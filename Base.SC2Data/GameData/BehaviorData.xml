@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="AutoTurretSwarm@TimedLife" parent="TimedLife">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="180"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CycloneLockOnAirLoTV1@LockOn">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-snipe.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <MaxStackCount value="65535"/>
+        <MaxStackCountPerCaster value="1"/>
+        <DamageResponse Fatal="1" Handled="CycloneLockOnAirLoTV1@LockOnTurretClear">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CycloneLockOnAirLoTV1@LockOnCaster">
+        <InfoIcon value="Assets\Textures\btn-ability-terran-snipe.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CycloneLockOnAirLoTV1@LockOnTargetNotDead"/>
+        <FinalEffect value="CycloneLockOnAirLoTV1@LockOnClearSet"/>
+        <Modification>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="IsKiting" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CycloneLockOnAirLoTV1@DummyWeapon">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CycloneLockOnAirLoTV1@LockOnTargetNotDeadInitial"/>
+        <Modification WeaponRange="2" WeaponScanBonus="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CycloneLockOnLotV2@LockOnCooldown">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Caster"/>
+        <Duration value="0.672"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CycloneLockOnLotV2@LockOn">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-snipe.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <MaxStackCount value="65535"/>
+        <MaxStackCountPerCaster value="1"/>
+        <DamageResponse Fatal="1" Handled="CycloneLockOnLotV2@LockOnTurretClear">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CycloneLockOnLotV2@LockOnCaster">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-snipe.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CycloneLockOnLotV2@LockOnTargetNotDead"/>
+        <FinalEffect value="CycloneLockOnLotV2@LockOnClearSet"/>
+        <Modification>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="IsKiting" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CycloneLockOnLotV2@DummyWeapon">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CycloneLockOnLotV2@LockOnTargetNotDeadInitial"/>
+        <Modification WeaponRange="2" WeaponScanBonus="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LiberatorLotV1@TargetMorphAGAttackable">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <MaxStackCount value="65535"/>
+        <MaxStackCountPerCaster value="1"/>
+        <Duration value="0.3125"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LiberatorLotV1@TargetMorphBehavior">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="HasNoLiberatorYoink"/>
+        <RemoveValidatorArray value="IsNotRecallingCombine"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PointDefenseDroneSwarm@TimedLife" parent="TimedLife">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="180"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PointDefenseDroneSwarm@PointDefenseReady">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SeekerMissileSwarm@TargetTint">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-huntermissile.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="0.2"/>
+        <AINotifyEffect value="SeekerMissileSwarm@Damage"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SeekerMissileSwarm@Timeout">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="SeekerMissileSwarm@NotInLastMotionPhase"/>
+        <Duration value="5"/>
+        <Modification MoveSpeedMaximum="0"/>
+    </CBehaviorBuff>
+</Catalog>

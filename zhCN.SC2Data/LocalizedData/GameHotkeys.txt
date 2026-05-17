@@ -1,0 +1,6 @@
+﻿Button/Hotkey/CycloneLockOnAirLoTV1@Button=C
+Button/Hotkey/CycloneLockOnLotV2@Button=C
+Button/Hotkey/CycloneLotV1@BuildCyclone=N
+Button/Hotkey/CycloneLotV2@BuildCyclone=N
+Button/Hotkey/HurricaneThrusters@Research=R
+Button/Hotkey/RapidFireLaunchers@Research=A

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="EnhancedShockwaves@Upgrade">
+        <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius" Value="0.5"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="Ghost"/>
+        <AffectedUnitArray value="GhostAlternate"/>
+        <AffectedUnitArray value="GhostNova"/>
+    </CUpgrade>
+    <CUpgrade id="HighCapacityBarrels">
+        <EffectArray index="1" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="LiberatorAGRangeUpgrade">
+        <EffectArray index="0" Value="3"/>
+        <EffectArray index="1" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="AdvancedBallistics">
+        <Icon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Abil,LiberatorLotV1@AGTarget,Range[0]" Value="4"/>
+        <EffectArray Reference="Weapon,LiberatorAGLotV1@Weapon,Range" Value="4"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="Liberator"/>
+        <AffectedUnitArray value="LiberatorAG"/>
+    </CUpgrade>
+    <CUpgrade id="MarineUpgrade">
+        <Flags index="UpgradeCheat" value="0"/>
+        <Race value="Neut"/>
+        <EffectArray Operation="Set" Reference="Abil,BarracksTrain,InfoArray[Train1].Time" Value="20.000000"/>
+        <EffectArray Operation="Set" Reference="Abil,BarracksTechLabResearch,InfoArray[Research1].Resource[Minerals]" Value="150"/>
+        <EffectArray Operation="Set" Reference="Abil,BarracksTechLabResearch,InfoArray[Research1].Resource[Vespene]" Value="150"/>
+        <EffectArray Operation="Set" Reference="Abil,BarracksTechLabResearch,InfoArray[Research2].Resource[Minerals]" Value="150"/>
+        <EffectArray Operation="Set" Reference="Abil,BarracksTechLabResearch,InfoArray[Research2].Resource[Vespene]" Value="150"/>
+        <AffectedUnitArray value="Marine"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="DrillClaws">
+        <EffectArray index="2" removed="1"/>
+        <EffectArray index="3" removed="1"/>
+    </CUpgrade>
+    <CUpgrade id="HurricaneThrusters@Upgrade">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Unit,CycloneLotV2,Speed" Value="3.375000"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="CycloneLotV2"/>
+    </CUpgrade>
+    <CUpgrade id="LiberatorUpgrade">
+        <Flags index="UpgradeCheat" value="0"/>
+        <Race value="Neut"/>
+        <EffectArray Operation="Set" Reference="Effect,LiberatorAGDamage,Amount" Value="85"/>
+        <EffectArray Operation="Set" Reference="Effect,LiberatorMissileDamage,Amount" Value="7"/>
+        <EffectArray Operation="Set" Reference="Unit,LiberatorAG,Sight" Value="13"/>
+        <EffectArray Operation="Set" Reference="Effect,LiberatorTargetMorphPersistent,RevealRadius" Value="0"/>
+        <EffectArray Operation="Set" Reference="Effect,LiberatorTargetMorphPersistent,RevealFlags[Unfog]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Effect,LiberatorTargetMorphDelayPersistent,RevealRadius" Value="0"/>
+        <EffectArray Operation="Set" Reference="Effect,LiberatorTargetMorphDelayPersistent,RevealFlags[Unfog]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Unit,LiberatorAG,CostResource[Vespene]" Value="150"/>
+        <AffectedUnitArray value="Marine"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
+    <CUpgrade id="RapidFireLaunchers@Upgrade">
+        <Icon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4]" Value="0.294"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5]" Value="0.294"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6]" Value="0.294"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7]" Value="0.294"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8]" Value="0.294"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9]" Value="0.294"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10]" Value="0.294"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11]" Value="0.294"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicEffectArray[4]" Value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicEffectArray[5]" Value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicEffectArray[6]" Value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicEffectArray[7]" Value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicEffectArray[8]" Value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicEffectArray[9]" Value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicEffectArray[10]" Value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <EffectArray Operation="Set" Reference="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicEffectArray[11]" Value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <EffectArray Operation="Set" Reference="Button,CycloneLockOnAirLoTV1@Button,AlertTooltip" Value="Button/Tooltip/CycloneLockOnAirLoTV1@UpgradeButton"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="CycloneLotV1"/>
+    </CUpgrade>
+    <CUpgrade id="ReaperLiberty@Upgrade">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,ReaperLiberty,Speed" Value="0.875000"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="ReaperSwarm@Upgrade">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,ReaperSwarm,Speed" Value="0.875000"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleAndShipArmorsLevel1">
+        <EffectArray Reference="Unit,CycloneLotV1,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,CycloneLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,CycloneLotV1@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+        <EffectArray Reference="Unit,CycloneLotV2,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,CycloneLotV2,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,CycloneLotV2@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleAndShipArmorsLevel2">
+        <EffectArray Reference="Unit,CycloneLotV1,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,CycloneLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,CycloneLotV1@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+        <EffectArray Reference="Unit,CycloneLotV2,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,CycloneLotV2,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,CycloneLotV2@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleAndShipArmorsLevel3">
+        <EffectArray Reference="Unit,CycloneLotV1,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,CycloneLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,CycloneLotV1@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+        <EffectArray Reference="Unit,CycloneLotV2,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,CycloneLotV2,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,CycloneLotV2@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel1">
+        <EffectArray Reference="Weapon,TornadoBlaster,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TornadoBlaster,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,TornadoBlaster@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,HellionTankDamage,AttributeBonus[Light]" Value="1.000000"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel2">
+        <EffectArray Reference="Weapon,TornadoBlaster,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TornadoBlaster,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,TornadoBlaster@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,HellionTankDamage,AttributeBonus[Light]" Value="1.000000"/>
+    </CUpgrade>
+    <CUpgrade id="TerranVehicleWeaponsLevel3">
+        <EffectArray Reference="Weapon,TornadoBlaster,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TornadoBlaster,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,TornadoBlaster@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,HellionTankDamage,AttributeBonus[Light]" Value="1.000000"/>
+    </CUpgrade>
+</Catalog>

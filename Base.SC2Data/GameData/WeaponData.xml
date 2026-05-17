@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="90mmCannonsLotV1">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <DisplayEffect value="90mmCannonsLotV1@Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="7.5"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <Period value="1.04"/>
+        <Effect value="90mmCannonsLotV1@Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AutoTurretSwarm@AutoTurretWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>
+        <DisplayEffect value="AutoTurretSwarm@AutoTurretDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Period value="0.8"/>
+        <Effect value="AutoTurretSwarm@AutoTurretDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CrucioShockCannonLotV1">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="DisplayCooldown" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <DisplayEffect value="CrucioShockCannonLotV1@Dummy"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="13"/>
+        <MinimumRange value="2"/>
+        <Period value="2.8"/>
+        <Effect value="CrucioShockCannonLotV1@Switch"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CycloneLockOnAirLoTV1@Dummy">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="7.5"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <Period value="1"/>
+        <Effect value="TornadoBlaster@Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LiberatorAGLotV1@Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
+        <DisplayEffect value="LiberatorAGLotV1@Damage"/>
+        <TargetFilters value="Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <Period value="1.6"/>
+        <DamagePoint value="0.125"/>
+        <Effect value="LiberatorAGLotV1@LMSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LiberatorLotV1@Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
+        <DisplayEffect value="LiberatorLotV1@Damage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1.8"/>
+        <Effect value="LiberatorLotV1@BurstPersistent"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PistolSwarm">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="PistolSwarm@Damage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1.1"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0.75"/>
+        <Effect value="PistolSwarm@CP"/>
+        <MinScanRange value="5.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GrenadeLiberty">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="GrenadeLiberty@Damage"/>
+        <TargetFilters value="Ground,Structure,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1.8"/>
+        <Effect value="GrenadeLiberty@LM"/>
+        <RandomDelayMin value="0.1"/>
+        <RandomDelayMax value="0.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GaussPistolLiberty">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <DisplayEffect value="GaussPistolLiberty@Damage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4.5"/>
+        <Period value="1.1"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0.75"/>
+        <Effect value="GaussPistolLiberty@CP"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PointDefenseDroneSwarm@PointDefenseLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="ContinuousScan" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
+        <TargetFilters value="Missile,Visible;Self,Player,Ally,Neutral,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireFilters value="Missile,Visible;Self,Player,Ally,Neutral,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Marker>
+            <MatchFlags index="Link" value="1"/>
+        </Marker>
+        <Period value="0"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="PointDefenseDroneSwarm@InitialSet"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TornadoBlaster">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <DisplayEffect value="TornadoBlaster@Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="6.5"/>
+        <Range value="6"/>
+        <Period value="0.14"/>
+        <Effect value="TornadoBlaster@LMSwitch"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TyphoonMissilePodLotV2@Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="ContinuousScan" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <DisplayEffect value="CycloneLockOnLotV2@Damage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="6.5"/>
+        <Range value="6"/>
+        <Period value="0.672"/>
+        <DamagePoint value="0.05"/>
+        <Effect value="TyphoonMissilePodLotV2@LMSwitch"/>
+    </CWeaponLegacy>
+</Catalog>

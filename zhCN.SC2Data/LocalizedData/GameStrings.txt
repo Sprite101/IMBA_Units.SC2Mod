@@ -1,0 +1,120 @@
+﻿Abil/Name/CycloneLockOnAirLoTV1@LockOn=Lock On
+Abil/Name/CycloneLockOnAirLoTV1@Research=Research
+Abil/Name/CycloneLockOnLotV2@LockOn=Lock On
+Abil/Name/CycloneLockOnLotV2@Research=Research
+Abil/Name/CycloneLotV1@Train=Train
+Abil/Name/CycloneLotV2@Train2=Train
+Behavior/Name/CycloneLockOnAirLoTV1@LockOn=Lock On Target
+Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
+Behavior/Name/CycloneLockOnLotV2@LockOn=Lock On Target
+Behavior/Tooltip/CycloneLockOnAirLoTV1@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
+Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
+Button/Name/CycloneLockOnAirLoTV1@Button=Lock On
+Button/Name/CycloneLockOnLotV2@Button=Lock On
+Button/Name/CycloneLotV1@BuildCyclone=Build Cyclone
+Button/Name/CycloneLotV2@BuildCyclone=Build Cyclone
+Button/Name/HurricaneThrusters@Passive=Hurricane Thrusters
+Button/Name/HurricaneThrusters@Research=Research Hurricane Thrusters
+Button/Name/RapidFireLaunchers@Passive=Rapid Fire Launchers
+Button/Name/RapidFireLaunchers@Research=Research Rapid Fire Launchers
+Button/Tooltip/BuildCycloneLotV1=机动突击型载具。可以使用锁定技能在移动状态下快速开火。<n/><n/><c val="#ColorAttackInfo">可以对地。</c>
+Button/Tooltip/BuildCycloneLotV2=机动突击型载具。可以使用锁定技能在移动状态下快速开火。<n/><n/><c val="#ColorAttackInfo">可以对地和对空。</c>
+Button/Tooltip/CycloneLockOnAirLoTV1@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
+Button/Tooltip/CycloneLockOnAirLoTV1@UpgradeButton=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First <c val="#ColorAttackInfo">12</c> shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
+Button/Tooltip/CycloneLockOnLotV2@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
+Button/Tooltip/CycloneLotV1@BuildCyclone=机动突击型载具。可以使用锁定技能在移动状态下快速开火。<n/><n/><c val="#ColorAttackInfo">可以对地。</c></n></n>2016年平衡性重做时引入，2018年时移除。<n/>
+Button/Tooltip/CycloneLotV2@BuildCyclone=机动突击型载具。可以使用锁定技能在移动状态下快速开火。<n/><n/><c val="#ColorAttackInfo">可以对地和对空。</c></n></n>2023年平衡性重做时引入，2024年时移除。<n/>
+Button/Tooltip/HurricaneThrusters@Passive=提高<c val="ffff8a">飓风</c>的移动速度。
+Button/Tooltip/HurricaneThrusters@Research=提高<c val="ffff8a">飓风</c>的移动速度。
+Button/Tooltip/RapidFireLaunchers@Passive=锁定技能的前12发飞弹可以快速发射
+Button/Tooltip/RapidFireLaunchers@Research=提高<c val="ffff8a">飓风</c>锁定技能的前12发飞弹的发射速度。
+Cyclone=Cyclone
+DataCollection/Name/CycloneLockOnAirLoTV1=CycloneLockOnAirLoTV1
+DataCollection/Name/CycloneLockOnLotV2=CycloneLockOnLotV2
+DataCollection/Name/CycloneLotV1=CycloneLotV1
+DataCollection/Name/CycloneLotV2=CycloneLotV2
+DataCollection/Name/HurricaneThrusters=Hurricane Thrusters
+DataCollection/Name/RapidFireLaunchers=Rapid Fire Launchers
+DataCollection/Name/TornadoBlaster=Tornado Blaster
+DataCollection/Name/TyphoonMissilePod=Typhoon Missile Pod
+DocInfo/DescLong=尚未完成——
+DocInfo/DescShort=2~8
+DocInfo/Name=IMBA兵种大乱斗
+Effect/Name/CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch=Lock On Weapon LM Switch
+Effect/Name/CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative=Lock On Weapon LM Switch Alternative
+Effect/Name/CycloneLockOnAirLoTV1@DummyWeaponAB=Dummy Weapon AB
+Effect/Name/CycloneLockOnAirLoTV1@DummyWeaponRB=Dummy Weapon RB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnAB=Lock On AB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnCP=Lock On CP
+Effect/Name/CycloneLockOnAirLoTV1@LockOnCasterAB=Lock On Caster AB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnCasterRB=Lock On Caster RB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnClearSet=Lock On Clear Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnFireSet=Lock On Fire Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnInitialAB=Lock On Initial AB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnInitialSet=Lock On Initial Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMLeft=Lock On LM Left
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMLeftAlternative=Lock On LM Left Alternative
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMLeftSet=Lock On LM Left Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMLeftSetAlternative=Lock On LM Left Set Alternative
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMRight=Lock On LM Right
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMRightAlternative=Lock On LM Right Alternative
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMRightSet=Lock On LM Right Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMRightSetAlternative=Lock On LM Right Set Alternative
+Effect/Name/CycloneLockOnAirLoTV1@LockOnRB=Lock On RB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnTurretClear=Lock On Turret Clear
+Effect/Name/CycloneLockOnAirLoTV1@LockOnTurretStart=Lock On Turret Start
+Effect/Name/CycloneLockOnAirLoTV1@LockOnWeaponDamage=Lock On Weapon Damage
+Effect/Name/CycloneLockOnAirLoTV1@LockOnWeaponDamageAlternative=Lock On Weapon Damage Alternative
+Effect/Name/CycloneLockOnLotV2@Damage=Damage
+Effect/Name/CycloneLockOnLotV2@DummyWeaponAB=Dummy Weapon AB
+Effect/Name/CycloneLockOnLotV2@DummyWeaponRB=Dummy Weapon RB
+Effect/Name/CycloneLockOnLotV2@LockOnAB=Lock On AB
+Effect/Name/CycloneLockOnLotV2@LockOnAddWeaponCooldown=Lock On Add Weapon Cooldown
+Effect/Name/CycloneLockOnLotV2@LockOnCP=Lock On CP
+Effect/Name/CycloneLockOnLotV2@LockOnCPInitial=Lock On CP Initial
+Effect/Name/CycloneLockOnLotV2@LockOnCasterAB=Lock On Caster AB
+Effect/Name/CycloneLockOnLotV2@LockOnCasterRB=Lock On Caster RB
+Effect/Name/CycloneLockOnLotV2@LockOnClearSet=Lock On Clear Set
+Effect/Name/CycloneLockOnLotV2@LockOnCooldownAB=Lock On Cooldown AB
+Effect/Name/CycloneLockOnLotV2@LockOnFireSet=Lock On Fire Set
+Effect/Name/CycloneLockOnLotV2@LockOnInitialAB=Lock On Initial AB
+Effect/Name/CycloneLockOnLotV2@LockOnInitialSet=Lock On Initial Set
+Effect/Name/CycloneLockOnLotV2@LockOnLMLeft=Lock On LM Left
+Effect/Name/CycloneLockOnLotV2@LockOnLMLeftSet=Lock On LM Left Set
+Effect/Name/CycloneLockOnLotV2@LockOnLMRight=Lock On LM Right
+Effect/Name/CycloneLockOnLotV2@LockOnLMRightSet=Lock On LM Right Set
+Effect/Name/CycloneLockOnLotV2@LockOnLaunchSet=Lock On Launch Set
+Effect/Name/CycloneLockOnLotV2@LockOnRB=Lock On RB
+Effect/Name/CycloneLockOnLotV2@LockOnTurretClear=Lock On Turret Clear
+Effect/Name/CycloneLockOnLotV2@LockOnTurretStart=Lock On Turret Start
+Effect/Name/CycloneLockOnLotV2@WeaponLMSwitch=Weapon LM Switch
+Effect/Name/LockOnCancelSet=Lock On Cancel Set
+Effect/Name/TornadoBlaster@Damage=Damage
+Effect/Name/TornadoBlaster@LMLeft=LM Left
+Effect/Name/TornadoBlaster@LMLeftSet=LM Left Set
+Effect/Name/TornadoBlaster@LMRight=LM Right
+Effect/Name/TornadoBlaster@LMRightSet=LM Right Set
+Effect/Name/TornadoBlaster@LMSwitch=LM Switch
+Effect/Name/TyphoonMissilePod@LMLeft=LM Left
+Effect/Name/TyphoonMissilePod@LMLeftSet=LM Left Set
+Effect/Name/TyphoonMissilePod@LMRight=LM Right
+Effect/Name/TyphoonMissilePod@LMSwitch=LM Switch
+Effect/Name/TyphoonMissilePod@WeaponLMRightSet=LM Right Set
+RequirementNode/Tooltip/CountUpgradeHurricaneThrusters@UpgradeCompleteOnly3968802568=Research <d stringRef="Upgrade,HurricaneThrusters@Upgrade,Name"/> at the Factory Tech Lab
+RequirementNode/Tooltip/CountUpgradeRapidFireLaunchers@UpgradeCompleteOnly1075727723=Research <d stringRef="Upgrade,RapidFireLaunchers@Upgrade,Name"/> at the Factory Tech Lab
+RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit=Not Locked On
+RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit=Not Locked On
+Unit/Name/CycloneLockOnAirLoTV1@Missile=Missile
+Unit/Name/CycloneLockOnAirLoTV1@MissileAlternative=Missile Alternative
+Unit/Name/CycloneLockOnLotV2@Missile=Missile
+Unit/Name/CycloneLotV1=飓风
+Unit/Name/CycloneLotV1@Unit=飓风
+Unit/Name/CycloneLotV2=飓风
+Unit/Name/CycloneLotV2@Unit=飓风
+Unit/Name/TornadoBlaster@Missile=Missile
+Unit/Name/TyphoonMissilePod@Missile=Missile
+Upgrade/Name/HurricaneThrusters@Upgrade=飓风引擎
+Upgrade/Name/RapidFireLaunchers@Upgrade=高速发射器
+Weapon/Name/CycloneLockOnAirLoTV1@Dummy=Lock On Dummy
+Weapon/Name/TornadoBlaster=龙卷风爆弹
+Weapon/Name/TyphoonMissilePod@Weapon=台风飞弹舱

@@ -1,0 +1,320 @@
+﻿Abil/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
+Abil/Name/AutoTurretSwarm=Place Auto Turret
+Abil/Name/CycloneLockOnAirLoTV1@LockOn=Lock On
+Abil/Name/CycloneLockOnAirLoTV1@Research=Research
+Abil/Name/CycloneLockOnLotV2@LockOn=Lock On
+Abil/Name/CycloneLockOnLotV2@Research=Research
+Abil/Name/CycloneLotV1@Train=Train
+Abil/Name/CycloneLotV2@Train2=Train
+Abil/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
+Abil/Name/GhostLotV1@ChannelSnipe=Channel Snipe
+Abil/Name/GhostLotV1@EMP=EMP
+Abil/Name/LiberatorAGLotV1@AATarget=AA Target
+Abil/Name/LiberatorAGLotV1@MorphtoAA=Morph to AA
+Abil/Name/LiberatorLotV1@AGTarget=AG Target
+Abil/Name/LiberatorLotV1@MorphtoAG=Morph to AG
+Abil/Name/LiberatorLotV1@Train=Train
+Abil/Name/PointDefenseDroneSwarm=Place Point Defense Drone
+Abil/Name/ReaperLiberty@ResearchNitroPacks=Research Nitro Packs
+Abil/Name/ReaperLiberty@Train=Train
+Abil/Name/ReaperSwarm@ResearchNitroPacks=Research Nitro Packs
+Abil/Name/ReaperSwarm@Train=Train
+Abil/Name/SeekerMissileSwarm=Seeker Missile
+Abil/Name/SiegeTankLotV1@Train=Train
+Abil/Name/SiegeTankLotV1Morph@SiegeMode=Siege
+Abil/Name/SiegeTankLotV1Morph@Unsiege=Unsiege
+Behavior/Name/CycloneLockOnAirLoTV1@LockOn=Lock On Target
+Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
+Behavior/Name/CycloneLockOnLotV2@LockOn=Lock On Target
+Behavior/Name/SeekerMissileSwarm@TargetTint=Seeker Missile
+Behavior/Name/SeekerMissileSwarm@Timeout=Timeout
+Behavior/Tooltip/CycloneLockOnAirLoTV1@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
+Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
+Behavior/Tooltip/SeekerMissileSwarm@TargetTint=This unit is being targeted by a Seeker Missile.
+Button/Name/AdvancedBallistics=Advanced Ballistics
+Button/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
+Button/Name/AutoTurretSwarm=Build Auto-Turret
+Button/Name/CycloneLockOnAirLoTV1@Button=Lock On
+Button/Name/CycloneLockOnLotV2@Button=Lock On
+Button/Name/CycloneLotV1@BuildCyclone=Build Cyclone
+Button/Name/CycloneLotV2@BuildCyclone=Build Cyclone
+Button/Name/EnhancedShockwaves@EnhancedShockwaves=Enhanced Shockwaves
+Button/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
+Button/Name/GhostLotV1@ChannelSnipe=Steady Targeting
+Button/Name/GhostLotV1@EMP=EMP Round
+Button/Name/HurricaneThrusters@Passive=Hurricane Thrusters
+Button/Name/HurricaneThrusters@Research=Research Hurricane Thrusters
+Button/Name/LiberatorLotV1@BuildLiberator=Build Liberator
+Button/Name/PointDefenseDroneSwarm@BuildPointDefenseDrone=Build Point Defense Drone
+Button/Name/RapidFireLaunchers@Passive=Rapid Fire Launchers
+Button/Name/RapidFireLaunchers@Research=Research Rapid Fire Launchers
+Button/Name/ReaperLiberty@PassiveButton=Jet Pack
+Button/Name/ReaperLiberty@ResearchNitroPacks=Research Nitro Packs
+Button/Name/ReaperLiberty@TrainReaper=Train Reaper
+Button/Name/ReaperLiberty@TrainReaper2=Train Reaper
+Button/Name/ReaperSwarm@PassiveButton=Battlefield Awareness
+Button/Name/ReaperSwarm@ResearchNitroPacks=Research Nitro Packs
+Button/Name/SeekerMissileSwarm=Seeker Missile
+Button/Name/SiegeTankLotV1@BuildSiegeTank=Build Siege Tank
+Button/Name/SiegeTankLotV1Morph@SiegeMode=Siege Mode
+Button/Name/SiegeTankLotV1Morph@Unsiege=Tank Mode
+Button/Tooltip/AdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
+Button/Tooltip/AdvancedBallistics@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGWeapon,Range$"/>.
+Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AutoTurretSwarm@AutoTurret=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/BuildCycloneLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/BuildCycloneLotV2=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/BuildGhostLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/CycloneLockOnAirLoTV1@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
+Button/Tooltip/CycloneLockOnAirLoTV1@UpgradeButton=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First <c val="#ColorAttackInfo">12</c> shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
+Button/Tooltip/CycloneLockOnLotV2@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
+Button/Tooltip/CycloneLotV1@BuildCyclone=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Originally introduced in 2016 balance revamp and removed in 2018 balance revamp.<n/>
+Button/Tooltip/CycloneLotV2@BuildCyclone=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Originally introduced in 2023 balance revamp and removed in 2024 balance revamp.<n/>
+Button/Tooltip/EnhancedShockwaves@EnhancedShockwaves=Increases the radius of <c val="ffff8a">Ghost's</c> EMP Round by +<d ref="$UpgradeEffectArrayValue:EnhancedShockwaves@Upgrade:Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius$" precision="1"/>.
+Button/Tooltip/EnhancedShockwaves@ResearchEnhancedShockwaves=Increases the <c val="ffff8a">Ghost's</c> EMP Round radius by +<d ref="$UpgradeEffectArrayValue:EnhancedShockwaves@Upgrade:Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius$" precision="1"/>.
+Button/Tooltip/GhostLotV1=Sniper. Can use Steady Targeting, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/GhostLotV1@ChannelSnipe=After carefully aiming for <d ref="Effect,ChannelSnipeCreatePersistent,PeriodCount*Effect,ChannelSnipeCreatePersistent,PeriodicPeriodArray[0]" precision="2"/> seconds while not taking damage, the Ghost fires a sniper round dealing <d ref="Effect,GhostLotV1@ChannelSnipeDamage,Amount"/> damage. Ignores armor.<n/><n/><c val="#ColorAttackInfo">Can only target biological units.</c>
+Button/Tooltip/GhostLotV1@EMP=Creates an electromagnetic pulse that does 100 damage to shields and energy of all units in the targeted area. Cloaked units hit by EMP are revealed for a short time.
+Button/Tooltip/GhostWoL=Sniper. Can use Steady Targeting, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/HurricaneThrusters@Passive=Increases the move speed of <c val="ffff8a">Cyclones</c>.
+Button/Tooltip/HurricaneThrusters@Research=Increases the move speed of <c val="ffff8a">Cyclones</c>.
+Button/Tooltip/LiberatorAGLotV1@LiberatorAG=Immobile defender. Deals heavy single target damage to ground units. Can switch into Fighter mode to provide air support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LiberatorLotV1@BuildLiberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher. Advanced Ballistics grants +4 range.<n/>
+Button/Tooltip/LiberatorLotV1@Liberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
+Button/Tooltip/PointDefenseDroneSwarm@BuildPointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
+Button/Tooltip/PointDefenseDroneSwarm@PointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneTimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
+Button/Tooltip/RapidFireLaunchers@Passive=Improves the Lock On ability to fire the first 12 shots quickly.
+Button/Tooltip/RapidFireLaunchers@Research=Increases the attack speed of the first 12 shots of the <c val="ffff8a">Cyclone's</c> Lock On.
+Button/Tooltip/RavenSwarm=Aerial support unit. Can use Auto-Turret, Point Defense Drone, Seeker Missile.<n/><n/><c val="FFE303">Detector</c>
+Button/Tooltip/ReaperLiberty=Raider. Capable of jumping up and down cliffs. Throws explosive mines.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/ReaperLiberty@PassiveButton=Reapers can jump up and down cliffs.  
+Button/Tooltip/ReaperLiberty@ResearchNitroPacks=Increases the movement speed of Reapers.
+Button/Tooltip/ReaperSwarm=Raider. Capable of jumping up and down cliffs. Can see up cliffs and through terrain that would normally block line of sight. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/ReaperSwarm@PassiveButton=Allows Reapers to see up cliffs and through terrains that would normally block line of sight.
+Button/Tooltip/ReaperSwarm@ResearchNitroPacks=Increases the movement speed of Reapers.
+Button/Tooltip/SeekerMissileSwarm=Deploys a Seeker Missile which activates after <d time="5"/> and pursues the target unit, dealing <d ref="Effect,SeekerMissileDamage,Amount"/> splash damage upon contact.
+Button/Tooltip/SiegeTankLotV1=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
+Button/Tooltip/SiegeTankLotV1@BuildSiegeTank=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c><n/><n/><c val="FFFF8A">Can be picked up by Medivacs in SIege Mode.</c>
+Button/Tooltip/SiegeTankLotV1Morph@SiegeMode=Deploys into Siege Mode. In this mode Siege Tanks have very long range and inflict area damage. Siege Tanks in this mode cannot move or attack targets at close range, but can be picked up by Medivacs.
+Button/Tooltip/SiegeTankLotV1Morph@Unsiege=Reverts to Tank Mode. In this mode Siege Tanks can move, but they do less damage.
+Button/Tooltip/SiegeTankSiegedLotV1=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Cyclone=Cyclone
+DataCollection/Name/90mmCannonsLotV1=90mm Cannons
+DataCollection/Name/AdvancedBallistics=Advanced Ballistics
+DataCollection/Name/AutoTurretSwarm=Raven Auto Turret
+DataCollection/Name/CrucioShockCannonLotV1=Crucio Shock Cannon
+DataCollection/Name/CycloneLockOnAirLoTV1=CycloneLockOnAirLoTV1
+DataCollection/Name/CycloneLockOnLotV2=CycloneLockOnLotV2
+DataCollection/Name/CycloneLotV1=CycloneLotV1
+DataCollection/Name/CycloneLotV2=CycloneLotV2
+DataCollection/Name/EnhancedShockwaves=Enhanced Shockwaves
+DataCollection/Name/GaussPistolLiberty=Pistol
+DataCollection/Name/GhostLotV1=GhostLotV1
+DataCollection/Name/GhostWoL=GhostWoL
+DataCollection/Name/GrenadeLiberty=Grenade
+DataCollection/Name/HurricaneThrusters=Hurricane Thrusters
+DataCollection/Name/LiberatorAGLotV1=Liberator AG LotV1
+DataCollection/Name/LiberatorLotV1=Liberator LotV1
+DataCollection/Name/PistolSwarm=Pistol
+DataCollection/Name/PointDefenseDroneSwarm=Raven Point Defense Drone
+DataCollection/Name/RapidFireLaunchers=Rapid Fire Launchers
+DataCollection/Name/RavenLotV1=Raven
+DataCollection/Name/RavenSwarm=Raven
+DataCollection/Name/ReaperLiberty=Reaper
+DataCollection/Name/ReaperSwarm=Reaper
+DataCollection/Name/SeekerMissileSwarm=Raven Seeker Missile
+DataCollection/Name/SiegeTankLotV1=Siege Tank LotV1
+DataCollection/Name/SiegeTankLotV1Morph=Siege Tank Morph
+DataCollection/Name/SiegeTankSiegedLotV1=Siege Tank Sieged LotV1
+DataCollection/Name/TornadoBlaster=Tornado Blaster
+DataCollection/Name/TyphoonMissilePodLotV2=Typhoon Missile Pod
+DocInfo/DescShort=Any
+DocInfo/Name=IMBA兵种大乱斗
+Effect/Name/90mmCannonsLotV1@Damage=Damage
+Effect/Name/AutoTurretSwarm@AutoTurretDamage=Auto-Turret Damage
+Effect/Name/AutoTurretSwarm@CU=CU
+Effect/Name/AutoTurretSwarm@InitialSet=Initial Set
+Effect/Name/AutoTurretSwarm@LM=LM
+Effect/Name/AutoTurretSwarm@ReleaseSet=Release Set
+Effect/Name/AutoTurretSwarm@TimedLifeAB=Timed Life AB
+Effect/Name/BurndownDamage2=Burndown Damage
+Effect/Name/CrucioShockCannonLotV1@Blast=Blast
+Effect/Name/CrucioShockCannonLotV1@Directed=Directed
+Effect/Name/CrucioShockCannonLotV1@Dummy=Dummy
+Effect/Name/CrucioShockCannonLotV1@Switch=Switch
+Effect/Name/CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch=Lock On Weapon LM Switch
+Effect/Name/CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative=Lock On Weapon LM Switch Alternative
+Effect/Name/CycloneLockOnAirLoTV1@DummyWeaponAB=Dummy Weapon AB
+Effect/Name/CycloneLockOnAirLoTV1@DummyWeaponRB=Dummy Weapon RB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnAB=Lock On AB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnCP=Lock On CP
+Effect/Name/CycloneLockOnAirLoTV1@LockOnCasterAB=Lock On Caster AB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnCasterRB=Lock On Caster RB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnClearSet=Lock On Clear Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnFireSet=Lock On Fire Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnInitialAB=Lock On Initial AB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnInitialSet=Lock On Initial Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMLeft=Lock On LM Left
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMLeftAlternative=Lock On LM Left Alternative
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMLeftSet=Lock On LM Left Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMLeftSetAlternative=Lock On LM Left Set Alternative
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMRight=Lock On LM Right
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMRightAlternative=Lock On LM Right Alternative
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMRightSet=Lock On LM Right Set
+Effect/Name/CycloneLockOnAirLoTV1@LockOnLMRightSetAlternative=Lock On LM Right Set Alternative
+Effect/Name/CycloneLockOnAirLoTV1@LockOnRB=Lock On RB
+Effect/Name/CycloneLockOnAirLoTV1@LockOnTurretClear=Lock On Turret Clear
+Effect/Name/CycloneLockOnAirLoTV1@LockOnTurretStart=Lock On Turret Start
+Effect/Name/CycloneLockOnAirLoTV1@LockOnWeaponDamage=Lock On Weapon Damage
+Effect/Name/CycloneLockOnAirLoTV1@LockOnWeaponDamageAlternative=Lock On Weapon Damage Alternative
+Effect/Name/CycloneLockOnLotV2@Damage=Damage
+Effect/Name/CycloneLockOnLotV2@DummyWeaponAB=Dummy Weapon AB
+Effect/Name/CycloneLockOnLotV2@DummyWeaponRB=Dummy Weapon RB
+Effect/Name/CycloneLockOnLotV2@LockOnAB=Lock On AB
+Effect/Name/CycloneLockOnLotV2@LockOnAddWeaponCooldown=Lock On Add Weapon Cooldown
+Effect/Name/CycloneLockOnLotV2@LockOnCP=Lock On CP
+Effect/Name/CycloneLockOnLotV2@LockOnCPInitial=Lock On CP Initial
+Effect/Name/CycloneLockOnLotV2@LockOnCasterAB=Lock On Caster AB
+Effect/Name/CycloneLockOnLotV2@LockOnCasterRB=Lock On Caster RB
+Effect/Name/CycloneLockOnLotV2@LockOnClearSet=Lock On Clear Set
+Effect/Name/CycloneLockOnLotV2@LockOnCooldownAB=Lock On Cooldown AB
+Effect/Name/CycloneLockOnLotV2@LockOnFireSet=Lock On Fire Set
+Effect/Name/CycloneLockOnLotV2@LockOnInitialAB=Lock On Initial AB
+Effect/Name/CycloneLockOnLotV2@LockOnInitialSet=Lock On Initial Set
+Effect/Name/CycloneLockOnLotV2@LockOnLMLeft=Lock On LM Left
+Effect/Name/CycloneLockOnLotV2@LockOnLMLeftSet=Lock On LM Left Set
+Effect/Name/CycloneLockOnLotV2@LockOnLMRight=Lock On LM Right
+Effect/Name/CycloneLockOnLotV2@LockOnLMRightSet=Lock On LM Right Set
+Effect/Name/CycloneLockOnLotV2@LockOnLaunchSet=Lock On Launch Set
+Effect/Name/CycloneLockOnLotV2@LockOnRB=Lock On RB
+Effect/Name/CycloneLockOnLotV2@LockOnTurretClear=Lock On Turret Clear
+Effect/Name/CycloneLockOnLotV2@LockOnTurretStart=Lock On Turret Start
+Effect/Name/CycloneLockOnLotV2@WeaponLMSwitch=Weapon LM Switch
+Effect/Name/GaussPistolLiberty@CP=CP
+Effect/Name/GaussPistolLiberty@Damage=Damage
+Effect/Name/GhostLotV1@ChannelSnipeCreatePersistent=Channel Snipe Create Persistent
+Effect/Name/GhostLotV1@ChannelSnipeDamage=Channel Snipe Damage
+Effect/Name/GhostLotV1@ChannelSnipeDamageSet=Channel Snipe Damage Set
+Effect/Name/GhostLotV1@ChannelSnipeInitialSet=Channel Snipe Initial Set
+Effect/Name/GhostLotV1@EMPDamage=EMP Damage
+Effect/Name/GhostLotV1@EMPLaunchMissile=EMP LM
+Effect/Name/GhostLotV1@EMPModifyUnit=EMP Modify Unit
+Effect/Name/GhostLotV1@EMPSearch=EMP Search
+Effect/Name/GhostLotV1@EMPSet=EMP Set
+Effect/Name/GrenadeLiberty@Damage=Damage
+Effect/Name/GrenadeLiberty@LM=LM
+Effect/Name/LiberatorAGLotV1@Damage=Damage
+Effect/Name/LiberatorAGLotV1@LM=LM
+Effect/Name/LiberatorAGLotV1@LMSet=LM Set
+Effect/Name/LiberatorAGLotV1@TargetAAMorphOrder=Target AA Morph Order
+Effect/Name/LiberatorAGLotV1@TargetAAMorphOrderSet=Target AA Morph Order Set
+Effect/Name/LiberatorAGLotV1@TargetAAMorphRB2=Target AA Morph RB
+Effect/Name/LiberatorLotV1@BurstPersistent=Burst Persistent
+Effect/Name/LiberatorLotV1@Damage=Damage
+Effect/Name/LiberatorLotV1@InterruptedMorphDelayPersistent=Interrupted Morph Delay Persistent
+Effect/Name/LiberatorLotV1@LM=LM
+Effect/Name/LiberatorLotV1@TargetMorphAB=Target Morph AB
+Effect/Name/LiberatorLotV1@TargetMorphAGOrder=Target Morph AG Order
+Effect/Name/LiberatorLotV1@TargetMorphDelayPersistent=Target Morph Delay Persistent
+Effect/Name/LiberatorLotV1@TargetMorphOrderInitialSet2=Target Morph Order Initial Set
+Effect/Name/LiberatorLotV1@TargetMorphPersistent=Target Morph Persistent
+Effect/Name/LiberatorLotV1@TargetMorphSearchAB=Target Morph Search AB
+Effect/Name/LiberatorLotV1@TargetMorphSearchArea=Target Morph Search Area
+Effect/Name/LockOnCancelSet=Lock On Cancel Set
+Effect/Name/PistolSwarm@CP=CP
+Effect/Name/PistolSwarm@Damage=Damage
+Effect/Name/PointDefenseDroneSwarm@CU=CU
+Effect/Name/PointDefenseDroneSwarm@Damage=Damage
+Effect/Name/PointDefenseDroneSwarm@Dummy=Dummy Damage
+Effect/Name/PointDefenseDroneSwarm@FireSet=Fire Set
+Effect/Name/PointDefenseDroneSwarm@InitialSet=Initial Set
+Effect/Name/PointDefenseDroneSwarm@ReadyAB=Ready AB
+Effect/Name/PointDefenseDroneSwarm@ReleaseLM=Release LM
+Effect/Name/PointDefenseDroneSwarm@ReleaseSet=Release Set
+Effect/Name/PointDefenseDroneSwarm@RemoveEnergy=Remove Energy
+Effect/Name/PointDefenseDroneSwarm@SearchArea=Search Area
+Effect/Name/PointDefenseDroneSwarm@TimedLifeAB=Timed Life AB
+Effect/Name/SeekerMissileSwarm@Damage=Damage
+Effect/Name/SeekerMissileSwarm@LM=LM
+Effect/Name/SeekerMissileSwarm@LaunchCP=Launch CP
+Effect/Name/SeekerMissileSwarm@LaunchSet=Launch Set
+Effect/Name/SeekerMissileSwarm@Suicide=Suicide
+Effect/Name/SeekerMissileSwarm@SuicideSet=Suicide Set
+Effect/Name/SeekerMissileSwarm@TargetTintAB=Target Tint AB
+Effect/Name/SeekerMissileSwarm@TargetTintCP=Target Tint CP
+Effect/Name/TornadoBlaster@Damage=Damage
+Effect/Name/TornadoBlaster@LMLeft=LM Left
+Effect/Name/TornadoBlaster@LMLeftSet=LM Left Set
+Effect/Name/TornadoBlaster@LMRight=LM Right
+Effect/Name/TornadoBlaster@LMRightSet=LM Right Set
+Effect/Name/TornadoBlaster@LMSwitch=LM Switch
+Effect/Name/TyphoonMissilePod@LMLeft=LM Left
+Effect/Name/TyphoonMissilePod@LMLeftSet=LM Left Set
+Effect/Name/TyphoonMissilePod@LMRight=LM Right
+Effect/Name/TyphoonMissilePod@LMSwitch=LM Switch
+Effect/Name/TyphoonMissilePod@WeaponLMRightSet=LM Right Set
+Effect/Name/TyphoonMissilePodLotV2@LMLeft=LM Left
+Effect/Name/TyphoonMissilePodLotV2@LMLeftSet=LM Left Set
+Effect/Name/TyphoonMissilePodLotV2@LMRight=LM Right
+Effect/Name/TyphoonMissilePodLotV2@LMSwitch=LM Switch
+Effect/Name/TyphoonMissilePodLotV2@WeaponLMRightSet=LM Right Set
+RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Research Advanced Ballistics at the Starport Techlab
+RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly2857131565TechTreeCheat=Research Advanced Ballistics at the Starport Tech Lab
+RequirementNode/Tooltip/CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat=Research Enhanced Shockwaves at the Ghost Academy
+RequirementNode/Tooltip/CountUpgradeEnhancedShockwavesCompleteOnly2618611756TechTreeCheat2=Research Enhanced Shockwaves at the Ghost Academy
+RequirementNode/Tooltip/CountUpgradeHurricaneThrusters@UpgradeCompleteOnly3968802568=Research <d stringRef="Upgrade,HurricaneThrusters@Upgrade,Name"/> at the Factory Tech Lab
+RequirementNode/Tooltip/CountUpgradeRapidFireLaunchers@UpgradeCompleteOnly1075727723=Research <d stringRef="Upgrade,RapidFireLaunchers@Upgrade,Name"/> at the Factory Tech Lab
+RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat=Research Nitro Packs at the Barracks Tech Lab
+RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat2=Research Nitro Packs at the Barracks Tech Lab
+RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit=Not Locked On
+RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit=Not Locked On
+Unit/Name/AutoTurretSwarm@AutoTurret=Auto-Turret
+Unit/Name/AutoTurretSwarm@ReleaseMissile=Release Missile
+Unit/Name/CycloneLockOnAirLoTV1@Missile=Missile
+Unit/Name/CycloneLockOnAirLoTV1@MissileAlternative=Missile Alternative
+Unit/Name/CycloneLockOnLotV2@Missile=Missile
+Unit/Name/CycloneLotV1=
+Unit/Name/CycloneLotV1@Unit=Cyclone
+Unit/Name/CycloneLotV2=Cyclone
+Unit/Name/CycloneLotV2@Unit=Cyclone
+Unit/Name/GhostLotV1=Ghost
+Unit/Name/GhostLotV1@Unit=Cyclone
+Unit/Name/GhostWoL=Ghost
+Unit/Name/GrenadeLiberty@Missile=D8 Charge
+Unit/Name/LiberatorAGLotV1@LiberatorAG=Liberator
+Unit/Name/LiberatorAGLotV1@MorphModel=Liberator
+Unit/Name/LiberatorLotV1@Liberator=Liberator
+Unit/Name/LiberatorLotV1@MorphModel=Liberator
+Unit/Name/PointDefenseDroneSwarm@Missile=Missile
+Unit/Name/PointDefenseDroneSwarm@PointDefenseDrone=Point Defense Drone
+Unit/Name/PointDefenseDroneSwarm@Unit=Point Defense Drone
+Unit/Name/RavenSwarm=Raven
+Unit/Name/ReaperLiberty=Reaper
+Unit/Name/ReaperSwarm=Reaper
+Unit/Name/SeekerMissileSwarm@Missile=Missile
+Unit/Name/SiegeTankLotV1=Siege Tank
+Unit/Name/SiegeTankSiegedLotV1=Siege Tank
+Unit/Name/TornadoBlaster@Missile=Missile
+Unit/Name/TyphoonMissilePod@Missile=Missile
+Unit/Name/TyphoonMissilePodLotV2@Missile=Missile
+Upgrade/Name/AdvancedBallistics=Advanced Ballistics
+Upgrade/Name/EnhancedShockwaves@Upgrade=Enhanced Shockwaves
+Upgrade/Name/HurricaneThrusters@Upgrade=Hurricane Thrusters
+Upgrade/Name/LiberatorUpgrade=Liberator
+Upgrade/Name/MarineUpgrade=Marine
+Upgrade/Name/RapidFireLaunchers@Upgrade=Rapid Fire Launchers
+Upgrade/Name/ReaperLiberty@Upgrade=Nitro Packs
+Upgrade/Name/ReaperSwarm@Upgrade=Nitro Packs
+Weapon/Name/90mmCannonsLotV1=90mm Cannons
+Weapon/Name/AutoTurretSwarm@AutoTurretWeapon=12mm Gauss Cannon
+Weapon/Name/CrucioShockCannonLotV1=Crucio Shock Cannon
+Weapon/Name/CycloneLockOnAirLoTV1@Dummy=Lock On Dummy
+Weapon/Name/GaussPistolLiberty=P-45 Gauss Pistol
+Weapon/Name/GrenadeLiberty=D-8 Charge
+Weapon/Name/LiberatorAGLotV1@Weapon=Concord Cannon
+Weapon/Name/LiberatorLotV1@Weapon=Lexington Rockets
+Weapon/Name/PistolSwarm=P-45 Gauss Pistol
+Weapon/Name/PointDefenseDroneSwarm@PointDefenseLaser=Point Defense Laser
+Weapon/Name/TornadoBlaster=Tornado Blaster
+Weapon/Name/TyphoonMissilePodLotV2@Weapon=Typhoon Missile Pod
+Weapon/Tip/GrenadeLiberty=Only used against structures.

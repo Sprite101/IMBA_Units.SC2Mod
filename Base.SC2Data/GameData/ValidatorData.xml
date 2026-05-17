@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorPlayerRequirement id="EnhancedShockwaves@Upgraded">
+        <WhichPlayer Value="Caster"/>
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="EnhancedShockwaves@HaveEnhancedShockwaves"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="GhostLotV1@ChannelSnipeValidators">
+        <Type value="And"/>
+        <CombineArray value="ChannelSnipeBehaviorValidator"/>
+        <CombineArray value="ChannelSnipeCasterFilters"/>
+        <CombineArray value="ChannelSnipeTargetFilters"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="CycloneLockOnAirLoTV1@CasterLockingOn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="CycloneLockOnAirLoTV1@LockOnCaster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="CycloneLockOnLotV2@TargetFilters">
+        <Filters value="Visible;Player,Ally,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="CycloneLockOnLotV2@CasterLockingOn">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="CycloneLockOnLotV2@LockOnCaster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="CycloneLockOnAirLoTV1@LockOnPeriodicValidators">
+        <Type value="And"/>
+        <CombineArray value="LockOnCasterNearTargetUpgraded"/>
+        <CombineArray value="CycloneLockOnAirLoTV1@TargetFilters"/>
+        <CombineArray value="LockOnCasterFilters"/>
+        <CombineArray value="CycloneLockOnAirLoTV1@CasterLockingOn"/>
+        <CombineArray value="CasterDoesNotHaveScramblerMissileBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CycloneLockOnLotV2@LockOnPeriodicValidators">
+        <Type value="And"/>
+        <CombineArray value="CycloneLockOnLotV2@LockOnCasterNearTarget"/>
+        <CombineArray value="CycloneLockOnLotV2@TargetFilters"/>
+        <CombineArray value="LockOnCasterFilters"/>
+        <CombineArray value="CycloneLockOnLotV2@CasterLockingOn"/>
+        <CombineArray value="CasterDoesNotHaveScramblerMissileBehavior"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="CycloneLockOnAirLoTV1@LockOnTargetNotDeadInitial">
+        <WhichUnit Effect="CycloneLockOnAirLoTV1@LockOnInitialSet"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorCombine id="CycloneLockOnAirLoTV1@LockOnTargetNotDeadSet">
+        <CombineArray value="LockOnTargetNotDead"/>
+        <CombineArray value="CycloneLockOnAirLoTV1@LockOnTargetNotDeadInitial"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="CycloneLockOnLotV2@LockingOn">
+        <ResultFailed value="Error,NotLockingOn"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="CycloneLockOnLotV2@LockOnCaster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="CycloneLockOnAirLoTV1@TargetFilters">
+        <Filters value="Air,Visible;Player,Ally,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="CycloneLockOnAirLoTV1@LockOnTargetNotDead">
+        <WhichUnit Effect="CycloneLockOnAirLoTV1@LockOnFireSet"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="CycloneLockOnAirLoTV1@NotLockingOn">
+        <ResultFailed value="Error,NotLockingOn"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="CycloneLockOnAirLoTV1@LockOnCaster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="CycloneLockOnAirLoTV1@LockingOn">
+        <ResultFailed value="Error,NotLockingOn"/>
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="CycloneLockOnAirLoTV1@LockOnCaster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="CycloneLockOnLotV2@NotLockingOn">
+        <ResultFailed value="Error,NotLockingOn"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="CycloneLockOnLotV2@LockOnCaster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="CycloneLockOnLotV2@NotHaveLockOnCooldownBehavior">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="CycloneLockOnLotV2@LockOnCooldown"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="CycloneLockOnLotV2@LockOnTargetNotDead">
+        <WhichUnit Effect="CycloneLockOnLotV2@LockOnFireSet"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="CycloneLockOnLotV2@LockOnTargetNotDeadInitial">
+        <WhichUnit Effect="CycloneLockOnLotV2@LockOnInitialSet"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorLocationCompareRange id="CycloneLockOnLotV2@LockOnCasterNearTarget">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LT"/>
+        <Range value="9"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorPlayerRequirement id="AdvancedBallistics@Upgraded">
+        <WhichPlayer Value="Caster"/>
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="AdvancedBallistics@HaveAdvancedBallistics"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="LiberatorLotV1@HasLiberatorMorphBehavior">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="LiberatorLotV1@TargetMorphBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="LiberatorAGLotV1@Targets">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="GT"/>
+        <Behavior value="LiberatorLotV1@TargetMorphAGAttackable"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="LiberatorLotV1@MorphValidatorCombine">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDead"/>
+        <CombineArray value="LiberatorLotV1@HasLiberatorMorphBehavior"/>
+        <CombineArray value="HasNoLiberatorYoink"/>
+        <CombineArray value="LiberatorNotRecallingMothership"/>
+        <CombineArray value="LiberatorNotRecallingMothershipCore"/>
+        <CombineArray value="LiberatorAGNotOutOfRange"/>
+        <CombineArray value="HasNoLiberatorEnsnare"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="SeekerMissileSwarm@MaxLaunchRange">
+        <WhichLocation Effect="SeekerMissileSwarm@LM"/>
+        <Compare value="GE"/>
+        <Range value="13"/>
+        <Value Value="SourceUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareMoverPhase id="SeekerMissileSwarm@NotInLastMotionPhase">
+        <Compare value="NE"/>
+        <Value value="3"/>
+    </CValidatorUnitCompareMoverPhase>
+    <CValidatorPlayerRequirement id="RapidFireLaunchers@HasRapidFireLaunchersUpgrade">
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="RapidFireLaunchers@HaveUpgrade"/>
+    </CValidatorPlayerRequirement>
+</Catalog>

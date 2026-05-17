@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAttachMethodPattern id="LiberatorLotV1@AMPatternLiberator">
+        <Keyword value="Weapon"/>
+        <Base value="::RollingIndex"/>
+        <Driver value="LiberatorLotV1@LM"/>
+    </CAttachMethodPattern>
+</Catalog>

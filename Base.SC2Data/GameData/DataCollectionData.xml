@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CDataCollectionUnit id="CycloneLotV2">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+        <DataRecord Entry="Unit,CycloneLotV2"/>
+        <DataRecord Entry="Actor,CycloneLotV2@Unit"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUpgrade id="EnhancedShockwaves">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <TechInfoUpgrade value="EnhancedShockwaves@Upgrade"/>
+    </CDataCollectionUpgrade>
+    <CDataCollection id="GaussPistolLiberty">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
+    </CDataCollection>
+    <CDataCollection id="CrucioShockCannonLotV1">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
+    </CDataCollection>
+    <CDataCollection id="CycloneLockOnAirLoTV1">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+        <DataRecord Entry="Abil,CycloneLockOnAirLoTV1@LockOn"/>
+        <DataRecord Entry="Button,CycloneLockOnAirLoTV1@Button"/>
+    </CDataCollection>
+    <CDataCollection id="CycloneLockOnLotV2">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+        <DataRecord Entry="Abil,CycloneLockOnLotV2@LockOn"/>
+        <DataRecord Entry="Button,CycloneLockOnLotV2@Button"/>
+    </CDataCollection>
+    <CDataCollectionUnit id="GhostLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+        <DataRecord Entry="Unit,GhostLotV1"/>
+        <DataRecord Entry="Actor,GhostLotV1@Unit"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="GhostWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+        <DataRecord Entry="Unit,GhostWoL"/>
+        <DataRecord Entry="Actor,GhostLotV1@Unit"/>
+    </CDataCollectionUnit>
+    <CDataCollection id="GrenadeLiberty">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
+    </CDataCollection>
+    <CDataCollectionUpgrade id="AdvancedBallistics">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <Button value=""/>
+    </CDataCollectionUpgrade>
+    <CDataCollectionAbil id="LiberatorAGLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionAbil>
+    <CDataCollectionAbil id="LiberatorLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionAbil>
+    <CDataCollection id="PistolSwarm">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
+    </CDataCollection>
+    <CDataCollection id="PointDefenseDroneSwarm">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+    </CDataCollection>
+    <CDataCollectionAbil id="ReaperLiberty">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionAbil>
+    <CDataCollectionAbil id="ReaperSwarm">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionAbil>
+    <CDataCollection id="SeekerMissileSwarm">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+    </CDataCollection>
+    <CDataCollection id="SiegeTankLotV1Morph">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+    </CDataCollection>
+    <CDataCollectionUnit id="CycloneLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+        <DataRecord Entry="Unit,CycloneLotV1"/>
+        <DataRecord Entry="Actor,CycloneLotV1@Unit"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="RavenSwarm">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="RavenLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionUnit>
+    <CDataCollectionAbil id="SiegeTankLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionAbil>
+    <CDataCollectionUpgrade id="RapidFireLaunchers">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+    </CDataCollectionUpgrade>
+    <CDataCollectionUpgrade id="HurricaneThrusters">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+    </CDataCollectionUpgrade>
+    <CDataCollection id="AutoTurretSwarm">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+    </CDataCollection>
+    <CDataCollectionAbil id="SiegeTankSiegedLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionAbil>
+    <CDataCollection id="TornadoBlaster">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
+    </CDataCollection>
+    <CDataCollection id="90mmCannonsLotV1">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
+    </CDataCollection>
+    <CDataCollection id="TyphoonMissilePodLotV2">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
+    </CDataCollection>
+</Catalog>

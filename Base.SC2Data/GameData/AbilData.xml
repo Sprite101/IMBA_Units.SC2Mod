@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilResearch id="EnhancedShockwaves@ResearchEnhancedShockwaves">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="110" Upgrade="EnhancedShockwaves@Upgrade">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="EnhancedShockwaves@ResearchEnhancedShockwaves" State="Restricted" Requirements="EnhancedShockwaves@@LearnEnhancedShockwaves">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilEffectTarget id="AutoTurretSwarm">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="21"/>
+        <Effect index="0" value="AutoTurretSwarm@CU"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Charge Link="Abil/AutoTurret"/>
+            <Cooldown Link="Raven Build Link" Location="Unit"/>
+        </Cost>
+        <Placeholder value="AutoTurretSwarm@AutoTurret"/>
+        <Range value="3"/>
+        <Marker Link="Abil/AutoTurret"/>
+        <ErrorAlert value="Error"/>
+        <AINotifyEffect value="AutoTurretSwarm@AutoTurretDamage"/>
+        <ProducedUnitArray value="AutoTurretSwarm@AutoTurret"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AutoTurretSwarm"/>
+        <PlaceUnit value="AutoTurretSwarm@AutoTurret"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="GhostLotV1@EMP">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="GhostLotV1@EMPLaunchMissile"/>
+        <Cost>
+            <Vital index="Energy" value="75"/>
+        </Cost>
+        <Range value="10"/>
+        <PrepTime value="0.01"/>
+        <FinishTime value="0.0625"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="GhostLotV1@EMPSearch"/>
+        <AINotifyEffect value="EMPLaunchMissile"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GhostLotV1@EMP"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="GhostLotV1@ChannelSnipe">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="GhostLotV1@ChannelSnipeInitialSet"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+        </Cost>
+        <TargetFilters value="Biological,Visible;Self,Player,Ally,Structure,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <RangeSlop value="20"/>
+        <CancelableArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ChannelSnipe"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+    </CAbilEffectTarget>
+    <CAbilTrain id="LiberatorLotV1@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="60">
+            <Button DefaultButtonFace="LiberatorLotV1@BuildLiberator"/>
+            <Unit value="LiberatorLotV1@Liberator"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="FactoryTrain">
+        <InfoArray index="Train25" Time="40"/>
+    </CAbilTrain>
+    <CAbilEffectTarget id="Hyperjump">
+        <Effect index="0" value="HyperjumpCreatePrecursor"/>
+        <InterruptCost>
+            <Cooldown TimeUse="0"/>
+        </InterruptCost>
+        <CastOutroTime index="0" value="6"/>
+        <FinishTime index="0" removed="1"/>
+        <UninterruptibleArray index="Prep" value="0"/>
+        <UninterruptibleArray index="Finish" value="0"/>
+        <ProgressButtonArray index="Prep" value=""/>
+        <CancelEffect index="Prep" value=""/>
+    </CAbilEffectTarget>
+    <CAbilEffectInstant id="LiberatorAGLotV1@AATarget">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="LiberatorAGLotV1@TargetAAMorphOrderSet"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LiberatorAAMode"/>
+    </CAbilEffectInstant>
+    <CAbilMorph id="LiberatorAGLotV1@MorphtoAA">
+        <AbilSetId value="LiberatorAA"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LiberatorAAMode">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreFacing" value="1"/>
+        <CancelUnit value="LiberatorLotV1@Liberator"/>
+        <InfoArray Unit="LiberatorLotV1@Liberator">
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="1.5417"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="1.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilEffectTarget id="LiberatorLotV1@AGTarget">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="LiberatorLotV1@TargetMorphOrderInitialSet2"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Range value="5"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LiberatorAGMode"/>
+    </CAbilEffectTarget>
+    <CAbilMorph id="LiberatorLotV1@MorphtoAG">
+        <AbilSetId value="LiberatorAG"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LiberatorAGMode"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="LiberatorAGLotV1@LiberatorAG">
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Facing">
+                <DurationArray index="Duration" value="0.5"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilEffectTarget id="PointDefenseDroneSwarm">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="11"/>
+        <Effect index="0" value="PointDefenseDroneSwarm@CU"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="100"/>
+            <Cooldown Link="Raven Build Link" Location="Unit"/>
+        </Cost>
+        <Placeholder value="PointDefenseDroneSwarm@PointDefenseDrone"/>
+        <Range value="3"/>
+        <ProducedUnitArray value="PointDefenseDroneSwarm@PointDefenseDrone"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PointDefenseDroneSwarm@BuildPointDefenseDrone"/>
+        <PlaceUnit value="PointDefenseDroneSwarm@PointDefenseDrone"/>
+    </CAbilEffectTarget>
+    <CAbilResearch id="AdvancedBallistics@ResearchAdvancedBallistics">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="90" Upgrade="AdvancedBallistics">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="AdvancedBallistics@ResearchAdvancedBallistics" State="Restricted" Requirements="AdvancedBallistics@UseAdvancedBallistics">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilTrain id="SiegeTankLotV1@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="45">
+            <Button DefaultButtonFace="SiegeTankLotV1@BuildSiegeTank" State="Restricted" Requirements="HaveAttachedTechLab"/>
+            <Unit value="SiegeTankLotV1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="ReaperSwarm@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="30">
+            <Button DefaultButtonFace="ReaperSwarm@TrainReaper" Requirements="HaveAttachedTechLab"/>
+            <Unit value="ReaperSwarm"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilResearch id="ReaperSwarm@ResearchNitroPacks">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="90" Upgrade="ReaperSwarm@Upgrade">
+            <Resource index="Minerals" value="50"/>
+            <Resource index="Vespene" value="50"/>
+            <Button DefaultButtonFace="ReaperSwarm@ResearchNitroPacks" State="Restricted" Requirements="ReaperSwarm@LearnNitroPacks">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilTrain id="ReaperLiberty@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="30">
+            <Button DefaultButtonFace="ReaperLiberty@TrainReaper" Requirements="HaveAttachedTechLab"/>
+            <Unit value="ReaperLiberty"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilResearch id="ReaperLiberty@ResearchNitroPacks">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="90" Upgrade="ReaperLiberty@Upgrade">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="ReaperLiberty@ResearchNitroPacks" State="Restricted" Requirements="ReaperLiberty@UseNitroPacks">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilEffectTarget id="CycloneLockOnAirLoTV1@LockOn">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <PrepEffect value="CycloneLockOnAirLoTV1@LockOnInitialAB"/>
+        <Effect index="0" value="CycloneLockOnAirLoTV1@LockOnInitialSet"/>
+        <Cost>
+            <Cooldown TimeUse="6"/>
+        </Cost>
+        <TargetFilters value="Air,Visible;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="CycloneLockOnAirLoTV1@Button" Requirements="CycloneLockOnAirLoTV1@NoLockedOn"/>
+        <FollowRange value="7"/>
+    </CAbilEffectTarget>
+    <CAbilResearch id="CycloneLockOnAirLoTV1@Research">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="100" Upgrade="RapidFireLaunchers@Upgrade">
+            <Resource index="Minerals" value="75"/>
+            <Resource index="Vespene" value="75"/>
+            <Button DefaultButtonFace="RapidFireLaunchers@Research" State="Restricted" Requirements="RapidFireLaunchers@LearnUpgrade">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilResearch id="CycloneLockOnLotV2@Research">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="140" Upgrade="HurricaneThrusters@Upgrade">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="HurricaneThrusters@Research" State="Restricted" Requirements="HurricaneThrusters@LearnUpgrade">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilTrain id="CycloneLotV1@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="45">
+            <Button DefaultButtonFace="CycloneLotV1@BuildCyclone"/>
+            <Unit value="CycloneLotV1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilEffectTarget id="CycloneLockOnLotV2@LockOn">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <PrepEffect value="CycloneLockOnLotV2@LockOnInitialAB"/>
+        <Effect index="0" value="CycloneLockOnLotV2@LockOnInitialSet"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Cost/>
+        <TargetFilters value="Visible;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSThreatensCyclone"/>
+            <SortArray value="AirTarget"/>
+        </TargetSorts>
+        <Range value="6"/>
+        <Arc value="360"/>
+        <AutoCastFilters value="Visible;Player,Ally,Neutral"/>
+        <AutoCastRange value="6.5"/>
+        <AutoCastValidatorArray value="IsNotInterceptor"/>
+        <AutoCastValidatorArray value="TargetNotChangeling"/>
+        <AutoCastValidatorArray value="IsNotNeuralParasited"/>
+        <AutoCastValidatorArray value="TargetNotChangeling"/>
+        <AutoCastValidatorArray value="IsDefensiveStructure"/>
+        <AutoCastValidatorArray value="IsNotBroodlingFate"/>
+        <AutoCastValidatorArray value="NotLarva"/>
+        <AutoCastValidatorArray value="CasterIsNotHidden"/>
+        <AutoCastValidatorArray value="NotLarvaEgg"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="CycloneLockOnLotV2@Button" Requirements="CycloneLockOnLotV2@NoLockedOn"/>
+        <FollowRange value="6"/>
+    </CAbilEffectTarget>
+    <CAbilTrain id="CycloneLotV2@Train2">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="45">
+            <Button DefaultButtonFace="CycloneLotV2@BuildCyclone"/>
+            <Unit value="CycloneLotV2"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilEffectInstant id="LockOnCancel">
+        <Effect index="0" value="LockOnCancelSet"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="SeekerMissileSwarm">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="1"/>
+        <Effect index="0" value="SeekerMissileSwarm@LM"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="75"/>
+            <Charge Link="Abil/HunterSeekerMissileSwarm"/>
+            <Cooldown Link="Abil/HunterSeekerMissileSwarm"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <Arc value="29.9926"/>
+        <ArcSlop value="0"/>
+        <Marker Link="Abil/HunterSeekerMissileSwarm"/>
+        <AINotifyEffect value="HunterSeekerMissile"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SeekerMissileSwarm"/>
+    </CAbilEffectTarget>
+    <CAbilMorph id="SiegeTankLotV1Morph@SiegeMode">
+        <OrderArray index="0">
+            <DisplayType value="Confirm"/>
+            <Color value="255,0,255,0"/>
+            <Model value="Assets\UI\Cursors\WayPointAttack_Void\WayPointAttack_Void.m3"/>
+            <LineTexture value="Assets\Textures\WayPointLine.dds"/>
+        </OrderArray>
+        <AbilSetId value="SiegeMode"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SiegeTankLotV1Morph@SiegeMode">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreCollision" value="0"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="SiegeTankSiegedLotV1" RandomDelayMax="0.5">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="0.5"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Facing">
+                <DurationArray index="Duration" value="0.5"/>
+                <EffectArray index="Start" value="SiegeTankMorphDisableDummyWeaponAB"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Delay" value="0.5"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="SiegeTankLotV1Morph@Unsiege">
+        <AbilSetId value="Unsieged"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SiegeTankLotV1Morph@Unsiege"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <InfoArray Unit="SiegeTankLotV1" RandomDelayMax="0.5">
+            <SectionArray index="Abils">
+                <EffectArray index="Start" value="SiegeTankUnmorphDisableDummyWeaponAB"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilEffectTarget id="WidowMineAttack">
+        <PrepEffect index="0" removed="1"/>
+        <CancelEffect index="Prep" value=""/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="Yamato">
+        <Flags index="AbortOnAllianceChange" value="1"/>
+        <Flags index="IgnoreOrderPlayerIdInStageValidate" value="0"/>
+        <ValidatedArray index="Cast" value="1"/>
+        <ValidatedArray index="Channel" value="1"/>
+        <CancelEffect index="Prep" value=""/>
+    </CAbilEffectTarget>
+</Catalog>

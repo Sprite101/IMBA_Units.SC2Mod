@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="EnhancedShockwaves@@LearnEnhancedShockwaves">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="CycloneLockOnLotV2@NoLockedOn">
+        <NodeArray index="Use" Link="Not361380870CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="AdvancedBallistics@HaveAdvancedBallistics">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeAdvancedBallisticsCompleteOnly1495348974"/>
+    </CRequirement>
+    <CRequirement id="EnhancedShockwaves@HaveEnhancedShockwaves">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="HurricaneThrusters@HaveUpgrade">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeHurricaneThrusters@UpgradeCompleteOnly3968802568"/>
+    </CRequirement>
+    <CRequirement id="AdvancedBallistics@UseAdvancedBallistics">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountUpgradeAdvancedBallisticsCompleteOnly2857131565TechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="ReaperSwarm@LearnNitroPacks">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountUnitAlias_FactoryCompleteOnly96167438"/>
+        <NodeArray index="Show" Link="NotCountUpgradeReaperSpeedQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="RapidFireLaunchers@LearnUpgrade">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeRapidFireLaunchers@UpgradeQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="RapidFireLaunchers@HaveUpgrade">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeRapidFireLaunchers@UpgradeCompleteOnly1075727723"/>
+    </CRequirement>
+    <CRequirement id="LockedOn">
+        <NodeArray index="Show" Link="OrCountBehaviorLockOnDisableAttackCompleteOnlyAtUnitCountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnitCountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="CycloneLockOnAirLoTV1@NoLockedOn">
+        <NodeArray index="Use" Link="Not361380870CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="HurricaneThrusters@LearnUpgrade">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeHurricaneThrusters@UpgradeQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="ReaperLiberty@UseNitroPacks">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat"/>
+    </CRequirement>
+</Catalog>

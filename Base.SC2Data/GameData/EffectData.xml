@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectDamage id="90mmCannonsLotV1@Damage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Armored" value="10"/>
+        <Kind value="Ranged"/>
+        <Amount value="15"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectDamage id="AutoTurretSwarm@AutoTurretDamage" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <Amount value="8"/>
+    </CEffectDamage>
+    <CEffectCreateUnit id="AutoTurretSwarm@CU">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetPoint"/>
+        <SpawnEffect value="AutoTurretSwarm@InitialSet"/>
+        <SpawnUnit value="AutoTurretSwarm@AutoTurret"/>
+        <SpawnRange value="0"/>
+    </CEffectCreateUnit>
+    <CEffectLaunchMissile id="AutoTurretSwarm@LM">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <FinishEffect value="RemovePrecursor"/>
+        <AmmoUnit value="AutoTurretSwarm@ReleaseMissile"/>
+        <PlaceholderUnit value="AutoTurretSwarm@AutoTurret"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="AutoTurretSwarm@ReleaseSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AutoTurretSwarm@LM"/>
+        <EffectArray value="MakePrecursor"/>
+    </CEffectSet>
+    <CEffectSet id="AutoTurretSwarm@InitialSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AutoTurretSwarm@TimedLifeAB"/>
+        <EffectArray value="AutoTurretSwarm@ReleaseSet"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="AutoTurretSwarm@TimedLifeAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AutoTurretSwarm@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="BurndownDamage2">
+        <EditorCategories value="Race:Terran"/>
+        <Flags index="NoKillCredit" value="1"/>
+        <Amount value="1"/>
+    </CEffectDamage>
+    <CEffectDamage id="GhostLotV1@EMPDamage">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ShieldBonus value="100"/>
+        <Flags index="Notification" value="1"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="GhostLotV1@EMPLaunchMissile">
+        <ValidatorArray index="0" value="EMP2TargetFilters"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="GhostLotV1@EMPSearch"/>
+        <AmmoUnit value="EMP2Weapon"/>
+    </CEffectLaunchMissile>
+    <CEffectModifyUnit id="GhostLotV1@EMPModifyUnit">
+        <ValidatorArray value="empUTargetFilters"/>
+        <EditorCategories value="Race:Terran"/>
+        <VitalArray index="Energy">
+            <Change value="-100"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectEnumArea id="GhostLotV1@EMPSearch">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="TargetPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Hidden,Invulnerable"/>
+        <AreaArray Radius="1.5" Effect="GhostLotV1@EMPSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="GhostLotV1@EMPSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="GhostLotV1@EMPDamage"/>
+        <EffectArray value="GhostLotV1@EMPModifyUnit"/>
+        <EffectArray value="EMPApplyDecloakBehavior"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="GhostLotV1@ChannelSnipeCreatePersistent">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireEffect value="GhostLotV1@ChannelSnipeDamageSet"/>
+        <FinalEffect value="ChannelSnipeCombatRB"/>
+        <PeriodCount value="32"/>
+        <PeriodicValidator value="GhostLotV1@ChannelSnipeValidators"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="GhostLotV1@ChannelSnipeDamage">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="170"/>
+    </CEffectDamage>
+    <CEffectSet id="GhostLotV1@ChannelSnipeDamageSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="GhostLotV1@ChannelSnipeDamage"/>
+        <EffectArray value="ChannelSnipeRefundRB"/>
+        <EffectArray value="ChannelSnipeCombatRB"/>
+    </CEffectSet>
+    <CEffectSet id="GhostLotV1@ChannelSnipeInitialSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="GhostLotV1@ChannelSnipeCreatePersistent"/>
+        <EffectArray value="ChannelSnipeCombat"/>
+        <EffectArray value="ChannelSnipeRefund"/>
+        <EffectArray value="ChannelSnipeCombatBeamDummy"/>
+    </CEffectSet>
+    <CEffectDamage id="CrucioShockCannonLotV1@Blast" parent="DU_WEAP">
+        <ValidatorArray value=""/>
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Armored" value="15"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="35"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="0.4687" Fraction="1"/>
+        <AreaArray Radius="0.7812" Fraction="0.5"/>
+        <AreaArray Radius="1.25" Fraction="0.25"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="CrucioShockCannonLotV1@Directed" parent="DU_WEAP">
+        <ValidatorArray value=""/>
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Armored" value="15"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="35"/>
+        <Death value="Blast"/>
+        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectDamage id="CrucioShockCannonLotV1@Dummy" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Armored" value="15"/>
+        <Kind value="Splash"/>
+        <KindSplash value="Splash"/>
+        <Amount value="35"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectSwitch id="CrucioShockCannonLotV1@Switch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="TargetRadiusSmall" Effect="CrucioShockCannonLotV1@Blast"/>
+        <CaseArray Validator="IsSupplyDepotLowered" Effect="CrucioShockCannonLotV1@Blast"/>
+        <CaseArray Validator="TargetRadiusLarge" Effect="CrucioShockCannonLotV1@Directed"/>
+    </CEffectSwitch>
+    <CEffectDamage id="HellionTankDamage">
+        <AttributeBonus index="Light" value="12"/>
+    </CEffectDamage>
+    <CEffectDamage id="LiberatorAGLotV1@Damage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <Amount value="85"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="LiberatorAGLotV1@LM">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="LiberatorAGLotV1@Damage"/>
+        <AmmoUnit value="LiberatorAGMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="LiberatorAGLotV1@LMSet">
+        <ValidatorArray value="LiberatorAGTargets"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="LiberatorAGLotV1@LM"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="LiberatorLotV1@LM">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="LiberatorLotV1@Damage"/>
+        <AmmoUnit value="LiberatorDamageMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="LiberatorLotV1@InterruptedMorphDelayPersistent">
+        <EditorCategories value="Race:Terran"/>
+        <ExpireEffect value="LiberatorAGLotV1@TargetAAMorphOrderSet"/>
+        <PeriodCount value="1"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
+    <CEffectIssueOrder id="LiberatorAGLotV1@TargetAAMorphOrder">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Source"/>
+        <Abil value="LiberatorAGLotV1@MorphtoAA"/>
+        <Player Value="Source"/>
+    </CEffectIssueOrder>
+    <CEffectSet id="LiberatorAGLotV1@TargetAAMorphOrderSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="LiberatorAGLotV1@TargetAAMorphRB2"/>
+        <EffectArray value="LiberatorAGLotV1@TargetAAMorphOrder"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="LiberatorAGLotV1@TargetAAMorphRB2">
+        <EditorCategories value="Race:Terran"/>
+        <BehaviorLink value="LiberatorLotV1@TargetMorphBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="LiberatorLotV1@TargetMorphAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="LiberatorLotV1@TargetMorphBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectIssueOrder id="LiberatorLotV1@TargetMorphAGOrder">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="LiberatorLotV1@MorphtoAG"/>
+        <Player Value="Creator"/>
+        <Target Value="CasterUnit"/>
+    </CEffectIssueOrder>
+    <CEffectCreatePersistent id="LiberatorLotV1@BurstPersistent">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="RandomOffset" value="1"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffectArray value="LiberatorLotV1@LM"/>
+        <PeriodicEffectArray value="LiberatorLotV1@LM"/>
+        <PeriodicPeriodArray value="0.05"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="LiberatorLotV1@Damage" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="SourceUnitOrPoint"/>
+        <Visibility value="Visible"/>
+        <Amount value="7"/>
+        <Death value="Fire"/>
+        <AreaArray Radius="1.5" Fraction="1"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Air;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="LiberatorTargetMorphDelayPersistent">
+        <RevealRadius value="5.5"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="LiberatorLotV1@TargetMorphDelayPersistent">
+        <EditorCategories value="Race:Terran"/>
+        <ExpireEffect value="LiberatorLotV1@TargetMorphPersistent"/>
+        <PeriodCount value="16"/>
+        <PeriodicEffectArray value="LiberatorLotV1@TargetMorphSearchArea"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <AINotifyEffect value="LiberatorTargetMorphSearchArea"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="LiberatorLotV1@TargetMorphOrderInitialSet2">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="LiberatorLotV1@TargetMorphAB"/>
+        <EffectArray value="LiberatorLotV1@TargetMorphAGOrder"/>
+        <EffectArray value="LiberatorLotV1@TargetMorphDelayPersistent"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="LiberatorTargetMorphPersistent">
+        <RevealRadius value="5.5"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="LiberatorLotV1@TargetMorphPersistent">
+        <EditorCategories value="Race:Terran"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <FinalEffect value="LiberatorLotV1@InterruptedMorphDelayPersistent"/>
+        <PeriodicValidator value="LiberatorLotV1@MorphValidatorCombine"/>
+        <PeriodicEffectArray value="LiberatorLotV1@TargetMorphSearchArea"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <AINotifyEffect value="LiberatorTargetMorphSearchArea"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="LiberatorLotV1@TargetMorphSearchAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="LiberatorTargetMorphAGAttackable"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="LiberatorLotV1@TargetMorphSearchArea">
+        <EditorCategories value="Race:Terran"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <AINotifyFlags index="MajorDanger" value="1"/>
+        <SearchFilters value="Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="5" Effect="LiberatorLotV1@TargetMorphSearchAB"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="PistolSwarm@CP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffectArray value="PistolSwarm@Damage"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.122"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="PistolSwarm@Damage" parent="DU_WEAP">
+        <ValidatorArray value="MultipleHitGroundOnlyAttackTargetFilter"/>
+        <ValidatorArray value="ReaperAttackDamageMaxRangeCombine"/>
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Light" value="5"/>
+        <Kind value="Ranged"/>
+        <Amount value="4"/>
+    </CEffectDamage>
+    <CEffectDamage id="GrenadeLiberty@Damage">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="GrenadeLiberty@LM">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="GrenadeLiberty@Damage"/>
+        <AmmoUnit value="GrenadeLiberty@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="GaussPistolLiberty@Damage" parent="DU_WEAP">
+        <ValidatorArray value="MultipleHitGroundOnlyAttackTargetFilter"/>
+        <ValidatorArray value="ReaperAttackDamageMaxRangeCombine"/>
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Light" value="5"/>
+        <Kind value="Ranged"/>
+        <Amount value="4"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="GaussPistolLiberty@CP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffectArray value="GaussPistolLiberty@Damage"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.122"/>
+    </CEffectCreatePersistent>
+    <CEffectCreateUnit id="PointDefenseDroneSwarm@CU">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetPoint"/>
+        <SpawnEffect value="PointDefenseDroneSwarm@ReleaseSet"/>
+        <SpawnUnit value="PointDefenseDroneSwarm@PointDefenseDrone"/>
+    </CEffectCreateUnit>
+    <CEffectLaunchMissile id="PointDefenseDroneSwarm@ReleaseLM">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <FinishEffect value="RemovePrecursor"/>
+        <AmmoUnit value="PointDefenseDroneSwarm@Missile"/>
+        <PlaceholderUnit value="PointDefenseDroneSwarm@PointDefenseDrone"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="PointDefenseDroneSwarm@ReleaseSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="PointDefenseDroneSwarm@TimedLifeAB"/>
+        <EffectArray value="PointDefenseDroneSwarm@ReleaseLM"/>
+        <EffectArray value="MakePrecursor"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="PointDefenseDroneSwarm@ReadyAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PointDefenseDroneSwarm@PointDefenseReady"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="PointDefenseDroneSwarm@Damage">
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="Weapon/PointDefenseLaser">
+            <MatchFlags index="Link" value="1"/>
+        </Marker>
+        <ModifyFlags index="Hide" value="1"/>
+        <ModifyFlags index="NullifyMissile" value="1"/>
+    </CEffectModifyUnit>
+    <CEffectDamage id="PointDefenseDroneSwarm@Dummy">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+    </CEffectDamage>
+    <CEffectModifyUnit id="PointDefenseDroneSwarm@RemoveEnergy">
+        <ValidatorArray value="PointDefenseLaserEnergyTargetFilters"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Energy">
+            <Change value="-10"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="PointDefenseDroneSwarm@InitialSet">
+        <ValidatorArray value="PointDefenseDroneUnitFilter"/>
+        <ValidatorArray value="CasterHas10Energy"/>
+        <EditorCategories value=""/>
+        <EffectArray value="PointDefenseDroneSwarm@SearchArea"/>
+        <EffectArray value="PointDefenseDroneSwarm@ReadyAB"/>
+    </CEffectSet>
+    <CEffectSet id="PointDefenseDroneSwarm@FireSet">
+        <ValidatorArray value="PointDefenseDroneUnitFilter"/>
+        <ValidatorArray value="CasterHas10Energy"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="PointDefenseDroneSwarm@Damage"/>
+        <EffectArray value="PointDefenseDroneSwarm@Dummy"/>
+        <EffectArray value="PointDefenseDroneSwarm@ReadyAB"/>
+        <EffectArray value="PointDefenseDroneSwarm@RemoveEnergy"/>
+    </CEffectSet>
+    <CEffectEnumArea id="PointDefenseDroneSwarm@SearchArea">
+        <ValidatorArray value="PointDefenseSearchTargetFilters"/>
+        <EditorCategories value=""/>
+        <ImpactLocation Value="SourceUnit"/>
+        <SearchFilters value="Missile,Visible;Self,Player,Ally,Neutral,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="8" Effect="PointDefenseDroneSwarm@FireSet"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="PointDefenseDroneSwarm@TimedLifeAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="PointDefenseDroneSwarm@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="SeekerMissileSwarm@TargetTintAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Effect="SeekerMissileSwarm@LM"/>
+        <Behavior value="SeekerMissileSwarm@TargetTint"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="SeekerMissileSwarm@Damage">
+        <EditorCategories value="Race:Terran"/>
+        <AINotifyFlags index="HurtFriend" value="1"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <AINotifyFlags index="MajorDanger" value="1"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="100"/>
+        <AreaArray Radius="0.6" Fraction="1"/>
+        <AreaArray Radius="1.2" Fraction="0.5"/>
+        <AreaArray Radius="2.4" Fraction="0.25"/>
+        <ExcludeArray Value="Target"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="-;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="SeekerMissileSwarm@LaunchCP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourceUnit"/>
+        <ExpireEffect value="SeekerMissileSwarm@SuicideSet"/>
+        <PeriodCount value="50"/>
+        <PeriodicPeriodArray value="0.1"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="SeekerMissileSwarm@LM">
+        <ValidatorArray index="0" value="HunterSeekerLaunchMissileTargetFilters"/>
+        <EditorCategories value="Race:Terran"/>
+        <LaunchEffect value="SeekerMissileSwarm@LaunchSet"/>
+        <ImpactEffect value="SeekerMissileSwarm@Damage"/>
+        <AmmoUnit value="SeekerMissileSwarm@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="SeekerMissileSwarm@LaunchSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="SeekerMissileSwarm@LaunchCP"/>
+        <EffectArray value="SeekerMissileSwarm@TargetTintCP"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="SeekerMissileSwarm@TargetTintCP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourceUnit"/>
+        <PeriodCount value="250"/>
+        <PeriodicValidator value="SourceNotDead"/>
+        <PeriodicEffectArray value="SeekerMissileSwarm@TargetTintAB"/>
+        <PeriodicPeriodArray value="0.1"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="SeekerMissileSwarm@Suicide">
+        <ValidatorArray value="SeekerMissileSwarm@MaxLaunchRange"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <Flags index="Kill" value="1"/>
+    </CEffectDamage>
+    <CEffectSet id="SeekerMissileSwarm@SuicideSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="SeekerMissileSwarm@Suicide"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="TyphoonMissilePodLotV2@LMLeft">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="CycloneLockOnLotV2@Damage"/>
+        <AmmoUnit value="TyphoonMissilePodLotV2@Missile"/>
+        <Movers Link="CycloneMissileLeft"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="TyphoonMissilePodLotV2@LMLeftSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="TyphoonMissilePodLotV2@LMLeft"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateAB"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnCooldownAB"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="TyphoonMissilePodLotV2@LMRight">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="CycloneLockOnLotV2@Damage"/>
+        <AmmoUnit value="TyphoonMissilePodLotV2@Missile"/>
+        <Movers Link="CycloneMissileRight"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="TyphoonMissilePodLotV2@WeaponLMRightSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="TyphoonMissilePodLotV2@LMRight"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateRB"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnCooldownAB"/>
+    </CEffectSet>
+    <CEffectSwitch id="TyphoonMissilePodLotV2@LMSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="CycloneWeaponLaunchMissileAlternate" Effect="TyphoonMissilePodLotV2@WeaponLMRightSet"/>
+        <CaseDefault value="TyphoonMissilePodLotV2@LMLeftSet"/>
+    </CEffectSwitch>
+    <CEffectRemoveBehavior id="CycloneLockOnLotV2@DummyWeaponRB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="CycloneLockOnLotV2@DummyWeapon"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="CycloneLockOnLotV2@LockOnCasterRB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="CycloneLockOnLotV2@LockOnCaster"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="CycloneLockOnLotV2@LockOnRB">
+        <EditorCategories value="Race:Terran"/>
+        <BehaviorLink value="CycloneLockOnLotV2@LockOn"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="CycloneLockOnLotV2@LockOnCPInitial">
+        <ValidatorArray value="LockOnGroundAirPeriodicValidators"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnLaunchSet"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="CycloneLockOnLotV2@LockOnAddWeaponCooldown">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactUnit Value="Source"/>
+        <Weapon Weapon="TyphoonMissilePodLotV2@Weapon" CooldownOperation="Set" CooldownFraction="1"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="CycloneLockOnLotV2@LockOnCooldownAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="CycloneLockOnLotV2@LockOnCooldown"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="CycloneLockOnAirLoTV1@DummyWeaponAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="CycloneLockOnAirLoTV1@DummyWeapon"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="CycloneLockOnAirLoTV1@DummyWeaponRB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="CycloneLockOnAirLoTV1@DummyWeapon"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="CycloneLockOnLotV2@LockOnInitialSet">
+        <ValidatorArray value="TargetNotInvisibleDummyUnit"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnTurretStart"/>
+        <EffectArray value="LockOnResetCooldownInitial"/>
+        <EffectArray value="CycloneLockOnLotV2@DummyWeaponAB"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="CycloneLockOnLotV2@LockOnTurretStart">
+        <ValidatorArray value="CasterIsNotHidden"/>
+        <ValidatorArray value="CycloneLockOnLotV2@NotLockingOn"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Turret="CycloneLotV2@LockOnTurret" AimCompleteEffect="CycloneLockOnLotV2@LockOnFireSet">
+            <Target Value="TargetUnit"/>
+            <Flags index="Tracking" value="1"/>
+        </ModifyTurret>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="CycloneLockOnLotV2@LockOnTurretClear">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Action="ClearTarget" Turret="CycloneLotV2@LockOnTurret"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="CycloneLockOnLotV2@LockOnInitialAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="CycloneLockOnLotV2@LockOn"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="1"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="CycloneLockOnLotV2@LockOnFireSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnAB"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnCasterAB"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnCP"/>
+        <EffectArray value="LockOnResetCooldownInitial"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="CycloneLockOnLotV2@LockOnAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="CycloneLockOnLotV2@LockOn"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="CycloneLockOnLotV2@LockOnCasterAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="CycloneLockOnLotV2@LockOnCaster"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="CycloneLockOnLotV2@LockOnCP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <FinalEffect value="CycloneLockOnLotV2@LockOnClearSet"/>
+        <PeriodCount value="320"/>
+        <PeriodicValidator value="CycloneLockOnLotV2@LockOnPeriodicValidators"/>
+        <PeriodicEffectArray value="CycloneLockOnLotV2@LockOnLaunchSet"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="CycloneLockOnLotV2@LockOnLaunchSet">
+        <ValidatorArray value="CycloneLockOnLotV2@NotHaveLockOnCooldownBehavior"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnLotV2@WeaponLMSwitch"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnCooldownAB"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnAddWeaponCooldown"/>
+    </CEffectSet>
+    <CEffectSwitch id="CycloneLockOnLotV2@WeaponLMSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="CycloneWeaponLaunchMissileAlternate" Effect="CycloneLockOnLotV2@LockOnLMRightSet"/>
+        <CaseDefault value="CycloneLockOnLotV2@LockOnLMLeftSet"/>
+    </CEffectSwitch>
+    <CEffectDamage id="CycloneLockOnLotV2@Damage" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Armored" value="5"/>
+        <Kind value="Spell"/>
+        <Amount value="10"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="CycloneLockOnLotV2@LockOnLMLeft">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="CycloneLockOnLotV2@Damage"/>
+        <AmmoUnit value="CycloneLockOnLotV2@Missile"/>
+        <Movers Link="CycloneMissileLeft"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="CycloneLockOnLotV2@LockOnLMLeftSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnLMLeft"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateAB"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="CycloneLockOnLotV2@LockOnLMRight">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="CycloneLockOnLotV2@Damage"/>
+        <AmmoUnit value="CycloneLockOnLotV2@Missile"/>
+        <Movers Link="CycloneMissileRight"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="CycloneLockOnLotV2@LockOnLMRightSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnLMRight"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateRB"/>
+    </CEffectSet>
+    <CEffectSet id="CycloneLockOnLotV2@LockOnClearSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnRB"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnCasterRB"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnTurretClear"/>
+        <EffectArray value="LockOnResetCooldown"/>
+        <EffectArray value="CycloneLockOnLotV2@DummyWeaponRB"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="CycloneLockOnLotV2@DummyWeaponAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="CycloneLockOnLotV2@DummyWeapon"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="TornadoBlaster@Damage" parent="DU_WEAP_MISSILE">
+        <ValidatorArray value="DetectedORNotCloakedBuried"/>
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Armored" value="2"/>
+        <Amount value="3"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="TornadoBlaster@LMLeft">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="TornadoBlaster@Damage"/>
+        <AmmoUnit value="TornadoBlaster@Missile"/>
+        <Movers Link="CycloneMissileLeft"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="TornadoBlaster@LMLeftSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="TornadoBlaster@LMLeft"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateAB"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="TornadoBlaster@LMRight">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="TornadoBlaster@Damage"/>
+        <AmmoUnit value="TornadoBlaster@Missile"/>
+        <Movers Link="CycloneMissileRight"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="TornadoBlaster@LMRightSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="TornadoBlaster@LMRight"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateRB"/>
+    </CEffectSet>
+    <CEffectSwitch id="TornadoBlaster@LMSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="CycloneWeaponLaunchMissileAlternate" Effect="TornadoBlaster@LMRightSet"/>
+        <CaseDefault value="TornadoBlaster@LMLeftSet"/>
+    </CEffectSwitch>
+    <CEffectLaunchMissile id="CycloneLockOnAirLoTV1@LockOnLMLeftAlternative">
+        <ValidatorArray index="0" value="AirUnitFilter"/>
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="CycloneLockOnAirLoTV1@LockOnWeaponDamageAlternative"/>
+        <AmmoUnit value="CycloneLockOnAirLoTV1@MissileAlternative"/>
+        <Movers Link="CycloneMissileLeft"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="CycloneLockOnAirLoTV1@LockOnLMRightAlternative">
+        <ValidatorArray index="0" value="AirUnitFilter"/>
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="CycloneLockOnAirLoTV1@LockOnWeaponDamageAlternative"/>
+        <AmmoUnit value="CycloneLockOnAirLoTV1@MissileAlternative"/>
+        <Movers Link="CycloneMissileRight"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="CycloneLockOnAirLoTV1@LockOnLMLeftSetAlternative">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnLMLeftAlternative"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateAB"/>
+    </CEffectSet>
+    <CEffectSet id="CycloneLockOnAirLoTV1@LockOnLMRightSetAlternative">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnLMRightAlternative"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateRB"/>
+    </CEffectSet>
+    <CEffectSwitch id="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="CycloneWeaponLaunchMissileAlternate" Effect="CycloneLockOnAirLoTV1@LockOnLMRightSetAlternative"/>
+        <CaseDefault value="CycloneLockOnAirLoTV1@LockOnLMLeftSetAlternative"/>
+    </CEffectSwitch>
+    <CEffectSet id="CycloneLockOnAirLoTV1@LockOnInitialSet">
+        <ValidatorArray value="TargetNotInvisibleDummyUnit"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnTurretStart"/>
+        <EffectArray value="LockOnResetCooldownInitial"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@DummyWeaponAB"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="CycloneLockOnAirLoTV1@LockOnTurretStart">
+        <ValidatorArray value="CasterIsNotHidden"/>
+        <ValidatorArray value="CycloneLockOnAirLoTV1@NotLockingOn"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Turret="CycloneLotV1@LockOnTurret" AimCompleteEffect="CycloneLockOnAirLoTV1@LockOnFireSet">
+            <Target Value="TargetUnit"/>
+            <Flags index="Tracking" value="1"/>
+        </ModifyTurret>
+    </CEffectModifyUnit>
+    <CEffectCreatePersistent id="CycloneLockOnAirLoTV1@LockOnCP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <FinalEffect value="CycloneLockOnAirLoTV1@LockOnClearSet"/>
+        <PeriodCount value="20"/>
+        <PeriodicValidator value="CycloneLockOnAirLoTV1@LockOnPeriodicValidators"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitchAlternative"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicEffectArray value="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch"/>
+        <PeriodicPeriodArray value="0.294"/>
+        <PeriodicPeriodArray value="0.294"/>
+        <PeriodicPeriodArray value="0.294"/>
+        <PeriodicPeriodArray value="0.294"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <PeriodicPeriodArray value="1.176"/>
+        <RevealRadius value="2"/>
+        <InitialEffect value="CycloneLockOnCPinitial"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="CycloneLockOnAirLoTV1@CycloneWeaponLMSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="CycloneWeaponLaunchMissileAlternate" Effect="CycloneLockOnAirLoTV1@LockOnLMRightSet"/>
+        <CaseDefault value="CycloneLockOnAirLoTV1@LockOnLMLeftSet"/>
+    </CEffectSwitch>
+    <CEffectDamage id="CycloneLockOnAirLoTV1@LockOnWeaponDamage" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <ArmorReduction value="0"/>
+        <Kind value="Spell"/>
+        <Amount value="8"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="CycloneLockOnAirLoTV1@LockOnLMLeft">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="CycloneLockOnAirLoTV1@LockOnWeaponDamage"/>
+        <AmmoUnit value="CycloneLockOnAirLoTV1@Missile"/>
+        <Movers Link="CycloneMissileLeft"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="CycloneLockOnAirLoTV1@LockOnLMLeftSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnLMLeft"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateAB"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="CycloneLockOnAirLoTV1@LockOnLMRight">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="CycloneLockOnAirLoTV1@LockOnWeaponDamage"/>
+        <AmmoUnit value="CycloneLockOnAirLoTV1@Missile"/>
+        <Movers Link="CycloneMissileRight"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="CycloneLockOnAirLoTV1@LockOnLMRightSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnLMRight"/>
+        <EffectArray value="CycloneWeaponLaunchMissileAlternateRB"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="CycloneLockOnAirLoTV1@LockOnAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="CycloneLockOnAirLoTV1@LockOn"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="CycloneLockOnAirLoTV1@LockOnFireSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnAB"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnCasterAB"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnCP"/>
+        <EffectArray value="LockOnResetCooldownInitial"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="CycloneLockOnAirLoTV1@LockOnRB">
+        <EditorCategories value="Race:Terran"/>
+        <BehaviorLink value="CycloneLockOnAirLoTV1@LockOn"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="CycloneLockOnAirLoTV1@LockOnCasterAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="CycloneLockOnAirLoTV1@LockOnCaster"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="CycloneLockOnAirLoTV1@LockOnClearSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnRB"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnCasterRB"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnTurretClear"/>
+        <EffectArray value="LockOnResetCooldown"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@DummyWeaponRB"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="CycloneLockOnAirLoTV1@LockOnCasterRB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="CycloneLockOnAirLoTV1@LockOnCaster"/>
+    </CEffectRemoveBehavior>
+    <CEffectDamage id="CycloneLockOnAirLoTV1@LockOnWeaponDamageAlternative" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <ArmorReduction value="0"/>
+        <Kind value="Spell"/>
+        <Amount value="8"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectSet id="LockOnCancelSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="LockOnDisableAttackRB"/>
+        <EffectArray value="CycloneLockOnAirLoTV1@LockOnCasterRB"/>
+        <EffectArray value="CycloneLockOnLotV2@LockOnCasterRB"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="CycloneLockOnAirLoTV1@LockOnInitialAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="CycloneLockOnAirLoTV1@LockOn"/>
+        <Flags index="UseDuration" value="1"/>
+        <Duration value="1"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="LockOnResetCooldown">
+        <Cost Abil="CycloneLockOnAirLoTV1@LockOn,Execute" CooldownOperation="Set" CooldownTimeUse="6"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="LockOnResetCooldownInitial">
+        <Cost Abil="CycloneLockOnAirLoTV1@LockOn,Execute" CooldownOperation="Set"/>
+        <Cost Abil="CycloneLockOnLotV2@LockOn,Execute" CooldownOperation="Set"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="CycloneLockOnAirLoTV1@LockOnTurretClear">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Action="ClearTarget" Turret="CycloneLotV1@LockOnTurret"/>
+    </CEffectModifyUnit>
+    <CEffectSet id="WidowMineAttack">
+        <EffectArray index="2" removed="1"/>
+    </CEffectSet>
+    <CEffectDamage id="WidowMineExplodeSplash">
+        <ShieldBonus value="40"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="WidowMineExplodeSplashSearch">
+        <AreaArray index="0" Radius="1.75"/>
+    </CEffectEnumArea>
+</Catalog>

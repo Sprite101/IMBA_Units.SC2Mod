@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="EnhancedShockwaves@EnhancedShockwaves">
+        <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="EnhancedShockwaves@ResearchEnhancedShockwaves">
+        <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AutoTurretSwarm">
+        <Icon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="GhostLotV1@EMP">
+        <Icon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="GhostLotV1@ChannelSnipe">
+        <Icon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HidesForSimpleText value="0"/>
+    </CButton>
+    <CButton id="CycloneLockOnLotV2@Button">
+        <Icon value="Assets\Textures\btn-ability-terran-lockon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-lockon.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="CycloneLotV1@BuildCyclone">
+        <Icon value="Assets\Textures\btn-unit-terran-cyclone.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-cyclone.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="CycloneLockOnAirLoTV1@Button">
+        <Icon value="Assets\Textures\btn-ability-terran-lockon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-lockon.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AdvancedBallistics">
+        <Icon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="LiberatorLotV1@BuildLiberator">
+        <Icon value="Assets\Textures\btn-unit-terran-liberator.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-liberator.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="PointDefenseDroneSwarm@BuildPointDefenseDrone">
+        <Icon value="Assets\Textures\btn-unit-terran-targetingdrone.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-targetingdrone.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AdvancedBallistics@ResearchAdvancedBallistics">
+        <Icon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="SeekerMissileSwarm">
+        <Icon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ReaperSwarm@TrainReaper">
+        <Tooltip value="Button/Tooltip/ReaperLiberty"/>
+        <Icon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+        <AlertTooltip value="Button/Tooltip/ReaperLiberty"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ReaperSwarm@PassiveButton">
+        <Icon value="Assets\Textures\btn-ability-terran-battlefieldawareness.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-battlefieldawareness.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ReaperLiberty@TrainReaper">
+        <Tooltip value="Button/Tooltip/ReaperLiberty"/>
+        <Icon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+        <AlertTooltip value="Button/Tooltip/ReaperLiberty"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="CycloneLotV2@BuildCyclone">
+        <Icon value="Assets\Textures\btn-unit-terran-cyclone.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-cyclone.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ReaperLiberty@PassiveButton">
+        <Icon value="Assets\Textures\btn-ability-terran-jetpack.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-jetpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="RapidFireLaunchers@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="HurricaneThrusters@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="RapidFireLaunchers@Research">
+        <Icon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="HurricaneThrusters@Research">
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ReaperSwarm@ResearchNitroPacks">
+        <Icon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ReaperLiberty@ResearchNitroPacks">
+        <Icon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="SiegeTankLotV1@BuildSiegeTank">
+        <Icon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="SiegeTankLotV1Morph@SiegeMode">
+        <Icon value="Assets\Textures\btn-unit-terran-siegetanksiegemode.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-siegetanksiegemode.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeySet value="TankModes"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="SiegeTankLotV1Morph@Unsiege">
+        <Icon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-siegetank.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeySet value="TankModes"/>
+        <Universal value="1"/>
+    </CButton>
+</Catalog>

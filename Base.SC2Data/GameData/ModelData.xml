@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel id="AutoTurretSwarm@ReleaseMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\AutoTurretPodMissile\AutoTurretPodMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="CycloneLockOnLotV2@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Cyclone_BigMissile\Cyclone_BigMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="TornadoBlaster@Missile" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Cyclone_Missile\Cyclone_Missile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+</Catalog>
