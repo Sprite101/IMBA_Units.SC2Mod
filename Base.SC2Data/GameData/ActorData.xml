@@ -338,8 +338,7 @@
     <CActorModel id="GhostWoL@EMPAttackImpactEffect" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.GhostWoL@EMPSearch.Start" Send="Create"/>
         <On Terms="Effect.GhostWoL@EMPSearch.Stop" Send="AnimBracketStop BSD"/>
-        <On Terms="ActorCreation; ValidatePlayer EnhancedShockwaves@Upgraded" Send="SetScale 1.330000"/>
-        <On Terms="ActorCreation; ValidatePlayer EnhancedShockwaves@Upgraded" Send="SetTintColor {128,128,255 1.400000}"/>
+        <On Terms="ActorCreation" Send="SetScale 1.330000"/>
         <HostSiteOps Ops="SOpShadow"/>
         <Model value="GhostEMPAttackImpactEffect"/>
     </CActorModel>
