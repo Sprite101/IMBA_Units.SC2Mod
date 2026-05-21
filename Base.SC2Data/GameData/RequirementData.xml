@@ -11,6 +11,14 @@
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeAdvancedBallisticsCompleteOnly1495348974"/>
     </CRequirement>
+    <CRequirement id="MoebiusReactor@HaveMoebiusReactor">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeMoebiusReactor@UpgradeCompleteOnly3009616705TechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="MoebiusReactor@LearnMoebiusReactor">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="EnhancedShockwaves@HaveEnhancedShockwaves">
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat"/>

@@ -29,6 +29,25 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="AutoTurretSwarm"/>
         <PlaceUnit value="AutoTurretSwarm@AutoTurret"/>
     </CAbilEffectTarget>
+    <CAbilTrain id="GhostWoL@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="40">
+            <Button DefaultButtonFace="GhostWoL@TrainGhost" Requirements="HaveAttachedBarrTechLabAndShadowOps"/>
+            <Unit value="GhostWoL"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilResearch id="MoebiusReactor@ResearchMoebiusReactor">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="110" Upgrade="MoebiusReactor@Upgrade">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="MoebiusReactor@ResearchMoebiusReactor" State="Restricted" Requirements="MoebiusReactor@LearnMoebiusReactor">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilEffectTarget id="GhostLotV1@EMP">
         <Alignment value="Negative"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -59,6 +78,22 @@
         <UninterruptibleArray index="Channel" value="1"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="ChannelSnipe"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="GhostWoL@EMP">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="GhostWoL@EMPLaunchMissile"/>
+        <Cost>
+            <Vital index="Energy" value="75"/>
+        </Cost>
+        <Range value="10"/>
+        <PrepTime value="0.01"/>
+        <FinishTime value="0.0625"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <CursorEffect value="GhostWoL@EMPSearch"/>
+        <AINotifyEffect value="EMPLaunchMissile"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GhostWoL@EMP"/>
     </CAbilEffectTarget>
     <CAbilTrain id="LiberatorLotV1@Train">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
@@ -159,6 +194,15 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilTrain id="GhostLotV1@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="40">
+            <Button DefaultButtonFace="GhostLotV1@TrainGhost" Requirements="HaveAttachedBarrTechLabAndShadowOps"/>
+            <Unit value="GhostLotV1"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilTrain id="SiegeTankLotV1@Train">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <Activity value="UI/Building"/>
@@ -361,6 +405,22 @@
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
+    <CAbilEffectTarget id="GhostWoL@Snipe">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="GhostWoL@SnipeDamage"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+        </Cost>
+        <TargetFilters value="Biological,Visible;Self,Structure,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <CastIntroTime value="0.5"/>
+        <Marker>
+            <MatchFlags index="Link" value="0"/>
+            <MatchFlags index="CasterUnit" value="1"/>
+        </Marker>
+        <CmdButtonArray index="Execute" DefaultButtonFace="GhostWoL@Snipe"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="WidowMineAttack">
         <PrepEffect index="0" removed="1"/>
         <CancelEffect index="Prep" value=""/>

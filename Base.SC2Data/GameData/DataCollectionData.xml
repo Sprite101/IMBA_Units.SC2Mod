@@ -9,6 +9,11 @@
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
         <TechInfoUpgrade value="EnhancedShockwaves@Upgrade"/>
     </CDataCollectionUpgrade>
+    <CDataCollectionUpgrade id="MoebiusReactor">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <Button value="EnhancedShockwaves"/>
+        <TechInfoUpgrade value="EnhancedShockwaves@Upgrade"/>
+    </CDataCollectionUpgrade>
     <CDataCollection id="GaussPistolLiberty">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>

@@ -15,6 +15,18 @@
         <AlertIcon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="GhostWoL@TrainGhost">
+        <Tooltip value="Button/Tooltip/GhostWoL"/>
+        <Icon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <AlertTooltip value="Button/Tooltip/GhostWoL"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="MoebiusReactor@ResearchMoebiusReactor">
+        <Icon value="Assets\Textures\btn-upgrade-terran-moebiusreactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="GhostLotV1@EMP">
         <Icon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
@@ -46,9 +58,19 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="GhostWoL@EMP">
+        <Icon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-emp-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="LiberatorLotV1@BuildLiberator">
         <Icon value="Assets\Textures\btn-unit-terran-liberator.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-terran-liberator.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="MoebiusReactor@MoebiusReactor">
+        <Icon value="Assets\Textures\btn-upgrade-terran-moebiusreactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="PointDefenseDroneSwarm@BuildPointDefenseDrone">
@@ -61,13 +83,20 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="GhostLotV1@TrainGhost">
+        <Tooltip value="Button/Tooltip/GhostLotV1"/>
+        <Icon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <AlertTooltip value="Button/Tooltip/GhostLotV1"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="SeekerMissileSwarm">
         <Icon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="ReaperSwarm@TrainReaper">
-        <Tooltip value="Button/Tooltip/ReaperLiberty"/>
+        <Tooltip value="Button/Tooltip/ReaperSwarm"/>
         <Icon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
         <AlertTooltip value="Button/Tooltip/ReaperLiberty"/>
         <AlertIcon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
@@ -144,5 +173,11 @@
         <EditorCategories value="Race:Terran"/>
         <HotkeySet value="TankModes"/>
         <Universal value="1"/>
+    </CButton>
+    <CButton id="GhostWoL@Snipe">
+        <Icon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HidesForSimpleText value="0"/>
     </CButton>
 </Catalog>

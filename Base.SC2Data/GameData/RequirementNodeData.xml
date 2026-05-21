@@ -20,7 +20,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="EnhancedShockwaves@Upgrade" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeEnhancedShockwavesCompleteOnly2618611756TechTreeCheat2">
@@ -41,6 +40,9 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="HurricaneThrusters@Upgrade" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMoebiusReactor@UpgradeCompleteOnly3009616705TechTreeCheat">
+        <Count Link="MoebiusReactor@Upgrade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeRapidFireLaunchers@UpgradeCompleteOnly1075727723">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="RapidFireLaunchers@Upgrade" State="CompleteOnly"/>
@@ -59,7 +61,6 @@
         <OperandArray index="0" value="CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeHurricaneThrusters@UpgradeQueuedOrBetter">

@@ -343,16 +343,15 @@
         <Collide index="ForceField" value="1"/>
         <Collide index="Locust" value="1"/>
         <Collide index="Small" value="1"/>
-        <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
         <Attributes index="Psionic" value="1"/>
-        <LifeStart value="125"/>
-        <LifeMax value="125"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
         <EnergyStart value="75"/>
         <EnergyMax value="200"/>
         <EnergyRegenRate value="0.5625"/>
-        <Speed value="2.8125"/>
+        <Speed value="2.25"/>
         <Acceleration value="1000"/>
         <LateralAcceleration value="46.0625"/>
         <StationaryTurningRate value="999.8437"/>
@@ -361,7 +360,7 @@
         <Food value="-2"/>
         <CostCategory value="Army"/>
         <CostResource index="Minerals" value="150"/>
-        <CostResource index="Vespene" value="125"/>
+        <CostResource index="Vespene" value="150"/>
         <RepairTime value="40"/>
         <AttackTargetPriority value="20"/>
         <DamageDealtXP value="1"/>
@@ -371,10 +370,10 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="GhostCloak"/>
-        <AbilArray Link="GhostLotV1@ChannelSnipe"/>
+        <AbilArray Link="GhostWoL@Snipe"/>
         <AbilArray Link="TacNukeStrike"/>
         <AbilArray Link="GhostHoldFire"/>
-        <AbilArray Link="GhostLotV1@EMP"/>
+        <AbilArray Link="GhostWoL@EMP"/>
         <AbilArray Link="GhostWeaponsFree"/>
         <WeaponArray Link="C10CanisterRifle"/>
         <CardLayouts>
@@ -384,15 +383,14 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="GhostHoldFire" Type="AbilCmd" AbilCmd="GhostHoldFire,Execute" Row="1" Column="2"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="TacNukeStrike,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="GhostLotV1@ChannelSnipe,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="AttackGhost" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="NukeCalldown" Type="AbilCmd" AbilCmd="TacNukeStrike,Execute" Row="1" Column="0"/>
             <LayoutButtons Face="CloakOnGhost" Type="AbilCmd" AbilCmd="GhostCloak,On" Row="2" Column="2"/>
             <LayoutButtons Face="CloakOff" Type="AbilCmd" AbilCmd="GhostCloak,Off" Row="2" Column="3"/>
-            <LayoutButtons Face="GhostLotV1@EMP" Type="AbilCmd" AbilCmd="GhostLotV1@EMP,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="GhostWoL@EMP" Type="AbilCmd" AbilCmd="GhostWoL@EMP,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="WeaponsFree" Type="AbilCmd" AbilCmd="GhostWeaponsFree,Execute" Row="1" Column="3"/>
-            <LayoutButtons Face="GhostLotV1@ChannelSnipe" Type="AbilCmd" AbilCmd="GhostLotV1@ChannelSnipe,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="EnhancedShockwaves@EnhancedShockwaves" Type="Passive" Requirements="EnhancedShockwaves@HaveEnhancedShockwaves" Row="1" Column="1"/>
+            <LayoutButtons Face="GhostWoL@Snipe" Type="AbilCmd" AbilCmd="GhostWoL@Snipe,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="MoebiusReactor@MoebiusReactor" Type="Passive" Requirements="MoebiusReactor@HaveMoebiusReactor" Row="1" Column="1"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>

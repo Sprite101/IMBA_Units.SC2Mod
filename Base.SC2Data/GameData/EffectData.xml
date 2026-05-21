@@ -52,11 +52,25 @@
         <Flags index="Notification" value="1"/>
         <SearchFlags index="CallForHelp" value="1"/>
     </CEffectDamage>
+    <CEffectDamage id="GhostWoL@EMPDamage">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
     <CEffectLaunchMissile id="GhostLotV1@EMPLaunchMissile">
         <ValidatorArray index="0" value="EMP2TargetFilters"/>
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="TargetPoint"/>
         <ImpactEffect value="GhostLotV1@EMPSearch"/>
+        <AmmoUnit value="EMP2Weapon"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="GhostWoL@EMPLaunchMissile">
+        <ValidatorArray index="0" value="EMP2TargetFilters"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="GhostWoL@EMPSearch"/>
         <AmmoUnit value="EMP2Weapon"/>
     </CEffectLaunchMissile>
     <CEffectModifyUnit id="GhostLotV1@EMPModifyUnit">
@@ -66,12 +80,29 @@
             <Change value="-100"/>
         </VitalArray>
     </CEffectModifyUnit>
+    <CEffectModifyUnit id="GhostWoL@EMPModifyUnit">
+        <ValidatorArray value="empUTargetFilters"/>
+        <EditorCategories value="Race:Terran"/>
+        <VitalArray index="Shields">
+            <Change value="-100"/>
+        </VitalArray>
+        <VitalArray index="Energy">
+            <ChangeFraction value="-1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
     <CEffectEnumArea id="GhostLotV1@EMPSearch">
         <EditorCategories value="Race:Terran"/>
         <LaunchLocation Value="TargetPoint"/>
         <ImpactLocation Value="TargetPoint"/>
         <SearchFilters value="-;Hidden,Invulnerable"/>
         <AreaArray Radius="1.5" Effect="GhostLotV1@EMPSet"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="GhostWoL@EMPSearch">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="TargetPoint"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Hidden,Invulnerable"/>
+        <AreaArray Radius="3" Effect="GhostWoL@@EMPSet"/>
     </CEffectEnumArea>
     <CEffectSet id="GhostLotV1@EMPSet">
         <EditorCategories value="Race:Terran"/>
@@ -148,6 +179,12 @@
         <CaseArray Validator="IsSupplyDepotLowered" Effect="CrucioShockCannonLotV1@Blast"/>
         <CaseArray Validator="TargetRadiusLarge" Effect="CrucioShockCannonLotV1@Directed"/>
     </CEffectSwitch>
+    <CEffectSet id="GhostWoL@@EMPSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="GhostWoL@EMPDamage"/>
+        <EffectArray value="GhostWoL@EMPModifyUnit"/>
+        <EffectArray value="EMPApplyDecloakBehavior"/>
+    </CEffectSet>
     <CEffectDamage id="HellionTankDamage">
         <AttributeBonus index="Light" value="12"/>
     </CEffectDamage>
@@ -457,6 +494,14 @@
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="SeekerMissileSwarm@Suicide"/>
     </CEffectSet>
+    <CEffectDamage id="GhostWoL@SnipeDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <ArmorReduction value="0"/>
+        <Kind value="Spell"/>
+        <Amount value="45"/>
+        <Death value="Silentkill"/>
+    </CEffectDamage>
     <CEffectLaunchMissile id="TyphoonMissilePodLotV2@LMLeft">
         <EditorCategories value="Race:Terran"/>
         <LaunchLocation Value="CasterUnit"/>
