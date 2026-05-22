@@ -433,9 +433,6 @@
             <LayoutButtons Face="HurricaneThrusters@Research" Type="AbilCmd" AbilCmd="CycloneLockOnLotV2@Research,Research1" Row="1" Column="1"/>
         </CardLayouts>
     </CUnit>
-    <CUnit id="Liberator">
-        <Sight value="10"/>
-    </CUnit>
     <CUnit id="LiberatorAGLotV1@LiberatorAG">
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
@@ -566,9 +563,6 @@
         <GlossaryWeakArray value="Tempest"/>
         <GlossaryAlias value="Liberator"/>
         <HotkeyCategory value="Unit/Category/TerranUnits"/>
-    </CUnit>
-    <CUnit id="LiberatorAG">
-        <Sight value="10"/>
     </CUnit>
     <CUnit id="PointDefenseDroneSwarm@Missile" parent="MISSILE_INVULNERABLE">
         <Race value="Terr"/>
@@ -1023,10 +1017,10 @@
     </CUnit>
     <CUnit id="Factory">
         <AbilArray Link="CycloneLotV1@Train"/>
-        <AbilArray Link="CycloneLotV2@Train2"/>
+        <AbilArray Link="CycloneLotV2@Train"/>
         <CardLayouts index="0">
             <LayoutButtons Face="CycloneLotV1@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV1@Train,Train1" Row="1" Column="2"/>
-            <LayoutButtons Face="CycloneLotV2@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV2@Train2,Train1" Row="2" Column="2"/>
+            <LayoutButtons Face="CycloneLotV2@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV2@Train,255" Row="2" Column="2"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="TornadoBlaster@Missile" parent="MISSILE">
@@ -1034,18 +1028,133 @@
         <Mover value="CycloneMissileLeft"/>
         <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
     </CUnit>
-    <CUnit id="WidowMine">
-        <CardLayouts index="0">
-            <LayoutButtons index="9" Row="1" Column="0"/>
-            <LayoutButtons index="10" removed="1"/>
+    <CUnit id="WidowMineSwarm">
+        <DeathRevealRadius value="7"/>
+        <DeathRevealDuration value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="90"/>
+        <LifeMax value="90"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <Speed value="2.8125"/>
+        <Acceleration value="1000"/>
+        <StationaryTurningRate value="2292.8906"/>
+        <Sight value="7"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="25"/>
+        <RepairTime value="20"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="WidowMineSwarm@WidowMineBurrow"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="WidowMineSwarm@WidowMineAttack"/>
+        <BehaviorArray Link="WidowMineDrillingClawsTracker"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="WidowMineBioSplash" Type="Passive" Row="2" Column="0"/>
+            <LayoutButtons Face="WidowMineAttack" Type="AbilCmd" AbilCmd="WidowMineSwarm@WidowMineAttack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="WidowMineBurrow" Type="AbilCmd" AbilCmd="WidowMineSwarm@WidowMineBurrow,Execute" Row="2" Column="1"/>
         </CardLayouts>
+        <CargoSize value="2"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="54"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkWidowMine"/>
+        <TechAliasArray value="Alias_WidowMine"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="129"/>
+        <GlossaryStrongArray value="Marine"/>
+        <GlossaryStrongArray value="Baneling"/>
+        <GlossaryStrongArray value="Oracle"/>
+        <GlossaryWeakArray value="Raven"/>
+        <GlossaryWeakArray value="Overseer"/>
+        <GlossaryWeakArray value="Observer"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
     </CUnit>
-    <CUnit id="WidowMineBurrowed">
-        <BehaviorArray index="1" removed="1"/>
-        <BehaviorArray index="2" removed="1"/>
-        <CardLayouts index="0">
-            <LayoutButtons index="5" Row="1" Column="0"/>
-            <LayoutButtons index="6" removed="1"/>
+    <CUnit id="WidowMineSwarm@WidowMineBurrowed">
+        <Description value="Button/Tooltip/WidowMine"/>
+        <DeathRevealRadius value="7"/>
+        <DeathRevealDuration value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="Buried" value="1"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="90"/>
+        <LifeMax value="90"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <Acceleration value="1000"/>
+        <StationaryTurningRate value="2292.8906"/>
+        <Sight value="7"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="25"/>
+        <RepairTime value="20"/>
+        <AttackTargetPriority value="20"/>
+        <AbilArray Link="WidowMineSwarm@WidowMineUnburrow"/>
+        <AbilArray Link="WidowMineSwarm@WidowMineAttack"/>
+        <BehaviorArray Link="WidowMineArmed"/>
+        <CardLayouts>
+            <LayoutButtons Face="WidowMineBioSplash" Type="Passive" AbilCmd="WidowMineSwarm@WidowMineAttack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="WidowMineAttack" Type="AbilCmd" AbilCmd="WidowMineSwarm@WidowMineAttack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="WidowMineUnburrow" Type="AbilCmd" AbilCmd="WidowMineSwarm@WidowMineUnburrow,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
         </CardLayouts>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="54"/>
+        <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkWidowMineBurrowed"/>
+        <LeaderAlias value="WidowMine"/>
+        <HotkeyAlias value="WidowMine"/>
+        <SelectAlias value="WidowMine"/>
+        <SubgroupAlias value="WidowMine"/>
+        <TechAliasArray value="Alias_WidowMine"/>
+        <EquipmentArray Weapon="WidowMineDummy"/>
+        <GlossaryStrongArray value="Marauder"/>
+        <GlossaryStrongArray value="Roach"/>
+        <GlossaryStrongArray value="Immortal"/>
+        <GlossaryWeakArray value="Raven"/>
+        <GlossaryWeakArray value="Overseer"/>
+        <GlossaryWeakArray value="Observer"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
     </CUnit>
 </Catalog>

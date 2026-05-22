@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="CaduceusReactorSwarmBeta@ResearchCaduceusReactor">
+        <Icon value="Assets\Textures\btn-upgrade-terran-caduceusreactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-caduceusreactor.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="EnhancedShockwaves@EnhancedShockwaves">
         <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
@@ -88,6 +93,16 @@
         <Icon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
         <AlertTooltip value="Button/Tooltip/GhostLotV1"/>
         <AlertIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="DrillingClaws@ResearchDrillingClaws">
+        <Icon value="Assets\Textures\BTN-Upgrade-Terran-ResearchDrillingClaws.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Terran-ResearchDrillingClaws.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="RavenSwarm">
+        <Icon value="Assets\Textures\btn-unit-terran-raven.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-raven.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="SeekerMissileSwarm">

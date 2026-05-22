@@ -4,6 +4,14 @@
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
     </CActorRange>
+    <CActorUnit id="Medivac">
+        <On Terms="AbilTransport.MedivacTransport.TransportLoad; AbilTransport SiegeTankSiegedLotV1" Send="Create SiegeTankSiegedLotV1@LoadTransit"/>
+        <On Terms="Signal.*.SiegeTankSiegedLotV1@LoadTransit" Send="RefSetFromMsg ::actor.SiegeTankSiegedLotV1 ::Sender"/>
+        <On Terms="AbilTransport.MedivacTransport.PassengerKilled; AbilTransport SiegeTankSiegedLotV1" Target="::actor.SiegeTankSiegedLotV1" Send="Signal Dead"/>
+        <On Terms="UnitDeath" Target="::actor.SiegeTankSiegedLotV1" Send="Signal Dead"/>
+        <On Terms="Signal.*.BeamModel" Send="RefSetFromMsg ::actor.BeamModel ::Sender"/>
+        <On Terms="Upgrade.CaduceusReactorSwarmBeta@.Add" Target="::actor.BeamModel" Send="ModelSwap MedivacHealBeamUpgrade"/>
+    </CActorUnit>
     <CActorUnit id="AutoTurretSwarm@AutoTurret" parent="GenericUnitStandard" unitName="AutoTurretSwarm@AutoTurret">
         <Aliases value="_CreepEngulfable"/>
         <Aliases value="_UnitMedium"/>
@@ -1139,6 +1147,16 @@
         </Wireframe>
     </CActorUnit>
     <CActorAction id="LiberatorLotV1@ShieldHitter" parent="AoESplashShieldHitter" effectHit="LiberatorLotV1@Damage"/>
+    <CActorBeamSimple id="MedivacHealBeamRev1">
+        <On Terms="ActorCreation; ValidateEffect CaduceusReactorSwarmBeta@HaveCaduceusReactor" Send="ModelSwap MedivacHealBeamUpgrade"/>
+        <On Terms="ActorCreation" Target="::Host" Send="Signal BeamModel"/>
+    </CActorBeamSimple>
+    <CActorModel id="MedivacHealModelRev1">
+        <On Terms="ActorCreation; ValidateEffect CaduceusReactorSwarmBeta@Upgraded" Send="SetTintColor {64,128,255 2.000000}"/>
+        <On Terms="ActorCreation; ValidateEffect CaduceusReactorSwarmBeta@Upgraded" Send="SetScale 1.500000"/>
+        <!--On Terms="ActorCreation; ValidateEffect HaveMedivacUpgradeDisplay" Send="SetTintColor {64,128,255 2.0}"/-->
+        <!--On Terms="ActorCreation; ValidateEffect HaveMedivacUpgradeDisplay" Send="SetScale 1.5"/-->
+    </CActorModel>
     <CActorRange id="PointDefenseDroneSwarm@Range" parent="RangeAbil" abil="PointDefenseDroneSwarm">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
@@ -1356,9 +1374,6 @@
         <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
         <ImpactPhysics Name="BulletImpact" MatchKeys="Basic" Physics="ReaperAttackDeathForce"/>
     </CActorAction>
-    <CActorUnit id="Medivac">
-        <On Terms="AbilTransport.MedivacTransport.TransportLoad; AbilTransport SiegeTankSiegedLotV1" Send="Create SiegeTankSiegedLotV1@LoadTransit"/>
-    </CActorUnit>
     <CActorAction id="GaussPistolLiberty@AttackAction" parent="GenericAttack" effectAttack="GaussPistolLiberty@Damage">
         <LaunchAttachQuery Methods="AMPatternReaper"/>
         <LaunchAssets Model="ReaperAttackLaunch" Sound="Reaper_AttackLaunch"/>
@@ -1912,5 +1927,139 @@
     <CActorSound id="Cyclone_TargetLock_On_ActorSound">
         <On Terms="Effect.CycloneLockOnAirLoTV1@LockOnCP.Start; At Caster" Send="Create"/>
         <On Terms="Effect.CycloneLockOnLotV2@LockOnCP.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorRange id="WidowMineSwarm@AttackRange">
+        <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.Start" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.StartEditorGround" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.StartEditorFlyer" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.Stop" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm@WidowMineBurrowed; Selected" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm" Send="Destroy"/>
+        <Abil Link="WidowMineSwarm@WidowMineAttack"/>
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorSplat id="WidowMineSwarm@BurrowedSplat" parent="BurrowedSplat" unitName="WidowMine">
+        <Inherits index="Visibility" value="0"/>
+        <On index="2" Terms="UnitBirth.WidowMineSwarm@WidowMineBurrowed" Send="Create"/>
+        <On index="3" Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm@WidowMineBurrowed" Send="Create"/>
+        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom WidowMineSwarm@WidowMineBurrowed" Send="RefClear ::Host"/>
+        <On index="5" Terms="AbilMorph.*.Start; MorphFrom WidowMineSwarm@WidowMineBurrowed" Send="TimerSet 4.000000,2.000000 DelayDestroy"/>
+        <HostSiteOps Ops="SOpAttachHardPoint"/>
+        <Model value="WidowMineBurrowedSplat"/>
+    </CActorSplat>
+    <CActorUnit id="WidowMineSwarm@WidowMine" parent="GenericUnitStandard" unitName="WidowMineSwarm">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergSmallBurrowEffects"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitBirth.WidowMineSwarm@WidowMineBurrowed" Send="Create"/>
+        <On Terms="UnitBirth.WidowMineSwarm@WidowMineBurrowed" Send="AnimPlay Burrow Burrow PlayForever,NonLooping"/>
+        <On Terms="ActorCreation" Send="StatusSet Fired 0"/>
+        <On Terms="ActorCreation" Send="Create WidowMineReadyAttach"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm@WidowMineBurrowed" Send="AnimPlay Burrow Burrow PlayForever,NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm@WidowMineBurrowed" Send="AnimClear Unburrow"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm" Send="AnimPlay Unburrow Unburrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo WidowMineSwarm" Send="AnimClear Unburrow"/>
+        <On Terms="Abil.WidowMineSwarm@WidowMineAttack.SourcePrepStart" Send="Create WidowMineWarning"/>
+        <On Terms="Abil.WidowMineSwarm@WidowMineAttack.SourcePrepStop" Target="WidowMineWarning" Send="Destroy"/>
+        <On Terms="Abil.WidowMineSwarm@WidowMineAttack.SourceCastStart" Send="StatusSet Fired 1"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsBuried" Send="DeathCustomize Variation0"/>
+        <On Terms="Behavior.WidowMineAnimationController.On" Target="WidowMineReadyAttach" Send="AnimBracketStop Work"/>
+        <On Terms="Behavior.WidowMineAnimationController.Off" Target="WidowMineReadyAttach" Send="AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End ClosingFull"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create WidowMine_Land"/>
+        <Model value="WidowMine"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="WidowMine"/>
+        <DeathArray index="Normal" ModelLink="WidowMineDeath" SoundLink="Terran_ExplosionSmall"/>
+        <DeathCustoms ModelLink="WidowMineDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="TerranSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms AnimProps="Death" ModelLink="WidowMineBurrowDeath" Name="Variation0"/>
+        <DeathCustoms ModelLink="Invisible" Name="Variation1"/>
+        <PlacementModel value="SpiderMinePlacement"/>
+        <PortraitModel value="WidowMinePortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleLargeVehicle"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.8125"/>
+        <BarOffset value="35"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-terran-widowmine.dds"/>
+        </GroupIcon>
+        <HighlightTooltip value="Unit/Name/WidowMineSwarm@WidowMine"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
+        <NameOffset value="10"/>
+        <SoundArray index="Ready" value="WidowMine_Ready"/>
+        <SoundArray index="What" value="WidowMine_What"/>
+        <SoundArray index="Yes" value="WidowMine_Yes"/>
+        <SoundArray index="Attack" value="WidowMine_Attack"/>
+        <SoundArray index="Pissed" value="WidowMine_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-widowmine.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-terran-widowmine.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorModel id="WidowMineSwarm@AttackImpact" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.WidowMineSwarm@ExplodeSplashSearch.Start" Send="Create"/>
+        <Model value="WidowMineAttackImpact"/>
+    </CActorModel>
+    <CActorAction id="WidowMineSwarm@AttackAirAction" parent="GenericAttack" effectImpact="WidowMineSwarm@ExplodeSet" effectLaunch="WidowMineSwarm@LMAir">
+        <LaunchSiteOps Ops="SOpForwardPointsUp"/>
+        <LaunchAttachQuery Methods="Center"/>
+        <LaunchAssets Sound="WidowMine_Attack"/>
+        <Missile value="WidowMineAirAttackMissile"/>
+        <ImpactMap index="None" Model="WidowMineAirAttackImpact" Sound="WidowMine_Death"/>
+        <ImpactPhysics Name="WidowMineImpact" MatchKeys="Basic" Physics="WidowMineAirAttackForce"/>
+        <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorAction id="WidowMineSwarm@AttackAction" parent="GenericAttack" effectImpact="WidowMineSwarm@ExplodeSet" effectLaunch="WidowMineSwarm@LM">
+        <LaunchSiteOps Ops="SOpForwardPointsUp"/>
+        <LaunchAttachQuery Methods="Center"/>
+        <LaunchAssets Model="WidowMineAttackLaunch" Sound="WidowMine_Attack"/>
+        <LaunchSound value="WidowMineAttackLaunchSound"/>
+        <Missile value="WidowMineAttackMissile"/>
+        <ImpactMap index="None" Model="" Sound=""/>
+        <ImpactPhysics Name="WidowMineImpact" MatchKeys="Basic" Physics="WidowMineAttackForce"/>
+        <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorSound id="WidowMineSwarm@Burrow" parent="SoundOneShot">
+        <On Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm@WidowMineBurrowed" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Sound value="WidowMine_Burrow"/>
+    </CActorSound>
+    <CActorSound id="WidowMineSwarm@UnburrowSound" parent="SoundOneShot">
+        <On Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Sound value="WidowMine_Unburrow"/>
     </CActorSound>
 </Catalog>

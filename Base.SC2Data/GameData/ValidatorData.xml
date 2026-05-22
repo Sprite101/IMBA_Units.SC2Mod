@@ -101,6 +101,10 @@
         <Find value="1"/>
         <Value value="AdvancedBallistics@HaveAdvancedBallistics"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="CaduceusReactorSwarmBeta@Upgraded">
+        <WhichPlayer Value="Caster"/>
+        <Value value="LearnMedivacEnergyUpgradeDisplay"/>
+    </CValidatorPlayerRequirement>
     <CValidatorUnitCompareBehaviorCount id="LiberatorLotV1@HasLiberatorMorphBehavior">
         <WhichUnit Value="Caster"/>
         <Value value="1"/>

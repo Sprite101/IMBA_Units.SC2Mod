@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilResearch id="DrillingClaws@ResearchDrillingClaws">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="90" Upgrade="DrillingClaws@DrillingClaws">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="DrillingClaws@ResearchDrillingClaws" State="Restricted" Requirements="DrillingClaws@@LearnDrillingClaws">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilResearch id="CaduceusReactorSwarmBeta@ResearchCaduceusReactor">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="110" Upgrade="DrillingClaws@DrillingClaws">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="CaduceusReactorSwarmBeta@ResearchCaduceusReactor" State="Restricted" Requirements="CaduceusReactorSwarmBeta@LearnCaduceusReactor">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilResearch id="EnhancedShockwaves@ResearchEnhancedShockwaves">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="110" Upgrade="EnhancedShockwaves@Upgrade">
@@ -38,6 +58,24 @@
             <Unit value="GhostWoL"/>
         </InfoArray>
     </CAbilTrain>
+    <CAbilEffectTarget id="ModifiedAbility@Hyperjump">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Effect index="0" value="HyperjumpCreatePrecursor"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Cooldown TimeUse="100"/>
+        </Cost>
+        <Range value="500"/>
+        <CastIntroTime value="0"/>
+        <CastOutroTime value="6"/>
+        <ShowProgressArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <ProgressButtonArray index="Channel" value="Hyperjump"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Hyperjump"/>
+    </CAbilEffectTarget>
     <CAbilResearch id="MoebiusReactor@ResearchMoebiusReactor">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="110" Upgrade="MoebiusReactor@Upgrade">
@@ -104,21 +142,6 @@
             <Unit value="LiberatorLotV1@Liberator"/>
         </InfoArray>
     </CAbilTrain>
-    <CAbilTrain id="FactoryTrain">
-        <InfoArray index="Train25" Time="40"/>
-    </CAbilTrain>
-    <CAbilEffectTarget id="Hyperjump">
-        <Effect index="0" value="HyperjumpCreatePrecursor"/>
-        <InterruptCost>
-            <Cooldown TimeUse="0"/>
-        </InterruptCost>
-        <CastOutroTime index="0" value="6"/>
-        <FinishTime index="0" removed="1"/>
-        <UninterruptibleArray index="Prep" value="0"/>
-        <UninterruptibleArray index="Finish" value="0"/>
-        <ProgressButtonArray index="Prep" value=""/>
-        <CancelEffect index="Prep" value=""/>
-    </CAbilEffectTarget>
     <CAbilEffectInstant id="LiberatorAGLotV1@AATarget">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="LiberatorAGLotV1@TargetAAMorphOrderSet"/>
@@ -143,7 +166,7 @@
         </InfoArray>
     </CAbilMorph>
     <CAbilEffectTarget id="LiberatorLotV1@AGTarget">
-        <EditorCategories value="AbilityorEffectType:Units"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Effect index="0" value="LiberatorLotV1@TargetMorphOrderInitialSet2"/>
         <Flags index="AllowMovement" value="1"/>
         <Range value="5"/>
@@ -189,7 +212,7 @@
         <InfoArray index="Research1" Time="90" Upgrade="AdvancedBallistics">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>
-            <Button DefaultButtonFace="AdvancedBallistics@ResearchAdvancedBallistics" State="Restricted" Requirements="AdvancedBallistics@UseAdvancedBallistics">
+            <Button DefaultButtonFace="AdvancedBallistics@ResearchAdvancedBallistics" State="Restricted" Requirements="AdvancedBallistics@LearnAdvancedBallistics">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
         </InfoArray>
@@ -322,7 +345,7 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="CycloneLockOnLotV2@Button" Requirements="CycloneLockOnLotV2@NoLockedOn"/>
         <FollowRange value="6"/>
     </CAbilEffectTarget>
-    <CAbilTrain id="CycloneLotV2@Train2">
+    <CAbilTrain id="CycloneLotV2@Train">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <Activity value="UI/Building"/>
         <Range value="3"/>
@@ -353,6 +376,15 @@
         <AINotifyEffect value="HunterSeekerMissile"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="SeekerMissileSwarm"/>
     </CAbilEffectTarget>
+    <CAbilTrain id="RavenSwarm@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="60">
+            <Button DefaultButtonFace="RavenSwarm" State="Restricted" Requirements="HaveAttachedTechLab"/>
+            <Unit value="RavenSwarm"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilMorph id="SiegeTankLotV1Morph@SiegeMode">
         <OrderArray index="0">
             <DisplayType value="Confirm"/>
@@ -421,15 +453,98 @@
         </Marker>
         <CmdButtonArray index="Execute" DefaultButtonFace="GhostWoL@Snipe"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="WidowMineAttack">
-        <PrepEffect index="0" removed="1"/>
-        <CancelEffect index="Prep" value=""/>
+    <CAbilEffectTarget id="WidowMineSwarm@WidowMineAttack">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="WidowMineSwarm@AttackSet"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="40"/>
+        </Cost>
+        <TargetFilters value="Visible;Player,Ally,Neutral,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="5"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <AutoCastFilters value="Visible;Player,Ally,Neutral,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastRange value="5"/>
+        <AutoCastValidatorArray value="IsNotDisguisedChangeling"/>
+        <AutoCastValidatorArray value="NotHallucinationOrNotDetected"/>
+        <AutoCastValidatorArray value="noMarkers"/>
+        <AutoCastValidatorArray value="NotLarvaEgg"/>
+        <AutoCastValidatorArray value="IsNotNeuralParasited"/>
+        <PrepTime value="1.5"/>
+        <AINotifyEffect value="WidowMineAttack"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="WidowMineAttack" Requirements="WidowMineArmed">
+            <Flags index="ShowInGlossary" value="0"/>
+        </CmdButtonArray>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="Yamato">
-        <Flags index="AbortOnAllianceChange" value="1"/>
-        <Flags index="IgnoreOrderPlayerIdInStageValidate" value="0"/>
-        <ValidatedArray index="Cast" value="1"/>
-        <ValidatedArray index="Channel" value="1"/>
-        <CancelEffect index="Prep" value=""/>
+    <CAbilMorph id="WidowMineSwarm@WidowMineBurrow">
+        <AbilSetId value="BrwD"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="WidowMineBurrow">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <ActorKey value="BurrowDown"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnorePlacement" value="0"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="WidowMineSwarm@WidowMineBurrowed" RandomDelayMax="0.25">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="3.125"/>
+                <EffectArray index="Start" value="WidowMineNotificationSearch"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Delay" value="0.6806"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="3.125"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="WidowMineSwarm@WidowMineUnburrow">
+        <AbilSetId value="BrwU"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="WidowMineUnburrow">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <ActorKey value="BurrowUp"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="WidowMineSwarm" RandomDelayMax="0.25">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="1.125"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="1.125"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilEffectTarget id="ModifiedAbility@Yamato">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="Yamato"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Cost>
+            <Cooldown Link="YamatoYamato2YamatoModifiedAbility@Yamato" TimeUse="100"/>
+        </Cost>
+        <InterruptCost>
+            <Cooldown TimeUse="100"/>
+        </InterruptCost>
+        <Range value="10"/>
+        <RangeSlop value="10"/>
+        <PrepTime value="3"/>
+        <ShowProgressArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value="Yamato"/>
+        <ProgressButtonArray index="Prep" value="YamatoGun"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="YamatoGun" Requirements="UseBattlecruiserSpecializations"/>
     </CAbilEffectTarget>
 </Catalog>

@@ -92,7 +92,7 @@
     <CBehaviorBuff id="SeekerMissileSwarm@TargetTint">
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-ability-terran-huntermissile.dds"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Duration value="0.2"/>
         <AINotifyEffect value="SeekerMissileSwarm@Damage"/>
     </CBehaviorBuff>

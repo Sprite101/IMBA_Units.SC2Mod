@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUpgrade id="DrillingClaws@DrillingClaws">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\BTN-Upgrade-Terran-ResearchDrillingClaws.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Subtract" Reference="Abil,WidowMineSwarm@WidowMineBurrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="2.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,WidowMineSwarm@WidowMineBurrow,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="2.000000"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="WidowMineSwarm"/>
+        <AffectedUnitArray value="WidowMineSwarm@WidowMineBurrowed"/>
+    </CUpgrade>
     <CUpgrade id="EnhancedShockwaves@Upgrade">
         <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
         <Alert value="ResearchComplete"/>
@@ -12,6 +25,18 @@
         <AffectedUnitArray value="GhostAlternate"/>
         <AffectedUnitArray value="GhostNova"/>
     </CUpgrade>
+    <CUpgrade id="CaduceusReactorSwarmBeta@">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-caduceusreactor.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Effect,MedivacHeal,DrainVitalCostFactor" Value="0.2"/>
+        <EffectArray Operation="Set" Reference="Effect,MedivacHeal,RechargeVitalRate" Value="15.000000"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="Medivac"/>
+    </CUpgrade>
     <CUpgrade id="MoebiusReactor@Upgrade">
         <Icon value="Assets\Textures\btn-upgrade-terran-moebiusreactor.dds"/>
         <Alert value="ResearchComplete"/>
@@ -23,9 +48,6 @@
         <AffectedUnitArray value="Ghost"/>
         <AffectedUnitArray value="GhostAlternate"/>
         <AffectedUnitArray value="GhostNova"/>
-    </CUpgrade>
-    <CUpgrade id="HighCapacityBarrels">
-        <EffectArray index="1" removed="1"/>
     </CUpgrade>
     <CUpgrade id="LiberatorAGRangeUpgrade">
         <EffectArray index="0" Value="3"/>
@@ -51,10 +73,6 @@
         <EffectArray Operation="Set" Reference="Abil,BarracksTechLabResearch,InfoArray[Research2].Resource[Vespene]" Value="150"/>
         <AffectedUnitArray value="Marine"/>
         <LeaderAlias value=""/>
-    </CUpgrade>
-    <CUpgrade id="DrillClaws">
-        <EffectArray index="2" removed="1"/>
-        <EffectArray index="3" removed="1"/>
     </CUpgrade>
     <CUpgrade id="HurricaneThrusters@Upgrade">
         <Flags index="TechTreeCheat" value="1"/>

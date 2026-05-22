@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirement id="CaduceusReactorSwarmBeta@HaveCaduceusReactor">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeCaduceusReactorSwarmBeta@CompleteOnly2609272276"/>
+    </CRequirement>
+    <CRequirement id="DrillingClaws@@LearnDrillingClaws">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeDrillingClaws@DrillingClawsQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="CaduceusReactorSwarmBeta@LearnCaduceusReactor">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeCaduceusReactorSwarmBeta@QueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="EnhancedShockwaves@@LearnEnhancedShockwaves">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Show" Link="NotCountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter"/>
@@ -27,14 +39,14 @@
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeHurricaneThrusters@UpgradeCompleteOnly3968802568"/>
     </CRequirement>
-    <CRequirement id="AdvancedBallistics@UseAdvancedBallistics">
+    <CRequirement id="AdvancedBallistics@LearnAdvancedBallistics">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
-        <NodeArray index="Use" Link="CountUpgradeAdvancedBallisticsCompleteOnly2857131565TechTreeCheat"/>
+        <NodeArray index="Show" Link="NotCountUpgradeAdvancedBallisticsQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="ReaperSwarm@LearnNitroPacks">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
-        <NodeArray index="Use" Link="CountUnitAlias_FactoryCompleteOnly96167438"/>
-        <NodeArray index="Show" Link="NotCountUpgradeReaperSpeedQueuedOrBetter"/>
+        <NodeArray index="Use" Link="CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat"/>
+        <NodeArray index="Show" Link="NotCountUpgradeReaperSwarm@UpgradeQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="RapidFireLaunchers@LearnUpgrade">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>

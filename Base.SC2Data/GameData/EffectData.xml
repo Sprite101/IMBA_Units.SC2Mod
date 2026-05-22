@@ -39,11 +39,6 @@
         <EditorCategories value="Race:Terran"/>
         <Behavior value="AutoTurretSwarm@TimedLife"/>
     </CEffectApplyBehavior>
-    <CEffectDamage id="BurndownDamage2">
-        <EditorCategories value="Race:Terran"/>
-        <Flags index="NoKillCredit" value="1"/>
-        <Amount value="1"/>
-    </CEffectDamage>
     <CEffectDamage id="GhostLotV1@EMPDamage">
         <EditorCategories value="Race:Terran"/>
         <ResponseFlags index="Acquire" value="1"/>
@@ -185,9 +180,6 @@
         <EffectArray value="GhostWoL@EMPModifyUnit"/>
         <EffectArray value="EMPApplyDecloakBehavior"/>
     </CEffectSet>
-    <CEffectDamage id="HellionTankDamage">
-        <AttributeBonus index="Light" value="12"/>
-    </CEffectDamage>
     <CEffectDamage id="LiberatorAGLotV1@Damage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="TargetUnit"/>
@@ -225,7 +217,7 @@
         <Player Value="Source"/>
     </CEffectIssueOrder>
     <CEffectSet id="LiberatorAGLotV1@TargetAAMorphOrderSet">
-        <EditorCategories value="Race:Zerg"/>
+        <EditorCategories value="Race:Terran"/>
         <EffectArray value="LiberatorAGLotV1@TargetAAMorphRB2"/>
         <EffectArray value="LiberatorAGLotV1@TargetAAMorphOrder"/>
         <TargetLocationType value="Point"/>
@@ -425,7 +417,7 @@
     </CEffectSet>
     <CEffectEnumArea id="PointDefenseDroneSwarm@SearchArea">
         <ValidatorArray value="PointDefenseSearchTargetFilters"/>
-        <EditorCategories value=""/>
+        <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="Missile,Visible;Self,Player,Ally,Neutral,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="8" Effect="PointDefenseDroneSwarm@FireSet"/>
@@ -916,13 +908,64 @@
         <ImpactUnit Value="Caster"/>
         <ModifyTurret Action="ClearTarget" Turret="CycloneLotV1@LockOnTurret"/>
     </CEffectModifyUnit>
-    <CEffectSet id="WidowMineAttack">
-        <EffectArray index="2" removed="1"/>
+    <CEffectSet id="WidowMineSwarm@AttackSet">
+        <ValidatorArray value="NoMineDroneCountdown"/>
+        <ValidatorArray value="NotLarva"/>
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="WidowMineAttackWidowMineAttack2WidowMineAttackWidowMineSwarm@AttackSet"/>
+        <EffectArray value="WidowMineSwarm@LMSwitch"/>
+        <EffectArray value="WidowMineApplyAnimation"/>
     </CEffectSet>
-    <CEffectDamage id="WidowMineExplodeSplash">
-        <ShieldBonus value="40"/>
+    <CEffectDamage id="WidowMineSwarm@ExplodeDirectDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <ShieldBonus value="35"/>
+        <ArmorReduction value="0"/>
+        <Kind value="Spell"/>
+        <KindSplash value="Splash"/>
+        <Amount value="125"/>
+        <Death value="Blast"/>
+        <SearchFilters value="-;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
     </CEffectDamage>
-    <CEffectEnumArea id="WidowMineExplodeSplashSearch">
-        <AreaArray index="0" Radius="1.75"/>
+    <CEffectSet id="WidowMineSwarm@ExplodeSet">
+        <EditorCategories value="Race:Terran"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <EffectArray value="WidowMineSwarm@ExplodeDirectDamage"/>
+        <EffectArray value="WidowMineSwarm@ExplodeSplashSearch"/>
+    </CEffectSet>
+    <CEffectDamage id="WidowMineSwarm@ExplodeSplashDamage" parent="DU_WEAP">
+        <ValidatorArray value="DontDamageOwnedWidowMines"/>
+        <ValidatorArray value="DontDamageOwnedWidowMines"/>
+        <EditorCategories value="Race:Terran"/>
+        <ShieldBonus value="40"/>
+        <ArmorReduction value="0"/>
+        <Kind value="Spell"/>
+        <KindSplash value="Splash"/>
+        <Amount value="40"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="WidowMineSwarm@ExplodeSplashSearch">
+        <EditorCategories value="Race:Terran"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="-;Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.75" Effect="WidowMineSwarm@ExplodeSplashDamage"/>
     </CEffectEnumArea>
+    <CEffectLaunchMissile id="WidowMineSwarm@LM">
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="WidowMineAttack"/>
+        <ImpactEffect value="WidowMineSwarm@ExplodeSet"/>
+        <AmmoUnit value="WidowMineWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="WidowMineSwarm@LMAir">
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="WidowMineAttack"/>
+        <ImpactEffect value="WidowMineSwarm@ExplodeSet"/>
+        <AmmoUnit value="WidowMineAirWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectSwitch id="WidowMineSwarm@LMSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="TargetIsAir" Effect="WidowMineSwarm@LMAir"/>
+        <CaseDefault value="WidowMineSwarm@LM"/>
+    </CEffectSwitch>
 </Catalog>
