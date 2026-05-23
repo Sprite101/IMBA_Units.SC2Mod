@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUpgrade id="CorvidReactorSwarm">
+        <Icon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,RavenSwarm,EnergyStart" Value="25"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="RavenSwarm"/>
+    </CUpgrade>
     <CUpgrade id="DrillingClaws@DrillingClaws">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\BTN-Upgrade-Terran-ResearchDrillingClaws.dds"/>
@@ -13,6 +21,15 @@
         <AffectedUnitArray value="WidowMineSwarm"/>
         <AffectedUnitArray value="WidowMineSwarm@WidowMineBurrowed"/>
     </CUpgrade>
+    <CUpgrade id="DurableMaterialsSwarm">
+        <Icon value="Assets\Textures\btn-upgrade-terran-durablematerials.dds"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Behavior,AutoTurretSwarm@TimedLife,Duration" Value="240.000000"/>
+        <EffectArray Operation="Set" Reference="Behavior,PointDefenseDroneSwarm@TimedLife,Duration" Value="240.000000"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="RavenSwarm"/>
+    </CUpgrade>
     <CUpgrade id="EnhancedShockwaves@Upgrade">
         <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
         <Alert value="ResearchComplete"/>
@@ -25,7 +42,7 @@
         <AffectedUnitArray value="GhostAlternate"/>
         <AffectedUnitArray value="GhostNova"/>
     </CUpgrade>
-    <CUpgrade id="CaduceusReactorSwarmBeta@">
+    <CUpgrade id="CaduceusReactorSwarmBeta@CaduceusReactor">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-caduceusreactor.dds"/>
         <Alert value="ResearchComplete"/>
@@ -36,6 +53,177 @@
         <EffectArray Operation="Set" Reference="Effect,MedivacHeal,RechargeVitalRate" Value="15.000000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="Medivac"/>
+    </CUpgrade>
+    <CUpgrade id="InfernalPreIgniterSwarm@InfernalPreIgniterSwarm">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infernalpreigniter.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Effect,InfernalFlameThrower,AttributeBonus[Light]" Value="5"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="HellionSwarmBeta@Hellion"/>
+    </CUpgrade>
+    <CUpgrade id="ModifiedAbility@TerranVehicleAndShipWeaponsLevel2" parent="TerranVehicleWeapons">
+        <Name value="Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel2"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <ScoreAmount value="200"/>
+        <EffectArray index="7" Reference="Effect,CrucioShockCannonBlast,Amount" Value="4"/>
+        <EffectArray index="8" Reference="Effect,CrucioShockCannonDirected,Amount" Value="4"/>
+        <EffectArray index="9" Reference="Effect,CrucioShockCannonDummy,Amount" Value="4"/>
+        <EffectArray Operation="Set" Reference="Weapon,JavelinMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ThorsHammer,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,90mmCannons,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,CrucioShockCannon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfernalFlameThrower,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,CrucioShockCannonBlast,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDirected,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDummy,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Weapon,WarHound,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,WarHoundMelee,Amount" Value="2"/>
+        <EffectArray Reference="Effect,WarHound,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,WidowMineDummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WidowMineDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,MineDroneDirectDamage,Amount" Value="5"/>
+        <EffectArray Reference="Effect,MineDroneExplodeDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HellionTank,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,HellionTankDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,HellionTank,Level" Value="1"/>
+        <EffectArray Reference="Weapon,LanceMissileLaunchers,Level" Value="1"/>
+        <EffectArray Reference="Effect,LanceMissileLaunchersDamage,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CycloneAttackWeaponDamage,Amount" Value="2"/>
+        <EffectArray Operation="Set" Reference="Weapon,LanceMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,TyphoonMissilePod,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,LanceMissileLaunchersDamage,AttributeBonus[Massive]" Value="1"/>
+        <EffectArray Reference="Weapon,TornadoBlaster,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TornadoBlaster,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,TornadoBlaster@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,90mmCannonsLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,90mmCannonsLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,90mmCannonsLotV1@Damage,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,CrucioShockCannonLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CrucioShockCannonLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,AttributeBonus[Light]" Value="1.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,BacklashRockets,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,TwinGatlingCannon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,LanzerTorpedoes,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,LiberatorMissileDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,LiberatorMissileLaunchers,Level" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorAGDamage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorAGWeapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,LiberatorAGWeapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,TwinGatlingCannons,AttributeBonus[Mechanical]" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorLotV1@Damage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,LiberatorLotV1@Weapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorAGLotV1@Damage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorAGLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,LiberatorAGLotV1@Weapon,Level" Value="1"/>
+        <AffectedUnitArray value="WarHound"/>
+        <AffectedUnitArray value="MPOdin"/>
+        <AffectedUnitArray value="HellionTank"/>
+        <AffectedUnitArray value="WidowMine"/>
+        <AffectedUnitArray value="WidowMineBurrowed"/>
+        <AffectedUnitArray value="ThorAP"/>
+        <LeaderLevel value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ModifiedAbility@TerranVehicleAndShipWeaponsLevel3" parent="TerranVehicleWeapons">
+        <Name value="Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel3"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <ScoreAmount value="200"/>
+        <EffectArray index="7" Reference="Effect,CrucioShockCannonBlast,Amount" Value="4"/>
+        <EffectArray index="8" Reference="Effect,CrucioShockCannonDirected,Amount" Value="4"/>
+        <EffectArray index="9" Reference="Effect,CrucioShockCannonDummy,Amount" Value="4"/>
+        <EffectArray Operation="Set" Reference="Weapon,JavelinMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ThorsHammer,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,90mmCannons,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,CrucioShockCannon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfernalFlameThrower,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,CrucioShockCannonBlast,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDirected,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDummy,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Weapon,WarHound,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,WarHoundMelee,Amount" Value="2"/>
+        <EffectArray Reference="Effect,WarHound,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,WidowMineDummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WidowMineDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,MineDroneDirectDamage,Amount" Value="5"/>
+        <EffectArray Reference="Effect,MineDroneExplodeDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HellionTank,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,HellionTankDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,HellionTank,Level" Value="1"/>
+        <EffectArray Reference="Weapon,LanceMissileLaunchers,Level" Value="1"/>
+        <EffectArray Reference="Effect,LanceMissileLaunchersDamage,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CycloneAttackWeaponDamage,Amount" Value="2"/>
+        <EffectArray Operation="Set" Reference="Weapon,LanceMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,TyphoonMissilePod,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,LanceMissileLaunchersDamage,AttributeBonus[Massive]" Value="1"/>
+        <EffectArray Reference="Weapon,TornadoBlaster,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TornadoBlaster,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,TornadoBlaster@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,90mmCannonsLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,90mmCannonsLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,90mmCannonsLotV1@Damage,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,CrucioShockCannonLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CrucioShockCannonLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,AttributeBonus[Light]" Value="1.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,BacklashRockets,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,TwinGatlingCannon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,LanzerTorpedoes,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,LiberatorMissileDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,LiberatorMissileLaunchers,Level" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorAGDamage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorAGWeapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,LiberatorAGWeapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,TwinGatlingCannons,AttributeBonus[Mechanical]" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorLotV1@Damage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,LiberatorLotV1@Weapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorAGLotV1@Damage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorAGLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,LiberatorAGLotV1@Weapon,Level" Value="1"/>
+        <AffectedUnitArray value="WarHound"/>
+        <AffectedUnitArray value="MPOdin"/>
+        <AffectedUnitArray value="HellionTank"/>
+        <AffectedUnitArray value="WidowMine"/>
+        <AffectedUnitArray value="WidowMineBurrowed"/>
+        <AffectedUnitArray value="ThorAP"/>
+        <LeaderLevel value="1"/>
     </CUpgrade>
     <CUpgrade id="MoebiusReactor@Upgrade">
         <Icon value="Assets\Textures\btn-upgrade-terran-moebiusreactor.dds"/>
@@ -49,19 +237,15 @@
         <AffectedUnitArray value="GhostAlternate"/>
         <AffectedUnitArray value="GhostNova"/>
     </CUpgrade>
-    <CUpgrade id="LiberatorAGRangeUpgrade">
-        <EffectArray index="0" Value="3"/>
-        <EffectArray index="1" Value="3"/>
-    </CUpgrade>
     <CUpgrade id="AdvancedBallistics">
         <Icon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
         <ScoreAmount value="300"/>
         <ScoreResult value="BuildOrder"/>
         <EffectArray Reference="Abil,LiberatorLotV1@AGTarget,Range[0]" Value="4"/>
         <EffectArray Reference="Weapon,LiberatorAGLotV1@Weapon,Range" Value="4"/>
-        <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
-        <AffectedUnitArray value="Liberator"/>
-        <AffectedUnitArray value="LiberatorAG"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="LiberatorLotV1@Liberator"/>
+        <AffectedUnitArray value="LiberatorAGLotV1@LiberatorAG"/>
     </CUpgrade>
     <CUpgrade id="MarineUpgrade">
         <Flags index="UpgradeCheat" value="0"/>
@@ -83,20 +267,6 @@
         <EffectArray Operation="Set" Reference="Unit,CycloneLotV2,Speed" Value="3.375000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="CycloneLotV2"/>
-    </CUpgrade>
-    <CUpgrade id="LiberatorUpgrade">
-        <Flags index="UpgradeCheat" value="0"/>
-        <Race value="Neut"/>
-        <EffectArray Operation="Set" Reference="Effect,LiberatorAGDamage,Amount" Value="85"/>
-        <EffectArray Operation="Set" Reference="Effect,LiberatorMissileDamage,Amount" Value="7"/>
-        <EffectArray Operation="Set" Reference="Unit,LiberatorAG,Sight" Value="13"/>
-        <EffectArray Operation="Set" Reference="Effect,LiberatorTargetMorphPersistent,RevealRadius" Value="0"/>
-        <EffectArray Operation="Set" Reference="Effect,LiberatorTargetMorphPersistent,RevealFlags[Unfog]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Effect,LiberatorTargetMorphDelayPersistent,RevealRadius" Value="0"/>
-        <EffectArray Operation="Set" Reference="Effect,LiberatorTargetMorphDelayPersistent,RevealFlags[Unfog]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Unit,LiberatorAG,CostResource[Vespene]" Value="150"/>
-        <AffectedUnitArray value="Marine"/>
-        <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="RapidFireLaunchers@Upgrade">
         <Icon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>
@@ -144,55 +314,414 @@
         <EffectArray Reference="Unit,ReaperSwarm,Speed" Value="0.875000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
+    <CUpgrade id="TerranBuildingArmor">
+        <EffectArray Reference="Unit,AutoTurretSwarm@AutoTurret,LifeArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,AutoTurretSwarm@AutoTurret,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,PointDefenseDroneSwarm@PointDefenseDrone,LifeArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,PointDefenseDroneSwarm@PointDefenseDrone,LifeArmor" Value="2"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel1">
+        <EffectArray Reference="Unit,GhostLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,GhostLotV1,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,GhostLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Reference="Unit,GhostWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,GhostWoL,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,GhostWoL@Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Reference="Unit,ReaperLiberty,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ReaperLiberty,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,ReaperLiberty,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Reference="Unit,ReaperSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ReaperSwarm,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,ReaperSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel2">
+        <EffectArray Reference="Unit,GhostLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,GhostLotV1,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,GhostLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Reference="Unit,GhostWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,GhostWoL,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,GhostWoL@Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Reference="Unit,ReaperLiberty,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ReaperLiberty,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,ReaperLiberty,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Reference="Unit,ReaperSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ReaperSwarm,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,ReaperSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryArmorsLevel3">
+        <EffectArray Reference="Unit,GhostLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,GhostLotV1,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,GhostLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Reference="Unit,GhostWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,GhostWoL,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,GhostWoL@Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Reference="Unit,ReaperLiberty,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ReaperLiberty,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,ReaperLiberty,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Reference="Unit,ReaperSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,ReaperSwarm,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,ReaperSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel1">
+        <!-- ReaperLiberty Anti Structure -->
+        <EffectArray Operation="Set" Reference="Weapon,GrenadeLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,GrenadeLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,GrenadeLiberty@Damage,Amount" Value="3.000000"/>
+        <!-- Reaper Liberty Normal -->
+        <EffectArray Operation="Set" Reference="Weapon,GaussPistolLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,GaussPistolLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,GaussPistolLiberty@Damage,Amount" Value="1.000000"/>
+        <!-- Reaper Swarm -->
+        <EffectArray Operation="Set" Reference="Weapon,PistolSwarm,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,PistolSwarm,Level" Value="1"/>
+        <EffectArray Reference="Effect,PistolSwarm@Damage,Amount" Value="1.000000"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel2">
+        <EffectArray Operation="Set" Reference="Weapon,GrenadeLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,GrenadeLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,GrenadeLiberty@Damage,Amount" Value="3.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,GaussPistolLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,GaussPistolLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,GaussPistolLiberty@Damage,Amount" Value="1.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,PistolSwarm,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,PistolSwarm,Level" Value="1"/>
+        <EffectArray Reference="Effect,PistolSwarm@Damage,Amount" Value="1.000000"/>
+    </CUpgrade>
+    <CUpgrade id="TerranInfantryWeaponsLevel3">
+        <EffectArray Operation="Set" Reference="Weapon,GrenadeLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,GrenadeLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,GrenadeLiberty@Damage,Amount" Value="3.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,GaussPistolLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,GaussPistolLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,GaussPistolLiberty@Damage,Amount" Value="1.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,PistolSwarm,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,PistolSwarm,Level" Value="1"/>
+        <EffectArray Reference="Effect,PistolSwarm@Damage,Amount" Value="1.000000"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipWeaponsLevel1">
+        <!-- LiberatorAA -->
+        <EffectArray Reference="Effect,LiberatorLotV1@Damage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,LiberatorLotV1@Weapon,Level" Value="1"/>
+        <!-- LiberatorAG -->
+        <EffectArray Reference="Effect,LiberatorAGLotV1@Damage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorAGLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,LiberatorAGLotV1@Weapon,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipWeaponsLevel2">
+        <!-- LiberatorAA -->
+        <EffectArray Reference="Effect,LiberatorLotV1@Damage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,LiberatorLotV1@Weapon,Level" Value="1"/>
+        <!-- LiberatorAG -->
+        <EffectArray Reference="Effect,LiberatorAGLotV1@Damage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorAGLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,LiberatorAGLotV1@Weapon,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="TerranShipWeaponsLevel3">
+        <!-- LiberatorAA -->
+        <EffectArray Reference="Effect,LiberatorLotV1@Damage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,LiberatorLotV1@Weapon,Level" Value="1"/>
+        <!-- LiberatorAG -->
+        <EffectArray Reference="Effect,LiberatorAGLotV1@Damage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorAGLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,LiberatorAGLotV1@Weapon,Level" Value="1"/>
+    </CUpgrade>
     <CUpgrade id="TerranVehicleAndShipArmorsLevel1">
+        <!-- Cyclone1 -->
         <EffectArray Reference="Unit,CycloneLotV1,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,CycloneLotV1,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,CycloneLotV1@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+        <!-- Cyclone2 -->
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,CycloneLotV2@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+        <!-- WidowMine -->
+        <EffectArray Reference="Unit,WidowMineSwarm,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,WidowMineSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,WidowMineSwarm@WidowMine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+        <EffectArray Reference="Unit,WidowMineSwarm@WidowMineBurrowed,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,WidowMineSwarm@WidowMineBurrowed,LifeArmorLevel" Value="1"/>
+        <!-- Hellbat Swarm -->
+        <EffectArray Reference="Unit,HellbatSwarmBeta@Hellbat,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,HellbatSwarmBeta@Hellbat,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HellbatSwarmBeta@Hellbat,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+        <!-- Hellion Swarm -->
+        <EffectArray Reference="Unit,HellionSwarmBeta@Hellion,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,HellionSwarmBeta@Hellion,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HellionSwarmBeta@Hellion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+        <!-- SiegeTankLotV1 -->
+        <EffectArray Reference="Unit,SiegeTankLotV1,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,SiegeTankLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,SiegeTankLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+        <!-- SiegeTankSiegedLotV1 -->
+        <EffectArray Reference="Unit,SiegeTankSiegedLotV1,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,SiegeTankSiegedLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,SiegeTankSiegedLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+        <!-- RavenSwarm -->
+        <EffectArray Reference="Unit,RavenSwarm,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,RavenSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RavenSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel1.dds"/>
+        <!-- LiberatorAGLotV1 -->
+        <EffectArray Reference="Unit,LiberatorAGLotV1@LiberatorAG,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,LiberatorAGLotV1@LiberatorAG,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LiberatorAGLotV1@LiberatorAG,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel1.dds"/>
+        <!-- LiberatorLotV1 -->
+        <EffectArray Reference="Unit,LiberatorLotV1@Liberator,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,LiberatorLotV1@Liberator,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LiberatorLotV1@Liberator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel1.dds"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleAndShipArmorsLevel2">
+        <!-- Cyclone1 -->
         <EffectArray Reference="Unit,CycloneLotV1,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,CycloneLotV1,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,CycloneLotV1@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+        <!-- Cyclone2 -->
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,CycloneLotV2@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+        <!-- WidowMine -->
+        <EffectArray Reference="Unit,WidowMineSwarm,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,WidowMineSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,WidowMineSwarm@WidowMine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+        <EffectArray Reference="Unit,WidowMineSwarm@WidowMineBurrowed,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,WidowMineSwarm@WidowMineBurrowed,LifeArmorLevel" Value="1"/>
+        <!-- Hellbat Swarm -->
+        <EffectArray Reference="Unit,HellbatSwarmBeta@Hellbat,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,HellbatSwarmBeta@Hellbat,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HellbatSwarmBeta@Hellbat,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+        <!-- Hellion Swarm -->
+        <EffectArray Reference="Unit,HellionSwarmBeta@Hellion,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,HellionSwarmBeta@Hellion,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HellionSwarmBeta@Hellion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+        <!-- SiegeTankLotV1 -->
+        <EffectArray Reference="Unit,SiegeTankLotV1,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,SiegeTankLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,SiegeTankLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+        <!-- SiegeTankSiegedLotV1 -->
+        <EffectArray Reference="Unit,SiegeTankSiegedLotV1,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,SiegeTankSiegedLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,SiegeTankSiegedLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+        <!-- RavenSwarm -->
+        <EffectArray Reference="Unit,RavenSwarm,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,RavenSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RavenSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel2.dds"/>
+        <!-- LiberatorAGLotV1 -->
+        <EffectArray Reference="Unit,LiberatorAGLotV1@LiberatorAG,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,LiberatorAGLotV1@LiberatorAG,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LiberatorAGLotV1@LiberatorAG,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel2.dds"/>
+        <!-- LiberatorLotV1 -->
+        <EffectArray Reference="Unit,LiberatorLotV1@Liberator,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,LiberatorLotV1@Liberator,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LiberatorLotV1@Liberator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel2.dds"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleAndShipArmorsLevel3">
+        <!-- Cyclone1 -->
         <EffectArray Reference="Unit,CycloneLotV1,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,CycloneLotV1,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,CycloneLotV1@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+        <!-- Cyclone2 -->
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,CycloneLotV2@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+        <!-- WidowMine -->
+        <EffectArray Reference="Unit,WidowMineSwarm,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,WidowMineSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,WidowMineSwarm@WidowMine,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+        <EffectArray Reference="Unit,WidowMineSwarm@WidowMineBurrowed,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,WidowMineSwarm@WidowMineBurrowed,LifeArmorLevel" Value="1"/>
+        <!-- Hellbat Swarm -->
+        <EffectArray Reference="Unit,HellbatSwarmBeta@Hellbat,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,HellbatSwarmBeta@Hellbat,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HellbatSwarmBeta@Hellbat,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+        <!-- Hellion Swarm -->
+        <EffectArray Reference="Unit,HellionSwarmBeta@Hellion,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,HellionSwarmBeta@Hellion,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HellionSwarmBeta@Hellion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+        <!-- SiegeTankLotV1 -->
+        <EffectArray Reference="Unit,SiegeTankLotV1,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,SiegeTankLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,SiegeTankLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+        <!-- SiegeTankSiegedLotV1 -->
+        <EffectArray Reference="Unit,SiegeTankSiegedLotV1,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,SiegeTankSiegedLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,SiegeTankSiegedLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+        <!-- RavenSwarm -->
+        <EffectArray Reference="Unit,RavenSwarm,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,RavenSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RavenSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel3.dds"/>
+        <!-- LiberatorAGLotV1 -->
+        <EffectArray Reference="Unit,LiberatorAGLotV1@LiberatorAG,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,LiberatorAGLotV1@LiberatorAG,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LiberatorAGLotV1@LiberatorAG,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel3.dds"/>
+        <!-- LiberatorLotV1 -->
+        <EffectArray Reference="Unit,LiberatorLotV1@Liberator,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,LiberatorLotV1@Liberator,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LiberatorLotV1@Liberator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-shipplatinglevel3.dds"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleWeaponsLevel1">
+        <!-- Cyclone1 -->
+        <EffectArray Reference="Weapon,TornadoBlaster,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TornadoBlaster,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,TornadoBlaster@Damage,Amount" Value="1"/>
+        <!-- Cyclone2 -->
+        <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
+        <!-- SiegeTankLotV1 -->
+        <EffectArray Reference="Weapon,90mmCannonsLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,90mmCannonsLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,90mmCannonsLotV1@Damage,Amount" Value="3"/>
+        <!-- SiegeTankSiegedLotV1 -->
+        <EffectArray Reference="Weapon,CrucioShockCannonLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CrucioShockCannonLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,AttributeBonus[Armored]" Value="2"/>
+        <!-- HellbatSwarm -->
+        <EffectArray Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,AttributeBonus[Light]" Value="1.000000"/>
+    </CUpgrade>
+    <CUpgrade id="ModifiedAbility@TerranVehicleAndShipWeaponsLevel1" parent="TerranVehicleWeapons">
+        <Name value="Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <ScoreAmount value="200"/>
+        <EffectArray index="7" Reference="Effect,CrucioShockCannonBlast,Amount" Value="4"/>
+        <EffectArray index="8" Reference="Effect,CrucioShockCannonDirected,Amount" Value="4"/>
+        <EffectArray index="9" Reference="Effect,CrucioShockCannonDummy,Amount" Value="4"/>
+        <EffectArray Operation="Set" Reference="Weapon,JavelinMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ThorsHammer,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,90mmCannons,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,CrucioShockCannon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfernalFlameThrower,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,CrucioShockCannonBlast,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDirected,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,CrucioShockCannonDummy,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Weapon,WarHound,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,WarHoundMelee,Amount" Value="2"/>
+        <EffectArray Reference="Effect,WarHound,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,WidowMineDummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WidowMineDummy,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,MineDroneDirectDamage,Amount" Value="5"/>
+        <EffectArray Reference="Effect,MineDroneExplodeDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HellionTank,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,HellionTankDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,HellionTank,Level" Value="1"/>
+        <EffectArray Reference="Weapon,LanceMissileLaunchers,Level" Value="1"/>
+        <EffectArray Reference="Effect,LanceMissileLaunchersDamage,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CycloneAttackWeaponDamage,Amount" Value="2"/>
+        <EffectArray Operation="Set" Reference="Weapon,LanceMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,TyphoonMissilePod,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,LanceMissileLaunchersDamage,AttributeBonus[Massive]" Value="1"/>
         <EffectArray Reference="Weapon,TornadoBlaster,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TornadoBlaster,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Reference="Effect,TornadoBlaster@Damage,Amount" Value="1"/>
         <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
-        <EffectArray Reference="Effect,HellionTankDamage,AttributeBonus[Light]" Value="1.000000"/>
+        <EffectArray Reference="Weapon,90mmCannonsLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,90mmCannonsLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,90mmCannonsLotV1@Damage,Amount" Value="3"/>
+        <EffectArray Reference="Weapon,CrucioShockCannonLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CrucioShockCannonLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,AttributeBonus[Light]" Value="1.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,BacklashRockets,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATALaserBattery,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,ATSLaserBattery,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,TwinGatlingCannon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,LanzerTorpedoes,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Effect,LiberatorMissileDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,LiberatorMissileLaunchers,Level" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorAGDamage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorAGWeapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,LiberatorAGWeapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,TwinGatlingCannons,AttributeBonus[Mechanical]" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorLotV1@Damage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,LiberatorLotV1@Weapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,LiberatorAGLotV1@Damage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,LiberatorAGLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-shipweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,LiberatorAGLotV1@Weapon,Level" Value="1"/>
+        <AffectedUnitArray value="WarHound"/>
+        <AffectedUnitArray value="MPOdin"/>
+        <AffectedUnitArray value="HellionTank"/>
+        <AffectedUnitArray value="WidowMine"/>
+        <AffectedUnitArray value="WidowMineBurrowed"/>
+        <AffectedUnitArray value="ThorAP"/>
+        <LeaderLevel value="1"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleWeaponsLevel2">
+        <!-- Cyclone1 -->
         <EffectArray Reference="Weapon,TornadoBlaster,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TornadoBlaster,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Reference="Effect,TornadoBlaster@Damage,Amount" Value="1"/>
+        <!-- Cyclone2 -->
         <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
-        <EffectArray Reference="Effect,HellionTankDamage,AttributeBonus[Light]" Value="1.000000"/>
+        <!-- SiegeTankLotV1 -->
+        <EffectArray Reference="Weapon,90mmCannonsLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,90mmCannonsLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,90mmCannonsLotV1@Damage,Amount" Value="3"/>
+        <!-- SiegeTankSiegedLotV1 -->
+        <EffectArray Reference="Weapon,CrucioShockCannonLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CrucioShockCannonLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,AttributeBonus[Armored]" Value="2"/>
+        <!-- HellbatSwarm -->
+        <EffectArray Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,AttributeBonus[Light]" Value="1.000000"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleWeaponsLevel3">
+        <!-- Cyclone1 -->
         <EffectArray Reference="Weapon,TornadoBlaster,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TornadoBlaster,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Reference="Effect,TornadoBlaster@Damage,Amount" Value="1"/>
+        <!-- Cyclone2 -->
         <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
-        <EffectArray Reference="Effect,HellionTankDamage,AttributeBonus[Light]" Value="1.000000"/>
+        <!-- SiegeTankLotV1 -->
+        <EffectArray Reference="Weapon,90mmCannonsLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,90mmCannonsLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,90mmCannonsLotV1@Damage,Amount" Value="3"/>
+        <!-- SiegeTankSiegedLotV1 -->
+        <EffectArray Reference="Weapon,CrucioShockCannonLotV1,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CrucioShockCannonLotV1,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Blast,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Directed,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,Amount" Value="3"/>
+        <EffectArray Reference="Effect,CrucioShockCannonLotV1@Dummy,AttributeBonus[Armored]" Value="2"/>
+        <!-- HellbatSwarm -->
+        <EffectArray Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NapalmSpraySwarmBeta@NapalmSpray,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,AttributeBonus[Light]" Value="1.000000"/>
     </CUpgrade>
 </Catalog>

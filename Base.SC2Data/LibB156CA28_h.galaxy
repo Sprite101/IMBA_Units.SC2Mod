@@ -3,4 +3,10 @@ include "TriggerLibs/natives"
 //--------------------------------------------------------------------------------------------------
 // Library: IMBA Units
 //--------------------------------------------------------------------------------------------------
+// Function Declarations
+void libB156CA28_gf_Default (int lp_player);
+void libB156CA28_gf_AllowGhost (int lp_player);
+
+// Trigger Declarations
+trigger libB156CA28_gt_UntitledTrigger001;
 

@@ -103,8 +103,21 @@
     </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="CaduceusReactorSwarmBeta@Upgraded">
         <WhichPlayer Value="Caster"/>
-        <Value value="LearnMedivacEnergyUpgradeDisplay"/>
+        <Value value="CaduceusReactorSwarmBeta@HaveCaduceusReactor"/>
+        <Find value="1"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="InfernalPreIgniterSwarm@Upgraded">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="InfernalPreIgniterSwarm@HaveInfernalPreIgniterSwarm"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="IsWidowMineOrWidowMineBurrowed">
+        <CombineArray value="WidowMineSwarm@IsWidowMine"/>
+        <CombineArray value="WidowMineSwarm@IsWidowMineBurrowed"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="WidowMineSwarm@IsWidowMine">
+        <Value value="WidowMineSwarm"/>
+    </CValidatorUnitType>
     <CValidatorUnitCompareBehaviorCount id="LiberatorLotV1@HasLiberatorMorphBehavior">
         <WhichUnit Value="Caster"/>
         <Value value="1"/>
@@ -141,4 +154,7 @@
         <Find value="1"/>
         <Value value="RapidFireLaunchers@HaveUpgrade"/>
     </CValidatorPlayerRequirement>
+    <CValidatorUnitType id="WidowMineSwarm@IsWidowMineBurrowed">
+        <Value value="WidowMineSwarm@WidowMineBurrowed"/>
+    </CValidatorUnitType>
 </Catalog>

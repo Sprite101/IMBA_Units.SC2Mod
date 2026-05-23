@@ -41,6 +41,16 @@
         <Period value="1"/>
         <Effect value="TornadoBlaster@Damage"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="NapalmSpraySwarmBeta@NapalmSpray">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <DisplayEffect value="NapalmSpraySwarmBeta@Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquirePrioritization value="ByAngle"/>
+        <Range value="2"/>
+        <Period value="2"/>
+        <Effect value="NapalmSpraySwarmBeta@Set"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="LiberatorAGLotV1@Weapon">
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>

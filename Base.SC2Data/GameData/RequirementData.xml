@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirement id="CorvidReactorSwarm@LearnCorvidReactor">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeCorvidReactorSwarmQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="DurableMaterialsSwarm@LearnDurableMaterials">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeDurableMaterialsSwarmQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="InfernalPreIgniterSwarm@HaveInfernalPreIgniterSwarm">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarmCompleteOnly2156962955"/>
+    </CRequirement>
     <CRequirement id="CaduceusReactorSwarmBeta@HaveCaduceusReactor">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
-        <NodeArray index="Use" Link="CountUpgradeCaduceusReactorSwarmBeta@CompleteOnly2609272276"/>
+        <NodeArray index="Use" Link="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276"/>
+        <NodeArray index="Show" Link="AllowAbilCaduceusReactorSwarmBeta@ResearchCaduceusReactor0"/>
     </CRequirement>
     <CRequirement id="DrillingClaws@@LearnDrillingClaws">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
@@ -10,7 +23,7 @@
     </CRequirement>
     <CRequirement id="CaduceusReactorSwarmBeta@LearnCaduceusReactor">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
-        <NodeArray index="Show" Link="NotCountUpgradeCaduceusReactorSwarmBeta@QueuedOrBetter"/>
+        <NodeArray index="Show" Link="NotCountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="EnhancedShockwaves@@LearnEnhancedShockwaves">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
@@ -22,6 +35,17 @@
     <CRequirement id="AdvancedBallistics@HaveAdvancedBallistics">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeAdvancedBallisticsCompleteOnly1495348974"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnTerranVehicleAndShipWeapon3">
+        <NodeArray index="Use" Link="AndEq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel3QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnTerranVehicleAndShipWeapon2">
+        <NodeArray index="Use" Link="AndEq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnTerranVehicleAndShipWeapon1">
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1QueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="MoebiusReactor@HaveMoebiusReactor">
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
@@ -42,6 +66,10 @@
     <CRequirement id="AdvancedBallistics@LearnAdvancedBallistics">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Show" Link="NotCountUpgradeAdvancedBallisticsQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="InfernalPreIgniterSwarm@LearnInfernalPreIgniterSwarm">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarmQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="ReaperSwarm@LearnNitroPacks">
         <EditorCategories value="Race:Terran,TechType:Ability"/>

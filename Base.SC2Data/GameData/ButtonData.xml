@@ -5,6 +5,16 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-caduceusreactor.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="CorvidReactorSwarm@ResearchCorvidReactor">
+        <Icon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="DurableMaterialsSwarm@ResearchDurableMaterials">
+        <Icon value="Assets\Textures\btn-upgrade-terran-durablematerials.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-durablematerials.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="EnhancedShockwaves@EnhancedShockwaves">
         <Icon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
@@ -103,6 +113,11 @@
     <CButton id="RavenSwarm">
         <Icon value="Assets\Textures\btn-unit-terran-raven.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-terran-raven.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infernalpreigniter.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-infernalpreigniter.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="SeekerMissileSwarm">

@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <!-- Balance change for balance patch of Nov 11th 2013 (combined Air/Ground vehicle upgrades)-->
+    <!-- Balance test 3/12 (separate Air/Ground vehicle upgrades)-->
+    <!-- Balance test 6/30 (combine Air/Ground mech armor upgrades)-->
+    <CUnit id="Armory">
+        <AbilArray Link="ModifiedAbility@ArmoryResearch"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="TerranVehicleWeaponsLevel3" AbilCmd="ArmoryResearch,Research8"/>
+            <LayoutButtons index="2" Face="TerranVehicleAndShipWeaponsLevel1" AbilCmd="ModifiedAbility@ArmoryResearch,Research1"/>
+            <LayoutButtons Face="TerranVehicleWeaponsLevel2" Type="AbilCmd" AbilCmd="ArmoryResearch,Research7" Row="0" Column="0"/>
+            <LayoutButtons Face="TerranVehicleAndShipWeaponsLevel2" Type="AbilCmd" AbilCmd="ModifiedAbility@ArmoryResearch,Research2" Row="0" Column="0"/>
+            <LayoutButtons Face="TerranVehicleAndShipWeaponsLevel3" Type="AbilCmd" AbilCmd="ModifiedAbility@ArmoryResearch,Research3" Row="0" Column="0"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="AutoTurretSwarm@AutoTurret">
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
@@ -63,6 +76,34 @@
     <CUnit id="AutoTurretSwarm@ReleaseMissile" parent="MISSILE_INVULNERABLE">
         <Race value="Terr"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="Barracks">
+        <AbilArray Link="GhostLotV1@Train"/>
+        <AbilArray Link="GhostWoL@Train"/>
+        <AbilArray Link="ReaperLiberty@Train"/>
+        <AbilArray Link="ReaperSwarm@Train"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GhostLotV1@TrainGhost" Type="AbilCmd" AbilCmd="GhostLotV1@Train,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="GhostWoL@TrainGhost" Type="AbilCmd" AbilCmd="GhostWoL@Train,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="ReaperLiberty@TrainReaper" Type="AbilCmd" AbilCmd="ReaperLiberty@Train,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="ReaperSwarm@TrainReaper" Type="AbilCmd" AbilCmd="ReaperSwarm@Train,Train1" Row="0" Column="1"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="BarracksTechLab">
+        <AbilArray Link="ReaperLiberty@ResearchNitroPacks"/>
+        <AbilArray Link="ReaperSwarm@ResearchNitroPacks"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="ReaperLiberty@ResearchNitroPacks" Type="AbilCmd" AbilCmd="ReaperLiberty@ResearchNitroPacks,Research1" Row="0" Column="3"/>
+            <LayoutButtons Face="ReaperSwarm@ResearchNitroPacks" Type="AbilCmd" AbilCmd="ReaperSwarm@ResearchNitroPacks,Research1" Row="0" Column="3"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Battlecruiser">
+        <AbilArray Link="ModifiedAbility@Hyperjump"/>
+        <AbilArray Link="ModifiedAbility@Yamato"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="YamatoGun" Type="AbilCmd" AbilCmd="ModifiedAbility@Yamato,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Hyperjump" Type="AbilCmd" AbilCmd="ModifiedAbility@Hyperjump,Execute" Row="2" Column="1"/>
+        </CardLayouts>
     </CUnit>
     <CUnit id="CycloneLotV2">
         <Description value="Button/Tooltip/BuildCycloneLotV2"/>
@@ -237,8 +278,10 @@
     </CUnit>
     <CUnit id="GhostAcademy">
         <AbilArray Link="EnhancedShockwaves@ResearchEnhancedShockwaves"/>
+        <AbilArray Link="MoebiusReactor@ResearchMoebiusReactor"/>
         <CardLayouts index="0">
             <LayoutButtons Face="EnhancedShockwaves@ResearchEnhancedShockwaves" Type="AbilCmd" AbilCmd="EnhancedShockwaves@ResearchEnhancedShockwaves,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="MoebiusReactor@ResearchMoebiusReactor" Type="AbilCmd" AbilCmd="MoebiusReactor@ResearchMoebiusReactor,Research1" Row="0" Column="1"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="GhostLotV1">
@@ -428,10 +471,151 @@
     <CUnit id="FactoryTechLab">
         <AbilArray Link="CycloneLockOnAirLoTV1@Research"/>
         <AbilArray Link="CycloneLockOnLotV2@Research"/>
+        <AbilArray Link="DrillingClaws@ResearchDrillingClaws"/>
+        <AbilArray Link="InfernalPreIgniterSwarm@ResearchInfernalPreIgniter"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="RapidFireLaunchers@Research" Type="AbilCmd" AbilCmd="CycloneLockOnAirLoTV1@Research,Research1" Row="1" Column="0"/>
-            <LayoutButtons Face="HurricaneThrusters@Research" Type="AbilCmd" AbilCmd="CycloneLockOnLotV2@Research,Research1" Row="1" Column="1"/>
+            <LayoutButtons Face="InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm" Type="AbilCmd" AbilCmd="InfernalPreIgniterSwarm@ResearchInfernalPreIgniter,Research1" Row="0" Column="0"/>
+            <LayoutButtons Face="DrillingClaws@ResearchDrillingClaws" Type="AbilCmd" AbilCmd="DrillingClaws@ResearchDrillingClaws,Research1" Row="0" Column="2"/>
+            <LayoutButtons Face="RapidFireLaunchers@Research" Type="AbilCmd" AbilCmd="CycloneLockOnAirLoTV1@Research,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="HurricaneThrusters@Research" Type="AbilCmd" AbilCmd="CycloneLockOnLotV2@Research,Research1" Row="0" Column="1"/>
         </CardLayouts>
+    </CUnit>
+    <CUnit id="HellionSwarmBeta@Hellion">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="90"/>
+        <LifeMax value="90"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <Speed value="4.25"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="1499.9414"/>
+        <Sight value="10"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="30"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="30"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="HellionSwarmBeta@MorphToHellbat"/>
+        <WeaponArray Link="InfernalFlameThrower" Turret="Hellion"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="MorphToHellionTank" Type="AbilCmd" AbilCmd="HellionSwarmBeta@MorphToHellbat,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.75"/>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="2"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="66"/>
+        <MinimapRadius value="0.625"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkHellion"/>
+        <TechAliasArray value="Alias_Hellion"/>
+        <TechAliasArray value="Alias_Hellion"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="80"/>
+        <GlossaryStrongArray value="SCV"/>
+        <GlossaryStrongArray value="Zergling"/>
+        <GlossaryStrongArray value="Probe"/>
+        <GlossaryWeakArray value="Cyclone"/>
+        <GlossaryWeakArray value="Roach"/>
+        <GlossaryWeakArray value="Stalker"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+    </CUnit>
+    <CUnit id="HellbatSwarmBeta@Hellbat">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="135"/>
+        <LifeMax value="135"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <Speed value="2.25"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="1499.9414"/>
+        <Sight value="10"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="30"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="30"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="HellbatSwarmBeta@MorphToHellion"/>
+        <WeaponArray Link="NapalmSpraySwarmBeta@NapalmSpray"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="MorphToHellion" Type="AbilCmd" AbilCmd="HellbatSwarmBeta@MorphToHellion,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.75"/>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="2"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="66"/>
+        <MinimapRadius value="0.625"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkHellionTank"/>
+        <HotkeyAlias value="Hellion"/>
+        <SubgroupAlias value="Hellion"/>
+        <TechAliasArray value="Alias_Hellbat"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="81"/>
+        <GlossaryStrongArray value="SCV"/>
+        <GlossaryStrongArray value="Zergling"/>
+        <GlossaryStrongArray value="Zealot"/>
+        <GlossaryWeakArray value="Marauder"/>
+        <GlossaryWeakArray value="Baneling"/>
+        <GlossaryWeakArray value="Stalker"/>
+        <GlossaryAlias value="HellionTank"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
     </CUnit>
     <CUnit id="LiberatorAGLotV1@LiberatorAG">
         <DeathRevealRadius value="3"/>
@@ -563,6 +747,20 @@
         <GlossaryWeakArray value="Tempest"/>
         <GlossaryAlias value="Liberator"/>
         <HotkeyCategory value="Unit/Category/TerranUnits"/>
+    </CUnit>
+    <CUnit id="MULE">
+        <AbilArray Link="ModifiedAbility@MuleGatherWoL"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="9" AbilCmd="ModifiedAbility@MuleGatherWoL,Return"/>
+            <LayoutButtons Face="GatherMULE" Type="AbilCmd" AbilCmd="ModifiedAbility@MuleGatherWoL,Gather" Row="1" Column="0"/>
+            <LayoutButtons Face="ReturnCargo" Type="AbilCmd" AbilCmd="SCVHarvest,Return" Row="1" Column="1"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Medivac">
+        <CardLayouts index="0">
+            <LayoutButtons index="10" Face="CaduceusReactorSwarmBeta@ResearchCaduceusReactor" Requirements="CaduceusReactorSwarmBeta@HaveCaduceusReactor"/>
+            <LayoutButtons Face="CaduceusReactor" Type="Passive" Requirements="HaveMedivacEnergyUpgrade" Row="1" Column="0"/>
+        </CardLayouts>
     </CUnit>
     <CUnit id="PointDefenseDroneSwarm@Missile" parent="MISSILE_INVULNERABLE">
         <Race value="Terr"/>
@@ -1002,11 +1200,25 @@
         <GlossaryWeakArray value="Immortal"/>
         <HotkeyCategory value="Unit/Category/TerranUnits"/>
     </CUnit>
+    <CUnit id="Starport">
+        <AbilArray Link="LiberatorLotV1@Train"/>
+        <AbilArray Link="RavenSwarm@Train"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="RavenSwarm" Type="AbilCmd" AbilCmd="RavenSwarm@Train,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="LiberatorLotV1@BuildLiberator" Type="AbilCmd" AbilCmd="LiberatorLotV1@Train,Train1" Row="0" Column="2"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="StarportTechLab">
         <AbilArray Link="AdvancedBallistics@ResearchAdvancedBallistics"/>
+        <AbilArray Link="CaduceusReactorSwarmBeta@ResearchCaduceusReactor"/>
+        <AbilArray Link="CorvidReactorSwarm@ResearchCorvidReactor"/>
+        <AbilArray Link="DurableMaterialsSwarm@ResearchDurableMaterials"/>
         <CardLayouts index="0">
-            <LayoutButtons index="4" Face="ResearchRavenEnergyUpgrade" AbilCmd="StarportTechLabResearch,Research4"/>
-            <LayoutButtons Face="ResearchDurableMaterials" Type="AbilCmd" AbilCmd="StarportTechLabResearch,Research8" Row="0" Column="3"/>
+            <LayoutButtons index="3" Column="4"/>
+            <LayoutButtons index="4" Face="CorvidReactorSwarm@ResearchCorvidReactor" AbilCmd="CorvidReactorSwarm@ResearchCorvidReactor,Research1"/>
+            <LayoutButtons Face="ResearchRavenInterferenceMatrix" Type="AbilCmd" AbilCmd="StarportTechLabResearch,Research18" Row="0" Column="2"/>
+            <LayoutButtons Face="CaduceusReactorSwarmBeta@ResearchCaduceusReactor" Type="AbilCmd" AbilCmd="CaduceusReactorSwarmBeta@ResearchCaduceusReactor,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="DurableMaterialsSwarm@ResearchDurableMaterials" Type="AbilCmd" AbilCmd="DurableMaterialsSwarm@ResearchDurableMaterials,Research1" Row="0" Column="3"/>
             <LayoutButtons Face="AdvancedBallistics@ResearchAdvancedBallistics" Type="AbilCmd" AbilCmd="AdvancedBallistics@ResearchAdvancedBallistics,Research1" Row="1" Column="0"/>
         </CardLayouts>
     </CUnit>
@@ -1018,9 +1230,17 @@
     <CUnit id="Factory">
         <AbilArray Link="CycloneLotV1@Train"/>
         <AbilArray Link="CycloneLotV2@Train"/>
+        <AbilArray Link="HellionSwarmBeta@Train"/>
+        <AbilArray Link="HellbatSwarmBeta@Train"/>
+        <AbilArray Link="SiegeTankLotV1@Train"/>
+        <AbilArray Link="WidowMineSwarm@Train2"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="CycloneLotV1@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV1@Train,Train1" Row="1" Column="2"/>
-            <LayoutButtons Face="CycloneLotV2@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV2@Train,255" Row="2" Column="2"/>
+            <LayoutButtons index="2" Face="Hellion" Type="AbilCmd" AbilCmd="HellionSwarmBeta@Train,Train1"/>
+            <LayoutButtons Face="SiegeTankLotV1@BuildSiegeTank" Type="AbilCmd" AbilCmd="SiegeTankLotV1@Train,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="WidowMine" Type="AbilCmd" AbilCmd="WidowMineSwarm@Train2,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="CycloneLotV1@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV1@Train,Train1" Row="0" Column="2"/>
+            <LayoutButtons Face="CycloneLotV2@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV2@Train,Train1" Row="0" Column="2"/>
+            <LayoutButtons Face="HellionTank" Type="AbilCmd" AbilCmd="HellbatSwarmBeta@Train,Train1" Row="1" Column="0"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="TornadoBlaster@Missile" parent="MISSILE">

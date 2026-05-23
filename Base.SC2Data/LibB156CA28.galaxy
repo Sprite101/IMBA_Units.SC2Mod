@@ -1,10 +1,86 @@
-include "TriggerLibs/natives"
+include "TriggerLibs/NativeLib"
 
 include "LibB156CA28_h"
 
 //--------------------------------------------------------------------------------------------------
 // Library: IMBA Units
 //--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libB156CA28_InitLibraries () {
+    libNtve_InitVariables();
+}
+
+// Functions
+void libB156CA28_gf_Default (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    TechTreeUnitAllow(lp_player, "CycloneLotV1", false);
+    TechTreeUnitAllow(lp_player, "CycloneLotV2", false);
+    TechTreeUnitAllow(lp_player, "GhostLotV1", false);
+    TechTreeUnitAllow(lp_player, "GhostWoL", false);
+    TechTreeUnitAllow(lp_player, "HellbatSwarmBeta@Hellbat", false);
+    TechTreeUnitAllow(lp_player, "HellionSwarmBeta@Hellion", false);
+    TechTreeUnitAllow(lp_player, "LiberatorAGLotV1@LiberatorAG", false);
+    TechTreeUnitAllow(lp_player, "LiberatorLotV1@Liberator", false);
+    TechTreeUnitAllow(lp_player, "RavenSwarm", false);
+    TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
+    TechTreeUnitAllow(lp_player, "ReaperSwarm", false);
+    TechTreeUnitAllow(lp_player, "SiegeTankLotV1", false);
+    TechTreeUnitAllow(lp_player, "SiegeTankSiegedLotV1", false);
+    TechTreeUnitAllow(lp_player, "WidowMineSwarm", false);
+    TechTreeUnitAllow(lp_player, "WidowMineSwarm@WidowMineBurrowed", false);
+    TechTreeUpgradeAllow(lp_player, "AdvancedBallistics", false);
+    TechTreeUpgradeAllow(lp_player, "CorvidReactorSwarm", false);
+    TechTreeUpgradeAllow(lp_player, "DurableMaterialsSwarm", false);
+    TechTreeUpgradeAllow(lp_player, "EnhancedShockwaves@Upgrade", false);
+    TechTreeUpgradeAllow(lp_player, "InfernalPreIgniterSwarm@InfernalPreIgniterSwarm", false);
+    TechTreeUpgradeAllow(lp_player, "MoebiusReactor@Upgrade", false);
+    TechTreeUpgradeAllow(lp_player, "ReaperLiberty@Upgrade", false);
+    TechTreeUpgradeAllow(lp_player, "ReaperSwarm@Upgrade", false);
+    TechTreeUpgradeAllow(lp_player, "CaduceusReactorSwarmBeta@CaduceusReactor", false);
+    TechTreeUpgradeAllow(lp_player, "DrillingClaws@DrillingClaws", false);
+    TechTreeUpgradeAllow(lp_player, "HurricaneThrusters@Upgrade", false);
+    TechTreeUpgradeAllow(lp_player, "RapidFireLaunchers@Upgrade", false);
+    TechTreeUpgradeAllow(lp_player, "ModifiedAbility@TerranVehicleAndShipWeaponsLevel1", false);
+    TechTreeUpgradeAllow(lp_player, "ModifiedAbility@TerranVehicleAndShipWeaponsLevel2", false);
+    TechTreeUpgradeAllow(lp_player, "ModifiedAbility@TerranVehicleAndShipWeaponsLevel3", false);
+    TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@Hyperjump", 0), false);
+    TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@Yamato", 0), false);
+    TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 0), false);
+    TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 1), false);
+    TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 2), false);
+    TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 0), false);
+}
+
+void libB156CA28_gf_AllowGhost (int lp_player) {
+    // Automatic Variable Declarations
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Untitled Trigger 001
+//--------------------------------------------------------------------------------------------------
+bool libB156CA28_gt_UntitledTrigger001_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libB156CA28_gf_Default(1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libB156CA28_gt_UntitledTrigger001_Init () {
+    libB156CA28_gt_UntitledTrigger001 = TriggerCreate("libB156CA28_gt_UntitledTrigger001_Func");
+    TriggerAddEventMapInit(libB156CA28_gt_UntitledTrigger001);
+}
+
+void libB156CA28_InitTriggers () {
+    libB156CA28_gt_UntitledTrigger001_Init();
+}
+
 //--------------------------------------------------------------------------------------------------
 // Library Initialization
 //--------------------------------------------------------------------------------------------------
@@ -17,5 +93,7 @@ void libB156CA28_InitLib () {
 
     libB156CA28_InitLib_completed = true;
 
+    libB156CA28_InitLibraries();
+    libB156CA28_InitTriggers();
 }
 

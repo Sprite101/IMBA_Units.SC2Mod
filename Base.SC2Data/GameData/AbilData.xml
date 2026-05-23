@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilResearch id="ModifiedAbility@ArmoryResearch">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="160" Upgrade="ModifiedAbility@TerranVehicleAndShipWeaponsLevel1">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="TerranVehicleAndShipWeaponsLevel1" State="Restricted" Requirements="ModifiedAbility@LearnTerranVehicleAndShipWeapon1"/>
+        </InfoArray>
+        <InfoArray index="Research2" Time="190" Upgrade="ModifiedAbility@TerranVehicleAndShipWeaponsLevel2">
+            <Resource index="Minerals" value="175"/>
+            <Resource index="Vespene" value="175"/>
+            <Button DefaultButtonFace="TerranVehicleAndShipWeaponsLevel2" State="Restricted" Requirements="ModifiedAbility@LearnTerranVehicleAndShipWeapon2"/>
+        </InfoArray>
+        <InfoArray index="Research3" Time="220" Upgrade="ModifiedAbility@TerranVehicleAndShipWeaponsLevel3">
+            <Resource index="Minerals" value="250"/>
+            <Resource index="Vespene" value="250"/>
+            <Button DefaultButtonFace="TerranVehicleAndShipWeaponsLevel3" State="Restricted" Requirements="ModifiedAbility@LearnTerranVehicleAndShipWeapon3"/>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilResearch id="CorvidReactorSwarm@ResearchCorvidReactor">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="90" Upgrade="CorvidReactorSwarm">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="CorvidReactorSwarm@ResearchCorvidReactor" State="Restricted" Requirements="CorvidReactorSwarm@LearnCorvidReactor">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilResearch id="DurableMaterialsSwarm@ResearchDurableMaterials">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="90" Upgrade="DurableMaterialsSwarm">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="DurableMaterialsSwarm@ResearchDurableMaterials" State="Restricted" Requirements="DurableMaterialsSwarm@LearnDurableMaterials">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilTrain id="WidowMineSwarm@Train2">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="40">
+            <Button DefaultButtonFace="WidowMine"/>
+            <Unit value="WidowMineSwarm"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilResearch id="InfernalPreIgniterSwarm@ResearchInfernalPreIgniter">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="110" Upgrade="InfernalPreIgniterSwarm@InfernalPreIgniterSwarm">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm" State="Restricted" Requirements="InfernalPreIgniterSwarm@LearnInfernalPreIgniterSwarm">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilResearch id="DrillingClaws@ResearchDrillingClaws">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="90" Upgrade="DrillingClaws@DrillingClaws">
@@ -12,7 +69,7 @@
     </CAbilResearch>
     <CAbilResearch id="CaduceusReactorSwarmBeta@ResearchCaduceusReactor">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
-        <InfoArray index="Research1" Time="110" Upgrade="DrillingClaws@DrillingClaws">
+        <InfoArray index="Research1" Time="110" Upgrade="CaduceusReactorSwarmBeta@CaduceusReactor">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>
             <Button DefaultButtonFace="CaduceusReactorSwarmBeta@ResearchCaduceusReactor" State="Restricted" Requirements="CaduceusReactorSwarmBeta@LearnCaduceusReactor">
@@ -58,6 +115,26 @@
             <Unit value="GhostWoL"/>
         </InfoArray>
     </CAbilTrain>
+    <CAbilTrain id="HellbatSwarmBeta@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="30">
+            <Button DefaultButtonFace="HellionTank" State="Restricted" Requirements="HaveArmory"/>
+            <Unit value="HellbatSwarmBeta@Hellbat"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilHarvest id="ModifiedAbility@MuleGatherWoL">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Gather" DefaultButtonFace="GatherMULE"/>
+        <Range value="0.5"/>
+        <ReservedMarker Link="Abil/MULEGather"/>
+        <ResourceAllowed index="Vespene" value="0"/>
+        <ResourceAllowed index="Terrazine" value="0"/>
+        <ResourceAllowed index="Custom" value="0"/>
+        <ResourceAmountMultiplier index="Minerals" value="6"/>
+        <ResourceTimeMultiplier index="Minerals" value="2.05"/>
+    </CAbilHarvest>
     <CAbilEffectTarget id="ModifiedAbility@Hyperjump">
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Effect index="0" value="HyperjumpCreatePrecursor"/>
@@ -189,6 +266,48 @@
             <SectionArray index="Stats">
                 <DurationArray index="Delay" value="0.5"/>
                 <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="HellionSwarmBeta@MorphToHellbat">
+        <AbilSetId value="TankMode"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HellionTank" Requirements="HaveArmory">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreFacing" value="1"/>
+        <InfoArray Unit="HellbatSwarmBeta@Hellbat" RandomDelayMax="0.25">
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.33"/>
+                <DurationArray index="Duration" value="3.67"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Delay" value="4"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="0.33"/>
+                <DurationArray index="Duration" value="3.67"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="HellbatSwarmBeta@MorphToHellion">
+        <AbilSetId value="HellionMode"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MorphToHellion" Requirements="HaveArmory">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreFacing" value="1"/>
+        <InfoArray Unit="HellionSwarmBeta@Hellion" RandomDelayMax="0.25">
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.33"/>
+                <DurationArray index="Duration" value="3.67"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Delay" value="4"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="0.33"/>
+                <DurationArray index="Duration" value="3.67"/>
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
@@ -383,6 +502,15 @@
         <InfoArray index="Train1" Time="60">
             <Button DefaultButtonFace="RavenSwarm" State="Restricted" Requirements="HaveAttachedTechLab"/>
             <Unit value="RavenSwarm"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="HellionSwarmBeta@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="30">
+            <Button DefaultButtonFace="Hellion" State="Restricted"/>
+            <Unit value="HellionSwarmBeta@Hellion"/>
         </InfoArray>
     </CAbilTrain>
     <CAbilMorph id="SiegeTankLotV1Morph@SiegeMode">
