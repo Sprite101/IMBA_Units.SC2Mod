@@ -10,7 +10,131 @@ void libB156CA28_InitLibraries () {
     libNtve_InitVariables();
 }
 
+// Variable Initialization
+bool libB156CA28_InitVariables_completed = false;
+
+void libB156CA28_InitVariables () {
+    int init_i1;
+    int init_j1;
+    int init_k1;
+    int init_l1;
+
+    if (libB156CA28_InitVariables_completed) {
+        return;
+    }
+
+    libB156CA28_InitVariables_completed = true;
+
+    libB156CA28_gv_playerFrames.lv_mainPanel = c_invalidDialogControlId;
+    libB156CA28_gv_playerFrames.lv_timeRemaining = c_invalidDialogControlId;
+    for (init_i1 = 0; init_i1 <= libB156CA28_gv_maxActivePlayer; init_i1 += 1) {
+        libB156CA28_gv_playerFrames.lv_playerButton[init_i1] = c_invalidDialogControlId;
+    }
+    for (init_i1 = 0; init_i1 <= libB156CA28_gv_maxActivePlayer; init_i1 += 1) {
+        libB156CA28_gv_playerFrames.lv_playerButtonName[init_i1] = c_invalidDialogControlId;
+    }
+    libB156CA28_gv_playerFrames.lv_confirmButton = c_invalidDialogControlId;
+    libB156CA28_gv_playerFrames.lv_randomButton = c_invalidDialogControlId;
+    for (init_i1 = 0; init_i1 <= libB156CA28_gv_maxActivePlayer; init_i1 += 1) {
+        libB156CA28_gv_playerFrames.lv_selectionPanel[init_i1] = c_invalidDialogControlId;
+    }
+    for (init_i1 = 0; init_i1 <= libB156CA28_gv_maxActivePlayer; init_i1 += 1) {
+        libB156CA28_gv_playerFrames.lv_selectionPanel_BG[init_i1] = c_invalidDialogControlId;
+    }
+    for (init_i1 = 0; init_i1 <= libB156CA28_gv_maxActivePlayer; init_i1 += 1) {
+        for (init_j1 = 0; init_j1 <= libB156CA28_gv_maxSelectionItems; init_j1 += 1) {
+            libB156CA28_gv_playerFrames.lv_selectionPanel_Items[init_i1][init_j1] = c_invalidDialogControlId;
+        }
+    }
+    for (init_i1 = 0; init_i1 <= libB156CA28_gv_maxActivePlayer; init_i1 += 1) {
+        for (init_j1 = 0; init_j1 <= libB156CA28_gv_maxSelectionItems; init_j1 += 1) {
+            for (init_k1 = 0; init_k1 <= 2; init_k1 += 1) {
+                libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[init_i1][init_j1][init_k1] = c_invalidDialogControlId;
+            }
+        }
+    }
+    for (init_i1 = 0; init_i1 <= libB156CA28_gv_maxActivePlayer; init_i1 += 1) {
+        for (init_j1 = 0; init_j1 <= libB156CA28_gv_maxSelectionItems; init_j1 += 1) {
+            for (init_k1 = 0; init_k1 <= 5; init_k1 += 1) {
+                for (init_l1 = 0; init_l1 <= 10; init_l1 += 1) {
+                    libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[init_i1][init_j1][init_k1][init_l1] = c_invalidDialogControlId;
+                }
+            }
+        }
+    }
+}
+
 // Functions
+void libB156CA28_gf_Hookups_PlayerFrames () {
+    // Variable Declarations
+    int lv_panelIndex;
+    int lv_selectFrameIndex;
+
+    // Automatic Variable Declarations
+    int autoF8B28B42_ae;
+    int autoF8B28B42_var;
+    int autoED878B8D_ae;
+    int autoED878B8D_var;
+    int auto1C68751A_ae;
+    int auto1C68751A_var;
+    const int autoA57A0CE1_ae = 3;
+    int autoA57A0CE1_var;
+
+    // Variable Initialization
+
+    // Implementation
+    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/FullscreenLowerContainer/IMBA_Selection_Panel");
+    libB156CA28_gv_playerFrames.lv_mainPanel = DialogControlLastCreated();
+    DialogControlHookup(DialogControlLastCreated(), c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName("TimeRemainingFrame/TimeRemainingLabel"));
+    libB156CA28_gv_playerFrames.lv_timeRemaining = DialogControlLastCreated();
+    autoF8B28B42_ae = (libB156CA28_gv_maxActivePlayer-1);
+    autoF8B28B42_var = 0;
+    for ( ; autoF8B28B42_var <= autoF8B28B42_ae; autoF8B28B42_var += 1 ) {
+        DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName(("StatusPanel/PlayerStatusFrame/Item" + IntToString(autoF8B28B42_var))));
+        libB156CA28_gv_playerFrames.lv_playerButton[autoF8B28B42_var] = DialogControlLastCreated();
+        DialogControlHookup(libB156CA28_gv_playerFrames.lv_playerButton[autoF8B28B42_var], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName("Label"));
+        libB156CA28_gv_playerFrames.lv_playerButtonName[autoF8B28B42_var] = DialogControlLastCreated();
+    }
+    DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName("ConfirmButton"));
+    libB156CA28_gv_playerFrames.lv_confirmButton = DialogControlLastCreated();
+    DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName("RandomButton"));
+    libB156CA28_gv_playerFrames.lv_randomButton = DialogControlLastCreated();
+    autoED878B8D_ae = (libB156CA28_gv_maxActivePlayer-1);
+    autoED878B8D_var = 0;
+    for ( ; autoED878B8D_var <= autoED878B8D_ae; autoED878B8D_var += 1 ) {
+        DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypePanel, libNtve_gf_ConvertStringToUILayoutFrameName(("StatusPanel/SelectionPanel" + IntToString(autoED878B8D_var))));
+        libB156CA28_gv_playerFrames.lv_selectionPanel[autoED878B8D_var] = DialogControlLastCreated();
+        DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel[autoED878B8D_var], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName("BG"));
+        libB156CA28_gv_playerFrames.lv_selectionPanel_BG[autoED878B8D_var] = DialogControlLastCreated();
+        lv_panelIndex = autoED878B8D_var;
+        auto1C68751A_ae = (libB156CA28_gv_maxSelectionItems-1);
+        auto1C68751A_var = 0;
+        for ( ; auto1C68751A_var <= auto1C68751A_ae; auto1C68751A_var += 1 ) {
+            DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel[lv_panelIndex], c_triggerControlTypePanel, libNtve_gf_ConvertStringToUILayoutFrameName(("ContainerFrame/Item" + IntToString(auto1C68751A_var))));
+            libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto1C68751A_var] = DialogControlLastCreated();
+            DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto1C68751A_var], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName(("UnitIndicator/HeaderImage")));
+            libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lv_panelIndex][auto1C68751A_var][0] = DialogControlLastCreated();
+            DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto1C68751A_var], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName(("UnitName")));
+            libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lv_panelIndex][auto1C68751A_var][1] = DialogControlLastCreated();
+            lv_selectFrameIndex = auto1C68751A_var;
+            autoA57A0CE1_var = 0;
+            for ( ; autoA57A0CE1_var <= autoA57A0CE1_ae; autoA57A0CE1_var += 1 ) {
+                DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][lv_selectFrameIndex], c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName(("UnitSelectionFrame/UnitSelection" + IntToString(autoA57A0CE1_var))));
+                libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][0] = DialogControlLastCreated();
+                DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][0], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName(("HeaderImageContainer/HeaderImage")));
+                libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][1] = DialogControlLastCreated();
+                DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][0], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName(("TitleLabel")));
+                libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][2] = DialogControlLastCreated();
+            }
+        }
+    }
+}
+
+void libB156CA28_gf_SetupSelectionPanelData (string lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+}
+
 void libB156CA28_gf_Default (int lp_player) {
     // Automatic Variable Declarations
     // Implementation
@@ -58,6 +182,31 @@ void libB156CA28_gf_AllowGhost (int lp_player) {
 
 // Triggers
 //--------------------------------------------------------------------------------------------------
+// Trigger: Hookups
+//--------------------------------------------------------------------------------------------------
+bool libB156CA28_gt_Hookups_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libB156CA28_gf_Hookups_PlayerFrames();
+    libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_BG[0], "Assets\\Textures\\ui_glues_scorescreen_racebg_zerg.dds", PlayerGroupAll());
+    libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[0][2][0], "Assets\\Textures\\btn-building-terran-missileturret-silver.dds", PlayerGroupAll());
+    libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[0][2][1], StringExternal("Param/Value/lib_B156CA28_A7333CC3"), PlayerGroupAll());
+    libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[0][2][1][1], "Assets\\Textures\\btn-building-terran-missileturret-silver.dds", PlayerGroupAll());
+    libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[0][2][1][2], StringExternal("Param/Value/lib_B156CA28_5CB86B76"), PlayerGroupAll());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libB156CA28_gt_Hookups_Init () {
+    libB156CA28_gt_Hookups = TriggerCreate("libB156CA28_gt_Hookups_Func");
+    TriggerAddEventMapInit(libB156CA28_gt_Hookups);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Untitled Trigger 001
 //--------------------------------------------------------------------------------------------------
 bool libB156CA28_gt_UntitledTrigger001_Func (bool testConds, bool runActions) {
@@ -78,6 +227,7 @@ void libB156CA28_gt_UntitledTrigger001_Init () {
 }
 
 void libB156CA28_InitTriggers () {
+    libB156CA28_gt_Hookups_Init();
     libB156CA28_gt_UntitledTrigger001_Init();
 }
 
@@ -94,6 +244,7 @@ void libB156CA28_InitLib () {
     libB156CA28_InitLib_completed = true;
 
     libB156CA28_InitLibraries();
+    libB156CA28_InitVariables();
     libB156CA28_InitTriggers();
 }
 

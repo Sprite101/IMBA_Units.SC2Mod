@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Label" name="TitleLabelTemplate">
+        <RenderPriority val="530"/>
+        <Options val=""/>
+        <AcceptsMouseTooltip val="true"/>
+
+        <StateGroup name="StyleState">
+            <DefaultState val="Normal"/>
+            <State name="Locked">
+                <When type="StateGroup" frame="$parent" HoveredState="NotHovered"/>
+                <When type="StateGroup" frame="$parent" SelectedState="NotSelected"/>
+                <When type="StateGroup" frame="$parent" EmptyState="NotEmpty"/>
+                <When type="StateGroup" frame="$parent" LockedState="Locked"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Locked_Normal"/>
+            </State>
+            <State name="EquippedSelected">
+                <When type="StateGroup" frame="$parent" SelectedState="Selected"/>
+                <When type="StateGroup" frame="$parent" EquippedState="Equipped"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Standard_Selected"/>
+            </State>
+            <State name="PurchasableSelected">
+                <When type="StateGroup" frame="$parent" SelectedState="Selected"/>
+                <When type="StateGroup" frame="$parent" PurchasableState="Purchasable"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Standard_Selected"/>
+            </State>
+            <State name="Selected">
+                <When type="StateGroup" frame="$parent" SelectedState="Selected"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Standard_Selected"/>
+            </State>
+            <State name="EquippedHovered">
+                <When type="StateGroup" frame="$parent" HoveredState="Hovered"/>
+                <When type="StateGroup" frame="$parent" EquippedState="Equipped"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Standard_Hovered"/>
+            </State>
+            <State name="PurchasableHovered">
+                <When type="StateGroup" frame="$parent" HoveredState="Hovered"/>
+                <When type="StateGroup" frame="$parent" PurchasableState="Purchasable"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Standard_Hovered"/>
+            </State>
+            <State name="Hovered">
+                <When type="StateGroup" frame="$parent" HoveredState="Hovered"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Standard_Hovered"/>
+            </State>
+            <State name="EquippedNormal">
+                <When type="StateGroup" frame="$parent" EquippedState="Equipped"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Standard_Normal"/>
+            </State>
+            <State name="PurchasableNormal">
+                <When type="StateGroup" frame="$parent" PurchasableState="Purchasable"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Standard_Normal"/>
+            </State>
+            <State name="Normal">
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Large_Standard_Normal"/>
+            </State>
+        </StateGroup>
+    </Frame>
+
+    <Frame type="Label" name="ContentLabelTemplate">
+        <RenderPriority val="530"/>
+        <Options val=""/>
+        <AcceptsMouseTooltip val="true"/>
+
+        <StateGroup name="StyleState">
+            <DefaultState val="Normal"/>
+            <State name="Locked">
+                <When type="StateGroup" frame="$parent" HoveredState="NotHovered"/>
+                <When type="StateGroup" frame="$parent" SelectedState="NotSelected"/>
+                <When type="StateGroup" frame="$parent" EmptyState="NotEmpty"/>
+                <When type="StateGroup" frame="$parent" LockedState="Locked"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Locked_Normal"/>
+            </State>
+            <State name="EquippedSelected">
+                <When type="StateGroup" frame="$parent" SelectedState="Selected"/>
+                <When type="StateGroup" frame="$parent" EquippedState="Equipped"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Standard_Selected"/>
+            </State>
+            <State name="PurchasableSelected">
+                <When type="StateGroup" frame="$parent" SelectedState="Selected"/>
+                <When type="StateGroup" frame="$parent" PurchasableState="Purchasable"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Standard_Selected"/>
+            </State>
+            <State name="Selected">
+                <When type="StateGroup" frame="$parent" SelectedState="Selected"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Standard_Selected"/>
+            </State>
+            <State name="EquippedHovered">
+                <When type="StateGroup" frame="$parent" HoveredState="Hovered"/>
+                <When type="StateGroup" frame="$parent" EquippedState="Equipped"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Standard_Hovered"/>
+            </State>
+            <State name="PurchasableHovered">
+                <When type="StateGroup" frame="$parent" HoveredState="Hovered"/>
+                <When type="StateGroup" frame="$parent" PurchasableState="Purchasable"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Standard_Hovered"/>
+            </State>
+            <State name="Hovered">
+                <When type="StateGroup" frame="$parent" HoveredState="Hovered"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Standard_Hovered"/>
+            </State>
+            <State name="EquippedNormal">
+                <When type="StateGroup" frame="$parent" EquippedState="Equipped"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Standard_Normal"/>
+            </State>
+            <State name="PurchasableNormal">
+                <When type="StateGroup" frame="$parent" PurchasableState="Purchasable"/>
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Standard_Normal"/>
+            </State>
+            <State name="Normal">
+                <Action type="SetProperty" frame="$this" Style="@StandardListItemTitle_Medium_Standard_Normal"/>
+            </State>
+        </StateGroup>
+    </Frame>
+
+    <Frame type="Frame" name="UnitIndicatorFrameTemplate">
+
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+        <Height val="108"/>
+        <Width val="108"/>
+
+        <Frame type="Image" name="Background">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Texture val="Assets\Textures\sc2_ui_glues_alliedcommanders_upgradeborder.dds"/>
+            <TextureType val="NineSlice"/>
+
+            <StateGroup name="ColorState">
+                <DefaultState val="Normal"/>
+                <State name="Selected">
+                    <When type="StateGroup" frame="$parent/$parent" SelectedState="Selected"/>
+                    <Action type="SetProperty" frame="$this" Color="154,206,255"/>
+                    <Action type="SetProperty" frame="$this" Alpha="255"/>
+                </State>
+                <State name="Normal">
+                    <When type="StateGroup" frame="$parent/$parent" EmptyState="NotEmpty"/>
+                    <Action type="SetProperty" frame="$this" Color="23,70,110"/>
+                    <Action type="SetProperty" frame="$this" Alpha="255"/>
+                </State>
+            </StateGroup>
+        </Frame>
+
+        <Frame type="Image" name="HeaderImage">
+            <Anchor side="Top" relative="$parent/Background" pos="Min" offset="12"/>
+            <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="-12"/>
+            <Anchor side="Left" relative="$parent/Background" pos="Min" offset="12"/>
+            <Anchor side="Right" relative="$parent/Background" pos="Max" offset="-12"/>
+            <Texture val="Assets\Textures\btn-unit-terran-marine.dds"/>
+        </Frame>
+    </Frame>
+
+    <Frame type="Button" name="UnitSelectionFrameTemplate">
+        <Height val="92"/>
+
+        <Toggleable val="true"/>
+        <CollapseLayout val="true"/>
+
+        <ClickSound val="@AC_UI_OnClick01"/>
+        
+        <Anchor side="Right" relative="$this/HeaderImageContainer" pos="Max" offset="5"/>
+        <Anchor side="Bottom" relative="$this/TitleLabel" pos="Max" offset="5"/>
+
+        <Frame type="Frame" name="HitTestFrame">
+            <Anchor side="Top" relative="$parent/HeaderImageContainer" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/TitleLabel" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/HeaderImageContainer" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/HeaderImageContainer" pos="Max" offset="0"/>
+        </Frame>
+
+        <Tooltip val="@UI/ScreenCustomGames/SearchTooltip"/>
+
+        <!--
+        ===============
+        STATEGROUPS
+        ===============
+        -->
+        <!-- EmptyState -->
+        <StateGroup name="EmptyState">
+            <DefaultState val="NotEmpty"/>
+            <State name="Empty">
+                <When type="Property" frame="$this" HasData="False" Index="0"/>
+            </State>
+            <State name="NotEmpty"/>
+        </StateGroup>
+
+        <!-- SelectedState -->
+        <StateGroup name="SelectedState">
+            <DefaultState val="NotSelected"/>
+            <State name="Selected">
+                <When type="Property" frame="$this" Toggled="True" Index="0"/>
+            </State>
+            <State name="NotSelected">
+            </State>
+        </StateGroup>
+
+        <!-- HoveredState -->
+        <StateGroup name="HoveredState">
+            <DefaultState val="NotHovered"/>
+            <State name="Hovered">
+                <When type="Property" frame="$this" Hovering="True" Index="0"/>
+            </State>
+            <State name="NotHovered"/>
+        </StateGroup>
+
+        <!-- Header Image -->
+        <Frame type="Frame" name="HeaderImageContainer">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+            <Height val="64"/>
+            <Width val="64"/>
+
+            <Frame type="Image" name="Background">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                <Texture val="Assets\Textures\sc2_ui_glues_alliedcommanders_upgradeborder.dds"/>
+                <TextureType val="NineSlice"/>
+
+                <StateGroup name="ColorState">
+                    <DefaultState val="Normal"/>
+                    <State name="Selected">
+                        <When type="StateGroup" frame="$parent/$parent" SelectedState="Selected"/>
+                        <Action type="SetProperty" frame="$this" Color="154,206,255"/>
+                        <Action type="SetProperty" frame="$this" Alpha="255"/>
+                    </State>
+                    <State name="Hover">
+                        <When type="StateGroup" frame="$parent/$parent" HoveredState="Hovered"/>
+                        <Action type="SetProperty" frame="$this" Color="77,142,204"/>
+                        <Action type="SetProperty" frame="$this" Alpha="255"/>
+                    </State>
+                    <State name="Normal">
+                        <When type="StateGroup" frame="$parent/$parent" EmptyState="NotEmpty"/>
+                        <Action type="SetProperty" frame="$this" Color="23,70,110"/>
+                        <Action type="SetProperty" frame="$this" Alpha="255"/>
+                    </State>
+                </StateGroup>
+            </Frame>
+
+            <Frame type="Image" name="HeaderImage">
+                <Height val="60"/>
+                <Width val="60"/>
+                <Anchor side="Top" relative="$parent/Background" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/Background" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/Background" pos="Max" offset="0"/>
+                <Texture val="Assets\Textures\ui_glues_icons_expansion_wol.dds"/>
+            </Frame>
+        </Frame>
+
+        <!-- Labels -->
+        <Frame type="Label" name="TitleLabel" template="IMBA_UnitSelectionPanel/TitleLabelTemplate">
+            <Anchor side="Top" relative="$parent/HeaderImageContainer" pos="Max" offset="5"/>
+            <Anchor side="Left" relative="$parent/HeaderImageContainer" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/HeaderImageContainer" pos="Mid" offset="0"/>
+            <Text val="Liberty"/>
+        </Frame>
+
+
+    </Frame>
+
+    <Frame type="Frame" name="ListItemTemplate">
+        <CollapseLayout val="true"/>
+        <Height val="120"/>
+        <Width val="520"/>
+
+        <Frame type="Frame" name="AnchorFrame">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="8"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-8"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="8"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-8"/>
+        </Frame>
+
+        <Frame type="Frame" name="HitTestFrame">
+            <Anchor relative="$parent/AnchorFrame" />
+        </Frame>
+
+        <Frame type="Image" name="Background">
+            <Anchor side="Top" relative="$parent/AnchorFrame" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="0"/>
+            <Texture val="@UI/Glues_Battlenet_PageAssets_StandardListItem_Background"/>
+            <TextureType val="NineSlice"/>
+            <Alpha val="150"/>
+            <StateGroup name="ColorState">
+                <DefaultState val="Empty"/>
+                <State name="Selected">
+                    <When type="StateGroup" frame="$parent" SelectedState="Selected"/>
+                    <Action type="SetProperty" frame="$this" Color="11,45,83"/>
+                    <Action type="SetProperty" frame="$this" Alpha="179"/>
+                </State>
+                <State name="Empty">
+                    <Action type="SetProperty" frame="$this" Color="15,20,25"/>
+                    <Action type="SetProperty" frame="$this" Alpha="140"/>
+                </State>
+            </StateGroup>
+        </Frame>
+
+        <!-- BORDER INNER -->
+        <Frame type="Image" name="BorderInner">
+            <Anchor relative="$parent/AnchorFrame"/>
+            <Texture val="@UI/Glues_Battlenet_PageAssets_StandardListItem_Border_Inner"/>
+            <TextureType val="NineSlice"/>
+            <RenderPriority val="524"/>
+            <Alpha val="150"/>
+
+            <StateGroup name="ColorState">
+                <DefaultState val="Empty"/>
+                <State name="Selected">
+                    <When type="StateGroup" frame="$parent" SelectedState="Selected"/>
+                    <Action type="SetProperty" frame="$this" Color="154,206,255"/>
+                    <Action type="SetProperty" frame="$this" Alpha="255"/>
+                </State>
+                <State name="Empty">
+                    <Action type="SetProperty" frame="$this" Color="33,60,88"/>
+                    <Action type="SetProperty" frame="$this" Alpha="255"/>
+                </State>
+            </StateGroup>
+        </Frame>
+
+        <Frame type="Frame" name="UnitIndicator" template="IMBA_UnitSelectionPanel/UnitIndicatorFrameTemplate">
+            <Anchor side="Top" relative="$parent/AnchorFrame" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="10"/>
+        </Frame>
+
+        <Frame type="Label" name="UnitName">
+            <Anchor side="Top" relative="$parent/UnitIndicator" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/UnitIndicator" pos="Max" offset="20"/>
+            <Style val="@Coop_CommanderMasteryTalentInfo"/>
+            <Text val="Marine"/>
+        </Frame> 
+
+        <Frame type="TabControl" name="UnitSelectionFrame">
+            <Anchor side="Top" relative="$parent/UnitName" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/UnitName" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="-10"/>
+
+            <TabListItem val="$this/UnitSelection0"/>
+            <TabListItem val="$this/UnitSelection1"/>
+            <TabListItem val="$this/UnitSelection2"/>
+            <TabListItem val="$this/UnitSelection3"/>
+
+            <Frame type="Button" name="UnitSelection0" template="IMBA_UnitSelectionPanel/UnitSelectionFrameTemplate">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            </Frame>  
+
+            <Frame type="Button" name="UnitSelection1" template="IMBA_UnitSelectionPanel/UnitSelectionFrameTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Max" offset="15"/>
+            </Frame>  
+
+            <Frame type="Button" name="UnitSelection2" template="IMBA_UnitSelectionPanel/UnitSelectionFrameTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Max" offset="15"/>
+            </Frame>  
+
+            <Frame type="Button" name="UnitSelection3" template="IMBA_UnitSelectionPanel/UnitSelectionFrameTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Max" offset="15"/>
+            </Frame>  
+        </Frame>
+    </Frame>
+
+    <Frame type="Button" name="PlayerCardTemplate" template="ScreenScore/TabButtonTemplate">
+        <CollapseLayout val="True"/>
+        <Text val="PlayerNamePlayerNamePlayerNamePlayerNamePlayerNamePlayerNamePlayerNamePlayerName"/>
+        <Width val="100"/>
+
+        <Frame type="Label" name="AnchoringLabel">
+            <AutoSizeClamps minWidth="90"/>
+            <AutoSizeClamps maxWidth="90"/>
+        </Frame>
+
+        <StateGroup name="DisabledStateGroup">
+            <DefaultState val="DefaultState"/>
+        
+            <State name="Disabled">
+                <When type="Property" Enabled="false"/>
+                <Action type="SetProperty" Tooltip="Can only view other players' options when both you and they are ready."/>
+            </State>
+        
+            <State name="DefaultState">
+                <Action type="SetProperty" Tooltip=""/>
+            </State>
+        </StateGroup>
+    </Frame>
+
+    <Frame type="Frame" name="PlayerStatusFrame">
+        <Height val="60"/>
+
+        <Frame type="Button" name="Item0" template="IMBA_UnitSelectionPanel/PlayerCardTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="Item1" template="IMBA_UnitSelectionPanel/PlayerCardTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="Item2" template="IMBA_UnitSelectionPanel/PlayerCardTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="Item3" template="IMBA_UnitSelectionPanel/PlayerCardTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="Item4" template="IMBA_UnitSelectionPanel/PlayerCardTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="Item5" template="IMBA_UnitSelectionPanel/PlayerCardTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="Item6" template="IMBA_UnitSelectionPanel/PlayerCardTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+        </Frame>
+        <Frame type="Button" name="Item7" template="IMBA_UnitSelectionPanel/PlayerCardTemplate">
+            <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$sibling-1" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$sibling-1" pos="Max" offset="0"/>
+        </Frame>
+
+    </Frame>
+
+    <Frame type="ScrollableFrame" name="UnitSelectionScrollTemplate">
+        <Height val="496"/>
+        <AcceptsMouse val="true"/>
+
+        <Frame type="Image" name="BG">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="-6"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="6"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="-6"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="6"/>
+            <Unclipped val="True"/>
+            <Texture val="Assets\Textures\ui_glues_scorescreen_racebg_prot.dds"/>
+        </Frame>
+
+        <Frame type="Frame" name="ContainerFrame">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
+            <Anchor side="Left" relative="$parent/BG" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/BG" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$this/Item11" pos="Max" offset="5"/>
+            <AcceptsMouse val="true"/>
+
+            <Frame type="Frame" name="Item0" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item1" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item2" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item3" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$sibling-2" pos="Min" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item4" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item5" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item6" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item7" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item8" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item9" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item10" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item11" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+        </Frame>
+
+        <Frame type="ScrollBar" name="ScrollBar">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="2"/>
+            <Anchor side="Right" relative="$parent/ContainerFrame" pos="Max" offset="-6"/>
+            <Orientation val="Vertical"/>
+            <StepValue val="122"/>
+            <Continuous val="true"/>
+            <Width val="16"/>
+
+            <Animation name="ResetPosition">
+                <Event event="OnShown" action="Reset,Play"/>
+                <Controller type="Property" end="Pause" property="Value">
+                    <Key type="Property" time="0.0" value="0"/>
+                </Controller>
+            </Animation>
+
+            <Frame type="Image" name="Image">
+                <Anchor relative="$parent"/>
+                <Texture val="Assets/Textures/UI_Battlenet_Glue_ChatPanelScrollBarLine.dds"/>
+                <TextureType val="NineSlice"/>
+                <Tiled val="true"/>
+                <Alpha val="0"/>
+            </Frame>
+
+            <Frame type="Button" name="Button">
+                <Frame type="Image" name="NormalImage">
+                    <Anchor relative="$parent"/>
+                    <Texture val="@UI/ChatPanelScrollBarGrabber_Normal"/>
+                    <TextureType val="NineSlice"/>
+                    <Tiled val="true"/>
+                </Frame>
+
+                <Frame type="Image" name="HoverImage">
+                    <Anchor relative="$parent"/>
+                    <Texture val="@UI/ChatPanelScrollBarGrabber_Hover"/>
+                    <TextureType val="NineSlice"/>
+                    <Tiled val="true"/>
+                </Frame>
+            </Frame>
+        </Frame>
+    </Frame>
+
+    <Frame type="Frame" name="UnitSelectionPanel">
+        <Width val="1140"/>
+        <Height val="740"/>
+        <Frame type="Image" name="BG">
+            <Anchor relative="$parent"/>
+            <Texture val="Assets\Textures\ui_battlenet_glues_pageassets_dialogbg.dds"/>
+            <TextureType val="HorizontalBorder"/>
+        </Frame>
+
+        <Frame type="Label" name="Title">
+            <Anchor side="Top" relative="$parent/BG" pos="Min" offset="30"/>
+            <Anchor side="Left" relative="$parent/BG" pos="Min" offset="30"/>
+            <Text val="Select your unit"/>
+            <Style val="@BattlenetTitle"/>
+        </Frame>
+
+        <Frame type="Frame" name="TimeRemainingFrame">
+            <Anchor side="Top" relative="$parent/Title" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/Title" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent/BG" pos="Max" offset="-30"/>
+            <Width val="50"/>
+            <Frame type="Label" name="TimeRemainingLabel">
+                <Anchor side="Top" relative="$parent" pos="Mid" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0"/>
+                <Text val="20"/>
+                <Style val="@BattlenetTitle"/>
+            </Frame>
+        </Frame>
+
+        <Frame type="Label" name="TimeRemainingTitle">
+            <Anchor side="Top" relative="$parent/Title" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/TimeRemainingFrame" pos="Min" offset="-5"/>
+            <Text val="Time Remaining:"/>
+            <Style val="@BattlenetTitle"/>
+        </Frame>
+
+        <Frame type="TabControl" name="StatusPanel">
+            <Anchor side="Top" relative="$parent/Title" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/Title" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/TimeRemainingFrame" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$this/SelectionPanel0" pos="Max" offset="0"/>
+
+            <TabListItem val="$this/PlayerStatusFrame/Item0"/>
+            <TabListItem val="$this/PlayerStatusFrame/Item1"/>
+            <TabListItem val="$this/PlayerStatusFrame/Item2"/>
+            <TabListItem val="$this/PlayerStatusFrame/Item3"/>
+            <TabListItem val="$this/PlayerStatusFrame/Item4"/>
+            <TabListItem val="$this/PlayerStatusFrame/Item5"/>
+            <TabListItem val="$this/PlayerStatusFrame/Item6"/>
+            <TabListItem val="$this/PlayerStatusFrame/Item7"/>
+            <PanelListItem val="$this/SelectionPanel0"/>
+            <PanelListItem val="$this/SelectionPanel1"/>
+            <PanelListItem val="$this/SelectionPanel2"/>
+            <PanelListItem val="$this/SelectionPanel3"/>
+            <PanelListItem val="$this/SelectionPanel4"/>
+            <PanelListItem val="$this/SelectionPanel5"/>
+            <PanelListItem val="$this/SelectionPanel6"/>
+            <PanelListItem val="$this/SelectionPanel7"/>
+
+            <Frame type="Frame" name="PlayerStatusFrame" template="IMBA_UnitSelectionPanel/PlayerStatusFrame">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+              <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+              <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+
+            </Frame>
+
+            <Frame type="ScrollableFrame" name="SelectionPanel0" template="IMBA_UnitSelectionPanel/UnitSelectionScrollTemplate">
+                <Anchor side="Top" relative="$parent/PlayerStatusFrame" pos="Max" offset="10"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            </Frame>
+
+            <Frame type="ScrollableFrame" name="SelectionPanel1" template="IMBA_UnitSelectionPanel/UnitSelectionScrollTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$sibling-1" pos="Max" offset="0"/>
+            </Frame>
+
+            <Frame type="ScrollableFrame" name="SelectionPanel2" template="IMBA_UnitSelectionPanel/UnitSelectionScrollTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$sibling-1" pos="Max" offset="0"/>
+            </Frame>
+
+            <Frame type="ScrollableFrame" name="SelectionPanel3" template="IMBA_UnitSelectionPanel/UnitSelectionScrollTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$sibling-1" pos="Max" offset="0"/>
+            </Frame>
+
+            <Frame type="ScrollableFrame" name="SelectionPanel4" template="IMBA_UnitSelectionPanel/UnitSelectionScrollTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$sibling-1" pos="Max" offset="0"/>
+            </Frame>
+
+            <Frame type="ScrollableFrame" name="SelectionPanel5" template="IMBA_UnitSelectionPanel/UnitSelectionScrollTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$sibling-1" pos="Max" offset="0"/>
+            </Frame>
+
+            <Frame type="ScrollableFrame" name="SelectionPanel6" template="IMBA_UnitSelectionPanel/UnitSelectionScrollTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$sibling-1" pos="Max" offset="0"/>
+            </Frame>
+
+            <Frame type="ScrollableFrame" name="SelectionPanel7" template="IMBA_UnitSelectionPanel/UnitSelectionScrollTemplate">
+                <Anchor side="Top" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$sibling-1" pos="Max" offset="0"/>
+            </Frame>
+        </Frame>
+        
+        <Frame type="Button" name="ConfirmButton" template="StandardBattlenetTemplates/BattlenetStandardAlternateMediumButtonTemplate">
+            <Anchor side="Top" relative="$parent/StatusPanel" pos="Max" offset="20"/>
+            <Anchor side="Right" relative="$parent/BG" pos="Mid" offset="-10"/>
+            <Width val ="240"/>
+            <Text val="@UI/Confirm"/>
+        </Frame>
+
+        <Frame type="Button" name="RandomButton" template="StandardBattlenetTemplates/BattlenetStandardMediumButtonTemplate">
+            <Anchor side="Top" relative="$parent/StatusPanel" pos="Max" offset="20"/>
+            <Anchor side="Left" relative="$parent/BG" pos="Mid" offset="10"/>
+            <Width val ="240"/>
+            <Text val="Choose Random"/>
+        </Frame>
+
+    </Frame>
+
+</Desc>

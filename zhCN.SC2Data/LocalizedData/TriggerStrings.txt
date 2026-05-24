@@ -1,1 +1,6 @@
-﻿Library/Name/B156CA28=IMBA Units
+﻿FunctionDef/Name/lib_B156CA28_4EC434A3=Allow Ghost
+FunctionDef/Name/lib_B156CA28_59BA75EF=Default
+Library/Name/B156CA28=IMBA Units
+ParamDef/Name/lib_B156CA28_565F6947=Player
+ParamDef/Name/lib_B156CA28_5C1D43D4=Player
+Trigger/Name/lib_B156CA28_1ADD0259=Untitled Trigger 001
