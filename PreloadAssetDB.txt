@@ -1718,7 +1718,7 @@ Alert=UpgradeComplete
 [User]
 id=IMBA_TerranUnits
 path=Assets\Textures\.dds
-asset=btn-unit-terran-ghost,btn-unit-terran-reaper,ui_glues_icons_expansion_hots,ui_glues_icons_expansion_lotv,ui_glues_icons_expansion_se,ui_glues_icons_expansion_wol
+asset=btn-unit-terran-cyclone,btn-unit-terran-ghost,btn-unit-terran-hellionbattlemode,btn-unit-terran-mule,btn-unit-terran-reaper,btn-unit-terran-siegetanksiegemode,btn-unit-terran-widowmine,ui_glues_icons_expansion_hots,ui_glues_icons_expansion_lotv,ui_glues_icons_expansion_se,ui_glues_icons_expansion_wol
 Actor=CommandUIHarnessAttackProtoss,CommandUIHarnessAttackTerran,CommandUIHarnessAttackZerg,CommandUIHarnessConfirmProtoss,CommandUIHarnessConfirmTerran,CommandUIHarnessConfirmZerg,CommandUIHarnessMoveProtoss,CommandUIHarnessMoveTerran,CommandUIHarnessMoveZerg,CommandUIHarnessRallyProtoss,CommandUIHarnessRallyTerran,CommandUIHarnessRallyZerg,TerrainMgr
 
 [Weapon]

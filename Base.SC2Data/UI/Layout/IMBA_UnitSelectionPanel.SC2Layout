@@ -607,7 +607,7 @@
             </Frame>
 
             <Frame type="Frame" name="Dummy" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$parent/Item10" pos="Max" offset="4"/>
+                <Anchor side="Top" relative="$parent/Item11" pos="Max" offset="4"/>
                 <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
                 <Alpha val="0"/>
 

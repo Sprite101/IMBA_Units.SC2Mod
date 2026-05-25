@@ -3573,6 +3573,7 @@
             <Action Type="FunctionCall" Library="B156CA28" Id="A128BA4D"/>
             <Action Type="Comment" Library="B156CA28" Id="4D58CE80"/>
             <Action Type="FunctionCall" Library="B156CA28" Id="ED9D6943"/>
+            <Action Type="FunctionCall" Library="B156CA28" Id="0A831EA0"/>
         </Element>
         <Element Type="FunctionCall" Id="A000F12F">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000120"/>
@@ -3897,6 +3898,32 @@
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000192"/>
         </Element>
         <Element Type="Param" Id="2002E5EC">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3A302059"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000121"/>
+        </Element>
+        <Element Type="FunctionCall" Id="0A831EA0">
+            <Disabled/>
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="E37ACA0E"/>
+            <Parameter Type="Param" Library="B156CA28" Id="3A6BE14A"/>
+            <Parameter Type="Param" Library="B156CA28" Id="A9C8AC7C"/>
+            <Parameter Type="Param" Library="B156CA28" Id="1078FBEA"/>
+        </Element>
+        <Element Type="Param" Id="3A6BE14A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="21F36F40"/>
+            <Variable Type="Variable" Library="B156CA28" Id="20E1B3BF"/>
+            <StructMember Type="Param" Library="B156CA28" Id="A581637E"/>
+        </Element>
+        <Element Type="Param" Id="A581637E">
+            <Variable Type="Variable" Library="B156CA28" Id="E6622216"/>
+        </Element>
+        <Element Type="Param" Id="A9C8AC7C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="0EAACCBD"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="0CB509E5"/>
+        </Element>
+        <Element Type="FunctionCall" Id="0CB509E5">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000192"/>
+        </Element>
+        <Element Type="Param" Id="1078FBEA">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="3A302059"/>
             <Preset Type="PresetValue" Library="Ntve" Id="00000121"/>
         </Element>

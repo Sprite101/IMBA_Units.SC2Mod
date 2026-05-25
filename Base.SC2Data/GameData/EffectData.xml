@@ -561,7 +561,7 @@
         <Count value="1"/>
     </CEffectRemoveBehavior>
     <CEffectSet id="CycloneLockOnLotV2@LockOnCPInitial">
-        <ValidatorArray value="LockOnGroundAirPeriodicValidators"/>
+        <ValidatorArray value="CycloneLockOnLotV2@LockOnPeriodicValidators"/>
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="CycloneLockOnLotV2@LockOnLaunchSet"/>
     </CEffectSet>
