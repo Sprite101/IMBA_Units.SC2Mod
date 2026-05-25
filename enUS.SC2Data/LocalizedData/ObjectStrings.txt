@@ -339,6 +339,7 @@ Turret/Name/SiegeTankSiegedLotV1=Turret
 Unit/EditorSuffix/WidowMineSwarm@WidowMineBurrowed=Burrowed
 Upgrade/EditorPrefix/MarineUpgrade=Version Change -
 Upgrade/EditorSuffix/MarineUpgrade=- WoL Pre 0.8
+User/Name/IMBA_TerranUnits=IMBA_TerranUnits
 Validator/Name/AdvancedBallistics@Upgraded=Upgraded
 Validator/Name/CaduceusReactorSwarmBeta@Upgraded=Upgraded
 Validator/Name/CycloneLockOnAirLoTV1@CasterLockingOn=Caster Locking On

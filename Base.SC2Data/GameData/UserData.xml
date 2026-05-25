@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="IMBA_TerranUnits">
+        <Fields>
+            <Id value="Selection_Units"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields Id="Selection_Images" Type="Image" Count="5"/>
+        <Fields Id="Info_Image" Type="Image"/>
+        <Fields Id="Info_Unit" Type="GameLink" GameLinkType="Unit"/>
+        <Fields Id="Selection_Expansion_Tip" Type="Text" Count="5"/>
+        <Fields Id="Selection_Title" Type="Text" Count="5"/>
+        <Instances Id="[Default]">
+            <Image>
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_se.dds">
+                <Field Id="Selection_Images"/>
+            </Image>
+        </Instances>
+        <Instances Id="Reaper">
+            <GameLink GameLink="Reaper">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Reaper">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="Reaper">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ReaperLiberty">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="ReaperSwarm">
+                <Field Id="Selection_Units" Index="3"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-terran-reaper.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
+                <Field Id="Selection_Images" Index="3"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_se.dds">
+                <Field Id="Selection_Images"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Text Text="UserData/IMBA_TerranUnits/Reaper_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reaper_Selection_Expansion_Tip_003">
+                <Field Id="Selection_Expansion_Tip" Index="3"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reaper_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reaper_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reaper_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reaper_Selection_Title_003">
+                <Field Id="Selection_Title" Index="3"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reaper_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reaper_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+        </Instances>
+        <Instances Id="Ghost">
+            <GameLink GameLink="Ghost">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Ghost">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="GhostLotV1">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="GhostWoL">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-terran-ghost.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Text Text="UserData/IMBA_TerranUnits/Ghost_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Ghost_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Ghost_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Ghost_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Ghost_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Ghost_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+        </Instances>
+    </CUser>
+</Catalog>

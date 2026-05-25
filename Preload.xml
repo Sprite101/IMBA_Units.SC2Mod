@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Preload>
+<Asset path="assets\textures\ui_glues_scorescreen_racebg_prot.dds" Type="Image"/>
 <Asset path="assets\textures\ui_glues_scorescreen_racebg_zerg.dds" Type="Image"/>
-<Asset path="assets\textures\btn-building-terran-missileturret-silver.dds" Type="Image"/>
+<Asset path="assets\textures\ui_glues_scorescreen_racebg_terr.dds" Type="Image"/>
 <Actor id="SYSTEM_ActorConfig"/>
 </Preload>

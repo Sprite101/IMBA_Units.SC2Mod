@@ -25,16 +25,17 @@ struct libB156CA28_gs_PlayerFrames {
 
 // Variable Declarations
 libB156CA28_gs_PlayerFrames libB156CA28_gv_playerFrames;
+int libB156CA28_gv_activePlayerNum;
 
 // Function Declarations
 void libB156CA28_gf_Hookups_PlayerFrames ();
-void libB156CA28_gf_SetupSelectionPanelData (string lp_player);
+void libB156CA28_gf_SetupSelectionPanel (int lp_player, int lp_panelIndex);
+void libB156CA28_gf_SetupSelectionItem (int lp_panelIndex, string lp_race, int lp_itemIndex);
 void libB156CA28_gf_Default (int lp_player);
 void libB156CA28_gf_AllowGhost (int lp_player);
 
 // Trigger Declarations
 trigger libB156CA28_gt_Hookups;
-trigger libB156CA28_gt_UntitledTrigger001;
 
 // Library Initialization
 void libB156CA28_InitVariables ();

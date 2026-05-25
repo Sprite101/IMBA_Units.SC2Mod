@@ -452,14 +452,14 @@
             <Anchor side="Left" relative="$parent" pos="Min" offset="-6"/>
             <Anchor side="Right" relative="$parent" pos="Max" offset="6"/>
             <Unclipped val="True"/>
-            <Texture val="Assets\Textures\ui_glues_scorescreen_racebg_prot.dds"/>
+            <Texture val="Assets\Textures\ui_glues_logo_wol_zhcn.dds"/>
         </Frame>
 
         <Frame type="Frame" name="ContainerFrame">
             <Anchor side="Top" relative="$parent" pos="Min" offset="20"/>
             <Anchor side="Left" relative="$parent/BG" pos="Min" offset="0"/>
             <Anchor side="Right" relative="$parent/BG" pos="Max" offset="0"/>
-            <Anchor side="Bottom" relative="$this/Item11" pos="Max" offset="5"/>
+            <Anchor side="Bottom" relative="$this/Dummy" pos="Max" offset="5"/>
             <AcceptsMouse val="true"/>
 
             <Frame type="Frame" name="Item0" template="IMBA_UnitSelectionPanel/ListItemTemplate">
@@ -487,8 +487,8 @@
             </Frame>
 
             <Frame type="Frame" name="Item2" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item0" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -499,8 +499,8 @@
             </Frame>
 
             <Frame type="Frame" name="Item3" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Left" relative="$sibling-2" pos="Min" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item1" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -511,8 +511,8 @@
             </Frame>
 
             <Frame type="Frame" name="Item4" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item2" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -523,8 +523,8 @@
             </Frame>
 
             <Frame type="Frame" name="Item5" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item3" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -535,8 +535,8 @@
             </Frame>
 
             <Frame type="Frame" name="Item6" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item4" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -547,8 +547,8 @@
             </Frame>
 
             <Frame type="Frame" name="Item7" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item5" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -559,8 +559,8 @@
             </Frame>
 
             <Frame type="Frame" name="Item8" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item6" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -571,8 +571,8 @@
             </Frame>
 
             <Frame type="Frame" name="Item9" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item7" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -583,8 +583,8 @@
             </Frame>
 
             <Frame type="Frame" name="Item10" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item8" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -595,8 +595,33 @@
             </Frame>
 
             <Frame type="Frame" name="Item11" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$sibling-2" pos="Max" offset="4"/>
-                <Anchor side="Right" relative="$sibling-2" pos="Max" offset="0"/>
+                <Anchor side="Top" relative="$parent/Item9" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Dummy" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent/Item10" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
+                <Alpha val="0"/>
+
+                <StateGroup name="Visibility">
+
+                    <State name="NotVisible">
+                        <Action type="SetProperty" frame="$this" Visible="false"/>
+                    </State>
+
+                    <State name="Visible">
+                        <When type="Property" frame="$parent/Item11" Visibility="false"/>
+                        <Action type="SetProperty" frame="$this" Visible="true"/>
+                    </State>
+                </StateGroup>
 
                 <Frame type="Frame" name="AnchorFrame">
                     <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
@@ -712,9 +737,8 @@
 
             <Frame type="Frame" name="PlayerStatusFrame" template="IMBA_UnitSelectionPanel/PlayerStatusFrame">
                 <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
-              <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
-              <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
-
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
             </Frame>
 
             <Frame type="ScrollableFrame" name="SelectionPanel0" template="IMBA_UnitSelectionPanel/UnitSelectionScrollTemplate">
