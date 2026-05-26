@@ -6,7 +6,7 @@ include "TriggerLibs/natives"
 // Constants
 const int libB156CA28_gv_maxPlayer = 14;
 const int libB156CA28_gv_maxActivePlayer = 8;
-const int libB156CA28_gv_maxSelectionItems = 12;
+const int libB156CA28_gv_maxSelectionItems = 16;
 
 // Structures
 struct libB156CA28_gs_PlayerFrames {

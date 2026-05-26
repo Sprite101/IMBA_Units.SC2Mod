@@ -1496,7 +1496,199 @@
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
     </CActorRange>
+    <CActorAction id="RavenAntiArmorMissile@AttackAction" parent="GenericAttack" effectImpact="RavenAntiArmorMissile@Damage" effectLaunch="RavenAntiArmorMissile@LM">
+        <Missile value="RavenAntiArmorMissile@Missile"/>
+        <ImpactSiteOps Ops="SOpTargetPoint SOp2DRotation"/>
+        <ImpactAttachQuery Methods="Origin"/>
+        <ImpactMap index="None" Model="Invisible" Sound=""/>
+        <ImpactPhysics Name="HunterSeekerImpact" MatchKeys="Basic" Physics="HunterSeekerAttackForce"/>
+        <ImpactPhysics Name="HunterSeekerImpactAir" MatchKeys="BasicAir" Physics="HunterSeekerAttackForceAir"/>
+        <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorModel id="RavenAntiArmorMissile@ImpactDebuffModel" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.RavenAntiArmorMissile@ArmorReductionAB.Start; At Target" Send="Create"/>
+        <On Terms="Behavior.RavenShredderMissileArmorReductionUISubtruct.Off" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Model value="RavenShredderMissileAttackImpactDebuff"/>
+    </CActorModel>
+    <CActorModel id="RavenAntiArmorMissile@ImpactModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.RavenAntiArmorMissile@Damage.Start" Target="_Unit" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create Raven_AntiArmorMissileAttackImpact_AS"/>
+        <Model value="AntiArmorMissileAttackImpact"/>
+    </CActorModel>
+    <CActorMissile id="RavenAntiArmorMissile@Missile" parent="GenericAttackMissile" unitName="RavenAntiArmorMissile@Weapon">
+        <On Terms="MotionPhaseStart; MotionPhase" Send="Create RavenShredderMissileTrackingBeam"/>
+        <On Terms="MotionPhaseStart; MotionPhase" Send="Create RavenShredderMissileLaunchSound"/>
+        <On Terms="MotionPhaseStart; MotionPhase 2" Target="RavenShredderMissileLaunchSound" Send="Destroy"/>
+        <On Terms="UnitDeath" Target="RavenShredderMissileLaunchSound" Send="Destroy"/>
+        <On Terms="MotionPhaseStart; MotionPhase 1" Send="Create RavenShredderMissileTargetLock"/>
+        <On Terms="MotionPhaseStart; MotionPhase 1" Send="Create RavenShredderMissile_Travel_AS"/>
+        <On Terms="UnitDeath" Target="RavenShredderMissile_Travel_AS" Send="Destroy"/>
+        <Model value="ShredderWeapon"/>
+    </CActorMissile>
+    <CActorModel id="RavenAntiArmorMissile@FailDeath">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <AcceptedTransfers index="Textures" value="1"/>
+        <On Terms="ActorCreation" Send="$Death"/>
+        <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="Create RavenShredderMissileFailSound"/>
+        <On Terms="ActorCreation" Send="Create RavenShredderMissileFizzleSound"/>
+        <On Terms="ActorCreation" Send="Create RavenShredderMissileSadSound"/>
+        <On Terms="Effect.RavenAntiArmorMissile@Suicide.Start" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Model value="ShredderWeapon"/>
+    </CActorModel>
+    <CActorSimple id="RavenAntiArmorMissile@ArmorReductionTint">
+        <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.On" Send="Create"/>
+        <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.On" Target="_Unit" Send="SetTintColor {255,153,85 2.000000} 0.100000 OneShot SeekerTargetArmor"/>
+        <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.Off" Target="_Unit" Send="ClearTintColor 0.100000 SeekerTargetArmor"/>
+        <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.Off" Send="Destroy"/>
+    </CActorSimple>
+    <CActorRange id="RavenAntiArmorMissile@Range" parent="RangeAbil" abil="RavenAntiArmorMissile">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorSimple id="RavenAntiArmorMissile@TargetTraceTint">
+        <Aliases value="_AngryTinter"/>
+        <On Terms="Behavior.RavenAntiArmorMissile@TargetTraceTint.On" Send="Create"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="SetTintColor 255,50,50 0.500000 OneShot SeekerTarget"/>
+        <On Terms="Behavior.RavenAntiArmorMissile@TargetTraceTint.Off" Target="_Unit" Send="ClearTintColor 0.500000 SeekerTarget"/>
+        <On Terms="Behavior.RavenAntiArmorMissile@TargetTraceTint.Off" Send="Destroy"/>
+    </CActorSimple>
+    <CActorModel id="RavenInterferenceMatrix@BehaviorModel" parent="ModelAnimationStyleContinuous">
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Behavior.RavenInterferenceMatrix.On" Send="Create"/>
+        <On Terms="Behavior.RavenInterferenceMatrix.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.RavenInterferenceMatrix@Carrier.On" Send="Create"/>
+        <On Terms="Behavior.RavenInterferenceMatrix@Carrier.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation; ValidateUnit IsColossus" Send="SetScale 1.000000,1.000000,1.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsCarrier" Send="SetScale 0.750000"/>
+        <On Terms="ActorCreation; ValidateUnit IsTempest" Send="SetScale 0.850000"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldRotation="1"/>
+        <Model value="RavenScramblerMissileBehavior"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="RavenInterferenceMatrix@ImpactModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <Flags index="SuppressCreationErrors" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.RavenInterferenceMatrix@ABSwitch.Start; At Target" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpForwardLaunchGuide SOp2DRotation" HoldRotation="1"/>
+        <Model value="RavenScramblerMissileImpact"/>
+        <AutoScaleFactor value="1.000000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorSound id="RavenInterferenceMatrix@ImpactSound" parent="SoundOneShot">
+        <On Terms="Effect.RavenInterferenceMatrix@ABSwitch.Start; At Target" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <Sound value="SkyTank_BarrageMissile_Impact"/>
+    </CActorSound>
+    <CActorAction id="RavenInterferenceMatrix@AttackAction" parent="GenericAttackBase" effectImpact="RavenScramblerMissileABswitch" effectLaunch="RavenScramblerMissileLM">
+        <On Terms="Effect.RavenInterferenceMatrix@LM.Start; At Caster" Send="Create"/>
+        <LaunchAttachQuery Methods="AMFilterWeaponSetA2"/>
+        <LaunchAssets Sound="Raven_ScramblerMissileLaunch"/>
+        <Missile value="RavenInterferenceMatrix@Missile"/>
+        <ImpactSiteOps Ops="SOpAttachCenter SOpForwardLaunchGuide SOp2DRotation"/>
+        <ImpactAttachQuery Methods="Center 0"/>
+        <ImpactMap index="None" Model="RavenScramblerMissileImpact" Sound="Raven_ScramblerMissileImpact" ModelReaction=""/>
+        <ImpactMap index="Shield" Sound="" ModelReaction=""/>
+        <ImpactModel value="RavenInterferenceMatrix@ImpactModel"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorSound id="RavenInterferenceMatrix@LoopSound" parent="SoundContinuous">
+        <On Terms="Behavior.RavenInterferenceMatrix.On" Send="Create"/>
+        <On Terms="Behavior.RavenInterferenceMatrix.Off" Send="Destroy"/>
+        <On Terms="Behavior.RavenInterferenceMatrix@Carrier.On" Send="Create"/>
+        <On Terms="Behavior.RavenInterferenceMatrix@Carrier.Off" Send="Destroy"/>
+        <Sound value="Raven_ScramblerMissileLoop"/>
+    </CActorSound>
+    <CActorMissile id="RavenInterferenceMatrix@Missile" parent="GenericAttackMissile" unitName="RavenInterferenceMatrix@Missile">
+        <Model value="RavenScramblerMissileWeapon"/>
+    </CActorMissile>
+    <CActorRange id="RavenInterferenceMatrix@Range" parent="RangeAbil" abil="RavenInterferenceMatrix">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
     <CActorUnit id="RavenSwarm" parent="GenericUnitStandard" unitName="RavenSwarm">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="BuildAnim"/>
+        <Macros value="RavenSpellAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="Abil.SeekerMissileSwarm.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.PlacePointDefenseDrone.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.AutoTurretSwarm.SourceCastStart" Send="$Spell"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Raven_Land"/>
+        <HostSiteOps Ops="SOpBankerRaven"/>
+        <Model value="Raven"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Raven"/>
+        <DeathArray index="Normal" ModelLink="RavenDeath" SoundLink="Raven_Explode"/>
+        <DeathCustoms>
+            <ActorModel value="RavenDeathRagdoll"/>
+            <ModelLink value="RavenDeathRagdoll"/>
+            <Name value="RagdollBasic"/>
+            <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+            <BodySquibs Name="Basic" Model="TerranSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionFlier"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="Raven"/>
+        <PortraitModel value="RavenPortrait"/>
+        <StandAnimTurnTime value="3"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMassive15"/>
+        </TerrainSquibs>
+        <AbilSoundArray AbilCmd="AutoTurretSwarm,Execute" Sound="Raven_AutoTurretVO"/>
+        <AbilSoundArray AbilCmd="SeekerMissileSwarm,Execute" Sound="Raven_HunterSeekerVO"/>
+        <AbilSoundArray AbilCmd="PointDefenseDroneSwarm,Execute" Sound="Raven_TargetingDroneVO"/>
+        <BarOffset value="55"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="e_cmdBuildTechRequirementsNotMet_Terr"/>
+        <ErrorArray Error="CantFindPlacementLocation" Sound="e_cmdBuildTechRequirementsNotMet_Terr"/>
+        <ErrorArray Error="CantBuildOnThat" Sound="e_cmdBuildTechRequirementsNotMet_Terr"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-Raven.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-terran-raven.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds"/>
+        <SoundArray index="Ready" value="Raven_Ready"/>
+        <SoundArray index="Help" value="Raven_Help"/>
+        <SoundArray index="What" value="Raven_What"/>
+        <SoundArray index="Yes" value="Raven_Yes"/>
+        <SoundArray index="Pissed" value="Raven_Pissed"/>
+        <SoundArray index="Movement" value="Raven_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-raven.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-Raven.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="RavenLotV1" parent="GenericUnitStandard" unitName="RavenLotV1">
         <Aliases value="_UnitLarge"/>
         <Macros value="BuildAnim"/>
         <Macros value="RavenSpellAnim"/>

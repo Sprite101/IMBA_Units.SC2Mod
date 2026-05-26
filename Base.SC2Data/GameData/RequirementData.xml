@@ -71,6 +71,9 @@
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Show" Link="NotCountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarmQueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="ModifiedAbility@NotHaveInterferenceMatrixBehavior">
+        <NodeArray index="Use" Link="OrNotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnitNotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
+    </CRequirement>
     <CRequirement id="ReaperSwarm@LearnNitroPacks">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Use" Link="CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat"/>

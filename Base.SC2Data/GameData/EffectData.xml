@@ -180,6 +180,12 @@
         <EffectArray value="GhostWoL@EMPModifyUnit"/>
         <EffectArray value="EMPApplyDecloakBehavior"/>
     </CEffectSet>
+    <CEffectCreatePersistent id="GuardianShieldPersistent">
+        <PeriodicValidator value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="HyperjumpInitialCP">
+        <ValidatorArray index="2" value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
+    </CEffectCreatePersistent>
     <CEffectSet id="NapalmSpraySwarmBeta@Set">
         <EditorCategories value="Race:Zerg"/>
         <EffectArray value="HellionTankApplyBehavior"/>
@@ -446,6 +452,118 @@
         <EditorCategories value="Race:Terran"/>
         <Behavior value="PointDefenseDroneSwarm@TimedLife"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="RavenAntiArmorMissile@TargetTraceAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Effect="RavenAntiArmorMissile@LM"/>
+        <Behavior value="RavenAntiArmorMissile@TargetTraceTint"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="RavenAntiArmorMissile@ArmorReductionAB">
+        <ValidatorArray index="0" value="RavenShredderMissileArmorReductionUIAddTargetFilters"/>
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="Effect/RavenShredderMissileArmorReductionUIAdd"/>
+        <Behavior value="RavenAntiArmorMissile@ArmorReduction"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="RavenAntiArmorMissile@Damage">
+        <EditorCategories value="Race:Terran"/>
+        <AINotifyFlags index="HurtFriend" value="1"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <AINotifyFlags index="MajorDanger" value="1"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="30"/>
+        <AreaArray Radius="0.72" Fraction="1"/>
+        <AreaArray Radius="1.44" Fraction="0.5"/>
+        <AreaArray Radius="2.88" Fraction="0.25"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="-;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="RavenAntiArmorMissile@ImpactSearchArea">
+        <EditorCategories value="Race:Terran"/>
+        <SearchFilters value="-;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2.88" Effect="RavenAntiArmorMissile@ImpactSearchSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="RavenAntiArmorMissile@ImpactSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="RavenAntiArmorMissile@Damage"/>
+        <EffectArray value="RavenAntiArmorMissile@ImpactSearchArea"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="RavenAntiArmorMissile@LaunchCP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourceUnit"/>
+        <ExpireEffect value="RavenAntiArmorMissile@Suicide"/>
+        <PeriodCount value="50"/>
+        <PeriodicPeriodArray value="0.1"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="RavenAntiArmorMissile@LM">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchEffect value="RavenAntiArmorMissile@LaunchSet"/>
+        <ImpactEffect value="RavenAntiArmorMissile@ImpactSet"/>
+        <AmmoUnit value="RavenAntiArmorMissile@Weapon"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="RavenAntiArmorMissile@LaunchSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="RavenAntiArmorMissile@LaunchCP"/>
+        <EffectArray value="RavenAntiArmorMissile@TargetTraceCP"/>
+    </CEffectSet>
+    <CEffectSet id="RavenAntiArmorMissile@ImpactSearchSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="RavenAntiArmorMissile@ArmorReductionAB"/>
+    </CEffectSet>
+    <CEffectDamage id="RavenAntiArmorMissile@Suicide">
+        <ValidatorArray value="RavenShredderMissileLaunchRangeCombine"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <Flags index="Kill" value="1"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="RavenAntiArmorMissile@TargetTraceCP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourceUnit"/>
+        <PeriodCount value="250"/>
+        <PeriodicValidator value="SourceNotDead"/>
+        <PeriodicEffectArray value="RavenAntiArmorMissile@TargetTraceAB"/>
+        <PeriodicPeriodArray value="0.1"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="RavenInterferenceMatrix@Dummy">
+        <EditorCategories value="Race:Terran"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="RavenInterferenceMatrix@AB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="RavenInterferenceMatrix"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="RavenInterferenceMatrix@ABcarrier">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="RavenInterferenceMatrix@Carrier"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="RavenInterferenceMatrix@ABSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="IsCarrier" Effect="RavenInterferenceMatrix@ABcarrier"/>
+        <CaseDefault value="RavenInterferenceMatrix@AB"/>
+    </CEffectSwitch>
+    <CEffectLaunchMissile id="RavenInterferenceMatrix@LM">
+        <ValidatorArray index="0" value="IsMechanicalOrIsPsionic"/>
+        <ValidatorArray value="TargetNotTacticalJumping"/>
+        <EditorCategories value="Race:Terran"/>
+        <FinishEffect value="RavenInterferenceMatrix@ABSwitch"/>
+        <AmmoUnit value="RavenInterferenceMatrix@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="RavenInterferenceMatrix@Initial">
+        <ValidatorArray value="IsMechanicalOrIsPsionic"/>
+        <ValidatorArray value="TargetNotTacticalJumping"/>
+        <EditorCategories value=""/>
+        <EffectArray value="RavenInterferenceMatrix@LM"/>
+        <EffectArray value="ScramblerMarkerAB"/>
+    </CEffectSet>
+    <CEffectSwitch id="RavenInterferenceMatrix@InitialSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="IsDead" Effect="RavenInterferenceMatrix@Dummy"/>
+        <CaseDefault value="RavenInterferenceMatrix@Initial"/>
+    </CEffectSwitch>
+    <CEffectSet id="RavenScramblerMissileSetInitial">
+        <ValidatorArray index="1" value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="SeekerMissileSwarm@TargetTintAB">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Effect="SeekerMissileSwarm@LM"/>

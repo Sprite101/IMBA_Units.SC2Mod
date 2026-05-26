@@ -48,7 +48,7 @@
             <Value Type="Param" Library="B156CA28" Id="509BE89E"/>
         </Element>
         <Element Type="Param" Id="509BE89E">
-            <Value>12</Value>
+            <Value>16</Value>
             <ValueType Type="int"/>
         </Element>
         <Element Type="Category" Id="C1432F2E">

@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorCombine id="LockOnGroundAirPeriodicValidators">
+        <CombineArray index="4" value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined">
+        <CombineArray value="CasterDoesNotHaveScramblerMissileBehavior"/>
+        <CombineArray value="RavenInterferenceMatrix@CasterDoesNotHaveInterferenceMatrixBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined">
+        <CombineArray value="NotHaveScramblerMissileBehavior"/>
+        <CombineArray value="RavenInterferenceMatrix@TargetDoesNotHaveInterferenceMatrixBehavior"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="RavenInterferenceMatrix@CasterDoesNotHaveInterferenceMatrixBehavior">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="RavenInterferenceMatrix"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorPlayerRequirement id="EnhancedShockwaves@Upgraded">
         <WhichPlayer Value="Caster"/>
         <ResultNoPlayer value="Error"/>
@@ -31,15 +46,15 @@
         <CombineArray value="CycloneLockOnAirLoTV1@TargetFilters"/>
         <CombineArray value="LockOnCasterFilters"/>
         <CombineArray value="CycloneLockOnAirLoTV1@CasterLockingOn"/>
-        <CombineArray value="CasterDoesNotHaveScramblerMissileBehavior"/>
+        <CombineArray value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
     </CValidatorCombine>
     <CValidatorCombine id="CycloneLockOnLotV2@LockOnPeriodicValidators">
         <Type value="And"/>
-        <CombineArray value="CycloneLockOnLotV2@LockOnCasterNearTarget"/>
+        <CombineArray value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
         <CombineArray value="CycloneLockOnLotV2@TargetFilters"/>
         <CombineArray value="LockOnCasterFilters"/>
         <CombineArray value="CycloneLockOnLotV2@CasterLockingOn"/>
-        <CombineArray value="CasterDoesNotHaveScramblerMissileBehavior"/>
+        <CombineArray value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
     </CValidatorCombine>
     <CValidatorUnitFilters id="CycloneLockOnAirLoTV1@LockOnTargetNotDeadInitial">
         <WhichUnit Effect="CycloneLockOnAirLoTV1@LockOnInitialSet"/>
@@ -115,6 +130,10 @@
         <CombineArray value="WidowMineSwarm@IsWidowMine"/>
         <CombineArray value="WidowMineSwarm@IsWidowMineBurrowed"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="RavenInterferenceMatrix@TargetDoesNotHaveInterferenceMatrixBehavior">
+        <ResultFailed value="CantTargetThatUnit,Error/Scrambled"/>
+        <Behavior value="RavenInterferenceMatrix"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitType id="WidowMineSwarm@IsWidowMine">
         <Value value="WidowMineSwarm"/>
     </CValidatorUnitType>

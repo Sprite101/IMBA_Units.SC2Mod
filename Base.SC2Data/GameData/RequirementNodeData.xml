@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CRequirementAllowAbil id="AllowAbilCaduceusReactorSwarmBeta@ResearchCaduceusReactor0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Link value="CaduceusReactorSwarmBeta@ResearchCaduceusReactor"/>
     </CRequirementAllowAbil>
     <CRequirementAnd id="AndEq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="Eq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1"/>
     </CRequirementAnd>
     <CRequirementCountBehavior id="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit">
@@ -19,6 +16,11 @@
     <CRequirementCountBehavior id="CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CycloneLockOnLotV2@LockOnCaster" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="RavenInterferenceMatrix" State="QueuedOrBetterAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountUnit id="CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat">
         <Tooltip value="RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat"/>
@@ -37,12 +39,10 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="CaduceusReactorSwarmBeta@CaduceusReactor" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCorvidReactorSwarmQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="CorvidReactorSwarm" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeDrillingClaws@DrillingClawsQueuedOrBetter">
@@ -51,7 +51,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeDurableMaterialsSwarmQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="DurableMaterialsSwarm" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat">
@@ -85,32 +84,26 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarmQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="InfernalPreIgniterSwarm@InfernalPreIgniterSwarm" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@TerranVehicleAndShipWeaponsLevel1" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@TerranVehicleAndShipWeaponsLevel1" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@TerranVehicleAndShipWeaponsLevel2" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@TerranVehicleAndShipWeaponsLevel2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel3QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@TerranVehicleAndShipWeaponsLevel3" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeMoebiusReactor@UpgradeCompleteOnly3009616705TechTreeCheat">
@@ -140,17 +133,14 @@
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel3QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel3QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
@@ -160,22 +150,23 @@
     <CRequirementNot id="Not361380870CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit">
         <OperandArray index="0" value="CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit"/>
     </CRequirementNot>
+    <CRequirementNot id="NotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
+    </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAdvancedBallisticsQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeAdvancedBallisticsQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCorvidReactorSwarmQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeCorvidReactorSwarmQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeDrillingClaws@DrillingClawsQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeDrillingClaws@DrillingClawsQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeDurableMaterialsSwarmQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeDurableMaterialsSwarmQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter">
@@ -185,7 +176,6 @@
         <OperandArray index="0" value="CountUpgradeHurricaneThrusters@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarmQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarmQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeRapidFireLaunchers@UpgradeQueuedOrBetter">
@@ -198,5 +188,10 @@
         <OperandArray value="CountBehaviorLockOnDisableAttackCompleteOnlyAtUnit"/>
         <OperandArray value="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit"/>
         <OperandArray value="CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit"/>
+    </CRequirementOr>
+    <CRequirementOr id="OrNotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnitNotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="NotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnit"/>
+        <OperandArray value="NotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirementOr>
 </Catalog>

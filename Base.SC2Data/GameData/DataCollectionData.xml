@@ -96,6 +96,15 @@
     </CDataCollection>
     <CDataCollection id="PointDefenseDroneSwarm">
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+        <Button value="PointDefenseDroneSwarm@BuildPointDefenseDrone"/>
+    </CDataCollection>
+    <CDataCollection id="RavenAntiArmorMissile">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+        <Button value="SeekerMissileSwarm"/>
+    </CDataCollection>
+    <CDataCollection id="RavenAutoTurret">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+        <Button value="RavenScramblerMissile"/>
     </CDataCollection>
     <CDataCollectionAbil id="ReaperLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
@@ -131,6 +140,10 @@
     </CDataCollectionUpgrade>
     <CDataCollection id="AutoTurretSwarm">
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+    </CDataCollection>
+    <CDataCollection id="RavenInterferenceMatrix">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+        <Button value="RavenScramblerMissile"/>
     </CDataCollection>
     <CDataCollectionAbil id="SiegeTankSiegedLotV1">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
