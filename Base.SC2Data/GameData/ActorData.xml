@@ -1500,14 +1500,14 @@
         <Missile value="RavenAntiArmorMissile@Missile"/>
         <ImpactSiteOps Ops="SOpTargetPoint SOp2DRotation"/>
         <ImpactAttachQuery Methods="Origin"/>
-        <ImpactMap index="None" Model="Invisible" Sound=""/>
+        <ImpactMap index="None" Model="Invisible" Sound="Raven_HunterSeekerAttackImpact"/>
         <ImpactPhysics Name="HunterSeekerImpact" MatchKeys="Basic" Physics="HunterSeekerAttackForce"/>
         <ImpactPhysics Name="HunterSeekerImpactAir" MatchKeys="BasicAir" Physics="HunterSeekerAttackForceAir"/>
         <ShieldFlashType value="Full"/>
     </CActorAction>
     <CActorModel id="RavenAntiArmorMissile@ImpactDebuffModel" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.RavenAntiArmorMissile@ArmorReductionAB.Start; At Target" Send="Create"/>
-        <On Terms="Behavior.RavenShredderMissileArmorReductionUISubtruct.Off" Send="Destroy"/>
+        <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.Off" Send="Destroy"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOverhead"/>
         <Model value="RavenShredderMissileAttackImpactDebuff"/>
@@ -1695,8 +1695,8 @@
         <Macros value="TerrainSquibAnimations"/>
         <Macros value="PhysicsDeathsSwarmAir"/>
         <Macros value="PhysicsDeathsVoidAir"/>
-        <On Terms="Abil.SeekerMissileSwarm.SourceCastStart" Send="$Spell"/>
-        <On Terms="Abil.PlacePointDefenseDrone.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.RavenAntiArmorMissile.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.RavenInterferenceMatrix.SourceCastStart" Send="$Spell"/>
         <On Terms="Abil.AutoTurretSwarm.SourceCastStart" Send="$Spell"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create Raven_Land"/>
         <HostSiteOps Ops="SOpBankerRaven"/>
@@ -1805,7 +1805,7 @@
     </CActorAction>
     <CActorModel id="SeekerMissileSwarm@ImpactModel" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.SeekerMissileSwarm@Damage.Start" Send="Create"/>
-        <Model value="ShredderAttackImpact"/>
+        <Model value="HunterSeekerAttackImpact"/>
     </CActorModel>
     <CActorMissile id="SeekerMissileSwarm@Missile" parent="GenericAttackMissile" unitName="SeekerMissileSwarm@Missile">
         <On Terms="MotionPhaseStart; MotionPhase 1" Send="Create SeekerMissileSwarm@TrackingBeam"/>

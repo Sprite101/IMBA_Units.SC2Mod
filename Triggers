@@ -3902,7 +3902,6 @@
             <Preset Type="PresetValue" Library="Ntve" Id="00000121"/>
         </Element>
         <Element Type="FunctionCall" Id="0A831EA0">
-            <Disabled/>
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="E37ACA0E"/>
             <Parameter Type="Param" Library="B156CA28" Id="3A6BE14A"/>
             <Parameter Type="Param" Library="B156CA28" Id="A9C8AC7C"/>

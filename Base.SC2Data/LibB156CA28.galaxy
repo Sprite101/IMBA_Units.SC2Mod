@@ -283,6 +283,7 @@ bool libB156CA28_gt_Hookups_Func (bool testConds, bool runActions) {
         }
     }
 
+    DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, PlayerGroupAll(), false);
     return true;
 }
 

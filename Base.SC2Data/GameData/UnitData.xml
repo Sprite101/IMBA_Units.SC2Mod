@@ -853,8 +853,8 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AutoTurretSwarm"/>
-        <AbilArray Link="PointDefenseDroneSwarm"/>
-        <AbilArray Link="SeekerMissileSwarm"/>
+        <AbilArray Link="RavenInterferenceMatrix"/>
+        <AbilArray Link="RavenAntiArmorMissile"/>
         <BehaviorArray Link="Detector11"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -865,9 +865,9 @@
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="Detector" Type="Passive" Row="2" Column="3"/>
             <LayoutButtons Face="Detector" Type="Passive" Row="2" Column="3"/>
-            <LayoutButtons Face="SeekerMissileSwarm" Type="AbilCmd" AbilCmd="SeekerMissileSwarm,Execute" Row="2" Column="2"/>
-            <LayoutButtons Face="AutoTurretSwarm" Type="AbilCmd" AbilCmd="AutoTurretSwarm,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="PointDefenseDroneSwarm@BuildPointDefenseDrone" Type="AbilCmd" AbilCmd="PointDefenseDroneSwarm,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="RavenAntiArmorMissile" Type="AbilCmd" AbilCmd="RavenAntiArmorMissile,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="RavenInterferenceMatrix" Type="AbilCmd" AbilCmd="RavenInterferenceMatrix,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AutoTurretSwarm" Type="AbilCmd" AbilCmd="AutoTurretSwarm,Execute" Row="2" Column="1"/>
         </CardLayouts>
         <Radius value="0.625"/>
         <SeparationRadius value="0.625"/>

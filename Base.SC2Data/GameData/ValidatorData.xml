@@ -6,10 +6,12 @@
     <CValidatorCombine id="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined">
         <CombineArray value="CasterDoesNotHaveScramblerMissileBehavior"/>
         <CombineArray value="RavenInterferenceMatrix@CasterDoesNotHaveInterferenceMatrixBehavior"/>
+        <Type value="And"/>
     </CValidatorCombine>
     <CValidatorCombine id="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined">
         <CombineArray value="NotHaveScramblerMissileBehavior"/>
         <CombineArray value="RavenInterferenceMatrix@TargetDoesNotHaveInterferenceMatrixBehavior"/>
+        <Type value="And"/>
     </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="RavenInterferenceMatrix@CasterDoesNotHaveInterferenceMatrixBehavior">
         <WhichUnit Value="Caster"/>
@@ -50,7 +52,7 @@
     </CValidatorCombine>
     <CValidatorCombine id="CycloneLockOnLotV2@LockOnPeriodicValidators">
         <Type value="And"/>
-        <CombineArray value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
+        <CombineArray value="CycloneLockOnLotV2@LockOnCasterNearTarget"/>
         <CombineArray value="CycloneLockOnLotV2@TargetFilters"/>
         <CombineArray value="LockOnCasterFilters"/>
         <CombineArray value="CycloneLockOnLotV2@CasterLockingOn"/>

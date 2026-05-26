@@ -72,7 +72,7 @@
         <NodeArray index="Show" Link="NotCountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarmQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="ModifiedAbility@NotHaveInterferenceMatrixBehavior">
-        <NodeArray index="Use" Link="OrNotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnitNotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
+        <NodeArray index="Use" Link="AndNotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnitNotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirement>
     <CRequirement id="ReaperSwarm@LearnNitroPacks">
         <EditorCategories value="Race:Terran,TechType:Ability"/>

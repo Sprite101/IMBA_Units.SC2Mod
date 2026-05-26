@@ -9,6 +9,11 @@
     <CRequirementAnd id="AndEq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1">
         <OperandArray value="Eq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1"/>
     </CRequirementAnd>
+    <CRequirementAnd id="AndNotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnitNotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="NotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnit"/>
+        <OperandArray value="NotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
+    </CRequirementAnd>
     <CRequirementCountBehavior id="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CycloneLockOnAirLoTV1@LockOnCaster" State="CompleteOnlyAtUnit"/>
@@ -19,7 +24,6 @@
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="RavenInterferenceMatrix" State="QueuedOrBetterAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountUnit id="CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat">
@@ -151,7 +155,6 @@
         <OperandArray index="0" value="CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAdvancedBallisticsQueuedOrBetter">
@@ -188,10 +191,5 @@
         <OperandArray value="CountBehaviorLockOnDisableAttackCompleteOnlyAtUnit"/>
         <OperandArray value="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit"/>
         <OperandArray value="CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit"/>
-    </CRequirementOr>
-    <CRequirementOr id="OrNotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnitNotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
-        <OperandArray value="NotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnit"/>
-        <OperandArray value="NotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirementOr>
 </Catalog>
