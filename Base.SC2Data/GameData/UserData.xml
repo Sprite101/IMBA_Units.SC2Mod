@@ -117,6 +117,35 @@
                 <Field Id="Selection_Title" Index="2"/>
             </Text>
         </Instances>
+        <Instances Id="WidowMine">
+            <GameLink GameLink="WidowMine">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="WidowMine">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="WidowMineSwarm">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-terran-widowmine.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/WidowMine_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/WidowMine_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
         <Instances Id="Cyclone">
             <GameLink GameLink="Cyclone">
                 <Field Id="Info_Unit"/>
@@ -187,64 +216,6 @@
                 <Field Id="Selection_Title" Index="1"/>
             </Text>
         </Instances>
-        <Instances Id="MULE">
-            <GameLink GameLink="MULE">
-                <Field Id="Info_Unit"/>
-            </GameLink>
-            <GameLink GameLink="MULE">
-                <Field Id="Selection_Units"/>
-            </GameLink>
-            <GameLink GameLink="MULE">
-                <Field Id="Selection_Units" Index="1"/>
-            </GameLink>
-            <Image Image="Assets\Textures\btn-unit-terran-mule.dds">
-                <Field Id="Info_Image"/>
-            </Image>
-            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
-                <Field Id="Selection_Images" Index="1"/>
-            </Image>
-            <Text Text="UserData/IMBA_TerranUnits/MULE_Selection_Expansion_Tip">
-                <Field Id="Selection_Expansion_Tip"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/MULE_Selection_Expansion_Tip_001">
-                <Field Id="Selection_Expansion_Tip" Index="1"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/MULE_Selection_Title">
-                <Field Id="Selection_Title"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/MULE_Selection_Title_001">
-                <Field Id="Selection_Title" Index="1"/>
-            </Text>
-        </Instances>
-        <Instances Id="WidowMine">
-            <GameLink GameLink="WidowMine">
-                <Field Id="Info_Unit"/>
-            </GameLink>
-            <GameLink GameLink="WidowMine">
-                <Field Id="Selection_Units"/>
-            </GameLink>
-            <GameLink GameLink="WidowMineSwarm">
-                <Field Id="Selection_Units" Index="1"/>
-            </GameLink>
-            <Image Image="Assets\Textures\btn-unit-terran-widowmine.dds">
-                <Field Id="Info_Image"/>
-            </Image>
-            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
-                <Field Id="Selection_Images" Index="1"/>
-            </Image>
-            <Text Text="UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip">
-                <Field Id="Selection_Expansion_Tip"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip_001">
-                <Field Id="Selection_Expansion_Tip" Index="1"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/WidowMine_Selection_Title">
-                <Field Id="Selection_Title"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/WidowMine_Selection_Title_001">
-                <Field Id="Selection_Title" Index="1"/>
-            </Text>
-        </Instances>
         <Instances Id="Hellbat">
             <GameLink GameLink="HellionTank">
                 <Field Id="Info_Unit"/>
@@ -283,6 +254,82 @@
                 <Field Id="Selection_Title" Index="1"/>
             </Text>
             <Text Text="UserData/IMBA_TerranUnits/Hellbat_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+        </Instances>
+        <Instances Id="Medivac">
+            <GameLink GameLink="Medivac">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Medivac">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="Medivac">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-terran-medivac.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image>
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Raven">
+            <GameLink GameLink="Raven">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Raven">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="RavenSwarm">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Raven">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-terran-raven.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image>
+                <Field Id="Selection_Images" Index="3"/>
+            </Image>
+            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Title_002">
                 <Field Id="Selection_Title" Index="2"/>
             </Text>
         </Instances>
@@ -356,79 +403,32 @@
                 <Field Id="Selection_Title" Index="1"/>
             </Text>
         </Instances>
-        <Instances Id="Raven">
-            <GameLink GameLink="Raven">
+        <Instances Id="MULE">
+            <GameLink GameLink="MULE">
                 <Field Id="Info_Unit"/>
             </GameLink>
-            <GameLink GameLink="Raven">
+            <GameLink GameLink="MULE">
                 <Field Id="Selection_Units"/>
             </GameLink>
-            <GameLink GameLink="RavenSwarm">
+            <GameLink GameLink="MULE">
                 <Field Id="Selection_Units" Index="1"/>
             </GameLink>
-            <GameLink GameLink="Raven">
-                <Field Id="Selection_Units" Index="2"/>
-            </GameLink>
-            <Image Image="Assets\Textures\btn-unit-terran-raven.dds">
+            <Image Image="Assets\Textures\btn-unit-terran-mule.dds">
                 <Field Id="Info_Image"/>
             </Image>
-            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
-                <Field Id="Selection_Images" Index="2"/>
-            </Image>
-            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
                 <Field Id="Selection_Images" Index="1"/>
             </Image>
-            <Image>
-                <Field Id="Selection_Images" Index="3"/>
-            </Image>
-            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Expansion_Tip">
+            <Text Text="UserData/IMBA_TerranUnits/MULE_Selection_Expansion_Tip">
                 <Field Id="Selection_Expansion_Tip"/>
             </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Expansion_Tip_001">
+            <Text Text="UserData/IMBA_TerranUnits/MULE_Selection_Expansion_Tip_001">
                 <Field Id="Selection_Expansion_Tip" Index="1"/>
             </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Expansion_Tip_002">
-                <Field Id="Selection_Expansion_Tip" Index="2"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Title">
+            <Text Text="UserData/IMBA_TerranUnits/MULE_Selection_Title">
                 <Field Id="Selection_Title"/>
             </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Title_001">
-                <Field Id="Selection_Title" Index="1"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Raven_Selection_Title_002">
-                <Field Id="Selection_Title" Index="2"/>
-            </Text>
-        </Instances>
-        <Instances Id="Medivac">
-            <GameLink GameLink="Medivac">
-                <Field Id="Info_Unit"/>
-            </GameLink>
-            <GameLink GameLink="Medivac">
-                <Field Id="Selection_Units"/>
-            </GameLink>
-            <GameLink GameLink="Medivac">
-                <Field Id="Selection_Units" Index="1"/>
-            </GameLink>
-            <Image Image="Assets\Textures\btn-unit-terran-medivac.dds">
-                <Field Id="Info_Image"/>
-            </Image>
-            <Image>
-                <Field Id="Selection_Images" Index="2"/>
-            </Image>
-            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
-                <Field Id="Selection_Images" Index="1"/>
-            </Image>
-            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Expansion_Tip">
-                <Field Id="Selection_Expansion_Tip"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Expansion_Tip_001">
-                <Field Id="Selection_Expansion_Tip" Index="1"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Title">
-                <Field Id="Selection_Title"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Title_001">
+            <Text Text="UserData/IMBA_TerranUnits/MULE_Selection_Title_001">
                 <Field Id="Selection_Title" Index="1"/>
             </Text>
         </Instances>
@@ -455,6 +455,122 @@
                 <Field Id="Selection_Title"/>
             </Text>
             <Text Text="UserData/IMBA_TerranUnits/MechAttackUpgrades_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Barracks">
+            <GameLink GameLink="Barracks">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Barracks">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="Barracks">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-building-terran-barracks.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_TerranUnits/Barracks_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Barracks_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Barracks_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Barracks_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Bunker">
+            <GameLink GameLink="Bunker">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Bunker">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="Bunker">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-building-terran-bunker.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_TerranUnits/Bunker_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Bunker_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Bunker_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Bunker_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="SensorTower">
+            <GameLink GameLink="SensorTower">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="SensorTower">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="SensorTowerLotV1">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-building-terran-sensordome.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_TerranUnits/SensorTower_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/SensorTower_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/SensorTower_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/SensorTower_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Reactor">
+            <GameLink GameLink="Reactor">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Reactor">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="Reactor">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-building-terran-reactor.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_TerranUnits/Reactor_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reactor_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reactor_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Reactor_Selection_Title_001">
                 <Field Id="Selection_Title" Index="1"/>
             </Text>
         </Instances>

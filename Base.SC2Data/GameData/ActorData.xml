@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorAction id="RavenAutoTurret@AutoTurretAttackAction" parent="GenericAttack" effectAttack="RavenAutoTurret@AutoTurretDamage">
+        <LaunchAssets Model="AutoTurretAttackLaunch" Sound="Raven_AutoTurretAttackLaunch"/>
+        <ImpactMap index="None" Model="AutoTurretAttackImpact" Sound="Raven_AutoTurretAttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="GauseCannonImpact" MatchKeys="Basic" Physics="AutoTurretAttackDeathForce"/>
+    </CActorAction>
+    <CActorTurret id="RavenAutoTurret@Turret">
+        <On Terms="TurretEnable.RavenAutoTurret@AutoTurret" Send="Create"/>
+    </CActorTurret>
+    <CActorUnit id="RavenAutoTurret@AutoTurret" parent="GenericUnitStandard" unitName="RavenAutoTurret@AutoTurret">
+        <Aliases value="_CreepEngulfable"/>
+        <Aliases value="_UnitMedium"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="Behavior.Precursor.Off" Send="Create AutoTurretReleaseMissileImpact"/>
+        <On Terms="Behavior.Precursor.Off" Send="$Birth"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimClear Birth"/>
+        <Model value="AutoTurret"/>
+        <CreepHeightClass value="Small"/>
+        <BuildModel value="AutoTurret"/>
+        <DeathArray index="Normal" ModelLink="AutoTurretDeath" SoundLink="Raven_AutoTurretExplode"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Raven_AutoTurretExplode"/>
+        <DeathCustoms ModelLink="AutoTurretDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdollBloodPrevent" ModelLink="AutoTurretDeathRagdoll" Name="RagdollSpineCrawlerHurl">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <PlacementModel value="AutoTurretPlacement"/>
+        <PlacementSound value="Terran_BuildingPlacement"/>
+        <PortraitModel value="AdjutantPortrait"/>
+        <BarOffset value="50"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="Raven_Pissed"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-AutoTurret.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <SoundArray index="Birth" value="Raven_AutoTurretBirth"/>
+        <SoundArray index="Ready" value="Raven_AutoTurretReady"/>
+        <SoundArray index="What" value="Raven_AutoTurretWhat"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-AutoTurret.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorRange id="RavenAutoTurret@Range" parent="RangeAbil" abil="RavenAutoTurret@BuildAutoTurret">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorAction id="RavenAutoTurret@ReleaseAction" parent="GenericAttack" effectImpact="RemovePrecursor" effectLaunch="RavenAutoTurret@ReleaseLM">
+        <LaunchAssets Sound="Raven_AutoTurretReleaseLaunch"/>
+        <Missile value="RavenAutoTurret@ReleaseMissile"/>
+        <ImpactSiteOps Ops="SOpAttachOrigin SOpShadow"/>
+        <ImpactMap index="None" Sound="Raven_AutoTurretReleaseImpact"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorMissile id="RavenAutoTurret@ReleaseMissile" parent="GenericAttackMissile" unitName="RavenAutoTurret@ReleaseWeapon">
+        <Model value="AutoTurretReleaseWeapon"/>
+    </CActorMissile>
     <CActorRange id="AutoTurretSwarm@Range" parent="RangeAbil" abil="AutoTurretSwarm">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
@@ -1697,7 +1775,7 @@
         <Macros value="PhysicsDeathsVoidAir"/>
         <On Terms="Abil.RavenAntiArmorMissile.SourceCastStart" Send="$Spell"/>
         <On Terms="Abil.RavenInterferenceMatrix.SourceCastStart" Send="$Spell"/>
-        <On Terms="Abil.AutoTurretSwarm.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.RavenAutoTurret@BuildAutoTurret.SourceCastStart" Send="$Spell"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create Raven_Land"/>
         <HostSiteOps Ops="SOpBankerRaven"/>
         <Model value="Raven"/>
@@ -1736,9 +1814,7 @@
             <AttachQuery Methods="AMFilterCenter"/>
             <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMassive15"/>
         </TerrainSquibs>
-        <AbilSoundArray AbilCmd="AutoTurretSwarm,Execute" Sound="Raven_AutoTurretVO"/>
-        <AbilSoundArray AbilCmd="SeekerMissileSwarm,Execute" Sound="Raven_HunterSeekerVO"/>
-        <AbilSoundArray AbilCmd="PointDefenseDroneSwarm,Execute" Sound="Raven_TargetingDroneVO"/>
+        <AbilSoundArray AbilCmd="RavenAutoTurret@BuildAutoTurret,Execute" Sound="Raven_AutoTurretVO"/>
         <BarOffset value="55"/>
         <ErrorArray Error="CantBuildLocationInvalid" Sound="e_cmdBuildTechRequirementsNotMet_Terr"/>
         <ErrorArray Error="CantFindPlacementLocation" Sound="e_cmdBuildTechRequirementsNotMet_Terr"/>
@@ -2009,6 +2085,44 @@
         <On Terms="Behavior.SeekerMissileSwarm@TargetTint.Off" Target="_Unit" Send="ClearTintColor 0.500000 SeekerTarget"/>
         <On Terms="Behavior.SeekerMissileSwarm@TargetTint.Off" Send="Destroy"/>
     </CActorSimple>
+    <CActorModel id="SensorTowerLotV1@Build" parent="TerranBuildingBuildSmall">
+        <Model value="SensorTowerBuild"/>
+    </CActorModel>
+    <CActorUnit id="SensorTowerLotV1" parent="TerranBuildingEx" unitName="SensorTowerLotV1">
+        <Aliases value="_UnitMedium"/>
+        <On index="69" Terms="UnitConstruction.SensorTowerLotV1.Start" Send="Create SensorTowerLotV1@Build"/>
+        <Model value="SensorTower"/>
+        <BuildModel value="SensorTower"/>
+        <DeathArray index="Normal" ModelLink="SensorTowerDeath" SoundLink="SensorTower_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="SensorTower_Explode"/>
+        <PlacementModel value="SensorTowerPlacement"/>
+        <PlacementSound value="Terran_BuildingPlacementSmall"/>
+        <PlacementActorModel value="SensorTowerPlacement"/>
+        <PortraitModel value="SensorTowerPortrait"/>
+        <BarOffset value="130"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-SensorTower.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-building-terran-sensordome.dds"/>
+        <SoundArray index="Ready" value="SensorTower_Ready"/>
+        <SoundArray index="What" value="SensorTower_What"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-terran-sensordome.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-SensorTower.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorRange id="SensorTowerLotV1@Radar">
+        <Inherits index="Visibility" value="0"/>
+        <FogVisibility value="Visible"/>
+        <On Terms="UnitBirth.SensorTowerLotV1.EditorPlaced" Send="Create"/>
+        <On Terms="Behavior.SensorTowerLotV1@Radar.On" Send="Create"/>
+        <On Terms="Behavior.SensorTowerLotV1@Radar.Off" Send="Destroy"/>
+        <Range value="30.000000"/>
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+        <RangeFlags index="Minimap" value="1"/>
+    </CActorRange>
     <CActorModel id="SiegeTankSiegedLotV1@LoadTransit">
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="TeamColor" value="1"/>
@@ -2342,6 +2456,11 @@
         <StateArray Name="Normal" Terms="ValidateUnit BurnDownNormal"/>
         <StateArray Name="Fire" Terms="ValidateUnit BurnDownFire"/>
         <StateThinkInterval value="0.5"/>
+    </CActorStateMonitor>
+    <CActorStateMonitor id="TerranFlamesSmallBuilding">
+        <On Terms="UnitCreation.SensorTowerLotV1" Send="Create"/>
+        <On Terms="UnitCreation.RavenAutoTurret@AutoTurret" Send="Create"/>
+        <On Terms="UnitCreation.AutoTurretSwarm@AutoTurret" Send="Create"/>
     </CActorStateMonitor>
     <CActorMissile id="TyphoonMissilePodLotV2@Missile" parent="GenericAttackMissile" unitName="TyphoonMissilePodLotV2@Missile">
         <Model value="CycloneMissile"/>

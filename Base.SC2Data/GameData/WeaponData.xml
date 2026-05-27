@@ -20,6 +20,15 @@
         <Period value="0.8"/>
         <Effect value="AutoTurretSwarm@AutoTurretDamage"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="RavenAutoTurret@AutoTurretWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>
+        <DisplayEffect value="RavenAutoTurret@AutoTurretDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Period value="0.8"/>
+        <Effect value="RavenAutoTurret@AutoTurretDamage"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="CrucioShockCannonLotV1">
         <EditorCategories value="Race:Terran"/>
         <Options index="DisplayCooldown" value="1"/>

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CDataCollectionUnit id="BarracksLiberty">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="BunkerLiberty">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUpgrade id="CorvidReactorLotV">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <DataRecord Entry="Upgrade,CorvidReactorLotV"/>
+        <DataRecord Entry="Abil,CorvidReactorLotV@ResearchCorvidReactor"/>
+        <DataRecord Entry="Button,CorvidReactorLotV@ResearchCorvidReactor"/>
+        <Button value="CorvidReactorSwarm@ResearchCorvidReactor"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUpgrade id="CorvidReactorSwarm">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
         <DataRecord Entry="Upgrade,CorvidReactorSwarm"/>
         <DataRecord Entry="Abil,CorvidReactorSwarm@ResearchCorvidReactor"/>
         <DataRecord Entry="Button,CorvidReactorSwarm@ResearchCorvidReactor"/>
-        <Button value="AdvancedBallistics@ResearchAdvancedBallistics"/>
+        <Button value="CorvidReactorSwarm@ResearchCorvidReactor"/>
     </CDataCollectionUpgrade>
     <CDataCollectionUnit id="CycloneLotV2">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
@@ -106,15 +119,27 @@
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
         <Button value="RavenScramblerMissile"/>
     </CDataCollection>
+    <CDataCollectionUnit id="ReactorLiberty">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+    </CDataCollectionUnit>
     <CDataCollectionAbil id="ReaperLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionAbil>
     <CDataCollectionAbil id="ReaperSwarm">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionAbil>
+    <CDataCollection id="SalvageLiberty">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+    </CDataCollection>
     <CDataCollection id="SeekerMissileSwarm">
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
     </CDataCollection>
+    <CDataCollectionUnit id="SensorTowerLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+        <Button value="SensorTower"/>
+        <TechInfoUnit value="SensorTower"/>
+    </CDataCollectionUnit>
     <CDataCollection id="SiegeTankLotV1Morph">
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
     </CDataCollection>
@@ -143,7 +168,6 @@
     </CDataCollection>
     <CDataCollection id="RavenInterferenceMatrix">
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
-        <Button value="RavenScramblerMissile"/>
     </CDataCollection>
     <CDataCollectionAbil id="SiegeTankSiegedLotV1">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>

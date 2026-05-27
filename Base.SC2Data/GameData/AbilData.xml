@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilBuild id="BarracksAddOns">
+        <InfoArray index="Build3" Unit="BarracksReactor" Time="25">
+            <Button DefaultButtonFace="ReactorLiberty"/>
+        </InfoArray>
+    </CAbilBuild>
+    <CAbilResearch id="CorvidReactorLotV@ResearchCorvidReactor">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="90" Upgrade="CorvidReactorLotV">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="CorvidReactorLotV@ResearchCorvidReactor" State="Restricted" Requirements="CorvidReactorLotV@LearnCorvidReactor">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilBuild id="FactoryAddOns">
+        <InfoArray index="Build3" Unit="FactoryReactor" Time="25">
+            <Button DefaultButtonFace="ReactorLiberty"/>
+        </InfoArray>
+    </CAbilBuild>
+    <CAbilResearch id="ModifiedAbility@YamatoGunResearch">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="60" Upgrade="BattlecruiserEnableSpecializations">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="ResearchBattlecruiserSpecializations" State="Restricted" Requirements="LearnBattlecruiserSpecializations">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilEffectTarget id="RavenAutoTurret@BuildAutoTurret">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="21"/>
+        <Effect index="0" value="RavenAutoTurret@CU"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Charge Link="Abil/AutoTurret"/>
+            <Cooldown Link="Raven Build Link" Location="Unit"/>
+        </Cost>
+        <Placeholder value="AutoTurret"/>
+        <Range value="1"/>
+        <Marker Link="Abil/AutoTurret"/>
+        <ErrorAlert value="Error"/>
+        <AINotifyEffect value="AutoTurret"/>
+        <ProducedUnitArray value="AutoTurret"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="RavenAutoTurret"/>
+        <PlaceUnit value="RavenAutoTurret@AutoTurret"/>
+    </CAbilEffectTarget>
     <CAbilResearch id="ModifiedAbility@ArmoryResearch">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="160" Upgrade="ModifiedAbility@TerranVehicleAndShipWeaponsLevel1">
@@ -74,6 +123,35 @@
         <DefaultError value="MustTargetUnit,Error/MustTargetMechanicalorPsionic"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="RavenInterferenceMatrix"/>
     </CAbilEffectTarget>
+    <CAbilEffectInstant id="SalvageLiberty" parent="Refund">
+        <Name value="Abil/Name/SalvageLiberty"/>
+        <Effect index="0" value="SalvageLiberty@AB"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="CancelResetAutoCast" value="0"/>
+        <Flags index="RangeUseCasterRadius" value="0"/>
+        <Flags index="ReApproachable" value="0"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="UpdateChargesOnLevelChange" value="0"/>
+        <Cost/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SalvageLiberty"/>
+    </CAbilEffectInstant>
+    <CAbilBuild id="StarportAddOns">
+        <InfoArray index="Build3" Unit="StarportReactor" Time="25">
+            <Button DefaultButtonFace="ReactorLiberty"/>
+        </InfoArray>
+    </CAbilBuild>
+    <CAbilBuild id="TerranBuild">
+        <InfoArray index="Build20" Unit="SensorTowerLotV1" Time="25">
+            <Button DefaultButtonFace="SensorTowerLotV1" State="Restricted" Requirements="HaveEngineeringBay"/>
+        </InfoArray>
+        <InfoArray index="Build21" Unit="Bunker" Time="30">
+            <Button DefaultButtonFace="BunkerLiberty" State="Restricted" Requirements="HaveBarracks"/>
+        </InfoArray>
+        <InfoArray index="Build22" Unit="Barracks" Time="60">
+            <Button DefaultButtonFace="BarracksLiberty" State="Restricted" Requirements="HaveCommandCenter"/>
+        </InfoArray>
+    </CAbilBuild>
     <CAbilTrain id="WidowMineSwarm@Train2">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <Activity value="UI/Building"/>

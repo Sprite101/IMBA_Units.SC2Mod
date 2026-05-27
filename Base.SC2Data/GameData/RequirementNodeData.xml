@@ -10,7 +10,6 @@
         <OperandArray value="Eq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndNotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnitNotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="NotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnit"/>
         <OperandArray value="NotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirementAnd>
@@ -44,6 +43,11 @@
     <CRequirementCountUpgrade id="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CaduceusReactorSwarmBeta@CaduceusReactor" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCorvidReactorLotVQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="CorvidReactorLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCorvidReactorSwarmQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
@@ -162,6 +166,10 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeCorvidReactorLotVQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeCorvidReactorLotVQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCorvidReactorSwarmQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeCorvidReactorSwarmQueuedOrBetter"/>

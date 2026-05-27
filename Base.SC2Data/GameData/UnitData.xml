@@ -13,6 +13,97 @@
             <LayoutButtons Face="TerranVehicleAndShipWeaponsLevel3" Type="AbilCmd" AbilCmd="ModifiedAbility@ArmoryResearch,Research3" Row="0" Column="0"/>
         </CardLayouts>
     </CUnit>
+    <CUnit id="BarracksFlying">
+        <!--5.0.15 Data-->
+        <CardLayouts index="0">
+            <LayoutButtons index="7" Face="ReactorLiberty" AbilCmd="BarracksAddOns,Build3" Row="2" Column="1"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Bunker">
+        <AbilArray Link="SalvageLiberty"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="SalvageLiberty" Type="AbilCmd" AbilCmd="SalvageLiberty,Execute" Row="2" Column="3"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="FactoryFlying">
+        <!--5.0.15 Data-->
+        <CardLayouts index="0">
+            <LayoutButtons index="7" Face="ReactorLiberty" AbilCmd="FactoryAddOns,Build3" Row="2" Column="1"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="FusionCore">
+        <AbilArray Link="ModifiedAbility@YamatoGunResearch"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="ResearchBattlecruiserSpecializations" Type="AbilCmd" AbilCmd="ModifiedAbility@YamatoGunResearch,Research1" Row="0" Column="0"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="RavenAutoTurret@AutoTurret">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AILifetime" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <LifeArmor value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="7"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="50"/>
+        <AttackTargetPriority value="20"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray Link="TerranBuildingBurnDown"/>
+        <WeaponArray Link="RavenAutoTurret@AutoTurretWeapon" Turret="RavenAutoTurret@AutoTurret"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="FootprintAutoTurret"/>
+        <PlacementFootprint value="FootprintAutoTurret"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="346"/>
+        <GlossaryStrongArray value="SCV"/>
+        <GlossaryStrongArray value="Drone"/>
+        <GlossaryStrongArray value="Probe"/>
+        <GlossaryWeakArray value="Marauder"/>
+        <GlossaryWeakArray value="Hydralisk"/>
+        <GlossaryWeakArray value="Immortal"/>
+        <KillDisplay value="Never"/>
+        <RankDisplay value="Never"/>
+    </CUnit>
+    <CUnit id="RavenAutoTurret@ReleaseWeapon" parent="MISSILE_INVULNERABLE">
+        <Race value="Terr"/>
+        <Mover value="AutoTurretReleaseWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
     <CUnit id="AutoTurretSwarm@AutoTurret">
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
@@ -85,6 +176,7 @@
         <CardLayouts index="0">
             <LayoutButtons Face="GhostLotV1@TrainGhost" Type="AbilCmd" AbilCmd="GhostLotV1@Train,Train1" Row="0" Column="3"/>
             <LayoutButtons Face="GhostWoL@TrainGhost" Type="AbilCmd" AbilCmd="GhostWoL@Train,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="ReactorLiberty" Type="AbilCmd" AbilCmd="BarracksAddOns,Build3" Row="2" Column="1"/>
             <LayoutButtons Face="ReaperLiberty@TrainReaper" Type="AbilCmd" AbilCmd="ReaperLiberty@Train,Train1" Row="0" Column="1"/>
             <LayoutButtons Face="ReaperSwarm@TrainReaper" Type="AbilCmd" AbilCmd="ReaperSwarm@Train,Train1" Row="0" Column="1"/>
         </CardLayouts>
@@ -834,7 +926,7 @@
         <EnergyMax value="200"/>
         <EnergyRegenRate value="0.5625"/>
         <Mover value="Fly"/>
-        <Speed value="2.25"/>
+        <Speed value="2.75"/>
         <Acceleration value="2"/>
         <StationaryTurningRate value="999.8437"/>
         <TurningRate value="999.8437"/>
@@ -852,7 +944,7 @@
         <KillXP value="45"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
-        <AbilArray Link="AutoTurretSwarm"/>
+        <AbilArray Link="RavenAutoTurret@BuildAutoTurret"/>
         <AbilArray Link="RavenInterferenceMatrix"/>
         <AbilArray Link="RavenAntiArmorMissile"/>
         <BehaviorArray Link="Detector11"/>
@@ -866,8 +958,8 @@
             <LayoutButtons Face="Detector" Type="Passive" Row="2" Column="3"/>
             <LayoutButtons Face="Detector" Type="Passive" Row="2" Column="3"/>
             <LayoutButtons Face="RavenAntiArmorMissile" Type="AbilCmd" AbilCmd="RavenAntiArmorMissile,Execute" Row="2" Column="2"/>
-            <LayoutButtons Face="RavenInterferenceMatrix" Type="AbilCmd" AbilCmd="RavenInterferenceMatrix,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="AutoTurretSwarm" Type="AbilCmd" AbilCmd="AutoTurretSwarm,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="RavenAutoTurret" Type="AbilCmd" AbilCmd="RavenAutoTurret@BuildAutoTurret,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="RavenInterferenceMatrix" Type="AbilCmd" AbilCmd="RavenInterferenceMatrix,Execute" Row="2" Column="1"/>
         </CardLayouts>
         <Radius value="0.625"/>
         <SeparationRadius value="0.625"/>
@@ -906,6 +998,11 @@
         <Race value="Terr"/>
         <Mover value="RavenScramblerMissile"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="SCV">
+        <CardLayouts index="1">
+            <LayoutButtons Face="SensorTowerLotV1" Type="AbilCmd" AbilCmd="TerranBuild,Build20" Row="2" Column="2"/>
+        </CardLayouts>
     </CUnit>
     <CUnit id="SeekerMissileSwarm@Missile" parent="MISSILE_INVULNERABLE">
         <Race value="Terr"/>
@@ -1151,6 +1248,66 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
     </CUnit>
+    <CUnit id="SensorTowerLotV1">
+        <DeathRevealRadius value="3"/>
+        <Facing value="315"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Phased" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="12"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="125"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="25"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildInProgress"/>
+        <BehaviorArray Link="SensorTowerLotV1@Radar"/>
+        <BehaviorArray Link="TerranBuildingBurnDown"/>
+        <BehaviorArray Link="UnderConstruction"/>
+        <CardLayouts>
+            <LayoutButtons Face="RadarField" Type="Passive" Requirements="NotUnderConstruction" Row="1" Column="0"/>
+            <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="SelectBuilder" Type="SelectBuilder" Row="1" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="Footprint1x1"/>
+        <PlacementFootprint value="Footprint1x1"/>
+        <ScoreMake value="225"/>
+        <ScoreKill value="225"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="10"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <GlossaryPriority value="314"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+    </CUnit>
     <CUnit id="SiegeTankLotV1">
         <DeathRevealRadius value="3"/>
         <Race value="Terr"/>
@@ -1302,7 +1459,15 @@
         <AbilArray Link="RavenSwarm@Train"/>
         <CardLayouts index="0">
             <LayoutButtons Face="RavenSwarm" Type="AbilCmd" AbilCmd="RavenSwarm@Train,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="ReactorLiberty" Type="AbilCmd" AbilCmd="StarportAddOns,Build3" Row="2" Column="1"/>
             <LayoutButtons Face="LiberatorLotV1@BuildLiberator" Type="AbilCmd" AbilCmd="LiberatorLotV1@Train,Train1" Row="0" Column="2"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="StarportFlying">
+        <!--5.0.15 Data-->
+        <CardLayouts index="0">
+            <LayoutButtons index="7" Face="ReactorLiberty" AbilCmd="StarportAddOns,Build3" Row="2" Column="1"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="StarportTechLab">
@@ -1310,9 +1475,11 @@
         <AbilArray Link="CaduceusReactorSwarmBeta@ResearchCaduceusReactor"/>
         <AbilArray Link="CorvidReactorSwarm@ResearchCorvidReactor"/>
         <AbilArray Link="DurableMaterialsSwarm@ResearchDurableMaterials"/>
+        <AbilArray Link="CorvidReactorLotV@ResearchCorvidReactor"/>
         <CardLayouts index="0">
             <LayoutButtons index="3" Column="4"/>
             <LayoutButtons index="4" Face="CorvidReactorSwarm@ResearchCorvidReactor" AbilCmd="CorvidReactorSwarm@ResearchCorvidReactor,Research1"/>
+            <LayoutButtons Face="CorvidReactorLotV@ResearchCorvidReactor" Type="AbilCmd" AbilCmd="CorvidReactorLotV@ResearchCorvidReactor,Research1" Row="0" Column="2"/>
             <LayoutButtons Face="ResearchRavenInterferenceMatrix" Type="AbilCmd" AbilCmd="StarportTechLabResearch,Research18" Row="0" Column="2"/>
             <LayoutButtons Face="CaduceusReactorSwarmBeta@ResearchCaduceusReactor" Type="AbilCmd" AbilCmd="CaduceusReactorSwarmBeta@ResearchCaduceusReactor,Research1" Row="0" Column="1"/>
             <LayoutButtons Face="DurableMaterialsSwarm@ResearchDurableMaterials" Type="AbilCmd" AbilCmd="DurableMaterialsSwarm@ResearchDurableMaterials,Research1" Row="0" Column="3"/>
@@ -1334,6 +1501,7 @@
         <CardLayouts index="0">
             <LayoutButtons index="2" Face="Hellion" Type="AbilCmd" AbilCmd="HellionSwarmBeta@Train,Train1"/>
             <LayoutButtons Face="SiegeTankLotV1@BuildSiegeTank" Type="AbilCmd" AbilCmd="SiegeTankLotV1@Train,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="ReactorLiberty" Type="AbilCmd" AbilCmd="FactoryAddOns,Build3" Row="2" Column="1"/>
             <LayoutButtons Face="WidowMine" Type="AbilCmd" AbilCmd="WidowMineSwarm@Train2,Train1" Row="0" Column="1"/>
             <LayoutButtons Face="CycloneLotV1@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV1@Train,Train1" Row="0" Column="2"/>
             <LayoutButtons Face="CycloneLotV2@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV2@Train,Train1" Row="0" Column="2"/>

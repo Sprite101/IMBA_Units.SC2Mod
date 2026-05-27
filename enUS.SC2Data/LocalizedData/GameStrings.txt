@@ -1,6 +1,7 @@
 ﻿Abil/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
 Abil/Name/AutoTurretSwarm=Place Auto Turret
 Abil/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
+Abil/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CycloneLockOnAirLoTV1@LockOn=Lock On
 Abil/Name/CycloneLockOnAirLoTV1@Research=Research
@@ -32,15 +33,18 @@ Abil/Name/ModifiedAbility@ArmoryResearch=Armory Research
 Abil/Name/ModifiedAbility@Hyperjump=Tactical Jump
 Abil/Name/ModifiedAbility@MuleGatherWoL=Gather
 Abil/Name/ModifiedAbility@Yamato=Yamato Gun
+Abil/Name/ModifiedAbility@YamatoGunResearch=Yamato Gun Research
 Abil/Name/MoebiusReactor@ResearchMoebiusReactor=Research Moebius Reactor
 Abil/Name/PointDefenseDroneSwarm=Place Point Defense Drone
 Abil/Name/RavenAntiArmorMissile=Anti-Armor Missile
+Abil/Name/RavenAutoTurret@BuildAutoTurret=Place Auto Turret
 Abil/Name/RavenInterferenceMatrix=Interference Matrix
 Abil/Name/RavenSwarm@Train=Build
 Abil/Name/ReaperLiberty@ResearchNitroPacks=Research Nitro Packs
 Abil/Name/ReaperLiberty@Train=Train
 Abil/Name/ReaperSwarm@ResearchNitroPacks=Research Nitro Packs
 Abil/Name/ReaperSwarm@Train=Train
+Abil/Name/SalvageLiberty=Salvage
 Abil/Name/SeekerMissileSwarm=Seeker Missile
 Abil/Name/SiegeTankLotV1@Train=Build
 Abil/Name/SiegeTankLotV1Morph@SiegeMode=Siege
@@ -66,7 +70,10 @@ Behavior/Tooltip/SeekerMissileSwarm@TargetTint=This unit is being targeted by a 
 Button/Name/AdvancedBallistics=Advanced Ballistics
 Button/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
 Button/Name/AutoTurretSwarm=Build Auto-Turret
+Button/Name/BarracksLiberty=Build Barracks
+Button/Name/BunkerLiberty=Build Bunker
 Button/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
+Button/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Button/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
 Button/Name/CycloneLockOnAirLoTV1@Button=Lock On
 Button/Name/CycloneLockOnLotV2@Button=Lock On
@@ -92,15 +99,19 @@ Button/Name/PointDefenseDroneSwarm@BuildPointDefenseDrone=Build Point Defense Dr
 Button/Name/RapidFireLaunchers@Passive=Rapid Fire Launchers
 Button/Name/RapidFireLaunchers@Research=Research Rapid Fire Launchers
 Button/Name/RavenAntiArmorMissile=Anti-Armor Missile
+Button/Name/RavenAutoTurret=Build Auto-Turret
 Button/Name/RavenInterferenceMatrix=Interference Matrix
 Button/Name/RavenSwarm=Build Raven
+Button/Name/ReactorLiberty=Build Reactor
 Button/Name/ReaperLiberty@PassiveButton=Jet Pack
 Button/Name/ReaperLiberty@ResearchNitroPacks=Research Nitro Packs
 Button/Name/ReaperLiberty@TrainReaper=Train Reaper
 Button/Name/ReaperSwarm@PassiveButton=Battlefield Awareness
 Button/Name/ReaperSwarm@ResearchNitroPacks=Research Nitro Packs
 Button/Name/ReaperSwarm@TrainReaper=Train Reaper
+Button/Name/SalvageLiberty=Salvage
 Button/Name/SeekerMissileSwarm=Seeker Missile
+Button/Name/SensorTowerLotV1=Build Sensor Tower
 Button/Name/SiegeTankLotV1@BuildSiegeTank=Build Siege Tank
 Button/Name/SiegeTankLotV1Morph@SiegeMode=Siege Mode
 Button/Name/SiegeTankLotV1Morph@Unsiege=Tank Mode
@@ -108,10 +119,13 @@ Button/Tooltip/AdvancedBallistics=Increases the range of Liberators in Defender 
 Button/Tooltip/AdvancedBallistics@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
 Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AutoTurretSwarm@AutoTurret=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/BarracksLiberty=Infantry-production facility.<n/><n/><c val="ffff8a">Enables:</c><n/>- Marines<n/>- Reapers<n/>- Bunkers from SCVs<n/>- Orbital Commands from Command Centers
 Button/Tooltip/BuildCycloneLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BuildCycloneLotV2=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BuildGhostLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/BunkerLiberty=Defensive structure. <n/>Infantry fights from inside. <n/><n/><c val="#ColorAttackInfo">Bonus: +1 range to units inside.</c>
 Button/Tooltip/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Increases Health restored per second from 9 to 15 and reduces energy cost from 3 health per 1 energy to 5 health per 1 energy.
+Button/Tooltip/CorvidReactorLotV@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
 Button/Tooltip/CorvidReactorSwarm@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
 Button/Tooltip/CycloneLockOnAirLoTV1@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
 Button/Tooltip/CycloneLockOnAirLoTV1@UpgradeButton=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First <c val="#ColorAttackInfo">12</c> shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
@@ -142,18 +156,23 @@ Button/Tooltip/PointDefenseDroneSwarm@BuildPointDefenseDrone=Uses a laser to sho
 Button/Tooltip/PointDefenseDroneSwarm@PointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneTimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
 Button/Tooltip/RapidFireLaunchers@Passive=Improves the Lock On ability to fire the first 12 shots quickly.
 Button/Tooltip/RapidFireLaunchers@Research=Increases the attack speed of the first 12 shots of the <c val="ffff8a">Cyclone's</c> Lock On.
-Button/Tooltip/RavenAntiArmorMissile=Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <d ref="-1*Behavior,RavenShredderMissileArmorReductionUISubtruct,Modification.LifeArmorBonus"/> for <d ref="Behavior,RavenShredderMissileArmorReductionUISubtruct,Duration"/> seconds.
+Button/Tooltip/RavenAntiArmorMissile=Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <d ref="-1*Behavior,RavenAntiArmorMissile@ArmorReduction,Modification.LifeArmorBonus"/> for <d ref="Behavior,RavenAntiArmorMissile@ArmorReduction,Duration"/> seconds.
+Button/Tooltip/RavenAutoTurret=Automated defensive turret. Times out after <d ref="Behavior,RavenAutoTurret@AutoTurretTimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/RavenAutoTurret@AutoTurret=Automated defensive turret. Times out after <d ref="Behavior,RavenAutoTurret@AutoTurretTimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/RavenInterferenceMatrix=Disables a target unit rendering it unable to attack or use abilities for <d ref="Behavior,RavenInterferenceMatrix,Duration"/> seconds. Reveals Cloaked units.<n/><n/><c val="#ColorAttackInfo">Can target mechanical and psionic units.</c>
 Button/Tooltip/RavenInterferenceMatrix@Missile=Disables a target unit rendering it unable to attack or use abilities for <d ref="Behavior,RavenScramblerMissile,Duration"/> seconds. Reveals Cloaked units.<n/><n/><c val="#ColorAttackInfo">Can target mechanical and psionic units.</c>
-Button/Tooltip/RavenLotV1=Aerial support unit. Can use Auto-Turret, Point Defense Drone, Seeker Missile.<n/><n/><c val="FFE303">Detector</c></n></n>Originally introduced in Heart of the Swarm.<n/>
+Button/Tooltip/RavenLotV1=Aerial support unit. Can use Auto-Turret, Interference Matrix, and Anti-Armor Missile.<n/><n/><c val="FFE303">Detector</c>
 Button/Tooltip/RavenSwarm=Aerial support unit. Can use Auto-Turret, Point Defense Drone, Seeker Missile.<n/><n/><c val="FFE303">Detector</c></n></n>Originally introduced in Heart of the Swarm.<n/>
+Button/Tooltip/ReactorLiberty=Allows 2 units to be created simultaneously.
 Button/Tooltip/ReaperLiberty=Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/ReaperLiberty@PassiveButton=Reapers can jump up and down cliffs.  
 Button/Tooltip/ReaperLiberty@ResearchNitroPacks=Increases the movement speed of Reapers.
 Button/Tooltip/ReaperSwarm=Raider. Capable of jumping up and down cliffs. Can see up cliffs and through terrain that would normally block line of sight. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c></n></n>Originally Introduced in Heart of the Swarm Beta.<n/>
 Button/Tooltip/ReaperSwarm@PassiveButton=Allows Reapers to see up cliffs and through terrains that would normally block line of sight.
 Button/Tooltip/ReaperSwarm@ResearchNitroPacks=Increases the movement speed of Reapers.
+Button/Tooltip/SalvageLiberty=Salvages the structure, removing it and returning 100% of its mineral and gas value. Salvage takes <d time="5"/> to finish. Warning: once Salvage is triggered, it cannot be canceled.
 Button/Tooltip/SeekerMissileSwarm=Deploys a Seeker Missile which activates after <d time="5"/> and pursues the target unit, dealing <d ref="Effect,SeekerMissileDamage,Amount"/> splash damage upon contact.
+Button/Tooltip/SensorTowerLotV1=Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy.
 Button/Tooltip/SiegeTankLotV1=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/SiegeTankLotV1@BuildSiegeTank=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c><n/><n/>Originalli introduced in Legacy of the Void. Can be picked up by Medivacs in SIege Mode.
 Button/Tooltip/SiegeTankLotV1Morph@SiegeMode=Deploys into Siege Mode. In this mode Siege Tanks have very long range and inflict area damage. Siege Tanks in this mode cannot move or attack targets at close range, but can be picked up by Medivacs.
@@ -164,7 +183,10 @@ Cyclone=Cyclone
 DataCollection/Name/90mmCannonsLotV1=90mm Cannons
 DataCollection/Name/AdvancedBallistics=Advanced Ballistics
 DataCollection/Name/AutoTurretSwarm=Raven Auto Turret
+DataCollection/Name/BarracksLiberty=Barracks
+DataCollection/Name/BunkerLiberty=Bunker
 DataCollection/Name/CaduceusReactorSwarmBeta=Caduceus Reactor
+DataCollection/Name/CorvidReactorLotV=Corvid Reactor
 DataCollection/Name/CorvidReactorSwarm=Corvid Reactor
 DataCollection/Name/CrucioShockCannonLotV1=Crucio Shock Cannon
 DataCollection/Name/CycloneLockOnAirLoTV1=CycloneLockOnAirLoTV1
@@ -195,9 +217,12 @@ DataCollection/Name/RavenAutoTurret=Raven Auto Turret
 DataCollection/Name/RavenInterferenceMatrix=Raven Interference Matrix
 DataCollection/Name/RavenLotV1=Raven
 DataCollection/Name/RavenSwarm=Raven
+DataCollection/Name/ReactorLiberty=Reactor
 DataCollection/Name/ReaperLiberty=Reaper
 DataCollection/Name/ReaperSwarm=Reaper
+DataCollection/Name/SalvageLiberty=Salvage
 DataCollection/Name/SeekerMissileSwarm=Raven Seeker Missile
+DataCollection/Name/SensorTowerLotV1=Sensor Tower
 DataCollection/Name/SiegeTankLotV1=Siege Tank LotV1
 DataCollection/Name/SiegeTankLotV1Morph=Siege Tank Morph
 DataCollection/Name/SiegeTankSiegedLotV1=Siege Tank Sieged LotV1
@@ -329,6 +354,12 @@ Effect/Name/RavenAntiArmorMissile@LaunchSet=Launch Set
 Effect/Name/RavenAntiArmorMissile@Suicide=Suicide
 Effect/Name/RavenAntiArmorMissile@TargetTraceAB=Target Trace AB
 Effect/Name/RavenAntiArmorMissile@TargetTraceCP=Target Trace CP
+Effect/Name/RavenAutoTurret@AutoTurretDamage=Auto-Turret Damage
+Effect/Name/RavenAutoTurret@CU=CU
+Effect/Name/RavenAutoTurret@CreateSet=Create Set
+Effect/Name/RavenAutoTurret@ReleaseLM=Release LM
+Effect/Name/RavenAutoTurret@ReleaseLaunchSet=Release Launch Set
+Effect/Name/RavenAutoTurret@TimedLifeAB=Timed Life AB
 Effect/Name/RavenInterferenceMatrix@AB=AB
 Effect/Name/RavenInterferenceMatrix@ABSwitch=AB Switch
 Effect/Name/RavenInterferenceMatrix@ABcarrier=AB
@@ -336,6 +367,8 @@ Effect/Name/RavenInterferenceMatrix@Dummy=Dummy
 Effect/Name/RavenInterferenceMatrix@Initial=Initial Set
 Effect/Name/RavenInterferenceMatrix@InitialSwitch=Initial Switch
 Effect/Name/RavenInterferenceMatrix@LM=LM
+Effect/Name/SalvageLiberty@AB=AB
+Effect/Name/SalvageLiberty@ModifyUnit=Modify Unit
 Effect/Name/SeekerMissileSwarm@Damage=Damage
 Effect/Name/SeekerMissileSwarm@LM=LM
 Effect/Name/SeekerMissileSwarm@LaunchCP=Launch CP
@@ -409,12 +442,15 @@ Unit/Name/PointDefenseDroneSwarm@Missile=Missile
 Unit/Name/PointDefenseDroneSwarm@PointDefenseDrone=Point Defense Drone
 Unit/Name/PointDefenseDroneSwarm@Unit=Point Defense Drone
 Unit/Name/RavenAntiArmorMissile@Weapon=Weapon
+Unit/Name/RavenAutoTurret@AutoTurret=Auto-Turret
+Unit/Name/RavenAutoTurret@ReleaseWeapon=Release Weapon
 Unit/Name/RavenInterferenceMatrix@Missile=Missile
 Unit/Name/RavenLotV1=Raven
 Unit/Name/RavenSwarm=Raven
 Unit/Name/ReaperLiberty=Reaper
 Unit/Name/ReaperSwarm=Reaper
 Unit/Name/SeekerMissileSwarm@Missile=Missile
+Unit/Name/SensorTowerLotV1=Sensor Tower
 Unit/Name/SiegeTankLotV1=Siege Tank
 Unit/Name/SiegeTankSiegedLotV1=Siege Tank
 Unit/Name/TornadoBlaster@Missile=Missile
@@ -425,6 +461,7 @@ Unit/Name/WidowMineSwarm@WidowMine=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMineBurrowed=Widow Mine
 Upgrade/Name/AdvancedBallistics=Advanced Ballistics
 Upgrade/Name/CaduceusReactorSwarmBeta@CaduceusReactor=Caduceus Reactor
+Upgrade/Name/CorvidReactorLotV=Corvid Reactor
 Upgrade/Name/CorvidReactorSwarm=Corvid Reactor
 Upgrade/Name/DrillingClaws@DrillingClaws=Drilling Claws
 Upgrade/Name/DurableMaterialsSwarm=Durable Materials
@@ -439,10 +476,18 @@ Upgrade/Name/MoebiusReactor@Upgrade=Moebius Reactor
 Upgrade/Name/RapidFireLaunchers@Upgrade=Rapid Fire Launchers
 Upgrade/Name/ReaperLiberty@Upgrade=Nitro Packs
 Upgrade/Name/ReaperSwarm@Upgrade=Nitro Packs
+UserData/IMBA_TerranUnits/Barracks_Selection_Expansion_Tip=current
+UserData/IMBA_TerranUnits/Barracks_Selection_Expansion_Tip_001=requires command center instead of supply depot. build tinme - 5 s
+UserData/IMBA_TerranUnits/Barracks_Selection_Title=current
+UserData/IMBA_TerranUnits/Barracks_Selection_Title_001=wol
 UserData/IMBA_TerranUnits/Battlecruiser_Selection_Expansion_Tip=Current
 UserData/IMBA_TerranUnits/Battlecruiser_Selection_Expansion_Tip_001=2018 revamp
 UserData/IMBA_TerranUnits/Battlecruiser_Selection_Title=Current
 UserData/IMBA_TerranUnits/Battlecruiser_Selection_Title_001=LotV
+UserData/IMBA_TerranUnits/Bunker_Selection_Expansion_Tip=current
+UserData/IMBA_TerranUnits/Bunker_Selection_Expansion_Tip_001=30 sec build time + 100% salvage refund
+UserData/IMBA_TerranUnits/Bunker_Selection_Title=current
+UserData/IMBA_TerranUnits/Bunker_Selection_Title_001=WoL
 UserData/IMBA_TerranUnits/Cyclone_Selection_Expansion_Tip=Current Version. No changes at all.
 UserData/IMBA_TerranUnits/Cyclone_Selection_Expansion_Tip_001=180 HP with heavy anti ground fire power.
 UserData/IMBA_TerranUnits/Cyclone_Selection_Expansion_Tip_002=Lock On has no cooldown but range is reduced.
@@ -485,6 +530,10 @@ UserData/IMBA_TerranUnits/Raven_Selection_Expansion_Tip_002=splash damage anti-a
 UserData/IMBA_TerranUnits/Raven_Selection_Title=current
 UserData/IMBA_TerranUnits/Raven_Selection_Title_001=hots
 UserData/IMBA_TerranUnits/Raven_Selection_Title_002=lotv
+UserData/IMBA_TerranUnits/Reactor_Selection_Expansion_Tip=current
+UserData/IMBA_TerranUnits/Reactor_Selection_Expansion_Tip_001=build time halved
+UserData/IMBA_TerranUnits/Reactor_Selection_Title=current
+UserData/IMBA_TerranUnits/Reactor_Selection_Title_001=wol
 UserData/IMBA_TerranUnits/Reaper_Selection_Expansion_Tip=Current Version. No changes at all.
 UserData/IMBA_TerranUnits/Reaper_Selection_Expansion_Tip_001=D8 Charge deals 10 damage and cooldown is halved.
 UserData/IMBA_TerranUnits/Reaper_Selection_Expansion_Tip_002=Has special attacks against structures. Can be upgraded to move faster.
@@ -493,6 +542,10 @@ UserData/IMBA_TerranUnits/Reaper_Selection_Title=Current
 UserData/IMBA_TerranUnits/Reaper_Selection_Title_001=LotV
 UserData/IMBA_TerranUnits/Reaper_Selection_Title_002=WoL
 UserData/IMBA_TerranUnits/Reaper_Selection_Title_003=HotS
+UserData/IMBA_TerranUnits/SensorTower_Selection_Expansion_Tip=Current
+UserData/IMBA_TerranUnits/SensorTower_Selection_Expansion_Tip_001=more expensive but 30 radius
+UserData/IMBA_TerranUnits/SensorTower_Selection_Title=Current
+UserData/IMBA_TerranUnits/SensorTower_Selection_Title_001=LotV
 UserData/IMBA_TerranUnits/Siege Tank_Selection_Expansion_Tip=Current Version. No changes at all.
 UserData/IMBA_TerranUnits/Siege Tank_Selection_Expansion_Tip_001=Can be picked up by Medivac while in siege mode. Firepower and life is reduced.
 UserData/IMBA_TerranUnits/Siege Tank_Selection_Title=Current
@@ -512,6 +565,7 @@ Weapon/Name/LiberatorLotV1@Weapon=Lexington Rockets
 Weapon/Name/NapalmSpraySwarmBeta@NapalmSpray=Napalm Spray
 Weapon/Name/PistolSwarm=P-45 Gauss Pistol
 Weapon/Name/PointDefenseDroneSwarm@PointDefenseLaser=Point Defense Laser
+Weapon/Name/RavenAutoTurret@AutoTurretWeapon=12mm Gauss Cannon
 Weapon/Name/TornadoBlaster=Tornado Blaster
 Weapon/Name/TyphoonMissilePodLotV2@Weapon=Typhoon Missile Pod
 Weapon/Tip/GrenadeLiberty=Only used against structures.

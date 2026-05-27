@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="BarracksLiberty">
+        <Icon value="Assets\Textures\btn-building-terran-barracks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-barracks.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="CorvidReactorLotV@ResearchCorvidReactor">
+        <Icon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="RavenAutoTurret">
+        <Icon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-autoturret.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="CaduceusReactorSwarmBeta@ResearchCaduceusReactor">
         <Icon value="Assets\Textures\btn-upgrade-terran-caduceusreactor.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-caduceusreactor.dds"/>
@@ -130,6 +145,17 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-infernalpreigniter.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="ReactorLiberty">
+        <Icon value="Assets\Textures\btn-building-terran-reactor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-reactor.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="SalvageLiberty">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
     <CButton id="SeekerMissileSwarm">
         <Icon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Terran-HunterMissile-color.dds"/>
@@ -193,6 +219,16 @@
     <CButton id="ReaperLiberty@ResearchNitroPacks">
         <Icon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-reapernitropacks.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="SensorTowerLotV1">
+        <Icon value="Assets\Textures\btn-building-terran-sensordome.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-sensordome.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="BunkerLiberty">
+        <Icon value="Assets\Textures\btn-building-terran-bunker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-terran-bunker.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="SiegeTankLotV1@BuildSiegeTank">

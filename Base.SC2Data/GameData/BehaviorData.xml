@@ -5,6 +5,11 @@
         <DisplayDuration index="Enemy" value="1"/>
         <Duration value="180"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="RavenAutoTurret@AutoTurretTimedLife" parent="TimedLife">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="14"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="BarrierDamageResponse">
         <DisableValidatorArray index="1" value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>
     </CBehaviorBuff>
@@ -188,6 +193,10 @@
             </Cost>
         </DamageResponse>
     </CBehaviorBuff>
+    <CBehaviorBuff id="SalvageLiberty" parent="Salvage">
+        <Name value="Behavior/Name/SalvageLiberty"/>
+        <ExpireEffect value="SalvageLiberty@ModifyUnit"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="SeekerMissileSwarm@TargetTint">
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-ability-terran-huntermissile.dds"/>
@@ -200,6 +209,14 @@
         <RemoveValidatorArray value="SeekerMissileSwarm@NotInLastMotionPhase"/>
         <Duration value="5"/>
         <Modification MoveSpeedMaximum="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SensorTowerLotV1@Radar">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-status-radar.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <BuffFlags index="DisableWhileUnderConstruction" value="1"/>
+        <Modification Radar="30" RadarFilters="-;Neutral,RawResource,HarvestableResource,Missile,Destructible,Buried,Cloaked"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="TakenDamage">
         <RemoveValidatorArray index="0" value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>

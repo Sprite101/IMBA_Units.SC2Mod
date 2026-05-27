@@ -250,6 +250,59 @@ void libB156CA28_gf_AllowGhost (int lp_player) {
 
 // Triggers
 //--------------------------------------------------------------------------------------------------
+// Trigger: Confirm Button Used
+//--------------------------------------------------------------------------------------------------
+bool libB156CA28_gt_ConfirmButtonUsed_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_playerIndexinActivePlayers;
+    int lv_panelIndex;
+
+    // Automatic Variable Declarations
+    int auto3E14DD4C_ae;
+    int auto3E14DD4C_var;
+    int auto06ECEAFF_ae;
+    int auto06ECEAFF_var;
+
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!((EventDialogControl() == libB156CA28_gv_playerFrames.lv_confirmButton))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto3E14DD4C_ae = PlayerGroupCount(PlayerGroupActive());
+    auto3E14DD4C_var = 1;
+    for ( ; auto3E14DD4C_var <= auto3E14DD4C_ae; auto3E14DD4C_var += 1 ) {
+        if ((PlayerGroupPlayer(PlayerGroupActive(), auto3E14DD4C_var) == EventPlayer())) {
+            lv_playerIndexinActivePlayers = auto3E14DD4C_var;
+            lv_panelIndex = (auto3E14DD4C_var-1);
+        }
+
+    }
+    DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_confirmButton, PlayerGroupSingle(EventPlayer()), false);
+    DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_randomButton, PlayerGroupSingle(EventPlayer()), false);
+    auto06ECEAFF_ae = (libB156CA28_gv_maxSelectionItems-1);
+    auto06ECEAFF_var = 0;
+    for ( ; auto06ECEAFF_var <= auto06ECEAFF_ae; auto06ECEAFF_var += 1 ) {
+        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto06ECEAFF_var], PlayerGroupSingle(EventPlayer()), false);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libB156CA28_gt_ConfirmButtonUsed_Init () {
+    libB156CA28_gt_ConfirmButtonUsed = TriggerCreate("libB156CA28_gt_ConfirmButtonUsed_Func");
+    TriggerAddEventDialogControl(libB156CA28_gt_ConfirmButtonUsed, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Hookups
 //--------------------------------------------------------------------------------------------------
 bool libB156CA28_gt_Hookups_Func (bool testConds, bool runActions) {
@@ -271,7 +324,7 @@ bool libB156CA28_gt_Hookups_Func (bool testConds, bool runActions) {
     for ( ; autoA128BA4D_var <= autoA128BA4D_ae; autoA128BA4D_var += 1 ) {
         TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "A", PlayerName(PlayerGroupPlayer(PlayerGroupActive(), autoA128BA4D_var)));
         TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "B", IntToText(autoA128BA4D_var));
-        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_17F87ABD"), true);
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_17F87ABD"), false);
         libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_playerButtonName[(autoA128BA4D_var-1)], PlayerName(PlayerGroupPlayer(PlayerGroupActive(), autoA128BA4D_var)), PlayerGroupAll());
         libB156CA28_gf_SetupSelectionPanel(PlayerGroupPlayer(PlayerGroupActive(), autoA128BA4D_var), (autoA128BA4D_var-1));
     }
@@ -283,7 +336,6 @@ bool libB156CA28_gt_Hookups_Func (bool testConds, bool runActions) {
         }
     }
 
-    DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, PlayerGroupAll(), false);
     return true;
 }
 
@@ -293,8 +345,31 @@ void libB156CA28_gt_Hookups_Init () {
     TriggerAddEventMapInit(libB156CA28_gt_Hookups);
 }
 
+//--------------------------------------------------------------------------------------------------
+// Trigger: Unit Test
+//--------------------------------------------------------------------------------------------------
+bool libB156CA28_gt_UnitTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TechTreeAbilityAllow(1, AbilityCommand("TerranBuild", 19), true);
+    TechTreeAbilityAllow(1, AbilityCommand("TerranBuild", 8), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libB156CA28_gt_UnitTest_Init () {
+    libB156CA28_gt_UnitTest = TriggerCreate("libB156CA28_gt_UnitTest_Func");
+    TriggerAddEventMapInit(libB156CA28_gt_UnitTest);
+}
+
 void libB156CA28_InitTriggers () {
+    libB156CA28_gt_ConfirmButtonUsed_Init();
     libB156CA28_gt_Hookups_Init();
+    libB156CA28_gt_UnitTest_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

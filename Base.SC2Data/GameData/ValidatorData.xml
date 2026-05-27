@@ -8,6 +8,16 @@
         <CombineArray value="RavenInterferenceMatrix@CasterDoesNotHaveInterferenceMatrixBehavior"/>
         <Type value="And"/>
     </CValidatorCombine>
+    <CValidatorUnitOrderQueue id="ModifiedAbility@SCVBuildingBunkerLiberty">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="TerranBuild"/>
+        <AbilCmdIndex value="20"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="ModifiedAbility@SCVBuildingBarracksLiberty">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="TerranBuild"/>
+        <AbilCmdIndex value="20"/>
+    </CValidatorUnitOrderQueue>
     <CValidatorCombine id="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined">
         <CombineArray value="NotHaveScramblerMissileBehavior"/>
         <CombineArray value="RavenInterferenceMatrix@TargetDoesNotHaveInterferenceMatrixBehavior"/>
@@ -136,6 +146,16 @@
         <ResultFailed value="CantTargetThatUnit,Error/Scrambled"/>
         <Behavior value="RavenInterferenceMatrix"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitOrderQueue id="ModifiedAbility@SCVBuildingSensorTowerLotV1">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="TerranBuild"/>
+        <AbilCmdIndex value="19"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorCombine id="TerranBuildingCombine">
+        <CombineArray value="ModifiedAbility@SCVBuildingSensorTowerLotV1"/>
+        <CombineArray value="ModifiedAbility@SCVBuildingBunkerLiberty"/>
+        <CombineArray value="ModifiedAbility@SCVBuildingBarracksLiberty"/>
+    </CValidatorCombine>
     <CValidatorUnitType id="WidowMineSwarm@IsWidowMine">
         <Value value="WidowMineSwarm"/>
     </CValidatorUnitType>

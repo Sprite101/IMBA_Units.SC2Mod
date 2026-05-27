@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUpgrade id="CorvidReactorLotV">
+        <Icon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,RavenLotV1,EnergyStart" Value="25"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="RavenLotV1"/>
+    </CUpgrade>
     <CUpgrade id="CorvidReactorSwarm">
         <Icon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
         <ScoreAmount value="300"/>
@@ -53,6 +61,14 @@
         <EffectArray Operation="Set" Reference="Effect,MedivacHeal,RechargeVitalRate" Value="15.000000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="Medivac"/>
+    </CUpgrade>
+    <CUpgrade id="HiSecAutoTracking">
+        <EffectArray Reference="Weapon,AutoTurretSwarm@AutoTurretWeapon,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AutoTurretSwarm@AutoTurretWeapon,Level" Value="1"/>
+        <EffectArray Reference="Weapon,RavenAutoTurret@AutoTurretWeapon,Range" Value="1"/>
+        <EffectArray Reference="Weapon,RavenAutoTurret@AutoTurretWeapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,PointDefenseDroneSwarm@SearchArea,AreaArray[0].Radius" Value="1"/>
+        <EffectArray Reference="Weapon,PointDefenseDroneSwarm@PointDefenseLaser,Range" Value="1"/>
     </CUpgrade>
     <CUpgrade id="InfernalPreIgniterSwarm@InfernalPreIgniterSwarm">
         <Flags index="TechTreeCheat" value="1"/>
@@ -319,6 +335,8 @@
         <EffectArray Reference="Unit,AutoTurretSwarm@AutoTurret,LifeArmor" Value="2"/>
         <EffectArray Reference="Unit,PointDefenseDroneSwarm@PointDefenseDrone,LifeArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,PointDefenseDroneSwarm@PointDefenseDrone,LifeArmor" Value="2"/>
+        <EffectArray Reference="Unit,RavenAutoTurret@AutoTurret,LifeArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,RavenAutoTurret@AutoTurret,LifeArmor" Value="2"/>
     </CUpgrade>
     <CUpgrade id="TerranInfantryArmorsLevel1">
         <EffectArray Reference="Unit,GhostLotV1,LifeArmorLevel" Value="1"/>

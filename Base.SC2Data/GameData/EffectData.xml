@@ -7,6 +7,34 @@
         <Amount value="15"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectDamage id="RavenAutoTurret@AutoTurretDamage" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <Amount value="18"/>
+    </CEffectDamage>
+    <CEffectCreateUnit id="RavenAutoTurret@CU">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetPoint"/>
+        <SpawnEffect value="RavenAutoTurret@CreateSet"/>
+        <SpawnUnit value="RavenAutoTurret@AutoTurret"/>
+        <SpawnRange value="0"/>
+    </CEffectCreateUnit>
+    <CEffectLaunchMissile id="RavenAutoTurret@ReleaseLM">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <FinishEffect value="RemovePrecursor"/>
+        <AmmoUnit value="RavenAutoTurret@ReleaseWeapon"/>
+        <PlaceholderUnit value="AutoTurret"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="RavenAutoTurret@ReleaseLaunchSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="RavenAutoTurret@ReleaseLM"/>
+        <EffectArray value="MakePrecursor"/>
+    </CEffectSet>
+    <CEffectSet id="RavenAutoTurret@CreateSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="RavenAutoTurret@TimedLifeAB"/>
+        <EffectArray value="RavenAutoTurret@ReleaseLaunchSet"/>
+    </CEffectSet>
     <CEffectDamage id="AutoTurretSwarm@AutoTurretDamage" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Terran"/>
         <Amount value="8"/>
@@ -38,6 +66,10 @@
     <CEffectApplyBehavior id="AutoTurretSwarm@TimedLifeAB">
         <EditorCategories value="Race:Terran"/>
         <Behavior value="AutoTurretSwarm@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="RavenAutoTurret@TimedLifeAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="RavenAutoTurret@AutoTurretTimedLife"/>
     </CEffectApplyBehavior>
     <CEffectDamage id="GhostLotV1@EMPDamage">
         <EditorCategories value="Race:Terran"/>
@@ -564,6 +596,22 @@
     <CEffectSet id="RavenScramblerMissileSetInitial">
         <ValidatorArray index="1" value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>
     </CEffectSet>
+    <CEffectApplyBehavior id="SalvageLiberty@AB">
+        <ValidatorArray index="0" value="HasNoCargo"/>
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SalvageLiberty"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="SalvageLiberty@ModifyUnit">
+        <EditorCategories value="Race:Terran"/>
+        <ModifyFlags index="Salvage" value="1"/>
+        <SalvageFactor>
+            <Resource index="Minerals" value="-1"/>
+            <Resource index="Vespene" value="-0.75"/>
+            <Resource index="Terrazine" value="-1"/>
+            <Resource index="Custom" value="-1"/>
+        </SalvageFactor>
+    </CEffectModifyUnit>
     <CEffectApplyBehavior id="SeekerMissileSwarm@TargetTintAB">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Effect="SeekerMissileSwarm@LM"/>

@@ -205,6 +205,15 @@
             <State name="NotHovered"/>
         </StateGroup>
 
+        <!-- DisabledState -->
+        <StateGroup name="DisabledState">
+            <DefaultState val="NotDisabled"/>
+            <State name="Disabled">
+                <When type="Property" frame="$parent/parent" Disabled="True" Index="0"/>
+            </State>
+            <State name="NotDisabled"/>
+        </StateGroup>
+
         <!-- Header Image -->
         <Frame type="Frame" name="HeaderImageContainer">
             <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
@@ -237,12 +246,39 @@
                         <Action type="SetProperty" frame="$this" Color="23,70,110"/>
                         <Action type="SetProperty" frame="$this" Alpha="255"/>
                     </State>
+                    <State name="Disabled">
+                        <When type="StateGroup" frame="$parent/$parent" DisabledState="Disabled"/>
+                        <When type="StateGroup" frame="$parent/$parent" SelectedState="Selected"/>
+                        <Action type="SetProperty" frame="$this" Color="154,206,255"/>
+                        <Action type="SetProperty" frame="$this" Alpha="255"/>
+                    </State>
                 </StateGroup>
             </Frame>
 
             <Frame type="Image" name="HeaderImage">
                 <Height val="60"/>
                 <Width val="60"/>
+
+                <StateGroup name="ColorState">
+                    <DefaultState val="Normal"/>
+                    <State name="Normal">
+                        <When type="StateGroup" frame="$parent/$parent" EmptyState="NotEmpty"/>
+                        <Action type="SetProperty" frame="$this" Alpha="255"/>
+                    </State>
+                    <State name="DisabledSelected">
+                        <When type="StateGroup" frame="$parent/$parent" DisabledState="Disabled"/>
+                        <When type="StateGroup" frame="$parent/$parent" SelectedState="Selected"/>
+                        <Action type="SetProperty" frame="this" ColorAdjustMode="Colorize"/>
+                        <Action type="SetProperty" frame="this" Alpha="255"/>
+                    </State>
+                    <State name="DisabledNotSelected">
+                        <When type="StateGroup" frame="$parent/$parent" DisabledState="Disabled"/>
+                        <When type="StateGroup" frame="$parent/$parent" SelectedState="NotSelected"/>
+                        <Action type="SetProperty" frame="this" ColorAdjustMode="Desaturate"/>
+                        <Action type="SetProperty" frame="this" Alpha="64"/>
+                    </State>
+                </StateGroup>
+
                 <Anchor side="Top" relative="$parent/Background" pos="Min" offset="0"/>
                 <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="0"/>
                 <Anchor side="Left" relative="$parent/Background" pos="Min" offset="0"/>
@@ -654,8 +690,104 @@
                 </Frame>
             </Frame>
 
-            <Frame type="Frame" name="Dummy" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+            <Frame type="Frame" name="Item16" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent/Item14" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item17" template="IMBA_UnitSelectionPanel/ListItemTemplate">
                 <Anchor side="Top" relative="$parent/Item15" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item18" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent/Item16" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item19" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent/Item17" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item20" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent/Item18" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item21" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent/Item19" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item22" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent/Item20" pos="Max" offset="4"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Item23" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent/Item21" pos="Max" offset="4"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="5"/>
+
+                <Frame type="Frame" name="AnchorFrame">
+                    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                    <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                </Frame>
+            </Frame>
+
+            <Frame type="Frame" name="Dummy" template="IMBA_UnitSelectionPanel/ListItemTemplate">
+                <Anchor side="Top" relative="$parent/Item23" pos="Max" offset="4"/>
                 <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
                 <Alpha val="0"/>
 
