@@ -402,6 +402,7 @@ Effect/Name/WidowMineSwarm@LM=LM
 Effect/Name/WidowMineSwarm@LMAir=LM Air
 Effect/Name/WidowMineSwarm@LMSwitch=LM Switch
 Param/Expression/lib_B156CA28_17F87ABD=Player ~A~'s Index: ~B~
+Param/Expression/lib_B156CA28_41422E3B=Player ~A~ is using button: Panel ~B~ Item ~C~ Selection ~D~
 Param/Expression/lib_B156CA28_81A2A7C1=Panel Index: ~A~
 RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat=Factory
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Research Advanced Ballistics at the Starport Techlab

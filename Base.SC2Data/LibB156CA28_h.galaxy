@@ -26,6 +26,7 @@ struct libB156CA28_gs_PlayerFrames {
 // Variable Declarations
 libB156CA28_gs_PlayerFrames libB156CA28_gv_playerFrames;
 int libB156CA28_gv_activePlayerNum;
+playergroup libB156CA28_gv_activePlayersGameInit;
 
 // Function Declarations
 void libB156CA28_gf_Hookups_PlayerFrames ();
@@ -36,6 +37,7 @@ void libB156CA28_gf_AllowGhost (int lp_player);
 
 // Trigger Declarations
 trigger libB156CA28_gt_ConfirmButtonUsed;
+trigger libB156CA28_gt_SelectionButtonUsed;
 trigger libB156CA28_gt_MapInit;
 trigger libB156CA28_gt_UnitTest;
 
