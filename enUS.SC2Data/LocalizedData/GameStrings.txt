@@ -46,9 +46,9 @@ Abil/Name/ReaperSwarm@ResearchNitroPacks=Research Nitro Packs
 Abil/Name/ReaperSwarm@Train=Train
 Abil/Name/SalvageLiberty=Salvage
 Abil/Name/SeekerMissileSwarm=Seeker Missile
-Abil/Name/SiegeTankLotV1@Train=Build
-Abil/Name/SiegeTankLotV1Morph@SiegeMode=Siege
-Abil/Name/SiegeTankLotV1Morph@Unsiege=Unsiege
+Abil/Name/SiegeArmorLotV1@Train=Build
+Abil/Name/SiegeArmorLotV1Morph@SiegeMode=Siege
+Abil/Name/SiegeArmorLotV1Morph@Unsiege=Unsiege
 Abil/Name/WidowMineSwarm@Train2=Build
 Abil/Name/WidowMineSwarm@WidowMineAttack=Widow Mine Attack
 Abil/Name/WidowMineSwarm@WidowMineBurrow=Widow Mine Burrow
@@ -112,9 +112,9 @@ Button/Name/ReaperSwarm@TrainReaper=Train Reaper
 Button/Name/SalvageLiberty=Salvage
 Button/Name/SeekerMissileSwarm=Seeker Missile
 Button/Name/SensorTowerLotV1=Build Sensor Tower
-Button/Name/SiegeTankLotV1@BuildSiegeTank=Build Siege Tank
-Button/Name/SiegeTankLotV1Morph@SiegeMode=Siege Mode
-Button/Name/SiegeTankLotV1Morph@Unsiege=Tank Mode
+Button/Name/SiegeArmorLotV1@BuildSiegeArmor=Build 攻城坦克
+Button/Name/SiegeArmorLotV1Morph@SiegeMode=Siege Mode
+Button/Name/SiegeArmorLotV1Morph@Unsiege=Tank Mode
 Button/Tooltip/AdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
 Button/Tooltip/AdvancedBallistics@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
 Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -173,11 +173,11 @@ Button/Tooltip/ReaperSwarm@ResearchNitroPacks=Increases the movement speed of Re
 Button/Tooltip/SalvageLiberty=Salvages the structure, removing it and returning 100% of its mineral and gas value. Salvage takes <d time="5"/> to finish. Warning: once Salvage is triggered, it cannot be canceled.
 Button/Tooltip/SeekerMissileSwarm=Deploys a Seeker Missile which activates after <d time="5"/> and pursues the target unit, dealing <d ref="Effect,SeekerMissileDamage,Amount"/> splash damage upon contact.
 Button/Tooltip/SensorTowerLotV1=Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy.
-Button/Tooltip/SiegeTankLotV1=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
-Button/Tooltip/SiegeTankLotV1@BuildSiegeTank=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c><n/><n/>Originalli introduced in Legacy of the Void. Can be picked up by Medivacs in SIege Mode.
-Button/Tooltip/SiegeTankLotV1Morph@SiegeMode=Deploys into Siege Mode. In this mode Siege Tanks have very long range and inflict area damage. Siege Tanks in this mode cannot move or attack targets at close range, but can be picked up by Medivacs.
-Button/Tooltip/SiegeTankLotV1Morph@Unsiege=Reverts to Tank Mode. In this mode Siege Tanks can move, but they do less damage.
-Button/Tooltip/SiegeTankSiegedLotV1=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/SiegeArmorLotV1=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
+Button/Tooltip/SiegeArmorLotV1@BuildSiegeArmor=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c><n/><n/>Originalli introduced in Legacy of the Void. Can be picked up by Medivacs in SIege Mode.
+Button/Tooltip/SiegeArmorLotV1Morph@SiegeMode=Deploys into Siege Mode. In this mode 攻城坦克s have very long range and inflict area damage. 攻城坦克s in this mode cannot move or attack targets at close range, but can be picked up by Medivacs.
+Button/Tooltip/SiegeArmorLotV1Morph@Unsiege=Reverts to Tank Mode. In this mode 攻城坦克s can move, but they do less damage.
+Button/Tooltip/SiegeArmorSiegedLotV1=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/WidowMineSwarm=Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. Widow Mine is revealed when Sentinel Missile is on cooldown. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Cyclone=Cyclone
 DataCollection/Name/90mmCannonsLotV1=90mm Cannons
@@ -223,9 +223,9 @@ DataCollection/Name/ReaperSwarm=Reaper
 DataCollection/Name/SalvageLiberty=Salvage
 DataCollection/Name/SeekerMissileSwarm=Raven Seeker Missile
 DataCollection/Name/SensorTowerLotV1=Sensor Tower
-DataCollection/Name/SiegeTankLotV1=Siege Tank LotV1
-DataCollection/Name/SiegeTankLotV1Morph=Siege Tank Morph
-DataCollection/Name/SiegeTankSiegedLotV1=Siege Tank Sieged LotV1
+DataCollection/Name/SiegeArmorLotV1=Siege Armor LotV1
+DataCollection/Name/SiegeArmorLotV1Morph=Siege Armor Morph
+DataCollection/Name/SiegeArmorSiegedLotV1=Siege Armor Sieged LotV1
 DataCollection/Name/TornadoBlaster=Tornado Blaster
 DataCollection/Name/TyphoonMissilePodLotV2=Typhoon Missile Pod
 DataCollection/Name/WidowMineSwarm=Widow Mine
@@ -451,8 +451,8 @@ Unit/Name/ReaperLiberty=Reaper
 Unit/Name/ReaperSwarm=Reaper
 Unit/Name/SeekerMissileSwarm@Missile=Missile
 Unit/Name/SensorTowerLotV1=Sensor Tower
-Unit/Name/SiegeTankLotV1=Siege Tank
-Unit/Name/SiegeTankSiegedLotV1=Siege Tank
+Unit/Name/SiegeArmorLotV1=攻城坦克
+Unit/Name/SiegeArmorSiegedLotV1=攻城坦克
 Unit/Name/TornadoBlaster@Missile=Missile
 Unit/Name/TyphoonMissilePod@Missile=Missile
 Unit/Name/TyphoonMissilePodLotV2@Missile=Missile
@@ -546,10 +546,10 @@ UserData/IMBA_TerranUnits/SensorTower_Selection_Expansion_Tip=Current
 UserData/IMBA_TerranUnits/SensorTower_Selection_Expansion_Tip_001=more expensive but 30 radius
 UserData/IMBA_TerranUnits/SensorTower_Selection_Title=Current
 UserData/IMBA_TerranUnits/SensorTower_Selection_Title_001=LotV
-UserData/IMBA_TerranUnits/Siege Tank_Selection_Expansion_Tip=Current Version. No changes at all.
-UserData/IMBA_TerranUnits/Siege Tank_Selection_Expansion_Tip_001=Can be picked up by Medivac while in siege mode. Firepower and life is reduced.
-UserData/IMBA_TerranUnits/Siege Tank_Selection_Title=Current
-UserData/IMBA_TerranUnits/Siege Tank_Selection_Title_001=LotV
+UserData/IMBA_TerranUnits/Siege Armor_Selection_Expansion_Tip=Current Version. No changes at all.
+UserData/IMBA_TerranUnits/Siege Armor_Selection_Expansion_Tip_001=Can be picked up by Medivac while in siege mode. Firepower and life is reduced.
+UserData/IMBA_TerranUnits/Siege Armor_Selection_Title=Current
+UserData/IMBA_TerranUnits/Siege Armor_Selection_Title_001=LotV
 UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip=Current
 UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip_001=no longer decloaks while weapon is in cooldown. target is not tinted and won't be connected by a visible line.
 UserData/IMBA_TerranUnits/WidowMine_Selection_Title=Current

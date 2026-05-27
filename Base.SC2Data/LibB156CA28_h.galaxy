@@ -36,7 +36,7 @@ void libB156CA28_gf_AllowGhost (int lp_player);
 
 // Trigger Declarations
 trigger libB156CA28_gt_ConfirmButtonUsed;
-trigger libB156CA28_gt_Hookups;
+trigger libB156CA28_gt_MapInit;
 trigger libB156CA28_gt_UnitTest;
 
 // Library Initialization

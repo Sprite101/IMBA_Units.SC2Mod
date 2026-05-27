@@ -104,6 +104,7 @@ void libB156CA28_gf_Hookups_PlayerFrames () {
     for ( ; autoED878B8D_var <= autoED878B8D_ae; autoED878B8D_var += 1 ) {
         DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypePanel, libNtve_gf_ConvertStringToUILayoutFrameName(("StatusPanel/SelectionPanel" + IntToString(autoED878B8D_var))));
         libB156CA28_gv_playerFrames.lv_selectionPanel[autoED878B8D_var] = DialogControlLastCreated();
+        DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupActive(), false);
         DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel[autoED878B8D_var], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName("BG"));
         libB156CA28_gv_playerFrames.lv_selectionPanel_BG[autoED878B8D_var] = DialogControlLastCreated();
         lv_panelIndex = autoED878B8D_var;
@@ -262,6 +263,8 @@ bool libB156CA28_gt_ConfirmButtonUsed_Func (bool testConds, bool runActions) {
     int auto3E14DD4C_var;
     int auto06ECEAFF_ae;
     int auto06ECEAFF_var;
+    const int auto675BBB04_ae = libB156CA28_gv_maxActivePlayer;
+    int auto675BBB04_var;
 
     // Variable Initialization
 
@@ -293,6 +296,10 @@ bool libB156CA28_gt_ConfirmButtonUsed_Func (bool testConds, bool runActions) {
     for ( ; auto06ECEAFF_var <= auto06ECEAFF_ae; auto06ECEAFF_var += 1 ) {
         DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto06ECEAFF_var], PlayerGroupSingle(EventPlayer()), false);
     }
+    auto675BBB04_var = 1;
+    for ( ; auto675BBB04_var <= auto675BBB04_ae; auto675BBB04_var += 1 ) {
+        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto675BBB04_var-1)], PlayerGroupSingle(EventPlayer()), true);
+    }
     return true;
 }
 
@@ -303,14 +310,31 @@ void libB156CA28_gt_ConfirmButtonUsed_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Hookups
+// Trigger: Map Init
 //--------------------------------------------------------------------------------------------------
-bool libB156CA28_gt_Hookups_Func (bool testConds, bool runActions) {
+bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_panelIndex;
+
     // Automatic Variable Declarations
     int autoA128BA4D_ae;
     int autoA128BA4D_var;
     int auto96E81FDE_ae;
     int auto96E81FDE_var;
+    const int auto43FFE8EF_ae = libB156CA28_gv_maxActivePlayer;
+    int auto43FFE8EF_var;
+    const int auto0293B99C_ae = libB156CA28_gv_maxActivePlayer;
+    int auto0293B99C_var;
+    int auto13614462_ae;
+    int auto13614462_var;
+    int autoC405D06A_ae;
+    int autoC405D06A_var;
+    int auto40239EE0_ae;
+    int auto40239EE0_var;
+    int autoB5F9DAD6_ae;
+    int autoB5F9DAD6_var;
+
+    // Variable Initialization
 
     // Actions
     if (!runActions) {
@@ -336,13 +360,43 @@ bool libB156CA28_gt_Hookups_Func (bool testConds, bool runActions) {
         }
     }
 
+    auto43FFE8EF_var = 1;
+    for ( ; auto43FFE8EF_var <= auto43FFE8EF_ae; auto43FFE8EF_var += 1 ) {
+        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto43FFE8EF_var-1)], PlayerGroupActive(), false);
+    }
+    auto0293B99C_var = 1;
+    for ( ; auto0293B99C_var <= auto0293B99C_ae; auto0293B99C_var += 1 ) {
+        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(PlayerGroupActive(), auto0293B99C_var)), true);
+        DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(PlayerGroupActive(), auto0293B99C_var)), true);
+        libNtve_gf_SetDialogItemToggled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], true, PlayerGroupSingle(PlayerGroupPlayer(PlayerGroupActive(), auto0293B99C_var)));
+    }
+    auto13614462_ae = (libB156CA28_gv_maxActivePlayer-1);
+    auto13614462_var = 0;
+    for ( ; auto13614462_var <= auto13614462_ae; auto13614462_var += 1 ) {
+        lv_panelIndex = auto13614462_var;
+        autoC405D06A_ae = (libB156CA28_gv_maxSelectionItems-1);
+        autoC405D06A_var = 0;
+        for ( ; autoC405D06A_var <= autoC405D06A_ae; autoC405D06A_var += 1 ) {
+            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][autoC405D06A_var], PlayerGroupActive(), false);
+        }
+    }
+    auto40239EE0_ae = libB156CA28_gv_activePlayerNum;
+    auto40239EE0_var = 1;
+    for ( ; auto40239EE0_var <= auto40239EE0_ae; auto40239EE0_var += 1 ) {
+        lv_panelIndex = auto40239EE0_var;
+        autoB5F9DAD6_ae = (libB156CA28_gv_maxSelectionItems-1);
+        autoB5F9DAD6_var = 0;
+        for ( ; autoB5F9DAD6_var <= autoB5F9DAD6_ae; autoB5F9DAD6_var += 1 ) {
+            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[(lv_panelIndex-1)][autoB5F9DAD6_var], PlayerGroupSingle(PlayerGroupPlayer(PlayerGroupActive(), lv_panelIndex)), true);
+        }
+    }
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void libB156CA28_gt_Hookups_Init () {
-    libB156CA28_gt_Hookups = TriggerCreate("libB156CA28_gt_Hookups_Func");
-    TriggerAddEventMapInit(libB156CA28_gt_Hookups);
+void libB156CA28_gt_MapInit_Init () {
+    libB156CA28_gt_MapInit = TriggerCreate("libB156CA28_gt_MapInit_Func");
+    TriggerAddEventMapInit(libB156CA28_gt_MapInit);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -368,7 +422,7 @@ void libB156CA28_gt_UnitTest_Init () {
 
 void libB156CA28_InitTriggers () {
     libB156CA28_gt_ConfirmButtonUsed_Init();
-    libB156CA28_gt_Hookups_Init();
+    libB156CA28_gt_MapInit_Init();
     libB156CA28_gt_UnitTest_Init();
 }
 

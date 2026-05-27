@@ -205,15 +205,6 @@
             <State name="NotHovered"/>
         </StateGroup>
 
-        <!-- DisabledState -->
-        <StateGroup name="DisabledState">
-            <DefaultState val="NotDisabled"/>
-            <State name="Disabled">
-                <When type="Property" frame="$parent/parent" Disabled="True" Index="0"/>
-            </State>
-            <State name="NotDisabled"/>
-        </StateGroup>
-
         <!-- Header Image -->
         <Frame type="Frame" name="HeaderImageContainer">
             <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
@@ -254,22 +245,20 @@
                 <Width val="60"/>
 
                 <StateGroup name="ColorState">
-                    <DefaultState val="Normal"/>
-                    <State name="Normal">
-                        <When type="StateGroup" frame="$parent/$parent" EmptyState="NotEmpty"/>
-                        <Action type="SetProperty" frame="$this" Alpha="255"/>
-                    </State>
-                    <State name="DisabledSelected">
-                        <When type="StateGroup" frame="$parent/$parent" DisabledState="Disabled"/>
+                    <DefaultState val="NotSelected_NotHovered"/>
+                    <State name="Selected">
                         <When type="StateGroup" frame="$parent/$parent" SelectedState="Selected"/>
-                        <Action type="SetProperty" frame="this" ColorAdjustMode="Colorize"/>
-                        <Action type="SetProperty" frame="this" Alpha="255"/>
+                        <Action type="SetProperty" frame="$this" ColorAdjustMode="None"/>
                     </State>
-                    <State name="DisabledNotSelected">
-                        <When type="StateGroup" frame="$parent/$parent" DisabledState="Disabled"/>
+                    <State name="NotSelected_Hovered">
                         <When type="StateGroup" frame="$parent/$parent" SelectedState="NotSelected"/>
-                        <Action type="SetProperty" frame="this" ColorAdjustMode="Desaturate"/>
-                        <Action type="SetProperty" frame="this" Alpha="64"/>
+                        <When type="StateGroup" frame="$parent/$parent" HoveredState="Hovered"/>
+                        <Action type="SetProperty" frame="$this" ColorAdjustMode="None"/>
+                    </State>
+                    <State name="NotSelected_NotHovered">
+                        <When type="StateGroup" frame="$parent/$parent" SelectedState="NotSelected"/>
+                        <When type="StateGroup" frame="$parent/$parent" HoveredState="NotHovered"/>
+                        <Action type="SetProperty" frame="$this" ColorAdjustMode="Colorize"/>
                     </State>
                 </StateGroup>
 
@@ -279,6 +268,77 @@
                 <Anchor side="Right" relative="$parent/Background" pos="Max" offset="0"/>
                 <Texture val="Assets\Textures\ui_glues_icons_expansion_wol.dds"/>
             </Frame>
+
+        </Frame>
+
+        <!-- Header Image_Secondary -->
+        <Frame type="Frame" name="HeaderImageSecondaryContainer">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="5"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="5"/>
+            <Height val="64"/>
+            <Width val="64"/>
+            <Visible val="false"/>
+
+            <StateGroup name="Visibility">
+
+                <State name="NotVisible">
+                    <Action type="SetProperty" frame="$this" Visible="false"/>
+                    <Action type="SetProperty" frame="$parent/HeaderImageContainer" Visible="true"/>
+                </State>
+
+                <State name="Visible">
+                    <When type="Property" frame="$parent/$parent/$parent" enabled="False"/>
+                    <Action type="SetProperty" frame="$this" Visible="true"/>
+                    <Action type="SetProperty" frame="$parent/HeaderImageContainer" Visible="false"/>
+                </State>
+            </StateGroup>
+
+            <Frame type="Image" name="Background">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+                <Texture val="Assets\Textures\sc2_ui_glues_alliedcommanders_upgradeborder.dds"/>
+                <TextureType val="NineSlice"/>
+
+                <StateGroup name="ColorState">
+                    <DefaultState val="Normal"/>
+                    <State name="Selected">
+                        <When type="StateGroup" frame="$parent/$parent" SelectedState="Selected"/>
+                        <Action type="SetProperty" frame="$this" Color="154,206,255"/>
+                        <Action type="SetProperty" frame="$this" Alpha="255"/>
+                    </State>
+                    <State name="Normal">
+                        <When type="StateGroup" frame="$parent/$parent" EmptyState="NotEmpty"/>
+                        <Action type="SetProperty" frame="$this" Color="23,70,110"/>
+                        <Action type="SetProperty" frame="$this" Alpha="255"/>
+                    </State>
+                </StateGroup>
+            </Frame>
+
+            <Frame type="Image" name="HeaderImage">
+                <Height val="60"/>
+                <Width val="60"/>
+
+                <StateGroup name="ColorState">
+                    <DefaultState val="NotSelected"/>
+                    <State name="Selected">
+                        <When type="StateGroup" frame="$parent/$parent" SelectedState="Selected"/>
+                        <Action type="SetProperty" frame="$this" ColorAdjustMode="Colorize"/>
+                    </State>
+                    <State name="NotSelected">
+                        <When type="StateGroup" frame="$parent/$parent" SelectedState="NotSelected"/>
+                        <Action type="SetProperty" frame="$this" ColorAdjustMode="None"/>
+                    </State>
+                </StateGroup>
+
+                <Anchor side="Top" relative="$parent/Background" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent/Background" pos="Min" offset="0"/>
+                <Anchor side="Right" relative="$parent/Background" pos="Max" offset="0"/>
+                <Texture val="{$parent/$parent/HeaderImageContainer/HeaderImage/@Texture}"/>
+            </Frame>
+
         </Frame>
 
         <!-- Labels -->
@@ -784,6 +844,7 @@
                 <Anchor side="Top" relative="$parent/Item23" pos="Max" offset="4"/>
                 <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
                 <Alpha val="0"/>
+                <Visible val="false"/>
 
                 <StateGroup name="Visibility">
 
@@ -792,7 +853,7 @@
                     </State>
 
                     <State name="Visible">
-                        <When type="Property" frame="$parent/Item15" Visibility="false"/>
+                        <When type="Property" frame="$parent/Item23" Visibility="false"/>
                         <Action type="SetProperty" frame="$this" Visible="true"/>
                     </State>
                 </StateGroup>
