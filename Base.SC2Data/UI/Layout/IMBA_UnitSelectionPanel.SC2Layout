@@ -246,12 +246,6 @@
                         <Action type="SetProperty" frame="$this" Color="23,70,110"/>
                         <Action type="SetProperty" frame="$this" Alpha="255"/>
                     </State>
-                    <State name="Disabled">
-                        <When type="StateGroup" frame="$parent/$parent" DisabledState="Disabled"/>
-                        <When type="StateGroup" frame="$parent/$parent" SelectedState="Selected"/>
-                        <Action type="SetProperty" frame="$this" Color="154,206,255"/>
-                        <Action type="SetProperty" frame="$this" Alpha="255"/>
-                    </State>
                 </StateGroup>
             </Frame>
 
