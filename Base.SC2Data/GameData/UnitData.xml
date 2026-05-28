@@ -1503,12 +1503,12 @@
         <AbilArray Link="HellionSwarmBeta@Train"/>
         <AbilArray Link="HellbatSwarmBeta@Train"/>
         <AbilArray Link="SiegeTankLotV1@Train"/>
-        <AbilArray Link="WidowMineSwarm@Train2"/>
+        <AbilArray Link="WidowMineSwarm@Train"/>
         <CardLayouts index="0">
             <LayoutButtons index="2" Face="Hellion" Type="AbilCmd" AbilCmd="HellionSwarmBeta@Train,Train1"/>
             <LayoutButtons Face="SiegeTankLotV1@BuildSiegeTank" Type="AbilCmd" AbilCmd="SiegeTankLotV1@Train,Train1" Row="0" Column="3"/>
             <LayoutButtons Face="ReactorLiberty" Type="AbilCmd" AbilCmd="FactoryAddOns,Build3" Row="2" Column="1"/>
-            <LayoutButtons Face="WidowMine" Type="AbilCmd" AbilCmd="WidowMineSwarm@Train2,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="WidowMineSwarm" Type="AbilCmd" AbilCmd="WidowMineSwarm@Train,Train1" Row="0" Column="1"/>
             <LayoutButtons Face="CycloneLotV1@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV1@Train,Train1" Row="0" Column="2"/>
             <LayoutButtons Face="CycloneLotV2@BuildCyclone" Type="AbilCmd" AbilCmd="CycloneLotV2@Train,Train1" Row="0" Column="2"/>
             <LayoutButtons Face="HellionTank" Type="AbilCmd" AbilCmd="HellbatSwarmBeta@Train,Train1" Row="1" Column="0"/>

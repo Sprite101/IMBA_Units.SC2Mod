@@ -268,9 +268,18 @@ void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_i
     lv_selectionIndex = libB156CA28_gv_unitSelectionResults[lp_panelIndex][lp_itemIndex];
     autoB2629101_val = lv_race;
     if (autoB2629101_val == "Terr") {
-        auto242D2030_val = lv_selectionIndex;
+        auto242D2030_val = lp_itemIndex;
         if (auto242D2030_val == 0) {
             libB156CA28_gf_Select_Reaper(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 1) {
+            libB156CA28_gf_Select_Ghost(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 2) {
+            libB156CA28_gf_Select_WidowMine(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 3) {
+            libB156CA28_gf_Select_Cyclone(lp_player, lv_selectionIndex);
         }
         else {
         }
@@ -283,6 +292,8 @@ void libB156CA28_gf_Select_Reaper (int lp_player, int lp_selectionIndex) {
     // Automatic Variable Declarations
     // Implementation
     if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("KD8Charge", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("KD8ChargeLotV1", 0), false);
         TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), false);
@@ -291,6 +302,8 @@ void libB156CA28_gf_Select_Reaper (int lp_player, int lp_selectionIndex) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), false);
     }
     else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("KD8ChargeLotV1", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("KD8Charge", 0), false);
         TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), false);
@@ -317,6 +330,92 @@ void libB156CA28_gf_Select_Reaper (int lp_player, int lp_selectionIndex) {
         TechTreeUnitAllow(lp_player, "ReaperSwarm", true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@Train", 0), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), true);
+    }
+}
+
+void libB156CA28_gf_Select_Ghost (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "GhostLotV1", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GhostLotV1@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("EnhancedShockwaves@ResearchEnhancedShockwaves", 0), false);
+        TechTreeUnitAllow(lp_player, "GhostWoL", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GhostWoL@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MoebiusReactor@ResearchMoebiusReactor", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "GhostLotV1", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GhostLotV1@Train", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("EnhancedShockwaves@ResearchEnhancedShockwaves", 0), true);
+        TechTreeUnitAllow(lp_player, "Ghost", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksTrain", 2), false);
+        TechTreeUnitAllow(lp_player, "GhostWoL", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GhostWoL@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MoebiusReactor@ResearchMoebiusReactor", 0), false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeUnitAllow(lp_player, "GhostWoL", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GhostWoL@Train", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MoebiusReactor@ResearchMoebiusReactor", 0), true);
+        TechTreeUnitAllow(lp_player, "Ghost", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksTrain", 2), false);
+        TechTreeUnitAllow(lp_player, "GhostLotV1", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GhostLotV1@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("EnhancedShockwaves@ResearchEnhancedShockwaves", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_WidowMine (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "WidowMineSwarm", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WidowMineSwarm@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("DrillingClaws@ResearchDrillingClaws", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "WidowMineSwarm", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WidowMineSwarm@Train", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("DrillingClaws@ResearchDrillingClaws", 0), true);
+        TechTreeUnitAllow(lp_player, "WidowMine", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryTrain", 24), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryTechLabResearch", 4), false);
+    }
+}
+
+void libB156CA28_gf_Select_Cyclone (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "CycloneLotV1", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLotV1@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLockOnAirLoTV1@Research", 0), false);
+        TechTreeUnitAllow(lp_player, "CycloneLotV2", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLotV2@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLockOnLotV2@Research", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "CycloneLotV1", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLotV1@Train", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLockOnAirLoTV1@Research", 0), true);
+        TechTreeUnitAllow(lp_player, "Cyclone", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryTrain", 7), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryTechLabResearch", 9), false);
+        TechTreeUnitAllow(lp_player, "CycloneLotV2", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLotV2@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLockOnLotV2@Research", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "CycloneLotV2", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLotV2@Train", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLockOnLotV2@Research", 0), true);
+        TechTreeUnitAllow(lp_player, "Cyclone", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryTrain", 7), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryTechLabResearch", 9), false);
+        TechTreeUnitAllow(lp_player, "CycloneLotV1", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLotV1@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLockOnAirLoTV1@Research", 0), false);
     }
 }
 
@@ -361,10 +460,6 @@ void libB156CA28_gf_Default (int lp_player) {
     TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 0), false);
 }
 
-void libB156CA28_gf_AllowGhost (int lp_player) {
-    // Automatic Variable Declarations
-}
-
 // Triggers
 //--------------------------------------------------------------------------------------------------
 // Trigger: Confirm Button Used
@@ -405,6 +500,7 @@ bool libB156CA28_gt_ConfirmButtonUsed_Func (bool testConds, bool runActions) {
     for ( ; auto675BBB04_var <= auto675BBB04_ae; auto675BBB04_var += 1 ) {
         DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto675BBB04_var-1)], PlayerGroupSingle(EventPlayer()), true);
     }
+    DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, PlayerGroupAll(), false);
     libB156CA28_gf_SetupTech(EventPlayer());
     return true;
 }
@@ -455,7 +551,7 @@ bool libB156CA28_gt_SelectionButtonUsed_Func (bool testConds, bool runActions) {
                 TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "A", IntToText(EventPlayer()));
                 TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "B", IntToText(lv_panelIndex));
                 TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "C", IntToText(lv_itemIndex));
-                TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "D", IntToText(autoCEDCE05C_var));
+                TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "D", IntToText(lv_selectionIndex));
                 TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_41422E3B"), true);
                 libB156CA28_gv_unitSelectionResults[lv_panelIndex][lv_itemIndex] = lv_selectionIndex;
             }
@@ -592,32 +688,10 @@ void libB156CA28_gt_MapInit_Init () {
     TriggerAddEventMapInit(libB156CA28_gt_MapInit);
 }
 
-//--------------------------------------------------------------------------------------------------
-// Trigger: Unit Test
-//--------------------------------------------------------------------------------------------------
-bool libB156CA28_gt_UnitTest_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    TechTreeAbilityAllow(9, AbilityCommand("ChargeLotV1", 0), true);
-    TechTreeAbilityAllow(9, AbilityCommand("Charge", 0), false);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libB156CA28_gt_UnitTest_Init () {
-    libB156CA28_gt_UnitTest = TriggerCreate("libB156CA28_gt_UnitTest_Func");
-    TriggerAddEventMapInit(libB156CA28_gt_UnitTest);
-}
-
 void libB156CA28_InitTriggers () {
     libB156CA28_gt_ConfirmButtonUsed_Init();
     libB156CA28_gt_SelectionButtonUsed_Init();
     libB156CA28_gt_MapInit_Init();
-    libB156CA28_gt_UnitTest_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

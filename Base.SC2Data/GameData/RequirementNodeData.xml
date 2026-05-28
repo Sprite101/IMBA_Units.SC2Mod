@@ -49,7 +49,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeChargeZealotLotV1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ChargeZealotLotV1" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCorvidReactorLotVQueuedOrBetter">
@@ -132,8 +131,10 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="RapidFireLaunchers@Upgrade" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat">
-        <Count Link="ReaperLiberty@Upgrade" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="CountUpgradeReaperLiberty@UpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="ReaperLiberty@Upgrade" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeReaperSwarm@UpgradeQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
@@ -175,7 +176,6 @@
         <OperandArray index="0" value="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeChargeZealotLotV1QueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeChargeZealotLotV1QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCorvidReactorLotVQueuedOrBetter">
@@ -201,6 +201,10 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeRapidFireLaunchers@UpgradeQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeRapidFireLaunchers@UpgradeQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeReaperLiberty@UpgradeQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeReaperLiberty@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeReaperSwarm@UpgradeQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeReaperSwarm@UpgradeQueuedOrBetter"/>

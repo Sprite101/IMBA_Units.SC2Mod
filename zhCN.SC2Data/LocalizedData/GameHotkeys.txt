@@ -42,3 +42,4 @@ Button/Hotkey/SensorTowerLotV1=N
 Button/Hotkey/SiegeTankLotV1@BuildSiegeTank=S
 Button/Hotkey/SiegeTankLotV1Morph@SiegeMode=E
 Button/Hotkey/SiegeTankLotV1Morph@Unsiege=D
+Button/Hotkey/WidowMineSwarm=D

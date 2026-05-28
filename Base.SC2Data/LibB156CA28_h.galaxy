@@ -37,14 +37,15 @@ int libB156CA28_gf_GetPlayersPanelIndex (int lp_player);
 void libB156CA28_gf_SetupTech (int lp_player);
 void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_itemIndex);
 void libB156CA28_gf_Select_Reaper (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Ghost (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_WidowMine (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Cyclone (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Default (int lp_player);
-void libB156CA28_gf_AllowGhost (int lp_player);
 
 // Trigger Declarations
 trigger libB156CA28_gt_ConfirmButtonUsed;
 trigger libB156CA28_gt_SelectionButtonUsed;
 trigger libB156CA28_gt_MapInit;
-trigger libB156CA28_gt_UnitTest;
 
 // Library Initialization
 void libB156CA28_InitVariables ();

@@ -188,12 +188,12 @@
             <Button DefaultButtonFace="BarracksLiberty" State="Restricted" Requirements="HaveCommandCenter"/>
         </InfoArray>
     </CAbilBuild>
-    <CAbilTrain id="WidowMineSwarm@Train2">
+    <CAbilTrain id="WidowMineSwarm@Train">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <Activity value="UI/Building"/>
         <Range value="3"/>
         <InfoArray index="Train1" Time="40">
-            <Button DefaultButtonFace="WidowMine"/>
+            <Button DefaultButtonFace="WidowMineSwarm"/>
             <Unit value="WidowMineSwarm"/>
         </InfoArray>
     </CAbilTrain>
@@ -537,7 +537,7 @@
         <InfoArray index="Research1" Time="90" Upgrade="ReaperLiberty@Upgrade">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="ReaperLiberty@ResearchNitroPacks" State="Restricted" Requirements="ReaperLiberty@UseNitroPacks">
+            <Button DefaultButtonFace="ReaperLiberty@ResearchNitroPacks" State="Restricted" Requirements="ReaperLiberty@LearnNitroPacks">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
         </InfoArray>

@@ -105,9 +105,9 @@
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeHurricaneThrusters@UpgradeQueuedOrBetter"/>
     </CRequirement>
-    <CRequirement id="ReaperLiberty@UseNitroPacks">
+    <CRequirement id="ReaperLiberty@LearnNitroPacks">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
-        <NodeArray index="Use" Link="CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat"/>
+        <NodeArray index="Show" Link="NotCountUpgradeReaperLiberty@UpgradeQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="ChargeZealotLotV1@UseCharge">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
