@@ -25,6 +25,7 @@ void libB156CA28_InitVariables () {
 
     libB156CA28_InitVariables_completed = true;
 
+    libB156CA28_gv_activePlayersGameInit = PlayerGroupEmpty();
     libB156CA28_gv_playerFrames.lv_mainPanel = c_invalidDialogControlId;
     libB156CA28_gv_playerFrames.lv_timeRemaining = c_invalidDialogControlId;
     for (init_i1 = 0; init_i1 <= libB156CA28_gv_maxActivePlayer; init_i1 += 1) {
@@ -62,76 +63,9 @@ void libB156CA28_InitVariables () {
             }
         }
     }
-    libB156CA28_gv_activePlayersGameInit = PlayerGroupEmpty();
 }
 
 // Functions
-void libB156CA28_gf_Hookups_PlayerFrames () {
-    // Variable Declarations
-    int lv_panelIndex;
-    int lv_selectFrameIndex;
-
-    // Automatic Variable Declarations
-    int autoF8B28B42_ae;
-    int autoF8B28B42_var;
-    int autoED878B8D_ae;
-    int autoED878B8D_var;
-    int auto1C68751A_ae;
-    int auto1C68751A_var;
-    const int autoA57A0CE1_ae = 3;
-    int autoA57A0CE1_var;
-
-    // Variable Initialization
-
-    // Implementation
-    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/FullscreenLowerContainer/IMBA_Selection_Panel");
-    libB156CA28_gv_playerFrames.lv_mainPanel = DialogControlLastCreated();
-    DialogControlHookup(DialogControlLastCreated(), c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName("TimeRemainingFrame/TimeRemainingLabel"));
-    libB156CA28_gv_playerFrames.lv_timeRemaining = DialogControlLastCreated();
-    autoF8B28B42_ae = (libB156CA28_gv_maxActivePlayer-1);
-    autoF8B28B42_var = 0;
-    for ( ; autoF8B28B42_var <= autoF8B28B42_ae; autoF8B28B42_var += 1 ) {
-        DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName(("StatusPanel/PlayerStatusFrame/Item" + IntToString(autoF8B28B42_var))));
-        libB156CA28_gv_playerFrames.lv_playerButton[autoF8B28B42_var] = DialogControlLastCreated();
-        DialogControlHookup(libB156CA28_gv_playerFrames.lv_playerButton[autoF8B28B42_var], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName("Label"));
-        libB156CA28_gv_playerFrames.lv_playerButtonName[autoF8B28B42_var] = DialogControlLastCreated();
-    }
-    DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName("ConfirmButton"));
-    libB156CA28_gv_playerFrames.lv_confirmButton = DialogControlLastCreated();
-    DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName("RandomButton"));
-    libB156CA28_gv_playerFrames.lv_randomButton = DialogControlLastCreated();
-    autoED878B8D_ae = (libB156CA28_gv_maxActivePlayer-1);
-    autoED878B8D_var = 0;
-    for ( ; autoED878B8D_var <= autoED878B8D_ae; autoED878B8D_var += 1 ) {
-        DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypePanel, libNtve_gf_ConvertStringToUILayoutFrameName(("StatusPanel/SelectionPanel" + IntToString(autoED878B8D_var))));
-        libB156CA28_gv_playerFrames.lv_selectionPanel[autoED878B8D_var] = DialogControlLastCreated();
-        DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupActive(), false);
-        DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel[autoED878B8D_var], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName("BG"));
-        libB156CA28_gv_playerFrames.lv_selectionPanel_BG[autoED878B8D_var] = DialogControlLastCreated();
-        lv_panelIndex = autoED878B8D_var;
-        auto1C68751A_ae = (libB156CA28_gv_maxSelectionItems-1);
-        auto1C68751A_var = 0;
-        for ( ; auto1C68751A_var <= auto1C68751A_ae; auto1C68751A_var += 1 ) {
-            DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel[lv_panelIndex], c_triggerControlTypePanel, libNtve_gf_ConvertStringToUILayoutFrameName(("ContainerFrame/Item" + IntToString(auto1C68751A_var))));
-            libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto1C68751A_var] = DialogControlLastCreated();
-            DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto1C68751A_var], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName(("UnitIndicator/HeaderImage")));
-            libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lv_panelIndex][auto1C68751A_var][0] = DialogControlLastCreated();
-            DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto1C68751A_var], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName(("UnitName")));
-            libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lv_panelIndex][auto1C68751A_var][1] = DialogControlLastCreated();
-            lv_selectFrameIndex = auto1C68751A_var;
-            autoA57A0CE1_var = 0;
-            for ( ; autoA57A0CE1_var <= autoA57A0CE1_ae; autoA57A0CE1_var += 1 ) {
-                DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][lv_selectFrameIndex], c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName(("UnitSelectionFrame/UnitSelection" + IntToString(autoA57A0CE1_var))));
-                libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][0] = DialogControlLastCreated();
-                DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][0], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName(("HeaderImageContainer/HeaderImage")));
-                libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][1] = DialogControlLastCreated();
-                DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][0], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName(("TitleLabel")));
-                libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][2] = DialogControlLastCreated();
-            }
-        }
-    }
-}
-
 void libB156CA28_gf_SetupSelectionPanel (int lp_player, int lp_panelIndex) {
     // Variable Declarations
     string lv_race;
@@ -207,6 +141,185 @@ void libB156CA28_gf_SetupSelectionItem (int lp_panelIndex, string lp_race, int l
     }
 }
 
+void libB156CA28_gf_Hookups_PlayerFrames () {
+    // Variable Declarations
+    int lv_panelIndex;
+    int lv_selectFrameIndex;
+
+    // Automatic Variable Declarations
+    int autoF8B28B42_ae;
+    int autoF8B28B42_var;
+    int autoED878B8D_ae;
+    int autoED878B8D_var;
+    int auto1C68751A_ae;
+    int auto1C68751A_var;
+    const int autoA57A0CE1_ae = 3;
+    int autoA57A0CE1_var;
+
+    // Variable Initialization
+
+    // Implementation
+    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/FullscreenLowerContainer/IMBA_Selection_Panel");
+    libB156CA28_gv_playerFrames.lv_mainPanel = DialogControlLastCreated();
+    DialogControlHookup(DialogControlLastCreated(), c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName("TimeRemainingFrame/TimeRemainingLabel"));
+    libB156CA28_gv_playerFrames.lv_timeRemaining = DialogControlLastCreated();
+    autoF8B28B42_ae = (libB156CA28_gv_maxActivePlayer-1);
+    autoF8B28B42_var = 0;
+    for ( ; autoF8B28B42_var <= autoF8B28B42_ae; autoF8B28B42_var += 1 ) {
+        DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName(("StatusPanel/PlayerStatusFrame/Item" + IntToString(autoF8B28B42_var))));
+        libB156CA28_gv_playerFrames.lv_playerButton[autoF8B28B42_var] = DialogControlLastCreated();
+        DialogControlHookup(libB156CA28_gv_playerFrames.lv_playerButton[autoF8B28B42_var], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName("Label"));
+        libB156CA28_gv_playerFrames.lv_playerButtonName[autoF8B28B42_var] = DialogControlLastCreated();
+    }
+    DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName("ConfirmButton"));
+    libB156CA28_gv_playerFrames.lv_confirmButton = DialogControlLastCreated();
+    DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName("RandomButton"));
+    libB156CA28_gv_playerFrames.lv_randomButton = DialogControlLastCreated();
+    autoED878B8D_ae = (libB156CA28_gv_maxActivePlayer-1);
+    autoED878B8D_var = 0;
+    for ( ; autoED878B8D_var <= autoED878B8D_ae; autoED878B8D_var += 1 ) {
+        DialogControlHookup(libB156CA28_gv_playerFrames.lv_mainPanel, c_triggerControlTypePanel, libNtve_gf_ConvertStringToUILayoutFrameName(("StatusPanel/SelectionPanel" + IntToString(autoED878B8D_var))));
+        libB156CA28_gv_playerFrames.lv_selectionPanel[autoED878B8D_var] = DialogControlLastCreated();
+        DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupActive(), false);
+        DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel[autoED878B8D_var], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName("BG"));
+        libB156CA28_gv_playerFrames.lv_selectionPanel_BG[autoED878B8D_var] = DialogControlLastCreated();
+        lv_panelIndex = autoED878B8D_var;
+        auto1C68751A_ae = (libB156CA28_gv_maxSelectionItems-1);
+        auto1C68751A_var = 0;
+        for ( ; auto1C68751A_var <= auto1C68751A_ae; auto1C68751A_var += 1 ) {
+            DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel[lv_panelIndex], c_triggerControlTypePanel, libNtve_gf_ConvertStringToUILayoutFrameName(("ContainerFrame/Item" + IntToString(auto1C68751A_var))));
+            libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto1C68751A_var] = DialogControlLastCreated();
+            DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto1C68751A_var], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName(("UnitIndicator/HeaderImage")));
+            libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lv_panelIndex][auto1C68751A_var][0] = DialogControlLastCreated();
+            DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][auto1C68751A_var], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName(("UnitName")));
+            libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lv_panelIndex][auto1C68751A_var][1] = DialogControlLastCreated();
+            lv_selectFrameIndex = auto1C68751A_var;
+            autoA57A0CE1_var = 0;
+            for ( ; autoA57A0CE1_var <= autoA57A0CE1_ae; autoA57A0CE1_var += 1 ) {
+                DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][lv_selectFrameIndex], c_triggerControlTypeButton, libNtve_gf_ConvertStringToUILayoutFrameName(("UnitSelectionFrame/UnitSelection" + IntToString(autoA57A0CE1_var))));
+                libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][0] = DialogControlLastCreated();
+                DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][0], c_triggerControlTypeImage, libNtve_gf_ConvertStringToUILayoutFrameName(("HeaderImageContainer/HeaderImage")));
+                libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][1] = DialogControlLastCreated();
+                DialogControlHookup(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][0], c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName(("TitleLabel")));
+                libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lv_panelIndex][lv_selectFrameIndex][autoA57A0CE1_var][2] = DialogControlLastCreated();
+            }
+        }
+    }
+}
+
+int libB156CA28_gf_GetPlayersPanelIndex (int lp_player) {
+    // Variable Declarations
+    int lv_panelIndex;
+
+    // Automatic Variable Declarations
+    int autoA2BB11F8_ae;
+    int autoA2BB11F8_var;
+
+    // Variable Initialization
+
+    // Implementation
+    autoA2BB11F8_ae = PlayerGroupCount(libB156CA28_gv_activePlayersGameInit);
+    autoA2BB11F8_var = 1;
+    for ( ; autoA2BB11F8_var <= autoA2BB11F8_ae; autoA2BB11F8_var += 1 ) {
+        if ((PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, autoA2BB11F8_var) == lp_player)) {
+            lv_panelIndex = (autoA2BB11F8_var-1);
+            break;
+        }
+        else {
+            lv_panelIndex = -1;
+        }
+    }
+    TriggerDebugOutput(1, IntToText(lv_panelIndex), false);
+    return lv_panelIndex;
+}
+
+void libB156CA28_gf_SetupTech (int lp_player) {
+    // Variable Declarations
+    int lv_panelIndex;
+
+    // Automatic Variable Declarations
+    int auto493A368B_ae;
+    int auto493A368B_var;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_panelIndex = libB156CA28_gf_GetPlayersPanelIndex(EventPlayer());
+    auto493A368B_ae = (libB156CA28_gv_maxSelectionItems-1);
+    auto493A368B_var = 0;
+    for ( ; auto493A368B_var <= auto493A368B_ae; auto493A368B_var += 1 ) {
+        libB156CA28_gf_SetupTechperItem(lp_player, lv_panelIndex, auto493A368B_var);
+    }
+}
+
+void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_itemIndex) {
+    // Variable Declarations
+    int lv_selectionIndex;
+    string lv_race;
+
+    // Automatic Variable Declarations
+    string autoB2629101_val;
+    int auto242D2030_val;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_race = PlayerRace(lp_player);
+    lv_selectionIndex = libB156CA28_gv_unitSelectionResults[lp_panelIndex][lp_itemIndex];
+    autoB2629101_val = lv_race;
+    if (autoB2629101_val == "Terr") {
+        auto242D2030_val = lv_selectionIndex;
+        if (auto242D2030_val == 0) {
+            libB156CA28_gf_Select_Reaper(lp_player, lv_selectionIndex);
+        }
+        else {
+        }
+    }
+    else {
+    }
+}
+
+void libB156CA28_gf_Select_Reaper (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), false);
+        TechTreeUnitAllow(lp_player, "ReaperSwarm", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), false);
+        TechTreeUnitAllow(lp_player, "ReaperSwarm", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeUnitAllow(lp_player, "ReaperLiberty", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), true);
+        TechTreeUnitAllow(lp_player, "Reaper", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksTrain", 1), false);
+        TechTreeUnitAllow(lp_player, "ReaperSwarm", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), false);
+    }
+    else if ((lp_selectionIndex == 3)) {
+        TechTreeUnitAllow(lp_player, "Reaper", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksTrain", 1), false);
+        TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), false);
+        TechTreeUnitAllow(lp_player, "ReaperSwarm", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@Train", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), true);
+    }
+}
+
 void libB156CA28_gf_Default (int lp_player) {
     // Automatic Variable Declarations
     // Implementation
@@ -261,8 +374,6 @@ bool libB156CA28_gt_ConfirmButtonUsed_Func (bool testConds, bool runActions) {
     int lv_panelIndex;
 
     // Automatic Variable Declarations
-    int auto3E14DD4C_ae;
-    int auto3E14DD4C_var;
     int auto06ECEAFF_ae;
     int auto06ECEAFF_var;
     const int auto675BBB04_ae = libB156CA28_gv_maxActivePlayer;
@@ -282,14 +393,7 @@ bool libB156CA28_gt_ConfirmButtonUsed_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    auto3E14DD4C_ae = PlayerGroupCount(libB156CA28_gv_activePlayersGameInit);
-    auto3E14DD4C_var = 1;
-    for ( ; auto3E14DD4C_var <= auto3E14DD4C_ae; auto3E14DD4C_var += 1 ) {
-        if ((PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, auto3E14DD4C_var) == EventPlayer())) {
-            lv_panelIndex = (auto3E14DD4C_var-1);
-        }
-
-    }
+    lv_panelIndex = libB156CA28_gf_GetPlayersPanelIndex(EventPlayer());
     DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_confirmButton, PlayerGroupSingle(EventPlayer()), false);
     DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_randomButton, PlayerGroupSingle(EventPlayer()), false);
     auto06ECEAFF_ae = (libB156CA28_gv_maxSelectionItems-1);
@@ -301,6 +405,7 @@ bool libB156CA28_gt_ConfirmButtonUsed_Func (bool testConds, bool runActions) {
     for ( ; auto675BBB04_var <= auto675BBB04_ae; auto675BBB04_var += 1 ) {
         DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto675BBB04_var-1)], PlayerGroupSingle(EventPlayer()), true);
     }
+    libB156CA28_gf_SetupTech(EventPlayer());
     return true;
 }
 
@@ -321,8 +426,6 @@ bool libB156CA28_gt_SelectionButtonUsed_Func (bool testConds, bool runActions) {
     bool lv_isSelection;
 
     // Automatic Variable Declarations
-    int auto43048A0E_ae;
-    int auto43048A0E_var;
     int auto11B052F2_ae;
     int auto11B052F2_var;
     const int autoCEDCE05C_ae = 3;
@@ -339,14 +442,7 @@ bool libB156CA28_gt_SelectionButtonUsed_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    auto43048A0E_ae = PlayerGroupCount(libB156CA28_gv_activePlayersGameInit);
-    auto43048A0E_var = 1;
-    for ( ; auto43048A0E_var <= auto43048A0E_ae; auto43048A0E_var += 1 ) {
-        if ((PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, auto43048A0E_var) == EventPlayer())) {
-            lv_panelIndex = (auto43048A0E_var-1);
-        }
-
-    }
+    lv_panelIndex = libB156CA28_gf_GetPlayersPanelIndex(EventPlayer());
     auto11B052F2_ae = (libB156CA28_gv_maxSelectionItems-1);
     auto11B052F2_var = 0;
     for ( ; auto11B052F2_var <= auto11B052F2_ae; auto11B052F2_var += 1 ) {
@@ -361,6 +457,7 @@ bool libB156CA28_gt_SelectionButtonUsed_Func (bool testConds, bool runActions) {
                 TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "C", IntToText(lv_itemIndex));
                 TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "D", IntToText(autoCEDCE05C_var));
                 TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_41422E3B"), true);
+                libB156CA28_gv_unitSelectionResults[lv_panelIndex][lv_itemIndex] = lv_selectionIndex;
             }
 
         }
@@ -505,8 +602,8 @@ bool libB156CA28_gt_UnitTest_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    TechTreeAbilityAllow(1, AbilityCommand("TerranBuild", 19), true);
-    TechTreeAbilityAllow(1, AbilityCommand("TerranBuild", 8), false);
+    TechTreeAbilityAllow(9, AbilityCommand("ChargeLotV1", 0), true);
+    TechTreeAbilityAllow(9, AbilityCommand("Charge", 0), false);
     return true;
 }
 

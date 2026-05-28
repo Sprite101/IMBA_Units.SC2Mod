@@ -999,6 +999,12 @@
         <Mover value="RavenScramblerMissile"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
     </CUnit>
+    <CUnit id="Reaper">
+        <AbilArray Link="KD8ChargeLotV1"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="KD8ChargeLotV1" Type="AbilCmd" AbilCmd="KD8ChargeLotV1,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="SCV">
         <CardLayouts index="1">
             <LayoutButtons Face="SensorTowerLotV1" Type="AbilCmd" AbilCmd="TerranBuild,Build20" Row="2" Column="2"/>
@@ -1641,5 +1647,11 @@
         <GlossaryWeakArray value="Observer"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
+    </CUnit>
+    <CUnit id="Zealot">
+        <AbilArray Link="ChargeLotV1"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="ChargeLotV1" Type="AbilCmd" AbilCmd="ChargeLotV1,Execute" Row="2" Column="0"/>
+        </CardLayouts>
     </CUnit>
 </Catalog>

@@ -6,6 +6,22 @@
     <CDataCollectionUnit id="BunkerLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionUnit>
+    <CDataCollection id="ChargeLotV1">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
+    <CDataCollectionUpgrade id="ChargeZealotLotV2">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <Button value="Charge"/>
+        <TechInfoUpgrade value="Charge"/>
+    </CDataCollectionUpgrade>
+    <CDataCollection id="ChargeLotV2">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
+    <CDataCollectionUpgrade id="ChargeZealotLotV1">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUpgrade id="CorvidReactorLotV">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
         <DataRecord Entry="Upgrade,CorvidReactorLotV"/>
@@ -48,6 +64,10 @@
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
         <Button value=""/>
     </CDataCollectionUpgrade>
+    <CDataCollection id="KD8ChargeLotV1">
+        <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollection id="NapalmSpraySwarmBeta">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>

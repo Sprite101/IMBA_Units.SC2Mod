@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorLocationCompareRange id="ChargeLotV1@ChargeDamageDistance">
+        <WhichLocation Value="SourceUnit"/>
+        <Compare value="LT"/>
+        <Range value="0.1"/>
+        <Pathing value="1"/>
+        <Value Effect="ChargeLotV1@InitialAB" Value="TargetUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="ChargeLotV1@IsCharging">
+        <Value value="1"/>
+        <Behavior value="ChargeLotV1@Charging"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="ChargeLotV1@ChargeTargetNotAlive">
+        <WhichUnit Effect="ChargeLotV1@InitialAB"/>
+        <Filters value="Dead;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="ChargeLotV1@ChargeTargetNotDead">
+        <WhichUnit Effect="ChargeLotV1@InitialAB"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
     <CValidatorCombine id="LockOnGroundAirPeriodicValidators">
         <CombineArray index="4" value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
     </CValidatorCombine>
@@ -198,4 +217,8 @@
     <CValidatorUnitType id="WidowMineSwarm@IsWidowMineBurrowed">
         <Value value="WidowMineSwarm@WidowMineBurrowed"/>
     </CValidatorUnitType>
+    <CValidatorUnitFilters id="ChargeLotV1@ChargeTargetNotHidden">
+        <WhichUnit Effect="ChargeLotV1@InitialAB"/>
+        <Filters value="-;Hidden"/>
+    </CValidatorUnitFilters>
 </Catalog>

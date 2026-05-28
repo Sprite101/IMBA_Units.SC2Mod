@@ -44,9 +44,16 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CaduceusReactorSwarmBeta@CaduceusReactor" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="CountUpgradeCorvidReactorLotVQueuedOrBetter">
+    <CRequirementCountUpgrade id="CountUpgradeChargeZealotLotV1CompleteOnly137519211TechTreeCheat">
+        <Count Link="ChargeZealotLotV1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeChargeZealotLotV1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="ChargeZealotLotV1" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCorvidReactorLotVQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CorvidReactorLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCorvidReactorSwarmQueuedOrBetter">
@@ -167,8 +174,11 @@
     <CRequirementNot id="NotCountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter"/>
     </CRequirementNot>
-    <CRequirementNot id="NotCountUpgradeCorvidReactorLotVQueuedOrBetter">
+    <CRequirementNot id="NotCountUpgradeChargeZealotLotV1QueuedOrBetter">
         <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeChargeZealotLotV1QueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeCorvidReactorLotVQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeCorvidReactorLotVQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCorvidReactorSwarmQueuedOrBetter">

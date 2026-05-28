@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorSound id="ChargeLotV1@ChargingSound" parent="SoundContinuous">
+        <On Terms="Behavior.ChargeLotV1@Charging.Create" Send="Create"/>
+        <On Terms="Behavior.ChargeLotV1@Charging.Destroy" Send="Destroy"/>
+        <Sound value="Zealot_Charge"/>
+    </CActorSound>
+    <CActorAction id="KD8ChargeLotV1@AttackAction" parent="GenericAttack" effectImpact="RemovePrecursor" effectLaunch="KD8ChargeLotV1@LM">
+        <LaunchAttachQuery Methods="AMFilterWeaponRight"/>
+        <LaunchAssets Sound="Reaper_D8ChargeAttackLaunch"/>
+        <Missile value="KD8ChargeMissile"/>
+    </CActorAction>
+    <CActorRange id="KD8ChargeLotV1@Range" parent="RangeAbil" abil="KD8ChargeLotV1"/>
     <CActorAction id="RavenAutoTurret@AutoTurretAttackAction" parent="GenericAttack" effectAttack="RavenAutoTurret@AutoTurretDamage">
         <LaunchAssets Model="AutoTurretAttackLaunch" Sound="Raven_AutoTurretAttackLaunch"/>
         <ImpactMap index="None" Model="AutoTurretAttackImpact" Sound="Raven_AutoTurretAttackImpact"/>
@@ -1835,6 +1846,9 @@
             <Image value="Assets\Textures\Wireframe-Terran-Raven.dds"/>
         </Wireframe>
     </CActorUnit>
+    <CActorMissile id="Reaper">
+        <On Terms="Abil.KD8ChargeLotV1.SourceCastStart" Send="$Spell"/>
+    </CActorMissile>
     <CActorModel id="SeekerMissileSwarm@FailDeath">
         <CopySource value="HunterSeekerWeapon"/>
         <Flags index="SuppressSaveLoad" value="1"/>
@@ -2638,4 +2652,13 @@
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
     </CActorRange>
+    <CActorAction id="ChargeLotV1@ChargeImpactDamageModel" parent="GenericAttack" effectAttack="ChargeLotV1@ChargingDamage">
+        <ImpactMap index="None">
+            <Model value="PurificationNovaImpact"/>
+            <Scale value="1.500000"/>
+            <Sound value=""/>
+            <ModelReaction value=""/>
+        </ImpactMap>
+        <ImpactMap index="Shield" Sound="" ModelReaction=""/>
+    </CActorAction>
 </Catalog>

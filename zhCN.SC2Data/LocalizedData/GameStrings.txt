@@ -1,6 +1,8 @@
 ﻿Abil/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
 Abil/Name/AutoTurretSwarm=Place Auto Turret
 Abil/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
+Abil/Name/ChargeLotV1=Charge
+Abil/Name/ChargeZealotLotV1@ResearchCharge=Research Charge
 Abil/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CycloneLockOnAirLoTV1@LockOn=Lock On
@@ -23,6 +25,7 @@ Abil/Name/HellbatSwarmBeta@Train=Build
 Abil/Name/HellionSwarmBeta@MorphToHellbat=Morph To Hellbat
 Abil/Name/HellionSwarmBeta@Train=Build
 Abil/Name/InfernalPreIgniterSwarm@ResearchInfernalPreIgniter=Research Infernal Pre-Igniter
+Abil/Name/KD8ChargeLotV1=KD8 Charge
 Abil/Name/LiberatorAGLotV1@AATarget=AA Target
 Abil/Name/LiberatorAGLotV1@MorphtoAA=Morph to AA
 Abil/Name/LiberatorLotV1@AGTarget=AG Target
@@ -53,6 +56,7 @@ Abil/Name/WidowMineSwarm@Train2=Build
 Abil/Name/WidowMineSwarm@WidowMineAttack=Widow Mine Attack
 Abil/Name/WidowMineSwarm@WidowMineBurrow=Widow Mine Burrow
 Abil/Name/WidowMineSwarm@WidowMineUnburrow=Widow Mine Unburrow 
+Behavior/Name/ChargeLotV1@Charging=Charging
 Behavior/Name/CycloneLockOnAirLoTV1@LockOn=Lock On Target
 Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
 Behavior/Name/CycloneLockOnLotV2@LockOn=Lock On Target
@@ -61,6 +65,7 @@ Behavior/Name/RavenAntiArmorMissile@TargetTraceTint=Anti-Armor Missile Targeting
 Behavior/Name/RavenInterferenceMatrix=Interference Matrix
 Behavior/Name/SeekerMissileSwarm@TargetTint=Seeker Missile
 Behavior/Name/SeekerMissileSwarm@Timeout=Timeout
+Behavior/Tooltip/ChargeLotV1@Charging=This Zealot is charging, allowing it to quickly close the distance with its target.
 Behavior/Tooltip/CycloneLockOnAirLoTV1@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/RavenAntiArmorMissile@ArmorReduction=This unit has reduced armor.
@@ -73,6 +78,8 @@ Button/Name/AutoTurretSwarm=Build Auto-Turret
 Button/Name/BarracksLiberty=Build Barracks
 Button/Name/BunkerLiberty=Build Bunker
 Button/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
+Button/Name/ChargeLotV1=Charge
+Button/Name/ChargeZealotLotV1@ResearchCharge=Research Charge
 Button/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Button/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
 Button/Name/CycloneLockOnAirLoTV1@Button=Lock On
@@ -92,6 +99,7 @@ Button/Name/GhostWoL@TrainGhost=Train Ghost
 Button/Name/HurricaneThrusters@Passive=Hurricane Thrusters
 Button/Name/HurricaneThrusters@Research=Research Hurricane Thrusters
 Button/Name/InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm=Research Infernal Pre-Igniter
+Button/Name/KD8ChargeLotV1=KD8 Charge
 Button/Name/LiberatorLotV1@BuildLiberator=Build Liberator
 Button/Name/MoebiusReactor@MoebiusReactor=Moebius Reactor
 Button/Name/MoebiusReactor@ResearchMoebiusReactor=Research Moebius Reactor
@@ -125,6 +133,8 @@ Button/Tooltip/BuildCycloneLotV2=Mobile assault vehicle. Can use Lock On to quic
 Button/Tooltip/BuildGhostLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BunkerLiberty=Defensive structure. <n/>Infantry fights from inside. <n/><n/><c val="#ColorAttackInfo">Bonus: +1 range to units inside.</c>
 Button/Tooltip/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Increases Health restored per second from 9 to 15 and reduces energy cost from 3 health per 1 energy to 5 health per 1 energy.
+Button/Tooltip/ChargeLotV1=Allows Zealots to intercept nearby enemies. Deals <d ref="Effect,ChargeLotV1@ChargingDamage,Amount"/> damage upon impcat. Also increases the movement speed of Zealots. Ability can only be used once every <d ref="Abil,Charge,Cost.Cooldown.TimeUse"/> seconds.
+Button/Tooltip/ChargeZealotLotV1@ResearchCharge=Allows <c val="ffff8a">Zealots</c> to intercept nearby enemies and deal <d ref="Effect,ChargeLotV1@ChargingDamage,Amount"/> damage upon impact. Also increases the movement speed of <c val="ffff8a">Zealots</c>. Ability can only be used once every <d ref="Abil,Charge,Cost.Cooldown.TimeUse"/> seconds.
 Button/Tooltip/CorvidReactorLotV@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
 Button/Tooltip/CorvidReactorSwarm@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
 Button/Tooltip/CycloneLockOnAirLoTV1@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
@@ -147,6 +157,7 @@ Button/Tooltip/HellionSwarmBeta@Hellion=Fast scout. Has a flame attack that dama
 Button/Tooltip/HurricaneThrusters@Passive=Increases the move speed of <c val="ffff8a">Cyclones</c>.
 Button/Tooltip/HurricaneThrusters@Research=Increases the move speed of <c val="ffff8a">Cyclones</c>.
 Button/Tooltip/InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm=Improves the <c val="ffff8a">Hellion's</c> Infernal Flamethrower to deal +<d ref="$UpgradeEffectArrayValue:InfernalPreIgniterSwarm@InfernalPreIgniterSwarm:Effect,InfernalFlameThrower,AttributeBonus[Light]$"/> damage vs. light units.
+Button/Tooltip/KD8ChargeLotV1=Explodes after a short delay, dealing <d ref="Effect,KD8ChargeLotV1@Damage,Amount"/> damage and knocking back nearby units.
 Button/Tooltip/LiberatorAGLotV1@LiberatorAG=Immobile defender. Deals heavy single target damage to ground units. Can switch into Fighter mode to provide air support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/LiberatorLotV1@BuildLiberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
 Button/Tooltip/LiberatorLotV1@Liberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
@@ -186,6 +197,10 @@ DataCollection/Name/AutoTurretSwarm=Raven Auto Turret
 DataCollection/Name/BarracksLiberty=Barracks
 DataCollection/Name/BunkerLiberty=Bunker
 DataCollection/Name/CaduceusReactorSwarmBeta=Caduceus Reactor
+DataCollection/Name/ChargeLotV1=Charge
+DataCollection/Name/ChargeLotV2=Charge
+DataCollection/Name/ChargeZealotLotV1=Charge
+DataCollection/Name/ChargeZealotLotV2=Charge
 DataCollection/Name/CorvidReactorLotV=Corvid Reactor
 DataCollection/Name/CorvidReactorSwarm=Corvid Reactor
 DataCollection/Name/CrucioShockCannonLotV1=Crucio Shock Cannon
@@ -204,6 +219,7 @@ DataCollection/Name/HellbatSwarmBeta=Hellbat
 DataCollection/Name/HellionSwarmBeta=Hellion
 DataCollection/Name/HurricaneThrusters=Hurricane Thrusters
 DataCollection/Name/InfernalPreIgniterSwarm=Infernal Pre-Igniter
+DataCollection/Name/KD8ChargeLotV1=KD8 Charge
 DataCollection/Name/LiberatorAGLotV1=Liberator AG LotV1
 DataCollection/Name/LiberatorLotV1=Liberator LotV1
 DataCollection/Name/ModifiedAbility=Modified
@@ -238,6 +254,14 @@ Effect/Name/AutoTurretSwarm@InitialSet=Initial Set
 Effect/Name/AutoTurretSwarm@LM=LM
 Effect/Name/AutoTurretSwarm@ReleaseSet=Release Set
 Effect/Name/AutoTurretSwarm@TimedLifeAB=Timed Life AB
+Effect/Name/ChargeLotV1@ChargingAttackAB=Charging Attack AB
+Effect/Name/ChargeLotV1@ChargingAttackRB=Charging Attack RB
+Effect/Name/ChargeLotV1@ChargingCheckAB=Charging Check AB
+Effect/Name/ChargeLotV1@ChargingCheckRB=Charging Check RB
+Effect/Name/ChargeLotV1@ChargingDamage=Charging Damage
+Effect/Name/ChargeLotV1@ChargingDamageSecondary=Charging Damage Secondary
+Effect/Name/ChargeLotV1@ChargingPrimaryDamageSet=Charging Primary Damage Set
+Effect/Name/ChargeLotV1@InitialAB=Initial AB
 Effect/Name/CrucioShockCannonLotV1@Blast=Blast
 Effect/Name/CrucioShockCannonLotV1@Directed=Directed
 Effect/Name/CrucioShockCannonLotV1@Dummy=Dummy
@@ -309,6 +333,14 @@ Effect/Name/GhostWoL@EMPSearch=EMP Search
 Effect/Name/GhostWoL@SnipeDamage=Damage
 Effect/Name/GrenadeLiberty@Damage=Damage
 Effect/Name/GrenadeLiberty@LM=LM
+Effect/Name/KD8ChargeLotV1@ChargeFateAB=Charge Fate AB
+Effect/Name/KD8ChargeLotV1@Damage=Damage
+Effect/Name/KD8ChargeLotV1@EndSet=End Set
+Effect/Name/KD8ChargeLotV1@ExplodeInitialSet=Explode Initial Set
+Effect/Name/KD8ChargeLotV1@InitialCU=CU
+Effect/Name/KD8ChargeLotV1@LM=LM
+Effect/Name/KD8ChargeLotV1@LaunchSet=Launch Set
+Effect/Name/KD8ChargeLotV1@SearchArea=Search Area
 Effect/Name/LiberatorAGLotV1@Damage=Damage
 Effect/Name/LiberatorAGLotV1@LM=LM
 Effect/Name/LiberatorAGLotV1@LMSet=LM Set
@@ -407,6 +439,7 @@ Param/Expression/lib_B156CA28_81A2A7C1=Panel Index: ~A~
 RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat=Factory
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Research Advanced Ballistics at the Starport Techlab
 RequirementNode/Tooltip/CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276=Research Caduceus Reactor at the Starport Techlab
+RequirementNode/Tooltip/CountUpgradeChargeZealotLotV1CompleteOnly137519211TechTreeCheat=Research Charge at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat=Research Enhanced Shockwaves at the Ghost Academy
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwavesCompleteOnly2618611756TechTreeCheat2=Research Enhanced Shockwaves at the Ghost Academy
 RequirementNode/Tooltip/CountUpgradeHurricaneThrusters@UpgradeCompleteOnly3968802568=Research <d stringRef="Upgrade,HurricaneThrusters@Upgrade,Name"/> at the Factory Tech Lab
@@ -462,6 +495,8 @@ Unit/Name/WidowMineSwarm@WidowMine=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMineBurrowed=Widow Mine
 Upgrade/Name/AdvancedBallistics=Advanced Ballistics
 Upgrade/Name/CaduceusReactorSwarmBeta@CaduceusReactor=Caduceus Reactor
+Upgrade/Name/ChargeZealotLotV1=Charge
+Upgrade/Name/ChargeZealotLotV2=Charge
 Upgrade/Name/CorvidReactorLotV=Corvid Reactor
 Upgrade/Name/CorvidReactorSwarm=Corvid Reactor
 Upgrade/Name/DrillingClaws@DrillingClaws=Drilling Claws

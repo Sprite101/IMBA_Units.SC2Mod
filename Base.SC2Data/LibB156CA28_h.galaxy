@@ -24,14 +24,19 @@ struct libB156CA28_gs_PlayerFrames {
 };
 
 // Variable Declarations
-libB156CA28_gs_PlayerFrames libB156CA28_gv_playerFrames;
 int libB156CA28_gv_activePlayerNum;
 playergroup libB156CA28_gv_activePlayersGameInit;
+int[libB156CA28_gv_maxActivePlayer + 1][libB156CA28_gv_maxSelectionItems + 1] libB156CA28_gv_unitSelectionResults;
+libB156CA28_gs_PlayerFrames libB156CA28_gv_playerFrames;
 
 // Function Declarations
-void libB156CA28_gf_Hookups_PlayerFrames ();
 void libB156CA28_gf_SetupSelectionPanel (int lp_player, int lp_panelIndex);
 void libB156CA28_gf_SetupSelectionItem (int lp_panelIndex, string lp_race, int lp_itemIndex);
+void libB156CA28_gf_Hookups_PlayerFrames ();
+int libB156CA28_gf_GetPlayersPanelIndex (int lp_player);
+void libB156CA28_gf_SetupTech (int lp_player);
+void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_itemIndex);
+void libB156CA28_gf_Select_Reaper (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Default (int lp_player);
 void libB156CA28_gf_AllowGhost (int lp_player);
 

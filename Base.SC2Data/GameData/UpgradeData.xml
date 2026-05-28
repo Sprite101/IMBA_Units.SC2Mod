@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUpgrade id="ChargeZealotLotV1">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,Zealot,Speed" Value="0.500000"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="Zealot"/>
+    </CUpgrade>
+    <CUpgrade id="ChargeZealotLotV2">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,Zealot,Speed" Value="0.699200"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="Zealot"/>
+    </CUpgrade>
     <CUpgrade id="CorvidReactorLotV">
         <Icon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
         <ScoreAmount value="300"/>

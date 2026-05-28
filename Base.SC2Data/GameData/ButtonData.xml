@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="ChargeZealotLotV1@ResearchCharge">
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="BarracksLiberty">
         <Icon value="Assets\Textures\btn-building-terran-barracks.dds"/>
         <AlertIcon value="Assets\Textures\btn-building-terran-barracks.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="ChargeLotV1">
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="CorvidReactorLotV@ResearchCorvidReactor">
         <Icon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-corvidreactor.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="KD8ChargeLotV1">
+        <Icon value="Assets\Textures\btn-upgrade-terran-kd8chargeex3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-kd8chargeex3.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="RavenAutoTurret">

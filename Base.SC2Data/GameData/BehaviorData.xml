@@ -5,6 +5,43 @@
         <DisplayDuration index="Enemy" value="1"/>
         <Duration value="180"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="ChargeLotV1@Charging">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="ChargeTargetAttacked"/>
+        <BuffFlags index="Channeling" value="1"/>
+        <Duration value="3.5"/>
+        <InitialEffect value="ChargeLotV1@ChargingCheckAB"/>
+        <FinalEffect value="ChargeLotV1@ChargingPrimaryDamageSet"/>
+        <Modification MoveSpeedMultiplier="2.2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ChargeLotV1@ChargingAttack2">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="0.25"/>
+        <DamageResponse Handled="ChargeLotV1@ChargingDamageSecondary" Location="Attacker">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ChargeLotV1@ChargingAttackCheck">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="ChargeLotV1@IsCharging"/>
+        <Duration value="3.5"/>
+        <FinalEffect value="ChargeLotV1@ChargingAttackAB"/>
+        <DamageResponse Handled="ChargeLotV1@ChargingDamageSecondary" Location="Attacker">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="KD8ChargeLotV1@ChargeFate">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="2"/>
+        <ExpireEffect value="KD8ChargeLotV1@ExplodeInitialSet"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="RavenAutoTurret@AutoTurretTimedLife" parent="TimedLife">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <DisplayDuration index="Enemy" value="1"/>

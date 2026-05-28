@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUser id="IMBA_ZergUnits">
+        <Fields>
+            <Id value="Selection_Units"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields Id="Selection_Images" Type="Image" Count="5"/>
+        <Fields Id="Info_Image" Type="Image"/>
+        <Fields Id="Info_Unit" Type="GameLink" GameLinkType="Unit"/>
+        <Fields Id="Selection_Expansion_Tip" Type="Text" Count="5"/>
+        <Fields Id="Selection_Title" Type="Text" Count="5"/>
+        <Instances Id="[Default]">
+            <Image>
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_se.dds">
+                <Field Id="Selection_Images"/>
+            </Image>
+        </Instances>
+    </CUser>
     <CUser id="IMBA_TerranUnits">
         <Fields>
             <Id value="Selection_Units"/>
@@ -573,6 +594,27 @@
             <Text Text="UserData/IMBA_TerranUnits/Reactor_Selection_Title_001">
                 <Field Id="Selection_Title" Index="1"/>
             </Text>
+        </Instances>
+    </CUser>
+    <CUser id="IMBA_ProtossUnits">
+        <Fields>
+            <Id value="Selection_Units"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="5"/>
+        </Fields>
+        <Fields Id="Selection_Images" Type="Image" Count="5"/>
+        <Fields Id="Info_Image" Type="Image"/>
+        <Fields Id="Info_Unit" Type="GameLink" GameLinkType="Unit"/>
+        <Fields Id="Selection_Expansion_Tip" Type="Text" Count="5"/>
+        <Fields Id="Selection_Title" Type="Text" Count="5"/>
+        <Instances Id="[Default]">
+            <Image>
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_se.dds">
+                <Field Id="Selection_Images"/>
+            </Image>
         </Instances>
     </CUser>
 </Catalog>

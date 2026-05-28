@@ -7,6 +7,100 @@
         <Amount value="15"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectApplyBehavior id="ChargeLotV1@InitialAB">
+        <ValidatorArray index="0" value="ChargeMinTriggerDistance"/>
+        <ValidatorArray value="ChargeMaxDistance"/>
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="ChargeLotV1@Charging"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="ChargeLotV1@ChargingAttackAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="ChargeLotV1@ChargingAttack2"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="ChargeLotV1@ChargingAttackRB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="ChargingAttack"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="ChargeLotV1@ChargingCheckAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="ChargeLotV1@ChargingAttackCheck"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="ChargeLotV1@ChargingCheckRB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="ChargingAttackCheck"/>
+    </CEffectRemoveBehavior>
+    <CEffectDamage id="ChargeLotV1@ChargingDamage">
+        <ValidatorArray value="ChargeLotV1@ChargeDamageDistance"/>
+        <ValidatorArray value="ChargeLotV1@ChargeTargetNotHidden"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Effect="ChargeLotV1@InitialAB" Value="TargetUnit"/>
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectDamage id="ChargeLotV1@ChargingDamageSecondary">
+        <ValidatorArray value="ChargeLotV1@ChargeTargetNotAlive"/>
+        <ValidatorArray value="NotHidden"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectSet id="ChargeLotV1@ChargingPrimaryDamageSet">
+        <ValidatorArray value="ChargeLotV1@ChargeTargetNotDead"/>
+        <ValidatorArray value="NotHidden"/>
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="ChargeLotV1@ChargingDamage"/>
+        <EffectArray value="ChargeLotV1@ChargingCheckRB"/>
+        <EffectArray value="ChargeLotV1@ChargingAttackRB"/>
+    </CEffectSet>
+    <CEffectDamage id="KD8ChargeLotV1@Damage" parent="DU_WEAP_SPLASH">
+        <ValidatorArray value="IsNotPhasedUnit"/>
+        <EditorCategories value="Race:Terran"/>
+        <ArmorReduction value="0"/>
+        <Kind value="Spell"/>
+        <Amount value="10"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectSet id="KD8ChargeLotV1@EndSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="KD8ChargeLotV1@Damage"/>
+        <EffectArray value="ReaperKD8Knockback"/>
+    </CEffectSet>
+    <CEffectSet id="KD8ChargeLotV1@ExplodeInitialSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="KD8ChargeLotV1@SearchArea"/>
+        <EffectArray value="Suicide"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="KD8ChargeLotV1@LM">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <FinishEffect value="RemovePrecursor"/>
+        <AmmoUnit value="KD8ChargeWeapon"/>
+        <Movers Link="KD8ChargeWeaponCloseRange" IfRangeLTE="1"/>
+        <Movers Link="KD8ChargeWeapon" IfRangeLTE="500"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="KD8ChargeLotV1@LaunchSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="KD8ChargeLotV1@LM"/>
+        <EffectArray value="KD8ChargeLotV1@ChargeFateAB"/>
+        <EffectArray value="MakePrecursor"/>
+    </CEffectSet>
+    <CEffectCreateUnit id="KD8ChargeLotV1@InitialCU">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <SpawnEffect value="KD8ChargeLotV1@LaunchSet"/>
+        <SpawnUnit value="KD8Charge"/>
+        <SpawnRange value="3"/>
+    </CEffectCreateUnit>
+    <CEffectEnumArea id="KD8ChargeLotV1@SearchArea">
+        <AINotifyFlags index="HurtFriend" value="1"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <AINotifyFlags index="MinorDanger" value="1"/>
+        <SearchFilters value="Ground;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="KD8ChargeLotV1@EndSet"/>
+    </CEffectEnumArea>
     <CEffectDamage id="RavenAutoTurret@AutoTurretDamage" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Terran"/>
         <Amount value="18"/>
@@ -596,6 +690,9 @@
     <CEffectSet id="RavenScramblerMissileSetInitial">
         <ValidatorArray index="1" value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>
     </CEffectSet>
+    <CEffectApplyBehavior id="KD8ChargeLotV1@ChargeFateAB">
+        <Behavior value="KD8ChargeLotV1@ChargeFate"/>
+    </CEffectApplyBehavior>
     <CEffectApplyBehavior id="SalvageLiberty@AB">
         <ValidatorArray index="0" value="HasNoCargo"/>
         <EditorCategories value="Race:Terran"/>

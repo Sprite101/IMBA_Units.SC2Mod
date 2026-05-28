@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirement id="ChargeZealotLotV1@LearnCharge">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeChargeZealotLotV1QueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="CorvidReactorSwarm@LearnCorvidReactor">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Show" Link="NotCountUpgradeCorvidReactorSwarmQueuedOrBetter"/>
@@ -104,5 +108,9 @@
     <CRequirement id="ReaperLiberty@UseNitroPacks">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Use" Link="CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="ChargeZealotLotV1@UseCharge">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeChargeZealotLotV1CompleteOnly137519211TechTreeCheat"/>
     </CRequirement>
 </Catalog>
