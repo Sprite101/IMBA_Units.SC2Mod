@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CBehaviorBuff id="PsionicTransferLotV@ShadeSpawn">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <StateFlags index="Benign" value="1"/>
+            <StateFlags index="Passive" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PsionicTransferLotV@CancelDummy">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="0.125"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PsionicTransferLotV@Caster">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <DisableValidatorArray value="NotBeingAbducted"/>
+        <DisableValidatorArray value="KD8CasterKnockingBack"/>
+        <Duration value="10.0625"/>
+        <FinalEffect value="PsionicTransferLotV@CancelRB"/>
+        <ExpireEffect value="PsionicTransferLotV@CancelRB"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PsionicTransferLotV@Timer">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <DisableValidatorArray value="CasterNotAbducted"/>
+        <DisableValidatorArray value="KD8CasterKnockingBack"/>
+        <RemoveValidatorArray value="CasterNotDead"/>
+        <RemoveValidatorArray value="CasterIsNotRecallingNexus"/>
+        <RemoveValidatorArray value="CasterIsNotHidden"/>
+        <RemoveValidatorArray value="CasterIsNotMothershipMassRecalling"/>
+        <RemoveValidatorArray value="PsionicTransferLotV@CasterIsNotPhaseShifting"/>
+        <Duration value="10"/>
+        <FinalEffect value="PsionicTransferLotV@TimerCancelSet"/>
+        <ExpireEffect value="PsionicTransferLotV@TeleportSet"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AutoTurretSwarm@TimedLife" parent="TimedLife">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <DisplayDuration index="Enemy" value="1"/>
@@ -42,6 +91,30 @@
         <Duration value="2"/>
         <ExpireEffect value="KD8ChargeLotV1@ExplodeInitialSet"/>
     </CBehaviorBuff>
+    <CBehaviorPowerSource id="WarpInLiberty@PrismPowerSource">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Radius value="3.75"/>
+        <PowerLink value="PowerSource"/>
+    </CBehaviorPowerSource>
+    <CBehaviorPowerUser id="WarpInLiberty@PowerUserWarpable">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <PowerLink value="PowerSource"/>
+        <PlacementMinPowerLevel value="1"/>
+        <Flags index="KillIfUnpowered" value="1"/>
+        <PoweredWhileUnderConstruction value="1"/>
+        <PowerStageArray/>
+    </CBehaviorPowerUser>
+    <CBehaviorPowerSource id="WarpInLiberty@PowerSource">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Radius value="7.5"/>
+        <PowerLink value="PowerSource"/>
+    </CBehaviorPowerSource>
     <CBehaviorBuff id="RavenAutoTurret@AutoTurretTimedLife" parent="TimedLife">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <DisplayDuration index="Enemy" value="1"/>

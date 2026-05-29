@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilEffectInstant id="PsionicTransferLotV@Cancel">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="PsionicTransferLotV@CancelAB"/>
+        <Flags index="Transient" value="1"/>
+        <AINotifyEffect value="AdeptPhaseShiftCancel"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Cancel" Requirements="AdeptPhaseShifting"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="PsionicTransferLotV">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <Effect index="0" value="PsionicTransferLotV@InitialSet"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="16"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PsionicTransferLotV">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
     <CAbilResearch id="ChargeZealotLotV1@ResearchCharge">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="100" Upgrade="ChargeZealotLotV1">
@@ -43,6 +65,12 @@
             <Button DefaultButtonFace="ReactorLiberty"/>
         </InfoArray>
     </CAbilBuild>
+    <CAbilTrain id="GatewayTrain">
+        <InfoArray index="Train9" Time="42">
+            <Button DefaultButtonFace="Stalker" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Unit value="StalkerLiberty"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilEffectTarget id="KD8ChargeLotV1">
         <Alignment value="Negative"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -56,12 +84,25 @@
         <AINotifyEffect value="KD8Charge"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="KD8ChargeLotV1"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="MedivacHeal">
+        <SmartValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CAbilEffectTarget>
     <CAbilResearch id="ModifiedAbility@YamatoGunResearch">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="60" Upgrade="BattlecruiserEnableSpecializations">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>
             <Button DefaultButtonFace="ResearchBattlecruiserSpecializations" State="Restricted" Requirements="LearnBattlecruiserSpecializations">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilResearch id="BlinkLiberty@ResearchBlink">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="110" Upgrade="BlinkTech">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="ResearchStalkerTeleport" State="Restricted" Requirements="LearnBlink">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
         </InfoArray>
@@ -159,6 +200,9 @@
         <DefaultError value="MustTargetUnit,Error/MustTargetMechanicalorPsionic"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="RavenInterferenceMatrix"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="RavenRepairDroneHeal">
+        <SmartValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CAbilEffectTarget>
     <CAbilEffectInstant id="SalvageLiberty" parent="Refund">
         <Name value="Abil/Name/SalvageLiberty"/>
         <Effect index="0" value="SalvageLiberty@AB"/>
@@ -188,6 +232,23 @@
             <Button DefaultButtonFace="BarracksLiberty" State="Restricted" Requirements="HaveCommandCenter"/>
         </InfoArray>
     </CAbilBuild>
+    <CAbilWarpTrain id="WarpGateTrain">
+        <InfoArray index="Train9" Time="16" Unit="StalkerLiberty">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value="WarpGateTrain"/>
+                <TimeUse value="32"/>
+            </Charge>
+            <Cooldown Link="WarpGateTrain"/>
+            <Button DefaultButtonFace="Stalker" State="Restricted" Requirements="HaveCyberneticsCore"/>
+        </InfoArray>
+    </CAbilWarpTrain>
+    <CAbilWarpable id="WarpInLiberty@Warpable">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <PowerUserBehavior value="WarpInLiberty@PowerUserWarpable"/>
+    </CAbilWarpable>
     <CAbilTrain id="WidowMineSwarm@Train">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <Activity value="UI/Building"/>

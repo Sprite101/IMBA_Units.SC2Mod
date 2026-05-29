@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitCompareBehaviorCount id="PsionicTransferLotV@CasterIsNotPhaseShifting">
+        <WhichUnit Effect="PsionicTransferLotV@CU" Value="Caster"/>
+        <Behavior value="PsionicTransferLotV@CancelDummy"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorLocationCompareRange id="ChargeLotV1@ChargeDamageDistance">
         <WhichLocation Value="SourceUnit"/>
         <Compare value="LT"/>
@@ -19,6 +23,15 @@
         <WhichUnit Effect="ChargeLotV1@InitialAB"/>
         <Filters value="-;Dead"/>
     </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="WarpInLiberty@IsNotWarpingIn">
+        <Compare value="NE"/>
+        <Value value="1"/>
+        <Behavior value="WarpInLiberty@PowerUserWarpable"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="WarpInLiberty@IsWarpingIn">
+        <Value value="1"/>
+        <Behavior value="WarpInLiberty@PowerUserWarpable"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="LockOnGroundAirPeriodicValidators">
         <CombineArray index="4" value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
     </CValidatorCombine>
@@ -42,6 +55,10 @@
         <CombineArray value="RavenInterferenceMatrix@TargetDoesNotHaveInterferenceMatrixBehavior"/>
         <Type value="And"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="WarpInLiberty@NotWarpingIn">
+        <ResultFailed value="CantTargetThatUnit,Error/CantTargetWarpingInUnits"/>
+        <Behavior value="WarpInLiberty@PowerUserWarpable"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RavenInterferenceMatrix@CasterDoesNotHaveInterferenceMatrixBehavior">
         <WhichUnit Value="Caster"/>
         <Behavior value="RavenInterferenceMatrix"/>

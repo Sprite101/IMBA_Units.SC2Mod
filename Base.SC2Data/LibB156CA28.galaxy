@@ -688,10 +688,42 @@ void libB156CA28_gt_MapInit_Init () {
     TriggerAddEventMapInit(libB156CA28_gt_MapInit);
 }
 
+//--------------------------------------------------------------------------------------------------
+// Trigger: Unit Test
+//--------------------------------------------------------------------------------------------------
+bool libB156CA28_gt_UnitTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TechTreeUnitAllow(1, "StalkerLiberty", true);
+    TechTreeUnitAllow(1, "Stalker", false);
+    TechTreeAbilityAllow(1, AbilityCommand("BlinkLiberty@ResearchBlink", 0), true);
+    TechTreeAbilityAllow(1, AbilityCommand("TwilightCouncilResearch", 1), false);
+    TechTreeBehaviorAllow(1, "PowerSource", false);
+    TechTreeBehaviorAllow(1, "PowerSourceFast", false);
+    TechTreeBehaviorAllow(1, "FastEnablerGatewayMorphingPowerSource", false);
+    TechTreeBehaviorAllow(1, "FastEnablerPowerSource", false);
+    TechTreeBehaviorAllow(1, "FastEnablerPowerSourceNexus", false);
+    TechTreeBehaviorAllow(1, "PowerUserWarpable", false);
+    TechTreeBehaviorAllow(1, "FastEnablerPowerUser", false);
+    TechTreeAbilityAllow(1, AbilityCommand("Warpable", 0), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libB156CA28_gt_UnitTest_Init () {
+    libB156CA28_gt_UnitTest = TriggerCreate("libB156CA28_gt_UnitTest_Func");
+    TriggerAddEventMapInit(libB156CA28_gt_UnitTest);
+}
+
 void libB156CA28_InitTriggers () {
     libB156CA28_gt_ConfirmButtonUsed_Init();
     libB156CA28_gt_SelectionButtonUsed_Init();
     libB156CA28_gt_MapInit_Init();
+    libB156CA28_gt_UnitTest_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

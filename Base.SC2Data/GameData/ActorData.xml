@@ -1,5 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorSound id="PsionicTransferLotV@LaunchSound" parent="SoundOneShot">
+        <On Terms="Abil.PsionicTransferLotV.SourceCastStart" Send="Create"/>
+        <Sound value="Adept_PsionicTransferLaunch"/>
+    </CActorSound>
+    <CActorUnit id="Adept2" parent="GenericUnitStandard" unitName="AdeptLotV">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Adept_Land"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Templar_LandSweetener"/>
+        <On Terms="Abil.AdeptPhaseShift.SourceCastStart; !UnitWalking" Send="$Spell"/>
+        <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundSmall"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
+        <On Terms="Effect.AdeptPhaseShiftTeleport.Stop" Send="Create AdeptSpiritIn"/>
+        <On Terms="Effect.AdeptPhaseShiftTeleport.Stop" Send="Create AdeptSpiritInSound"/>
+        <On Terms="Behavior.AdeptPhaseShiftCaster.On" Send="Create AdeptSpiritSpawn"/>
+        <On Terms="Behavior.AdeptPhaseShiftCaster.On" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="Behavior.AdeptPhaseShiftCaster.Off" Send="AnimBracketStop Cover"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Spell" Send="AnimClear Spell"/>
+        <On Terms="Signal.*.NeuralLinkStarted" Send="RefSetFromMsg ::actor.NeuralLinkSite ::Sender"/>
+        <On Terms="Effect.AdeptPhaseShiftTeleportSet.Start" Target="::actor.NeuralLinkSite" Send="Signal BreakLinkInstant"/>
+        <On Terms="UnitDeathCustomize; !ValidateUnit IsHallucination" Send="Create AdeptProtossSpiritDeathModel"/>
+        <On Terms="Effect.AdeptPhaseShiftTeleportSet.Start" Send="CombatRevealClearTimers"/>
+        <Model value="Adept"/>
+        <AnimBlendTime value="0.200000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="AdeptWarpIn"/>
+        <DeathArray index="Normal" ModelLink="AdeptDeath" SoundLink="Adept_DeathFX"/>
+        <DeathCustoms ActorModel="AdeptDeathRagdoll" ModelLink="AdeptDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="BloodReduced"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdollWithTeamColor" ModelLink="AdeptDeathRagdoll" Name="RagdollSpineCrawlerHurl">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathSmall" Name="Hallucination"/>
+        <PlacementModel value="AdeptPlacement"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="AdeptPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="0.600000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMedium"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.5"/>
+        <AbilSoundArray AbilCmd="AdeptPhaseShift,Execute" Sound="Adept_PsionicTransferVO"/>
+        <BarOffset value="60"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        </GroupIcon>
+        <HighlightTooltip value="Unit/Name/Adept2"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="Adept_Ready"/>
+        <SoundArray index="Help" value="Adept_Help"/>
+        <SoundArray index="What" value="Adept_What"/>
+        <SoundArray index="Yes" value="Adept_Yes"/>
+        <SoundArray index="Attack" value="Adept_Attack"/>
+        <SoundArray index="Pissed" value="Adept_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-protoss-adept.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\wireframe-protoss-adept-shield01.dds"/>
+            <Image value="Assets\Textures\wireframe-protoss-adept-shield02.dds"/>
+            <Image value="Assets\Textures\wireframe-protoss-adept-shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorUnit id="AdeptLotV@Shade" parent="GenericUnitStandard" unitName="AdeptLotV@Shade">
+        <Aliases value="_UnitSmall"/>
+        <Model value="AdeptSpirit"/>
+        <AnimBlendTime value="0.200000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="AdeptWarpIn"/>
+        <DeathArray index="Normal" ModelLink="AdeptSpiritDeath" SoundLink="Adept_DeathFX"/>
+        <PlacementModel value="AdeptPlacement"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="AdeptPortrait"/>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="60"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        </GroupIcon>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="AdeptShade_Ready"/>
+        <SoundArray index="Help" value="AdeptShade_Help"/>
+        <SoundArray index="What" value="AdeptShade_What"/>
+        <SoundArray index="Yes" value="AdeptShade_Yes"/>
+        <SoundArray index="Attack" value="AdeptShade_Attack"/>
+        <SoundArray index="Pissed" value="AdeptShade_Pissed"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-protoss-adept.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\wireframe-protoss-adept-shield01.dds"/>
+            <Image value="Assets\Textures\wireframe-protoss-adept-shield02.dds"/>
+            <Image value="Assets\Textures\wireframe-protoss-adept-shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorModel id="PsionicTransferLotV@TeleportModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.PsionicTransferLotV@Teleport.Start; At Effect" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Model value="AdeptSpiritOut"/>
+    </CActorModel>
+    <CActorSound id="PsionicTransferLotV@TeleportSound" parent="SoundOneShot">
+        <On Terms="Effect.PsionicTransferLotV@Teleport.Start; At Effect" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Sound value="Adept_PsionicTransferEnd"/>
+    </CActorSound>
     <CActorSound id="ChargeLotV1@ChargingSound" parent="SoundContinuous">
         <On Terms="Behavior.ChargeLotV1@Charging.Create" Send="Create"/>
         <On Terms="Behavior.ChargeLotV1@Charging.Destroy" Send="Destroy"/>
@@ -11,6 +148,46 @@
         <Missile value="KD8ChargeMissile"/>
     </CActorAction>
     <CActorRange id="KD8ChargeLotV1@Range" parent="RangeAbil" abil="KD8ChargeLotV1"/>
+    <CActorPower id="WarpInLiberty@PrismPower">
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; !Option Model Low" Send="Create"/>
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; !Option Model Low" Send="Destroy"/>
+        <VisualArray value="WarpPrismUnpoweredVisual"/>
+        <VisualArray value="WarpInLiberty@PrismPowerVisualSplat"/>
+    </CActorPower>
+    <CActorPower id="WarpInLiberty@PrismPowerLow">
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; Option Model Low" Send="Create"/>
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; Option Model Low" Send="Destroy"/>
+        <PowerSource value="WarpInLiberty@PrismPowerSource"/>
+        <VisualArray value="WarpPrismUnpoweredVisualLow"/>
+        <VisualArray value="WarpInLiberty@PrismPowerVisualLowRange"/>
+    </CActorPower>
+    <CActorSplat id="WarpInLiberty@PowerVisualSplat">
+        <FogVisibility value="Visible"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <FadeIn value="0.000000"/>
+        <FadeOut value="0.000000"/>
+        <HoldTime value="-1.000000"/>
+        <Layer value="PowerLayer"/>
+    </CActorSplat>
+    <CActorRange id="WarpInLiberty@PowerVisualLowRange">
+        <Behavior value="WarpInLiberty@PowerSource"/>
+        <Icon value="Assets\Textures\PylonLowRingSplat.dds"/>
+        <IconArcLength value="1.250000"/>
+    </CActorRange>
+    <CActorPower id="WarpInLiberty@Power">
+        <On Terms="Behavior.WarpInLiberty@PowerSource.Create; !Option Model Low" Send="Create"/>
+        <On Terms="Behavior.WarpInLiberty@PowerSource.Destroy; !Option Model Low" Send="Destroy"/>
+        <VisualArray value="UnpoweredVisual"/>
+        <VisualArray value="WarpInLiberty@PowerVisualSplat"/>
+    </CActorPower>
+    <CActorPower id="WarpInLiberty@PowerLow">
+        <On Terms="Behavior.WarpInLiberty@PowerSource.Create; Option Model Low" Send="Create"/>
+        <On Terms="Behavior.WarpInLiberty@PowerSource.Destroy; Option Model Low" Send="Destroy"/>
+        <PowerSource value="WarpInLiberty@PowerSource"/>
+        <VisualArray value="UnpoweredVisualLow"/>
+        <VisualArray value="WarpInLiberty@PowerVisualLowRange"/>
+    </CActorPower>
     <CActorAction id="RavenAutoTurret@AutoTurretAttackAction" parent="GenericAttack" effectAttack="RavenAutoTurret@AutoTurretDamage">
         <LaunchAssets Model="AutoTurretAttackLaunch" Sound="Raven_AutoTurretAttackLaunch"/>
         <ImpactMap index="None" Model="AutoTurretAttackImpact" Sound="Raven_AutoTurretAttackImpact"/>
@@ -2471,6 +2648,94 @@
         <StateArray Name="Fire" Terms="ValidateUnit BurnDownFire"/>
         <StateThinkInterval value="0.5"/>
     </CActorStateMonitor>
+    <CActorAction id="StalkerLiberty@AttackAction" parent="GenericAttack" effectImpact="StalkerLiberty@AttackDamage" effectLaunch="StalkerLiberty@AttackLM">
+        <LaunchAssets Sound="Stalker_AttackLaunch"/>
+        <Missile value="StalkerLiberty@AttackMissile"/>
+        <ImpactMap index="None" Model="StalkerAttackImpact" Sound="Stalker_AttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="ParticleDisruptorImpact" MatchKeys="Basic" Physics="StalkerAttackDeathForce"/>
+        <AcquisitionYawHalfArc value="7.500000"/>
+        <AcquisitionPitchHalfArc value="15.000000"/>
+        <AccuracyHalfArc value="10.000000"/>
+    </CActorAction>
+    <CActorMissile id="StalkerLiberty@AttackMissile" parent="GenericAttackMissile" unitName="StalkerLiberty@AttackMissile">
+        <Model value="StalkerWeapon"/>
+    </CActorMissile>
+    <CActorUnit id="StalkerLiberty" parent="GenericUnitBase" unitName="StalkerLiberty">
+        <Aliases value="_UnitMedium"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Stalker_Land"/>
+        <Model value="Stalker"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="StalkerWarpIn"/>
+        <DeathArray index="Normal" ModelLink="StalkerDeath"/>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathMedium" Name="Hallucination"/>
+        <DeathCustoms ModelLink="StalkerDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="Basic" Model="ProtossRobotSquibDeathRagdoll"/>
+            <BodySquibs Name="BloodReduced" Model="ProtossRobotBloodSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <PlacementModel value="StalkerPlacement"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="StalkerPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleLarge"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="3.1328"/>
+        <BarOffset value="70"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Stalker.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="Stalker_Ready"/>
+        <SoundArray index="Help" value="Stalker_Help"/>
+        <SoundArray index="What" value="Stalker_What"/>
+        <SoundArray index="Yes" value="Stalker_Yes"/>
+        <SoundArray index="Attack" value="Stalker_Attack"/>
+        <SoundArray index="Pissed" value="Stalker_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Stalker.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Stalker-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Stalker-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Stalker-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
     <CActorStateMonitor id="TerranFlamesSmallBuilding">
         <On Terms="UnitCreation.SensorTowerLotV1" Send="Create"/>
         <On Terms="UnitCreation.RavenAutoTurret@AutoTurret" Send="Create"/>
@@ -2514,6 +2779,20 @@
         <On Terms="Effect.CycloneLockOnAirLoTV1@LockOnCP.Start; At Caster" Send="Create"/>
         <On Terms="Effect.CycloneLockOnLotV2@LockOnCP.Start; At Caster" Send="Create"/>
     </CActorSound>
+    <CActorSplat id="WarpInLiberty@PrismPowerVisualSplat">
+        <FogVisibility value="Visible"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <FadeIn value="0.000000"/>
+        <FadeOut value="0.000000"/>
+        <HoldTime value="-1.000000"/>
+        <Layer value="PowerLayer"/>
+    </CActorSplat>
+    <CActorRange id="WarpInLiberty@PrismPowerVisualLowRange">
+        <Behavior value="WarpPrismPowerSource"/>
+        <Icon value="Assets\Textures\PylonLowRingSplat.dds"/>
+        <IconArcLength value="0.750000"/>
+    </CActorRange>
     <CActorRange id="WidowMineSwarm@AttackRange">
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.Start" Send="Create"/>
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.StartEditorGround" Send="Create"/>

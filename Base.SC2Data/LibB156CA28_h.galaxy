@@ -46,6 +46,7 @@ void libB156CA28_gf_Default (int lp_player);
 trigger libB156CA28_gt_ConfirmButtonUsed;
 trigger libB156CA28_gt_SelectionButtonUsed;
 trigger libB156CA28_gt_MapInit;
+trigger libB156CA28_gt_UnitTest;
 
 // Library Initialization
 void libB156CA28_InitVariables ();

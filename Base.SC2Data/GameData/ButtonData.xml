@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="PsionicTransferLotV">
+        <Icon value="Assets\Textures\btn-ability-protoss-psionictransfer.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-psionictransfer.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="ChargeZealotLotV1@ResearchCharge">
         <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>

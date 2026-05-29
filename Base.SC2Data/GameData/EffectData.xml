@@ -7,6 +7,117 @@
         <Amount value="15"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectCreateUnit id="PsionicTransferLotV@CU">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="CasterUnit"/>
+        <CreateFlags index="DropOff" value="0"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="TechComplete" value="0"/>
+        <CreateFlags index="UseFood" value="0"/>
+        <SpawnEffect value="PsionicTransferLotV@ShadeSpawnSet"/>
+        <SpawnUnit value="AdeptLotV@Shade"/>
+        <SpawnRange value="1"/>
+    </CEffectCreateUnit>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@CancelRB">
+        <EditorCategories value="Race:Protoss"/>
+        <BehaviorLink value="PsionicTransferLotV@Caster"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="PsionicTransferLotV@CancelAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PsionicTransferLotV@CancelDummy"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="PsionicTransferLotV@CasterAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PsionicTransferLotV@Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="PsionicTransferLotV@InitialSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PsionicTransferLotV@CasterAB"/>
+        <EffectArray value="PsionicTransferLotV@CU"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="PsionicTransferLotV@IssueOrder">
+        <EditorCategories value="Race:Protoss"/>
+        <Abil value="move"/>
+        <Target Effect="PsionicTransferLotV@CU" Value="TargetPoint"/>
+    </CEffectIssueOrder>
+    <CEffectDamage id="PsionicTransferLotV@KillDummy">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Effect="PsionicTransferLotV@TimerSpawnAB" Value="TargetUnit"/>
+        <Flags index="Kill" value="1"/>
+        <Flags index="NoKillCredit" value="1"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="PsionicTransferLotV@ShiftNeuraledShadeCP">
+        <ValidatorArray value="CasterIsNeuralParasited"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <FinalEffect value="PsionicTransferLotV@CancelAB"/>
+        <PeriodicValidator value="CasterIsNeuralParasited"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="PsionicTransferLotV@RemoveDisablesSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PsionicTransferLotV@RemoveNeuralParasite"/>
+        <EffectArray value="PsionicTransferLotV@RemoveMothershipRecalled"/>
+        <EffectArray value="PsionicTransferLotV@RemoveMothershipRecalling"/>
+        <EffectArray value="PsionicTransferLotV@RemoveFungalGrowth"/>
+        <EffectArray value="PsionicTransferLotV@RemoveFungalMovement"/>
+        <EffectArray value="PsionicTransferLotV@RemoveGravitonBeamPersistant"/>
+        <EffectArray value="PsionicTransferLotV@RemoveStasisTrap"/>
+        <EffectArray value="PsionicTransferLotV@RemoveRecallSet"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="PsionicTransferLotV@ModifyUnitSelect">
+        <ImpactUnit Value="Caster"/>
+        <SelectTransferUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Target"/>
+        <SelectTransferFlags index="DeselectSource" value="1"/>
+        <SelectTransferFlags index="IncludeControlGroups" value="1"/>
+        <FacingLocation Effect="PsionicTransferLotV@TeleportSet" Value="SourceUnit"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="PsionicTransferLotV@ShadeSpawnAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="PsionicTransferLotV@ShadeSpawn"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="PsionicTransferLotV@ShadeSpawnSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PsionicTransferLotV@ShadeSpawnAB"/>
+        <EffectArray value="PsionicTransferLotV@TimerSpawnAB"/>
+        <EffectArray value="PsionicTransferLotV@IssueOrder"/>
+        <EffectArray value="PsionicTransferLotV@ShiftNeuraledShadeCP"/>
+    </CEffectSet>
+    <CEffectTeleport id="PsionicTransferLotV@Teleport">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <MinDistance value="0"/>
+        <TargetLocation Effect="PsionicTransferLotV@TeleportSet" Value="TargetPoint"/>
+    </CEffectTeleport>
+    <CEffectSet id="PsionicTransferLotV@TeleportSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PsionicTransferLotV@RemoveDisablesSet"/>
+        <EffectArray value="PsionicTransferLotV@ModifyUnitSelect"/>
+        <EffectArray value="PsionicTransferLotV@KillDummy"/>
+        <EffectArray value="PsionicTransferLotV@Teleport"/>
+        <EffectArray value="PsionicTransferLotV@UnitOrderQueue"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="PsionicTransferLotV@TimerSpawnAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="PsionicTransferLotV@Timer"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="PsionicTransferLotV@UnitOrderQueue">
+        <EditorCategories value="Race:Protoss"/>
+        <LaunchUnit Effect="PsionicTransferLotV@TeleportSet"/>
+        <ImpactUnit Value="Caster"/>
+        <CopyOrderCount value="50"/>
+        <CopyRallyCount value="50"/>
+    </CEffectModifyUnit>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@CasterRB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="PsionicTransferLotV@Caster"/>
+    </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="ChargeLotV1@InitialAB">
         <ValidatorArray index="0" value="ChargeMinTriggerDistance"/>
         <ValidatorArray value="ChargeMaxDistance"/>
@@ -55,6 +166,9 @@
         <EffectArray value="ChargeLotV1@ChargingCheckRB"/>
         <EffectArray value="ChargeLotV1@ChargingAttackRB"/>
     </CEffectSet>
+    <CEffectCreatePersistent id="EnergyRechargePersistent">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreatePersistent>
     <CEffectDamage id="KD8ChargeLotV1@Damage" parent="DU_WEAP_SPLASH">
         <ValidatorArray value="IsNotPhasedUnit"/>
         <EditorCategories value="Race:Terran"/>
@@ -101,6 +215,110 @@
         <SearchFilters value="Ground;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="2" Effect="KD8ChargeLotV1@EndSet"/>
     </CEffectEnumArea>
+    <CEffectCreateHealer id="MULERepair">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreateHealer>
+    <CEffectCreateHealer id="MedivacHeal">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreateHealer>
+    <CEffectCreatePersistent id="MothershipCoreEnergize">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="MothershipStrategicRecallWarpOutSet">
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="NeuralParasite">
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+    </CEffectApplyBehavior>
+    <CEffectLaunchMissile id="NeuralParasiteLaunchMissile">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+        <!--ValidatorArray value="NotMothershipCore"/-->
+    </CEffectLaunchMissile>
+    <CEffectSet id="NexusMassRecallWarpOutSet">
+        <ValidatorArray index="0" value="WarpInLiberty@IsNotWarpingIn"/>
+    </CEffectSet>
+    <CEffectDestroyPersistent id="PsionicTransferLotV@RemoveGravitonBeamPersistant">
+        <WhichLocation Effect="PsionicTransferLotV@TimerSpawnAB"/>
+        <Effect value="GravitonBeam"/>
+        <Count value="1"/>
+    </CEffectDestroyPersistent>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@RemoveFungalGrowth">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Caster"/>
+        <BehaviorLink value="FungalGrowth"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@RemoveFungalMovement">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Caster"/>
+        <BehaviorLink value="FungalGrowthSlowMovement"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@RemoveMothershipCoreRecalled">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Caster"/>
+        <BehaviorLink value="MothershipCoreRecalled"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@RemoveMothershipCoreRecalling">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Caster"/>
+        <BehaviorLink value="MothershipCoreRecalling"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@RemoveMothershipRecalled">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="AdeptPhaseShiftTimerSpawnAB" Value="Caster"/>
+        <BehaviorLink value="MothershipRecalled"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@RemoveMothershipRecalling">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Caster"/>
+        <BehaviorLink value="MothershipRecalling"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@RemoveNeuralParasite">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Caster"/>
+        <BehaviorLink value="NeuralParasite"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="PsionicTransferLotV@RemoveRecallSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PsionicTransferLotV@RemoveMothershipCoreRecalled"/>
+        <EffectArray value="PsionicTransferLotV@RemoveMothershipCoreRecalling"/>
+    </CEffectSet>
+    <CEffectSet id="PsionicTransferLotV@TimerCancelSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PsionicTransferLotV@CasterRB"/>
+        <EffectArray value="PsionicTransferLotV@KillDummy"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="PsionicTransferLotV@RemoveStasisTrap">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Caster"/>
+        <BehaviorLink value="OracleStasisTrapTarget"/>
+    </CEffectRemoveBehavior>
+    <CEffectCreateHealer id="RavenRepairDroneHeal">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreateHealer>
+    <CEffectCreateUnit id="ReaperKD8Knockback">
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+    </CEffectCreateUnit>
+    <CEffectCreateHealer id="Repair">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreateHealer>
+    <CEffectSet id="ShieldBatteryRechargeChanneledSet">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectSet>
+    <CEffectCreateHealer id="ShieldHeal">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreateHealer>
+    <CEffectLaunchMissile id="StalkerLiberty@AttackLM">
+        <ValidatorArray index="0" value="StalkerTargetFilters"/>
+        <ValidatorArray value=""/>
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="StalkerLiberty@AttackDamage"/>
+        <AmmoUnit value="StalkerLiberty@AttackMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="StalkerLiberty@AttackDamage" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Protoss"/>
+        <AttributeBonus index="Armored" value="4"/>
+        <Amount value="10"/>
+    </CEffectDamage>
     <CEffectDamage id="RavenAutoTurret@AutoTurretDamage" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Terran"/>
         <Amount value="18"/>
@@ -1191,6 +1409,12 @@
         <ImpactUnit Value="Caster"/>
         <ModifyTurret Action="ClearTarget" Turret="CycloneLotV1@LockOnTurret"/>
     </CEffectModifyUnit>
+    <CEffectApplyBehavior id="VortexApplyDisableEnemy">
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="VortexApplyDisableOther">
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+    </CEffectApplyBehavior>
     <CEffectSet id="WidowMineSwarm@AttackSet">
         <ValidatorArray value="NoMineDroneCountdown"/>
         <ValidatorArray value="NotLarva"/>
@@ -1251,4 +1475,17 @@
         <CaseArray Validator="TargetIsAir" Effect="WidowMineSwarm@LMAir"/>
         <CaseDefault value="WidowMineSwarm@LM"/>
     </CEffectSwitch>
+    <CEffectCreateUnit id="YoinkStartCreatePlaceholder">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreateUnit>
+    <!-- This is the Siege Tank effect tree -->
+    <CEffectCreateUnit id="YoinkStartCreatePlaceholderSiegeTank">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="YoinkStartCreatePlaceholderVikingAir">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="YoinkStartCreatePlaceholderVikingGround">
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+    </CEffectCreateUnit>
 </Catalog>

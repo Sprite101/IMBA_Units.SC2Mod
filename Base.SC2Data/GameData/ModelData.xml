@@ -8,8 +8,21 @@
         <Model value="Assets\Effects\Terran\Cyclone_BigMissile\Cyclone_BigMissile.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
+    <CModel id="WarpInLiberty@PowerVisualSplat" parent="UIFeedback">
+        <Model value="Assets\UI\Feedback\PylonRadius\PylonRadius.m3"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
     <CModel id="TornadoBlaster@Missile" parent="MissileFX">
         <Model value="Assets\Effects\Terran\Cyclone_Missile\Cyclone_Missile.m3"/>
         <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="WarpInLiberty@PrismPowerVisualSplat" parent="UI">
+        <Model value="Assets\UI\Feedback\WarpPrism_WarpIn_Radius\WarpPrism_WarpIn_Radius.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
     </CModel>
 </Catalog>

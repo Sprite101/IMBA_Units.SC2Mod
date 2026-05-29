@@ -24,6 +24,7 @@ Button/Hotkey/LiberatorLotV1@BuildLiberator=N
 Button/Hotkey/MoebiusReactor@MoebiusReactor=
 Button/Hotkey/MoebiusReactor@ResearchMoebiusReactor=S
 Button/Hotkey/PointDefenseDroneSwarm@BuildPointDefenseDrone=D
+Button/Hotkey/PsionicTransferLotV=F
 Button/Hotkey/RapidFireLaunchers@Research=A
 Button/Hotkey/RavenAntiArmorMissile=R
 Button/Hotkey/RavenAutoTurret=T
