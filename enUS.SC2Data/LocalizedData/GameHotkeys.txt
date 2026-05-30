@@ -1,4 +1,6 @@
 ﻿Button/Hotkey/AdvancedBallistics@ResearchAdvancedBallistics=N
+Button/Hotkey/AmplifiedShieldingLotV=S
+Button/Hotkey/AmplifiedShieldingLotV@Passive=
 Button/Hotkey/AutoTurretSwarm=T
 Button/Hotkey/BarracksLiberty=B
 Button/Hotkey/BunkerLiberty=U

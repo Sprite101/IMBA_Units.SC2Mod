@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="AmplifiedShieldingLotV@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="PsionicTransferLotV">
         <Icon value="Assets\Textures\btn-ability-protoss-psionictransfer.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-psionictransfer.dds"/>
@@ -169,6 +174,11 @@
         <Icon value="Assets\Textures\btn-building-terran-reactor.dds"/>
         <AlertIcon value="Assets\Textures\btn-building-terran-reactor.dds"/>
         <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AmplifiedShieldingLotV">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="SalvageLiberty">
         <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>

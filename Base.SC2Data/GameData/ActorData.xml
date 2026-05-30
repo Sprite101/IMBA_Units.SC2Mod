@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorAction id="AdeptLotV@AttackAction" parent="GenericAttack" effectImpact="AdeptLotV@WeaponDamage" effectLaunch="AdeptLotV@WeaponLM">
+        <LaunchAssets Sound="Adept_AttackLaunch"/>
+        <Missile value="AdeptLotV@AttackMissile"/>
+        <ImpactMap index="None" Model="AdeptImpact" Sound="Adept_AttackImpact"/>
+        <ImpactModel value="AdeptLotV@AttackImpactModel"/>
+    </CActorAction>
+    <CActorModel id="AdeptLotV@AttackImpactModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <Flags index="SuppressCreationErrors" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="ActorCreation; ValidateCreationEffect AdeptGlaivesUpgraded" Send="ModelSwap Adept_Missile_Impact_Upgrade"/>
+        <Model value="GenericAttackModel"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorMissile id="AdeptLotV@AttackMissile" parent="GenericAttackMissile" unitName="AdeptLotV@WeaponMissile">
+        <On Terms="ActorCreation; ValidateUnit AdeptGlaivesUpgraded" Send="ModelSwap Adept_Missile_Upgrade"/>
+        <Model value="AdeptWeapon"/>
+    </CActorMissile>
     <CActorSound id="PsionicTransferLotV@LaunchSound" parent="SoundOneShot">
         <On Terms="Abil.PsionicTransferLotV.SourceCastStart" Send="Create"/>
         <Sound value="Adept_PsionicTransferLaunch"/>
@@ -11,19 +28,19 @@
         <Macros value="TerrainSquibAnimations"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create Adept_Land"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create Templar_LandSweetener"/>
-        <On Terms="Abil.AdeptPhaseShift.SourceCastStart; !UnitWalking" Send="$Spell"/>
+        <On Terms="Abil.PsionicTransferLotV.SourceCastStart; !UnitWalking" Send="$Spell"/>
         <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundSmall"/>
         <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
-        <On Terms="Effect.AdeptPhaseShiftTeleport.Stop" Send="Create AdeptSpiritIn"/>
-        <On Terms="Effect.AdeptPhaseShiftTeleport.Stop" Send="Create AdeptSpiritInSound"/>
-        <On Terms="Behavior.AdeptPhaseShiftCaster.On" Send="Create AdeptSpiritSpawn"/>
-        <On Terms="Behavior.AdeptPhaseShiftCaster.On" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
-        <On Terms="Behavior.AdeptPhaseShiftCaster.Off" Send="AnimBracketStop Cover"/>
+        <On Terms="Effect.PsionicTransferLotV@Teleport.Stop" Send="Create AdeptSpiritIn"/>
+        <On Terms="Effect.PsionicTransferLotV@Teleport.Stop" Send="Create AdeptSpiritInSound"/>
+        <On Terms="Behavior.PsionicTransferLotV@Caster.On" Send="Create AdeptSpiritSpawn"/>
+        <On Terms="Behavior.PsionicTransferLotV@Caster.On" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="Behavior.PsionicTransferLotV@Caster.Off" Send="AnimBracketStop Cover"/>
         <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Spell" Send="AnimClear Spell"/>
         <On Terms="Signal.*.NeuralLinkStarted" Send="RefSetFromMsg ::actor.NeuralLinkSite ::Sender"/>
-        <On Terms="Effect.AdeptPhaseShiftTeleportSet.Start" Target="::actor.NeuralLinkSite" Send="Signal BreakLinkInstant"/>
+        <On Terms="Effect.PsionicTransferLotV@TeleportSet.Start" Target="::actor.NeuralLinkSite" Send="Signal BreakLinkInstant"/>
         <On Terms="UnitDeathCustomize; !ValidateUnit IsHallucination" Send="Create AdeptProtossSpiritDeathModel"/>
-        <On Terms="Effect.AdeptPhaseShiftTeleportSet.Start" Send="CombatRevealClearTimers"/>
+        <On Terms="Effect.PsionicTransferLotV@TeleportSet.Start" Send="CombatRevealClearTimers"/>
         <Model value="Adept"/>
         <AnimBlendTime value="0.200000"/>
         <ModelFlags index="OutlineEmitter" value="1"/>

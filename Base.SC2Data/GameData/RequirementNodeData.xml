@@ -21,6 +21,10 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CycloneLockOnLotV2@LockOnCaster" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorPsionicTransferLotV@CasterCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="PsionicTransferLotV@Caster" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="RavenInterferenceMatrix" State="QueuedOrBetterAtUnit"/>
@@ -35,6 +39,15 @@
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AdvancedBallistics" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AmplifiedShieldingLotV" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAmplifiedShieldingLotVQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="AmplifiedShieldingLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276">
         <Flags index="TechTreeCheat" value="0"/>
@@ -133,7 +146,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeReaperLiberty@UpgradeQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ReaperLiberty@Upgrade" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeReaperSwarm@UpgradeQueuedOrBetter">
@@ -172,6 +184,10 @@
     <CRequirementNot id="NotCountUpgradeAdvancedBallisticsQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeAdvancedBallisticsQueuedOrBetter"/>
     </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeAmplifiedShieldingLotVQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeAmplifiedShieldingLotVQueuedOrBetter"/>
+    </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter"/>
     </CRequirementNot>
@@ -203,7 +219,6 @@
         <OperandArray index="0" value="CountUpgradeRapidFireLaunchers@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeReaperLiberty@UpgradeQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeReaperLiberty@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeReaperSwarm@UpgradeQueuedOrBetter">

@@ -11,6 +11,15 @@
         <Period value="1.04"/>
         <Effect value="90mmCannonsLotV1@Damage"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="AdeptLotV@Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="AdeptLotV@WeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4"/>
+        <Period value="2.25"/>
+        <Effect value="AdeptLotV@WeaponLM"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="AutoTurretSwarm@AutoTurretWeapon">
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-hisecautotracking.dds"/>

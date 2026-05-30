@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUpgrade id="AmplifiedShieldingLotV">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,AdeptLotV,ShieldsMax" Value="50"/>
+        <EffectArray Reference="Unit,AdeptLotV,ShieldsStart" Value="50"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:AttackBonus"/>
+        <AffectedUnitArray value="AdeptLotV"/>
+    </CUpgrade>
     <CUpgrade id="ChargeZealotLotV1">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>

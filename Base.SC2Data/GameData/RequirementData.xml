@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirement id="AmplifiedShieldingLotV@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174"/>
+    </CRequirement>
+    <CRequirement id="PsionicTransferLotV@IsPsionicTransferring">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="CountBehaviorPsionicTransferLotV@CasterCompleteOnlyAtUnit"/>
+    </CRequirement>
     <CRequirement id="ChargeZealotLotV1@LearnCharge">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Show" Link="NotCountUpgradeChargeZealotLotV1QueuedOrBetter"/>
@@ -56,7 +64,7 @@
         <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1QueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="MoebiusReactor@HaveMoebiusReactor">
-        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeMoebiusReactor@UpgradeCompleteOnly3009616705TechTreeCheat"/>
     </CRequirement>
     <CRequirement id="MoebiusReactor@LearnMoebiusReactor">
@@ -64,7 +72,7 @@
         <NodeArray index="Show" Link="NotCountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="EnhancedShockwaves@HaveEnhancedShockwaves">
-        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat"/>
     </CRequirement>
     <CRequirement id="HurricaneThrusters@HaveUpgrade">
@@ -81,6 +89,10 @@
     </CRequirement>
     <CRequirement id="ModifiedAbility@NotHaveInterferenceMatrixBehavior">
         <NodeArray index="Use" Link="AndNotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnitNotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
+    </CRequirement>
+    <CRequirement id="AmplifiedShieldingLotV@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeAmplifiedShieldingLotVQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="ReaperSwarm@LearnNitroPacks">
         <EditorCategories value="Race:Terran,TechType:Ability"/>

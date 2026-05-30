@@ -44,18 +44,18 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="PsionicTransferLotV"/>
-        <AbilArray Link="AdeptPhaseShiftCancel"/>
-        <WeaponArray Link="Adept"/>
+        <AbilArray Link="PsionicTransferLotV@Cancel"/>
+        <WeaponArray Link="AdeptLotV@Weapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="AdeptPhaseShift" Type="AbilCmd" AbilCmd="AdeptPhaseShift,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AdeptPhaseShiftCancel,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="PsionicTransferLotV" Type="AbilCmd" AbilCmd="PsionicTransferLotV,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="PsionicTransferLotV@Cancel,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
-            <LayoutButtons Face="AdeptPiercingUpgrade" Type="Passive" Requirements="HaveAdeptPiercingAttack" Row="2" Column="1"/>
+            <LayoutButtons Face="AmplifiedShieldingLotV@Passive" Type="Passive" Requirements="AmplifiedShieldingLotV@Have" Row="1" Column="0"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
@@ -115,7 +115,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
-        <AbilArray Link="AdeptShadePhaseShiftCancel"/>
+        <AbilArray Link="PsionicTransferLotV@Cancel"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -124,7 +124,7 @@
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AdeptShadePhaseShiftCancel,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="PsionicTransferLotV@Cancel,Execute" Row="2" Column="4"/>
         </CardLayouts>
         <InnerRadius value="0.375"/>
         <CargoSize value="2"/>
@@ -138,6 +138,11 @@
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
         <AIEvaluateAlias value="Adept"/>
+    </CUnit>
+    <CUnit id="AdeptLotV@WeaponMissile" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="AdeptWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
     </CUnit>
     <!-- Balance change for balance patch of Nov 11th 2013 (combined Air/Ground vehicle upgrades)-->
     <!-- Balance test 3/12 (separate Air/Ground vehicle upgrades)-->
@@ -1727,8 +1732,10 @@
     </CUnit>
     <CUnit id="TwilightCouncil">
         <AbilArray Link="BlinkLiberty@ResearchBlink"/>
+        <AbilArray Link="AmplifiedShieldingLotV@Research"/>
         <CardLayouts index="0">
             <LayoutButtons Face="ResearchStalkerTeleport" Type="AbilCmd" AbilCmd="BlinkLiberty@ResearchBlink,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="AmplifiedShieldingLotV" Type="AbilCmd" AbilCmd="AmplifiedShieldingLotV@Research,Research1" Row="0" Column="2"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="TyphoonMissilePodLotV2@Missile" parent="MISSILE">

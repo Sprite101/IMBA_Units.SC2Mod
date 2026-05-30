@@ -7,6 +7,20 @@
         <Amount value="15"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectDamage id="AdeptLotV@WeaponDamage" parent="DU_WEAP">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Protoss"/>
+        <AttributeBonus index="Light" value="13"/>
+        <Kind value="Ranged"/>
+        <Amount value="10"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="AdeptLotV@WeaponLM">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="AdeptLotV@WeaponDamage"/>
+        <AmmoUnit value="AdeptLotV@WeaponMissile"/>
+        <Movers Link="AdeptWeapon"/>
+    </CEffectLaunchMissile>
     <CEffectCreateUnit id="PsionicTransferLotV@CU">
         <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="CasterUnit"/>

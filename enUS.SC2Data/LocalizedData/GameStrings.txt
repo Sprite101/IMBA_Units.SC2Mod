@@ -1,4 +1,5 @@
 ﻿Abil/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
+Abil/Name/AmplifiedShieldingLotV@Research=Research
 Abil/Name/AutoTurretSwarm=Place Auto Turret
 Abil/Name/BlinkLiberty@ResearchBlink=Research
 Abil/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
@@ -75,6 +76,8 @@ Behavior/Tooltip/SeekerMissileSwarm@TargetTint=This unit is being targeted by a 
 Behavior/Tooltip/WarpInLiberty@PowerUserWarpable=Unit is being materialized by a Warp Gate.
 Button/Name/AdvancedBallistics=Advanced Ballistics
 Button/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
+Button/Name/AmplifiedShieldingLotV=Research Amplified Shielding
+Button/Name/AmplifiedShieldingLotV@Passive=Amplified Shielding
 Button/Name/AutoTurretSwarm=Build Auto-Turret
 Button/Name/BarracksLiberty=Build Barracks
 Button/Name/BunkerLiberty=Build Bunker
@@ -125,6 +128,8 @@ Button/Name/SiegeArmorLotV1Morph@Unsiege=Tank Mode
 Button/Tooltip/AdeptLotV@Shade=Projects an invulnerable Shade that can move but cannot attack. After <d time="10"/>, the Adept teleports to the Shade's location.
 Button/Tooltip/AdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
 Button/Tooltip/AdvancedBallistics@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
+Button/Tooltip/AmplifiedShieldingLotV=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShieldingLotV:Unit,AdeptLotV,ShieldsMax$"/>.
+Button/Tooltip/AmplifiedShieldingLotV@Passive=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShielding:Unit,Adept,ShieldsMax$"/>.
 Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AutoTurretSwarm@AutoTurret=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BarracksLiberty=Infantry-production facility.<n/><n/><c val="ffff8a">Enables:</c><n/>- Marines<n/>- Reapers<n/>- Bunkers from SCVs<n/>- Orbital Commands from Command Centers
@@ -194,6 +199,7 @@ Cyclone=Cyclone
 DataCollection/Name/90mmCannonsLotV1=90mm Cannons
 DataCollection/Name/AdeptLotV=Adept
 DataCollection/Name/AdvancedBallistics=Advanced Ballistics
+DataCollection/Name/AmplifiedShieldingLotV=Amplified Shielding
 DataCollection/Name/AutoTurretSwarm=Raven Auto Turret
 DataCollection/Name/BarracksLiberty=Barracks
 DataCollection/Name/BlinkLiberty=Blink
@@ -248,6 +254,8 @@ DataCollection/Name/WidowMineSwarm=Widow Mine
 DocInfo/DescShort=Any
 DocInfo/Name=IMBA兵种大乱斗
 Effect/Name/90mmCannonsLotV1@Damage=Damage
+Effect/Name/AdeptLotV@WeaponDamage=Damage
+Effect/Name/AdeptLotV@WeaponLM=LM
 Effect/Name/AutoTurretSwarm@AutoTurretDamage=Auto-Turret Damage
 Effect/Name/AutoTurretSwarm@CU=CU
 Effect/Name/AutoTurretSwarm@InitialSet=Initial Set
@@ -451,6 +459,7 @@ Param/Expression/lib_B156CA28_17F87ABD=Player ~A~'s Index: ~B~
 Param/Expression/lib_B156CA28_81A2A7C1=Panel Index: ~A~
 RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat=Factory
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Research Advanced Ballistics at the Starport Techlab
+RequirementNode/Tooltip/CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174=Research Amplified Shielding at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276=Research Caduceus Reactor at the Starport Techlab
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat=Research Enhanced Shockwaves at the Ghost Academy
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwavesCompleteOnly2618611756TechTreeCheat2=Research Enhanced Shockwaves at the Ghost Academy
@@ -466,6 +475,7 @@ RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnAirLoTV1@LockOnCas
 RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit=Not Locked On
 Unit/Name/AdeptLotV=Adept
 Unit/Name/AdeptLotV@Shade=Shade
+Unit/Name/AdeptLotV@WeaponMissile=Weapon Missile
 Unit/Name/AutoTurretSwarm@AutoTurret=Auto-Turret
 Unit/Name/AutoTurretSwarm@ReleaseMissile=Release Missile
 Unit/Name/CycloneLockOnAirLoTV1@Missile=Missile
@@ -510,6 +520,7 @@ Unit/Name/WidowMineSwarm=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMine=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMineBurrowed=Widow Mine
 Upgrade/Name/AdvancedBallistics=Advanced Ballistics
+Upgrade/Name/AmplifiedShieldingLotV=Amplified Shielding
 Upgrade/Name/CaduceusReactorSwarmBeta@CaduceusReactor=Caduceus Reactor
 Upgrade/Name/CorvidReactorLotV=Corvid Reactor
 Upgrade/Name/CorvidReactorSwarm=Corvid Reactor
@@ -615,6 +626,7 @@ UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip_001=no longer decloa
 UserData/IMBA_TerranUnits/WidowMine_Selection_Title=Current
 UserData/IMBA_TerranUnits/WidowMine_Selection_Title_001=HotS
 Weapon/Name/90mmCannonsLotV1=90mm Cannons
+Weapon/Name/AdeptLotV@Weapon=Glaive Cannon
 Weapon/Name/AutoTurretSwarm@AutoTurretWeapon=12mm Gauss Cannon
 Weapon/Name/CrucioShockCannonLotV1=Crucio Shock Cannon
 Weapon/Name/CycloneLockOnAirLoTV1@Dummy=Lock On Dummy

@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilResearch id="AmplifiedShieldingLotV@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="140" Upgrade="AmplifiedShieldingLotV">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="AmplifiedShieldingLotV" State="Restricted" Requirements="AmplifiedShieldingLotV@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilEffectInstant id="PsionicTransferLotV@Cancel">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Effect index="0" value="PsionicTransferLotV@CancelAB"/>
         <Flags index="Transient" value="1"/>
         <AINotifyEffect value="AdeptPhaseShiftCancel"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Cancel" Requirements="AdeptPhaseShifting"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Cancel" Requirements="PsionicTransferLotV@IsPsionicTransferring"/>
     </CAbilEffectInstant>
     <CAbilEffectTarget id="PsionicTransferLotV">
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>

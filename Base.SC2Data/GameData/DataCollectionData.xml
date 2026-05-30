@@ -173,6 +173,10 @@
         <Button value="SensorTower"/>
         <TechInfoUnit value="SensorTower"/>
     </CDataCollectionUnit>
+    <CDataCollectionUpgrade id="AmplifiedShieldingLotV">
+        <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
     <CDataCollection id="SiegeTankLotV1Morph">
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
     </CDataCollection>
