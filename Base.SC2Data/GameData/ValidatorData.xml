@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorLocationCompareRange id="ColossusLiberty@DamageMaxRange">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="2"/>
+        <Value Effect="ColossusLiberty@WeaponSet" Value="TargetPoint"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorPlayerRequirement id="ExtendedThermalLanceLiberty@Upgraded">
+        <WhichPlayer Value="Caster"/>
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="ExtendedThermalLanceLiberty@HaveExtendedThermalLance"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareOrderCount id="CarrierLotV1@WeaponHangarQueueEmpty">
+        <AbilLink value="CarrierLotV1@WeaponHangar"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitCompareBehaviorCount id="ReleaseInterceptorsLotV1@BeaconHasNoStacks">
+        <WhichUnit Value="Source"/>
+        <Behavior value="ReleaseInterceptorsLotV1@Beacon"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="ReleaseInterceptorsLotV1@DestinationNotReached">
+        <Type value="And"/>
+        <CombineArray value="ReleaseInterceptorsLotV1@InterceptorsNotNearDestination"/>
+        <CombineArray value="InterceptorIsNotStationary"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="ReleaseInterceptorsLotV1@InterceptorsNotNearStartingPoint">
+        <WhichLocation Effect="ReleaseInterceptorsLotV1@Set"/>
+        <Compare value="GT"/>
+        <Range value="15"/>
+        <Value Value="SourceUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="ReleaseInterceptorsLotV1@InterceptorsNotNearStartingPointOrNotDoingStuff">
+        <CombineArray value="ReleaseInterceptorsLotV1@InterceptorsNotNearStartingPoint"/>
+        <CombineArray value="ReleaseInterceptorsNotDoingStuff"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="ReleaseInterceptorsLotV1@InterceptorsNotNearDestination">
+        <WhichLocation Effect="ReleaseInterceptorsLotV1@Set"/>
+        <Compare value="GE"/>
+        <Value Value="TargetUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="WarpInLiberty@PylonHasLibertyPowerSource">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="WarpInLiberty@PowerSource"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="PsiStormLiberty@TargetFilters">
+        <Filters value="-;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareOrderTargetRange id="ShadowStrideLotV@RangeCheck">
+        <Compare value="GT"/>
+        <AbilLink value="ShadowStrideLotV"/>
+        <Value value="30"/>
+    </CValidatorUnitCompareOrderTargetRange>
     <CValidatorUnitCompareBehaviorCount id="PsionicTransferLotV@CasterIsNotPhaseShifting">
         <WhichUnit Effect="PsionicTransferLotV@CU" Value="Caster"/>
         <Behavior value="PsionicTransferLotV@CancelDummy"/>
@@ -192,6 +244,11 @@
         <CombineArray value="ModifiedAbility@SCVBuildingBunkerLiberty"/>
         <CombineArray value="ModifiedAbility@SCVBuildingBarracksLiberty"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="ModifiedAbility@PylonHasPowerSource">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="PowerSource"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitType id="WidowMineSwarm@IsWidowMine">
         <Value value="WidowMineSwarm"/>
     </CValidatorUnitType>

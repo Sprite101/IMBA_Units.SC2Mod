@@ -21,6 +21,304 @@
         <AmmoUnit value="AdeptLotV@WeaponMissile"/>
         <Movers Link="AdeptWeapon"/>
     </CEffectLaunchMissile>
+    <CEffectUseMagazine id="CarrierLotV1@WeaponUseMagazine">
+        <EditorCategories value="Race:Protoss"/>
+    </CEffectUseMagazine>
+    <CEffectDamage id="FeedbackLiberty@Damage">
+        <ValidatorArray value=""/>
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <Flags index="Notification" value="1"/>
+        <VitalFractionCurrent index="Energy" value="1"/>
+        <Death value="Blast"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectModifyUnit id="FeedbackLiberty@RemoveEnergy">
+        <ValidatorArray value=""/>
+        <EditorCategories value="Race:Protoss"/>
+        <VitalArray index="Energy">
+            <ChangeFraction value="-1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="FeedbackLiberty@Set">
+        <ValidatorArray value="NotOrbitalCommand"/>
+        <ValidatorArray value="NotOrbitalCommandFlying"/>
+        <ValidatorArray value="NotNexus"/>
+        <ValidatorArray value="NotShieldBattery"/>
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="FeedbackLiberty@Damage"/>
+        <EffectArray value="FeedbackLiberty@RemoveEnergy"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="ImmortalLotVBarrier@RB">
+        <EditorCategories value="Race:Protoss"/>
+        <BehaviorLink value="ImmortalLotVBarrier@Barrier"/>
+    </CEffectRemoveBehavior>
+    <CEffectDamage id="ImmortalLiberty@Damage">
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <AttributeBonus index="Armored" value="30"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="20"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="ImmortalLotVBarrier@AB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="ImmortalLotVBarrier@Barrier"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="CarrierLotV1@WeaponCP">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="8"/>
+        <PeriodicValidator value="CasterNotDead"/>
+        <PeriodicEffectArray value="CarrierLotV1@WeaponUseMagazine"/>
+        <PeriodicPeriodArray value="0.375"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="CarrierLotV1@WeaponCPUpgraded">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="8"/>
+        <PeriodicValidator value="CasterNotDead"/>
+        <PeriodicEffectArray value="CarrierLotV1@WeaponUseMagazine"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <PeriodicPeriodArray value="0.25"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="PsiStormLiberty@AB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="PsiStormLiberty"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="PsiStormLiberty@Damage">
+        <ValidatorArray value="PsiStormLiberty@TargetFilters"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Visibility value="Hidden"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectDamage id="PsiStormLiberty@DamageInitial">
+        <ValidatorArray value="PsiStormLiberty@TargetFilters"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="PsiStormLiberty@CP">
+        <EditorCategories value="Race:Protoss"/>
+        <InitialEffect value="PsiStormLiberty@SearchArea"/>
+        <PeriodCount value="6"/>
+        <PeriodicEffectArray value="PsiStormLiberty@SearchArea"/>
+        <PeriodicPeriodArray value="0.5712"/>
+        <AINotifyEffect value="PsiStormSearch"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="PsiStormLiberty@SearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <AINotifyFlags index="HurtFriend" value="1"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <SearchFilters value="-;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="PsiStormLiberty@AB"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectReleaseMagazine id="ReleaseInterceptorsLotV1@ReleaseMagazine">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Target"/>
+    </CEffectReleaseMagazine>
+    <CEffectApplyBehavior id="ReleaseInterceptorsLotV1@TimedLifeAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="ReleaseInterceptorsLotV1@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="ReleaseInterceptorsLotV1@TimedLifeWarningAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="ReleaseInterceptorsLotV1@TimedLifeWarning"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="ReleaseInterceptorsLotV1@WanderDelayAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="ReleaseInterceptorsLotV1@WanderDelay"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="ReleaseInterceptorsLotV1@BeaconAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Effect="ReleaseInterceptorsLotV1@Set"/>
+        <Behavior value="ReleaseInterceptorsLotV1@Beacon"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="ReleaseInterceptorsLotV1@BeaconRB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Effect="ReleaseInterceptorsLotV1@Set"/>
+        <BehaviorLink value="ReleaseInterceptorsLotV1@Beacon"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectIssueOrder id="ReleaseInterceptorsLotV1@IssueLeashOrder">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Source"/>
+        <Abil value="move"/>
+        <Player Value="Source"/>
+        <Target Effect="ReleaseInterceptorsLotV1@Set" Value="TargetPoint"/>
+    </CEffectIssueOrder>
+    <CEffectSet id="ReleaseInterceptorsLotV1@LeashSet">
+        <ValidatorArray value="ReleaseInterceptorsLotV1@InterceptorsNotNearStartingPointOrNotDoingStuff"/>
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="ReleaseInterceptorsLotV1@IssueLeashOrder"/>
+        <EffectArray value="ReleaseInterceptorsLotV1@WanderDelayAB"/>
+    </CEffectSet>
+    <CEffectUseMagazine id="ReleaseInterceptorsLotV1@UseMagazine">
+        <EditorCategories value="Race:Protoss"/>
+        <AmmoEffect value="ReleaseInterceptorsLotV1@ReleaseSet"/>
+        <TargetLocation Effect="ReleaseInterceptorsLotV1@Set" Value="TargetPoint"/>
+    </CEffectUseMagazine>
+    <CEffectCreateUnit id="ReleaseInterceptorsLotV1@BeaconCU">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetPoint"/>
+        <Origin Value="TargetPoint"/>
+        <CreateFlags index="PlacementIgnoreCliffTest" value="1"/>
+        <CreateFlags index="SetFacing" value="1"/>
+        <CreateFlags index="TechComplete" value="0"/>
+        <SpawnEffect value="ReleaseInterceptorsLotV1@Set"/>
+        <SpawnUnit value="ReleaseInterceptorsLotV1@Beacon"/>
+    </CEffectCreateUnit>
+    <CEffectCreatePersistent id="ReleaseInterceptorsLotV1@InitialCP">
+        <EditorCategories value="Race:Protoss"/>
+        <OffsetVectorStartLocation Value="CasterUnit"/>
+        <PeriodCount value="8"/>
+        <PeriodicEffectArray value="ReleaseInterceptorsLotV1@IterateMagazine"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumMagazine id="ReleaseInterceptorsLotV1@IterateMagazine">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <MaxCount value="1"/>
+        <EffectInternal value="ReleaseInterceptorsLotV1@UseMagazine"/>
+        <EffectExternal value="ReleaseInterceptorsLotV1@ReleaseSet"/>
+    </CEffectEnumMagazine>
+    <CEffectSet id="ReleaseInterceptorsLotV1@Set">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="ReleaseInterceptorsLotV1@InitialCP"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="ReleaseInterceptorsLotV1@IssueMoveOrder">
+        <EditorCategories value="Race:Protoss"/>
+        <Abil value="move"/>
+        <Player Value="Caster"/>
+        <Target Effect="ReleaseInterceptorsLotV1@Set" Value="TargetPoint"/>
+    </CEffectIssueOrder>
+    <CEffectCreatePersistent id="ReleaseInterceptorsLotV1@PatrolCP">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Effect="ReleaseInterceptorsLotV1@Set"/>
+        <Flags index="RandomEffect" value="1"/>
+        <Flags index="RandomOffset" value="1"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="ReleaseInterceptorsLotV1@PatrolLeftTurnCP"/>
+        <PeriodicEffectArray value="ReleaseInterceptorsLotV1@PatrolRightTurnCP"/>
+        <PeriodicOffsetArray value="2.5,0,0"/>
+        <PeriodicOffsetArray value="2.165,1.25,0"/>
+        <PeriodicOffsetArray value="1.25,2.165,0"/>
+        <PeriodicOffsetArray value="0,2.5,0"/>
+        <PeriodicOffsetArray value="-1.25,2.165,0"/>
+        <PeriodicOffsetArray value="-2.165,1.25,0"/>
+        <PeriodicOffsetArray value="-2.5,0,0"/>
+        <PeriodicOffsetArray value="-2.165,-1.25,0"/>
+        <PeriodicOffsetArray value="-1.25,-2.165,0"/>
+        <PeriodicOffsetArray value="0,-2.5,0"/>
+        <PeriodicOffsetArray value="1.25,-2.165,0"/>
+        <PeriodicOffsetArray value="2.165,-1.25,0"/>
+    </CEffectCreatePersistent>
+    <CEffectIssueOrder id="ReleaseInterceptorsLotV1@PatrolIssueOrder">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Source"/>
+        <Abil value="move"/>
+        <AbilCmdIndex value="1"/>
+        <CmdFlags index="Queued" value="1"/>
+        <Player Value="Source"/>
+        <Target Value="TargetPoint"/>
+    </CEffectIssueOrder>
+    <CEffectCreatePersistent id="ReleaseInterceptorsLotV1@PatrolLeftTurnCP">
+        <EditorCategories value="Race:Protoss"/>
+        <OffsetVectorStartLocation Effect="ReleaseInterceptorsLotV1@Set" Value="TargetPoint"/>
+        <PeriodCount value="7"/>
+        <PeriodicEffectArray value="ReleaseInterceptorsLotV1@PatrolRandomizerCP"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="-1.768,0.732,0"/>
+        <PeriodicOffsetArray value="-2.5,2.5,0"/>
+        <PeriodicOffsetArray value="2.5,2.5,0"/>
+        <PeriodicOffsetArray value="1.768,4.268,0"/>
+        <PeriodicOffsetArray value="0,5,0"/>
+        <PeriodicOffsetArray value="0,2.5,0"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="ReleaseInterceptorsLotV1@PatrolRandomizerCP">
+        <EditorCategories value="Race:Protoss"/>
+        <Flags index="RandomOffset" value="1"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="ReleaseInterceptorsLotV1@PatrolIssueOrder"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="0.25,0,0"/>
+        <PeriodicOffsetArray value="0.125,0.2165,0"/>
+        <PeriodicOffsetArray value="-0.125,0.2165,0"/>
+        <PeriodicOffsetArray value="-0.25,0,0"/>
+        <PeriodicOffsetArray value="-0.125,-0.2165,0"/>
+        <PeriodicOffsetArray value="0.125,-0.2165,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="0.433,0.25,0"/>
+        <PeriodicOffsetArray value="0.25,0.433,0"/>
+        <PeriodicOffsetArray value="0,0.5,0"/>
+        <PeriodicOffsetArray value="-0.25,0.433,0"/>
+        <PeriodicOffsetArray value="-0.433,0.25,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="-0.433,-0.25,0"/>
+        <PeriodicOffsetArray value="-0.25,-0.433,0"/>
+        <PeriodicOffsetArray value="0,-0.5,0"/>
+        <PeriodicOffsetArray value="0.25,-0.433,0"/>
+        <PeriodicOffsetArray value="0.433,-0.25,0"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="ReleaseInterceptorsLotV1@PatrolRightTurnCP">
+        <EditorCategories value="Race:Protoss"/>
+        <OffsetVectorStartLocation Effect="ReleaseInterceptorsLotV1@Set" Value="TargetPoint"/>
+        <PeriodCount value="7"/>
+        <PeriodicEffectArray value="ReleaseInterceptorsLotV1@PatrolRandomizerCP"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="1.768,0.732,0"/>
+        <PeriodicOffsetArray value="2.5,2.5,0"/>
+        <PeriodicOffsetArray value="-2.5,2.5,0"/>
+        <PeriodicOffsetArray value="-1.768,4.268,0"/>
+        <PeriodicOffsetArray value="0,5,0"/>
+        <PeriodicOffsetArray value="0,2.5,0"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="ReleaseInterceptorsLotV1@ReleaseSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="ReleaseInterceptorsLotV1@ReleaseMagazine"/>
+        <EffectArray value="ReleaseInterceptorsLotV1@IssueMoveOrder"/>
+        <EffectArray value="ReleaseInterceptorsLotV1@TimedLifeAB"/>
+        <EffectArray value="ReleaseInterceptorsLotV1@TimedLifeWarningAB"/>
+        <EffectArray value="ReleaseInterceptorsLotV1@WanderDelayAB"/>
+    </CEffectSet>
+    <CEffectDamage id="ReleaseInterceptorsLotV1@RemoveBeacon">
+        <ValidatorArray value="ReleaseInterceptorsLotV1@BeaconHasNoStacks"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <Flags index="Kill" value="1"/>
+        <Death value="Remove"/>
+    </CEffectDamage>
+    <CEffectTeleport id="ShadowStrideLotV@Teleport">
+        <ValidatorArray value="CasterNotFungalGrowthed"/>
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <ClearQueuedOrders value="0"/>
+        <PlacementAround Value="CasterUnit"/>
+        <PlacementRange value="8"/>
+        <Range value="8"/>
+        <TargetLocation Value="TargetPoint"/>
+        <TeleportFlags index="TestCliff" value="1"/>
+    </CEffectTeleport>
     <CEffectCreateUnit id="PsionicTransferLotV@CU">
         <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="CasterUnit"/>
@@ -1008,6 +1306,120 @@
         <Kind value="Spell"/>
         <Amount value="45"/>
         <Death value="Silentkill"/>
+    </CEffectDamage>
+    <CEffectSet id="ColossusLiberty@WeaponSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="ColossusLiberty@WeaponForwardCP"/>
+        <EffectArray value="ColossusLiberty@WeaponBackwardsCP"/>
+        <EffectArray value="ColossusLiberty@WeaponFriendlyCP"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="ColossusLiberty@WeaponDmageDelayCP">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.25"/>
+        <FinalEffect value="ColossusLiberty@WeaponDamage"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="ColossusLiberty@WeaponForwardSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.15" Effect="ColossusLiberty@WeaponDmageDelayCP"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="ColossusLiberty@WeaponBackwardsSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.15" Effect="ColossusLiberty@WeaponDmageDelayCP"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="ColossusLiberty@WeaponForwardCP">
+        <EditorCategories value="Race:Protoss"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.73"/>
+        <ExpireEffect value="ColossusLiberty@WeaponDamage"/>
+        <PeriodCount value="11"/>
+        <PeriodicEffectArray value="ColossusLiberty@WeaponForwardSearchArea"/>
+        <PeriodicOffsetArray value="-1.25,0,0"/>
+        <PeriodicOffsetArray value="-1,0,0"/>
+        <PeriodicOffsetArray value="-0.75,0,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="-0.25,0,0"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="0.25,0,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="0.75,0,0"/>
+        <PeriodicOffsetArray value="1,0,0"/>
+        <PeriodicOffsetArray value="1.25,0,0"/>
+        <PeriodicPeriodArray value="0.0312"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="ColossusLiberty@WeaponFriendlyCP">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.2"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffectArray value="ColossusLiberty@WeaponFriendlyDamage"/>
+        <PeriodicEffectArray value="ColossusLiberty@WeaponFriendlyDamage"/>
+        <PeriodicPeriodArray value="0.09"/>
+        <PeriodicPeriodArray value="0.09"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="ColossusLiberty@WeaponFriendlyDamage" parent="DU_WEAP">
+        <Name value="Effect/Name/ThermalLancesMU"/>
+        <ValidatorArray value="MultipleHitSelfAlliedOnlyGroundOnlyAttackTargetFilter"/>
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="ColossusLiberty@DamageMaxRange"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="23"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectDamage id="ColossusLiberty@WeaponDamage" parent="DU_WEAP">
+        <ValidatorArray value="MultipleHitGroundOnlyAttackTargetFilter"/>
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="ColossusLiberty@DamageMaxRange"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="23"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="ColossusLiberty@WeaponBackwardsCP">
+        <EditorCategories value="Race:Protoss"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.73"/>
+        <ExpireEffect value="ColossusLiberty@WeaponDamage"/>
+        <PeriodCount value="11"/>
+        <PeriodicEffectArray value="ColossusLiberty@WeaponBackwardsSearchArea"/>
+        <PeriodicOffsetArray value="1.25,0,0"/>
+        <PeriodicOffsetArray value="1,0,0"/>
+        <PeriodicOffsetArray value="0.75,0,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="0.25,0,0"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="-0.25,0,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="-0.75,0,0"/>
+        <PeriodicOffsetArray value="-1,0,0"/>
+        <PeriodicOffsetArray value="-1.25,0,0"/>
+        <PeriodicPeriodArray value="0.0312"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="ReleaseInterceptorsLotV1@TimedLifeFate">
+        <Flags index="Kill" value="1"/>
+        <Flags index="NoKillCredit" value="1"/>
+        <Death value="Timeout"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="TyphoonMissilePodLotV2@LMLeft">
         <EditorCategories value="Race:Terran"/>

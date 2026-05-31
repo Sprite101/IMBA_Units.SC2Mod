@@ -10,6 +10,124 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilArmMagazine id="CarrierLotV1@WeaponHangar">
+        <AbilSetId value="CarrierHanger"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Flags index="Retarget" value="1"/>
+        <Leash value="12"/>
+        <InfoArray index="Ammo1" Time="8" CountStart="4" Manage="Recall" Unit="InterceptorLotV1">
+            <Charge Link="CarrierInterceptor" Location="Unit"/>
+            <Cooldown Link="CarrierTrainInterceptor" TimeUse="0.01"/>
+            <Button DefaultButtonFace="InterceptorLotV1" Requirements="CarrierLotV1@WeaponHangarCount">
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+            <Flags index="AutoBuild" value="1"/>
+            <Flags index="LeashRetarget" value="1"/>
+        </InfoArray>
+        <Alert value="TrainComplete"/>
+        <EffectArray index="Death" value="InterceptorFate"/>
+        <MaxCount value="8"/>
+    </CAbilArmMagazine>
+    <CAbilEffectTarget id="FeedbackLiberty">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="FeedbackLiberty@Set"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Charge Link=""/>
+            <Cooldown Link=""/>
+        </Cost>
+        <TargetFilters value="CanHaveEnergy,Visible,HasEnergy;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <AINotifyEffect value=""/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="FeedbackLiberty"/>
+    </CAbilEffectTarget>
+    <CAbilResearch id="GravitonCatapultLotV1@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="80" Upgrade="GravitonCatapultLotV1">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="GravitonCatapultLotV1" State="Restricted" Requirements="GravitonCatapultLotV1@LearnGravitonCatapult">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilEffectInstant id="ImmortalLotVBarrier">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="ImmortalLotVBarrier@AB"/>
+        <Flags index="TransientPreferred" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="60"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ImmortalLotVBarrier"/>
+    </CAbilEffectInstant>
+    <CAbilResearch id="KhaydarinAmulet">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <DataCollection value="PsiStormHighTemplarLiberty"/>
+        <InfoArray index="Research1" Time="110" Upgrade="KhaydarinAmulet">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="KhaydarinAmulet" State="Restricted" Requirements="KhaydarinAmulet@LearnKhaydarinAmulet">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilBuild id="ProtossBuild">
+        <InfoArray index="Build19" Unit="WarpInLiberty@Pylon" Time="25">
+            <Button DefaultButtonFace="Pylon"/>
+        </InfoArray>
+    </CAbilBuild>
+    <CAbilEffectTarget id="PsiStormLiberty">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="PsiStormLiberty@CP"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="75"/>
+            <Cooldown TimeUse="2"/>
+        </Cost>
+        <Range value="9"/>
+        <CastOutroTime value="0.5"/>
+        <CursorEffect value="PsiStormLiberty@SearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PsiStormLiberty" Requirements="PsiStormHighTemplarLiberty@Have"/>
+    </CAbilEffectTarget>
+    <CAbilResearch id="ExtendedThermalLanceLiberty@ResearchExtendedThermalLance">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="140" Upgrade="ExtendedThermalLanceLiberty">
+            <Resource index="Minerals" value="200"/>
+            <Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="ExtendedThermalLanceLiberty" State="Restricted" Requirements="LearnExtendedThermalLance">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilEffectTarget id="ReleaseInterceptorsLotV1">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="ReleaseInterceptorsLotV1@BeaconCU"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="40"/>
+        </Cost>
+        <Range value="15"/>
+        <AINotifyEffect value="ReleaseInterceptors"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ReleaseInterceptorsLotV1" Requirements="ReleaseInterceptorsLotV1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="ShadowStrideLotV">
+        <AbilSetId value="Blnk"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="ShadowStrideLotV@Teleport"/>
+        <Flags index="BestUnit" value="0"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <Range value="500"/>
+        <AINotifyEffect value="ShadowStrideLotV@Teleport"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ShadowStrideLotV" Requirements="UseDarkTemplarBlink">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
     <CAbilEffectInstant id="PsionicTransferLotV@Cancel">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Effect index="0" value="PsionicTransferLotV@CancelAB"/>
@@ -231,6 +349,16 @@
             <Button DefaultButtonFace="ReactorLiberty"/>
         </InfoArray>
     </CAbilBuild>
+    <CAbilResearch id="PsiStormHighTemplarLiberty">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="110" Upgrade="PsiStormHighTemplarLiberty">
+            <Resource index="Minerals" value="200"/>
+            <Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="PsiStormHighTemplarLiberty" State="Restricted" Requirements="PsiStormHighTemplarLiberty@LearnPsionicStorm">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilBuild id="TerranBuild">
         <InfoArray index="Build20" Unit="SensorTowerLotV1" Time="25">
             <Button DefaultButtonFace="SensorTowerLotV1" State="Restricted" Requirements="HaveEngineeringBay"/>

@@ -29,6 +29,30 @@
         <Period value="0.8"/>
         <Effect value="AutoTurretSwarm@AutoTurretDamage"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="ImmortalLiberty@Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="ImmortalLiberty@Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="6.5"/>
+        <Range value="6"/>
+        <Period value="1.45"/>
+        <Effect value="ImmortalLiberty@Damage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CarrierLotV1@Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <DisplayEffect value="Carrier"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <Period value="0.5"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="CarrierLotV1@WeaponCP"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="StalkerLiberty@ParticleDisruptors">
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
@@ -152,6 +176,22 @@
         <Effect value="PointDefenseDroneSwarm@InitialSet"/>
         <RandomDelayMin value="0"/>
         <RandomDelayMax value="0"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ColossusLiberty@Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="ColossusLiberty@WeaponDamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquirePrioritization value="ByDistanceFromTarget"/>
+        <MinScanRange value="6.5"/>
+        <Range value="6"/>
+        <RangeSlop value="0"/>
+        <Arc value="90"/>
+        <Period value="2.2"/>
+        <DamagePoint value="0.0832"/>
+        <Effect value="ColossusLiberty@WeaponSet"/>
+        <LegacyOptions index="KeepChanneling" value="1"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="TornadoBlaster">
         <EditorCategories value="Race:Terran"/>

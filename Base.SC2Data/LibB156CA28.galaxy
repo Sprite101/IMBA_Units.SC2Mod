@@ -637,7 +637,7 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
     for ( ; autoA128BA4D_var <= autoA128BA4D_ae; autoA128BA4D_var += 1 ) {
         TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "A", PlayerName(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, autoA128BA4D_var)));
         TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "B", IntToText(autoA128BA4D_var));
-        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_17F87ABD"), true);
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_17F87ABD"), false);
         libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_playerButtonName[(autoA128BA4D_var-1)], PlayerName(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, autoA128BA4D_var)), PlayerGroupAll());
         libB156CA28_gf_SetupSelectionPanel(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, autoA128BA4D_var), (autoA128BA4D_var-1));
     }
@@ -698,10 +698,6 @@ bool libB156CA28_gt_UnitTest_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    TechTreeUnitAllow(1, "StalkerLiberty", true);
-    TechTreeUnitAllow(1, "Stalker", false);
-    TechTreeAbilityAllow(1, AbilityCommand("BlinkLiberty@ResearchBlink", 0), true);
-    TechTreeAbilityAllow(1, AbilityCommand("TwilightCouncilResearch", 1), false);
     TechTreeBehaviorAllow(1, "PowerSource", false);
     TechTreeBehaviorAllow(1, "PowerSourceFast", false);
     TechTreeBehaviorAllow(1, "FastEnablerGatewayMorphingPowerSource", false);

@@ -5,6 +5,83 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="FeedbackLiberty">
+        <Icon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="GravitonCatapultLotV1@Passive">
+        <Icon value="Assets\Textures\BTN-Upgrade-Protoss-GravitonCatapult.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Protoss-GravitonCatapult.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ImmortalLotV">
+        <Icon value="Assets\Textures\BTN-Unit-Protoss-Immortal.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Unit-Protoss-Immortal.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ImmortalLiberty@HardenedShieldPassive">
+        <Icon value="Assets\Textures\btn-ability-protoss-hardenedshields.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-hardenedshields.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="ImmortalLiberty">
+        <Icon value="Assets\Textures\BTN-Unit-Protoss-Immortal.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Unit-Protoss-Immortal.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ImmortalLotVBarrier">
+        <Icon value="Assets\Textures\btn-ability-protoss-invulnerabilityshield.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-invulnerabilityshield.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="InterceptorLotV1">
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="KhaydarinAmulet">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-khaydarinamulet.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-khaydarinamulet.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="KhaydarinAmulet@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-khaydarinamulet.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-khaydarinamulet.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="PsiStormLiberty">
+        <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="PsiStormHighTemplarLiberty">
+        <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ExtendedThermalLanceLiberty">
+        <Icon value="Assets\Textures\BTN-Upgrade-Protoss-ExtendedThermalLance.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Protoss-ExtendedThermalLance.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="GravitonCatapultLotV1">
+        <Icon value="Assets\Textures\BTN-Upgrade-Protoss-GravitonCatapult.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Protoss-GravitonCatapult.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ReleaseInterceptorsLotV1">
+        <Icon value="Assets\Textures\btn-ability-terran-unloadall.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-unloadall.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="ShadowStrideLotV">
+        <Icon value="Assets\Textures\btn-ability-protoss-stealth-blink.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-stealth-blink.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="PsionicTransferLotV">
         <Icon value="Assets\Textures\btn-ability-protoss-psionictransfer.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-psionictransfer.dds"/>

@@ -4,6 +4,42 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174"/>
     </CRequirement>
+    <CRequirement id="CarrierLotV1@WeaponHangarCount">
+        <EditorCategories value="Race:Protoss,TechType:Unit"/>
+        <NodeArray index="Use" Link="LT2210218377CountUnitInterceptorLotV1QueuedOrBetterAtUnit8"/>
+    </CRequirement>
+    <CRequirement id="ExtendedThermalLanceLiberty@LearnExtendedThermalLance">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="AndNotCountUpgradeExtendedThermalLanceLibertyQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="ExtendedThermalLanceLiberty@HaveExtendedThermalLance">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountUpgradeExtendedThermalLanceLibertyCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="GravitonCatapultLotV1@LearnGravitonCatapult">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeGravitonCatapultLotV1QueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="PsiStormHighTemplarLiberty@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradePsiStormHighTemplarLibertyCompleteOnly3263798822"/>
+    </CRequirement>
+    <CRequirement id="KhaydarinAmulet@HaveKhaydarinAmulet">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeKhaydarinAmuletCompleteOnly1915283201"/>
+    </CRequirement>
+    <CRequirement id="GravitonCatapultLotV1@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeGravitonCatapultLotV1CompleteOnly545093725"/>
+    </CRequirement>
+    <CRequirement id="PsiStormHighTemplarLiberty@LearnPsionicStorm">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradePsiStormHighTemplarLibertyQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="KhaydarinAmulet@LearnKhaydarinAmulet">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeKhaydarinAmuletQueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="PsionicTransferLotV@IsPsionicTransferring">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="CountBehaviorPsionicTransferLotV@CasterCompleteOnlyAtUnit"/>
@@ -124,5 +160,9 @@
     <CRequirement id="ChargeZealotLotV1@UseCharge">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeChargeZealotLotV1CompleteOnly137519211TechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="ReleaseInterceptorsLotV1">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987"/>
     </CRequirement>
 </Catalog>

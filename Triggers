@@ -4602,7 +4602,7 @@
         </Element>
         <Element Type="Param" Id="D35599B3">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="00000187"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="00000071"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000072"/>
         </Element>
         <Element Type="Param" Id="17F87ABD">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="00000186"/>
@@ -9352,6 +9352,11 @@
             <Action Type="FunctionCall" Library="B156CA28" Id="82E9A286"/>
             <Action Type="FunctionCall" Library="B156CA28" Id="D9F28C81"/>
             <Action Type="FunctionCall" Library="B156CA28" Id="D486B9FC"/>
+            <Action Type="Comment" Library="B156CA28" Id="DC302596"/>
+            <Action Type="FunctionCall" Library="B156CA28" Id="F3B1F638"/>
+            <Action Type="FunctionCall" Library="B156CA28" Id="9CB81063"/>
+            <Action Type="FunctionCall" Library="B156CA28" Id="40DF94A0"/>
+            <Action Type="FunctionCall" Library="B156CA28" Id="ABB299B7"/>
         </Element>
         <Element Type="FunctionCall" Id="A481FE69">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000120"/>
@@ -9448,6 +9453,7 @@
             </Comment>
         </Element>
         <Element Type="FunctionCall" Id="8DB900DE">
+            <Disabled/>
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="51A273F5"/>
             <Parameter Type="Param" Library="B156CA28" Id="6BF07417"/>
             <Parameter Type="Param" Library="B156CA28" Id="165D921F"/>
@@ -9469,6 +9475,7 @@
             <ValueGameType Type="Unit"/>
         </Element>
         <Element Type="FunctionCall" Id="E27073D9">
+            <Disabled/>
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="51A273F5"/>
             <Parameter Type="Param" Library="B156CA28" Id="5C8B93CB"/>
             <Parameter Type="Param" Library="B156CA28" Id="4A25D075"/>
@@ -9490,6 +9497,7 @@
             <ValueGameType Type="Unit"/>
         </Element>
         <Element Type="FunctionCall" Id="88440481">
+            <Disabled/>
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="0F7C3248"/>
             <Parameter Type="Param" Library="B156CA28" Id="D68FE1FD"/>
             <Parameter Type="Param" Library="B156CA28" Id="E4E38EF2"/>
@@ -9510,6 +9518,7 @@
             <ValueType Type="abilcmd"/>
         </Element>
         <Element Type="FunctionCall" Id="62267BEF">
+            <Disabled/>
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="0F7C3248"/>
             <Parameter Type="Param" Library="B156CA28" Id="9CB0A257"/>
             <Parameter Type="Param" Library="B156CA28" Id="C3E3A198"/>
@@ -9700,6 +9709,98 @@
         <Element Type="Param" Id="8721AD48">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="9B01128C"/>
             <Value>Warpable</Value>
+            <ValueType Type="abilcmd"/>
+        </Element>
+        <Element Type="Comment" Id="DC302596">
+            <Comment>
+                Comment
+            </Comment>
+        </Element>
+        <Element Type="FunctionCall" Id="F3B1F638">
+            <Disabled/>
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000171"/>
+            <Parameter Type="Param" Library="B156CA28" Id="6A9C63C7"/>
+            <Parameter Type="Param" Library="B156CA28" Id="DD9DA583"/>
+            <Parameter Type="Param" Library="B156CA28" Id="D5F3A1A6"/>
+        </Element>
+        <Element Type="Param" Id="6A9C63C7">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000279"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="DD9DA583">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000281"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="D5F3A1A6">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000280"/>
+            <Value>WarpInLiberty@PowerSource</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="9CB81063">
+            <Disabled/>
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000171"/>
+            <Parameter Type="Param" Library="B156CA28" Id="BFF7813E"/>
+            <Parameter Type="Param" Library="B156CA28" Id="E4834624"/>
+            <Parameter Type="Param" Library="B156CA28" Id="333470A8"/>
+        </Element>
+        <Element Type="Param" Id="BFF7813E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000279"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="E4834624">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000281"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="333470A8">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000280"/>
+            <Value>WarpInLiberty@PrismPowerSource</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="40DF94A0">
+            <Disabled/>
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000171"/>
+            <Parameter Type="Param" Library="B156CA28" Id="3472DE23"/>
+            <Parameter Type="Param" Library="B156CA28" Id="A8D192B8"/>
+            <Parameter Type="Param" Library="B156CA28" Id="003AB389"/>
+        </Element>
+        <Element Type="Param" Id="3472DE23">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000279"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="A8D192B8">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000281"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="003AB389">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000280"/>
+            <Value>WarpInLiberty@PowerUserWarpable</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="FunctionCall" Id="ABB299B7">
+            <Disabled/>
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="0F7C3248"/>
+            <Parameter Type="Param" Library="B156CA28" Id="6518BC44"/>
+            <Parameter Type="Param" Library="B156CA28" Id="170A5704"/>
+            <Parameter Type="Param" Library="B156CA28" Id="90C98929"/>
+        </Element>
+        <Element Type="Param" Id="6518BC44">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="BFF56EB0"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="170A5704">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="09B7BAEA"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="90C98929">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="9B01128C"/>
+            <Value>WarpInLiberty@Warpable</Value>
             <ValueType Type="abilcmd"/>
         </Element>
     </Library>

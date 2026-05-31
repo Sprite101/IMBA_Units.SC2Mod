@@ -9,6 +9,17 @@
         <EditorCategories value="Race:Protoss,UpgradeType:AttackBonus"/>
         <AffectedUnitArray value="AdeptLotV"/>
     </CUpgrade>
+    <CUpgrade id="GravitonCatapultLotV1">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-gravitoncatapult.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Weapon,CarrierLotV1@Weapon,Effect" Value="CarrierLotV1@WeaponCPUpgraded"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="CarrierLotV1"/>
+    </CUpgrade>
     <CUpgrade id="ChargeZealotLotV1">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
@@ -92,6 +103,18 @@
         <EffectArray Operation="Set" Reference="Effect,MedivacHeal,RechargeVitalRate" Value="15.000000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="Medivac"/>
+    </CUpgrade>
+    <CUpgrade id="ExtendedThermalLanceLiberty">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-extendedthermallance.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Weapon,ColossusLiberty@Weapon,Range" Value="3"/>
+        <EffectArray Reference="Weapon,ColossusLiberty@Weapon,MinScanRange" Value="3"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="ColossusLiberty"/>
     </CUpgrade>
     <CUpgrade id="HiSecAutoTracking">
         <EffectArray Reference="Weapon,AutoTurretSwarm@AutoTurretWeapon,Range" Value="1"/>
@@ -294,17 +317,6 @@
         <AffectedUnitArray value="LiberatorLotV1@Liberator"/>
         <AffectedUnitArray value="LiberatorAGLotV1@LiberatorAG"/>
     </CUpgrade>
-    <CUpgrade id="MarineUpgrade">
-        <Flags index="UpgradeCheat" value="0"/>
-        <Race value="Neut"/>
-        <EffectArray Operation="Set" Reference="Abil,BarracksTrain,InfoArray[Train1].Time" Value="20.000000"/>
-        <EffectArray Operation="Set" Reference="Abil,BarracksTechLabResearch,InfoArray[Research1].Resource[Minerals]" Value="150"/>
-        <EffectArray Operation="Set" Reference="Abil,BarracksTechLabResearch,InfoArray[Research1].Resource[Vespene]" Value="150"/>
-        <EffectArray Operation="Set" Reference="Abil,BarracksTechLabResearch,InfoArray[Research2].Resource[Minerals]" Value="150"/>
-        <EffectArray Operation="Set" Reference="Abil,BarracksTechLabResearch,InfoArray[Research2].Resource[Vespene]" Value="150"/>
-        <AffectedUnitArray value="Marine"/>
-        <LeaderAlias value=""/>
-    </CUpgrade>
     <CUpgrade id="HurricaneThrusters@Upgrade">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
@@ -314,6 +326,25 @@
         <EffectArray Operation="Set" Reference="Unit,CycloneLotV2,Speed" Value="3.375000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="CycloneLotV2"/>
+    </CUpgrade>
+    <CUpgrade id="PsiStormHighTemplarLiberty">
+        <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="HighTemplarLiberty"/>
+    </CUpgrade>
+    <CUpgrade id="KhaydarinAmulet">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-khaydarinamulet.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,HighTemplarLiberty,EnergyStart" Value="25"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="HighTemplarLiberty"/>
     </CUpgrade>
     <CUpgrade id="RapidFireLaunchers@Upgrade">
         <Icon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>

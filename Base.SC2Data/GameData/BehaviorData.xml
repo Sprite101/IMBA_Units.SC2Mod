@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CBehaviorBuff id="ImmortalLiberty@HardenedShield">
+        <Alignment value="Positive"/>
+        <Cost>
+            <Cooldown Link="Immortal Shield"/>
+        </Cost>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\BTN-Ability-Protoss-HardenedShields.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="CasterShieldsGE1"/>
+        <DamageResponse ClampMaximum="10" Minimum="10">
+            <Kind index="Spell" value="0"/>
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PsiStormLiberty">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-psistorm.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.6665"/>
+        <Period value="0.571"/>
+        <InitialEffect value="PsiStormLiberty@DamageInitial"/>
+        <PeriodicEffect value="PsiStormLiberty@Damage"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="PsionicTransferLotV@ShadeSpawn">
         <Alignment value="Positive"/>
         <InfoFlags index="Hidden" value="1"/>
@@ -90,6 +114,44 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Duration value="2"/>
         <ExpireEffect value="KD8ChargeLotV1@ExplodeInitialSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ImmortalLotVBarrier@Barrier">
+        <Name value="Behavior/Name/ImmortalOverload"/>
+        <Tooltip value="Behavior/Tooltip/ImmortalOverload"/>
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-invulnerabilityshield.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <RemoveValidatorArray value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>
+        <Duration value="3"/>
+        <ExpireEffect value="ImmortalLotVBarrier@RB"/>
+        <DamageResponse ModifyFraction="0" ModifyLimit="200" ModifyMinimumDamage="1">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ReleaseInterceptorsLotV1@Beacon">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <MaxStackCount value="65535"/>
+        <FinalEffect value="ReleaseInterceptorsLotV1@RemoveBeacon"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ReleaseInterceptorsLotV1@TimedLife" parent="TimedLife">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="60"/>
+        <Period value="0.5"/>
+        <InitialEffect value="ReleaseInterceptorsLotV1@BeaconAB"/>
+        <PeriodicEffect value="ReleaseInterceptorsLotV1@LeashSet"/>
+        <FinalEffect value="ReleaseInterceptorsLotV1@BeaconRB"/>
+        <ExpireEffect value="ReleaseInterceptorsLotV1@TimedLifeFate"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ReleaseInterceptorsLotV1@TimedLifeWarning">
+        <Duration value="50"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ReleaseInterceptorsLotV1@WanderDelay">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="ReleaseInterceptorsLotV1@DestinationNotReached"/>
+        <FinalEffect value="ReleaseInterceptorsLotV1@PatrolCP"/>
     </CBehaviorBuff>
     <CBehaviorPowerSource id="WarpInLiberty@PrismPowerSource">
         <InfoFlags index="Hidden" value="1"/>
