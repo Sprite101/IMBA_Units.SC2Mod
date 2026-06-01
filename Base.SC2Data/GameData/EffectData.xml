@@ -99,6 +99,9 @@
         <PeriodicPeriodArray value="0.25"/>
         <PeriodicPeriodArray value="0.25"/>
     </CEffectCreatePersistent>
+    <CEffectDamage id="PurificationNovaDamage">
+        <ValidatorArray index="0" value="DisruptorLotV1@DisruptorDamageFilter"/>
+    </CEffectDamage>
     <CEffectApplyBehavior id="PurificationNovaPhasedLotV1@PhasedAB">
         <EditorCategories value=""/>
         <WhichUnit Value="Caster"/>
@@ -157,7 +160,7 @@
         <SearchFlags index="CallForHelp" value="1"/>
     </CEffectEnumArea>
     <CEffectDamage id="PurificationNovaLotV1@Damage">
-        <ValidatorArray value="DisruptorDamageFilter"/>
+        <ValidatorArray value="DisruptorLotV1@DisruptorDamageFilter"/>
         <EditorCategories value=""/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>

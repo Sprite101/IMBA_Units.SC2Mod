@@ -205,7 +205,7 @@
         <InfoArray Unit="DisruptorLotV1@Phased"/>
     </CAbilMorph>
     <CAbilEffectInstant id="PurificationNovaPhasedLotV1">
-        <EditorCategories value="AbilityorEffectType:Units"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <SharedFlags index="RegisterChargeEvent" value="1"/>
         <SharedFlags index="RegisterCooldownEvent" value="1"/>
         <Effect index="0" value="PurificationNovaPhasedLotV1@Set"/>
@@ -1271,20 +1271,4 @@
         <ProgressButtonArray index="Prep" value="YamatoGun"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="YamatoGun" Requirements="UseBattlecruiserSpecializations"/>
     </CAbilEffectTarget>
-    <CAbilAttack id="attack2">
-        <TargetMessage value="Abil/TargetMessage/attack2"/>
-        <MinAttackSpeedMultiplier value="0.25"/>
-        <MaxAttackSpeedMultiplier value="128"/>
-    </CAbilAttack>
-    <CAbilMove id="move2">
-        <AbilSetId value="Move"/>
-        <FleeRange value="5"/>
-        <FleeTime value="5"/>
-        <FollowRangeSlop value="1"/>
-        <FollowAcquireRange value="6"/>
-        <MinPatrolDistance value="1"/>
-    </CAbilMove>
-    <CAbilStop id="stop2">
-        <CmdButtonArray index="HoldFire" DefaultButtonFace="HoldFireSpecial"/>
-    </CAbilStop>
 </Catalog>

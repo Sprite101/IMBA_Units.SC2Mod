@@ -140,7 +140,6 @@
         <Icon value="Assets\Textures\btn-ability-Protoss-ReleaseInterceptors.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-Protoss-ReleaseInterceptors.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TintRacially value="1"/>
     </CButton>
     <CButton id="GraviticBoostersLotV1">
         <Icon value="Assets\Textures\btn-upgrade-protoss-graviticbooster.dds"/>

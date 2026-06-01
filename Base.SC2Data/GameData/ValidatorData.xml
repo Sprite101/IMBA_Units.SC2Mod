@@ -6,6 +6,17 @@
         <Range value="2"/>
         <Value Effect="ColossusLiberty@WeaponSet" Value="TargetPoint"/>
     </CValidatorLocationCompareRange>
+    <CValidatorCombine id="DisruptorLotV1@DisruptorDamageFilter">
+        <CombineArray value="DisruptorLotV1@IsNotDisruptors"/>
+        <CombineArray value="IsNotFriendly"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="DisruptorLotV1@IsNotDisruptors">
+        <Type value="And"/>
+        <CombineArray value="IsNotDisruptor"/>
+        <CombineArray value="IsNotDisruptorPhased"/>
+        <CombineArray value="DisruptorLotV1@IsNotDisruptor"/>
+        <CombineArray value="DisruptorLotV1@PhasedIsNotDisruptorPhased"/>
+    </CValidatorCombine>
     <CValidatorPlayerRequirement id="ExtendedThermalLanceLiberty@Upgraded">
         <WhichPlayer Value="Caster"/>
         <ResultNoPlayer value="Error"/>
@@ -15,6 +26,23 @@
     <CValidatorUnitCompareOrderCount id="CarrierLotV1@WeaponHangarQueueEmpty">
         <AbilLink value="CarrierLotV1@WeaponHangar"/>
     </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitType id="DisruptorLotV1@IsNotDisruptor">
+        <Value value="DisruptorLotV1"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="DisruptorLotV1@IsDisruptor">
+        <Value value="DisruptorLotV1@"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="DisruptorLotV1@PhasedIsDisruptorPhased">
+        <Value value="DisruptorLotV1@Phased"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="DisruptorLotV1@PhasedIsNotDisruptorPhased">
+        <Value value="DisruptorLotV1@Phased"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="IsNotPhasedUnit">
+        <CombineArray value="DisruptorLotV1@PhasedIsNotDisruptorPhased"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="ReleaseInterceptorsLotV1@BeaconHasNoStacks">
         <WhichUnit Value="Source"/>
         <Behavior value="ReleaseInterceptorsLotV1@Beacon"/>

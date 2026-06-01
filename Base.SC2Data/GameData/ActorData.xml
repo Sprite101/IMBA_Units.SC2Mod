@@ -90,6 +90,19 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Carrier-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorForceSphere id="PurificationNovaLotV1@ForceUp">
+        <HostSiteOps Ops="SOpShadow SOpRotVariancerUp35"/>
+        <Field value="Directional"/>
+        <Duration value="0.500000"/>
+        <Magnitude value="15.000000,5.000000"/>
+        <Radius value="1.900000,0.300000"/>
+    </CActorForceSphere>
+    <CActorRange id="PurificationNovaLotV1@Range">
+        <On Terms="SelectionLocalUpdate.DisruptorLotV1.Start" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.DisruptorLotV1.Stop" Send="Destroy"/>
+        <Range value="12.000000"/>
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+    </CActorRange>
     <CActorForceSphere id="PurificationNovaPhasedLotV1@ExplosionForce">
         <On Terms="Effect.PurificationNovaPhasedLotV1@SearchArea.Start" Send="Create"/>
         <On Terms="ActorCreation" Send="Create DisruptorExplosionUpForce"/>
@@ -402,12 +415,12 @@
         <Scale value="1.600000"/>
     </CActorSplat>
     <CActorForceSphere id="PurificationNovaLotV1@Force">
-        <On Terms="Effect.PurificationNovaLotV1@Damage.Start; At Target" Send="Create"/>
-        <On Terms="ActorCreation" Send="Create PurificationNovaForceUp"/>
         <HostSiteOps Ops="SOpShadow SOpRandomPointInCircleDot25"/>
         <Duration value="0.300000"/>
         <Magnitude value="16.000000,8.000000"/>
         <Radius value="2.100000,0.300000"/>
+        <On Terms="Effect.PurificationNovaLotV1@Damage.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create PurificationNovaLotV1@ForceUp"/>
     </CActorForceSphere>
     <CActorModel id="PurificationNovaLotV1@TargetImpactModel" parent="ModelAnimationStyleOneShot">
         <Inherits index="Visibility" value="1"/>
@@ -417,7 +430,7 @@
         <Model value="PurificationNovaImpact"/>
         <AutoScaleFactor value="1.000000"/>
     </CActorModel>
-    <CActorModel id="PurificationNovaLotV1@Range" parent="ModelAnimationStyleContinuous">
+    <CActorModel id="PurificationNovaLotV1@Indicator" parent="ModelAnimationStyleContinuous">
         <On Terms="Behavior.PurificationNovaPhasedLotV1@Phased.On" Send="Create"/>
         <On Terms="Behavior.PurificationNovaPhasedLotV1@Phased.Off" Send="Destroy"/>
         <On Terms="Behavior.PurificationNovaLotV1@Target.On" Send="Create"/>
