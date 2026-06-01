@@ -16,9 +16,17 @@
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Use" Link="CountUpgradeExtendedThermalLanceLibertyCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="GraviticBoostersLotV2@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AndNotCountUpgradeGraviticBoostersLotV2QueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="GravitonCatapultLotV1@LearnGravitonCatapult">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeGravitonCatapultLotV1QueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="GraviticBoostersLotV1@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AndNotCountUpgradeGraviticBoostersLotV1QueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="PsiStormHighTemplarLiberty@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>

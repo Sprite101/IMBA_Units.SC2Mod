@@ -15,8 +15,14 @@
         <OperandArray value="NotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndNotCountUpgradeExtendedThermalLanceLibertyQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="NotCountUpgradeExtendedThermalLanceLibertyQueuedOrBetter"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndNotCountUpgradeGraviticBoostersLotV1QueuedOrBetter">
+        <OperandArray value="NotCountUpgradeGraviticBoostersLotV1QueuedOrBetter"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndNotCountUpgradeGraviticBoostersLotV2QueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="NotCountUpgradeGraviticBoostersLotV2QueuedOrBetter"/>
     </CRequirementAnd>
     <CRequirementCountBehavior id="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
@@ -43,7 +49,6 @@
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitInterceptorLotV1QueuedOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="InterceptorLotV1" State="QueuedOrBetterAtUnit"/>
     </CRequirementCountUnit>
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsCompleteOnly1495348974">
@@ -112,13 +117,20 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeExtendedThermalLanceLibertyCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ExtendedThermalLanceLiberty" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeExtendedThermalLanceLibertyQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ExtendedThermalLanceLiberty" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGraviticBoostersLotV1QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="GraviticBoostersLotV1" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGraviticBoostersLotV2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="GraviticBoostersLotV2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeGravitonCatapultLotV1CompleteOnly545093725">
         <Flags index="TechTreeCheat" value="0"/>
@@ -126,7 +138,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeGravitonCatapultLotV1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="GravitonCatapultLotV1" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeHurricaneThrusters@UpgradeCompleteOnly3968802568">
@@ -261,11 +272,16 @@
         <OperandArray index="0" value="CountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeExtendedThermalLanceLibertyQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeExtendedThermalLanceLibertyQueuedOrBetter"/>
     </CRequirementNot>
-    <CRequirementNot id="NotCountUpgradeGravitonCatapultLotV1QueuedOrBetter">
+    <CRequirementNot id="NotCountUpgradeGraviticBoostersLotV1QueuedOrBetter">
+        <OperandArray index="0" value="CountUpgradeGraviticBoostersLotV1QueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeGraviticBoostersLotV2QueuedOrBetter">
         <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeGraviticBoostersLotV2QueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeGravitonCatapultLotV1QueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeGravitonCatapultLotV1QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeHurricaneThrusters@UpgradeQueuedOrBetter">

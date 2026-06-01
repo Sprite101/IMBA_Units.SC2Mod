@@ -43,6 +43,17 @@
         <AINotifyEffect value=""/>
         <CmdButtonArray index="Execute" DefaultButtonFace="FeedbackLiberty"/>
     </CAbilEffectTarget>
+    <CAbilResearch id="GraviticBoostersLotV2">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <DataCollection value="GraviticBoostersLotV1"/>
+        <InfoArray index="Research1" Time="80" Upgrade="GraviticBoostersLotV2">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="GraviticBoostersLotV2" State="Restricted" Requirements="GraviticBoostersLotV2@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilResearch id="GravitonCatapultLotV1@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Time="80" Upgrade="GravitonCatapultLotV1">
@@ -73,6 +84,199 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilTrain id="ObserverLotV2@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="25" Effect="WarpInEffect15">
+            <Button DefaultButtonFace="ObserverLotV2" State="Restricted"/>
+            <Unit value="ObserverLotV2"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilMorph id="ObserverLotV1@Siege">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ObserverLotV1@Siege">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="ObserverLotV1@Sieged">
+            <SectionArray index="Abils">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="ObserverLotV1@SiegedUnsiege">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ObserverLotV1@SiegedUnsiege">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreFacing" value="1"/>
+        <InfoArray Unit="ObserverLotV1">
+            <SectionArray index="Abils">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="ObserverLotV2@Siege">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ObserverLotV2@Siege">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="ObserverLotV2@Sieged">
+            <SectionArray index="Abils">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="ObserverLotV2@SiegedUnsiege">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ObserverLotV2@SiegedUnsiege">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreFacing" value="1"/>
+        <InfoArray Unit="ObserverLotV2">
+            <SectionArray index="Abils">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="0.75"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="PurificationNovaPhasedLotV1@MorphBack">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PurificationNovaPhasedLotV1"/>
+        <Flags index="Transient" value="1"/>
+        <InfoArray Unit="DisruptorLotV1"/>
+    </CAbilMorph>
+    <CAbilMorph id="PurificationNovaPhasedLotV1@Morph">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PurificationNovaPhasedLotV1"/>
+        <Flags index="Transient" value="1"/>
+        <InfoArray Unit="DisruptorLotV1@Phased"/>
+    </CAbilMorph>
+    <CAbilEffectInstant id="PurificationNovaPhasedLotV1">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <SharedFlags index="RegisterChargeEvent" value="1"/>
+        <SharedFlags index="RegisterCooldownEvent" value="1"/>
+        <Effect index="0" value="PurificationNovaPhasedLotV1@Set"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="23.8"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PurificationNovaPhasedLotV1"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="PurificationNovaLotV1">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <SharedFlags index="RegisterChargeEvent" value="1"/>
+        <SharedFlags index="RegisterCooldownEvent" value="1"/>
+        <Effect index="0" value="PurificationNovaLotV1@InitialSet"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Charge Link="Abil/PurificationNovaTargetted"/>
+            <Cooldown Link="Abil/PurificationNovaTargetted" TimeUse="30"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PurificationNovaLotV1">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
+    <CAbilTrain id="CarrierLotV1@Train">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="90" Effect="WarpInEffect">
+            <Button DefaultButtonFace="CarrierLotV1" State="Restricted" Requirements="HaveFleetBeacon"/>
+            <Unit value="CarrierLotV1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="TempestSwarm@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="60" Effect="WarpInEffect">
+            <Button DefaultButtonFace="TempestSwarm" Requirements="HaveFleetBeacon"/>
+            <Unit value="TempestSwarm"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilMorph id="WarpPrismLotV1@SiegedUnsiege">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TransportMode"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <InfoArray Unit="WarpPrismLotV1">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="1.5"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="1.5"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="WarpPrismLotV1@Siege">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="WarpPrismLotV1@Siege"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <InfoArray Unit="WarpPrismLotV1@Sieged">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="1.5"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="1.5"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
     <CAbilBuild id="ProtossBuild">
         <InfoArray index="Build19" Unit="WarpInLiberty@Pylon" Time="25">
             <Button DefaultButtonFace="Pylon"/>
@@ -113,6 +317,24 @@
         <AINotifyEffect value="ReleaseInterceptors"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="ReleaseInterceptorsLotV1" Requirements="ReleaseInterceptorsLotV1"/>
     </CAbilEffectTarget>
+    <CAbilTrain id="ObserverLotV1@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="30" Effect="WarpInEffect15">
+            <Button DefaultButtonFace="ObserverLotV1" State="Restricted"/>
+            <Unit value="ObserverLotV1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilResearch id="GraviticBoostersLotV1">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="80" Upgrade="GraviticBoostersLotV1">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="GraviticBoostersLotV1" State="Restricted" Requirements="GraviticBoostersLotV1@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilEffectTarget id="ShadowStrideLotV">
         <AbilSetId value="Blnk"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -387,6 +609,31 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <PowerUserBehavior value="WarpInLiberty@PowerUserWarpable"/>
     </CAbilWarpable>
+    <CAbilTransport id="WarpPrismLotV1@Transport">
+        <AbilSetId value="ULdM"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Load" DefaultButtonFace="MedivacLoad"/>
+        <CmdButtonArray index="UnloadAll" DefaultButtonFace="BunkerUnloadAll">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="UnloadAt" DefaultButtonFace="MedivacUnloadAll"/>
+        <CmdButtonArray index="UnloadUnit">
+            <Flags index="Hidden" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="LoadAll">
+            <Flags index="Hidden" value="1"/>
+        </CmdButtonArray>
+        <Flags index="CargoDeath" value="1"/>
+        <Range value="6"/>
+        <MaxCargoCount value="8"/>
+        <MaxCargoSize value="8"/>
+        <TotalCargoSpace value="8"/>
+        <LoadCargoEffect value="WarpPrismLoadDummy"/>
+        <UnloadCargoEffect value="WarpPrismUnloadCargoSetEffect"/>
+        <UnloadPeriod value="1"/>
+        <TargetFilters value="Visible;Ally,Neutral,Enemy,Buried,UnderConstruction,Dead,Hidden"/>
+        <LoadValidatorArray value="NotWidowMineTarget"/>
+    </CAbilTransport>
     <CAbilTrain id="WidowMineSwarm@Train">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <Activity value="UI/Building"/>
@@ -1024,4 +1271,20 @@
         <ProgressButtonArray index="Prep" value="YamatoGun"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="YamatoGun" Requirements="UseBattlecruiserSpecializations"/>
     </CAbilEffectTarget>
+    <CAbilAttack id="attack2">
+        <TargetMessage value="Abil/TargetMessage/attack2"/>
+        <MinAttackSpeedMultiplier value="0.25"/>
+        <MaxAttackSpeedMultiplier value="128"/>
+    </CAbilAttack>
+    <CAbilMove id="move2">
+        <AbilSetId value="Move"/>
+        <FleeRange value="5"/>
+        <FleeTime value="5"/>
+        <FollowRangeSlop value="1"/>
+        <FollowAcquireRange value="6"/>
+        <MinPatrolDistance value="1"/>
+    </CAbilMove>
+    <CAbilStop id="stop2">
+        <CmdButtonArray index="HoldFire" DefaultButtonFace="HoldFireSpecial"/>
+    </CAbilStop>
 </Catalog>

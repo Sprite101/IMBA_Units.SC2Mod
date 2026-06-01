@@ -90,6 +90,342 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Carrier-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorForceSphere id="PurificationNovaPhasedLotV1@ExplosionForce">
+        <On Terms="Effect.PurificationNovaPhasedLotV1@SearchArea.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create DisruptorExplosionUpForce"/>
+        <Duration value="0.150000"/>
+        <Magnitude value="40.000000,3.000000"/>
+        <Radius value="3.000000,0.200000"/>
+    </CActorForceSphere>
+    <CActorUnit id="DisruptorLotV1@Phased" parent="GenericUnitStandard" unitName="DisruptorLotV1@Phased">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ChargingAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Model value="PurificationNovaModelSwap"/>
+        <DeathArray index="Normal" SoundLink="Disruptor_Death"/>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathSmall" Name="Hallucination"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="DisruptorPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="0.600000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMedium"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="90"/>
+        <BarWidth value="65"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-protoss-disruptorphasemod.dds"/>
+        </GroupIcon>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="Pusher_Ready"/>
+        <SoundArray index="Help" value="Pusher_Help"/>
+        <SoundArray index="What" value="Pusher_What"/>
+        <SoundArray index="Yes" value="Pusher_Yes"/>
+        <SoundArray index="Attack" value="Pusher_Attack"/>
+        <SoundArray index="Pissed" value="Pusher_Pissed"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <UnitIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-protoss-disruptorphasemod.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorBeamSimple id="PurificationNovaLotV1@Beam" parent="BeamSimpleAnimationStyleContinuous">
+        <On Terms="Effect.PurificationNovaLotV1@SpawnSet.Start; At Target" Send="Create"/>
+        <Model value="DisruptorBeam"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <HostLaunch Subject="_Unit" Scope="Caster"/>
+        <HostLaunchSiteOps Ops="SOpAttachCenter"/>
+        <HostImpact Subject="_Unit" Scope="Target"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+    </CActorBeamSimple>
+    <CActorUnit id="DisruptorLotV1" parent="GenericUnitStandard" unitName="DisruptorLotV1">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ChargingAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Remove Terms="Behavior.PurificationNova.Off" Send="ModelSwap Disruptor"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Disruptor_Land"/>
+        <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
+        <On Terms="Behavior.PurificationNovaPhasedLotV1@CooldownVisual.On" Send="AnimBracketStop Work"/>
+        <On Terms="Behavior.PurificationNovaPhasedLotV1@CooldownVisual.Off" Send="AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"/>
+        <On Terms="Behavior.PurificationNovaPhasedLotV1@Phased.On" Send="ModelSwap PurificationNovaModelSwap"/>
+        <On Terms="Behavior.PurificationNovaPhasedLotV1@Phased.Off" Send="ModelSwap Disruptor"/>
+        <On Terms="Behavior.PurificationNovaPhasedLotV1@Phased.On" Send="Create PurificationNovaBirth"/>
+        <On Terms="AbilCooldown.PurificationNovaLotV1.Spend" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="AbilCooldown.PurificationNovaLotV1.Regen" Send="AnimBracketStop Cover"/>
+        <On Terms="Behavior.PurificationNovaLotV1@Target.On" Send="ModelSwap PurificationNovaModelSwap"/>
+        <On Terms="Behavior.PurificationNovaLotV1@Caster.On" Send="Create PurificationNovaBirth"/>
+        <On Terms="Behavior.PurificationNovaLotV1@Caster.On" Send="AnimBracketStart Purification {} Stand,Work Stand,Work,End"/>
+        <On Terms="Behavior.PurificationNovaLotV1@Caster.Off" Send="AnimBracketStop Purification"/>
+        <Model value="Disruptor"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Disruptor"/>
+        <DeathArray index="Normal" ModelLink="DisruptorDeath" SoundLink="Disruptor_Death"/>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathSmall" Name="Hallucination"/>
+        <DeathCustoms ActorModel="DisruptorDeathRagdoll" ModelLink="DisruptorDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="BloodReduced"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdollWithTeamColor" ModelLink="DisruptorDeathRagdoll" Name="RagdollSpineCrawlerHurl">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <DeathActorModel value="DisruptorDeath"/>
+        <PlacementModel value="Disruptor"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="DisruptorPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="0.600000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMedium"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="83"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor.dds"/>
+        </GroupIcon>
+        <GroupSoundArray index="What" value="Zealot_GroupWhat"/>
+        <GroupSoundArray index="Yes" value="Zealot_GroupYes"/>
+        <GroupSoundArray index="Attack" value="Zealot_GroupAttack"/>
+        <GroupSoundArray index="Movement" value="Disruptor_Movement"/>
+        <GroupSoundArray index="Board" value="Zealot_GroupBoard"/>
+        <HeroIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="Pusher_Ready"/>
+        <SoundArray index="Help" value="Pusher_Help"/>
+        <SoundArray index="What" value="Pusher_What"/>
+        <SoundArray index="Yes" value="Pusher_Yes"/>
+        <SoundArray index="Attack" value="Pusher_Attack"/>
+        <SoundArray index="Pissed" value="Pusher_Pissed"/>
+        <SoundArray index="Movement" value="Disruptor_Movement"/>
+        <SoundArray index="Turning" value="Observer_Turning"/>
+        <SoundArray index="Board" value="Observer_Board"/>
+        <SoundArray index="Click" value="Observer_Click"/>
+        <SoundArray index="ClickError" value="Observer_ClickError"/>
+        <SoundArray index="Highlight" value="Observer_Highlight"/>
+        <UnitIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor-shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor-shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor-shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorSound id="PurificationNovaLotV1@ImpactSoumd" parent="SoundOneShot">
+        <On Terms="Effect.PurificationNovaPhasedLotV1@SearchArea.Start" Send="Create"/>
+        <On Terms="Effect.PurificationNovaLotV1@SearchArea.Start" Send="Create"/>
+        <Sound value="Disruptor_DisruptionOvercharge_Attack"/>
+        <Layers Sound="Disruptor_DisruptionOvercharge_Discharge">
+            <Chance value="100"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorSound id="PurificationNovaLotV1@LoopSound" parent="SoundContinuous">
+        <On Terms="Behavior.Overcharge.On" Send="Create"/>
+        <On Terms="Behavior.Overcharge.Off" Send="Destroy"/>
+        <On Terms="Behavior.PurificationNovaLotV1@Target.On" Send="Create"/>
+        <On Terms="Behavior.PurificationNovaLotV1@Target.Off" Send="Destroy"/>
+        <Sound value="Disruptor_DisruptionOvercharge_Loop"/>
+    </CActorSound>
+    <CActorSound id="PurificationNovaLotV1@LaunchSound" parent="SoundOneShot">
+        <On Terms="Behavior.PurificationNovaPhasedLotV1@Phased.On" Send="Create"/>
+        <On Terms="Behavior.PurificationNovaLotV1@Target.On" Send="Create"/>
+        <Sound value="Disruptor_DisruptionOvercharge_Start"/>
+    </CActorSound>
+    <CActorSound id="PurificationNovaLotV1@StopSound" parent="SoundOneShot">
+        <On Terms="Effect.PurificationNovaPhasedLotV1@SearchArea.Start" Send="Create"/>
+        <On Terms="Effect.PurificationNovaLotV1@SearchArea.Start" Send="Create"/>
+        <Sound value="Disruptor_DisruptionOvercharge_Stop"/>
+    </CActorSound>
+    <CActorUnit id="ObserverLotV2" parent="GenericUnitStandard" unitName="ObserverLotV2">
+        <Aliases value="_UnitMedium"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <On Terms="Behavior.WarpInEffect15.On" Send="ModelSwap ObserverWarpIn"/>
+        <On Terms="Behavior.WarpInEffect15.On" Send="$Birth"/>
+        <On Terms="Behavior.WarpInEffect15.Off" Send="ModelSwap Observer"/>
+        <On Terms="Behavior.WarpInEffect15.Off" Send="AnimBaselineStart"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Observer_Land"/>
+        <On Terms="UnitBirth.ObserverLotV2@Sieged" Send="Create"/>
+        <On Terms="UnitBirth.ObserverLotV2@Sieged" Send="Create ObserverObservationMode"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ObserverLotV2; MorphTo ObserverLotV2@Sieged" Send="AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End 0 1.750000 AsTimeScale"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ObserverLotV2; MorphTo ObserverLotV2@Sieged" Send="Create ObserverObservationMode"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ObserverLotV2@Sieged; MorphTo ObserverLotV2" Target="ObserverObservationMode" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ObserverLotV2@Sieged; MorphTo ObserverLotV2" Send="AnimBracketStop Work"/>
+        <On Terms="UnitDetectedByViewer.*.On" Target="_UndetectedMuteSound" Send="SoundSetMuted"/>
+        <On Terms="UnitDetectedByViewer.*.Off" Target="_UndetectedMuteSound" Send="SoundSetMuted 1"/>
+        <Model value="Observer"/>
+        <Scale value="1.210000"/>
+        <AnimBlendTime value="1.200000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Observer"/>
+        <DeathArray index="Normal" ModelLink="ObserverDeath" SoundLink="Observer_Explode"/>
+        <DeathCustoms ModelLink="ObserverDeathRagdoll" Name="RagdollBasic" PhysicsMatchKeysOrdered="BasicAir,Basic">
+            <BodySquibs Name="Basic" Model="ProtossTinyRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="ObserverPlacement"/>
+        <PortraitModel value="ObserverPortrait"/>
+        <BarOffset value="40"/>
+        <BarWidth value="46"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="Observer_Ready"/>
+        <SoundArray index="What" value="Observer_What"/>
+        <SoundArray index="Yes" value="Observer_Yes"/>
+        <SoundArray index="Pissed" value="Observer_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorUnit id="ObserverLotV1" parent="GenericUnitStandard" unitName="ObserverLotV1">
+        <Aliases value="_UnitMedium"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <On Terms="Behavior.WarpInEffect15.On" Send="ModelSwap ObserverWarpIn"/>
+        <On Terms="Behavior.WarpInEffect15.On" Send="$Birth"/>
+        <On Terms="Behavior.WarpInEffect15.Off" Send="ModelSwap Observer"/>
+        <On Terms="Behavior.WarpInEffect15.Off" Send="AnimBaselineStart"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Observer_Land"/>
+        <On Terms="UnitBirth.ObserverLotV1@Sieged" Send="Create"/>
+        <On Terms="UnitBirth.ObserverLotV1@Sieged" Send="Create ObserverObservationMode"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ObserverLotV1; MorphTo ObserverLotV1@Sieged" Send="AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ObserverLotV1; MorphTo ObserverLotV1@Sieged" Send="Create ObserverObservationMode"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ObserverLotV1@Sieged; MorphTo ObserverLotV1" Target="ObserverObservationMode" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ObserverLotV1@Sieged; MorphTo ObserverLotV1" Send="AnimBracketStop Work"/>
+        <On Terms="UnitDetectedByViewer.*.On" Target="_UndetectedMuteSound" Send="SoundSetMuted"/>
+        <On Terms="UnitDetectedByViewer.*.Off" Target="_UndetectedMuteSound" Send="SoundSetMuted 1"/>
+        <Model value="Observer"/>
+        <AnimBlendTime value="1.200000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Observer"/>
+        <DeathArray index="Normal" ModelLink="ObserverDeath" SoundLink="Observer_Explode"/>
+        <DeathCustoms ModelLink="ObserverDeathRagdoll" Name="RagdollBasic" PhysicsMatchKeysOrdered="BasicAir,Basic">
+            <BodySquibs Name="Basic" Model="ProtossTinyRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="ObserverPlacement"/>
+        <PortraitModel value="ObserverPortrait"/>
+        <BarOffset value="40"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="Observer_Ready"/>
+        <SoundArray index="What" value="Observer_What"/>
+        <SoundArray index="Yes" value="Observer_Yes"/>
+        <SoundArray index="Pissed" value="Observer_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Observer-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorModel id="PurificationNovaLotV1@ImpactModel" parent="ModelAnimationStyleOneShot">
+        <FogVisibility value="Hidden"/>
+        <On Terms="Effect.PurificationNovaPhasedLotV1@SearchArea.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.PurificationNovaLotV1@SearchArea.Start; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldPosition="1" HoldRotation="1"/>
+        <Model value="PurificationNova"/>
+    </CActorModel>
+    <CActorSplat id="PurificationNovaLotV1@CursorSplat" parent="ProtossCursorSplat" abil="PurificationNovaLotV1">
+        <Scale value="1.600000"/>
+    </CActorSplat>
+    <CActorForceSphere id="PurificationNovaLotV1@Force">
+        <On Terms="Effect.PurificationNovaLotV1@Damage.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create PurificationNovaForceUp"/>
+        <HostSiteOps Ops="SOpShadow SOpRandomPointInCircleDot25"/>
+        <Duration value="0.300000"/>
+        <Magnitude value="16.000000,8.000000"/>
+        <Radius value="2.100000,0.300000"/>
+    </CActorForceSphere>
+    <CActorModel id="PurificationNovaLotV1@TargetImpactModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.PurificationNovaLotV1@Damage.Start; At Target" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="PurificationNovaImpact"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="PurificationNovaLotV1@Range" parent="ModelAnimationStyleContinuous">
+        <On Terms="Behavior.PurificationNovaPhasedLotV1@Phased.On" Send="Create"/>
+        <On Terms="Behavior.PurificationNovaPhasedLotV1@Phased.Off" Send="Destroy"/>
+        <On Terms="Behavior.PurificationNovaLotV1@Target.On" Send="Create"/>
+        <On Terms="Behavior.PurificationNovaLotV1@Target.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="PurificationNovaRangeIndicator"/>
+    </CActorModel>
     <CActorUnit id="ReleaseInterceptorsLotV1@Beacon" parent="GenericUnitMinimal" unitName="ReleaseInterceptorsLotV1@Beacon">
         <On Terms="ActorCreation" Send="$Stand 0 -1.000000 -1.000000 60.000000 AsDuration"/>
         <Model value="Invisible"/>
@@ -685,6 +1021,157 @@
     <CActorRange id="ReleaseInterceptorsLotV1@Range" parent="RangeAbil" abil="ReleaseInterceptorsLotV1">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
     </CActorRange>
+    <CActorModel id="TempestSwarm@SphereAttachment" parent="ModelAddition">
+        <Macros value="GlobalLoopMacroMore"/>
+        <On Terms="Signal.*.Birth" Send="AnimPlay Rearm Stand,Work,Start 0 0.000000 0.000000 1.750000 AsDuration"/>
+        <On Terms="Signal.*.Fire" Send="$Death"/>
+        <On Terms="AnimDone; AnimName Death" Send="AnimPlay Rearm Stand,Work,Start 0 0.000000 0.000000 3.050000 AsDuration"/>
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+        <Model value="StormSphereAttachment"/>
+    </CActorModel>
+    <CActorAction id="TempestAttackGround">
+        <ImpactModel value="GenericAttackImpactModel"/>
+        <!--ImpactModel value="TempestGroundAttackImpactModel"/-->
+    </CActorAction>
+    <CActorAction id="TempestSwarm@AGWeaponAttackAction" parent="GenericAttack" effectImpact="TempestSwarm@AGWeaponDamage" effectLaunch="TempestSwarm@AGWeaponLM">
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="Tempest_GroundAttackLaunch"/>
+        <Missile value="TempestSwarm@AGWeaponAttackMissile"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpUpDefault"/>
+        <ImpactMap index="None" Model="TempestGroundAttackImpact" Sound="Tempest_GroundAttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="KineticOverloadImpact" MatchKeys="Basic" Physics="TempestAttackForce"/>
+        <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorMissile id="TempestSwarm@AGWeaponAttackMissile" unitName="TempestWeapon">
+        <Aliases value="_Unit"/>
+        <Aliases value="_Missile"/>
+        <On Terms="UnitBirth.TempestSwarm@AGWeaponMissile" Send="Create"/>
+        <On Terms="UnitBirth" Send="AnimBracketStart Lifetime Birth Walk"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor 219,151,255 0.000000 OneShot {} 100.000000"/>
+        <On Terms="ActorCreation; ValidateUnit TempestGroundAttackUpgraded; ValidateCreationEffect IsStructureTarget" Send="ModelSwap TempestWeaponGroundUpgraded"/>
+        <On Terms="ActorCreation; ValidateUnit TempestGroundAttackUpgraded; ValidateCreationEffect IsStructureTarget" Send="SetTintColor {255,128,0 5.000000}"/>
+        <Model value="TempestWeaponGround"/>
+        <Scale value="0.900000"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <PreHost value="_ActorAction"/>
+    </CActorMissile>
+    <CActorAction id="TempestSwarm@AAWeaponAttackAction" parent="GenericAttack" effectImpact="TempestSwarm@AAWeaponDamage" effectLaunch="TempestSwarm@AAWeaponLM">
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="Tempest_AirAttackLaunch"/>
+        <Missile value="TempestSwarm@AAWeaponAttackMissile"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpUpDefault"/>
+        <ImpactMap index="None" Model="TempestAttackImpact" Sound="Tempest_AirAttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="KineticOverloadImpact" MatchKeys="Basic" Physics="TempestAttackForce"/>
+        <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorMissile id="TempestSwarm@AAWeaponAttackMissile" unitName="TempestWeapon">
+        <Aliases value="_Unit"/>
+        <Aliases value="_Missile"/>
+        <Macros value="GlobalLoopMacro"/>
+        <Macros value="GlobalLoopMacroMore"/>
+        <On Terms="UnitBirth.TempestSwarm@AAWeaponAttackMissile" Send="Create"/>
+        <On Terms="UnitBirth" Send="AnimBracketStart Lifetime Birth Walk"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor 219,151,255 0.000000 OneShot {} 100.000000"/>
+        <On Terms="ActorCreation; ValidateUnit TempestGroundAttackUpgraded; ValidateCreationEffect IsStructureTarget" Send="ModelSwap TempestWeaponGroundUpgraded"/>
+        <On Terms="ActorCreation; ValidateUnit TempestGroundAttackUpgraded; ValidateCreationEffect IsStructureTarget" Send="SetTintColor {255,128,0 5.000000}"/>
+        <Model value="TempestWeapon"/>
+        <Scale value="0.900000"/>
+        <PreHost value="_ActorAction"/>
+    </CActorMissile>
+    <CActorUnit id="TempestSwarm" parent="GenericUnitStandard" unitName="TempestSwarm">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="GlobalLoopMacro"/>
+        <Macros value="GlobalLoopMacroMore"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Tempest_Land"/>
+        <On Terms="ActorCreation" Send="Create TempestSwarm@SphereAttachment"/>
+        <On Terms="ActorCreation" Target="TempestSwarm@SphereAttachment" Send="Signal Birth"/>
+        <On Terms="Effect.TempestSwarm@AAWeapon.Start; At Caster" Target="TempestSwarm@SphereAttachment" Send="Signal Fire"/>
+        <On Terms="Effect.TempestSwarm@AGWeapon.Start; At Caster" Target="TempestSwarm@SphereAttachment" Send="Signal Fire"/>
+        <On Terms="Behavior.WarpInEffect.On" Send="ModelSwap TempestWarpInStargate"/>
+        <On Terms="Behavior.WarpInEffect.On" Send="$Spell 0 0.000000 0.000000 2.100000 AsDuration"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="ModelSwap Tempest"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD GLbirth GLstand GLdeath"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD_A GLbirth,A GLstand,A GLdeath,A"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD_B GLbirth,B GLstand,B GLdeath,B"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD_C GLbirth,C GLstand,C GLdeath,C"/>
+        <HostSiteOps Ops="SOpBankerCarrier"/>
+        <Model value="Tempest"/>
+        <AnimBlendTime value="0.750000"/>
+        <ModelFlags index="AutomateGlobalLoops" value="0"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <Baselines index="Walk" BlendIn="1.500000" BlendOut="2.000000"/>
+        <BuildModel value="TempestWarpIn"/>
+        <DeathArray index="Normal" ModelLink="TempestDeath" SoundLink="Tempest_Explode"/>
+        <DeathCustoms>
+            <ActorModel value="TempestDeathRagdoll"/>
+            <ModelLink value="TempestDeathRagdoll"/>
+            <Name value="RagdollBasic"/>
+            <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+            <BodySquibs Name="Basic" Model="ProtossRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="Tempest"/>
+        <PortraitModel value="TempestPortrait"/>
+        <AbilSoundArray/>
+        <BarOffset value="86"/>
+        <BarWidth value="140"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <NameOffset value="99"/>
+        <SoundArray index="Ready" value="Tempest_Ready"/>
+        <SoundArray index="Help" value="Tempest_Help"/>
+        <SoundArray index="What" value="Tempest_What"/>
+        <SoundArray index="Yes" value="Tempest_Yes"/>
+        <SoundArray index="Attack" value="Tempest_Attack"/>
+        <SoundArray index="Pissed" value="Tempest_Pissed"/>
+        <SoundArray index="Movement" value="Tempest_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorRange id="TempestSwarm@WeaponRange">
+        <On Terms="SelectionLocalUpdate.TempestSwarm.Start" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.TempestSwarm.StartEditorGround" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.TempestSwarm.StartEditorFlyer" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.TempestSwarm.Stop" Send="Destroy"/>
+        <Weapon value="TempestSwarm@AAWeapon"/>
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorSound id="TempestSwarm@DeathVO" parent="SoundOneShot">
+        <On Terms="UnitDeath.TempestSwarm; PassChance 25.000000" Send="Create"/>
+        <Sound value="Tempest_Death"/>
+    </CActorSound>
     <CActorSplat id="WarpInLiberty@UnpoweredVisualSplat">
         <FogVisibility value="Visible"/>
         <Host Subject="_Selectable"/>
@@ -3585,6 +4072,131 @@
         <Icon value="Assets\Textures\PylonLowRingSplat.dds"/>
         <IconArcLength value="0.750000"/>
     </CActorRange>
+    <CActorUnit id="WarpPrismLotV1" parent="GenericUnitStandard" unitName="WarpPrismLotV1">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom WarpPrismLotV1; MorphTo WarpPrismLotV1@Sieged" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom WarpPrismLotV1@Sieged; MorphTo WarpPrismLotV1" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom WarpPrismLotV1@Sieged; MorphTo WarpPrismLotV1" Send="AnimPlay Work Work,End 0 0.000000"/>
+        <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create WarpPrism_Land"/>
+        <On Terms="Behavior.WarpInEffect15.On" Send="ModelSwap WarpPrismWarpIn"/>
+        <On Terms="Behavior.WarpInEffect15.On" Send="$Birth"/>
+        <On Terms="Behavior.WarpInEffect15.Off" Send="ModelSwap WarpPrism"/>
+        <On Terms="Behavior.WarpInEffect15.Off" Send="AnimBaselineStart"/>
+        <On Terms="Behavior.WarpInEffect15.On" Send="ModelSwap WarpPrismWarpIn"/>
+        <On Terms="Behavior.WarpInEffect15.On" Send="$Birth"/>
+        <On Terms="Behavior.WarpInEffect15.On" Send="AnimBaselineStop"/>
+        <On Terms="Behavior.WarpInEffect15.Off" Send="ModelSwap WarpPrism"/>
+        <On Terms="Behavior.WarpInEffect15.Off" Send="AnimBaselineStart"/>
+        <Model value="WarpPrism"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="WarpPrismWarpIn"/>
+        <DeathArray index="Normal" ModelLink="WarpPrismDeath" SoundLink="WarpPrism_Explode"/>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathMedium" Name="Hallucination"/>
+        <DeathCustoms>
+            <ActorModel value="WarpPrismDeathRagdoll"/>
+            <ModelLink value="WarpPrismDeathRagdoll"/>
+            <Name value="RagdollBasic"/>
+            <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+            <BodySquibs Name="Basic" Model="ProtossRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="WarpPrism"/>
+        <PortraitModel value="WarpPrismPortrait"/>
+        <BarOffset value="55"/>
+        <BarWidth value="78"/>
+        <GlossaryAnim value="GLstand,A"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-warpprism.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <NameOffset value="60"/>
+        <SoundArray index="Ready" value="WarpPrism_Ready"/>
+        <SoundArray index="What" value="WarpPrism_What"/>
+        <SoundArray index="Yes" value="WarpPrism_Yes"/>
+        <SoundArray index="Pissed" value="WarpPrism_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-warpprism.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorUnit id="WarpPrismLotV1@Sieged" parent="GenericUnitStandard" unitName="WarpPrismLotV1@Sieged">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom WarpPrismLotV1@Sieged; MorphTo WarpPrismLotV1" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom WarpPrismLotV1; MorphTo WarpPrismLotV1@Sieged" Send="Create"/>
+        <On Terms="UnitBirth.WarpPrismLotV1@Sieged" Send="AnimBracketStart Phasing Work,Start Work Work,End Instant"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WarpPrismPhasing" Send="AnimBracketStart Phasing Work,Start Work Work,End"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WarpPrism" Send="AnimBracketStop Phasing"/>
+        <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create WarpPrismPhasing_Land"/>
+        <Model value="WarpPrism"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="WarpPrism"/>
+        <DeathArray index="Normal" ModelLink="WarpPrismOpenDeath" SoundLink="WarpPrism_Explode"/>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathMedium" Name="Hallucination"/>
+        <DeathCustoms ModelLink="WarpPrismPhasingDeathRagdoll" Name="RagdollBasic" PhysicsMatchKeysOrdered="BasicAir,Basic">
+            <BodySquibs Name="Basic" Model="ProtossRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="WarpPrism"/>
+        <PortraitModel value="WarpPrismPortrait"/>
+        <BarOffset value="55"/>
+        <BarWidth value="78"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism01.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-warpprismstationary.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <NameOffset value="60"/>
+        <SoundArray index="Ready" value="WarpPrism_Ready"/>
+        <SoundArray index="What" value="WarpPrism_What"/>
+        <SoundArray index="Yes" value="WarpPrism_Yes"/>
+        <SoundArray index="Pissed" value="WarpPrism_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-warpprismstationary.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism01.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism01-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism01-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism01-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
     <CActorRange id="WidowMineSwarm@AttackRange">
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.Start" Send="Create"/>
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.StartEditorGround" Send="Create"/>

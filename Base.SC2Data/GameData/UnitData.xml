@@ -329,6 +329,161 @@
             <LayoutButtons Face="ShadowStrideLotV" Type="AbilCmd" AbilCmd="ShadowStrideLotV,Execute" Row="2" Column="1"/>
         </CardLayouts>
     </CUnit>
+    <CUnit id="DisruptorLotV1">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <LifeArmor value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
+        <ShieldsStart value="100"/>
+        <ShieldsMax value="100"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Speed value="2.25"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="9"/>
+        <Food value="-3"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="150"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="Warpable"/>
+        <AbilArray Link="PurificationNovaLotV1"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
+            <LayoutButtons Face="PurificationNovaLotV1" Type="AbilCmd" AbilCmd="PurificationNovaLotV1,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="300"/>
+        <ScoreKill value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="72"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkDisruptor"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="135"/>
+        <GlossaryStrongArray value="Marauder"/>
+        <GlossaryStrongArray value="Hydralisk"/>
+        <GlossaryStrongArray value="Stalker"/>
+        <GlossaryWeakArray value="Thor"/>
+        <GlossaryWeakArray value="Ultralisk"/>
+        <GlossaryWeakArray value="Tempest"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="20"/>
+            <ChanceArray index="Idle" value="70"/>
+            <ChanceArray index="Turn" value="10"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="DisruptorLotV1@Phased">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="AILifetime" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="AICantAddToWave" value="1"/>
+        <FlagArray index="AIFleeDamageDisabled" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="DisruptorPhased" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <LifeArmor value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
+        <ShieldsStart value="100"/>
+        <ShieldsMax value="100"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Speed value="4.25"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="9"/>
+        <Food value="-3"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="Warpable"/>
+        <AbilArray Link="PurificationNovaPhasedLotV1"/>
+        <AbilArray Link="PurificationNovaPhasedLotV1@MorphBack"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
+        </CardLayouts>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="17"/>
+        <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkDisruptorPhased"/>
+        <AINotifyEffect value="AIPurificationNovaDanger"/>
+        <GlossaryStrongArray value="Marauder"/>
+        <GlossaryStrongArray value="Hydralisk"/>
+        <GlossaryStrongArray value="Probe"/>
+        <GlossaryWeakArray value="Thor"/>
+        <GlossaryWeakArray value="Ultralisk"/>
+        <GlossaryWeakArray value="Immortal"/>
+        <KillDisplay value="Never"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="20"/>
+            <ChanceArray index="Idle" value="70"/>
+            <ChanceArray index="Turn" value="10"/>
+        </Fidget>
+    </CUnit>
     <CUnit id="FactoryFlying">
         <!--5.0.15 Data-->
         <CardLayouts index="0">
@@ -654,6 +809,292 @@
         <GlossaryPriority value="180"/>
         <GlossaryAlias value="Interceptor"/>
     </CUnit>
+    <CUnit id="ObserverLotV2">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="40"/>
+        <LifeMax value="40"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="30"/>
+        <ShieldsMax value="30"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Speed value="2.0156"/>
+        <Acceleration value="2.125"/>
+        <Sight value="11"/>
+        <Height value="3.75"/>
+        <VisionHeight value="15"/>
+        <Food value="-1"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="25"/>
+        <CostResource index="Vespene" value="75"/>
+        <RepairTime value="40"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="ObserverLotV2@Siege"/>
+        <BehaviorArray Link="Detector11"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="PermanentlyCloakedObserver" Type="Passive" Row="2" Column="2"/>
+            <LayoutButtons Face="Detector" Type="Passive" Row="2" Column="3"/>
+            <LayoutButtons Face="ObserverLotV2@Siege" Type="AbilCmd" AbilCmd="ObserverLotV2@Siege,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="36"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <AIEvalFactor value="0"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="110"/>
+        <GlossaryStrongArray value="Banshee"/>
+        <GlossaryStrongArray value="LurkerMP"/>
+        <GlossaryStrongArray value="DarkTemplar"/>
+        <GlossaryWeakArray value="MissileTurret"/>
+        <GlossaryWeakArray value="SporeCrawler"/>
+        <GlossaryWeakArray value="PhotonCannon"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+    </CUnit>
+    <CUnit id="ObserverLotV1">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="40"/>
+        <LifeMax value="40"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="20"/>
+        <ShieldsMax value="20"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Speed value="2.1484"/>
+        <Acceleration value="2.125"/>
+        <Sight value="11"/>
+        <Height value="3.75"/>
+        <VisionHeight value="15"/>
+        <Food value="-1"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="25"/>
+        <CostResource index="Vespene" value="75"/>
+        <RepairTime value="40"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="20"/>
+        <AbilArray Link="stop2"/>
+        <AbilArray Link="move2"/>
+        <AbilArray Link="ObserverLotV1@Siege"/>
+        <BehaviorArray Link="Detector11"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move2,0" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop2,0" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move2,2" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move2,1" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack2,0" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move2,3" Row="0" Column="4"/>
+            <LayoutButtons Face="PermanentlyCloakedObserver" Type="Passive" Row="2" Column="2"/>
+            <LayoutButtons Face="Detector" Type="Passive" Row="2" Column="3"/>
+            <LayoutButtons Face="ObserverLotV1@Siege" Type="AbilCmd" AbilCmd="ObserverLotV1@Siege,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="36"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <AIEvalFactor value="0"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="110"/>
+        <GlossaryStrongArray value="Banshee"/>
+        <GlossaryStrongArray value="LurkerMP"/>
+        <GlossaryStrongArray value="DarkTemplar"/>
+        <GlossaryWeakArray value="MissileTurret"/>
+        <GlossaryWeakArray value="SporeCrawler"/>
+        <GlossaryWeakArray value="PhotonCannon"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+    </CUnit>
+    <CUnit id="ObserverLotV1@Sieged">
+        <Name value="Unit/Name/Observer"/>
+        <Description value="Button/Tooltip/Observer"/>
+        <DeathRevealRadius value="3"/>
+        <ReviveType value="Observer"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="40"/>
+        <LifeMax value="40"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="20"/>
+        <ShieldsMax value="20"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <StationaryTurningRate value="0"/>
+        <TurningRate value="0"/>
+        <Sight value="13.75"/>
+        <Height value="5"/>
+        <VisionHeight value="15"/>
+        <Food value="-1"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="25"/>
+        <CostResource index="Vespene" value="75"/>
+        <RepairTime value="40"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="ObserverLotV1@SiegedUnsiege"/>
+        <BehaviorArray Link="Detector15"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="Detector" Type="Passive" Row="2" Column="3"/>
+            <LayoutButtons Face="ObserverLotV1@SiegedUnsiege" Type="AbilCmd" AbilCmd="ObserverLotV1@SiegedUnsiege,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="36"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="Observer"/>
+        <AIEvalFactor value="0"/>
+        <LeaderAlias value="Observer"/>
+        <HotkeyAlias value="Observer"/>
+        <SelectAlias value="Observer"/>
+        <SubgroupAlias value="Observer"/>
+        <GlossaryPriority value="110"/>
+        <GlossaryStrongArray value="Banshee"/>
+        <GlossaryStrongArray value="LurkerMP"/>
+        <GlossaryStrongArray value="DarkTemplar"/>
+        <GlossaryWeakArray value="MissileTurret"/>
+        <GlossaryWeakArray value="SporeCrawler"/>
+        <GlossaryWeakArray value="PhotonCannon"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+        <AIEvaluateAlias value="Observer"/>
+        <ReviveInfoBase>
+            <Charge Link="Observer/Revive"/>
+            <Cooldown Link="Observer/Revive"/>
+        </ReviveInfoBase>
+    </CUnit>
+    <CUnit id="ObserverLotV2@Sieged">
+        <Name value="Unit/Name/Observer"/>
+        <Description value="Button/Tooltip/Observer"/>
+        <DeathRevealRadius value="3"/>
+        <ReviveType value="Observer"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="40"/>
+        <LifeMax value="40"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="30"/>
+        <ShieldsMax value="30"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <StationaryTurningRate value="0"/>
+        <TurningRate value="0"/>
+        <Sight value="13.75"/>
+        <Height value="5"/>
+        <VisionHeight value="15"/>
+        <Food value="-1"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="25"/>
+        <CostResource index="Vespene" value="75"/>
+        <RepairTime value="40"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="ObserverLotV2@SiegedUnsiege"/>
+        <BehaviorArray Link="Detector15"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="Detector" Type="Passive" Row="2" Column="3"/>
+            <LayoutButtons Face="ObserverLotV2@SiegedUnsiege" Type="AbilCmd" AbilCmd="ObserverLotV2@SiegedUnsiege,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="36"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="Observer"/>
+        <AIEvalFactor value="0"/>
+        <LeaderAlias value="Observer"/>
+        <HotkeyAlias value="Observer"/>
+        <SelectAlias value="Observer"/>
+        <SubgroupAlias value="Observer"/>
+        <GlossaryPriority value="110"/>
+        <GlossaryStrongArray value="Banshee"/>
+        <GlossaryStrongArray value="LurkerMP"/>
+        <GlossaryStrongArray value="DarkTemplar"/>
+        <GlossaryWeakArray value="MissileTurret"/>
+        <GlossaryWeakArray value="SporeCrawler"/>
+        <GlossaryWeakArray value="PhotonCannon"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+        <AIEvaluateAlias value="Observer"/>
+        <ReviveInfoBase>
+            <Charge Link="Observer/Revive"/>
+            <Cooldown Link="Observer/Revive"/>
+        </ReviveInfoBase>
+    </CUnit>
     <CUnit id="Probe">
         <CardLayouts index="1">
             <LayoutButtons Face="Pylon" Type="AbilCmd" AbilCmd="ProtossBuild,Build19" Row="1" Column="2"/>
@@ -675,6 +1116,95 @@
         <SeparationRadius value="1.5"/>
         <InnerRadius value="1.5"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="Stargate">
+        <AbilArray Link="TempestSwarm@Build"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="TempestSwarm" Type="AbilCmd" AbilCmd="TempestSwarm@Build,Train1" Row="1" Column="3"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="TempestSwarm">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <LifeArmor value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="150"/>
+        <ShieldsMax value="150"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Speed value="1.875"/>
+        <Acceleration value="1.0625"/>
+        <Deceleration value="3"/>
+        <LateralAcceleration value="46.0625"/>
+        <Sight value="12"/>
+        <Height value="3.75"/>
+        <VisionHeight value="15"/>
+        <Food value="-4"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Vespene" value="200"/>
+        <RepairTime value="60"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="120"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="Warpable"/>
+        <WeaponArray Link="TempestSwarm@AAWeapon"/>
+        <WeaponArray Link="TempestSwarm@AGWeapon"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="425"/>
+        <ScoreKill value="425"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="50"/>
+        <MinimapRadius value="1.25"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkTempest"/>
+        <Mass value="0.6"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="170"/>
+        <GlossaryStrongArray value="Liberator"/>
+        <GlossaryStrongArray value="BroodLord"/>
+        <GlossaryStrongArray value="Colossus"/>
+        <GlossaryWeakArray value="VikingFighter"/>
+        <GlossaryWeakArray value="Corruptor"/>
+        <GlossaryWeakArray value="VoidRay"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+    </CUnit>
+    <CUnit id="TempestSwarm@AAWeaponAttackMissile" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="MissileDefault"/>
+        <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
+    </CUnit>
+    <CUnit id="TempestSwarm@AGWeaponMissile" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="MissileDefault"/>
+        <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
     </CUnit>
     <CUnit id="WarpInLiberty@Pylon">
         <DeathRevealRadius value="3"/>
@@ -2324,8 +2854,146 @@
             <LayoutButtons Face="Stalker" Type="AbilCmd" AbilCmd="WarpGateTrain,Train9" Row="0" Column="2"/>
         </CardLayouts>
     </CUnit>
+    <CUnit id="WarpPrismLotV1">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Psionic" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="100"/>
+        <ShieldsMax value="100"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Speed value="2.9531"/>
+        <Acceleration value="2.625"/>
+        <LateralAcceleration value="57"/>
+        <Sight value="10"/>
+        <Height value="3.75"/>
+        <VisionHeight value="15"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="200"/>
+        <RepairTime value="50"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="35"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="WarpPrismLotV1@Siege"/>
+        <AbilArray Link="WarpPrismLotV1@Transport"/>
+        <AbilArray Link="Warpable"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="WarpPrismLoad" Type="AbilCmd" AbilCmd="WarpPrismLotV1@Transport,Load" Row="2" Column="2"/>
+            <LayoutButtons Face="WarpPrismUnloadAll" Type="AbilCmd" AbilCmd="WarpPrismLotV1@Transport,UnloadAt" Row="2" Column="3"/>
+            <LayoutButtons Face="WarpPrismLotV1@Siege" Type="AbilCmd" AbilCmd="WarpPrismLotV1@Siege,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0.875"/>
+        <ScoreMake value="250"/>
+        <ScoreKill value="250"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="69"/>
+        <MinimapRadius value="0.875"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkWarpPrism"/>
+        <AIEvalFactor value="0"/>
+        <TechAliasArray value="Alias_WarpPrism"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="110"/>
+        <GlossaryWeakArray value="MissileTurret"/>
+        <GlossaryWeakArray value="SporeCrawler"/>
+        <GlossaryWeakArray value="PhotonCannon"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+    </CUnit>
     <CUnit id="WarpPrismPhasing">
         <BehaviorArray Link="WarpInLiberty@PrismPowerSource"/>
+    </CUnit>
+    <CUnit id="WarpPrismLotV1@Sieged">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Psionic" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="100"/>
+        <ShieldsMax value="100"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Sight value="11"/>
+        <Height value="3.75"/>
+        <VisionHeight value="15"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="200"/>
+        <RepairTime value="50"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="35"/>
+        <AbilArray Link="WarpPrismLotV1@SiegedUnsiege"/>
+        <AbilArray Link="WarpPrismTransport"/>
+        <AbilArray Link="AttackWarpPrism"/>
+        <AbilArray Link="stop"/>
+        <BehaviorArray Link="WarpPrismPowerSourceFast"/>
+        <BehaviorArray Link="WarpInLiberty@PrismPowerSource"/>
+        <WeaponArray Turret="WarpPrismPhasingRotate"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="WarpPrismLoad" Type="AbilCmd" AbilCmd="WarpPrismTransport,Load" Row="2" Column="2"/>
+            <LayoutButtons Face="WarpPrismUnloadAll" Type="AbilCmd" AbilCmd="WarpPrismTransport,UnloadAt" Row="2" Column="3"/>
+            <LayoutButtons Face="WarpPrismLotV1@SiegedUnsiege" Type="AbilCmd" AbilCmd="WarpPrismLotV1@SiegedUnsiege,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="ImprovedEnergy" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0.875"/>
+        <ScoreKill value="250"/>
+        <SubgroupPriority value="69"/>
+        <MinimapRadius value="0.875"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkWarpPrismPhasing"/>
+        <LeaderAlias value="WarpPrism"/>
+        <HotkeyAlias value="WarpPrism"/>
+        <SelectAlias value="WarpPrism"/>
+        <SubgroupAlias value="WarpPrism"/>
+        <TechAliasArray value="Alias_WarpPrism"/>
+        <KillDisplay value="Never"/>
+        <RankDisplay value="Never"/>
     </CUnit>
     <CUnit id="WidowMineSwarm">
         <DeathRevealRadius value="7"/>

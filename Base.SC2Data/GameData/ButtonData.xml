@@ -5,9 +5,19 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="CarrierLotV1">
+        <Icon value="Assets\Textures\btn-unit-protoss-carrier.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-carrier.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="FeedbackLiberty">
         <Icon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-feedback-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="GraviticBoostersLotV2">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-graviticbooster.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-graviticbooster.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="GravitonCatapultLotV1@Passive">
@@ -51,6 +61,61 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-khaydarinamulet.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="ObserverLotV2">
+        <Icon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ObserverLotV2@SiegedUnsiege">
+        <Icon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ObserverLotV2@Siege">
+        <Icon value="Assets\Textures\btn-unit-protoss-observer-Surveillance.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-observer-Surveillance.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ObserverLotV1">
+        <Icon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ObserverLotV1@SiegedUnsiege">
+        <Icon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-observer.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ObserverLotV1@Siege">
+        <Icon value="Assets\Textures\btn-unit-protoss-observer-Surveillance.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-observer-Surveillance.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="PurificationNovaPhasedLotV1">
+        <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
+    </CButton>
+    <CButton id="PurificationNovaLotV1">
+        <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
+    </CButton>
+    <CButton id="TempestSwarm">
+        <Icon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="WarpPrismLotV1@SiegedUnsiege">
+        <Icon value="Assets\Textures\btn-unit-protoss-warpprism.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-warpprism.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeySet value="WarpPrismModes"/>
+    </CButton>
+    <CButton id="WarpPrismLotV1@Siege">
+        <Icon value="Assets\Textures\btn-unit-protoss-warpprismstationary.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-warpprismstationary.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeySet value="WarpPrismModes"/>
+    </CButton>
     <CButton id="PsiStormLiberty">
         <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>
@@ -72,10 +137,15 @@
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="ReleaseInterceptorsLotV1">
-        <Icon value="Assets\Textures\btn-ability-terran-unloadall.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-terran-unloadall.dds"/>
+        <Icon value="Assets\Textures\btn-ability-Protoss-ReleaseInterceptors.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-Protoss-ReleaseInterceptors.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <TintRacially value="1"/>
+    </CButton>
+    <CButton id="GraviticBoostersLotV1">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-graviticbooster.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-graviticbooster.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="ShadowStrideLotV">
         <Icon value="Assets\Textures\btn-ability-protoss-stealth-blink.dds"/>

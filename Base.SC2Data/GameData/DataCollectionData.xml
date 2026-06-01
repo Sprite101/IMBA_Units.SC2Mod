@@ -60,6 +60,11 @@
         <DataRecord Entry="Unit,CycloneLotV2"/>
         <DataRecord Entry="Actor,CycloneLotV2@Unit"/>
     </CDataCollectionUnit>
+    <CDataCollectionUnit id="DisruptorLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
     <CDataCollectionUpgrade id="DrillingClaws">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
         <Button value="MoebiusReactor@ResearchMoebiusReactor"/>
@@ -80,6 +85,16 @@
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
+    <CDataCollectionUpgrade id="GraviticBoostersLotV1">
+        <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
+    <CDataCollectionUpgrade id="GraviticBoostersLotV2">
+        <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUpgrade id="GravitonCatapultLotV1">
         <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
         <Button value="AmplifiedShieldingLotV"/>
@@ -179,6 +194,16 @@
     <CDataCollectionAbil id="LiberatorLotV1">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionAbil>
+    <CDataCollectionUnit id="ObserverLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="ObserverLotV2">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
     <CDataCollection id="PistolSwarm">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>
@@ -194,6 +219,14 @@
         <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
     </CDataCollectionUpgrade>
     <CDataCollection id="PsionicTransferLotV">
+        <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
+    <CDataCollection id="PurificationNovaPhasedLotV1">
+        <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
+    <CDataCollection id="PurificationNovaLotV1">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
@@ -279,6 +312,16 @@
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
+    <CDataCollectionUnit id="TempestLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="TempestSwarm">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
     <CDataCollection id="TornadoBlaster">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>
@@ -290,6 +333,11 @@
     </CDataCollection>
     <CDataCollectionUnit id="WarpInLiberty">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="WarpPrismLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
     </CDataCollectionUnit>
     <CDataCollectionUnit id="WidowMineSwarm">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>

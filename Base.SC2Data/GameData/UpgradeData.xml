@@ -9,6 +9,18 @@
         <EditorCategories value="Race:Protoss,UpgradeType:AttackBonus"/>
         <AffectedUnitArray value="AdeptLotV"/>
     </CUpgrade>
+    <CUpgrade id="GraviticBoostersLotV2">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-graviticbooster.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,ObserverLotV2,Speed" Value="1.007800"/>
+        <EffectArray Reference="Unit,ObserverLotV2,Acceleration" Value="1.0625"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="ObserverLotV2"/>
+    </CUpgrade>
     <CUpgrade id="GravitonCatapultLotV1">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-gravitoncatapult.dds"/>
@@ -326,6 +338,18 @@
         <EffectArray Operation="Set" Reference="Unit,CycloneLotV2,Speed" Value="3.375000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="CycloneLotV2"/>
+    </CUpgrade>
+    <CUpgrade id="GraviticBoostersLotV1">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-graviticbooster.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,ObserverLotV1,Speed" Value="1.074200"/>
+        <EffectArray Reference="Unit,ObserverLotV1,Acceleration" Value="1.0625"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="ObserverLotV1"/>
     </CUpgrade>
     <CUpgrade id="PsiStormHighTemplarLiberty">
         <Icon value="Assets\Textures\btn-ability-protoss-psistorm-color.dds"/>

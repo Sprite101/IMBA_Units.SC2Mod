@@ -193,6 +193,26 @@
         <Effect value="ColossusLiberty@WeaponSet"/>
         <LegacyOptions index="KeepChanneling" value="1"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="TempestSwarm@AGWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="TempestSwarm@AGWeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="15"/>
+        <Period value="3.3"/>
+        <Effect value="TempestSwarm@AGWeaponLM"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TempestSwarm@AAWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="TempestSwarm@AAWeaponDamage"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="15"/>
+        <Period value="3.3"/>
+        <Effect value="TempestSwarm@AAWeaponLM"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="TornadoBlaster">
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>

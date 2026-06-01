@@ -99,6 +99,29 @@
         <PeriodicPeriodArray value="0.25"/>
         <PeriodicPeriodArray value="0.25"/>
     </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="PurificationNovaPhasedLotV1@PhasedAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PurificationNovaPhasedLotV1@Phased"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="PurificationNovaPhasedLotV1@SpeedBuffAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PurificationNovaPhasedLotV1@SpeedBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="PurificationNovaPhasedLotV1@CooldownVisualAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PurificationNovaPhasedLotV1@CooldownVisual"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="PurificationNovaLotV1@Kill">
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Flags index="Kill" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
     <CEffectApplyBehavior id="PsiStormLiberty@AB">
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="PsiStormLiberty"/>
@@ -132,6 +155,114 @@
         <SearchFilters value="-;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="2" Effect="PsiStormLiberty@AB"/>
         <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectDamage id="PurificationNovaLotV1@Damage">
+        <ValidatorArray value="DisruptorDamageFilter"/>
+        <EditorCategories value=""/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ShieldBonus value="55"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="145"/>
+        <Death value="Electrocute"/>
+    </CEffectDamage>
+    <CEffectCreateUnit id="PurificationNovaLotV1@CU">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="CasterUnit"/>
+        <CreateFlags index="DropOff" value="0"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="TechComplete" value="0"/>
+        <CreateFlags index="UseFood" value="0"/>
+        <SpawnEffect value="PurificationNovaLotV1@SpawnSet"/>
+        <SpawnUnit value="DisruptorLotV1@Phased"/>
+        <SpawnRange value="1"/>
+    </CEffectCreateUnit>
+    <CEffectApplyBehavior id="PurificationNovaLotV1@CasterAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PurificationNovaLotV1@Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="PurificationNovaLotV1@InitialSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PurificationNovaLotV1@CasterAB"/>
+        <EffectArray value="PurificationNovaLotV1@CU"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="PurificationNovaLotV1@SpawnIssueOrder">
+        <EditorCategories value="Race:Protoss"/>
+        <Abil value="move"/>
+        <Target Effect="PurificationNovaLotV1@CU" Value="TargetPoint"/>
+    </CEffectIssueOrder>
+    <CEffectEnumArea id="PurificationNovaLotV1@SearchArea">
+        <ValidatorArray value="CasterIsVisible"/>
+        <EditorCategories value=""/>
+        <LaunchLocation Value="TargetUnit"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <SearchFilters value="Ground;Self,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.5" Effect="PurificationNovaLotV1@Damage"/>
+        <SearchFlags index="SameCliff" value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="PurificationNovaLotV1@EndSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PurificationNovaLotV1@SearchArea"/>
+        <EffectArray value="PurificationNovaLotV1@Kill"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="PurificationNovaLotV1@SpawnTargetAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="PurificationNovaLotV1@Target"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="PurificationNovaLotV1@SpawnSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PurificationNovaLotV1@SpawnTargetAB"/>
+        <EffectArray value="PurificationNovaLotV1@SpawnIssueOrder"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="PurificationNovaPhasedLotV1@IssueMorphOrder">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="PurificationNovaPhasedLotV1@Morph"/>
+    </CEffectIssueOrder>
+    <CEffectIssueOrder id="PurificationNovaPhasedLotV1@IssueMorphBackOrder">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="PurificationNovaPhasedLotV1@MorphBack"/>
+    </CEffectIssueOrder>
+    <CEffectDamage id="PurificationNovaPhasedLotV1@NotificationDamage">
+        <ValidatorArray value="TargetHasVisionOfSource"/>
+        <EditorCategories value=""/>
+        <Flags index="Notification" value="1"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="PurificationNovaPhasedLotV1@NotificationSearch">
+        <ValidatorArray value="CasterIsVisible"/>
+        <EditorCategories value=""/>
+        <SearchFilters value="Ground;Self,Player,Ally,RawResource,HarvestableResource,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="10" Effect="PurificationNovaPhasedLotV1@NotificationDamage"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="PurificationNovaPhasedLotV1@PhasedEndAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PurificationNovaPhasedLotV1@PhasedEnd"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="PurificationNovaPhasedLotV1@SearchSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PurificationNovaPhasedLotV1@SearchArea"/>
+        <EffectArray value="PurificationNovaPhasedLotV1@PhasedEndAB"/>
+    </CEffectSet>
+    <CEffectSet id="PurificationNovaPhasedLotV1@Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PurificationNovaPhasedLotV1@IssueMorphOrder"/>
+        <EffectArray value="PurificationNovaPhasedLotV1@PhasedAB"/>
+        <EffectArray value="PurificationNovaPhasedLotV1@SpeedBuffAB"/>
+        <EffectArray value="PurificationNovaPhasedLotV1@CooldownVisualAB"/>
+    </CEffectSet>
+    <CEffectEnumArea id="PurificationNovaPhasedLotV1@SearchArea">
+        <ValidatorArray value="CasterIsVisible"/>
+        <EditorCategories value=""/>
+        <ImpactLocation Value="SourceUnitOrPoint"/>
+        <SearchFilters value="Ground;Self,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.75" Effect="PurificationNovaLotV1@Damage"/>
+        <SearchFlags index="SameCliff" value="1"/>
     </CEffectEnumArea>
     <CEffectReleaseMagazine id="ReleaseInterceptorsLotV1@ReleaseMagazine">
         <EditorCategories value="Race:Protoss"/>
@@ -1421,6 +1552,41 @@
         <Flags index="NoKillCredit" value="1"/>
         <Death value="Timeout"/>
     </CEffectDamage>
+    <CEffectDamage id="TempestSwarm@AGWeaponDamage">
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <ArmorReduction value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="30"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="TempestSwarm@AGWeaponLM">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="TempestSwarm@AGWeaponDamage"/>
+        <AmmoUnit value="TempestSwarm@AGWeaponMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="TempestSwarm@AAWeaponDamage">
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <AttributeBonus index="Massive" value="50"/>
+        <ArmorReduction value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="30"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="TempestSwarm@AAWeaponLM">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="TempestSwarm@AAWeaponDamage"/>
+        <AmmoUnit value="TempestSwarm@AAWeaponAttackMissile"/>
+    </CEffectLaunchMissile>
     <CEffectLaunchMissile id="TyphoonMissilePodLotV2@LMLeft">
         <EditorCategories value="Race:Terran"/>
         <LaunchLocation Value="CasterUnit"/>

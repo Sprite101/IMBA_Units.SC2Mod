@@ -130,6 +130,89 @@
             <Chance value="1"/>
         </DamageResponse>
     </CBehaviorBuff>
+    <CBehaviorBuff id="PurificationNovaPhasedLotV1@Phased">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-arcshield.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="3"/>
+        <Period value="0.125"/>
+        <PeriodicEffect value="PurificationNovaPhasedLotV1@NotificationSearch"/>
+        <ExpireEffect value="PurificationNovaPhasedLotV1@SearchSet"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Benign" value="1"/>
+            <StateFlags index="Passive" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PurificationNovaPhasedLotV1@CooldownVisual">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="30"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PurificationNovaLotV1@Caster">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-arcshield.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <Duration value="3"/>
+        <Modification MoveSpeedBonus="-2.2382"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PurificationNovaLotV1@Target">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-arcshield.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <RemoveValidatorArray value="CasterNotDead"/>
+        <RemoveValidatorArray value="CasterIsNotHidden"/>
+        <RemoveValidatorArray value="CasterIsNotStasisWarded"/>
+        <RemoveValidatorArray value="CasterIsNotYoinked"/>
+        <RemoveValidatorArray value="CasterIsNotGravitonBeamed"/>
+        <RemoveValidatorArray value="CasterIsNotMothershipCoreRecalling"/>
+        <RemoveValidatorArray value="CasterIsNotMothershipRecalling"/>
+        <RemoveValidatorArray value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
+        <RemoveValidatorArray value="CasterIsNotMothershipMassRecalling"/>
+        <RemoveValidatorArray value="CasterIsNotNexusStrategicRecalling"/>
+        <Duration value="3"/>
+        <Period value="0.125"/>
+        <FinalEffect value="Suicide"/>
+        <ExpireEffect value="PurificationNovaLotV1@EndSet"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Benign" value="1"/>
+            <StateFlags index="Passive" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PurificationNovaPhasedLotV1@PhasedEnd">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-arcshield.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="3"/>
+        <FinalEffect value="PurificationNovaPhasedLotV1@IssueMorphBackOrder"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Benign" value="1"/>
+            <StateFlags index="Passive" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PurificationNovaPhasedLotV1@SpeedBuff">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="3"/>
+        <Modification MoveSpeedBonus="2"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="ReleaseInterceptorsLotV1@Beacon">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <MaxStackCount value="65535"/>
