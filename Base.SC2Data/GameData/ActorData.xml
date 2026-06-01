@@ -90,6 +90,9 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Carrier-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorEventMacro id="PhysicsDeathsVoidGround">
+        <On Terms="UnitDeathCustomize; KilledByEffect PurificationNovaLotV1@Damage" Send="DeathCustomize RagdollSiegeTank"/>
+    </CActorEventMacro>
     <CActorForceSphere id="PurificationNovaLotV1@ForceUp">
         <HostSiteOps Ops="SOpShadow SOpRotVariancerUp35"/>
         <Field value="Directional"/>
@@ -1043,10 +1046,6 @@
         <HostSiteOps Ops="SOpAttachWeapon"/>
         <Model value="StormSphereAttachment"/>
     </CActorModel>
-    <CActorAction id="TempestAttackGround">
-        <ImpactModel value="GenericAttackImpactModel"/>
-        <!--ImpactModel value="TempestGroundAttackImpactModel"/-->
-    </CActorAction>
     <CActorAction id="TempestSwarm@AGWeaponAttackAction" parent="GenericAttack" effectImpact="TempestSwarm@AGWeaponDamage" effectLaunch="TempestSwarm@AGWeaponLM">
         <LaunchAttachQuery Methods="AMFilterWeapon"/>
         <LaunchAssets Sound="Tempest_GroundAttackLaunch"/>
