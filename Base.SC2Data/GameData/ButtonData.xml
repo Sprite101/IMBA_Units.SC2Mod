@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="OracleLotV1@Revelation">
+        <Icon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="StasisWardLotV1@Activate">
         <Icon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>

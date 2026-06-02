@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitCompareBehaviorCount id="DisruptorLotV1@PhasedNotHavePhasedBehavior">
+        <Behavior value="PurificationNovaPhasedLotV1@Phased"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="StasisWardLotV1@NotTrappedbyStasisWard">
+        <Behavior value="StasisWardLotV1@ActivateTarget"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="StasisWardLotV1@ActivateValidators">
         <Type value="And"/>
         <CombineArray value="IsNotPhasedUnit"/>

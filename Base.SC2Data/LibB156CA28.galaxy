@@ -706,6 +706,7 @@ bool libB156CA28_gt_UnitTest_Func (bool testConds, bool runActions) {
     TechTreeBehaviorAllow(1, "PowerUserWarpable", false);
     TechTreeBehaviorAllow(1, "FastEnablerPowerUser", false);
     TechTreeAbilityAllow(1, AbilityCommand("Warpable", 0), false);
+    TechTreeBehaviorAllow(1, "WarpPrismPowerSourceFast", false);
     return true;
 }
 

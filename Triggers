@@ -9352,6 +9352,7 @@
             <Action Type="FunctionCall" Library="B156CA28" Id="82E9A286"/>
             <Action Type="FunctionCall" Library="B156CA28" Id="D9F28C81"/>
             <Action Type="FunctionCall" Library="B156CA28" Id="D486B9FC"/>
+            <Action Type="FunctionCall" Library="B156CA28" Id="3FF11551"/>
             <Action Type="Comment" Library="B156CA28" Id="DC302596"/>
             <Action Type="FunctionCall" Library="B156CA28" Id="F3B1F638"/>
             <Action Type="FunctionCall" Library="B156CA28" Id="9CB81063"/>
@@ -9710,6 +9711,27 @@
             <ParameterDef Type="ParamDef" Library="Ntve" Id="9B01128C"/>
             <Value>Warpable</Value>
             <ValueType Type="abilcmd"/>
+        </Element>
+        <Element Type="FunctionCall" Id="3FF11551">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000171"/>
+            <Parameter Type="Param" Library="B156CA28" Id="BA707A73"/>
+            <Parameter Type="Param" Library="B156CA28" Id="C9D6D871"/>
+            <Parameter Type="Param" Library="B156CA28" Id="670A73F5"/>
+        </Element>
+        <Element Type="Param" Id="BA707A73">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000279"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="C9D6D871">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000281"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="670A73F5">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000280"/>
+            <Value>WarpPrismPowerSourceFast</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
         </Element>
         <Element Type="Comment" Id="DC302596">
             <Comment>

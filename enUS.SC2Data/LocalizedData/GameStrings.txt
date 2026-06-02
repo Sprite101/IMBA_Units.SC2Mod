@@ -53,6 +53,7 @@ Abil/Name/ObserverLotV2@Build=Build
 Abil/Name/ObserverLotV2@Siege=Siege
 Abil/Name/ObserverLotV2@SiegedUnsiege=Unsiege
 Abil/Name/OracleLotV1@BuildStasisWard=Build Stasis Ward
+Abil/Name/OracleLotV1@Revelation=Revelation
 Abil/Name/PointDefenseDroneSwarm=Place Point Defense Drone
 Abil/Name/PsiStormHighTemplarLiberty=Research
 Abil/Name/PsiStormLiberty=Psi Storm
@@ -90,7 +91,7 @@ Abil/Name/WidowMineSwarm@WidowMineUnburrow=Widow Mine Unburrow
 Behavior/Name/CycloneLockOnAirLoTV1@LockOn=Lock On Target
 Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
 Behavior/Name/CycloneLockOnLotV2@LockOn=Lock On Target
-Behavior/Name/OracleStasisTrapTarget2=Stasis
+Behavior/Name/OracleLotV1@RevelationRevealed=Revealed
 Behavior/Name/PsiStormLiberty=Psionic Storm
 Behavior/Name/PurificationNovaPhasedLotV1@Phased=Phased
 Behavior/Name/PurificationNovaPhasedLotV1@PhasedEnd=Phased End
@@ -106,7 +107,7 @@ Behavior/Name/StasisWardLotV1@ActivateTarget=Stasis
 Behavior/Name/WarpInLiberty@PowerUserWarpable=Warping In
 Behavior/Tooltip/CycloneLockOnAirLoTV1@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
-Behavior/Tooltip/OracleStasisTrapTarget2=This unit cannot move, attack, or be damaged.
+Behavior/Tooltip/OracleLotV1@RevelationRevealed=This unit or structure is providing vision for the caster.
 Behavior/Tooltip/PsiStormLiberty=Target is under the effects of Psionic Storm and will take massive damage while in this area of effect.
 Behavior/Tooltip/PurificationNovaPhasedLotV1@Phased=This unit is invulnerable and is able to move through other units.
 Behavior/Tooltip/PurificationNovaPhasedLotV1@PhasedEnd=This unit is invulnerable and is able to move through other units.
@@ -167,6 +168,7 @@ Button/Name/ObserverLotV2=Warp In Observer
 Button/Name/ObserverLotV2@Siege=Surveillance Mode
 Button/Name/ObserverLotV2@SiegedUnsiege=Observer Mode
 Button/Name/OracleLotV1@BuildStasisTrap=Build Stasis Ward
+Button/Name/OracleLotV1@Revelation=Revelation
 Button/Name/PointDefenseDroneSwarm@BuildPointDefenseDrone=Build Point Defense Drone
 Button/Name/PsiStormHighTemplarLiberty=Research Psionic Storm
 Button/Name/PsiStormLiberty=Psionic Storm
@@ -267,6 +269,7 @@ Button/Tooltip/ObserverLotV2@Siege=Transforms the Observer to Surveillance Mode.
 Button/Tooltip/ObserverLotV2@SiegedUnsiege=Transforms the Observer to standard Observer Mode. Allows the Observer to move at the cost of decreased sight radius.
 Button/Tooltip/OracleLotV1=Flying caster. Can use Revelation, Stasis Ward, and Pulsar Beam.
 Button/Tooltip/OracleLotV1@BuildStasisTrap=Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for <d ref="Behavior,OracleStasisTrapTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
+Button/Tooltip/OracleLotV1@Revelation=Causes enemy units and structures within the target area to grant vision for <d ref="Behavior,OracleLotV1@RevelationRevealed,Duration"/> seconds. Reveals cloaked or burrowed units and structures.
 Button/Tooltip/PointDefenseDroneSwarm@BuildPointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
 Button/Tooltip/PointDefenseDroneSwarm@PointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneTimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
 Button/Tooltip/PsiStormHighTemplarLiberty=Allows <c val="ffff8a">High Templar</c> to summon a storm of psionic energy, causing heavy damage to every unit in the target area.<n/><n/>Creates a storm of psionic energy that lasts <d time="4"/>, causing up to 80 damage to all units in the target area.
@@ -517,6 +520,14 @@ Effect/Name/LockOnCancelSet=Lock On Cancel Set
 Effect/Name/NapalmSpraySwarmBeta@Damage=Damage
 Effect/Name/NapalmSpraySwarmBeta@Search=Search
 Effect/Name/NapalmSpraySwarmBeta@Set=Set
+Effect/Name/OracleLotV1@BuildStasisWardBuildBeamOff=Build Beam Off
+Effect/Name/OracleLotV1@BuildStasisWardBuildBeamOn=Build Beam On
+Effect/Name/OracleLotV1@RevelationAB=Revelation AB
+Effect/Name/OracleLotV1@RevelationDummyDamage=Revelation Dummy Damage
+Effect/Name/OracleLotV1@RevelationRevealCP=Revelation Reveal CP
+Effect/Name/OracleLotV1@RevelationRevealDP=Revelation Reveal DP
+Effect/Name/OracleLotV1@RevelationSearchArea=Revelation Search Area
+Effect/Name/OracleLotV1@RevelationSet=Revelation Set
 Effect/Name/PistolSwarm@CP=CP
 Effect/Name/PistolSwarm@Damage=Damage
 Effect/Name/PointDefenseDroneSwarm@CU=CU

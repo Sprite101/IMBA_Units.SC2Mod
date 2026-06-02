@@ -99,6 +99,50 @@
         <PeriodicPeriodArray value="0.25"/>
         <PeriodicPeriodArray value="0.25"/>
     </CEffectCreatePersistent>
+    <CEffectDamage id="OracleLotV1@BuildStasisWardBuildBeamOff">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="SourcePoint"/>
+    </CEffectDamage>
+    <CEffectDamage id="OracleLotV1@BuildStasisWardBuildBeamOn">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="TargetUnit"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="OracleLotV1@RevelationAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="OracleLotV1@RevelationRevealed"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="OracleLotV1@RevelationDummyDamage">
+        <EditorCategories value=""/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Flags index="NoDamageTimerReset" value="1"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="OracleLotV1@RevelationSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Self,Player,Ally,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="6" Effect="OracleLotV1@RevelationSet"/>
+    </CEffectEnumArea>
+    <CEffectDestroyPersistent id="OracleLotV1@RevelationRevealDP">
+        <EditorCategories value=""/>
+        <WhichLocation Value="TargetUnit"/>
+        <Effect value="RevelationPersistent"/>
+        <Count value="1"/>
+        <Radius value="0.5"/>
+    </CEffectDestroyPersistent>
+    <CEffectCreatePersistent id="OracleLotV1@RevelationRevealCP">
+        <EditorCategories value=""/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="60"/>
+        <RevealRadius value="3"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="OracleLotV1@RevelationSet">
+        <EditorCategories value=""/>
+        <EffectArray value="OracleLotV1@RevelationAB"/>
+        <EffectArray value="OracleLotV1@RevelationRevealCP"/>
+        <EffectArray value="OracleLotV1@RevelationDummyDamage"/>
+    </CEffectSet>
     <CEffectEnumArea id="StasisWardLotV1@ActivateSearchArea">
         <EditorCategories value="Race:Protoss"/>
         <AINotifyFlags index="HurtEnemy" value="1"/>
@@ -109,12 +153,6 @@
     <CEffectApplyBehavior id="StasisWardLotV1@ActivateTargetAB">
         <ValidatorArray index="0" value="NotFrenzied"/>
         <ValidatorArray value="IsNotRecallingCombine"/>
-        <ValidatorArray value="NotLarva"/>
-        <ValidatorArray value="NotLarvaEgg"/>
-        <ValidatorArray value="IsNotBanelingCocoon"/>
-        <ValidatorArray value="NotRavagerCocoon"/>
-        <ValidatorArray value="NotLurkerCocoon"/>
-        <ValidatorArray value="IsNotInfestedTerransEgg"/>
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="StasisWardLotV1@ActivateTarget"/>
     </CEffectApplyBehavior>

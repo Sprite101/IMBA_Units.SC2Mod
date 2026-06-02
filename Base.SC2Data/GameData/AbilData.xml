@@ -202,10 +202,23 @@
             </Button>
         </InfoArray>
         <Range value="5"/>
-        <EffectArray index="Start" value="OracleStasisTrapBuildBeamOn"/>
-        <EffectArray index="Finish" value="OracleStasisTrapBuildBeamOff"/>
-        <EffectArray index="Cancel" value="OracleStasisTrapBuildBeamOff"/>
+        <EffectArray index="Start" value="OracleLotV1@BuildStasisWardBuildBeamOn"/>
+        <EffectArray index="Finish" value="OracleLotV1@BuildStasisWardBuildBeamOff"/>
+        <EffectArray index="Cancel" value="OracleLotV1@BuildStasisWardBuildBeamOff"/>
     </CAbilBuild>
+    <CAbilEffectTarget id="OracleLotV1@Revelation">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="OracleLotV1@RevelationSearchArea"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Cooldown TimeUse="2.5"/>
+        </Cost>
+        <Range value="12"/>
+        <CastOutroTime value="0.5"/>
+        <CursorEffect value="OracleLotV1@RevelationSearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="OracleLotV1@Revelation"/>
+    </CAbilEffectTarget>
     <CAbilEffectInstant id="StasisWardLotV1@Activate">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Effect index="0" value="StasisWardLotV1@ActivateSet"/>

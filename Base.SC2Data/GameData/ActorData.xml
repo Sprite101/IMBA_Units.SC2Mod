@@ -90,6 +90,74 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Carrier-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorBeamSimple id="OracleLotV1@BuildStasisWardBuildBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <On Terms="Effect.OracleLotV1@BuildStasisWardBuildBeamOn.Start; At Caster" Send="Create"/>
+        <On Terms="Abil.OracleLotV1@BuildStasisWard.WorkerStop" Send="AnimBracketStop BSD"/>
+        <On Terms="Abil.OracleLotV1@BuildStasisWard.WorkerCancel" Send="AnimBracketStop BSD"/>
+        <Model value="OracleStasisTrapBuildBeam"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <HostLaunch Subject="_Unit" Scope="Caster"/>
+        <HostLaunchSiteOps Ops="SOpAttachCenter"/>
+        <HostImpact Subject="_Unit" Scope="Target"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+    </CActorBeamSimple>
+    <CActorModel id="OracleLotV1@RevelationRevealedBehaviorModel" parent="ModelAnimationStyleContinuous">
+        <Macros value="GlobalLoopMacro"/>
+        <Macros value="GlobalLoopMacroMore"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Behavior.OracleLotV1@RevelationRevealed.On" Send="Create"/>
+        <On Terms="Behavior.OracleLotV1@RevelationRevealed.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Model value="OracleRevelationBehaviorModel"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSplat id="OracleLotV1@RevelationCursorSplat" parent="ProtossCursorSplat" abil="OracleLotV1@Revelation"/>
+    <CActorModel id="OracleLotV1@RevelationModel" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.OracleLotV1@RevelationSearchArea.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="TimerSet 1.500000 DelayDeath"/>
+        <On Terms="TimerExpired; TimerName DelayDeath" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow OracleRevelationOffSet"/>
+        <Model value="OracleRevelationModel"/>
+    </CActorModel>
+    <CActorRange id="OracleLotV1@RevelationRange" parent="RangeAbil" abil="OracleLotV1@Revelation">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorSound id="OracleLotV1@RevelationLaunchoundSecondary" parent="SoundOneShot">
+        <On Terms="Effect.OracleLotV1@RevelationSearchArea.Start" Send="Create"/>
+        <Sound value="Oracle_RevelationCast2"/>
+    </CActorSound>
+    <CActorSound id="OracleLotV1@RevelationLaunchSound" parent="SoundOneShot">
+        <On Terms="Effect.OracleLotV1@RevelationSearchArea.Start" Send="Create"/>
+        <Sound value="Oracle_RevelationCast"/>
+    </CActorSound>
+    <CActorSound id="WarpPrismLotV1@SiegeSound" parent="SoundOneShot">
+        <On Terms="AbilMorph.*.Start; MorphTo WarpPrismLotV1@Sieged" Send="Create"/>
+        <Sound value="WarpPrism_MorphToPhasing"/>
+    </CActorSound>
+    <CActorModel id="StasisWardLotV1@BuildStasisWardPlacementModel">
+        <Aliases value="_Main"/>
+        <Aliases value="_Unit"/>
+        <Aliases value="_Selectable"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <FogVisibility value="Visible"/>
+        <On Terms="ActorCreation; ModelIsLowQuality" Send="SetOpacity 0.300000"/>
+        <On Terms="ActorCreation" Send="AnimGroupApply Placement"/>
+        <On Terms="ActorCreation" Send="$Stand PlayForever"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Signal.*.HidePlacement" Send="SetVisibility"/>
+        <On Terms="Signal.*.ShowPlacement" Send="SetVisibility 1"/>
+        <On Terms="ActorCreation" Send="Create StasisWardLotV1@ActivateRange"/>
+        <On Terms="ActorDestruction" Target="StasisWardLotV1@ActivateRange" Send="Destroy"/>
+        <HostSiteOps Ops="SOpTipabilityFloorScope"/>
+    </CActorModel>
+    <CActorRange id="StasisWardLotV1@ActivateRange">
+        <Inherits index="CloakEffect" value="1"/>
+        <Range value="3.000000"/>
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+    </CActorRange>
     <CActorSimple id="StasisWardLotV1@GlazeSimple">
         <EditorCategories value=""/>
         <Supporter Subject="_Selectable"/>
@@ -104,8 +172,8 @@
         <Macros value="GlobalLoopMacroMore"/>
         <Macros value="PhysicsDeathsSwarmAir"/>
         <Macros value="PhysicsDeathsVoidAir"/>
-        <Remove Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_RevelationCast_Sound"/>
-        <Remove Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_RevelationCast2_Sound"/>
+        <Remove Terms="Abil.OracleLotV1@Revelation.SourceCastStart" Send="Create Oracle_RevelationCast_Sound"/>
+        <Remove Terms="Abil.OracleLotV1@Revelation.SourceCastStart" Send="Create Oracle_RevelationCast2_Sound"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create Oracle_Land"/>
         <On Terms="Behavior.WarpInEffect.On" Send="ModelSwap OracleWarpInStargate"/>
         <On Terms="Behavior.WarpInEffect.On" Send="$Spell 0 0.000000 0.000000 2.100000 AsDuration"/>
@@ -117,11 +185,11 @@
         <On Terms="Behavior.OracleCloakField.Off" Send="AnimBracketStop Cloaking"/>
         <On Terms="Abil.Scryer.SourceCastStart" Send="$Spell"/>
         <On Terms="Abil.ResourceStun.SourceCastStart" Send="$Spell"/>
-        <On Terms="Abil.OracleRevelation.SourceCastStart" Send="AnimPlay Spell Stand,Work,Start"/>
+        <On Terms="Abil.OracleLotV1@Revelation.SourceCastStart" Send="AnimPlay Spell Stand,Work,Start"/>
         <On Terms="Abil.*.SourceCastStart" Send="Create OracleCastLaunch"/>
-        <On Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_RevelationCast_Sound"/>
-        <On Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_RevelationCast2_Sound"/>
-        <On Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_Spell_Revelation_StandWorkStart2_Sound"/>
+        <On Terms="Abil.OracleLotV1@Revelation.SourceCastStart" Send="Create Oracle_RevelationCast_Sound"/>
+        <On Terms="Abil.OracleLotV1@Revelation.SourceCastStart" Send="Create Oracle_RevelationCast2_Sound"/>
+        <On Terms="Abil.OracleLotV1@Revelation.SourceCastStart" Send="Create Oracle_Spell_Revelation_StandWorkStart2_Sound"/>
         <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
         <On Terms="UnitDeathCustomize; IsStatus OracleMoving 1; !ValidateUnit IsHallucination" Send="DeathCustomize Variation0"/>
         <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
@@ -215,7 +283,7 @@
         <Sound value="Oracle_StasisWardBeam_Loop"/>
     </CActorSound>
     <CActorModel id="StasisWardLotV1@ActivateExplosionModel" parent="ModelAnimationStyleOneShotNoOrphan">
-        <Remove Terms="Effect.OracleStasisTrapActivateCP.Start; At Caster" Send="Create"/>
+        <Remove Terms="Effect.StasisWardLotV1@ActivateCP.Start; At Caster" Send="Create"/>
         <On Terms="Effect.StasisWardLotV1@ActivateCP.Start; At Caster" Send="Create"/>
         <On Terms="Effect.StasisWardLotV1@ActivateSearchArea.Start; At Caster" Send="Create"/>
         <Model value="OracleStasisTrapExplosion"/>
@@ -238,11 +306,11 @@
         <ModelFlags index="AutomateGlobalLoops" value="1"/>
     </CActorModel>
     <CActorUnit id="StasisWardLotV1" parent="GenericUnitBase" unitName="StasisWardLotV1">
-        <On Terms="ActorCreation" Send="Create OracleStasisTrapRange"/>
+        <On Terms="ActorCreation" Send="Create StasisWardLotV1@ActivateRange"/>
         <On Terms="ActorCreation" Send="$Birth PlayForever 0.000000 -1.000000 5.000000 AsDuration"/>
         <On Terms="UnitBirth" Send="AnimClear Birth"/>
-        <On Terms="Effect.OracleStasisTrapActivateSet.Start" Send="AnimPlay Work Death PlayForever"/>
-        <On Terms="Effect.OracleStasisTrapActivateSet.Start" Send="Create Oracle_StasisTrap_Explode"/>
+        <On Terms="Effect.StasisWardLotV1@ActivateSet.Start" Send="AnimPlay Work Death PlayForever"/>
+        <On Terms="Effect.StasisWardLotV1@ActivateSet.Start" Send="Create Oracle_StasisTrap_Explode"/>
         <Model value="OracleStasisTrap"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <BuildModel value="OracleStasisTrap"/>
@@ -1217,6 +1285,10 @@
     <CActorRange id="ReleaseInterceptorsLotV1@Range" parent="RangeAbil" abil="ReleaseInterceptorsLotV1">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
     </CActorRange>
+    <CActorSound id="WarpPrismLotV1@UnsiegeSound" parent="SoundOneShot">
+        <On Terms="AbilMorph.*.Start; MorphTo WarpPrismLotV1" Send="Create"/>
+        <Sound value="WarpPrism_MorphToTransport"/>
+    </CActorSound>
     <CActorModel id="WarpPrismLotV1@TransportLoadModel" parent="ModelAnimationStyleOneShot">
         <On Terms="AbilTransport.WarpPrismLotV1@Transport.CargoLoad" Send="Create"/>
         <On Terms="ActorCreation" Send="Create UnitWarpIntoShuttle_ActorSound"/>
@@ -1659,13 +1731,14 @@
         <IconArcLength value="0.750000"/>
     </CActorRange>
     <CActorPower id="WarpInLiberty@PrismPower">
-        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; !Option Model Low; ValidateCreationEffect WarpInLiberty@PrismHasPowerSourceLiberty" Send="Create"/>
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; !Option Model Low; ValidateUnit WarpInLiberty@PrismHasPowerSourceLiberty" Send="Create"/>
         <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; !Option Model Low" Send="Destroy"/>
-        <VisualArray value="WarpPrismUnpoweredVisual"/>
+        <On Terms="ActorCreation" Target="WarpPrismPowerFast" Send="Destroy"/>
+        <VisualArray value="WarpInLiberty@UnpoweredVisualSplat"/>
         <VisualArray value="WarpInLiberty@PrismPowerVisualSplat"/>
     </CActorPower>
     <CActorPower id="WarpInLiberty@PrismPowerLow">
-        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; Option Model Low; ValidateCreationEffect WarpInLiberty@PrismHasPowerSourceLiberty" Send="Create"/>
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; Option Model Low; ValidateUnit WarpInLiberty@PrismHasPowerSourceLiberty" Send="Create"/>
         <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; Option Model Low" Send="Destroy"/>
         <PowerSource value="WarpInLiberty@PrismPowerSource"/>
         <VisualArray value="WarpPrismUnpoweredVisualLow"/>
@@ -4438,6 +4511,19 @@
         <HostImpact Subject="_Selectable"/>
         <HostImpactSiteOps Ops="SOpAttachOriginStationary"/>
     </CActorBeamSimple>
+    <CActorPower id="WarpPrismPowerFast">
+        <On index="0" Terms="Behavior.WarpPrismPowerSourceFast.Create; !Option Model Low; !ValidateUnit WarpInLiberty@PrismHasPowerSourceLiberty"/>
+    </CActorPower>
+    <CActorSplat id="WarpInLiberty@PrismUnpoweredVisualSplat">
+        <FogVisibility value="Visible"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <FadeIn value="0.000000"/>
+        <FadeOut value="0.000000"/>
+        <HoldTime value="-1.000000"/>
+        <Layer value="PowerLayer"/>
+        <Model value="WarpPrismUnpoweredVisual"/>
+    </CActorSplat>
     <CActorRange id="WidowMineSwarm@AttackRange">
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.Start" Send="Create"/>
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.StartEditorGround" Send="Create"/>

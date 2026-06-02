@@ -46,6 +46,7 @@ Button/Hotkey/ObserverLotV2=B
 Button/Hotkey/ObserverLotV2@Siege=E
 Button/Hotkey/ObserverLotV2@SiegedUnsiege=T
 Button/Hotkey/OracleLotV1@BuildStasisTrap=T
+Button/Hotkey/OracleLotV1@Revelation=R
 Button/Hotkey/PointDefenseDroneSwarm@BuildPointDefenseDrone=D
 Button/Hotkey/PsiStormHighTemplarLiberty=T
 Button/Hotkey/PsiStormLiberty=T

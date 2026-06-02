@@ -1139,7 +1139,7 @@
         <AttackTargetPriority value="20"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
-        <AbilArray Link="OracleRevelation"/>
+        <AbilArray Link="OracleLotV1@Revelation"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="OracleWeapon"/>
@@ -1152,7 +1152,7 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="OracleAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
-            <LayoutButtons Face="OracleRevelation" Type="AbilCmd" AbilCmd="OracleRevelation,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="OracleLotV1@Revelation" Type="AbilCmd" AbilCmd="OracleLotV1@Revelation,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="OracleBuildStasisTrap" Type="AbilCmd" AbilCmd="OracleLotV1@BuildStasisWard,Build1" Row="2" Column="1"/>
             <LayoutButtons Face="OracleWeaponOn" Type="AbilCmd" AbilCmd="OracleWeapon,On" Row="2" Column="2"/>
             <LayoutButtons Face="OracleWeaponOff" Type="AbilCmd" AbilCmd="OracleWeapon,Off" Row="2" Column="3"/>
@@ -1206,7 +1206,7 @@
         <ShieldRegenDelay value="10"/>
         <ShieldRegenRate value="2"/>
         <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
-        <Sight value="7"/>
+        <Sight value="4"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="StasisWardLotV1@Activate"/>
         <AbilArray Link="BuildInProgress"/>
