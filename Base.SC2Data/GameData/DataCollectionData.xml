@@ -204,6 +204,16 @@
         <Button value="BarracksLiberty"/>
         <TechInfoUnit value="StalkerLiberty"/>
     </CDataCollectionUnit>
+    <CDataCollectionUnit id="OracleLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="OracleSwarm">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
     <CDataCollection id="PistolSwarm">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>
@@ -312,6 +322,11 @@
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
+    <CDataCollectionUnit id="StasisWardLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
     <CDataCollectionUnit id="TempestLotV1">
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
         <Button value="BarracksLiberty"/>

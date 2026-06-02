@@ -192,6 +192,36 @@
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
+    <CAbilBuild id="OracleLotV1@BuildStasisWard">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <FlagArray index="RequireFacing" value="1"/>
+        <InfoArray index="Build1" Unit="StasisWardLotV1" Time="5">
+            <Vital index="Energy" value="50"/>
+            <Button DefaultButtonFace="OracleLotV1@BuildStasisTrap">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+        <Range value="5"/>
+        <EffectArray index="Start" value="OracleStasisTrapBuildBeamOn"/>
+        <EffectArray index="Finish" value="OracleStasisTrapBuildBeamOff"/>
+        <EffectArray index="Cancel" value="OracleStasisTrapBuildBeamOff"/>
+    </CAbilBuild>
+    <CAbilEffectInstant id="StasisWardLotV1@Activate">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="StasisWardLotV1@ActivateSet"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <Arc value="360"/>
+        <AutoCastRange value="3"/>
+        <AutoCastValidatorArray value="StasisWardLotV1@TargetInRange"/>
+        <PrepTime value="0"/>
+        <AINotifyEffect value="StasisWardLotV1@ActivateSearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="StasisWardLotV1@Activate"/>
+    </CAbilEffectInstant>
     <CAbilMorph id="PurificationNovaPhasedLotV1@MorphBack">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="PurificationNovaPhasedLotV1"/>

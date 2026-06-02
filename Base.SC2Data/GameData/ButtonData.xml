@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="StasisWardLotV1@Activate">
+        <Icon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="StasisWardLotV1@ActivatePassive">
+        <Icon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="AmplifiedShieldingLotV@Passive">
         <Icon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
@@ -90,6 +100,17 @@
         <Icon value="Assets\Textures\btn-unit-protoss-observer-Surveillance.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-observer-Surveillance.dds"/>
         <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="OracleLotV1@BuildStasisTrap">
+        <Icon value="Assets\Textures\btn-ability-protoss-oracle-stasisward.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-oracle-stasisward.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="StasisWardLotV1@PermanentlyCloakedPassive">
+        <Icon value="Assets\Textures\btn-upgrade-vorazun-stasiswardpermanentlycloaked.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-vorazun-stasiswardpermanentlycloaked.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeyAlias value="PermanentlyCloakedObserver"/>
     </CButton>
     <CButton id="PurificationNovaPhasedLotV1">
         <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>

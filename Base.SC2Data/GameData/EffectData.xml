@@ -99,6 +99,66 @@
         <PeriodicPeriodArray value="0.25"/>
         <PeriodicPeriodArray value="0.25"/>
     </CEffectCreatePersistent>
+    <CEffectEnumArea id="StasisWardLotV1@ActivateSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="5" Effect="StasisWardLotV1@ActivateSearchSet"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="StasisWardLotV1@ActivateTargetAB">
+        <ValidatorArray index="0" value="NotFrenzied"/>
+        <ValidatorArray value="IsNotRecallingCombine"/>
+        <ValidatorArray value="NotLarva"/>
+        <ValidatorArray value="NotLarvaEgg"/>
+        <ValidatorArray value="IsNotBanelingCocoon"/>
+        <ValidatorArray value="NotRavagerCocoon"/>
+        <ValidatorArray value="NotLurkerCocoon"/>
+        <ValidatorArray value="IsNotInfestedTerransEgg"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="StasisWardLotV1@ActivateTarget"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="StasisWardLotV1@ActivateCP">
+        <WhichLocation Value="CasterPoint"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="StasisWardLotV1@ActivateReveal"/>
+        <PeriodicEffectArray value="StasisWardLotV1@ActivateSearchArea"/>
+        <PeriodicEffectArray value="SuicideRemove"/>
+        <PeriodicPeriodArray value="0.5"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="1.66"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="StasisWardLotV1@ActivateSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="StasisWardLotV1@ActivateCP"/>
+        <EffectArray value="StasisWardLotV1@ActivateCasterAB"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="StasisWardLotV1@ActivateCasterAB">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="StasisWardLotV1@ActivateCaster"/>
+    </CEffectApplyBehavior>
+    <CEffectIssueOrder id="StasisWardLotV1@ActivateIssueHaltOrder">
+        <EditorCategories value="Race:Terran"/>
+        <Abil value="TerranBuild"/>
+        <AbilCmdIndex value="30"/>
+    </CEffectIssueOrder>
+    <CEffectCreatePersistent id="StasisWardLotV1@ActivateReveal">
+        <WhichLocation Value="CasterUnit"/>
+        <ExpireDelay value="4"/>
+        <RevealRadius value="4"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="StasisWardLotV1@ActivateSearchSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="StasisWardLotV1@ActivateIssueStopOrder"/>
+        <EffectArray value="StasisWardLotV1@ActivateIssueHaltOrder"/>
+        <EffectArray value="StasisWardLotV1@ActivateTargetAB"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="StasisWardLotV1@ActivateIssueStopOrder">
+        <ValidatorArray value="OracleStasisTrapBuildingSet"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Abil value="stop"/>
+    </CEffectIssueOrder>
     <CEffectDamage id="PurificationNovaDamage">
         <ValidatorArray index="0" value="DisruptorLotV1@DisruptorDamageFilter"/>
     </CEffectDamage>

@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorCombine id="StasisWardLotV1@ActivateValidators">
+        <Type value="And"/>
+        <CombineArray value="IsNotPhasedUnit"/>
+        <CombineArray value="NotFrenzied"/>
+        <CombineArray value="TargetNotUntargetable"/>
+        <CombineArray value="IsNotDisguisedChangeling"/>
+        <CombineArray value="IsNotNexusMassRecallWarpingOut"/>
+    </CValidatorCombine>
+    <CValidatorLocationEnumArea id="StasisWardLotV1@TargetInRange">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichLocation Value="SourceUnit"/>
+        <AreaArray>
+            <Compare value="GE"/>
+            <Count value="1"/>
+            <Radius value="3"/>
+            <Validator value="StasisWardLotV1@ActivateValidators"/>
+        </AreaArray>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <SearchFilters value="Ground,Visible;Player,Ally,Neutral,Structure,Missile,Dead,Hidden"/>
+    </CValidatorLocationEnumArea>
     <CValidatorLocationCompareRange id="ColossusLiberty@DamageMaxRange">
         <WhichLocation Value="TargetUnit"/>
         <Compare value="LE"/>
@@ -43,6 +63,11 @@
     <CValidatorCombine id="IsNotPhasedUnit">
         <CombineArray value="DisruptorLotV1@PhasedIsNotDisruptorPhased"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="WarpInLiberty@PrismHasPowerSourceLiberty">
+        <WhichUnit Value="Source"/>
+        <Value value="1"/>
+        <Behavior value="WarpInLiberty@PrismPowerSource"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="ReleaseInterceptorsLotV1@BeaconHasNoStacks">
         <WhichUnit Value="Source"/>
         <Behavior value="ReleaseInterceptorsLotV1@Beacon"/>

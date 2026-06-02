@@ -14,6 +14,93 @@
             <Chance value="1"/>
         </DamageResponse>
     </CBehaviorBuff>
+    <CBehaviorBuff id="StasisWardLotV1@ActivateCaster">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-unit-protoss-stasisward.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressCloak" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+            <StateFlags index="SuppressDetection" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
+            <StateFlags index="SuppressLifeRegen" value="1"/>
+            <StateFlags index="SuppressShieldsRegen" value="1"/>
+            <StateFlags index="SuppressEnergyRegen" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <StateFlags index="Unstoppable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="StasisWardLotV1@ActivateTarget">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="30"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stasis" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressCloak" value="1"/>
+            <StateFlags index="SuppressDetection" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
+            <StateFlags index="SuppressLifeRegen" value="1"/>
+            <StateFlags index="SuppressShieldsRegen" value="1"/>
+            <StateFlags index="SuppressEnergyRegen" value="1"/>
+            <AbilClassEnableArray index="CAbilHarvest" value="1"/>
+            <AbilLinkEnableArray value="move"/>
+            <AbilLinkEnableArray value="stop"/>
+            <RateMultiplierArray index="Cooldown" value="0.001"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="StasisWardLotV1@Cloak">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="IsNotConstructing"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="OracleStasisTrapTarget2">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-stasistrap.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="30"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stasis" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressCloak" value="1"/>
+            <StateFlags index="SuppressDetection" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
+            <StateFlags index="SuppressLifeRegen" value="1"/>
+            <StateFlags index="SuppressShieldsRegen" value="1"/>
+            <StateFlags index="SuppressEnergyRegen" value="1"/>
+            <AbilClassEnableArray index="CAbilHarvest" value="1"/>
+            <AbilLinkEnableArray value="move"/>
+            <AbilLinkEnableArray value="stop"/>
+            <RateMultiplierArray index="Cooldown" value="0.001"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="PsiStormLiberty">
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-psistorm.dds"/>
@@ -242,6 +329,7 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <Radius value="3.75"/>
         <PowerLink value="PowerSource"/>
+        <Requirements value="ModifiedAbility@NotHaveInterferenceMatrixBehavior"/>
     </CBehaviorPowerSource>
     <CBehaviorPowerUser id="WarpInLiberty@PowerUserWarpable">
         <Alignment value="Positive"/>

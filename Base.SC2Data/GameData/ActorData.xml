@@ -90,6 +90,186 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Carrier-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorSimple id="StasisWardLotV1@GlazeSimple">
+        <EditorCategories value=""/>
+        <Supporter Subject="_Selectable"/>
+        <On Terms="Behavior.StasisWardLotV1@ActivateTarget.On" Send="Create"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="ModelMaterialApply GlazeStasis"/>
+        <On Terms="Behavior.StasisWardLotV1@ActivateTarget.Off" Target="_Unit" Send="ModelMaterialRemove GlazeStasis"/>
+        <On Terms="Behavior.StasisWardLotV1@ActivateTarget.Off" Send="Destroy"/>
+    </CActorSimple>
+    <CActorUnit id="OracleLotV1" parent="GenericUnitBase" unitName="OracleLotV1">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="GlobalLoopMacro"/>
+        <Macros value="GlobalLoopMacroMore"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <Remove Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_RevelationCast_Sound"/>
+        <Remove Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_RevelationCast2_Sound"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Oracle_Land"/>
+        <On Terms="Behavior.WarpInEffect.On" Send="ModelSwap OracleWarpInStargate"/>
+        <On Terms="Behavior.WarpInEffect.On" Send="$Spell 0 0.000000 0.000000 2.100000 AsDuration"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="ModelSwap Oracle"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimClear Spell"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD GLbirth GLstand GLdeath"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD_A GLbirth,A GLstand,A GLdeath,A"/>
+        <On Terms="Behavior.OracleCloakField.On" Send="AnimBracketStart Cloaking Stand,Work,Start Stand,Work Stand,Work,End"/>
+        <On Terms="Behavior.OracleCloakField.Off" Send="AnimBracketStop Cloaking"/>
+        <On Terms="Abil.Scryer.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.ResourceStun.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.OracleRevelation.SourceCastStart" Send="AnimPlay Spell Stand,Work,Start"/>
+        <On Terms="Abil.*.SourceCastStart" Send="Create OracleCastLaunch"/>
+        <On Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_RevelationCast_Sound"/>
+        <On Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_RevelationCast2_Sound"/>
+        <On Terms="Abil.OracleRevelation.SourceCastStart" Send="Create Oracle_Spell_Revelation_StandWorkStart2_Sound"/>
+        <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
+        <On Terms="UnitDeathCustomize; IsStatus OracleMoving 1; !ValidateUnit IsHallucination" Send="DeathCustomize Variation0"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
+        <On Terms="UnitMovementUpdate.*.Stand" Send="StatusSet OracleMoving 0"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="StatusSet OracleMoving 1"/>
+        <On Terms="Behavior.OracleWeapon.On" Send="Create OracleCastLaunch"/>
+        <On Terms="Behavior.OracleWeapon.On" Send="Create Oracle_PulsarBeamModeOn_Sound"/>
+        <On Terms="Behavior.OracleWeapon.On" Send="Create Oracle_PulsarBeamModeOn2_Sound"/>
+        <On Terms="Behavior.OracleWeapon.On" Send="Create Oracle_PulsarBeamModeOn3_Sound"/>
+        <On Terms="Behavior.OracleWeapon.Off" Send="Create Oracle_PulsarBeamModeOff_Sound"/>
+        <On Terms="Behavior.OracleWeapon.Off" Send="Create Oracle_PulsarBeamModeOff2_Sound"/>
+        <On Terms="Behavior.LightofAiur.On" Send="AnimBracketStart Envisioning Stand,Work,Start Stand,Work Stand,Work,End"/>
+        <On Terms="Behavior.LightofAiur.Off" Send="AnimBracketStop Envisioning"/>
+        <On Terms="Behavior.LightofAiur.On" Send="StatusSet MorphDeath 1"/>
+        <On Terms="Behavior.LightofAiur.Off" Send="StatusSet MorphDeath 0"/>
+        <On Terms="UnitDeathCustomize; IsStatus MorphDeath 1; !ValidateUnit IsHallucination" Send="DeathCustomize Variation1"/>
+        <On Terms="Behavior.LightofAiur.On" Send="Create Oracle_EnvisionCast1_Sound"/>
+        <On Terms="Behavior.LightofAiur.On" Send="Create Oracle_EnvisionCast2_Sound"/>
+        <On Terms="Behavior.LightofAiur.On" Send="Create Oracle_EnvisionCast3_Sound"/>
+        <Model value="Oracle"/>
+        <AnimBlendTime value="0.400000"/>
+        <ModelFlags index="AutomateGlobalLoops" value="0"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <Baselines index="Walk" BlendIn="1.500000" BlendOut="2.000000"/>
+        <BuildModel value="OracleWarpIn"/>
+        <DeathArray index="Normal" ModelLink="OracleDeath" SoundLink="Oracle_Explode"/>
+        <DeathCustoms ModelLink="OracleDeathWalk" VoiceLink="Oracle_Death" Name="Variation0"/>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathMedium" Name="Hallucination"/>
+        <DeathCustoms>
+            <ActorModel value="UnitDeathRagdollFlier"/>
+            <ModelLink value="OracleDeathRagdoll"/>
+            <Name value="RagdollBasic"/>
+            <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+            <BodySquibs Name="Basic" Model="ProtossTinyRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ModelLink="OracleDeathMorph" VoiceLink="Oracle_Death" Name="Variation1"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionFlier"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="Oracle"/>
+        <PortraitModel value="OraclePortrait"/>
+        <BarOffset value="40"/>
+        <BarWidth value="50"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Oracle.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <NameOffset value="60"/>
+        <SoundArray index="Ready" value="Oracle_Ready"/>
+        <SoundArray index="Help" value="Oracle_Help"/>
+        <SoundArray index="What" value="Oracle_What"/>
+        <SoundArray index="Yes" value="Oracle_Yes"/>
+        <SoundArray index="Attack" value="Oracle_Attack"/>
+        <SoundArray index="Pissed" value="Oracle_Pissed"/>
+        <SoundArray index="Movement" value="Oracle_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Oracle.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Oracle-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Oracle-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Oracle-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorSound id="OracleLotV1@BuildStasisWardBuildFinishSound" parent="SoundOneShot">
+        <On Terms="Abil.OracleLotV1@BuildStasisWard.WorkerStop" Send="Create"/>
+        <On Terms="Abil.OracleLotV1@BuildStasisWard.WorkerCancel" Send="Create"/>
+        <Sound value="Oracle_StasisTrap_Finished"/>
+    </CActorSound>
+    <CActorSound id="OracleLotV1@BuildStasisWardBuildStartSound" parent="SoundOneShot">
+        <On Terms="Abil.OracleLotV1@BuildStasisWard.WorkerStart" Send="Create"/>
+        <Sound value="Oracle_StasisTrap_Start"/>
+    </CActorSound>
+    <CActorSound id="OracleLotV1@BuildStasisWardBuildLoopSound" parent="SoundContinuous">
+        <On Terms="Abil.OracleLotV1@BuildStasisWard.WorkerStart" Send="Create"/>
+        <On Terms="Abil.OracleLotV1@BuildStasisWard.WorkerStop" Send="Destroy"/>
+        <On Terms="Abil.OracleLotV1@BuildStasisWard.WorkerCancel" Send="Destroy"/>
+        <Sound value="Oracle_StasisWardBeam_Loop"/>
+    </CActorSound>
+    <CActorModel id="StasisWardLotV1@ActivateExplosionModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <Remove Terms="Effect.OracleStasisTrapActivateCP.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.StasisWardLotV1@ActivateCP.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.StasisWardLotV1@ActivateSearchArea.Start; At Caster" Send="Create"/>
+        <Model value="OracleStasisTrapExplosion"/>
+    </CActorModel>
+    <CActorSound id="StasisWardLotV1@ActivateTargetStartSound" parent="SoundOneShot">
+        <On Terms="Behavior.StasisWardLotV1@ActivateTarget.On" Send="Create"/>
+        <Sound value="Oracle_StasisTrap_Target"/>
+    </CActorSound>
+    <CActorModel id="StasisWardLotV1@ActivateTargetBehaviorModel" parent="ModelAnimationStyleContinuous">
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Behavior.StasisWardLotV1@ActivateTarget.On" Send="Create"/>
+        <On Terms="Behavior.StasisWardLotV1@ActivateTarget.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="OracleStasisTrapTarget"/>
+        <AutoScaleFactor value="1.000000"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
+    <CActorUnit id="StasisWardLotV1" parent="GenericUnitBase" unitName="StasisWardLotV1">
+        <On Terms="ActorCreation" Send="Create OracleStasisTrapRange"/>
+        <On Terms="ActorCreation" Send="$Birth PlayForever 0.000000 -1.000000 5.000000 AsDuration"/>
+        <On Terms="UnitBirth" Send="AnimClear Birth"/>
+        <On Terms="Effect.OracleStasisTrapActivateSet.Start" Send="AnimPlay Work Death PlayForever"/>
+        <On Terms="Effect.OracleStasisTrapActivateSet.Start" Send="Create Oracle_StasisTrap_Explode"/>
+        <Model value="OracleStasisTrap"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="OracleStasisTrap"/>
+        <DeathArray index="Normal" ModelLink="StasisTrapDeath" SoundLink="Oracle_StasisTrap_Explode"/>
+        <PlacementModel value="OracleStasisTrap"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PlacementActorModel value="OracleStasisTrapPlacementModel"/>
+        <PlaceholderActorModel value="OracleStasisTrapPlaceholder"/>
+        <PortraitModel value="StasisWardPortrait"/>
+        <BarOffset value="40"/>
+        <BarWidth value="42"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-protoss-stasisward.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-ability-protoss-oracle-stasisward.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-protoss-buildingplating.dds"/>
+        <SoundArray index="What" value="Oracle_StasisTrap_What"/>
+        <UnitIcon value="Assets\Textures\btn-ability-protoss-oracle-stasisward.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-protoss-stasisward.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\wireframe-protoss-stasisward-shield01.dds"/>
+            <Image value="Assets\Textures\wireframe-protoss-stasisward-shield02.dds"/>
+            <Image value="Assets\Textures\wireframe-protoss-stasisward-shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
     <CActorEventMacro id="PhysicsDeathsVoidGround">
         <On Terms="UnitDeathCustomize; KilledByEffect PurificationNovaLotV1@Damage" Send="DeathCustomize RagdollSiegeTank"/>
     </CActorEventMacro>
@@ -1037,6 +1217,31 @@
     <CActorRange id="ReleaseInterceptorsLotV1@Range" parent="RangeAbil" abil="ReleaseInterceptorsLotV1">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
     </CActorRange>
+    <CActorModel id="WarpPrismLotV1@TransportLoadModel" parent="ModelAnimationStyleOneShot">
+        <On Terms="AbilTransport.WarpPrismLotV1@Transport.CargoLoad" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create UnitWarpIntoShuttle_ActorSound"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Model value="ShuttleTransportLoadModel"/>
+    </CActorModel>
+    <CActorSound id="WarpPrismLotV1@TransportLoadSound" parent="SoundOneShot">
+        <On Terms="AbilTransport.WarpPrismLotV1@Transport.TransportLoad" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Sound value="Shuttle_Load"/>
+    </CActorSound>
+    <CActorModel id="WarpPrismLotV1@TransportUnloadModel" parent="ModelAnimationStyleOneShot">
+        <On Terms="Abil.WarpPrismLotV1@Transport.CargoUnload" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="ShuttleTransportUnloadModel"/>
+    </CActorModel>
+    <CActorSound id="WarpPrismLotV1@TransportUnloadSound" parent="SoundOneShot">
+        <On Terms="AbilTransport.WarpPrismLotV1@Transport.TransportUnload" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Sound value="Shuttle_Unload"/>
+    </CActorSound>
     <CActorModel id="TempestSwarm@SphereAttachment" parent="ModelAddition">
         <Macros value="GlobalLoopMacroMore"/>
         <On Terms="Signal.*.Birth" Send="AnimPlay Rearm Stand,Work,Start 0 0.000000 0.000000 1.750000 AsDuration"/>
@@ -1184,6 +1389,20 @@
         <On Terms="UnitDeath.TempestSwarm; PassChance 25.000000" Send="Create"/>
         <Sound value="Tempest_Death"/>
     </CActorSound>
+    <CActorModel id="WarpPrismLotV1@TransportUnloadFX">
+        <Flags index="SuppressSaveLoad" value="1"/>
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="ActorCreation" Send="$Stand,00"/>
+        <On Terms="AnimDone; AnimName Stand" Send="Destroy"/>
+        <On Terms="AbilTransport.WarpPrismLotV1@Transport.CargoUnload" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpShadow"/>
+        <Model value="UnloadFX"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
     <CActorSplat id="WarpInLiberty@UnpoweredVisualSplat">
         <FogVisibility value="Visible"/>
         <Host Subject="_Selectable"/>
@@ -1440,13 +1659,13 @@
         <IconArcLength value="0.750000"/>
     </CActorRange>
     <CActorPower id="WarpInLiberty@PrismPower">
-        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; !Option Model Low" Send="Create"/>
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; !Option Model Low; ValidateCreationEffect WarpInLiberty@PrismHasPowerSourceLiberty" Send="Create"/>
         <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; !Option Model Low" Send="Destroy"/>
         <VisualArray value="WarpPrismUnpoweredVisual"/>
         <VisualArray value="WarpInLiberty@PrismPowerVisualSplat"/>
     </CActorPower>
     <CActorPower id="WarpInLiberty@PrismPowerLow">
-        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; Option Model Low" Send="Create"/>
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; Option Model Low; ValidateCreationEffect WarpInLiberty@PrismHasPowerSourceLiberty" Send="Create"/>
         <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; Option Model Low" Send="Destroy"/>
         <PowerSource value="WarpInLiberty@PrismPowerSource"/>
         <VisualArray value="WarpPrismUnpoweredVisualLow"/>
@@ -4160,8 +4379,8 @@
         <On Terms="AbilMorph.*.Start; MorphFrom WarpPrismLotV1@Sieged; MorphTo WarpPrismLotV1" Send="Destroy"/>
         <On Terms="AbilMorph.*.Start; MorphFrom WarpPrismLotV1; MorphTo WarpPrismLotV1@Sieged" Send="Create"/>
         <On Terms="UnitBirth.WarpPrismLotV1@Sieged" Send="AnimBracketStart Phasing Work,Start Work Work,End Instant"/>
-        <On Terms="AbilMorph.*.Start; MorphTo WarpPrismPhasing" Send="AnimBracketStart Phasing Work,Start Work Work,End"/>
-        <On Terms="AbilMorph.*.Start; MorphTo WarpPrism" Send="AnimBracketStop Phasing"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WarpPrismLotV1@Sieged" Send="AnimBracketStart Phasing Work,Start Work Work,End"/>
+        <On Terms="AbilMorph.*.Start; MorphTo WarpPrismLotV1" Send="AnimBracketStop Phasing"/>
         <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
         <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create WarpPrismPhasing_Land"/>
@@ -4209,6 +4428,16 @@
             <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism01-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorTurret id="WarpPrismLotV1@SiegedRotateTurret">
+        <On Terms="TurretEnable.WarpPrismLotV1@SiegedRotate" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom WarpPrismLotV1@Sieged" Send="Destroy"/>
+    </CActorTurret>
+    <CActorBeamSimple id="WarpPrismLotV1@TransportWarpOutBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <On Terms="AbilTransport.WarpPrismLotV1@Transport.CargoLoad" Send="Create"/>
+        <Model value="WarpPrismWarpOut"/>
+        <HostImpact Subject="_Selectable"/>
+        <HostImpactSiteOps Ops="SOpAttachOriginStationary"/>
+    </CActorBeamSimple>
     <CActorRange id="WidowMineSwarm@AttackRange">
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.Start" Send="Create"/>
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.StartEditorGround" Send="Create"/>
