@@ -53,6 +53,26 @@
         <Effect value="CarrierLotV1@WeaponCP"/>
         <AllowedMovement value="Slowing"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="PulsarBeamSwarm">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="DisplayCooldown" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-oraclepulsarcannonon.dds"/>
+        <DisplayEffect value="PulsarBeamSwarm@Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4"/>
+        <RangeSlop value="0"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown TimeUse="0.86"/>
+        </Cost>
+        <Period value="0.86"/>
+        <Backswing value="0.75"/>
+        <Effect value="PulsarBeamSwarm@CP"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="StalkerLiberty@ParticleDisruptors">
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>

@@ -232,6 +232,9 @@
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
+    <CDataCollection id="PulsarBeamSwarm">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Protoss"/>
+    </CDataCollection>
     <CDataCollection id="PurificationNovaPhasedLotV1">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
@@ -281,6 +284,11 @@
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
+    <CDataCollectionUnit id="ShieldBatteryLotV">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
     <CDataCollection id="SiegeTankLotV1Morph">
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
     </CDataCollection>

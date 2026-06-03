@@ -29,6 +29,16 @@
             <StateFlags index="SuppressCloak" value="1"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="PulsarBeamSwarm@WeaponOn">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-oraclepulsarcannonon.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CanSpendEnergy"/>
+        <RemoveValidatorArray value="OracleHasEnergy"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="-2"/>
+            <WeaponEnableArray value="PulsarBeamSwarm"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="StasisWardLotV1@ActivateCaster">
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\btn-unit-protoss-stasisward.dds"/>

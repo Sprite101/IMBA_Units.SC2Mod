@@ -48,9 +48,13 @@
         <ValidatorArray value="NotOrbitalCommandFlying"/>
         <ValidatorArray value="NotNexus"/>
         <ValidatorArray value="NotShieldBattery"/>
+        <ValidatorArray value="ShieldBatteryLotV@Not"/>
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="FeedbackLiberty@Damage"/>
         <EffectArray value="FeedbackLiberty@RemoveEnergy"/>
+    </CEffectSet>
+    <CEffectSet id="FeedbackSet">
+        <ValidatorArray value="ShieldBatteryLotV@Not"/>
     </CEffectSet>
     <CEffectRemoveBehavior id="ImmortalLotVBarrier@RB">
         <EditorCategories value="Race:Protoss"/>
@@ -143,6 +147,25 @@
         <EffectArray value="OracleLotV1@RevelationRevealCP"/>
         <EffectArray value="OracleLotV1@RevelationDummyDamage"/>
     </CEffectSet>
+    <CEffectCreatePersistent id="PulsarBeamSwarm@CP">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="PulsarBeamSwarm@Damage"/>
+        <PeriodicValidator value="OracleHasEnergyAndNotDead"/>
+        <PeriodicEffectArray value="PulsarBeamSwarm@Damage"/>
+        <PeriodicPeriodArray value="0.86"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="PulsarBeamSwarm@Damage" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <AttributeBonus index="Light" value="10"/>
+        <ArmorReduction value="0"/>
+        <Visibility value="Visible"/>
+        <Kind value="Spell"/>
+        <Amount value="15"/>
+    </CEffectDamage>
     <CEffectEnumArea id="StasisWardLotV1@ActivateSearchArea">
         <EditorCategories value="Race:Protoss"/>
         <AINotifyFlags index="HurtEnemy" value="1"/>

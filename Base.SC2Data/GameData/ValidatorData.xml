@@ -3,6 +3,15 @@
     <CValidatorUnitCompareBehaviorCount id="DisruptorLotV1@PhasedNotHavePhasedBehavior">
         <Behavior value="PurificationNovaPhasedLotV1@Phased"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="ShieldBatteryLotV@Is">
+        <ResultFailed value="Error,Error/MustTargetShieldBattery"/>
+        <Value value="ShieldBattery"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="ShieldBatteryLotV@Not">
+        <ResultFailed value="CantTargetThatUnit,Error/CantTargetShieldBattery"/>
+        <Value value="ShieldBattery"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
     <CValidatorUnitCompareBehaviorCount id="StasisWardLotV1@NotTrappedbyStasisWard">
         <Behavior value="StasisWardLotV1@ActivateTarget"/>
     </CValidatorUnitCompareBehaviorCount>

@@ -52,6 +52,7 @@ Abil/Name/ObserverLotV1@SiegedUnsiege=Unsiege
 Abil/Name/ObserverLotV2@Build=Build
 Abil/Name/ObserverLotV2@Siege=Siege
 Abil/Name/ObserverLotV2@SiegedUnsiege=Unsiege
+Abil/Name/OracleLotV1@Build=Build
 Abil/Name/OracleLotV1@BuildStasisWard=Build Stasis Ward
 Abil/Name/OracleLotV1@Revelation=Revelation
 Abil/Name/PointDefenseDroneSwarm=Place Point Defense Drone
@@ -59,6 +60,7 @@ Abil/Name/PsiStormHighTemplarLiberty=Research
 Abil/Name/PsiStormLiberty=Psi Storm
 Abil/Name/PsionicTransferLotV=Psionic Transfer
 Abil/Name/PsionicTransferLotV@Cancel=Cancel
+Abil/Name/PulsarBeamSwarm@Weapon=Weapon
 Abil/Name/PurificationNovaLotV1=Purification Nova
 Abil/Name/PurificationNovaPhasedLotV1=Purification Nova
 Abil/Name/PurificationNovaPhasedLotV1@Morph=Morph
@@ -80,6 +82,7 @@ Abil/Name/SiegeArmorLotV1Morph@SiegeMode=Siege
 Abil/Name/SiegeArmorLotV1Morph@Unsiege=Unsiege
 Abil/Name/StasisWardLotV1@Activate=Activate
 Abil/Name/TempestSwarm@Build=Build
+Abil/Name/WarpInLiberty@Research=Research
 Abil/Name/WarpInLiberty@Warpable=Warpable
 Abil/Name/WarpPrismLotV1@Siege=Siege
 Abil/Name/WarpPrismLotV1@SiegedUnsiege=Unsiege
@@ -93,6 +96,7 @@ Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
 Behavior/Name/CycloneLockOnLotV2@LockOn=Lock On Target
 Behavior/Name/OracleLotV1@RevelationRevealed=Revealed
 Behavior/Name/PsiStormLiberty=Psionic Storm
+Behavior/Name/PulsarBeamSwarm@WeaponOn=Pulsar Beam
 Behavior/Name/PurificationNovaPhasedLotV1@Phased=Phased
 Behavior/Name/PurificationNovaPhasedLotV1@PhasedEnd=Phased End
 Behavior/Name/RavenAntiArmorMissile@ArmorReduction=Armor Reduction
@@ -109,6 +113,7 @@ Behavior/Tooltip/CycloneLockOnAirLoTV1@LockOn=This unit has been targeted by a C
 Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/OracleLotV1@RevelationRevealed=This unit or structure is providing vision for the caster.
 Behavior/Tooltip/PsiStormLiberty=Target is under the effects of Psionic Storm and will take massive damage while in this area of effect.
+Behavior/Tooltip/PulsarBeamSwarm@WeaponOn=This Oracle's weapon is enabled and can attack ground units.
 Behavior/Tooltip/PurificationNovaPhasedLotV1@Phased=This unit is invulnerable and is able to move through other units.
 Behavior/Tooltip/PurificationNovaPhasedLotV1@PhasedEnd=This unit is invulnerable and is able to move through other units.
 Behavior/Tooltip/RavenAntiArmorMissile@ArmorReduction=This unit has reduced armor.
@@ -117,6 +122,7 @@ Behavior/Tooltip/RavenInterferenceMatrix=Weapons and abilities are disabled.
 Behavior/Tooltip/SeekerMissileSwarm@TargetTint=This unit is being targeted by a Seeker Missile.
 Behavior/Tooltip/StasisWardLotV1@ActivateTarget=This unit cannot move, attack, or be damaged.
 Behavior/Tooltip/WarpInLiberty@PowerUserWarpable=Unit is being materialized by a Warp Gate.
+Button/Name/AdeptLotV@WarpIn=Warp In Adept
 Button/Name/AdvancedBallistics=Advanced Ballistics
 Button/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
 Button/Name/AmplifiedShieldingLotV=Research Amplified Shielding
@@ -167,12 +173,15 @@ Button/Name/ObserverLotV1@SiegedUnsiege=Observer Mode
 Button/Name/ObserverLotV2=Warp In Observer
 Button/Name/ObserverLotV2@Siege=Surveillance Mode
 Button/Name/ObserverLotV2@SiegedUnsiege=Observer Mode
+Button/Name/OracleLotV1=Warp In Oracle
 Button/Name/OracleLotV1@BuildStasisTrap=Build Stasis Ward
 Button/Name/OracleLotV1@Revelation=Revelation
 Button/Name/PointDefenseDroneSwarm@BuildPointDefenseDrone=Build Point Defense Drone
 Button/Name/PsiStormHighTemplarLiberty=Research Psionic Storm
 Button/Name/PsiStormLiberty=Psionic Storm
 Button/Name/PsionicTransferLotV=Psionic Transfer
+Button/Name/PulsarBeamSwarm@WeaponOff=Deactivate Pulsar Beam
+Button/Name/PulsarBeamSwarm@WeaponOn=Activate Pulsar Beam
 Button/Name/PurificationNovaLotV1=Purification Nova
 Button/Name/PurificationNovaPhasedLotV1=Purification Nova
 Button/Name/RapidFireLaunchers@Passive=Rapid Fire Launchers
@@ -196,13 +205,16 @@ Button/Name/ShadowStrideLotV=Shadow Stride
 Button/Name/SiegeArmorLotV1@BuildSiegeArmor=Build 攻城坦克
 Button/Name/SiegeArmorLotV1Morph@SiegeMode=Siege Mode
 Button/Name/SiegeArmorLotV1Morph@Unsiege=Tank Mode
+Button/Name/StalkerLiberty@WarpIn=Warp In Stalker
 Button/Name/StasisWardLotV1@Activate=Stasis Trap 
 Button/Name/StasisWardLotV1@ActivatePassive=Stasis Trap
 Button/Name/StasisWardLotV1@PermanentlyCloakedPassive=Permanently Cloaked
 Button/Name/TempestSwarm=Warp In Tempest
+Button/Name/WarpInLiberty@Research=Research Warp Gate
 Button/Name/WarpPrismLotV1@Siege=Phasing Mode
 Button/Name/WarpPrismLotV1@SiegedUnsiege=Transport Mode
 Button/Tooltip/AdeptLotV@Shade=Projects an invulnerable Shade that can move but cannot attack. After <d time="10"/>, the Adept teleports to the Shade's location.
+Button/Tooltip/AdeptLotV@WarpIn=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
 Button/Tooltip/AdvancedBallistics@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
 Button/Tooltip/AmplifiedShieldingLotV=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShieldingLotV:Unit,AdeptLotV,ShieldsMax$"/>.
@@ -275,6 +287,8 @@ Button/Tooltip/PointDefenseDroneSwarm@PointDefenseDrone=Uses a laser to shoot do
 Button/Tooltip/PsiStormHighTemplarLiberty=Allows <c val="ffff8a">High Templar</c> to summon a storm of psionic energy, causing heavy damage to every unit in the target area.<n/><n/>Creates a storm of psionic energy that lasts <d time="4"/>, causing up to 80 damage to all units in the target area.
 Button/Tooltip/PsiStormLiberty=Creates a storm of psionic energy that lasts <d time="4"/>, causing up to 80 damage to all units in the target area.
 Button/Tooltip/PsionicTransferLotV=Projects an invulnerable Shade that can move but cannot attack. After <d time="10"/>, the Adept teleports to the Shade's location.
+Button/Tooltip/PulsarBeamSwarm@WeaponOff=Deactivates the Oracle's Pulsar Beam and prevents it from attacking.
+Button/Tooltip/PulsarBeamSwarm@WeaponOn=Charges the Oracle's Pulsar Beam and allows it to attack enemy ground units.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,OracleWeapon,Modification.VitalRegenArray[2] + Unit,Oracle,EnergyRegenRate)" precision="1"/> energy per second.</c>
 Button/Tooltip/PurificationNovaLotV1=Shoots out a ball of energy that lasts <d ref="Behavior,PurificationNovaLotV1@Target,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,PurificationNovaLotV1@Damage,Amount"/> splash damage and an additional <d ref="Effect,PurificationNovaLotV1@Damage,ShieldBonus"/> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.
 Button/Tooltip/PurificationNovaPhasedLotV1=Shoots out a ball of energy that lasts <d ref="Behavior,PurificationNovaLotV1@Target,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,PurificationNovaLotV1@Damage,Amount"/> splash damage and an additional <d ref="Effect,PurificationNovaLotV1@Damage,ShieldBonus"/> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.
 Button/Tooltip/RapidFireLaunchers@Passive=Improves the Lock On ability to fire the first 12 shots quickly.
@@ -298,12 +312,14 @@ Button/Tooltip/SalvageLiberty=Salvages the structure, removing it and returning 
 Button/Tooltip/SeekerMissileSwarm=Deploys a Seeker Missile which activates after <d time="5"/> and pursues the target unit, dealing <d ref="Effect,SeekerMissileDamage,Amount"/> splash damage upon contact.
 Button/Tooltip/SensorTowerLotV1=Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy.
 Button/Tooltip/ShadowStrideLotV=Teleports the Dark Templar to a nearby target location. Ability can only be used once every <d ref="Abil,ShadowStrideLotV,Cost[0].Cooldown.TimeUse"/> seconds.
+Button/Tooltip/ShieldBatteryLotV=Defensive structure. Recharges shields of nearby units.
 Button/Tooltip/SiegeArmorLotV1=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/SiegeArmorLotV1@BuildSiegeArmor=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c><n/><n/>Originalli introduced in Legacy of the Void. Can be picked up by Medivacs in SIege Mode.
 Button/Tooltip/SiegeArmorLotV1Morph@SiegeMode=Deploys into Siege Mode. In this mode 攻城坦克s have very long range and inflict area damage. 攻城坦克s in this mode cannot move or attack targets at close range, but can be picked up by Medivacs.
 Button/Tooltip/SiegeArmorLotV1Morph@Unsiege=Reverts to Tank Mode. In this mode 攻城坦克s can move, but they do less damage.
 Button/Tooltip/SiegeArmorSiegedLotV1=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/StalkerLiberty=Ranged support strider.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/StalkerLiberty@WarpIn=Ranged support strider.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/StasisWardLotV1=Ground unit trap. Cloak renders the Stasis Ward invisible to enemies without detection.
 Button/Tooltip/StasisWardLotV1@Activate=Traps nearby enemies in stasis for <d ref="Behavior,StasisWardLotV1@ActivateTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
 Button/Tooltip/StasisWardLotV1@ActivatePassive=Traps nearby enemies in stasis for <d ref="Behavior,OracleStasisTrapTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
@@ -311,6 +327,7 @@ Button/Tooltip/StasisWardLotV1@PermanentlyCloakedPassive=The Stasis Ward is perm
 Button/Tooltip/TempestSwarm=Siege artillery craft. Attacks from long range.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/WarpInAdeptLotV=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/WarpInLiberty@Pylon=Provides supply.<n/>Supply allows you to warp in more units.<n/>Creates power for nearby structures.
+Button/Tooltip/WarpInLiberty@Research=Enables <c val="ffff8a">Gateways</c> to upgrade to Warp Gates.
 Button/Tooltip/WarpPrismLotV1=Flying transport. Can load units from a distance. Can also deploy to create a power field.
 Button/Tooltip/WarpPrismLotV1@Siege=Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode.
 Button/Tooltip/WarpPrismLotV1@Sieged=Immobile power provider. Can load units from a distance. Can switch to a mobile Transport Mode.
@@ -372,6 +389,7 @@ DataCollection/Name/PointDefenseDroneSwarm=Raven Point Defense Drone
 DataCollection/Name/PsiStormHighTemplarLiberty=Psionic Storm
 DataCollection/Name/PsiStormLiberty=Psi Storm
 DataCollection/Name/PsionicTransferLotV=Psionic Transfer
+DataCollection/Name/PulsarBeamSwarm=Pulsar Beam
 DataCollection/Name/PurificationNovaLotV1=Purification Nova
 DataCollection/Name/PurificationNovaPhasedLotV1=Purification Nova (Phased)
 DataCollection/Name/RapidFireLaunchers=Rapid Fire Launchers
@@ -388,6 +406,7 @@ DataCollection/Name/SalvageLiberty=Salvage
 DataCollection/Name/SeekerMissileSwarm=Raven Seeker Missile
 DataCollection/Name/SensorTowerLotV1=Sensor Tower
 DataCollection/Name/ShadowStrideLotV=Shadow Stride
+DataCollection/Name/ShieldBatteryLotV=Shield Battery
 DataCollection/Name/SiegeArmorLotV1=Siege Armor LotV1
 DataCollection/Name/SiegeArmorLotV1Morph=Siege Armor Morph
 DataCollection/Name/SiegeArmorSiegedLotV1=Siege Armor Sieged LotV1
@@ -574,6 +593,8 @@ Effect/Name/PsionicTransferLotV@TeleportSet=Teleport Set
 Effect/Name/PsionicTransferLotV@TimerCancelSet=Timer Cancel Set
 Effect/Name/PsionicTransferLotV@TimerSpawnAB=Timer Spawn AB
 Effect/Name/PsionicTransferLotV@UnitOrderQueue=Unit Order Queue
+Effect/Name/PulsarBeamSwarm@CP=CP
+Effect/Name/PulsarBeamSwarm@Damage=Damage
 Effect/Name/PurificationNovaLotV1@CU=CU
 Effect/Name/PurificationNovaLotV1@CasterAB=Caster AB
 Effect/Name/PurificationNovaLotV1@Damage=Damage
@@ -764,6 +785,7 @@ Unit/Name/ReaperSwarm=Reaper
 Unit/Name/ReleaseInterceptorsLotV1@Beacon=Release Interceptors Beacon
 Unit/Name/SeekerMissileSwarm@Missile=Missile
 Unit/Name/SensorTowerLotV1=Sensor Tower
+Unit/Name/ShieldBatteryLotV=Shield Battery
 Unit/Name/SiegeArmorLotV1=攻城坦克
 Unit/Name/SiegeArmorSiegedLotV1=攻城坦克
 Unit/Name/StalkerLiberty=Stalker
@@ -907,6 +929,7 @@ Weapon/Name/LiberatorLotV1@Weapon=Lexington Rockets
 Weapon/Name/NapalmSpraySwarmBeta@NapalmSpray=Napalm Spray
 Weapon/Name/PistolSwarm=P-45 Gauss Pistol
 Weapon/Name/PointDefenseDroneSwarm@PointDefenseLaser=Point Defense Laser
+Weapon/Name/PulsarBeamSwarm=Pulsar Beam
 Weapon/Name/RavenAutoTurret@AutoTurretWeapon=12mm Gauss Cannon
 Weapon/Name/StalkerLiberty@ParticleDisruptors=Particle Disruptors
 Weapon/Name/TempestSwarm@AAWeapon=Kinetic Overload

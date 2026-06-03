@@ -28,6 +28,16 @@
         <EffectArray index="Death" value="InterceptorFate"/>
         <MaxCount value="8"/>
     </CAbilArmMagazine>
+    <CAbilResearch id="WarpInLiberty@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="60" Upgrade="WarpGateResearch">
+            <Resource index="Minerals" value="50"/>
+            <Resource index="Vespene" value="50"/>
+            <Button DefaultButtonFace="WarpInLiberty@Research" State="Restricted" Requirements="LearnWarpGate">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilEffectTarget id="FeedbackLiberty">
         <Alignment value="Negative"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -219,6 +229,30 @@
         <CursorEffect value="OracleLotV1@RevelationSearchArea"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="OracleLotV1@Revelation"/>
     </CAbilEffectTarget>
+    <CAbilBehavior id="PulsarBeamSwarm@Weapon">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="PulsarBeamSwarm@WeaponOn">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Off" DefaultButtonFace="PulsarBeamSwarm@WeaponOff">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+            <Cooldown TimeUse="4"/>
+        </Cost>
+        <BehaviorArray value="PulsarBeamSwarm@WeaponOn"/>
+    </CAbilBehavior>
+    <CAbilTrain id="OracleLotV1@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="52" Effect="WarpInEffect">
+            <Button DefaultButtonFace="OracleLotV1"/>
+            <Unit value="OracleLotV1"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilEffectInstant id="StasisWardLotV1@Activate">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Effect index="0" value="StasisWardLotV1@ActivateSet"/>
@@ -323,6 +357,9 @@
     <CAbilBuild id="ProtossBuild">
         <InfoArray index="Build19" Unit="WarpInLiberty@Pylon" Time="25">
             <Button DefaultButtonFace="Pylon"/>
+        </InfoArray>
+        <InfoArray index="Build20" Unit="ShieldBatteryLotV" Time="40">
+            <Button DefaultButtonFace="ShieldBattery" State="Suppressed" Requirements="HaveCyberneticsCore"/>
         </InfoArray>
     </CAbilBuild>
     <CAbilEffectTarget id="PsiStormLiberty">
@@ -460,8 +497,12 @@
     </CAbilBuild>
     <CAbilTrain id="GatewayTrain">
         <InfoArray index="Train9" Time="42">
-            <Button DefaultButtonFace="Stalker" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Button DefaultButtonFace="StalkerLiberty@WarpIn" State="Restricted" Requirements="HaveCyberneticsCore"/>
             <Unit value="StalkerLiberty"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="38">
+            <Button DefaultButtonFace="AdeptLotV@WarpIn" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Unit value="AdeptLotV"/>
         </InfoArray>
     </CAbilTrain>
     <CAbilEffectTarget id="KD8ChargeLotV1">
@@ -645,7 +686,19 @@
                 <TimeUse value="32"/>
             </Charge>
             <Cooldown Link="WarpGateTrain"/>
-            <Button DefaultButtonFace="Stalker" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Button DefaultButtonFace="StalkerLiberty@WarpIn" State="Restricted" Requirements="HaveCyberneticsCore"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="16" Unit="AdeptLotV">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value="WarpGateTrain"/>
+                <TimeUse value="28"/>
+                <Flags index="EnableChargeTimeQueuing" value="1"/>
+            </Charge>
+            <Cooldown Link="WarpGateTrain"/>
+            <Button DefaultButtonFace="AdeptLotV@WarpIn" State="Restricted" Requirements="HaveCyberneticsCore"/>
         </InfoArray>
     </CAbilWarpTrain>
     <CAbilWarpable id="WarpInLiberty@Warpable">

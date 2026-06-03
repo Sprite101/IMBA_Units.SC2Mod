@@ -1142,9 +1142,9 @@
         <AbilArray Link="OracleLotV1@Revelation"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="attack"/>
-        <AbilArray Link="OracleWeapon"/>
+        <AbilArray Link="PulsarBeamSwarm@Weapon"/>
         <AbilArray Link="OracleLotV1@BuildStasisWard"/>
-        <WeaponArray Link="Oracle"/>
+        <WeaponArray Link="PulsarBeamSwarm"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1153,9 +1153,9 @@
             <LayoutButtons Face="OracleAttack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="OracleLotV1@Revelation" Type="AbilCmd" AbilCmd="OracleLotV1@Revelation,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="OracleBuildStasisTrap" Type="AbilCmd" AbilCmd="OracleLotV1@BuildStasisWard,Build1" Row="2" Column="1"/>
-            <LayoutButtons Face="OracleWeaponOn" Type="AbilCmd" AbilCmd="OracleWeapon,On" Row="2" Column="2"/>
-            <LayoutButtons Face="OracleWeaponOff" Type="AbilCmd" AbilCmd="OracleWeapon,Off" Row="2" Column="3"/>
+            <LayoutButtons Face="OracleLotV1@BuildStasisTrap" Type="AbilCmd" AbilCmd="OracleLotV1@BuildStasisWard,Build1" Row="2" Column="1"/>
+            <LayoutButtons Face="PulsarBeamSwarm@WeaponOn" Type="AbilCmd" AbilCmd="PulsarBeamSwarm@Weapon,On" Row="2" Column="2"/>
+            <LayoutButtons Face="PulsarBeamSwarm@WeaponOff" Type="AbilCmd" AbilCmd="PulsarBeamSwarm@Weapon,Off" Row="2" Column="3"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="OracleLotV1@BuildStasisWard,Halt" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.75"/>
@@ -1179,6 +1179,68 @@
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
+    </CUnit>
+    <CUnit id="ShieldBatteryLotV">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <LifeArmor value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossBuildingPlating"/>
+        <EnergyStart value="50"/>
+        <EnergyMax value="100"/>
+        <EnergyRegenRate value="0.5625"/>
+        <ShieldsStart value="200"/>
+        <ShieldsMax value="200"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Sight value="9"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="75"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="ShieldBatteryRechargeEx5"/>
+        <BehaviorArray Link="PowerUserQueueSmall"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="ShieldBatteryRechargeEx5,Cancel" Row="0" Column="1"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="ShieldBatteryRecharge" Type="AbilCmd" AbilCmd="ShieldBatteryRechargeEx5,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="5"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="201"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
     <CUnit id="StasisWardLotV1">
         <Race value="Prot"/>
