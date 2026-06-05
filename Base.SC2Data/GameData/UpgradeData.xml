@@ -828,4 +828,18 @@
         <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,Amount" Value="2"/>
         <EffectArray Reference="Effect,NapalmSpraySwarmBeta@Damage,AttributeBonus[Light]" Value="1.000000"/>
     </CUpgrade>
+    <CUpgrade id="FluxVanesLotV">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fluxvanes.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Unit,VoidRayLotV,Speed" Value="3.320300"/>
+        <EffectArray Operation="Set" Reference="Unit,VoidRayLotV,Acceleration" Value="2.687500"/>
+        <EffectArray Operation="Set" Reference="Behavior,VoidRaySwarmDamageBoost,Modification.MoveSpeedMultiplier" Value="0.621"/>
+        <EffectArray Operation="Set" Reference="Behavior,VoidRaySwarmDamageBoost,Modification.AccelerationMultiplier" Value="0.7441"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="VoidRayLotV"/>
+    </CUpgrade>
 </Catalog>

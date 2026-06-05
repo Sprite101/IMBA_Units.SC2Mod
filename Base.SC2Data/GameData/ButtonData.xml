@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="ChronoBoostLotV">
+        <Icon value="Assets\Textures\btn-ability-protoss-protoncharge-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="OracleLotV1">
         <Icon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>
@@ -25,11 +29,21 @@
         <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="FluxVanesLotV">
+        <Icon value="Assets\Textures\BTN-Upgrade-Protoss-FluxVanes.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Protoss-FluxVanes.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="StalkerLiberty@WarpIn">
         <Icon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Universal value="1"/>
+    </CButton>
+    <CButton id="VoidRayLotV">
+        <Icon value="Assets\Textures\btn-unit-protoss-warpray.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-warpray.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="WarpInLiberty@Research">
         <Icon value="Assets\Textures\BTN-Building-Protoss-WarpGate.dds"/>

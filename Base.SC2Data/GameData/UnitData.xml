@@ -1407,6 +1407,77 @@
         <Mover value="MissileDefault"/>
         <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
     </CUnit>
+    <CUnit id="VoidRayLotV">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="100"/>
+        <ShieldsMax value="100"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Speed value="2.75"/>
+        <Acceleration value="2"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Height value="3.75"/>
+        <VisionHeight value="15"/>
+        <Food value="-4"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="200"/>
+        <CostResource index="Vespene" value="150"/>
+        <RepairTime value="60"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="100"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="VoidRaySwarmDamageBoost"/>
+        <AbilArray Link="VoidRaySwarmDamageBoostCancel"/>
+        <WeaponArray Link="VoidRaySwarm"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="VoidRaySwarmDamageBoost" Type="AbilCmd" AbilCmd="VoidRaySwarmDamageBoost,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="VoidRaySwarmDamageBoostCancel,Execute" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="0.75"/>
+        <ScoreMake value="400"/>
+        <ScoreKill value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="78"/>
+        <MinimapRadius value="1"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkVoidRay"/>
+        <EquipmentArray Weapon="VoidRaySwarmDisplayDummy"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="160"/>
+        <GlossaryStrongArray value="Battlecruiser"/>
+        <GlossaryStrongArray value="Corruptor"/>
+        <GlossaryStrongArray value="Immortal"/>
+        <GlossaryWeakArray value="Marine"/>
+        <GlossaryWeakArray value="Hydralisk"/>
+        <GlossaryWeakArray value="Phoenix"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+    </CUnit>
     <CUnit id="WarpInLiberty@Pylon">
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>

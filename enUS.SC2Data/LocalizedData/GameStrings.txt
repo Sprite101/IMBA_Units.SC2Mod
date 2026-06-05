@@ -5,6 +5,7 @@ Abil/Name/BlinkLiberty@ResearchBlink=Research
 Abil/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
 Abil/Name/CarrierLotV1@Train=Build
 Abil/Name/CarrierLotV1@WeaponHangar=Hangar
+Abil/Name/ChronoBoostLotV=Chrono Boost
 Abil/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CycloneLockOnAirLoTV1@LockOn=Lock On
@@ -16,8 +17,9 @@ Abil/Name/CycloneLotV2@Train=Build
 Abil/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Abil/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
 Abil/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
-Abil/Name/ExtendedThermalLanceLiberty@ResearchExtendedThermalLance=Extended Thermal Lance
+Abil/Name/ExtendedThermalLanceLiberty@Research=Research
 Abil/Name/FeedbackLiberty=Feedback
+Abil/Name/FluxVanesLotV@Research=Research
 Abil/Name/GhostLotV1@ChannelSnipe=Channel Snipe
 Abil/Name/GhostLotV1@EMP=EMP
 Abil/Name/GhostLotV1@Train=Train
@@ -82,6 +84,7 @@ Abil/Name/SiegeArmorLotV1Morph@SiegeMode=Siege
 Abil/Name/SiegeArmorLotV1Morph@Unsiege=Unsiege
 Abil/Name/StasisWardLotV1@Activate=Activate
 Abil/Name/TempestSwarm@Build=Build
+Abil/Name/VoidRayLotV@Build=Build
 Abil/Name/WarpInLiberty@Research=Research
 Abil/Name/WarpInLiberty@Warpable=Warpable
 Abil/Name/WarpPrismLotV1@Siege=Siege
@@ -91,6 +94,7 @@ Abil/Name/WidowMineSwarm@Train2=Build
 Abil/Name/WidowMineSwarm@WidowMineAttack=Widow Mine Attack
 Abil/Name/WidowMineSwarm@WidowMineBurrow=Widow Mine Burrow
 Abil/Name/WidowMineSwarm@WidowMineUnburrow=Widow Mine Unburrow 
+Behavior/Name/ChronoBoostLotV=Chrono Boost
 Behavior/Name/CycloneLockOnAirLoTV1@LockOn=Lock On Target
 Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
 Behavior/Name/CycloneLockOnLotV2@LockOn=Lock On Target
@@ -109,6 +113,7 @@ Behavior/Name/SeekerMissileSwarm@TargetTint=Seeker Missile
 Behavior/Name/SeekerMissileSwarm@Timeout=Timeout
 Behavior/Name/StasisWardLotV1@ActivateTarget=Stasis
 Behavior/Name/WarpInLiberty@PowerUserWarpable=Warping In
+Behavior/Tooltip/ChronoBoostLotV=This structure is in an accelerated state.
 Behavior/Tooltip/CycloneLockOnAirLoTV1@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/OracleLotV1@RevelationRevealed=This unit or structure is providing vision for the caster.
@@ -132,6 +137,7 @@ Button/Name/BarracksLiberty=Build Barracks
 Button/Name/BunkerLiberty=Build Bunker
 Button/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
 Button/Name/CarrierLotV1=Warp In Carrier
+Button/Name/ChronoBoostLotV=Chrono Boost
 Button/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Button/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
 Button/Name/CycloneLockOnAirLoTV1@Button=Lock On
@@ -144,6 +150,7 @@ Button/Name/EnhancedShockwaves@EnhancedShockwaves=Enhanced Shockwaves
 Button/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
 Button/Name/ExtendedThermalLanceLiberty=Research Extended Thermal Lance
 Button/Name/FeedbackLiberty=Feedback
+Button/Name/FluxVanesLotV=Research Flux Vanes
 Button/Name/GhostLotV1@ChannelSnipe=Steady Targeting
 Button/Name/GhostLotV1@EMP=EMP Round
 Button/Name/GhostLotV1@TrainGhost=Train Ghost
@@ -210,6 +217,7 @@ Button/Name/StasisWardLotV1@Activate=Stasis Trap
 Button/Name/StasisWardLotV1@ActivatePassive=Stasis Trap
 Button/Name/StasisWardLotV1@PermanentlyCloakedPassive=Permanently Cloaked
 Button/Name/TempestSwarm=Warp In Tempest
+Button/Name/VoidRayLotV=Warp In Void Ray
 Button/Name/WarpInLiberty@Research=Research Warp Gate
 Button/Name/WarpPrismLotV1@Siege=Phasing Mode
 Button/Name/WarpPrismLotV1@SiegedUnsiege=Transport Mode
@@ -228,6 +236,7 @@ Button/Tooltip/BuildGhostLotV1=Mobile assault vehicle. Can use Lock On to quickl
 Button/Tooltip/BunkerLiberty=Defensive structure. <n/>Infantry fights from inside. <n/><n/><c val="#ColorAttackInfo">Bonus: +1 range to units inside.</c>
 Button/Tooltip/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Increases Health restored per second from 9 to 15 and reduces energy cost from 3 health per 1 energy to 5 health per 1 energy.
 Button/Tooltip/CarrierLotV1=Capital ship. Can build and launch Interceptors to make attacks. Can use Release Interceptors ability.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/ChronoBoostLotV=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
 Button/Tooltip/ColossusLiberty=Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/CorvidReactorLotV@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
 Button/Tooltip/CorvidReactorSwarm@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
@@ -244,6 +253,7 @@ Button/Tooltip/EnhancedShockwaves@EnhancedShockwaves=Increases the radius of <c 
 Button/Tooltip/EnhancedShockwaves@ResearchEnhancedShockwaves=Increases the <c val="ffff8a">Ghost's</c> EMP Round radius by +<d ref="$UpgradeEffectArrayValue:EnhancedShockwaves@Upgrade:Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius$" precision="1"/>.
 Button/Tooltip/ExtendedThermalLanceLiberty=Increases the range of the <c val="ffff8a">Colossus</c> weapon by <d ref="$UpgradeEffectArrayValue:ExtendedThermalLanceLiberty:Weapon,ColossusLiberty@Weapon,Range$"/>.
 Button/Tooltip/FeedbackLiberty=Drains all energy from the target. Deals <d ref="(Effect,Feedback,VitalFractionCurrent[Energy])" Precision="2"/> damage per point of energy.
+Button/Tooltip/FluxVanesLotV=Increases the speed and acceleration of the <c val="ffff8a">Void Ray</c>.
 Button/Tooltip/GhostLotV1=Sniper. Can use Steady Targeting, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Steady Targeting deals 170 flat damage and doesn't have "cancel" range. Enhanced Shockwaves can be upgraded to give EMP +0.5 radius.<n/>
 Button/Tooltip/GhostLotV1@ChannelSnipe=After carefully aiming for <d ref="Effect,ChannelSnipeCreatePersistent,PeriodCount*Effect,ChannelSnipeCreatePersistent,PeriodicPeriodArray[0]" precision="2"/> seconds while not taking damage, the Ghost fires a sniper round dealing <d ref="Effect,GhostLotV1@ChannelSnipeDamage,Amount"/> damage. Ignores armor.<n/><n/><c val="#ColorAttackInfo">Can only target biological units.</c>
 Button/Tooltip/GhostLotV1@EMP=Creates an electromagnetic pulse that does 100 damage to shields and energy of all units in the targeted area. Cloaked units hit by EMP are revealed for a short time.
@@ -325,6 +335,7 @@ Button/Tooltip/StasisWardLotV1@Activate=Traps nearby enemies in stasis for <d re
 Button/Tooltip/StasisWardLotV1@ActivatePassive=Traps nearby enemies in stasis for <d ref="Behavior,OracleStasisTrapTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
 Button/Tooltip/StasisWardLotV1@PermanentlyCloakedPassive=The Stasis Ward is permanently cloaked.
 Button/Tooltip/TempestSwarm=Siege artillery craft. Attacks from long range.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/VoidRayLotV=Surgical strike craft.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/WarpInAdeptLotV=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/WarpInLiberty@Pylon=Provides supply.<n/>Supply allows you to warp in more units.<n/>Creates power for nearby structures.
 Button/Tooltip/WarpInLiberty@Research=Enables <c val="ffff8a">Gateways</c> to upgrade to Warp Gates.
@@ -344,6 +355,7 @@ DataCollection/Name/BlinkLiberty=Blink
 DataCollection/Name/BunkerLiberty=Bunker
 DataCollection/Name/CaduceusReactorSwarmBeta=Caduceus Reactor
 DataCollection/Name/CarrierLotV1=Carrier
+DataCollection/Name/ChronoBoostLotV=Chrono Boost
 DataCollection/Name/ColossusLiberty=Colossus
 DataCollection/Name/CorvidReactorLotV=Corvid Reactor
 DataCollection/Name/CorvidReactorSwarm=Corvid Reactor
@@ -358,6 +370,7 @@ DataCollection/Name/DurableMaterialsSwarm=Durable Materials
 DataCollection/Name/EnhancedShockwaves=Enhanced Shockwaves
 DataCollection/Name/ExtendedThermalLanceLiberty=Extended Thermal Lance
 DataCollection/Name/FeedbackLiberty=Feedback
+DataCollection/Name/FluxVanesLotV=Flux Vanes
 DataCollection/Name/GaussPistolLiberty=Pistol
 DataCollection/Name/GhostLotV1=GhostLotV1
 DataCollection/Name/GhostWoL=GhostWoL
@@ -416,6 +429,7 @@ DataCollection/Name/TempestLotV1=Tempest
 DataCollection/Name/TempestSwarm=Tempest
 DataCollection/Name/TornadoBlaster=Tornado Blaster
 DataCollection/Name/TyphoonMissilePodLotV2=Typhoon Missile Pod
+DataCollection/Name/VoidRayLotV=Void Ray
 DataCollection/Name/WarpInLiberty=Warp In
 DataCollection/Name/WarpPrismLotV1=Warp Prism
 DataCollection/Name/WidowMineSwarm=Widow Mine
@@ -433,6 +447,7 @@ Effect/Name/AutoTurretSwarm@TimedLifeAB=Timed Life AB
 Effect/Name/CarrierLotV1@WeaponCP=CP
 Effect/Name/CarrierLotV1@WeaponCPUpgraded=CP Upgraded
 Effect/Name/CarrierLotV1@WeaponUseMagazine=Use Magazine
+Effect/Name/ChronoBoostLotV@AB=AB
 Effect/Name/ColossusLiberty@WeaponBackwardsCP=Backwards CP
 Effect/Name/ColossusLiberty@WeaponBackwardsSearchArea=Backwards Search Area
 Effect/Name/ColossusLiberty@WeaponDamage=Weapon Damage
@@ -797,6 +812,7 @@ Unit/Name/TempestSwarm@AGWeaponMissile=Weapon Attack Missile
 Unit/Name/TornadoBlaster@Missile=Missile
 Unit/Name/TyphoonMissilePod@Missile=Missile
 Unit/Name/TyphoonMissilePodLotV2@Missile=Missile
+Unit/Name/VoidRayLotV=Void Ray
 Unit/Name/WarpInLiberty@Pylon=Pylon
 Unit/Name/WarpPrismLotV1=Warp Prism
 Unit/Name/WarpPrismLotV1@Sieged=Warp Prism
@@ -812,6 +828,7 @@ Upgrade/Name/DrillingClaws@DrillingClaws=Drilling Claws
 Upgrade/Name/DurableMaterialsSwarm=Durable Materials
 Upgrade/Name/EnhancedShockwaves@Upgrade=Enhanced Shockwaves
 Upgrade/Name/ExtendedThermalLanceLiberty=Extended Thermal Lance
+Upgrade/Name/FluxVanesLotV=Flux Vanes
 Upgrade/Name/GraviticBoostersLotV1=Gravitic Boosters
 Upgrade/Name/GraviticBoostersLotV2=Gravitic Boosters
 Upgrade/Name/GravitonCatapultLotV1=Graviton Catapult

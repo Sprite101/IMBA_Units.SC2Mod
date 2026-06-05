@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CBehaviorBuff id="ChronoBoostLotV">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-chronoboost.dds"/>
+        <BehaviorCategories index="Fast" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="14"/>
+        <Modification>
+            <RateMultiplierArray index="Charge" value="2"/>
+            <RateMultiplierArray index="Cooldown" value="2"/>
+            <RateMultiplierArray index="Morph" value="2"/>
+            <RateMultiplierArray index="Progress" value="2"/>
+            <RateMultiplierArray index="Queueable" value="2"/>
+            <RateMultiplierArray index="Spawn" value="2"/>
+            <RateMultiplierArray index="Creep" value="2"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="ImmortalLiberty@HardenedShield">
         <Alignment value="Positive"/>
         <Cost>

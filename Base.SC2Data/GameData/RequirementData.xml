@@ -28,6 +28,10 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AndNotCountUpgradeGraviticBoostersLotV1QueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="FluxVanesLotV@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeFluxVanesLotVQueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="PsiStormHighTemplarLiberty@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradePsiStormHighTemplarLibertyCompleteOnly3263798822"/>

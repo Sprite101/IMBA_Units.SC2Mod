@@ -90,6 +90,33 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Carrier-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorModel id="ChronoBoostLotV@Model" parent="ModelAnimationStyleContinuous">
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <On Terms="ActorCreation" Send="SetScale 0.300000"/>
+        <On Terms="Behavior.ChronoBoostLotV.On" Send="Create"/>
+        <On Terms="Behavior.ChronoBoostLotV.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <Model value="TimeWarp"/>
+        <AutoScaleFactor value="0.750000"/>
+    </CActorModel>
+    <CActorSound id="ChronoBoostLotV@ImpactSound" parent="SoundOneShot">
+        <On Terms="Behavior.ChronoBoostLotV.On" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <Sound value="Obelisk_TimeWarpImpact"/>
+    </CActorSound>
+    <CActorModel id="ChronoBoostLotV@LaunchModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Abil.ChronoBoostLotV.SourceCastStart" Send="Create"/>
+        <Model value="TimeWarpLaunch"/>
+    </CActorModel>
+    <CActorSound id="ChronoBoostLotV@LaunchSound" parent="SoundOneShot">
+        <On Terms="Abil.ChronoBoostLotV.SourceCastStart" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <Sound value="Obelisk_TimeWarpLaunch"/>
+    </CActorSound>
     <CActorBeamSimple id="OracleLotV1@BuildStasisWardBuildBeam" parent="BeamSimpleAnimationStyleContinuous">
         <On Terms="Effect.OracleLotV1@BuildStasisWardBuildBeamOn.Start; At Caster" Send="Create"/>
         <On Terms="Abil.OracleLotV1@BuildStasisWard.WorkerStop" Send="AnimBracketStop BSD"/>
@@ -220,6 +247,115 @@
             <Image value="Assets\Textures\Wireframe-Protoss-ShieldBattery-Shield01.dds"/>
             <Image value="Assets\Textures\Wireframe-Protoss-ShieldBattery-Shield02.dds"/>
             <Image value="Assets\Textures\Wireframe-Protoss-ShieldBattery-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
+    <CActorUnit id="VoidRayLotV" parent="GenericUnitBase" unitName="VoidRayLotV">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <Remove Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack Stand,Channel Attack,End"/>
+        <Remove Terms="WeaponStart.*.AttackStart" Send="StatusIncrement WeaponTracker"/>
+        <Remove Terms="WeaponStop.*.AttackStop; ValidateUnit NotQuadAndNotDoubleDamage" Send="AnimBracketStop Attack"/>
+        <Remove Terms="WeaponStop.*.AttackStop" Send="StatusDecrement WeaponTracker"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack Stand,Channel Attack,End"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="StatusIncrement WeaponTracker"/>
+        <On Terms="WeaponStop.*.AttackStop; ValidateUnit NotQuadAndNotDoubleDamage" Send="AnimBracketStop Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="StatusDecrement WeaponTracker"/>
+        <On Terms="Behavior.VoidRayPhase2.Off; !HasStatus WeaponTracker; !ValidateUnit QuadDamage" Send="AnimBracketStop Attack"/>
+        <On Terms="Behavior.VoidRayPhase3.Off; !HasStatus WeaponTracker" Send="AnimBracketStop Attack"/>
+        <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundLarge"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create VoidRay_Land"/>
+        <On Terms="ActorCreation" Send="StatusSet WeaponAnim 0"/>
+        <On Terms="ActorCreation" Send="StatusSet WeaponAttacking 0"/>
+        <On Terms="ActorCreation" Send="StatusSet WeaponEnhanced 0"/>
+        <On Terms="WeaponStart.*.AttackStart; IsStatus WeaponAnim 0" Send="AnimBracketStart Powered Attack Stand,Channel Attack,End"/>
+        <On Terms="WeaponStart.*.AttackStart; IsStatus WeaponAnim 0" Send="StatusSet WeaponAnim 1"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="StatusSet WeaponAttacking 1"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="StatusSet WeaponAttacking 0"/>
+        <On Terms="WeaponStop.*.AttackStop; IsStatus WeaponEnhanced 0" Send="AnimBracketStop Powered"/>
+        <On Terms="WeaponStop.*.AttackStop; IsStatus WeaponEnhanced 0" Send="StatusSet WeaponAnim 0"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.On; IsStatus WeaponAnim 0" Send="AnimBracketStart Powered Attack Stand,Channel Attack,End"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.On; IsStatus WeaponAnim 0" Send="StatusSet WeaponAnim 1"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.On" Send="StatusSet WeaponEnhanced 1"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.Off" Send="StatusSet WeaponEnhanced 0"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.Off; IsStatus WeaponAttacking 0" Send="AnimBracketStop Powered"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.Off; IsStatus WeaponAttacking 0" Send="StatusSet WeaponAnim 0"/>
+        <On Terms="WeaponStart.*.AttackStart; IsStatus WeaponEnhanced 0" Send="Create VoidRayCenterBeam"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.Off; IsStatus WeaponAttacking 1" Send="Create VoidRayCenterBeam"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.On" Target="VoidRayCenterBeam" Send="Destroy"/>
+        <On Terms="WeaponStop.*.AttackStop" Target="VoidRayCenterBeam" Send="Destroy"/>
+        <On Terms="WeaponStart.*.AttackStart; IsStatus WeaponEnhanced 0" Send="Create VoidRaySound1"/>
+        <On Terms="WeaponStart.*.AttackStart; IsStatus WeaponEnhanced 1" Send="Create VoidRaySound2"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.On; IsStatus WeaponAttacking 1" Target="VoidRaySound1" Send="Destroy"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.On; IsStatus WeaponAttacking 1" Send="Create VoidRaySound2"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.Off; IsStatus WeaponAttacking 1" Target="VoidRaySound2" Send="Destroy"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.Off; IsStatus WeaponAttacking 1" Send="Create VoidRaySound1"/>
+        <On Terms="WeaponStop.*.AttackStop" Target="VoidRaySound1" Send="Destroy"/>
+        <On Terms="WeaponStop.*.AttackStop" Target="VoidRaySound2" Send="Destroy"/>
+        <On Terms="Signal.*.VoidRaySwarmAttackBeamModel" Send="RefSetFromMsg ::actor.VoidRaySwarmAttackBeamModel ::Sender"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.On" Target="::actor.VoidRaySwarmAttackBeamModel" Send="Signal PowerUp"/>
+        <On Terms="Behavior.VoidRaySwarmDamageBoost.Off" Target="::actor.VoidRaySwarmAttackBeamModel" Send="Signal PowerDown"/>
+        <On Terms="Behavior.WarpInEffect.Off; IsStatus WeaponAnim 1" Send="AnimBracketStart Powered Attack Stand,Channel Attack,End"/>
+        <On Terms="Behavior.WarpInEffect.On" Send="ModelSwap VoidRayWarpInStargate"/>
+        <On Terms="Behavior.WarpInEffect.On" Send="$Spell"/>
+        <On Terms="Behavior.WarpInEffect.On" Send="AnimBaselineStop"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="ModelSwap VoidRay"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBaselineStart"/>
+        <HostSiteOps Ops="SOpBankerVoidRay"/>
+        <Model value="VoidRay"/>
+        <AnimBlendTime value="0.500000"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <Baselines index="Walk" BlendIn="1.500000" BlendOut="2.000000"/>
+        <BuildModel value="VoidRayWarpIn"/>
+        <DeathArray index="Normal" ModelLink="VoidRayDeath" SoundLink="VoidRay_Explode"/>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathLarge" Name="Hallucination"/>
+        <DeathCustoms>
+            <ActorModel value="VoidRayDeathRagdoll"/>
+            <ModelLink value="VoidRayDeathRagdoll"/>
+            <Name value="RagdollBasic"/>
+            <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+            <BodySquibs Name="Basic" Model="ProtossTinyRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionFlier"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="VoidRay"/>
+        <PortraitModel value="VoidRayPortrait"/>
+        <BarOffset value="65"/>
+        <BarWidth value="100"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-VoidRay.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-warpray.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <NameOffset value="60"/>
+        <SoundArray index="Ready" value="VoidRay_Ready"/>
+        <SoundArray index="Help" value="VoidRay_Help"/>
+        <SoundArray index="What" value="VoidRay_What"/>
+        <SoundArray index="Yes" value="VoidRay_Yes"/>
+        <SoundArray index="Attack" value="VoidRay_Attack"/>
+        <SoundArray index="Pissed" value="VoidRay_Pissed"/>
+        <SoundArray index="Movement" value="VoidRay_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-warpray.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-VoidRay.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-VoidRay-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-VoidRay-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-VoidRay-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
     <CActorSound id="WarpPrismLotV1@SiegeSound" parent="SoundOneShot">

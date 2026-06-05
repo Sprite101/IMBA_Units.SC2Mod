@@ -28,6 +28,41 @@
         <EffectArray index="Death" value="InterceptorFate"/>
         <MaxCount value="8"/>
     </CAbilArmMagazine>
+    <CAbilEffectTarget id="ChronoBoostLotV">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="ChronoBoostLotV@AB"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+        </Cost>
+        <TargetFilters value="Structure;Ally,Neutral,Enemy,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <UninterruptibleArray index="Approach" value="1"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value="ChronoBoost"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ChronoBoostLotV"/>
+    </CAbilEffectTarget>
+    <CAbilResearch id="FluxVanesLotV@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="80" Upgrade="FluxVanesLotV">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="FluxVanesLotV" Requirements="FluxVanesLotV@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilTrain id="VoidRayLotV@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="52" Effect="WarpInEffect">
+            <Button DefaultButtonFace="VoidRayLotV" State="Restricted"/>
+            <Unit value="VoidRayLotV"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilResearch id="WarpInLiberty@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="60" Upgrade="WarpGateResearch">
@@ -376,12 +411,12 @@
         <CursorEffect value="PsiStormLiberty@SearchArea"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="PsiStormLiberty" Requirements="PsiStormHighTemplarLiberty@Have"/>
     </CAbilEffectTarget>
-    <CAbilResearch id="ExtendedThermalLanceLiberty@ResearchExtendedThermalLance">
+    <CAbilResearch id="ExtendedThermalLanceLiberty@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="140" Upgrade="ExtendedThermalLanceLiberty">
             <Resource index="Minerals" value="200"/>
             <Resource index="Vespene" value="200"/>
-            <Button DefaultButtonFace="ExtendedThermalLanceLiberty" State="Restricted" Requirements="LearnExtendedThermalLance">
+            <Button DefaultButtonFace="ExtendedThermalLanceLiberty" State="Restricted" Requirements="ExtendedThermalLanceLiberty@LearnExtendedThermalLance">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
         </InfoArray>

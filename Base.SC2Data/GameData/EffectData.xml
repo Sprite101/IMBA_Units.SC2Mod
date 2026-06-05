@@ -24,6 +24,12 @@
     <CEffectUseMagazine id="CarrierLotV1@WeaponUseMagazine">
         <EditorCategories value="Race:Protoss"/>
     </CEffectUseMagazine>
+    <CEffectApplyBehavior id="ChronoBoostLotV@AB">
+        <ValidatorArray value="TimeWarpTargetFilters"/>
+        <ValidatorArray value="TimeWarpViableTargets"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="ChronoBoostLotV"/>
+    </CEffectApplyBehavior>
     <CEffectDamage id="FeedbackLiberty@Damage">
         <ValidatorArray value=""/>
         <EditorCategories value="Race:Protoss"/>

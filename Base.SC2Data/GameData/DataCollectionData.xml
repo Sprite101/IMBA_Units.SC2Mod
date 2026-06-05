@@ -36,6 +36,10 @@
     <CDataCollectionUpgrade id="ChargeZealotLotV1">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
     </CDataCollectionUpgrade>
+    <CDataCollection id="ChronoBoostLotV">
+        <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollectionUnit id="ColossusLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
         <Button value="ImmortalLiberty"/>
@@ -85,6 +89,11 @@
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
+    <CDataCollectionUpgrade id="FluxVanesLotV">
+        <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUpgrade id="GraviticBoostersLotV1">
         <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
         <Button value="AmplifiedShieldingLotV"/>
@@ -354,6 +363,11 @@
     <CDataCollection id="TyphoonMissilePodLotV2">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>
+    <CDataCollectionUnit id="VoidRayLotV">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+        <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
     <CDataCollectionUnit id="WarpInLiberty">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
     </CDataCollectionUnit>
