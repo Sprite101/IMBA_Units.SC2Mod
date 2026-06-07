@@ -125,6 +125,29 @@
         <On Terms="UnitDeath.GhostLotV1; PassChance 100.000000" Send="Create"/>
         <Sound value="Ghost_Death"/>
     </CActorSound>
+    <!--                                                                                         -->
+    <!-- Robotics Facility ..................................................................... -->
+    <!--                                                                                         -->
+    <CActorUnit id="RoboticsFacility">
+        <On Terms="UnitDeathCustomize; IsStatus Queuing 0; ValidateUnit NotUnderConstruction" Send="Create RoboticsFacilityDeathNormal"/>
+        <On Terms="UnitDeathCustomize; !IsStatus Queuing 0; ValidateUnit NotUnderConstruction" Send="Create RoboticsFacilityDeathConstruction"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit CasterIsUnpoweredAndNotUnderConstruction" Send="Create RoboticsFacilityDeathUnpowered"/>
+        <DeathArray index="Normal" ModelLink=""/>
+    </CActorUnit>
+    <CActorModel id="RoboticsFacilityDeathNormal" parent="UnitDeathModel">
+        <On index="0" Terms="ActorCreation" Send="$Death"/>
+        <On index="1" Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <On index="2" removed="1"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <On index="5" removed="1"/>
+        <On index="6" removed="1"/>
+        <On index="7" removed="1"/>
+        <On index="8" removed="1"/>
+        <On index="9" removed="1"/>
+        <On index="10" removed="1"/>
+        <Model value="RoboticsFacilityDeath"/>
+    </CActorModel>
     <CActorModel id="LiberatorLotV2@TargetAGSearchIndicatorModel">
         <Inherits index="TeamColor" value="1"/>
         <Remove Terms="Effect.LiberatorLotV2@TargetAGCP.Start" Send="Create"/>
@@ -573,6 +596,48 @@
         <On Terms="Effect.PulsarBeamSwarm@CP.Stop" Send="Create"/>
         <Sound value="Sentry_WeaponEnd"/>
     </CActorSound>
+    <CActorModel id="RoboticsFacilityDeathUnpowered" parent="UnitDeathModel">
+        <On index="0" Terms="ActorCreation" Send="$Death"/>
+        <On index="1" Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <On index="2" removed="1"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <On index="5" removed="1"/>
+        <On index="6" removed="1"/>
+        <On index="7" removed="1"/>
+        <On index="8" removed="1"/>
+        <On index="9" removed="1"/>
+        <On index="10" removed="1"/>
+        <Model value="RoboticsFacilityDeathUnpowered"/>
+    </CActorModel>
+    <CActorModel id="RoboticsFacilityDeathUnderConstruction" parent="UnitDeathModel">
+        <On index="0" Terms="ActorCreation" Send="$Death"/>
+        <On index="1" Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <On index="2" removed="1"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <On index="5" removed="1"/>
+        <On index="6" removed="1"/>
+        <On index="7" removed="1"/>
+        <On index="8" removed="1"/>
+        <On index="9" removed="1"/>
+        <On index="10" removed="1"/>
+        <Model value="RoboticsFacilityDeathUnderConstruction"/>
+    </CActorModel>
+    <CActorModel id="RoboticsFacilityDeathConstruction" parent="UnitDeathModel">
+        <On index="0" Terms="ActorCreation" Send="$Death"/>
+        <On index="1" Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <On index="2" removed="1"/>
+        <On index="3" removed="1"/>
+        <On index="4" removed="1"/>
+        <On index="5" removed="1"/>
+        <On index="6" removed="1"/>
+        <On index="7" removed="1"/>
+        <On index="8" removed="1"/>
+        <On index="9" removed="1"/>
+        <On index="10" removed="1"/>
+        <Model value="RoboticsFacilityConstructionDeath"/>
+    </CActorModel>
     <CActorModel id="ShieldBatteryLotV@Build" parent="ProtossBuildingBuild">
         <Model value="ShieldBatteryBuild"/>
     </CActorModel>
