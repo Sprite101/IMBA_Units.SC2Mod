@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUpgrade id="AdvancedBallisticsLotV2">
+        <Icon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Abil,LiberatorLotV2@AGTarget,Range[0]" Value="3"/>
+        <EffectArray Reference="Weapon,LiberatorAGLotV2@Weapon,Range" Value="3"/>
+        <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="LiberatorLotV2"/>
+        <AffectedUnitArray value="LiberatorAGLotV2"/>
+    </CUpgrade>
     <CUpgrade id="AmplifiedShieldingLotV">
         <Icon value="Assets\Textures\btn-upgrade-protoss-adeptshieldupgrade.dds"/>
         <ScoreAmount value="200"/>
@@ -430,7 +440,7 @@
         <EffectArray Operation="Set" Reference="Actor,GhostLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
         <EffectArray Reference="Unit,GhostWoL,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,GhostWoL,LifeArmor" Value="1"/>
-        <EffectArray Operation="Set" Reference="Actor,GhostWoL@Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,GhostWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
         <EffectArray Reference="Unit,ReaperLiberty,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,ReaperLiberty,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,ReaperLiberty,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
@@ -444,7 +454,7 @@
         <EffectArray Operation="Set" Reference="Actor,GhostLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
         <EffectArray Reference="Unit,GhostWoL,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,GhostWoL,LifeArmor" Value="1"/>
-        <EffectArray Operation="Set" Reference="Actor,GhostWoL@Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,GhostWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
         <EffectArray Reference="Unit,ReaperLiberty,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,ReaperLiberty,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,ReaperLiberty,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
@@ -458,7 +468,7 @@
         <EffectArray Operation="Set" Reference="Actor,GhostLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
         <EffectArray Reference="Unit,GhostWoL,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,GhostWoL,LifeArmor" Value="1"/>
-        <EffectArray Operation="Set" Reference="Actor,GhostWoL@Ghost,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,GhostWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
         <EffectArray Reference="Unit,ReaperLiberty,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,ReaperLiberty,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,ReaperLiberty,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>

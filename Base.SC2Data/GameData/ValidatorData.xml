@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorPlayerRequirement id="AdvancedBallisticsLotV2@Upgraded">
+        <WhichPlayer Value="Caster"/>
+        <ResultNoPlayer value="Error"/>
+        <Find value="1"/>
+        <Value value="AdvancedBallisticsLotV2@Have"/>
+    </CValidatorPlayerRequirement>
     <CValidatorUnitCompareBehaviorCount id="DisruptorLotV1@PhasedNotHavePhasedBehavior">
         <Behavior value="PurificationNovaPhasedLotV1@Phased"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="LiberatorLotV2@AGTargetHasMorphBehavior">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="LiberatorLotV2@MorphtoAGBehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="LiberatorLotV2@AGTargetMorphValidatorCombine">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDead"/>
+        <CombineArray value="LiberatorLotV2@AGTargetHasMorphBehavior"/>
+        <CombineArray value="HasNoLiberatorYoink"/>
+        <CombineArray value="LiberatorNotRecallingMothership"/>
+        <CombineArray value="LiberatorNotRecallingMothershipCore"/>
+        <CombineArray value="LiberatorAGNotOutOfRange"/>
+        <CombineArray value="HasNoLiberatorEnsnare"/>
+    </CValidatorCombine>
     <CValidatorUnitType id="ShieldBatteryLotV@Is">
         <ResultFailed value="Error,Error/MustTargetShieldBattery"/>
         <Value value="ShieldBattery"/>

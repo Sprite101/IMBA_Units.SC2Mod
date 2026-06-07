@@ -247,13 +247,10 @@
             <GameLink GameLink="HellbatSwarmBeta@Hellbat">
                 <Field Id="Selection_Units" Index="1"/>
             </GameLink>
-            <GameLink GameLink="HellionTank">
-                <Field Id="Selection_Units" Index="2"/>
-            </GameLink>
             <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
                 <Field Id="Selection_Images" Index="1"/>
             </Image>
-            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+            <Image>
                 <Field Id="Selection_Images" Index="2"/>
             </Image>
             <Image Image="Assets\Textures\btn-unit-terran-hellionbattlemode.dds">
@@ -265,17 +262,11 @@
             <Text Text="UserData/IMBA_TerranUnits/Hellbat_Selection_Expansion_Tip_001">
                 <Field Id="Selection_Expansion_Tip" Index="1"/>
             </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Hellbat_Selection_Expansion_Tip_002">
-                <Field Id="Selection_Expansion_Tip" Index="2"/>
-            </Text>
             <Text Text="UserData/IMBA_TerranUnits/Hellbat_Selection_Title">
                 <Field Id="Selection_Title"/>
             </Text>
             <Text Text="UserData/IMBA_TerranUnits/Hellbat_Selection_Title_001">
                 <Field Id="Selection_Title" Index="1"/>
-            </Text>
-            <Text Text="UserData/IMBA_TerranUnits/Hellbat_Selection_Title_002">
-                <Field Id="Selection_Title" Index="2"/>
             </Text>
         </Instances>
         <Instances Id="Medivac">

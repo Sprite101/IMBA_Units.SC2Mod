@@ -109,6 +109,97 @@
         <PeriodicPeriodArray value="0.25"/>
         <PeriodicPeriodArray value="0.25"/>
     </CEffectCreatePersistent>
+    <CEffectDamage id="LiberatorAGLotV2@WeaponDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <Amount value="75"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="LiberatorAGLotV2@WeaponLM">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="LiberatorAGLotV2@WeaponDamage"/>
+        <AmmoUnit value="LiberatorAGMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="LiberatorAGLotV2@WeaponLMSet">
+        <ValidatorArray value="LiberatorAGTargets"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="LiberatorAGLotV2@WeaponLM"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="LiberatorLotV2@TargetAGInterruptedDelayCP">
+        <EditorCategories value="Race:Terran"/>
+        <ExpireEffect value="LiberatorAGLotV2@TargetAAMorphOrderSet"/>
+        <PeriodCount value="1"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
+    <CEffectIssueOrder id="LiberatorAGLotV2@TargetAAOrderMorphAA">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Source"/>
+        <Abil value="LiberatorAGLotV2@MorphtoAA"/>
+        <Player Value="Source"/>
+    </CEffectIssueOrder>
+    <CEffectSet id="LiberatorAGLotV2@TargetAAMorphOrderSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="LiberatorAGLotV2@TargetAAMorphRB"/>
+        <EffectArray value="LiberatorAGLotV2@TargetAAOrderMorphAA"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="LiberatorAGLotV2@TargetAAMorphRB">
+        <EditorCategories value="Race:Terran"/>
+        <BehaviorLink value="LiberatorLotV2@MorphtoAGBehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="LiberatorLotV2@TargetAGMorphAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="LiberatorLotV2@MorphtoAGBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectIssueOrder id="LiberatorLotV2@TargetAGOrderMorphAG">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="LiberatorLotV2@MorphtoAG"/>
+        <Player Value="Creator"/>
+        <Target Value="CasterUnit"/>
+    </CEffectIssueOrder>
+    <CEffectCreatePersistent id="LiberatorLotV2@TargetAGDelayCP">
+        <EditorCategories value="Race:Terran"/>
+        <ExpireEffect value="LiberatorLotV2@TargetAGCP"/>
+        <PeriodCount value="16"/>
+        <PeriodicEffectArray value="LiberatorLotV2@TargetAGSearchArea"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <RevealRadius value="5.5"/>
+        <RevealFlags index="Unfog" value="1"/>
+        <AINotifyEffect value="LiberatorTargetMorphSearchArea"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="LiberatorLotV2@TargetAGInitialSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="LiberatorLotV2@TargetAGMorphAB"/>
+        <EffectArray value="LiberatorLotV2@TargetAGOrderMorphAG"/>
+        <EffectArray value="LiberatorLotV2@TargetAGDelayCP"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="LiberatorLotV2@TargetAGCP">
+        <EditorCategories value="Race:Terran"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <FinalEffect value="LiberatorLotV2@TargetAGInterruptedDelayCP"/>
+        <PeriodicValidator value="LiberatorLotV2@AGTargetMorphValidatorCombine"/>
+        <PeriodicEffectArray value="LiberatorLotV2@TargetAGSearchArea"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <RevealRadius value="5.5"/>
+        <RevealFlags index="Unfog" value="1"/>
+        <AINotifyEffect value="LiberatorTargetMorphSearchArea"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="LiberatorLotV2@TargetAGSearchAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="LiberatorTargetMorphAGAttackable"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="LiberatorLotV2@TargetAGSearchArea">
+        <EditorCategories value="Race:Terran"/>
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <AINotifyFlags index="MajorDanger" value="1"/>
+        <SearchFilters value="Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="5" Effect="LiberatorLotV2@TargetAGSearchAB"/>
+    </CEffectEnumArea>
     <CEffectDamage id="OracleLotV1@BuildStasisWardBuildBeamOff">
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourcePoint"/>

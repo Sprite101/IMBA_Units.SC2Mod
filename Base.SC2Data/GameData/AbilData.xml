@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilResearch id="AdvancedBallisticsLotV2@Research">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="90" Upgrade="AdvancedBallisticsLotV2">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="AdvancedBallisticsLotV2@ResearchAdvancedBallistics" State="Restricted" Requirements="AdvancedBallisticsLotV2@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilResearch id="AmplifiedShieldingLotV@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="140" Upgrade="AmplifiedShieldingLotV">
@@ -55,6 +65,70 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilEffectInstant id="LiberatorAGLotV2@AATarget">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="LiberatorAGLotV2@TargetAAMorphOrderSet"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LiberatorAGLotV2@FighterMode"/>
+    </CAbilEffectInstant>
+    <CAbilMorph id="LiberatorAGLotV2@MorphtoAA">
+        <AbilSetId value="LiberatorAA"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LiberatorAGLotV2@FighterMode">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreFacing" value="1"/>
+        <CancelUnit value="LiberatorLotV2"/>
+        <InfoArray Unit="LiberatorLotV2">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="0.5"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="1.5417"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="1.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilEffectTarget id="LiberatorLotV2@AGTarget">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <Effect index="0" value="LiberatorLotV2@TargetAGInitialSet"/>
+        <Range value="5"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LiberatorLotV2@DefenderMode"/>
+    </CAbilEffectTarget>
+    <CAbilTrain id="LiberatorLotV2@Build">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="60">
+            <Button DefaultButtonFace="LiberatorLotV2"/>
+            <Unit value="LiberatorLotV2"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilMorph id="LiberatorLotV2@MorphtoAG">
+        <AbilSetId value="LiberatorAG"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LiberatorLotV2@DefenderMode"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="LiberatorAGLotV2">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="0.5"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Facing">
+                <DurationArray index="Duration" value="0.5"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
     <CAbilTrain id="VoidRayLotV@Build">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <Activity value="UI/Warping"/>
@@ -960,6 +1034,9 @@
         <Flags index="IgnoreFacing" value="1"/>
         <CancelUnit value="LiberatorLotV1@Liberator"/>
         <InfoArray Unit="LiberatorLotV1@Liberator">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="0.5"/>
+            </SectionArray>
             <SectionArray index="Actor">
                 <DurationArray index="Delay" value="0.5"/>
                 <DurationArray index="Duration" value="1.5417"/>
@@ -972,7 +1049,6 @@
     <CAbilEffectTarget id="LiberatorLotV1@AGTarget">
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Effect index="0" value="LiberatorLotV1@TargetMorphOrderInitialSet2"/>
-        <Flags index="AllowMovement" value="1"/>
         <Range value="5"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="LiberatorAGMode"/>
     </CAbilEffectTarget>
@@ -983,6 +1059,9 @@
         <Flags index="IgnoreFacing" value="1"/>
         <Flags index="WaitUntilStopped" value="0"/>
         <InfoArray Unit="LiberatorAGLotV1@LiberatorAG">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="0.5"/>
+            </SectionArray>
             <SectionArray index="Actor">
                 <DurationArray index="Delay" value="0.5"/>
                 <DurationArray index="Duration" value="3.5417"/>

@@ -40,6 +40,12 @@ void libB156CA28_gf_Select_Reaper (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Ghost (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_WidowMine (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Cyclone (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_SiegeTank (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Hellbat (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Medivac (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Raven (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Liberator (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Battlecruiser (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Default (int lp_player);
 
 // Trigger Declarations

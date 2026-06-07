@@ -1,4 +1,5 @@
 ﻿Abil/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
+Abil/Name/AdvancedBallisticsLotV2@Research=Research Advanced Ballistics
 Abil/Name/AmplifiedShieldingLotV@Research=Research
 Abil/Name/AutoTurretSwarm=Place Auto Turret
 Abil/Name/BlinkLiberty@ResearchBlink=Research
@@ -38,9 +39,14 @@ Abil/Name/InfernalPreIgniterSwarm@ResearchInfernalPreIgniter=Research Infernal P
 Abil/Name/KhaydarinAmulet=Research
 Abil/Name/LiberatorAGLotV1@AATarget=AA Target
 Abil/Name/LiberatorAGLotV1@MorphtoAA=Morph to AA
+Abil/Name/LiberatorAGLotV2@AATarget=AA Target
+Abil/Name/LiberatorAGLotV2@MorphtoAA=Morph to AA
 Abil/Name/LiberatorLotV1@AGTarget=AG Target
 Abil/Name/LiberatorLotV1@MorphtoAG=Morph to AG
 Abil/Name/LiberatorLotV1@Train=Build
+Abil/Name/LiberatorLotV2@AGTarget=AG Target
+Abil/Name/LiberatorLotV2@Build=Build
+Abil/Name/LiberatorLotV2@MorphtoAG=Morph to AG
 Abil/Name/MULEGather2=Gather
 Abil/Name/ModifiedAbility@ArmoryResearch=Armory Research
 Abil/Name/ModifiedAbility@Hyperjump=Tactical Jump
@@ -130,6 +136,8 @@ Behavior/Tooltip/WarpInLiberty@PowerUserWarpable=Unit is being materialized by a
 Button/Name/AdeptLotV@WarpIn=Warp In Adept
 Button/Name/AdvancedBallistics=Advanced Ballistics
 Button/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
+Button/Name/AdvancedBallisticsLotV2=Advanced Ballistics
+Button/Name/AdvancedBallisticsLotV2@ResearchAdvancedBallistics=Research Advanced Ballistics
 Button/Name/AmplifiedShieldingLotV=Research Amplified Shielding
 Button/Name/AmplifiedShieldingLotV@Passive=Amplified Shielding
 Button/Name/AutoTurretSwarm=Build Auto-Turret
@@ -171,7 +179,10 @@ Button/Name/InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm=Research Inf
 Button/Name/InterceptorLotV1=Build Interceptor
 Button/Name/KhaydarinAmulet=Research Khaydarin Amulet
 Button/Name/KhaydarinAmulet@Passive=Khaydarin Amulet
+Button/Name/LiberatorAGLotV2@FighterMode=Fighter Mode
 Button/Name/LiberatorLotV1@BuildLiberator=Build Liberator
+Button/Name/LiberatorLotV2=Build Liberator
+Button/Name/LiberatorLotV2@DefenderMode=Defender Mode
 Button/Name/MoebiusReactor@MoebiusReactor=Moebius Reactor
 Button/Name/MoebiusReactor@ResearchMoebiusReactor=Research Moebius Reactor
 Button/Name/ObserverLotV1=Warp In Observer
@@ -225,6 +236,8 @@ Button/Tooltip/AdeptLotV@Shade=Projects an invulnerable Shade that can move but 
 Button/Tooltip/AdeptLotV@WarpIn=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
 Button/Tooltip/AdvancedBallistics@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
+Button/Tooltip/AdvancedBallisticsLotV2=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallisticsLotV2:Weapon,LiberatorAGLotV2@Weapon,Range$"/>.
+Button/Tooltip/AdvancedBallisticsLotV2@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallisticsLotV2:Weapon,LiberatorAGLotV2@Weapon,Range$"/>.
 Button/Tooltip/AmplifiedShieldingLotV=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShieldingLotV:Unit,AdeptLotV,ShieldsMax$"/>.
 Button/Tooltip/AmplifiedShieldingLotV@Passive=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShielding:Unit,Adept,ShieldsMax$"/>.
 Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -279,8 +292,12 @@ Button/Tooltip/InterceptorLotV1Unit=Combat drones that automatically strafe thei
 Button/Tooltip/KhaydarinAmulet=Increases the starting energy of <c val="ffff8a">High Templar</c> by <d ref="Upgrade,KhaydarinAmulet,EffectArray[0].Value"/>.
 Button/Tooltip/KhaydarinAmulet@Passive=Increases the starting energy of <c val="ffff8a">High Templar</c> by <d ref="Upgrade,KhaydarinAmulet,EffectArray[0].Value"/>.
 Button/Tooltip/LiberatorAGLotV1@LiberatorAG=Immobile defender. Deals heavy single target damage to ground units. Can switch into Fighter mode to provide air support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LiberatorAGLotV2=Immobile defender. Deals heavy single target damage to ground units. Can switch into Fighter mode to provide air support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LiberatorAGLotV2@FighterMode=Reverts to Fighter Mode. In this mode Liberators can move, but they can only attack air targets.
 Button/Tooltip/LiberatorLotV1@BuildLiberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
 Button/Tooltip/LiberatorLotV1@Liberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
+Button/Tooltip/LiberatorLotV2=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
+Button/Tooltip/LiberatorLotV2@DefenderMode=Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.
 Button/Tooltip/MoebiusReactor@MoebiusReactor=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
 Button/Tooltip/MoebiusReactor@ResearchMoebiusReactor=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
 Button/Tooltip/ObserverLotV1=Flying spy. Cloak renders the unit invisible to enemies without detection.<n/><n/><c val="FFE303">Detector</c>
@@ -348,6 +365,7 @@ Cyclone=Cyclone
 DataCollection/Name/90mmCannonsLotV1=90mm Cannons
 DataCollection/Name/AdeptLotV=Adept
 DataCollection/Name/AdvancedBallistics=Advanced Ballistics
+DataCollection/Name/AdvancedBallisticsLotV2=Advanced Ballistics
 DataCollection/Name/AmplifiedShieldingLotV=Amplified Shielding
 DataCollection/Name/AutoTurretSwarm=Raven Auto Turret
 DataCollection/Name/BarracksLiberty=Barracks
@@ -388,8 +406,10 @@ DataCollection/Name/ImmortalLotVBarrier=Barrier
 DataCollection/Name/InfernalPreIgniterSwarm=Infernal Pre-Igniter
 DataCollection/Name/InterceptorLotV1=Interceptor
 DataCollection/Name/KhaydarinAmulet=Khaydarin Amulet
-DataCollection/Name/LiberatorAGLotV1=Liberator AG LotV1
-DataCollection/Name/LiberatorLotV1=Liberator LotV1
+DataCollection/Name/LiberatorAGLotV1=Liberator AG
+DataCollection/Name/LiberatorAGLotV2=Liberator AG
+DataCollection/Name/LiberatorLotV1=Liberator AA
+DataCollection/Name/LiberatorLotV2=Liberator AA
 DataCollection/Name/ModifiedAbility=Modified
 DataCollection/Name/MoebiusReactor=Moebius Reactor
 DataCollection/Name/NapalmSpraySwarmBeta=Napalm Spray
@@ -539,6 +559,12 @@ Effect/Name/LiberatorAGLotV1@LMSet=LM Set
 Effect/Name/LiberatorAGLotV1@TargetAAMorphOrder=Target AA Morph Order
 Effect/Name/LiberatorAGLotV1@TargetAAMorphOrderSet=Target AA Morph Order Set
 Effect/Name/LiberatorAGLotV1@TargetAAMorphRB2=Target AA Morph RB
+Effect/Name/LiberatorAGLotV2@TargetAAMorphOrderSet=Target AA Morph Order Set
+Effect/Name/LiberatorAGLotV2@TargetAAMorphRB=Target AA Morph RB
+Effect/Name/LiberatorAGLotV2@TargetAAOrderMorphAA=Target AA Order Morph AA
+Effect/Name/LiberatorAGLotV2@WeaponDamage=Damage
+Effect/Name/LiberatorAGLotV2@WeaponLM=LM
+Effect/Name/LiberatorAGLotV2@WeaponLMSet=LM Set
 Effect/Name/LiberatorLotV1@BurstPersistent=Burst Persistent
 Effect/Name/LiberatorLotV1@Damage=Damage
 Effect/Name/LiberatorLotV1@InterruptedMorphDelayPersistent=Interrupted Morph Delay Persistent
@@ -550,6 +576,14 @@ Effect/Name/LiberatorLotV1@TargetMorphOrderInitialSet2=Target Morph Order Initia
 Effect/Name/LiberatorLotV1@TargetMorphPersistent=Target Morph Persistent
 Effect/Name/LiberatorLotV1@TargetMorphSearchAB=Target Morph Search AB
 Effect/Name/LiberatorLotV1@TargetMorphSearchArea=Target Morph Search Area
+Effect/Name/LiberatorLotV2@TargetAGCP=Target AG CP
+Effect/Name/LiberatorLotV2@TargetAGDelayCP=Target AG Delay CP
+Effect/Name/LiberatorLotV2@TargetAGInitialSet=Target AG Initial Set
+Effect/Name/LiberatorLotV2@TargetAGInterruptedDelayCP=Target AG Interrupted Delay CP
+Effect/Name/LiberatorLotV2@TargetAGMorphAB=Target AG Morph AB
+Effect/Name/LiberatorLotV2@TargetAGOrderMorphAG=Target AG Order Morph AG
+Effect/Name/LiberatorLotV2@TargetAGSearchAB=Target AG Search AB
+Effect/Name/LiberatorLotV2@TargetAGSearchArea=Target AG Search Area
 Effect/Name/LockOnCancelSet=Lock On Cancel Set
 Effect/Name/NapalmSpraySwarmBeta@Damage=Damage
 Effect/Name/NapalmSpraySwarmBeta@Search=Search
@@ -734,6 +768,7 @@ Param/Expression/lib_B156CA28_81A2A7C1=Panel Index: ~A~
 RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat=Factory
 RequirementNode/Tooltip/CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987=Must have at least 1 interceptor
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Research Advanced Ballistics at the Starport Techlab
+RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsLotV2CompleteOnly2325880491=Research Advanced Ballistics at the Fusion Core
 RequirementNode/Tooltip/CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174=Research Amplified Shielding at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276=Research Caduceus Reactor at the Starport Techlab
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat=Research Enhanced Shockwaves at the Ghost Academy
@@ -771,7 +806,6 @@ Unit/Name/DisruptorLotV1@Phased=Disruptor
 Unit/Name/GhostLotV1=Ghost
 Unit/Name/GhostLotV1@Unit=Cyclone
 Unit/Name/GhostWoL=Ghost
-Unit/Name/GhostWoL@Ghost=Ghost
 Unit/Name/GrenadeLiberty@Missile=D8 Charge
 Unit/Name/HellbatSwarmBeta@Hellbat=Hellbat
 Unit/Name/HellionSwarmBeta@Hellion=Hellion
@@ -781,8 +815,12 @@ Unit/Name/ImmortalLotV=Immortal
 Unit/Name/InterceptorLotV1=Interceptor
 Unit/Name/LiberatorAGLotV1@LiberatorAG=Liberator
 Unit/Name/LiberatorAGLotV1@MorphModel=Liberator
+Unit/Name/LiberatorAGLotV2=Liberator
+Unit/Name/LiberatorAGLotV2@MorphModel=Liberator
 Unit/Name/LiberatorLotV1@Liberator=Liberator
 Unit/Name/LiberatorLotV1@MorphModel=Liberator
+Unit/Name/LiberatorLotV2=Liberator
+Unit/Name/LiberatorLotV2@MorphModel=Liberator
 Unit/Name/ObserverLotV1=Observer
 Unit/Name/ObserverLotV2=Observer
 Unit/Name/OracleLotV1=Oracle
@@ -820,6 +858,7 @@ Unit/Name/WidowMineSwarm=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMine=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMineBurrowed=Widow Mine
 Upgrade/Name/AdvancedBallistics=Advanced Ballistics
+Upgrade/Name/AdvancedBallisticsLotV2=Advanced Ballistics
 Upgrade/Name/AmplifiedShieldingLotV=Amplified Shielding
 Upgrade/Name/CaduceusReactorSwarmBeta@CaduceusReactor=Caduceus Reactor
 Upgrade/Name/CorvidReactorLotV=Corvid Reactor
@@ -942,6 +981,7 @@ Weapon/Name/GaussPistolLiberty=P-45 Gauss Pistol
 Weapon/Name/GrenadeLiberty=D-8 Charge
 Weapon/Name/ImmortalLiberty@Weapon=Phase Disruptors
 Weapon/Name/LiberatorAGLotV1@Weapon=Concord Cannon
+Weapon/Name/LiberatorAGLotV2@Weapon=Concord Cannon
 Weapon/Name/LiberatorLotV1@Weapon=Lexington Rockets
 Weapon/Name/NapalmSpraySwarmBeta@NapalmSpray=Napalm Spray
 Weapon/Name/PistolSwarm=P-45 Gauss Pistol

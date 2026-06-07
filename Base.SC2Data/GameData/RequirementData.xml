@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirement id="AdvancedBallisticsLotV2@Have">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeAdvancedBallisticsLotV2CompleteOnly2325880491"/>
+    </CRequirement>
+    <CRequirement id="AdvancedBallisticsLotV2@Learn">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeAdvancedBallisticsLotV2QueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="AmplifiedShieldingLotV@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174"/>
@@ -117,7 +125,7 @@
     </CRequirement>
     <CRequirement id="MoebiusReactor@LearnMoebiusReactor">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
-        <NodeArray index="Show" Link="NotCountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter"/>
+        <NodeArray index="Show" Link="NotCountUpgradeMoebiusReactor@UpgradeQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="EnhancedShockwaves@HaveEnhancedShockwaves">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>

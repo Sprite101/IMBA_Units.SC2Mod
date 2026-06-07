@@ -53,6 +53,18 @@
         <Effect value="CarrierLotV1@WeaponCP"/>
         <AllowedMovement value="Slowing"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="LiberatorAGLotV2@Weapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
+        <DisplayEffect value="LiberatorAGLotV2@WeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <Period value="1.6"/>
+        <DamagePoint value="0.125"/>
+        <Effect value="LiberatorAGLotV2@WeaponLMSet"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="PulsarBeamSwarm">
         <EditorCategories value="Race:Protoss"/>
         <Options index="Disabled" value="1"/>

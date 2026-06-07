@@ -281,6 +281,24 @@ void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_i
         else if (auto242D2030_val == 3) {
             libB156CA28_gf_Select_Cyclone(lp_player, lv_selectionIndex);
         }
+        else if (auto242D2030_val == 4) {
+            libB156CA28_gf_Select_SiegeTank(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 5) {
+            libB156CA28_gf_Select_Hellbat(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 6) {
+            libB156CA28_gf_Select_Medivac(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 7) {
+            libB156CA28_gf_Select_Raven(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 8) {
+            libB156CA28_gf_Select_Liberator(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 9) {
+            libB156CA28_gf_Select_Battlecruiser(lp_player, lv_selectionIndex);
+        }
         else {
         }
     }
@@ -406,7 +424,7 @@ void libB156CA28_gf_Select_Cyclone (int lp_player, int lp_selectionIndex) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLotV2@Train", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLockOnLotV2@Research", 0), false);
     }
-    else if ((lp_selectionIndex == 1)) {
+    else if ((lp_selectionIndex == 2)) {
         TechTreeUnitAllow(lp_player, "CycloneLotV2", true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLotV2@Train", 0), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLockOnLotV2@Research", 0), true);
@@ -416,6 +434,134 @@ void libB156CA28_gf_Select_Cyclone (int lp_player, int lp_selectionIndex) {
         TechTreeUnitAllow(lp_player, "CycloneLotV1", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLotV1@Train", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("CycloneLockOnAirLoTV1@Research", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_SiegeTank (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "SiegeTankLotV1", false);
+        TechTreeUnitAllow(lp_player, "SiegeTankSiegedLotV1", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "SiegeTankLotV1", true);
+        TechTreeUnitAllow(lp_player, "SiegeTankSiegedLotV1", true);
+        TechTreeUnitAllow(lp_player, "SiegeTank", false);
+        TechTreeUnitAllow(lp_player, "SiegeTankSieged", false);
+    }
+}
+
+void libB156CA28_gf_Select_Hellbat (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "HellionSwarmBeta@Hellion", false);
+        TechTreeUnitAllow(lp_player, "HellbatSwarmBeta@Hellbat", false);
+        TechTreeUpgradeAllow(lp_player, "InfernalPreIgniterSwarm@InfernalPreIgniterSwarm", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "HellionSwarmBeta@Hellion", true);
+        TechTreeUnitAllow(lp_player, "HellbatSwarmBeta@Hellbat", true);
+        TechTreeUpgradeAllow(lp_player, "InfernalPreIgniterSwarm@InfernalPreIgniterSwarm", true);
+        TechTreeUnitAllow(lp_player, "Hellion", false);
+        TechTreeUnitAllow(lp_player, "HellionTank", false);
+        TechTreeUpgradeAllow(lp_player, "HighCapacityBarrels", false);
+    }
+}
+
+void libB156CA28_gf_Select_Medivac (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUpgradeAllow(lp_player, "CaduceusReactorSwarmBeta@CaduceusReactor", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUpgradeAllow(lp_player, "CaduceusReactorSwarmBeta@CaduceusReactor", true);
+        TechTreeUpgradeAllow(lp_player, "MedivacCaduceusReactor", false);
+    }
+}
+
+void libB156CA28_gf_Select_Raven (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "RavenSwarm", false);
+        TechTreeUpgradeAllow(lp_player, "CorvidReactorSwarm", false);
+        TechTreeUpgradeAllow(lp_player, "DurableMaterialsSwarm", false);
+        TechTreeUnitAllow(lp_player, "RavenLotV1", false);
+        TechTreeUpgradeAllow(lp_player, "CorvidReactorLotV", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "RavenSwarm", true);
+        TechTreeUpgradeAllow(lp_player, "CorvidReactorSwarm", true);
+        TechTreeUpgradeAllow(lp_player, "DurableMaterialsSwarm", true);
+        TechTreeUnitAllow(lp_player, "Raven", false);
+        TechTreeUpgradeAllow(lp_player, "InterferenceMatrix", false);
+        TechTreeUnitAllow(lp_player, "RavenLotV1", false);
+        TechTreeUpgradeAllow(lp_player, "CorvidReactorLotV", false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeUnitAllow(lp_player, "RavenLotV1", true);
+        TechTreeUpgradeAllow(lp_player, "CorvidReactorLotV", true);
+        TechTreeUnitAllow(lp_player, "RavenSwarm", false);
+        TechTreeUpgradeAllow(lp_player, "CorvidReactorSwarm", false);
+        TechTreeUpgradeAllow(lp_player, "DurableMaterialsSwarm", false);
+        TechTreeUnitAllow(lp_player, "Raven", false);
+        TechTreeUpgradeAllow(lp_player, "InterferenceMatrix", false);
+    }
+}
+
+void libB156CA28_gf_Select_Liberator (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "LiberatorLotV1@Liberator", false);
+        TechTreeUnitAllow(lp_player, "LiberatorAGLotV1@LiberatorAG", false);
+        TechTreeUpgradeAllow(lp_player, "AdvancedBallistics", false);
+        TechTreeUnitAllow(lp_player, "LiberatorLotV2", false);
+        TechTreeUnitAllow(lp_player, "LiberatorAGLotV2", false);
+        TechTreeUpgradeAllow(lp_player, "AdvancedBallisticsLotV2", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "LiberatorLotV1@Liberator", true);
+        TechTreeUnitAllow(lp_player, "LiberatorAGLotV1@LiberatorAG", true);
+        TechTreeUpgradeAllow(lp_player, "AdvancedBallistics", true);
+        TechTreeUnitAllow(lp_player, "Liberator", false);
+        TechTreeUnitAllow(lp_player, "LiberatorAG", false);
+        TechTreeUpgradeAllow(lp_player, "LiberatorAGRangeUpgrade", false);
+        TechTreeUnitAllow(lp_player, "LiberatorLotV2", false);
+        TechTreeUnitAllow(lp_player, "LiberatorAGLotV2", false);
+        TechTreeUpgradeAllow(lp_player, "AdvancedBallisticsLotV2", false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeUnitAllow(lp_player, "LiberatorLotV2", true);
+        TechTreeUnitAllow(lp_player, "LiberatorAGLotV2", true);
+        TechTreeUpgradeAllow(lp_player, "AdvancedBallisticsLotV2", true);
+        TechTreeUnitAllow(lp_player, "Liberator", false);
+        TechTreeUnitAllow(lp_player, "LiberatorAG", false);
+        TechTreeUpgradeAllow(lp_player, "LiberatorAGRangeUpgrade", false);
+        TechTreeUnitAllow(lp_player, "LiberatorLotV1@Liberator", false);
+        TechTreeUnitAllow(lp_player, "LiberatorAGLotV1@LiberatorAG", false);
+        TechTreeUpgradeAllow(lp_player, "AdvancedBallistics", false);
+    }
+}
+
+void libB156CA28_gf_Select_Battlecruiser (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@Hyperjump", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@Yamato", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@YamatoGunResearch", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@Hyperjump", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@Yamato", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@YamatoGunResearch", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("Hyperjump", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("Yamato", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FusionCoreResearch", 0), false);
     }
 }
 

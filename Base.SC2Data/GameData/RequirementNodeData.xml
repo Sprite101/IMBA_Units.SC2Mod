@@ -54,6 +54,15 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AdvancedBallistics" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsLotV2CompleteOnly2325880491">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AdvancedBallisticsLotV2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsLotV2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="AdvancedBallisticsLotV2" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AdvancedBallistics" State="QueuedOrBetter"/>
@@ -124,7 +133,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeFluxVanesLotVQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="FluxVanesLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeGraviticBoostersLotV1QueuedOrBetter">
@@ -190,6 +198,10 @@
     <CRequirementCountUpgrade id="CountUpgradeMoebiusReactor@UpgradeCompleteOnly3009616705TechTreeCheat">
         <Count Link="MoebiusReactor@Upgrade" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMoebiusReactor@UpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MoebiusReactor@Upgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradePsiStormHighTemplarLibertyCompleteOnly3263798822">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="PsiStormHighTemplarLiberty" State="CompleteOnly"/>
@@ -247,6 +259,10 @@
     <CRequirementNot id="NotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
         <OperandArray index="0" value="CountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeAdvancedBallisticsLotV2QueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeAdvancedBallisticsLotV2QueuedOrBetter"/>
+    </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAdvancedBallisticsQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeAdvancedBallisticsQueuedOrBetter"/>
     </CRequirementNot>
@@ -278,7 +294,6 @@
         <OperandArray index="0" value="CountUpgradeExtendedThermalLanceLibertyQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeFluxVanesLotVQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeFluxVanesLotVQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeGraviticBoostersLotV1QueuedOrBetter">
@@ -298,6 +313,9 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeKhaydarinAmuletQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeKhaydarinAmuletQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeMoebiusReactor@UpgradeQueuedOrBetter">
+        <OperandArray index="0" value="CountUpgradeMoebiusReactor@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradePsiStormHighTemplarLibertyQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradePsiStormHighTemplarLibertyQueuedOrBetter"/>

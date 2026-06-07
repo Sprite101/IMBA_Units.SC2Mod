@@ -1,5 +1,6 @@
 ﻿Button/Hotkey/AdeptLotV@WarpIn=H
 Button/Hotkey/AdvancedBallistics@ResearchAdvancedBallistics=N
+Button/Hotkey/AdvancedBallisticsLotV2@ResearchAdvancedBallistics=N
 Button/Hotkey/AmplifiedShieldingLotV=S
 Button/Hotkey/AmplifiedShieldingLotV@Passive=
 Button/Hotkey/AutoTurretSwarm=T
@@ -39,7 +40,10 @@ Button/Hotkey/InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm=I
 Button/Hotkey/InterceptorLotV1=I
 Button/Hotkey/KhaydarinAmulet=K
 Button/Hotkey/KhaydarinAmulet@Passive=
+Button/Hotkey/LiberatorAGLotV2@FighterMode=D
 Button/Hotkey/LiberatorLotV1@BuildLiberator=N
+Button/Hotkey/LiberatorLotV2=N
+Button/Hotkey/LiberatorLotV2@DefenderMode=E
 Button/Hotkey/MoebiusReactor@MoebiusReactor=
 Button/Hotkey/MoebiusReactor@ResearchMoebiusReactor=S
 Button/Hotkey/ObserverLotV1=B

@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="AdvancedBallisticsLotV2">
+        <Icon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AdvancedBallisticsLotV2@ResearchAdvancedBallistics">
+        <Icon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="ChronoBoostLotV">
         <Icon value="Assets\Textures\btn-ability-protoss-protoncharge-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="LiberatorAGLotV2@FighterMode">
+        <Icon value="Assets\Textures\btn-ability-terran-liberator-aamode.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-liberator-aamode.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeySet value="LiberatorModes"/>
+    </CButton>
+    <CButton id="LiberatorLotV2">
+        <Icon value="Assets\Textures\btn-unit-terran-liberator.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-liberator.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="LiberatorLotV2@DefenderMode">
+        <Icon value="Assets\Textures\btn-ability-terran-liberator-agmode.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-liberator-agmode.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <HotkeySet value="LiberatorModes"/>
     </CButton>
     <CButton id="OracleLotV1">
         <Icon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>
