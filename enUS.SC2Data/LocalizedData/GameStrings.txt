@@ -2,6 +2,7 @@
 Abil/Name/AdvancedBallisticsLotV2@Research=Research Advanced Ballistics
 Abil/Name/AmplifiedShieldingLotV@Research=Research
 Abil/Name/AutoTurretSwarm=Place Auto Turret
+Abil/Name/BatteryOverchargeLotV=Battery Overcharge
 Abil/Name/BlinkLiberty@ResearchBlink=Research
 Abil/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
 Abil/Name/CarrierLotV1@Train=Build
@@ -17,6 +18,7 @@ Abil/Name/CycloneLotV1@Train=Build
 Abil/Name/CycloneLotV2@Train=Build
 Abil/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Abil/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
+Abil/Name/EnergyRechargeLotV=Energy Recharge
 Abil/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
 Abil/Name/ExtendedThermalLanceLiberty@Research=Research
 Abil/Name/FeedbackLiberty=Feedback
@@ -48,6 +50,7 @@ Abil/Name/LiberatorLotV2@AGTarget=AG Target
 Abil/Name/LiberatorLotV2@Build=Build
 Abil/Name/LiberatorLotV2@MorphtoAG=Morph to AG
 Abil/Name/MULEGather2=Gather
+Abil/Name/MassRecallNexusLotV=Mass Recall
 Abil/Name/ModifiedAbility@ArmoryResearch=Armory Research
 Abil/Name/ModifiedAbility@Hyperjump=Tactical Jump
 Abil/Name/ModifiedAbility@MuleGatherWoL=Gather
@@ -100,6 +103,7 @@ Abil/Name/WidowMineSwarm@Train2=Build
 Abil/Name/WidowMineSwarm@WidowMineAttack=Widow Mine Attack
 Abil/Name/WidowMineSwarm@WidowMineBurrow=Widow Mine Burrow
 Abil/Name/WidowMineSwarm@WidowMineUnburrow=Widow Mine Unburrow 
+Behavior/Name/BatteryOverchargeLotV=Battery Overcharge
 Behavior/Name/ChronoBoostLotV=Chrono Boost
 Behavior/Name/CycloneLockOnAirLoTV1@LockOn=Lock On Target
 Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
@@ -119,6 +123,7 @@ Behavior/Name/SeekerMissileSwarm@TargetTint=Seeker Missile
 Behavior/Name/SeekerMissileSwarm@Timeout=Timeout
 Behavior/Name/StasisWardLotV1@ActivateTarget=Stasis
 Behavior/Name/WarpInLiberty@PowerUserWarpable=Warping In
+Behavior/Tooltip/BatteryOverchargeLotV=Restoration rate increased. Not consuming energy.
 Behavior/Tooltip/ChronoBoostLotV=This structure is in an accelerated state.
 Behavior/Tooltip/CycloneLockOnAirLoTV1@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
@@ -142,6 +147,7 @@ Button/Name/AmplifiedShieldingLotV=Research Amplified Shielding
 Button/Name/AmplifiedShieldingLotV@Passive=Amplified Shielding
 Button/Name/AutoTurretSwarm=Build Auto-Turret
 Button/Name/BarracksLiberty=Build Barracks
+Button/Name/BatteryOverchargeLotV=Battery Overcharge
 Button/Name/BunkerLiberty=Build Bunker
 Button/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
 Button/Name/CarrierLotV1=Warp In Carrier
@@ -154,6 +160,7 @@ Button/Name/CycloneLotV1@BuildCyclone=Build Cyclone
 Button/Name/CycloneLotV2@BuildCyclone=Build Cyclone
 Button/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Button/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
+Button/Name/EnergyRechargeLotV=Energy Recharge
 Button/Name/EnhancedShockwaves@EnhancedShockwaves=Enhanced Shockwaves
 Button/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
 Button/Name/ExtendedThermalLanceLiberty=Research Extended Thermal Lance
@@ -183,6 +190,7 @@ Button/Name/LiberatorAGLotV2@FighterMode=Fighter Mode
 Button/Name/LiberatorLotV1@BuildLiberator=Build Liberator
 Button/Name/LiberatorLotV2=Build Liberator
 Button/Name/LiberatorLotV2@DefenderMode=Defender Mode
+Button/Name/MassRecallNexusLotV=Mass Recall
 Button/Name/MoebiusReactor@MoebiusReactor=Moebius Reactor
 Button/Name/MoebiusReactor@ResearchMoebiusReactor=Research Moebius Reactor
 Button/Name/ObserverLotV1=Warp In Observer
@@ -243,6 +251,7 @@ Button/Tooltip/AmplifiedShieldingLotV@Passive=Increases the <c val="ffff8a">Adep
 Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AutoTurretSwarm@AutoTurret=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BarracksLiberty=Infantry-production facility.<n/><n/><c val="ffff8a">Enables:</c><n/>- Marines<n/>- Reapers<n/>- Bunkers from SCVs<n/>- Orbital Commands from Command Centers
+Button/Tooltip/BatteryOverchargeLotV=Overcharges a target Shield Battery near a Nexus, increasing its shield restoration rate by <d ref="Behavior,BatteryOverchargeLotV,Modification.HealDealtMultiplier * 100 - 100"/>% and allowing it to restore shields without consuming energy for <d ref="Behavior,BatteryOverchargeLotV,Duration"/> seconds.
 Button/Tooltip/BuildCycloneLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BuildCycloneLotV2=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BuildGhostLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -262,6 +271,7 @@ Button/Tooltip/DisruptorLotV1=Robotic disruption unit. Can use Purification Nova
 Button/Tooltip/DisruptorLotV1@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,PurificationNovaTargettedTarget,Duration"/> seconds, dealing area damage.
 Button/Tooltip/DrillingClaws@ResearchDrillingClaws=Allows <c val="ffff8a">Widow Mines</c> to burrow and unburrow two times as fast.
 Button/Tooltip/DurableMaterialsSwarm@ResearchDurableMaterials=Extends the timed duration of Raven <c val="ffff8a">Auto-Turrets</c> and <c val="ffff8a">Point Defense Drones</c>.
+Button/Tooltip/EnergyRechargeLotV=Instantly recharges <d ref="Effect,EnergyRechargeLotV@MU,VitalArray[Energy].Change * (Effect,EnergyRechargeLotV@CP,PeriodCount + 1)"/> energy to a unit near a Nexus.
 Button/Tooltip/EnhancedShockwaves@EnhancedShockwaves=Increases the radius of <c val="ffff8a">Ghost's</c> EMP Round by +<d ref="$UpgradeEffectArrayValue:EnhancedShockwaves@Upgrade:Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius$" precision="1"/>.
 Button/Tooltip/EnhancedShockwaves@ResearchEnhancedShockwaves=Increases the <c val="ffff8a">Ghost's</c> EMP Round radius by +<d ref="$UpgradeEffectArrayValue:EnhancedShockwaves@Upgrade:Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius$" precision="1"/>.
 Button/Tooltip/ExtendedThermalLanceLiberty=Increases the range of the <c val="ffff8a">Colossus</c> weapon by <d ref="$UpgradeEffectArrayValue:ExtendedThermalLanceLiberty:Weapon,ColossusLiberty@Weapon,Range$"/>.
@@ -298,6 +308,7 @@ Button/Tooltip/LiberatorLotV1@BuildLiberator=Artillery fighter. Loaded with miss
 Button/Tooltip/LiberatorLotV1@Liberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
 Button/Tooltip/LiberatorLotV2=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
 Button/Tooltip/LiberatorLotV2@DefenderMode=Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.
+Button/Tooltip/MassRecallNexusLotV=Recalls all player units in the target area to the Mothership.
 Button/Tooltip/MoebiusReactor@MoebiusReactor=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
 Button/Tooltip/MoebiusReactor@ResearchMoebiusReactor=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
 Button/Tooltip/ObserverLotV1=Flying spy. Cloak renders the unit invisible to enemies without detection.<n/><n/><c val="FFE303">Detector</c>
@@ -369,6 +380,7 @@ DataCollection/Name/AdvancedBallisticsLotV2=Advanced Ballistics
 DataCollection/Name/AmplifiedShieldingLotV=Amplified Shielding
 DataCollection/Name/AutoTurretSwarm=Raven Auto Turret
 DataCollection/Name/BarracksLiberty=Barracks
+DataCollection/Name/BatteryOverchargeLotV=Battery Overcharge
 DataCollection/Name/BlinkLiberty=Blink
 DataCollection/Name/BunkerLiberty=Bunker
 DataCollection/Name/CaduceusReactorSwarmBeta=Caduceus Reactor
@@ -385,6 +397,7 @@ DataCollection/Name/CycloneLotV2=CycloneLotV2
 DataCollection/Name/DisruptorLotV1=Disruptor
 DataCollection/Name/DrillingClaws=Drilling Claws
 DataCollection/Name/DurableMaterialsSwarm=Durable Materials
+DataCollection/Name/EnergyRechargeLotV=Energy Recharge
 DataCollection/Name/EnhancedShockwaves=Enhanced Shockwaves
 DataCollection/Name/ExtendedThermalLanceLiberty=Extended Thermal Lance
 DataCollection/Name/FeedbackLiberty=Feedback
@@ -410,6 +423,7 @@ DataCollection/Name/LiberatorAGLotV1=Liberator AG
 DataCollection/Name/LiberatorAGLotV2=Liberator AG
 DataCollection/Name/LiberatorLotV1=Liberator AA
 DataCollection/Name/LiberatorLotV2=Liberator AA
+DataCollection/Name/MassRecallNexusLotV=Mass Recall Nexus
 DataCollection/Name/ModifiedAbility=Modified
 DataCollection/Name/MoebiusReactor=Moebius Reactor
 DataCollection/Name/NapalmSpraySwarmBeta=Napalm Spray
@@ -464,6 +478,7 @@ Effect/Name/AutoTurretSwarm@InitialSet=Initial Set
 Effect/Name/AutoTurretSwarm@LM=LM
 Effect/Name/AutoTurretSwarm@ReleaseSet=Release Set
 Effect/Name/AutoTurretSwarm@TimedLifeAB=Timed Life AB
+Effect/Name/BatteryOverchargeLotV@AB=AB
 Effect/Name/CarrierLotV1@WeaponCP=CP
 Effect/Name/CarrierLotV1@WeaponCPUpgraded=CP Upgraded
 Effect/Name/CarrierLotV1@WeaponUseMagazine=Use Magazine
@@ -528,6 +543,8 @@ Effect/Name/CycloneLockOnLotV2@LockOnRB=Lock On RB
 Effect/Name/CycloneLockOnLotV2@LockOnTurretClear=Lock On Turret Clear
 Effect/Name/CycloneLockOnLotV2@LockOnTurretStart=Lock On Turret Start
 Effect/Name/CycloneLockOnLotV2@WeaponLMSwitch=Weapon LM Switch
+Effect/Name/EnergyRechargeLotV@CP=CP
+Effect/Name/EnergyRechargeLotV@MU=MU
 Effect/Name/FeedbackLiberty@Damage=Damage
 Effect/Name/FeedbackLiberty@RemoveEnergy=Remove Energy
 Effect/Name/FeedbackLiberty@Set=Set
@@ -585,6 +602,16 @@ Effect/Name/LiberatorLotV2@TargetAGOrderMorphAG=Target AG Order Morph AG
 Effect/Name/LiberatorLotV2@TargetAGSearchAB=Target AG Search AB
 Effect/Name/LiberatorLotV2@TargetAGSearchArea=Target AG Search Area
 Effect/Name/LockOnCancelSet=Lock On Cancel Set
+Effect/Name/MassRecallNexusLotV@CastingAB=Casting AB
+Effect/Name/MassRecallNexusLotV@CastingRB=Casting RB
+Effect/Name/MassRecallNexusLotV@PhasedAB=Phased AB
+Effect/Name/MassRecallNexusLotV@PreTeleportDummy=Pre Teleport Dummy
+Effect/Name/MassRecallNexusLotV@Prevent2ndRecall=Prevent 2nd Recall
+Effect/Name/MassRecallNexusLotV@RecallSet=Recall Set
+Effect/Name/MassRecallNexusLotV@RecallTeleport=Recall Teleport
+Effect/Name/MassRecallNexusLotV@SearchArea=Search Area
+Effect/Name/MassRecallNexusLotV@WarpOutAB=Warp Out AB
+Effect/Name/MassRecallNexusLotV@WarpOutSet=Warp Out Set
 Effect/Name/NapalmSpraySwarmBeta@Damage=Damage
 Effect/Name/NapalmSpraySwarmBeta@Search=Search
 Effect/Name/NapalmSpraySwarmBeta@Set=Set

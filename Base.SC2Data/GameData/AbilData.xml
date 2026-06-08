@@ -20,6 +20,20 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilEffectTarget id="BatteryOverchargeLotV">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="BatteryOverchargeLotV@AB"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Cooldown Location="Player" TimeUse="84"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Ally,Neutral,Enemy,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <AINotifyEffect value="BatteryOverchargeCreateHealer"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BatteryOverchargeLotV"/>
+    </CAbilEffectTarget>
     <CAbilArmMagazine id="CarrierLotV1@WeaponHangar">
         <AbilSetId value="CarrierHanger"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -54,6 +68,25 @@
         <UninterruptibleArray index="Finish" value="1"/>
         <AINotifyEffect value="ChronoBoost"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="ChronoBoostLotV"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="EnergyRechargeLotV">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="EnergyRechargeLotV@CP"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Charge Link="Abil/BatteryOvercharge"/>
+            <Cooldown Location="Player" TimeUse="63"/>
+        </Cost>
+        <TargetFilters value="CanHaveEnergy;Ally,Neutral,Enemy,Missile,Stasis,Dead,Hidden,Hallucination,Invulnerable"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <UninterruptibleArray index="Approach" value="1"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value="EnergyRechargeLotV@MU"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="EnergyRechargeLotV"/>
     </CAbilEffectTarget>
     <CAbilResearch id="FluxVanesLotV@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -129,6 +162,27 @@
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
+    <CAbilEffectTarget id="LockOn">
+        <AutoCastValidatorArray index="2" value="ModifiedAbility@NotInterceptorCombined"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="LockOnAir">
+        <AutoCastValidatorArray index="2" value="ModifiedAbility@NotInterceptorCombined"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="MassRecallNexusLotV">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="MassRecallNexusLotV@SearchArea"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Cooldown Location="Player" TimeUse="182"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CursorEffect value="MassRecallNexusLotV@SearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MassRecallNexusLotV"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="ShieldBatteryRechargeEx5">
+        <AutoCastValidatorArray index="0" value="ModifiedAbility@CasterHas10EnergyOrCasterHasBatteryOverchargeBehavior"/>
+    </CAbilEffectTarget>
     <CAbilTrain id="VoidRayLotV@Build">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <Activity value="UI/Warping"/>
@@ -1258,7 +1312,7 @@
         <Arc value="360"/>
         <AutoCastFilters value="Visible;Player,Ally,Neutral"/>
         <AutoCastRange value="6.5"/>
-        <AutoCastValidatorArray value="IsNotInterceptor"/>
+        <AutoCastValidatorArray value="ModifiedAbility@NotInterceptorCombined"/>
         <AutoCastValidatorArray value="TargetNotChangeling"/>
         <AutoCastValidatorArray value="IsNotNeuralParasited"/>
         <AutoCastValidatorArray value="TargetNotChangeling"/>

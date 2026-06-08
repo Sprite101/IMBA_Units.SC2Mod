@@ -10,8 +10,18 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="BatteryOverchargeLotV">
+        <Icon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="ChronoBoostLotV">
         <Icon value="Assets\Textures\btn-ability-protoss-protoncharge-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="EnergyRechargeLotV">
+        <Icon value="Assets\Textures\btn-ability-zeratul-warpprism-transferlink.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zeratul-warpprism-transferlink.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="LiberatorAGLotV2@FighterMode">
@@ -30,6 +40,11 @@
         <AlertIcon value="Assets\Textures\btn-ability-terran-liberator-agmode.dds"/>
         <EditorCategories value="Race:Terran"/>
         <HotkeySet value="LiberatorModes"/>
+    </CButton>
+    <CButton id="MassRecallNexusLotV">
+        <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="OracleLotV1">
         <Icon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>

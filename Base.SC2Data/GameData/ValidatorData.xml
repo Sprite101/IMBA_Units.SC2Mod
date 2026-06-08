@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorCombine id="ModifiedAbility@IsShieldBattery">
+        <CombineArray value="IsShieldBattery"/>
+        <CombineArray value="ShieldBatteryLotV@Is"/>
+    </CValidatorCombine>
     <CValidatorPlayerRequirement id="AdvancedBallisticsLotV2@Upgraded">
         <WhichPlayer Value="Caster"/>
         <ResultNoPlayer value="Error"/>
         <Find value="1"/>
         <Value value="AdvancedBallisticsLotV2@Have"/>
     </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="BatteryOverchargeLotV@CasterHasBatteryOverchargeBehavior">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Behavior value="BatteryOverchargeLotV"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="ModifiedAbility@CasterHas10EnergyOrCasterHasBatteryOverchargeBehavior">
+        <CombineArray value="CasterHas10Energy"/>
+        <CombineArray value="BatteryOverchargeLotV@CasterHasBatteryOverchargeBehavior"/>
+        <CombineArray value="CasterHasBatteryOverchargeBehavior"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="DisruptorLotV1@PhasedNotHavePhasedBehavior">
         <Behavior value="PurificationNovaPhasedLotV1@Phased"/>
     </CValidatorUnitCompareBehaviorCount>
@@ -24,9 +38,27 @@
         <CombineArray value="LiberatorAGNotOutOfRange"/>
         <CombineArray value="HasNoLiberatorEnsnare"/>
     </CValidatorCombine>
+    <CValidatorCombine id="ModifiedAbility@TargetNotHaveBatteryOverchargeBehaviorCombined">
+        <Type value="And"/>
+        <CombineArray value="BatteryOverchargeLotV@TargetNotHaveBatteryOverchargeBehavior"/>
+        <CombineArray value="TargetNotHaveBatteryOvercharge"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ModifiedAbility@CasterHasBatteryOverchargeBehaviorCombined">
+        <CombineArray value="CasterHasBatteryOverchargeBehavior"/>
+        <CombineArray value="BatteryOverchargeLotV@CasterHasBatteryOverchargeBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ModifiedAbility@NotInterceptorCombined">
+        <Type value="And"/>
+        <CombineArray value="NotInterceptor"/>
+        <CombineArray value="InterceptorLotV1@NotInterceptor"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="InterceptorLotV1@NotInterceptor">
+        <Value value="InterceptorLotV1"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
     <CValidatorUnitType id="ShieldBatteryLotV@Is">
         <ResultFailed value="Error,Error/MustTargetShieldBattery"/>
-        <Value value="ShieldBattery"/>
+        <Value value="ShieldBatteryLotV"/>
     </CValidatorUnitType>
     <CValidatorUnitType id="ShieldBatteryLotV@Not">
         <ResultFailed value="CantTargetThatUnit,Error/CantTargetShieldBattery"/>
@@ -99,6 +131,10 @@
     <CValidatorCombine id="IsNotPhasedUnit">
         <CombineArray value="DisruptorLotV1@PhasedIsNotDisruptorPhased"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="BatteryOverchargeLotV@TargetNotHaveBatteryOverchargeBehavior">
+        <ResultFailed value="Error,Error/CantTargetOverchargedShieldBattery"/>
+        <Behavior value="BatteryOverchargeLotV"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="WarpInLiberty@PrismHasPowerSourceLiberty">
         <WhichUnit Value="Source"/>
         <Value value="1"/>

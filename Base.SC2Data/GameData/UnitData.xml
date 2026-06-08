@@ -942,6 +942,16 @@
         <GlossaryAlias value="Liberator"/>
         <HotkeyCategory value="Unit/Category/TerranUnits"/>
     </CUnit>
+    <CUnit id="Nexus">
+        <AbilArray Link="ChronoBoostLotV"/>
+        <AbilArray Link="BatteryOverchargeLotV"/>
+        <AbilArray Link="EnergyRechargeLotV"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="BatteryOverchargeLotV" Type="AbilCmd" AbilCmd="BatteryOverchargeLotV,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="EnergyRechargeLotV" Type="AbilCmd" AbilCmd="EnergyRechargeLotV,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="ChronoBoostLotV" Type="AbilCmd" AbilCmd="ChronoBoostLotV,Execute" Row="1" Column="0"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="ObserverLotV2">
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>

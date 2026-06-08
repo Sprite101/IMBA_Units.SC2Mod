@@ -21,6 +21,19 @@
         <AmmoUnit value="AdeptLotV@WeaponMissile"/>
         <Movers Link="AdeptWeapon"/>
     </CEffectLaunchMissile>
+    <CEffectApplyBehavior id="BatteryOverchargeAB">
+        <ValidatorArray index="0" value="ModifiedAbility@IsShieldBattery"/>
+        <ValidatorArray index="3" value="ModifiedAbility@TargetNotHaveBatteryOverchargeBehaviorCombined"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="BatteryOverchargeLotV@AB">
+        <ValidatorArray index="0" value="ModifiedAbility@IsShieldBattery"/>
+        <ValidatorArray value="IsNotConstructing"/>
+        <ValidatorArray value="HasAtLeastNormalPower"/>
+        <ValidatorArray value="ModifiedAbility@TargetNotHaveBatteryOverchargeBehaviorCombined"/>
+        <ValidatorArray value="NexusBatteryOvercharge8Range"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="BatteryOverchargeLotV"/>
+    </CEffectApplyBehavior>
     <CEffectUseMagazine id="CarrierLotV1@WeaponUseMagazine">
         <EditorCategories value="Race:Protoss"/>
     </CEffectUseMagazine>
@@ -30,6 +43,26 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="ChronoBoostLotV"/>
     </CEffectApplyBehavior>
+    <CEffectModifyUnit id="EnergyRechargeLotV@MU">
+        <EditorCategories value=""/>
+        <VitalArray index="Energy">
+            <Change value="25"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectCreatePersistent id="EnergyRechargeLotV@CP">
+        <ValidatorArray value="NexusBatteryOvercharge8Range"/>
+        <ValidatorArray value="EnergyNotFull"/>
+        <ValidatorArray value="NotNexus"/>
+        <ValidatorArray value="NotWarpingIn"/>
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="EnergyRechargeLotV@MU"/>
+        <PeriodCount value="3"/>
+        <PeriodicValidator value="TargetNotDead"/>
+        <PeriodicEffectArray value="EnergyRechargeLotV@MU"/>
+        <PeriodicPeriodArray value="0.157"/>
+    </CEffectCreatePersistent>
     <CEffectDamage id="FeedbackLiberty@Damage">
         <ValidatorArray value=""/>
         <EditorCategories value="Race:Protoss"/>
@@ -109,6 +142,9 @@
         <PeriodicPeriodArray value="0.25"/>
         <PeriodicPeriodArray value="0.25"/>
     </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="InfestorEnsnareLM">
+        <ValidatorArray index="0" value="ModifiedAbility@NotInterceptorCombined"/>
+    </CEffectLaunchMissile>
     <CEffectDamage id="LiberatorAGLotV2@WeaponDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="TargetUnit"/>
@@ -200,6 +236,65 @@
         <SearchFilters value="Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="5" Effect="LiberatorLotV2@TargetAGSearchAB"/>
     </CEffectEnumArea>
+    <CEffectApplyBehavior id="MassRecallNexusLotV@CastingAB">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="MassRecallNexusLotV@Casting"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="MassRecallNexusLotV@CastingRB">
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="NexusMassRecallCasting"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="MassRecallNexusLotV@PhasedAB">
+        <ValidatorArray index="0" removed="1"/>
+        <Behavior value="MassRecallNexusLotV@Phased"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="MassRecallNexusLotV@PreTeleportDummy"/>
+    <CEffectEnumArea id="MassRecallNexusLotV@SearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Self,Ally,Neutral,Enemy,Structure,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="6.5" Effect="MassRecallNexusLotV@WarpOutSet"/>
+        <MinCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="MassRecallNexusLotV@RecallSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="MassRecallNexusLotV@RecallTeleport"/>
+        <EffectArray value="NexusMassRecallPostBehavior2"/>
+        <EffectArray value="MassRecallNexusLotV@Prevent2ndRecall"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="MassRecallNexusLotV@Prevent2ndRecall">
+        <ValidatorArray index="0" value="NexusRecallSucceeded"/>
+        <EditorCategories value=""/>
+        <BehaviorLink value="MothershipStrategicWarpOut"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectTeleport id="MassRecallNexusLotV@RecallTeleport">
+        <EditorCategories value="Race:Protoss"/>
+        <PlacementArc value="360"/>
+        <PlacementAround Effect="MassRecallNexusLotV@SearchArea" Value="SourcePoint"/>
+        <PlacementRange value="15"/>
+        <SourceLocation Effect="MassRecallNexusLotV@SearchArea" Value="TargetPoint"/>
+        <TargetLocation Effect="MassRecallNexusLotV@SearchArea" Value="SourcePoint"/>
+        <TeleportFlags index="TestCliff" value="1"/>
+        <TeleportFlags index="TestFog" value="0"/>
+    </CEffectTeleport>
+    <CEffectApplyBehavior id="MassRecallNexusLotV@WarpOutAB">
+        <ValidatorArray index="0" removed="1"/>
+        <Behavior value="MassRecallNexusLotV@WarpOut"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="MassRecallNexusLotV@WarpOutSet">
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+        <ValidatorArray value="NotLarvaEgg"/>
+        <ValidatorArray value="NotLarva"/>
+        <ValidatorArray value="NotAbducted"/>
+        <ValidatorArray value="IsNotWarpingIn"/>
+        <ValidatorArray value="IsStrategicWarpOut"/>
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="MassRecallNexusLotV@CastingAB"/>
+        <EffectArray value="MassRecallNexusLotV@WarpOutAB"/>
+        <EffectArray value="MassRecallNexusLotV@PhasedAB"/>
+    </CEffectSet>
     <CEffectDamage id="OracleLotV1@BuildStasisWardBuildBeamOff">
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourcePoint"/>
@@ -263,6 +358,9 @@
         <Kind value="Spell"/>
         <Amount value="15"/>
     </CEffectDamage>
+    <CEffectCreateHealer id="ShieldBatteryRechargeEx5">
+        <ValidatorArray index="4" value="ModifiedAbility@NotInterceptorCombined"/>
+    </CEffectCreateHealer>
     <CEffectEnumArea id="StasisWardLotV1@ActivateSearchArea">
         <EditorCategories value="Race:Protoss"/>
         <AINotifyFlags index="HurtEnemy" value="1"/>
@@ -966,6 +1064,7 @@
         <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
     </CEffectCreateHealer>
     <CEffectSet id="ShieldBatteryRechargeChanneledSet">
+        <ValidatorArray index="7" value="ModifiedAbility@NotInterceptorCombined"/>
         <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
     </CEffectSet>
     <CEffectCreateHealer id="ShieldHeal">

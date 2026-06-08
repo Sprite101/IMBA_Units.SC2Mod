@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CBehaviorBuff id="BatteryOverchargeLotV">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="20"/>
+        <Modification HealDealtMultiplier="2"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="ChronoBoostLotV">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-chronoboost.dds"/>
@@ -46,6 +57,38 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HasNoLiberatorYoink"/>
         <RemoveValidatorArray value="IsNotRecallingCombine"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MassRecallNexusLotV@Casting">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>
+        <MaxStackCount value="0"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MassRecallNexusLotV@Phased">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="IsNexusMassRecallWarpingOutOrRecalled"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MassRecallNexusLotV@WarpOut">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CasterHasNexusMassRecallCasting"/>
+        <Duration value="5"/>
+        <Period value="4.6"/>
+        <PeriodicEffect value="MassRecallNexusLotV@PreTeleportDummy"/>
+        <FinalEffect value="MassRecallNexusLotV@CastingRB"/>
+        <ExpireEffect value="MassRecallNexusLotV@RecallSet"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <AbilClassDisableArray index="CAbilMove" value="1"/>
+            <AbilLinkEnableArray value="VolatileBurstBuilding"/>
+            <AbilLinkEnableArray value="GhostCloak"/>
+            <AbilLinkEnableArray value="BansheeCloak"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="OracleLotV1@RevelationRevealed">
         <Alignment value="Negative"/>

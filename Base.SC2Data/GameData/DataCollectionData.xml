@@ -15,6 +15,10 @@
     <CDataCollectionUnit id="BarracksLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionUnit>
+    <CDataCollection id="BatteryOverchargeLotV">
+        <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollectionUpgrade id="BlinkLiberty">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
@@ -88,6 +92,10 @@
         <DataRecord Entry="Button,DurableMaterialsSwarm@ResearchDurableMaterials"/>
         <Button value="AdvancedBallistics@ResearchAdvancedBallistics"/>
     </CDataCollectionUpgrade>
+    <CDataCollection id="EnergyRechargeLotV">
+        <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollectionUpgrade id="EnhancedShockwaves">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
         <TechInfoUpgrade value="EnhancedShockwaves@Upgrade"/>
@@ -160,6 +168,10 @@
     <CDataCollectionAbil id="LiberatorLotV2">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionAbil>
+    <CDataCollection id="MassRecallNexusLotV">
+        <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollection id="NapalmSpraySwarmBeta">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>

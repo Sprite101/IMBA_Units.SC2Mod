@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAccumulatorSwitch id="ShieldBatteryRechargeEx5@CostSwitch">
+        <CaseArray index="0" Validator="ModifiedAbility@CasterHasBatteryOverchargeBehaviorCombined"/>
+    </CAccumulatorSwitch>
+</Catalog>
