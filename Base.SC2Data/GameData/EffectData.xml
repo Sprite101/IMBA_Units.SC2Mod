@@ -145,6 +145,9 @@
     <CEffectLaunchMissile id="InfestorEnsnareLM">
         <ValidatorArray index="0" value="ModifiedAbility@NotInterceptorCombined"/>
     </CEffectLaunchMissile>
+    <CEffectCreateUnit id="KD8Knockback">
+        <ValidatorArray value="MassRecallNexusLotV@IsNotNexusMassRecallWarpingOut"/>
+    </CEffectCreateUnit>
     <CEffectDamage id="LiberatorAGLotV2@WeaponDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="TargetUnit"/>
@@ -242,7 +245,7 @@
     </CEffectApplyBehavior>
     <CEffectRemoveBehavior id="MassRecallNexusLotV@CastingRB">
         <WhichUnit Value="Caster"/>
-        <BehaviorLink value="NexusMassRecallCasting"/>
+        <BehaviorLink value="MassRecallNexusLotV@Casting"/>
         <Count value="1"/>
     </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="MassRecallNexusLotV@PhasedAB">
@@ -260,11 +263,10 @@
     <CEffectSet id="MassRecallNexusLotV@RecallSet">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="MassRecallNexusLotV@RecallTeleport"/>
-        <EffectArray value="NexusMassRecallPostBehavior2"/>
         <EffectArray value="MassRecallNexusLotV@Prevent2ndRecall"/>
     </CEffectSet>
     <CEffectRemoveBehavior id="MassRecallNexusLotV@Prevent2ndRecall">
-        <ValidatorArray index="0" value="NexusRecallSucceeded"/>
+        <ValidatorArray index="0" value="MassRecallNexusLotV@Succeeded"/>
         <EditorCategories value=""/>
         <BehaviorLink value="MothershipStrategicWarpOut"/>
         <Count value="1"/>
@@ -284,16 +286,26 @@
         <Behavior value="MassRecallNexusLotV@WarpOut"/>
     </CEffectApplyBehavior>
     <CEffectSet id="MassRecallNexusLotV@WarpOutSet">
-        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+        <ValidatorArray value="IsNotRecallingNexus"/>
         <ValidatorArray value="NotLarvaEgg"/>
         <ValidatorArray value="NotLarva"/>
         <ValidatorArray value="NotAbducted"/>
         <ValidatorArray value="IsNotWarpingIn"/>
         <ValidatorArray value="IsStrategicWarpOut"/>
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+        <ValidatorArray value="MassRecallNexusLotV@IsNotNexusMassRecallWarpingOut"/>
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="MassRecallNexusLotV@CastingAB"/>
         <EffectArray value="MassRecallNexusLotV@WarpOutAB"/>
         <EffectArray value="MassRecallNexusLotV@PhasedAB"/>
+    </CEffectSet>
+    <CEffectSet id="MothershipStrategicRecallWarpOutSet">
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+        <ValidatorArray value="MassRecallNexusLotV@IsNotNexusMassRecallWarpingOut"/>
+    </CEffectSet>
+    <CEffectSet id="NexusMassRecallWarpOutSet">
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+        <ValidatorArray value="MassRecallNexusLotV@IsNotNexusMassRecallWarpingOut"/>
     </CEffectSet>
     <CEffectDamage id="OracleLotV1@BuildStasisWardBuildBeamOff">
         <EditorCategories value="Race:Protoss"/>
@@ -339,6 +351,9 @@
         <EffectArray value="OracleLotV1@RevelationRevealCP"/>
         <EffectArray value="OracleLotV1@RevelationDummyDamage"/>
     </CEffectSet>
+    <CEffectApplyBehavior id="OracleStasisTrapActivateAB">
+        <ValidatorArray index="1" value="ModifiedAbility@IsNotRecallingCombine"/>
+    </CEffectApplyBehavior>
     <CEffectCreatePersistent id="PulsarBeamSwarm@CP">
         <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="TargetUnit"/>
@@ -370,7 +385,7 @@
     </CEffectEnumArea>
     <CEffectApplyBehavior id="StasisWardLotV1@ActivateTargetAB">
         <ValidatorArray index="0" value="NotFrenzied"/>
-        <ValidatorArray value="IsNotRecallingCombine"/>
+        <ValidatorArray value="ModifiedAbility@IsNotRecallingCombine"/>
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="StasisWardLotV1@ActivateTarget"/>
     </CEffectApplyBehavior>
@@ -986,9 +1001,6 @@
     <CEffectCreatePersistent id="MothershipCoreEnergize">
         <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
     </CEffectCreatePersistent>
-    <CEffectSet id="MothershipStrategicRecallWarpOutSet">
-        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
-    </CEffectSet>
     <CEffectApplyBehavior id="NeuralParasite">
         <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
     </CEffectApplyBehavior>
@@ -996,9 +1008,6 @@
         <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
         <!--ValidatorArray value="NotMothershipCore"/-->
     </CEffectLaunchMissile>
-    <CEffectSet id="NexusMassRecallWarpOutSet">
-        <ValidatorArray index="0" value="WarpInLiberty@IsNotWarpingIn"/>
-    </CEffectSet>
     <CEffectDestroyPersistent id="PsionicTransferLotV@RemoveGravitonBeamPersistant">
         <WhichLocation Effect="PsionicTransferLotV@TimerSpawnAB"/>
         <Effect value="GravitonBeam"/>
@@ -2387,7 +2396,11 @@
         <CaseArray Validator="TargetIsAir" Effect="WidowMineSwarm@LMAir"/>
         <CaseDefault value="WidowMineSwarm@LM"/>
     </CEffectSwitch>
+    <CEffectSet id="YoinkSet">
+        <ValidatorArray index="2" value="ModifiedAbility@IsNotRecallingCombine"/>
+    </CEffectSet>
     <CEffectCreateUnit id="YoinkStartCreatePlaceholder">
+        <ValidatorArray index="7" value="ModifiedAbility@IsNotRecallingCombine"/>
         <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
     </CEffectCreateUnit>
     <!-- This is the Siege Tank effect tree -->

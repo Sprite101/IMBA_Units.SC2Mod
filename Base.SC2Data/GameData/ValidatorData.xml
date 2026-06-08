@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitCompareBehaviorCount id="MassRecallNexusLotV@CasterIsNotNexusMassRecallWarpingOut">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="MassRecallNexusLotV@WarpOut"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="ModifiedAbility@IsNotRecallingCombine">
+        <ResultFailed value="Error,Error/CantTargetRecalling"/>
+        <Type value="And"/>
+        <CombineArray value="IsNotRecallingMothershipCore"/>
+        <CombineArray value="IsNotRecallingMothership"/>
+        <CombineArray value="IsNotRecallingNexus"/>
+        <CombineArray value="MassRecallNexusLotV@IsNotNexusMassRecallWarpingOut"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="MassRecallNexusLotV@IsNexusMassRecallWarpingOut">
+        <Compare value="GT"/>
+        <Behavior value="MassRecallNexusLotV@WarpOut"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="MassRecallNexusLotV@IsNotNexusMassRecallWarpingOut">
+        <Behavior value="MassRecallNexusLotV@WarpOut"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="ModifiedAbility@IsNexusMassRecallWarpingOutOrRecalled">
+        <CombineArray value="IsNexusMassRecallWarpingOut"/>
+        <CombineArray value="IsMothershipStrategicWarpOut"/>
+        <CombineArray value="IsNexusMassRecallRecalled"/>
+        <CombineArray value="MassRecallNexusLotV@IsNexusMassRecallWarpingOut"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="MassRecallNexusLotV@CasterHasNexusMassRecallCasting">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="MassRecallNexusLotV@Casting"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="ModifiedAbility@IsShieldBattery">
         <CombineArray value="IsShieldBattery"/>
         <CombineArray value="ShieldBatteryLotV@Is"/>
@@ -56,6 +87,11 @@
         <Value value="InterceptorLotV1"/>
         <Find value="0"/>
     </CValidatorUnitType>
+    <CValidatorLocationCompareRange id="MassRecallNexusLotV@Succeeded">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="GT"/>
+        <Value Effect="MassRecallNexusLotV@RecallSet" Value="TargetPoint"/>
+    </CValidatorLocationCompareRange>
     <CValidatorUnitType id="ShieldBatteryLotV@Is">
         <ResultFailed value="Error,Error/MustTargetShieldBattery"/>
         <Value value="ShieldBatteryLotV"/>

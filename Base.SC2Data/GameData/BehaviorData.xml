@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CBehaviorBuff id="AdeptPhaseShiftTimer">
+        <RemoveValidatorArray value="MassRecallNexusLotV@CasterIsNotNexusMassRecallWarpingOut"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="BatteryOverchargeLotV">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
@@ -56,7 +59,10 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HasNoLiberatorYoink"/>
-        <RemoveValidatorArray value="IsNotRecallingCombine"/>
+        <RemoveValidatorArray value="ModifiedAbility@IsNotRecallingCombine"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LiberatorTargetMorphBehavior">
+        <RemoveValidatorArray index="1" value="ModifiedAbility@IsNotRecallingCombine"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="MassRecallNexusLotV@Casting">
         <InfoFlags index="Hidden" value="1"/>
@@ -67,12 +73,12 @@
     <CBehaviorBuff id="MassRecallNexusLotV@Phased">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <RemoveValidatorArray value="IsNexusMassRecallWarpingOutOrRecalled"/>
+        <RemoveValidatorArray value="ModifiedAbility@IsNexusMassRecallWarpingOutOrRecalled"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="MassRecallNexusLotV@WarpOut">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <RemoveValidatorArray value="CasterHasNexusMassRecallCasting"/>
+        <RemoveValidatorArray value="MassRecallNexusLotV@CasterHasNexusMassRecallCasting"/>
         <Duration value="5"/>
         <Period value="4.6"/>
         <PeriodicEffect value="MassRecallNexusLotV@PreTeleportDummy"/>
@@ -89,6 +95,9 @@
             <AbilLinkEnableArray value="GhostCloak"/>
             <AbilLinkEnableArray value="BansheeCloak"/>
         </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NexusMassRecallTargetPhased">
+        <RemoveValidatorArray index="0" value="ModifiedAbility@IsNexusMassRecallWarpingOutOrRecalled"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="OracleLotV1@RevelationRevealed">
         <Alignment value="Negative"/>
@@ -114,6 +123,10 @@
             <VitalRegenArray index="Energy" value="-2"/>
             <WeaponEnableArray value="PulsarBeamSwarm"/>
         </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PurificationNovaTargettedTarget">
+        <RemoveValidatorArray index="7" value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
+        <RemoveValidatorArray value="MassRecallNexusLotV@CasterIsNotNexusMassRecallWarpingOut"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="StasisWardLotV1@ActivateCaster">
         <InfoFlags index="Hidden" value="1"/>
@@ -225,6 +238,7 @@
         <RemoveValidatorArray value="CasterIsNotHidden"/>
         <RemoveValidatorArray value="CasterIsNotMothershipMassRecalling"/>
         <RemoveValidatorArray value="PsionicTransferLotV@CasterIsNotPhaseShifting"/>
+        <RemoveValidatorArray value="MassRecallNexusLotV@CasterIsNotNexusMassRecallWarpingOut"/>
         <Duration value="10"/>
         <FinalEffect value="PsionicTransferLotV@TimerCancelSet"/>
         <ExpireEffect value="PsionicTransferLotV@TeleportSet"/>
@@ -336,6 +350,7 @@
         <RemoveValidatorArray value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
         <RemoveValidatorArray value="CasterIsNotMothershipMassRecalling"/>
         <RemoveValidatorArray value="CasterIsNotNexusStrategicRecalling"/>
+        <RemoveValidatorArray value="MassRecallNexusLotV@CasterIsNotNexusMassRecallWarpingOut"/>
         <Duration value="3"/>
         <Period value="0.125"/>
         <FinalEffect value="Suicide"/>
@@ -506,7 +521,7 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="HasNoLiberatorYoink"/>
-        <RemoveValidatorArray value="IsNotRecallingCombine"/>
+        <RemoveValidatorArray value="ModifiedAbility@IsNotRecallingCombine"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="MedivacSpeedBoost">
         <RemoveValidatorArray index="0" value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>
@@ -523,9 +538,6 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Duration value="3"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="PurificationNovaTargettedTarget">
-        <RemoveValidatorArray index="7" value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="RavenAntiArmorMissile@ArmorReduction">
         <Alignment value="Negative"/>
@@ -644,5 +656,6 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="WidowMineTargeted">
         <RemoveValidatorArray index="7" value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
+        <RemoveValidatorArray value="MassRecallNexusLotV@CasterIsNotNexusMassRecallWarpingOut"/>
     </CBehaviorBuff>
 </Catalog>

@@ -946,10 +946,12 @@
         <AbilArray Link="ChronoBoostLotV"/>
         <AbilArray Link="BatteryOverchargeLotV"/>
         <AbilArray Link="EnergyRechargeLotV"/>
+        <AbilArray Link="MassRecallNexusLotV"/>
         <CardLayouts index="0">
             <LayoutButtons Face="BatteryOverchargeLotV" Type="AbilCmd" AbilCmd="BatteryOverchargeLotV,Execute" Row="1" Column="2"/>
             <LayoutButtons Face="EnergyRechargeLotV" Type="AbilCmd" AbilCmd="EnergyRechargeLotV,Execute" Row="1" Column="3"/>
             <LayoutButtons Face="ChronoBoostLotV" Type="AbilCmd" AbilCmd="ChronoBoostLotV,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="MassRecallNexusLotV" Type="AbilCmd" AbilCmd="MassRecallNexusLotV,Execute" Row="1" Column="1"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="ObserverLotV2">
@@ -1351,7 +1353,7 @@
         <LifeMax value="200"/>
         <LifeArmor value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/ProtossBuildingPlating"/>
-        <EnergyStart value="50"/>
+        <EnergyStart value="100"/>
         <EnergyMax value="100"/>
         <EnergyRegenRate value="0.5625"/>
         <ShieldsStart value="200"/>
@@ -1442,6 +1444,7 @@
     <CUnit id="Probe">
         <CardLayouts index="1">
             <LayoutButtons Face="Pylon" Type="AbilCmd" AbilCmd="ProtossBuild,Build19" Row="1" Column="2"/>
+            <LayoutButtons Face="ShieldBattery" Type="AbilCmd" AbilCmd="ProtossBuild,Build20" Row="2" Column="3"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="ReleaseInterceptorsLotV1@Beacon">
