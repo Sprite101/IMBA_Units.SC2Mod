@@ -7,12 +7,14 @@
     <CModel id="OracleSwarm@TimeWarpModel" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\TemporalField\TemporalField.m3"/>
         <EditorCategories value="Race:Protoss"/>
-        <ScaleMax value="1.600000,1.600000,1.600000"/>
-        <ScaleMin value="1.600000,1.600000,1.600000"/>
     </CModel>
     <CModel id="CycloneLockOnLotV2@Missile" parent="MissileFX">
         <Model value="Assets\Effects\Terran\Cyclone_BigMissile\Cyclone_BigMissile.m3"/>
         <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="OracleSwarm@TimeWarpImpactModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\TimebombAffected\TimeBombAffected.m3"/>
+        <EditorCategories value="Race:Protoss"/>
     </CModel>
     <CModel id="WarpInLiberty@UnpoweredVisual" parent="UIFeedback">
         <Model value="Assets\UI\Feedback\PylonRadiusUnpowered_X1\PylonRadiusUnpowered_X1.m3"/>

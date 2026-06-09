@@ -124,6 +124,7 @@
         <On Terms="Effect.OracleSwarm@TimeWarpCP.Stop" Send="Create CloakingFieldTargetedStopSound"/>
         <HostSiteOps Ops="SOpShadow"/>
         <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <Scale value="1.150000"/>
     </CActorModel>
     <CActorSplat id="OracleSwarm@TimeWarpCursorSplat" parent="ProtossCursorSplat" abil="OracleSwarm@TimeWarp"/>
     <CActorRange id="OracleSwarm@TimeWarpRange" parent="RangeAbil" abil="OracleSwarm@TimeWarp">
@@ -336,6 +337,14 @@
         <HostImpact Subject="_Selectable"/>
         <HostImpactSiteOps Ops="SOpLowerBy375"/>
     </CActorBeamSimple>
+    <CActorSound id="OracleSwarm@PulsarBeamAttackStartSound" parent="SoundOneShot">
+        <On Terms="Effect.OracleSwarm@PulsarBeamCP.Start" Send="Create"/>
+        <Sound value="Sentry_WeaponStart"/>
+    </CActorSound>
+    <CActorSound id="OracleSwarm@PulsarBeamAttackStopSound" parent="SoundOneShot">
+        <On Terms="Effect.OracleSwarm@PulsarBeamCP.Stop" Send="Create"/>
+        <Sound value="Sentry_WeaponEnd"/>
+    </CActorSound>
     <!--                                                                                         -->
     <!-- Robotics Facility ..................................................................... -->
     <!--                                                                                         -->
@@ -940,7 +949,6 @@
         <On Terms="ActorCreation; ValidateUnit IsSwarmHostBurrowed" Send="SetScale 0.700000"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachOrigin"/>
-        <Model value="TemporalFieldImpactModel"/>
         <AutoScaleFactor value="1.000000"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
