@@ -43,6 +43,21 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="ChronoBoostLotV"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="OracleSwarm@TimeWarpAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="OracleSwarm@TimeWarp"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="OracleSwarm@TimeWarpCP">
+        <EditorCategories value="Race:Protoss"/>
+        <PeriodCount value="480"/>
+        <PeriodicEffectArray value="OracleSwarm@TimeWarpSearchArea"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="OracleSwarm@TimeWarpSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="3.5" Effect="OracleSwarm@TimeWarpAB"/>
+    </CEffectEnumArea>
     <CEffectModifyUnit id="EnergyRechargeLotV@MU">
         <EditorCategories value=""/>
         <VitalArray index="Energy">
@@ -142,6 +157,11 @@
         <PeriodicPeriodArray value="0.25"/>
         <PeriodicPeriodArray value="0.25"/>
     </CEffectCreatePersistent>
+    <CEffectRemoveBehavior id="OracleSwarm@PulsarBeamRB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="OracleSwarm@PulsarBeamEnergyCost"/>
+    </CEffectRemoveBehavior>
     <CEffectLaunchMissile id="InfestorEnsnareLM">
         <ValidatorArray index="0" value="ModifiedAbility@NotInterceptorCombined"/>
     </CEffectLaunchMissile>
@@ -267,7 +287,7 @@
     </CEffectSet>
     <CEffectRemoveBehavior id="MassRecallNexusLotV@Prevent2ndRecall">
         <ValidatorArray index="0" value="MassRecallNexusLotV@Succeeded"/>
-        <EditorCategories value=""/>
+        <EditorCategories value="Race:Protoss"/>
         <BehaviorLink value="MothershipStrategicWarpOut"/>
         <Count value="1"/>
     </CEffectRemoveBehavior>
@@ -307,6 +327,11 @@
         <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
         <ValidatorArray value="MassRecallNexusLotV@IsNotNexusMassRecallWarpingOut"/>
     </CEffectSet>
+    <CEffectSet id="OracleSwarm@PulsarBeamCPSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="OracleSwarm@PulsarBeamAB"/>
+        <EffectArray value="OracleSwarm@PulsarBeamDamage"/>
+    </CEffectSet>
     <CEffectDamage id="OracleLotV1@BuildStasisWardBuildBeamOff">
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourcePoint"/>
@@ -318,6 +343,11 @@
     <CEffectApplyBehavior id="OracleLotV1@RevelationAB">
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="OracleLotV1@RevelationRevealed"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="OracleSwarm@PulsarBeamAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="OracleSwarm@PulsarBeamEnergyCost"/>
     </CEffectApplyBehavior>
     <CEffectDamage id="OracleLotV1@RevelationDummyDamage">
         <EditorCategories value=""/>
@@ -354,6 +384,31 @@
     <CEffectApplyBehavior id="OracleStasisTrapActivateAB">
         <ValidatorArray index="1" value="ModifiedAbility@IsNotRecallingCombine"/>
     </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="OracleSwarm@PulsarBeamCP">
+        <ValidatorArray value="PulsarCasterMinEnergy"/>
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="OracleSwarm@PulsarBeamInitialDummyDamage"/>
+        <FinalEffect value="OracleSwarm@PulsarBeamRB"/>
+        <PeriodicValidator value="CasterHasEnergyAndNotDead"/>
+        <PeriodicEffectArray value="OracleSwarm@PulsarBeamCPSet"/>
+        <PeriodicPeriodArray value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="OracleSwarm@PulsarBeamDamage">
+        <EditorCategories value="Race:Protoss"/>
+        <Flags index="Notification" value="1"/>
+        <Flags index="NoScaledDealtBonus" value="1"/>
+        <Flags index="NoFractionDealtBonus" value="1"/>
+        <Flags index="NoUnscaledDealtBonus" value="1"/>
+        <Flags index="NoDealtMaximum" value="1"/>
+        <Flags index="NoDealtMinimum" value="1"/>
+        <Flags index="NoBehaviorResponse" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="25"/>
+    </CEffectDamage>
     <CEffectCreatePersistent id="PulsarBeamSwarm@CP">
         <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="TargetUnit"/>
@@ -372,6 +427,12 @@
         <Visibility value="Visible"/>
         <Kind value="Spell"/>
         <Amount value="15"/>
+    </CEffectDamage>
+    <CEffectDamage id="OracleSwarm@PulsarBeamInitialDummyDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <Marker Link="Effect/OracleSwarm@PulsarBeamDamage"/>
+        <ArmorReduction value="0"/>
+        <Kind value="Ranged"/>
     </CEffectDamage>
     <CEffectCreateHealer id="ShieldBatteryRechargeEx5">
         <ValidatorArray index="4" value="ModifiedAbility@NotInterceptorCombined"/>
@@ -847,6 +908,7 @@
         <EffectArray value="PsionicTransferLotV@RemoveRecallSet"/>
     </CEffectSet>
     <CEffectModifyUnit id="PsionicTransferLotV@ModifyUnitSelect">
+        <EditorCategories value="Race:Protoss"/>
         <ImpactUnit Value="Caster"/>
         <SelectTransferUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Target"/>
         <SelectTransferFlags index="DeselectSource" value="1"/>
@@ -1009,12 +1071,13 @@
         <!--ValidatorArray value="NotMothershipCore"/-->
     </CEffectLaunchMissile>
     <CEffectDestroyPersistent id="PsionicTransferLotV@RemoveGravitonBeamPersistant">
+        <EditorCategories value="Race:Protoss"/>
         <WhichLocation Effect="PsionicTransferLotV@TimerSpawnAB"/>
         <Effect value="GravitonBeam"/>
         <Count value="1"/>
     </CEffectDestroyPersistent>
     <CEffectRemoveBehavior id="PsionicTransferLotV@RemoveFungalGrowth">
-        <EditorCategories value=""/>
+        <EditorCategories value="Race:Protoss"/>
         <WhichUnit Effect="PsionicTransferLotV@TimerSpawnAB" Value="Caster"/>
         <BehaviorLink value="FungalGrowth"/>
     </CEffectRemoveBehavior>
@@ -1877,6 +1940,7 @@
         <PeriodicPeriodArray value="0.0312"/>
     </CEffectCreatePersistent>
     <CEffectDamage id="ReleaseInterceptorsLotV1@TimedLifeFate">
+        <EditorCategories value="Race:Protoss"/>
         <Flags index="Kill" value="1"/>
         <Flags index="NoKillCredit" value="1"/>
         <Death value="Timeout"/>

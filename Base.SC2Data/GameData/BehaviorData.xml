@@ -34,6 +34,12 @@
             <RateMultiplierArray index="Creep" value="2"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="OracleSwarm@TimeWarp">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="0.125"/>
+        <Modification MoveSpeedMultiplier="0.5"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="ImmortalLiberty@HardenedShield">
         <Alignment value="Positive"/>
         <Cost>
@@ -122,6 +128,16 @@
         <Modification>
             <VitalRegenArray index="Energy" value="-2"/>
             <WeaponEnableArray value="PulsarBeamSwarm"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="OracleSwarm@PulsarBeamEnergyCost">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-voidrayprismaticalignment.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CanSpendEnergy"/>
+        <RemoveValidatorArray value="hasEnergy"/>
+        <Duration value="1"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="-2"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="PurificationNovaTargettedTarget">

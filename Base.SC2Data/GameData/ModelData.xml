@@ -4,6 +4,12 @@
         <Model value="Assets\Effects\Terran\AutoTurretPodMissile\AutoTurretPodMissile.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
+    <CModel id="OracleSwarm@TimeWarpModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\TemporalField\TemporalField.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ScaleMax value="1.600000,1.600000,1.600000"/>
+        <ScaleMin value="1.600000,1.600000,1.600000"/>
+    </CModel>
     <CModel id="CycloneLockOnLotV2@Missile" parent="MissileFX">
         <Model value="Assets\Effects\Terran\Cyclone_BigMissile\Cyclone_BigMissile.m3"/>
         <EditorCategories value="Race:Terran"/>

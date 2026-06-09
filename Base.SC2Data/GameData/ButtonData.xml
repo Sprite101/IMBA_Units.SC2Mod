@@ -46,7 +46,17 @@
         <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="OracleSwarm@TimeWarp">
+        <Icon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="OracleLotV1">
+        <Icon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="OracleSwarm">
         <Icon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-oracle.dds"/>
         <EditorCategories value="Race:Protoss"/>
@@ -85,6 +95,11 @@
     <CButton id="VoidRayLotV">
         <Icon value="Assets\Textures\btn-unit-protoss-warpray.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-warpray.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="OracleSwarm@PulsarBeam">
+        <Icon value="Assets\Textures\btn-ability-protoss-prismaticbeam-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-prismaticbeam-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="WarpInLiberty@Research">

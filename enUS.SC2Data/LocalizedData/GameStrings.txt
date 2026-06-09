@@ -66,6 +66,9 @@ Abil/Name/ObserverLotV2@SiegedUnsiege=Unsiege
 Abil/Name/OracleLotV1@Build=Build
 Abil/Name/OracleLotV1@BuildStasisWard=Build Stasis Ward
 Abil/Name/OracleLotV1@Revelation=Revelation
+Abil/Name/OracleSwarm@Build=Build
+Abil/Name/OracleSwarm@PulsarBeam=Pulsar Beam
+Abil/Name/OracleSwarm@TimeWarp=Time Warp
 Abil/Name/PointDefenseDroneSwarm=Place Point Defense Drone
 Abil/Name/PsiStormHighTemplarLiberty=Research
 Abil/Name/PsiStormLiberty=Psi Storm
@@ -109,6 +112,8 @@ Behavior/Name/CycloneLockOnAirLoTV1@LockOn=Lock On Target
 Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
 Behavior/Name/CycloneLockOnLotV2@LockOn=Lock On Target
 Behavior/Name/OracleLotV1@RevelationRevealed=Revealed
+Behavior/Name/OracleSwarm@PulsarBeamEnergyCost=Pulsar Beam
+Behavior/Name/OracleSwarm@TimeWarp=Time Warp
 Behavior/Name/PsiStormLiberty=Psionic Storm
 Behavior/Name/PulsarBeamSwarm@WeaponOn=Pulsar Beam
 Behavior/Name/PurificationNovaPhasedLotV1@Phased=Phased
@@ -128,6 +133,7 @@ Behavior/Tooltip/ChronoBoostLotV=This structure is in an accelerated state.
 Behavior/Tooltip/CycloneLockOnAirLoTV1@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/OracleLotV1@RevelationRevealed=This unit or structure is providing vision for the caster.
+Behavior/Tooltip/OracleSwarm@PulsarBeamEnergyCost=This Oracle's is attacking a structure target.
 Behavior/Tooltip/PsiStormLiberty=Target is under the effects of Psionic Storm and will take massive damage while in this area of effect.
 Behavior/Tooltip/PulsarBeamSwarm@WeaponOn=This Oracle's weapon is enabled and can attack ground units.
 Behavior/Tooltip/PurificationNovaPhasedLotV1@Phased=This unit is invulnerable and is able to move through other units.
@@ -202,6 +208,9 @@ Button/Name/ObserverLotV2@SiegedUnsiege=Observer Mode
 Button/Name/OracleLotV1=Warp In Oracle
 Button/Name/OracleLotV1@BuildStasisTrap=Build Stasis Ward
 Button/Name/OracleLotV1@Revelation=Revelation
+Button/Name/OracleSwarm=Warp In Oracle
+Button/Name/OracleSwarm@PulsarBeam=Pulsar Beam
+Button/Name/OracleSwarm@TimeWarp=Time Warp
 Button/Name/PointDefenseDroneSwarm@BuildPointDefenseDrone=Build Point Defense Drone
 Button/Name/PsiStormHighTemplarLiberty=Research Psionic Storm
 Button/Name/PsiStormLiberty=Psionic Storm
@@ -320,6 +329,9 @@ Button/Tooltip/ObserverLotV2@SiegedUnsiege=Transforms the Observer to standard O
 Button/Tooltip/OracleLotV1=Flying caster. Can use Revelation, Stasis Ward, and Pulsar Beam.
 Button/Tooltip/OracleLotV1@BuildStasisTrap=Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for <d ref="Behavior,OracleStasisTrapTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
 Button/Tooltip/OracleLotV1@Revelation=Causes enemy units and structures within the target area to grant vision for <d ref="Behavior,OracleLotV1@RevelationRevealed,Duration"/> seconds. Reveals cloaked or burrowed units and structures.
+Button/Tooltip/OracleSwarm=Flying caster. Can use Revelation, Stasis Ward, and Pulsar Beam.
+Button/Tooltip/OracleSwarm@PulsarBeam=Activates Oracle's Pulsar Beam on an enemy structure, dealing <d ref="Effect,OracleSwarm@PulsarBeamDamage,Amount[0]"/> damage every second.
+Button/Tooltip/OracleSwarm@TimeWarp=Warps spacetime within the target area for <d ref="Effect,OracleSwarm@TimeWarpCP,PeriodCount*Effect,OracleSwarm@TimeWarpCP,PeriodicPeriodArray[0]"/> seconds. Enemy ground units that enter the field have their movement speed reduced by <d ref="(1-Behavior,OracleSwarm@TimeWarp,Modification.MoveSpeedMultiplier)*100"/>%.
 Button/Tooltip/PointDefenseDroneSwarm@BuildPointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
 Button/Tooltip/PointDefenseDroneSwarm@PointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneTimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
 Button/Tooltip/PsiStormHighTemplarLiberty=Allows <c val="ffff8a">High Templar</c> to summon a storm of psionic energy, causing heavy damage to every unit in the target area.<n/><n/>Creates a storm of psionic energy that lasts <d time="4"/>, causing up to 80 damage to all units in the target area.
@@ -623,6 +635,15 @@ Effect/Name/OracleLotV1@RevelationRevealCP=Revelation Reveal CP
 Effect/Name/OracleLotV1@RevelationRevealDP=Revelation Reveal DP
 Effect/Name/OracleLotV1@RevelationSearchArea=Revelation Search Area
 Effect/Name/OracleLotV1@RevelationSet=Revelation Set
+Effect/Name/OracleSwarm@PulsarBeamAB=Pulsar Beam AB
+Effect/Name/OracleSwarm@PulsarBeamCP=Pulsar Beam CP
+Effect/Name/OracleSwarm@PulsarBeamCPSet=Pulsar Beam CP Set
+Effect/Name/OracleSwarm@PulsarBeamDamage=Pulsar Beam Damage
+Effect/Name/OracleSwarm@PulsarBeamInitialDummyDamage=Pulsar Beam Initial Dummy Damage
+Effect/Name/OracleSwarm@PulsarBeamRB=Pulsar Beam RB
+Effect/Name/OracleSwarm@TimeWarpAB=Time Warp AB
+Effect/Name/OracleSwarm@TimeWarpCP=Time Warp CP
+Effect/Name/OracleSwarm@TimeWarpSearchArea=Time Warp Search Area
 Effect/Name/PistolSwarm@CP=CP
 Effect/Name/PistolSwarm@Damage=Damage
 Effect/Name/PointDefenseDroneSwarm@CU=CU
@@ -851,6 +872,7 @@ Unit/Name/LiberatorLotV2@MorphModel=Liberator
 Unit/Name/ObserverLotV1=Observer
 Unit/Name/ObserverLotV2=Observer
 Unit/Name/OracleLotV1=Oracle
+Unit/Name/OracleSwarm=Oracle
 Unit/Name/PointDefenseDroneSwarm@Missile=Missile
 Unit/Name/PointDefenseDroneSwarm@PointDefenseDrone=Point Defense Drone
 Unit/Name/PointDefenseDroneSwarm@Unit=Point Defense Drone

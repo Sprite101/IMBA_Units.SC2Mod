@@ -179,6 +179,25 @@
         <CursorEffect value="MassRecallNexusLotV@SearchArea"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MassRecallNexusLotV"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="OracleSwarm@TimeWarp">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="OracleSwarm@TimeWarpCP"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="75"/>
+        </Cost>
+        <Range value="9"/>
+        <CursorEffect value="OracleSwarm@TimeWarpSearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="OracleSwarm@TimeWarp"/>
+    </CAbilEffectTarget>
+    <CAbilTrain id="OracleSwarm@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="35" Effect="WarpInEffect">
+            <Button DefaultButtonFace="OracleSwarm"/>
+            <Unit value="OracleSwarm"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilEffectTarget id="ShieldBatteryRechargeEx5">
         <AutoCastValidatorArray index="0" value="ModifiedAbility@CasterHas10EnergyOrCasterHasBatteryOverchargeBehavior"/>
     </CAbilEffectTarget>
@@ -190,6 +209,30 @@
             <Unit value="VoidRayLotV"/>
         </InfoArray>
     </CAbilTrain>
+    <CAbilEffectTarget id="OracleSwarm@PulsarBeam">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="OracleSwarm@PulsarBeamCP"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Cost>
+            <Charge Link="Abil/ViperConsumeStructure"/>
+            <Cooldown Link="Abil/ViperConsumeStructure" Location="Unit"/>
+        </Cost>
+        <TargetFilters value="Structure;Player,Ally,RawResource,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="5"/>
+        <SmartValidatorArray value="PulsarBeamTargetFilters"/>
+        <AutoCastFilters value="Structure,Visible;Player,Ally,Neutral,RawResource,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <AutoCastRange value="5"/>
+        <AutoCastValidatorArray value="PulsarCasterMinEnergy"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="OracleSwarm@PulsarBeam"/>
+        <TargetSorts>
+            <SortArray value="OracleSwarm@PulsarBeamTSThreatensOracle"/>
+        </TargetSorts>
+    </CAbilEffectTarget>
     <CAbilResearch id="WarpInLiberty@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="60" Upgrade="WarpGateResearch">
@@ -410,7 +453,7 @@
     <CAbilTrain id="OracleLotV1@Build">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <Activity value="UI/Warping"/>
-        <InfoArray index="Train1" Time="52" Effect="WarpInEffect">
+        <InfoArray index="Train1" Time="50" Effect="WarpInEffect">
             <Button DefaultButtonFace="OracleLotV1"/>
             <Unit value="OracleLotV1"/>
         </InfoArray>
