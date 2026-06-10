@@ -652,6 +652,11 @@
     <CBehaviorBuff id="SalvageLiberty" parent="Salvage">
         <Name value="Behavior/Name/SalvageLiberty"/>
         <ExpireEffect value="SalvageLiberty@ModifyUnit"/>
+        <Modification>
+            <AbilLinkEnableArray index="0" removed="1"/>
+            <AbilLinkEnableArray index="1" removed="1"/>
+            <AbilLinkDisableArray value="SalvageLiberty"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="SeekerMissileSwarm@TargetTint">
         <Alignment value="Negative"/>

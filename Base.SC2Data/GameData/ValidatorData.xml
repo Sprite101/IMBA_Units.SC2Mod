@@ -9,6 +9,27 @@
     <CValidatorUnitType id="CarrierLotV1@IsCarrier">
         <Value value="CarrierLotV1"/>
     </CValidatorUnitType>
+    <CValidatorCombine id="CloneBehaviorFilters">
+        <CombineArray value="MULEWoL@NotWorkerMULE"/>
+    </CValidatorCombine>
+    <CValidatorLocationPlacement id="MULEWoL@MULEPlacementCheck">
+        <Range value="2"/>
+        <Unit value="MULEWoL"/>
+    </CValidatorLocationPlacement>
+    <CValidatorLocationType id="MULEWoL@MULETargetCheck">
+        <ResultFailed value="CantFindPlacementLocation"/>
+        <Point value="MULEWoL@MULEPlacementCheck"/>
+        <Unit value="MULEWoL@MULEUnitCheck"/>
+    </CValidatorLocationType>
+    <CValidatorCombine id="MULEWoL@MULEUnitCheck">
+        <ResultFailed value="CantFindPlacementLocation"/>
+        <Type value="And"/>
+        <CombineArray value="Minerals"/>
+        <CombineArray value="MULEPlacementCheck"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="MULEWoL@IsMULE">
+        <Value value="MULEWoL"/>
+    </CValidatorUnitType>
     <CValidatorCombine id="ModifiedAbility@IsCarrier">
         <CombineArray value="IsCarrier"/>
         <CombineArray value="CarrierLotV1@IsCarrier"/>
@@ -106,6 +127,22 @@
         <Compare value="GT"/>
         <Value Effect="MassRecallNexusLotV@RecallSet" Value="TargetPoint"/>
     </CValidatorLocationCompareRange>
+    <CValidatorUnitType id="MULEWoL@NotWorkerMULE">
+        <Value value="MULEWoL"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="NotWorker">
+        <CombineArray value="MULEWoL@NotWorkerMULE"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="NotWorkerAndNotCloaked">
+        <CombineArray value="MULEWoL@NotWorkerMULE"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="NotWorkerAndNotCloakedAndNotDead">
+        <CombineArray value="MULEWoL@NotWorkerMULE"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="PurifyTargetFilters">
+        <CombineArray value="MULEWoL@NotWorkerMULE"/>
+    </CValidatorCombine>
     <CValidatorUnitType id="ShieldBatteryLotV@Is">
         <ResultFailed value="Error,Error/MustTargetShieldBattery"/>
         <Value value="ShieldBatteryLotV"/>
@@ -470,4 +507,7 @@
         <WhichUnit Effect="ChargeLotV1@InitialAB"/>
         <Filters value="-;Hidden"/>
     </CValidatorUnitFilters>
+    <CValidatorCombine id="isWorker">
+        <CombineArray value="MULEWoL@IsMULE"/>
+    </CValidatorCombine>
 </Catalog>

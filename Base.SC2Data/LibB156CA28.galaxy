@@ -587,14 +587,11 @@ void libB156CA28_gf_Select_MULE (int lp_player, int lp_selectionIndex) {
     // Automatic Variable Declarations
     // Implementation
     if ((lp_selectionIndex == 0)) {
-        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 0), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MULEWoL@CalldownMULE", 0), false);
     }
     else if ((lp_selectionIndex == 1)) {
-        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 0), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 1), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("MULEGather", 0), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("MULEGather", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MULEWoL@CalldownMULE", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CalldownMULE", 0), false);
     }
 }
 
@@ -636,10 +633,13 @@ void libB156CA28_gf_Select_Bunker (int lp_player, int lp_selectionIndex) {
     // Implementation
     if ((lp_selectionIndex == 0)) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 20), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("SalvageLiberty", 0), false);
     }
     else if ((lp_selectionIndex == 1)) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 20), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("SalvageLiberty", 0), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("SalvageEffect", 0), false);
     }
 }
 
@@ -693,6 +693,7 @@ void libB156CA28_gf_Default (int lp_player) {
     TechTreeUnitAllow(lp_player, "WidowMineSwarm", false);
     TechTreeUnitAllow(lp_player, "WidowMineSwarm@WidowMineBurrowed", false);
     TechTreeUpgradeAllow(lp_player, "AdvancedBallistics", false);
+    TechTreeUpgradeAllow(lp_player, "AdvancedBallisticsLotV2", false);
     TechTreeUpgradeAllow(lp_player, "CorvidReactorSwarm", false);
     TechTreeUpgradeAllow(lp_player, "DurableMaterialsSwarm", false);
     TechTreeUpgradeAllow(lp_player, "EnhancedShockwaves@Upgrade", false);
@@ -712,7 +713,7 @@ void libB156CA28_gf_Default (int lp_player) {
     TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 0), false);
     TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 1), false);
     TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 2), false);
-    TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 0), false);
+    TechTreeAbilityAllow(lp_player, AbilityCommand("MULEWoL@Gather", 0), false);
 }
 
 // Triggers
@@ -807,7 +808,7 @@ bool libB156CA28_gt_SelectionButtonUsed_Func (bool testConds, bool runActions) {
                 TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "B", IntToText(lv_panelIndex));
                 TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "C", IntToText(lv_itemIndex));
                 TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "D", IntToText(lv_selectionIndex));
-                TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_41422E3B"), true);
+                TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_41422E3B"), false);
                 libB156CA28_gv_unitSelectionResults[lv_panelIndex][lv_itemIndex] = lv_selectionIndex;
             }
 

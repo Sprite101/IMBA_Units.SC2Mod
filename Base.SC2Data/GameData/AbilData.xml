@@ -34,6 +34,17 @@
         <AINotifyEffect value="BatteryOverchargeCreateHealer"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BatteryOverchargeLotV"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="MULEWoL@CalldownMULE">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="MULEWoL@CalldownMULECU"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MULEWoL"/>
+    </CAbilEffectTarget>
     <CAbilTrain id="CarrierLotV2@Train">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <Activity value="UI/Warping"/>
@@ -1103,9 +1114,9 @@
             <Unit value="HellbatSwarmBeta@Hellbat"/>
         </InfoArray>
     </CAbilTrain>
-    <CAbilHarvest id="ModifiedAbility@MuleGatherWoL">
+    <CAbilHarvest id="MULEWoL@Gather">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="Gather" DefaultButtonFace="ModifiedAbility@MuleGatherWoL"/>
+        <CmdButtonArray index="Gather" DefaultButtonFace="MULEWoL@Gather"/>
         <Range value="0.5"/>
         <ReservedMarker Link="Abil/MULEGather"/>
         <ResourceAllowed index="Vespene" value="0"/>

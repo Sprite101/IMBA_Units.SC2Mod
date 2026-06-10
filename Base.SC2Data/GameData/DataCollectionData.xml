@@ -198,6 +198,10 @@
     <CDataCollectionAbil id="LiberatorLotV2">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionAbil>
+    <CDataCollectionUnit id="MULEWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+        <TechInfoUnit value="RavenLotV1"/>
+    </CDataCollectionUnit>
     <CDataCollection id="MassRecallNexusLotV">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>

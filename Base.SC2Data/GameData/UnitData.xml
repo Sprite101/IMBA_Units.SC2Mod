@@ -1080,6 +1080,72 @@
         <GlossaryAlias value="Liberator"/>
         <HotkeyCategory value="Unit/Category/TerranUnits"/>
     </CUnit>
+    <CUnit id="MULEWoL">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Worker" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="AILifetime" value="1"/>
+        <FlagArray index="HideFromHarvestingCount" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <DefaultAcquireLevel value="Defensive"/>
+        <Response value="Flee"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="60"/>
+        <LifeMax value="60"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
+        <Speed value="2.8125"/>
+        <Acceleration value="2.5"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="8"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="16.667"/>
+        <AttackTargetPriority value="20"/>
+        <AIOverideTargetPriority value="10"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="10"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="MULERepair"/>
+        <AbilArray Link="MULEWoL@Gather"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="AttackWorker" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="MULEWoL@Gather" Type="AbilCmd" AbilCmd="MULEWoL@Gather,Gather" Row="1" Column="0"/>
+            <LayoutButtons Face="Repair" Type="AbilCmd" AbilCmd="MULERepair,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="ReturnCargo" Type="AbilCmd" AbilCmd="MULEWoL@Gather,Return" Row="1" Column="1"/>
+            <LayoutButtons Face="ReturnCargo" Type="AbilCmd" AbilCmd="MULEGather,Return" Row="1" Column="1"/>
+            <LayoutButtons Face="ReturnCargo" Type="AbilCmd" AbilCmd="SCVHarvest,Return" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <SubgroupPriority value="56"/>
+        <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <GlossaryCategory value="Unit/Category/TerranUnits"/>
+        <GlossaryPriority value="20"/>
+        <HotkeyCategory value="Unit/Category/TerranUnits"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
     <CUnit id="Nexus">
         <AbilArray Link="ChronoBoostLotV"/>
         <AbilArray Link="BatteryOverchargeLotV"/>
@@ -1544,6 +1610,12 @@
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
+    </CUnit>
+    <CUnit id="OrbitalCommand">
+        <AbilArray Link="MULEWoL@CalldownMULE"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="MULEWoL" Type="AbilCmd" AbilCmd="MULEWoL@CalldownMULE,Execute" Row="2" Column="0"/>
+        </CardLayouts>
     </CUnit>
     <CUnit id="PlanetaryFortress">
         <LifeArmor value="3"/>
@@ -2476,7 +2548,7 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="HellionSwarmBeta@MorphToHellbat"/>
-        <WeaponArray Link="InfernalFlameThrower" Turret="Hellion"/>
+        <WeaponArray Link="InfernalFlamethrowerWoL" Turret="Hellion"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -2605,7 +2677,7 @@
         <Food value="-3"/>
         <CostCategory value="Army"/>
         <CostResource index="Minerals" value="150"/>
-        <CostResource index="Vespene" value="125"/>
+        <CostResource index="Vespene" value="150"/>
         <RepairTime value="60"/>
         <AttackTargetPriority value="20"/>
         <DamageDealtXP value="1"/>
@@ -2666,7 +2738,7 @@
         <Food value="-3"/>
         <CostCategory value="Army"/>
         <CostResource index="Minerals" value="150"/>
-        <CostResource index="Vespene" value="125"/>
+        <CostResource index="Vespene" value="150"/>
         <RepairTime value="60"/>
         <AttackTargetPriority value="20"/>
         <DamageDealtXP value="1"/>
@@ -2708,14 +2780,6 @@
         <GlossaryWeakArray value="Tempest"/>
         <GlossaryAlias value="Liberator"/>
         <HotkeyCategory value="Unit/Category/TerranUnits"/>
-    </CUnit>
-    <CUnit id="MULE">
-        <AbilArray Link="ModifiedAbility@MuleGatherWoL"/>
-        <CardLayouts index="0">
-            <LayoutButtons index="9" AbilCmd="ModifiedAbility@MuleGatherWoL,Return"/>
-            <LayoutButtons Face="GatherMULE" Type="AbilCmd" AbilCmd="ModifiedAbility@MuleGatherWoL,Gather" Row="1" Column="0"/>
-            <LayoutButtons Face="ReturnCargo" Type="AbilCmd" AbilCmd="SCVHarvest,Return" Row="1" Column="1"/>
-        </CardLayouts>
     </CUnit>
     <CUnit id="Medivac">
         <CardLayouts index="0">
@@ -2876,6 +2940,8 @@
     </CUnit>
     <CUnit id="SCV">
         <CardLayouts index="1">
+            <LayoutButtons Face="BarracksLiberty" Type="AbilCmd" AbilCmd="TerranBuild,Build22" Row="1" Column="0"/>
+            <LayoutButtons Face="BunkerLiberty" Type="AbilCmd" AbilCmd="TerranBuild,Build21" Row="2" Column="0"/>
             <LayoutButtons Face="SensorTowerLotV1" Type="AbilCmd" AbilCmd="TerranBuild,Build20" Row="2" Column="2"/>
         </CardLayouts>
     </CUnit>
