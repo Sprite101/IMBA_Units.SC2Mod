@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitType id="CarrierLotV2@IsCarrier">
+        <Value value="CarrierLotV2"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareOrderCount id="CarrierLotV2@WeaponHangarQueueEmpty">
+        <AbilLink value="CarrierLotV2@WeaponHangar"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitType id="CarrierLotV1@IsCarrier">
+        <Value value="CarrierLotV1"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="ModifiedAbility@IsCarrier">
+        <CombineArray value="IsCarrier"/>
+        <CombineArray value="CarrierLotV1@IsCarrier"/>
+        <CombineArray value="CarrierLotV2@IsCarrier"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="MassRecallNexusLotV@CasterIsNotNexusMassRecallWarpingOut">
         <WhichUnit Value="Caster"/>
         <Behavior value="MassRecallNexusLotV@WarpOut"/>

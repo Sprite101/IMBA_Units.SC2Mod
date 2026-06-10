@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CRequirementConst id="8"/>
     <CRequirementAllowAbil id="AllowAbilCaduceusReactorSwarmBeta@ResearchCaduceusReactor0">
         <Link value="CaduceusReactorSwarmBeta@ResearchCaduceusReactor"/>
     </CRequirementAllowAbil>
@@ -50,6 +49,11 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="InterceptorLotV1" State="QueuedOrBetterAtUnit"/>
     </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitInterceptorLotV2QueuedOrBetterAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="InterceptorLotV2" State="QueuedOrBetterAtUnit"/>
+    </CRequirementCountUnit>
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsCompleteOnly1495348974">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AdvancedBallistics" State="CompleteOnly"/>
@@ -60,7 +64,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsLotV2QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="AdvancedBallisticsLotV2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsQueuedOrBetter">
@@ -150,6 +153,15 @@
     <CRequirementCountUpgrade id="CountUpgradeGravitonCatapultLotV1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="GravitonCatapultLotV1" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGravitonCatapultLotV2CompleteOnly545093725">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="GravitonCatapultLotV2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGravitonCatapultLotV2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="GravitonCatapultLotV2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeHurricaneThrusters@UpgradeCompleteOnly3968802568">
         <Flags index="TechTreeCheat" value="0"/>
@@ -250,6 +262,10 @@
         <OperandArray index="0" value="CountUnitInterceptorLotV1QueuedOrBetterAtUnit"/>
         <OperandArray index="1" value="8"/>
     </CRequirementLT>
+    <CRequirementLT id="LT2210218377CountUnitInterceptorLotV2QueuedOrBetterAtUnit8">
+        <OperandArray index="0" value="CountUnitInterceptorLotV2QueuedOrBetterAtUnit"/>
+        <OperandArray index="1" value="8"/>
+    </CRequirementLT>
     <CRequirementNot id="Not361380870CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit">
         <OperandArray index="0" value="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit"/>
     </CRequirementNot>
@@ -260,7 +276,6 @@
         <OperandArray index="0" value="CountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAdvancedBallisticsLotV2QueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeAdvancedBallisticsLotV2QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAdvancedBallisticsQueuedOrBetter">
@@ -304,6 +319,10 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeGravitonCatapultLotV1QueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeGravitonCatapultLotV1QueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeGravitonCatapultLotV2QueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeGravitonCatapultLotV2QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeHurricaneThrusters@UpgradeQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeHurricaneThrusters@UpgradeQueuedOrBetter"/>

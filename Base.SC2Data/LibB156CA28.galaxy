@@ -299,6 +299,24 @@ void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_i
         else if (auto242D2030_val == 9) {
             libB156CA28_gf_Select_Battlecruiser(lp_player, lv_selectionIndex);
         }
+        else if (auto242D2030_val == 10) {
+            libB156CA28_gf_Select_MULE(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 11) {
+            libB156CA28_gf_Select_MechAttack(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 12) {
+            libB156CA28_gf_Select_Barracks(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 13) {
+            libB156CA28_gf_Select_Bunker(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 14) {
+            libB156CA28_gf_Select_SensorTower(lp_player, lv_selectionIndex);
+        }
+        else if (auto242D2030_val == 15) {
+            libB156CA28_gf_Select_Reactor(lp_player, lv_selectionIndex);
+        }
         else {
         }
     }
@@ -562,6 +580,97 @@ void libB156CA28_gf_Select_Battlecruiser (int lp_player, int lp_selectionIndex) 
         TechTreeAbilityAllow(lp_player, AbilityCommand("Hyperjump", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("Yamato", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("FusionCoreResearch", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_MULE (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 1), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@MuleGatherWoL", 1), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MULEGather", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MULEGather", 1), false);
+    }
+}
+
+void libB156CA28_gf_Select_MechAttack (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 2), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 1), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 2), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ArmoryResearch", 5), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ArmoryResearch", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ArmoryResearch", 7), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ArmoryResearch", 11), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ArmoryResearch", 12), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ArmoryResearch", 13), false);
+    }
+}
+
+void libB156CA28_gf_Select_Barracks (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 21), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 21), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 3), false);
+    }
+}
+
+void libB156CA28_gf_Select_Bunker (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 20), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 20), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 6), false);
+    }
+}
+
+void libB156CA28_gf_Select_SensorTower (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 19), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 19), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 8), false);
+    }
+}
+
+void libB156CA28_gf_Select_Reactor (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksAddOns", 2), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryAddOns", 2), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("StarportAddOns", 2), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksAddOns", 2), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryAddOns", 2), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("StarportAddOns", 2), true);
+        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "ReactorRepairTime", 1);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksAddOns", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryAddOns", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("StarportAddOns", 1), false);
     }
 }
 

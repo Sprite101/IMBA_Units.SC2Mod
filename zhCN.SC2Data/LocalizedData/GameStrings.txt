@@ -1,8 +1,18 @@
 ﻿Abil/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
+Abil/Name/AdvancedBallisticsLotV2@Research=Research Advanced Ballistics
+Abil/Name/AmplifiedShieldingLotV@Research=Research
 Abil/Name/AutoTurretSwarm=Place Auto Turret
+Abil/Name/BatteryOverchargeLotV=Battery Overcharge
+Abil/Name/BlinkLiberty@ResearchBlink=Research
 Abil/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
+Abil/Name/CarrierLotV1@Train=Build
+Abil/Name/CarrierLotV1@WeaponHangar=Hangar
+Abil/Name/CarrierLotV2@Train=Build
+Abil/Name/CarrierLotV2@WeaponHangar=Hangar
 Abil/Name/ChargeLotV1=Charge
 Abil/Name/ChargeZealotLotV1@ResearchCharge=Research Charge
+Abil/Name/ChronoBoostLotV=Chrono Boost
+Abil/Name/ColossusLiberty@Build=Build
 Abil/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CycloneLockOnAirLoTV1@LockOn=Lock On
@@ -11,34 +21,75 @@ Abil/Name/CycloneLockOnLotV2@LockOn=Lock On
 Abil/Name/CycloneLockOnLotV2@Research=Research
 Abil/Name/CycloneLotV1@Train=Build
 Abil/Name/CycloneLotV2@Train=Build
+Abil/Name/DisruptorLotV1@Build=Build
 Abil/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Abil/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
+Abil/Name/EnergyRechargeLotV=Energy Recharge
 Abil/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
+Abil/Name/ExtendedThermalLanceLiberty@Research=Research
+Abil/Name/FeedbackLiberty=Feedback
+Abil/Name/FluxVanesLotV@Research=Research
 Abil/Name/GhostLotV1@ChannelSnipe=Channel Snipe
 Abil/Name/GhostLotV1@EMP=EMP
 Abil/Name/GhostLotV1@Train=Train
 Abil/Name/GhostWoL@EMP=EMP
 Abil/Name/GhostWoL@Snipe=Snipe
 Abil/Name/GhostWoL@Train=Train
+Abil/Name/GraviticBoostersLotV1=Research
+Abil/Name/GraviticBoostersLotV2=Research
+Abil/Name/GravitonCatapultLotV1@Research=Research
+Abil/Name/GravitonCatapultLotV2@Research=Research
 Abil/Name/HellbatSwarmBeta@MorphToHellion=Morph To Hellion
 Abil/Name/HellbatSwarmBeta@Train=Build
 Abil/Name/HellionSwarmBeta@MorphToHellbat=Morph To Hellbat
 Abil/Name/HellionSwarmBeta@Train=Build
+Abil/Name/ImmortalLiberty@Build=Build
+Abil/Name/ImmortalLotV@Build=Build
+Abil/Name/ImmortalLotVBarrier=Barrier
 Abil/Name/InfernalPreIgniterSwarm@ResearchInfernalPreIgniter=Research Infernal Pre-Igniter
 Abil/Name/KD8ChargeLotV1=KD8 Charge
+Abil/Name/KhaydarinAmulet=Research
 Abil/Name/LiberatorAGLotV1@AATarget=AA Target
 Abil/Name/LiberatorAGLotV1@MorphtoAA=Morph to AA
+Abil/Name/LiberatorAGLotV2@AATarget=AA Target
+Abil/Name/LiberatorAGLotV2@MorphtoAA=Morph to AA
 Abil/Name/LiberatorLotV1@AGTarget=AG Target
 Abil/Name/LiberatorLotV1@MorphtoAG=Morph to AG
 Abil/Name/LiberatorLotV1@Train=Build
+Abil/Name/LiberatorLotV2@AGTarget=AG Target
+Abil/Name/LiberatorLotV2@Build=Build
+Abil/Name/LiberatorLotV2@MorphtoAG=Morph to AG
 Abil/Name/MULEGather2=Gather
+Abil/Name/MassRecallNexusLotV=Mass Recall
 Abil/Name/ModifiedAbility@ArmoryResearch=Armory Research
 Abil/Name/ModifiedAbility@Hyperjump=Tactical Jump
 Abil/Name/ModifiedAbility@MuleGatherWoL=Gather
 Abil/Name/ModifiedAbility@Yamato=Yamato Gun
 Abil/Name/ModifiedAbility@YamatoGunResearch=Yamato Gun Research
 Abil/Name/MoebiusReactor@ResearchMoebiusReactor=Research Moebius Reactor
+Abil/Name/ObserverLotV1@Build=Build
+Abil/Name/ObserverLotV1@Siege=Siege
+Abil/Name/ObserverLotV1@SiegedUnsiege=Unsiege
+Abil/Name/ObserverLotV2@Build=Build
+Abil/Name/ObserverLotV2@Siege=Siege
+Abil/Name/ObserverLotV2@SiegedUnsiege=Unsiege
+Abil/Name/OracleLotV1@Build=Build
+Abil/Name/OracleLotV1@BuildStasisWard=Build Stasis Ward
+Abil/Name/OracleLotV1@Revelation=Revelation
+Abil/Name/OracleSwarm@Build=Build
+Abil/Name/OracleSwarm@PulsarBeam=Pulsar Beam
+Abil/Name/OracleSwarm@Revelation=Revelation
+Abil/Name/OracleSwarm@TimeWarp=Time Warp
 Abil/Name/PointDefenseDroneSwarm=Place Point Defense Drone
+Abil/Name/PsiStormHighTemplarLiberty=Research
+Abil/Name/PsiStormLiberty=Psi Storm
+Abil/Name/PsionicTransferLotV=Psionic Transfer
+Abil/Name/PsionicTransferLotV@Cancel=Cancel
+Abil/Name/PulsarBeamSwarm@Weapon=Weapon
+Abil/Name/PurificationNovaLotV1=Purification Nova
+Abil/Name/PurificationNovaPhasedLotV1=Purification Nova
+Abil/Name/PurificationNovaPhasedLotV1@Morph=Morph
+Abil/Name/PurificationNovaPhasedLotV1@MorphBack=Morph Back
 Abil/Name/RavenAntiArmorMissile=Anti-Armor Missile
 Abil/Name/RavenAutoTurret@BuildAutoTurret=Place Auto Turret
 Abil/Name/RavenInterferenceMatrix=Interference Matrix
@@ -47,63 +98,157 @@ Abil/Name/ReaperLiberty@ResearchNitroPacks=Research Nitro Packs
 Abil/Name/ReaperLiberty@Train=Train
 Abil/Name/ReaperSwarm@ResearchNitroPacks=Research Nitro Packs
 Abil/Name/ReaperSwarm@Train=Train
+Abil/Name/ReleaseInterceptorsLotV1=Release Interceptors
 Abil/Name/SalvageLiberty=Salvage
 Abil/Name/SeekerMissileSwarm=Seeker Missile
+Abil/Name/ShadowStrideLotV=Shadow Stride
 Abil/Name/SiegeArmorLotV1@Train=Build
 Abil/Name/SiegeArmorLotV1Morph@SiegeMode=Siege
 Abil/Name/SiegeArmorLotV1Morph@Unsiege=Unsiege
+Abil/Name/StasisWardLotV1@Activate=Activate
+Abil/Name/TempestSwarm@Build=Build
+Abil/Name/VoidRayLotV@Build=Build
+Abil/Name/WarpInLiberty@Research=Research
+Abil/Name/WarpInLiberty@Warpable=Warpable
+Abil/Name/WarpPrismLotV1@Siege=Siege
+Abil/Name/WarpPrismLotV1@SiegedUnsiege=Unsiege
+Abil/Name/WarpPrismLotV1@Transport=Transport
 Abil/Name/WidowMineSwarm@Train=Build
+Abil/Name/WidowMineSwarm@Train2=Build
 Abil/Name/WidowMineSwarm@WidowMineAttack=Widow Mine Attack
 Abil/Name/WidowMineSwarm@WidowMineBurrow=Widow Mine Burrow
 Abil/Name/WidowMineSwarm@WidowMineUnburrow=Widow Mine Unburrow 
+Behavior/Name/BatteryOverchargeLotV=Battery Overcharge
 Behavior/Name/ChargeLotV1@Charging=Charging
+Behavior/Name/ChronoBoostLotV=Chrono Boost
 Behavior/Name/CycloneLockOnAirLoTV1@LockOn=Lock On Target
 Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
 Behavior/Name/CycloneLockOnLotV2@LockOn=Lock On Target
+Behavior/Name/OracleLotV1@RevelationRevealed=Revealed
+Behavior/Name/OracleSwarm@PulsarBeamEnergyCost=Pulsar Beam
+Behavior/Name/OracleSwarm@Revelation=Revealed
+Behavior/Name/OracleSwarm@TimeWarp=Time Warp
+Behavior/Name/PsiStormLiberty=Psionic Storm
+Behavior/Name/PulsarBeamSwarm@WeaponOn=Pulsar Beam
+Behavior/Name/PurificationNovaPhasedLotV1@Phased=Phased
+Behavior/Name/PurificationNovaPhasedLotV1@PhasedEnd=Phased End
 Behavior/Name/RavenAntiArmorMissile@ArmorReduction=Armor Reduction
 Behavior/Name/RavenAntiArmorMissile@TargetTraceTint=Anti-Armor Missile Targeting 
 Behavior/Name/RavenInterferenceMatrix=Interference Matrix
+Behavior/Name/ReleaseInterceptorsLotV1@Beacon=Beacon
+Behavior/Name/ReleaseInterceptorsLotV1@TimedLifeWarning=Timed Life Warning
+Behavior/Name/ReleaseInterceptorsLotV1@WanderDelay=Wander Delay
 Behavior/Name/SeekerMissileSwarm@TargetTint=Seeker Missile
 Behavior/Name/SeekerMissileSwarm@Timeout=Timeout
+Behavior/Name/StasisWardLotV1@ActivateTarget=Stasis
+Behavior/Name/WarpInLiberty@PowerUserWarpable=Warping In
+Behavior/Tooltip/BatteryOverchargeLotV=Restoration rate increased. Not consuming energy.
 Behavior/Tooltip/ChargeLotV1@Charging=This Zealot is charging, allowing it to quickly close the distance with its target.
+Behavior/Tooltip/ChronoBoostLotV=This structure is in an accelerated state.
 Behavior/Tooltip/CycloneLockOnAirLoTV1@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
 Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cyclone's Lock On ability.
+Behavior/Tooltip/OracleLotV1@RevelationRevealed=This unit or structure is providing vision for the caster.
+Behavior/Tooltip/OracleSwarm@PulsarBeamEnergyCost=This Oracle's is attacking a structure target.
+Behavior/Tooltip/OracleSwarm@Revelation=This unit or structure is providing vision for the caster.
+Behavior/Tooltip/PsiStormLiberty=Target is under the effects of Psionic Storm and will take massive damage while in this area of effect.
+Behavior/Tooltip/PulsarBeamSwarm@WeaponOn=This Oracle's weapon is enabled and can attack ground units.
+Behavior/Tooltip/PurificationNovaPhasedLotV1@Phased=This unit is invulnerable and is able to move through other units.
+Behavior/Tooltip/PurificationNovaPhasedLotV1@PhasedEnd=This unit is invulnerable and is able to move through other units.
 Behavior/Tooltip/RavenAntiArmorMissile@ArmorReduction=This unit has reduced armor.
 Behavior/Tooltip/RavenAntiArmorMissile@TargetTraceTint=This unit is being targeted by an Anti-Armor Missile.
 Behavior/Tooltip/RavenInterferenceMatrix=Weapons and abilities are disabled.
 Behavior/Tooltip/SeekerMissileSwarm@TargetTint=This unit is being targeted by a Seeker Missile.
+Behavior/Tooltip/StasisWardLotV1@ActivateTarget=This unit cannot move, attack, or be damaged.
+Behavior/Tooltip/WarpInLiberty@PowerUserWarpable=Unit is being materialized by a Warp Gate.
+Button/Name/AdeptLotV@WarpIn=Warp In Adept
 Button/Name/AdvancedBallistics=Advanced Ballistics
 Button/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
+Button/Name/AdvancedBallisticsLotV2=Advanced Ballistics
+Button/Name/AdvancedBallisticsLotV2@ResearchAdvancedBallistics=Research Advanced Ballistics
+Button/Name/AmplifiedShieldingLotV=Research Amplified Shielding
+Button/Name/AmplifiedShieldingLotV@Passive=Amplified Shielding
 Button/Name/AutoTurretSwarm=Build Auto-Turret
 Button/Name/BarracksLiberty=Build Barracks
+Button/Name/BatteryOverchargeLotV=Battery Overcharge
 Button/Name/BunkerLiberty=Build Bunker
 Button/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
+Button/Name/CarrierLotV1=Warp In Carrier
+Button/Name/CarrierLotV2=Warp In Carrier
 Button/Name/ChargeLotV1=Charge
 Button/Name/ChargeZealotLotV1@ResearchCharge=Research Charge
+Button/Name/ChronoBoostLotV=Chrono Boost
+Button/Name/ColossusLiberty=Warp In Colossus
 Button/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Button/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
 Button/Name/CycloneLockOnAirLoTV1@Button=Lock On
 Button/Name/CycloneLockOnLotV2@Button=Lock On
 Button/Name/CycloneLotV1@BuildCyclone=Build Cyclone
 Button/Name/CycloneLotV2@BuildCyclone=Build Cyclone
+Button/Name/DisruptorLotV1=Warp In Disruptor
 Button/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Button/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
+Button/Name/EnergyRechargeLotV=Energy Recharge
 Button/Name/EnhancedShockwaves@EnhancedShockwaves=Enhanced Shockwaves
 Button/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
+Button/Name/ExtendedThermalLanceLiberty=Research Extended Thermal Lance
+Button/Name/FeedbackLiberty=Feedback
+Button/Name/FluxVanesLotV=Research Flux Vanes
 Button/Name/GhostLotV1@ChannelSnipe=Steady Targeting
 Button/Name/GhostLotV1@EMP=EMP Round
 Button/Name/GhostLotV1@TrainGhost=Train Ghost
 Button/Name/GhostWoL@EMP=EMP Round
 Button/Name/GhostWoL@Snipe=Sniper Round
 Button/Name/GhostWoL@TrainGhost=Train Ghost
+Button/Name/GraviticBoostersLotV1=Research Gravitic Boosters
+Button/Name/GraviticBoostersLotV2=Research Gravitic Boosters
+Button/Name/GravitonCatapultLotV1=Research Graviton Catapult
+Button/Name/GravitonCatapultLotV1@Passive=Graviton Catapult
+Button/Name/GravitonCatapultLotV2=Research Graviton Catapult
+Button/Name/GravitonCatapultLotV2@Passive=Graviton Catapult
+Button/Name/HellbatSwarmBeta@Build=Build Hellbat
+Button/Name/HellionSwarmBeta=Build Hellion
 Button/Name/HurricaneThrusters@Passive=Hurricane Thrusters
 Button/Name/HurricaneThrusters@Research=Research Hurricane Thrusters
+Button/Name/ImmortalLiberty=Warp In Immortal
+Button/Name/ImmortalLiberty@HardenedShieldPassive=Hardened Shield
+Button/Name/ImmortalLotV=Warp In Immortal
+Button/Name/ImmortalLotVBarrier=Barrier
 Button/Name/InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm=Research Infernal Pre-Igniter
+Button/Name/InterceptorLotV1=Build Interceptor
+Button/Name/InterceptorLotV2=Build Interceptor
 Button/Name/KD8ChargeLotV1=KD8 Charge
+Button/Name/KhaydarinAmulet=Research Khaydarin Amulet
+Button/Name/KhaydarinAmulet@Passive=Khaydarin Amulet
+Button/Name/LiberatorAGLotV2@FighterMode=Fighter Mode
 Button/Name/LiberatorLotV1@BuildLiberator=Build Liberator
+Button/Name/LiberatorLotV2=Build Liberator
+Button/Name/LiberatorLotV2@DefenderMode=Defender Mode
+Button/Name/MassRecallNexusLotV=Mass Recall
+Button/Name/ModifiedAbility@MuleGatherWoL=Gather
 Button/Name/MoebiusReactor@MoebiusReactor=Moebius Reactor
 Button/Name/MoebiusReactor@ResearchMoebiusReactor=Research Moebius Reactor
+Button/Name/ObserverLotV1=Warp In Observer
+Button/Name/ObserverLotV1@Siege=Surveillance Mode
+Button/Name/ObserverLotV1@SiegedUnsiege=Observer Mode
+Button/Name/ObserverLotV2=Warp In Observer
+Button/Name/ObserverLotV2@Siege=Surveillance Mode
+Button/Name/ObserverLotV2@SiegedUnsiege=Observer Mode
+Button/Name/OracleLotV1=Warp In Oracle
+Button/Name/OracleLotV1@BuildStasisTrap=Build Stasis Ward
+Button/Name/OracleLotV1@Revelation=Revelation
+Button/Name/OracleRevelation2=Revelation
+Button/Name/OracleSwarm=Warp In Oracle
+Button/Name/OracleSwarm@PulsarBeam=Pulsar Beam
+Button/Name/OracleSwarm@Revelation=Revelation
+Button/Name/OracleSwarm@TimeWarp=Time Warp
 Button/Name/PointDefenseDroneSwarm@BuildPointDefenseDrone=Build Point Defense Drone
+Button/Name/PsiStormHighTemplarLiberty=Research Psionic Storm
+Button/Name/PsiStormLiberty=Psionic Storm
+Button/Name/PsionicTransferLotV=Psionic Transfer
+Button/Name/PulsarBeamSwarm@WeaponOff=Deactivate Pulsar Beam
+Button/Name/PulsarBeamSwarm@WeaponOn=Activate Pulsar Beam
+Button/Name/PurificationNovaLotV1=Purification Nova
+Button/Name/PurificationNovaPhasedLotV1=Purification Nova
 Button/Name/RapidFireLaunchers@Passive=Rapid Fire Launchers
 Button/Name/RapidFireLaunchers@Research=Research Rapid Fire Launchers
 Button/Name/RavenAntiArmorMissile=Anti-Armor Missile
@@ -117,25 +262,47 @@ Button/Name/ReaperLiberty@TrainReaper=Train Reaper
 Button/Name/ReaperSwarm@PassiveButton=Battlefield Awareness
 Button/Name/ReaperSwarm@ResearchNitroPacks=Research Nitro Packs
 Button/Name/ReaperSwarm@TrainReaper=Train Reaper
+Button/Name/ReleaseInterceptorsLotV1=Release Interceptors
 Button/Name/SalvageLiberty=Salvage
 Button/Name/SeekerMissileSwarm=Seeker Missile
 Button/Name/SensorTowerLotV1=Build Sensor Tower
+Button/Name/ShadowStrideLotV=Shadow Stride
 Button/Name/SiegeArmorLotV1@BuildSiegeArmor=Build 攻城坦克
 Button/Name/SiegeArmorLotV1Morph@SiegeMode=Siege Mode
 Button/Name/SiegeArmorLotV1Morph@Unsiege=Tank Mode
+Button/Name/StalkerLiberty@WarpIn=Warp In Stalker
+Button/Name/StasisWardLotV1@Activate=Stasis Trap 
+Button/Name/StasisWardLotV1@ActivatePassive=Stasis Trap
+Button/Name/StasisWardLotV1@PermanentlyCloakedPassive=Permanently Cloaked
+Button/Name/TempestSwarm=Warp In Tempest
+Button/Name/VoidRayLotV=Warp In Void Ray
+Button/Name/WarpInLiberty@Research=Research Warp Gate
+Button/Name/WarpPrismLotV1@Siege=Phasing Mode
+Button/Name/WarpPrismLotV1@SiegedUnsiege=Transport Mode
 Button/Name/WidowMineSwarm=Build Widow Mine
+Button/Tooltip/AdeptLotV@Shade=Projects an invulnerable Shade that can move but cannot attack. After <d time="10"/>, the Adept teleports to the Shade's location.
+Button/Tooltip/AdeptLotV@WarpIn=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
 Button/Tooltip/AdvancedBallistics@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallistics:Weapon,LiberatorAGLotV1@Weapon,Range$"/>.
+Button/Tooltip/AdvancedBallisticsLotV2=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallisticsLotV2:Weapon,LiberatorAGLotV2@Weapon,Range$"/>.
+Button/Tooltip/AdvancedBallisticsLotV2@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallisticsLotV2:Weapon,LiberatorAGLotV2@Weapon,Range$"/>.
+Button/Tooltip/AmplifiedShieldingLotV=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShieldingLotV:Unit,AdeptLotV,ShieldsMax$"/>.
+Button/Tooltip/AmplifiedShieldingLotV@Passive=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShielding:Unit,Adept,ShieldsMax$"/>.
 Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AutoTurretSwarm@AutoTurret=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BarracksLiberty=Infantry-production facility.<n/><n/><c val="ffff8a">Enables:</c><n/>- Marines<n/>- Reapers<n/>- Bunkers from SCVs<n/>- Orbital Commands from Command Centers
+Button/Tooltip/BatteryOverchargeLotV=Overcharges a target Shield Battery near a Nexus, increasing its shield restoration rate by <d ref="Behavior,BatteryOverchargeLotV,Modification.HealDealtMultiplier * 100 - 100"/>% and allowing it to restore shields without consuming energy for <d ref="Behavior,BatteryOverchargeLotV,Duration"/> seconds.
 Button/Tooltip/BuildCycloneLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BuildCycloneLotV2=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BuildGhostLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BunkerLiberty=Defensive structure. <n/>Infantry fights from inside. <n/><n/><c val="#ColorAttackInfo">Bonus: +1 range to units inside.</c>
 Button/Tooltip/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Increases Health restored per second from 9 to 15 and reduces energy cost from 3 health per 1 energy to 5 health per 1 energy.
+Button/Tooltip/CarrierLotV1=Capital ship. Can build and launch Interceptors to make attacks. Can use Release Interceptors ability.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/CarrierLotV2=Capital ship. Can build and launch Interceptors to make attacks. Can use Release Interceptors ability.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ChargeLotV1=Allows Zealots to intercept nearby enemies. Deals <d ref="Effect,ChargeLotV1@ChargingDamage,Amount"/> damage upon impcat. Also increases the movement speed of Zealots. Ability can only be used once every <d ref="Abil,Charge,Cost.Cooldown.TimeUse"/> seconds.
 Button/Tooltip/ChargeZealotLotV1@ResearchCharge=Allows <c val="ffff8a">Zealots</c> to intercept nearby enemies and deal <d ref="Effect,ChargeLotV1@ChargingDamage,Amount"/> damage upon impact. Also increases the movement speed of <c val="ffff8a">Zealots</c>. Ability can only be used once every <d ref="Abil,Charge,Cost.Cooldown.TimeUse"/> seconds.
+Button/Tooltip/ChronoBoostLotV=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
+Button/Tooltip/ColossusLiberty=Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/CorvidReactorLotV@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
 Button/Tooltip/CorvidReactorSwarm@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
 Button/Tooltip/CycloneLockOnAirLoTV1@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
@@ -143,29 +310,81 @@ Button/Tooltip/CycloneLockOnAirLoTV1@UpgradeButton=Locks the Cyclone's weapons o
 Button/Tooltip/CycloneLockOnLotV2@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
 Button/Tooltip/CycloneLotV1@BuildCyclone=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Originally introduced in 2016 balance revamp. Provides solid anti-ground firepower.<n/>
 Button/Tooltip/CycloneLotV2@BuildCyclone=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Originally introduced in 2023 balance revamp and removed in 2024 balance revamp.<n/>
+Button/Tooltip/DisruptorLotV1=Robotic disruption unit. Can use Purification Nova to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/DisruptorLotV1@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,PurificationNovaTargettedTarget,Duration"/> seconds, dealing area damage.
 Button/Tooltip/DrillingClaws@ResearchDrillingClaws=Allows <c val="ffff8a">Widow Mines</c> to burrow and activate two times as fast.
 Button/Tooltip/DurableMaterialsSwarm@ResearchDurableMaterials=Extends the timed duration of Raven <c val="ffff8a">Auto-Turrets</c> and <c val="ffff8a">Point Defense Drones</c>.
+Button/Tooltip/EnergyRechargeLotV=Instantly recharges <d ref="Effect,EnergyRechargeLotV@MU,VitalArray[Energy].Change * (Effect,EnergyRechargeLotV@CP,PeriodCount + 1)"/> energy to a unit near a Nexus.
 Button/Tooltip/EnhancedShockwaves@EnhancedShockwaves=Increases the radius of <c val="ffff8a">Ghost's</c> EMP Round by +<d ref="$UpgradeEffectArrayValue:EnhancedShockwaves@Upgrade:Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius$" precision="1"/>.
 Button/Tooltip/EnhancedShockwaves@ResearchEnhancedShockwaves=Increases the <c val="ffff8a">Ghost's</c> EMP Round radius by +<d ref="$UpgradeEffectArrayValue:EnhancedShockwaves@Upgrade:Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius$" precision="1"/>.
+Button/Tooltip/ExtendedThermalLanceLiberty=Increases the range of the <c val="ffff8a">Colossus</c> weapon by <d ref="$UpgradeEffectArrayValue:ExtendedThermalLanceLiberty:Weapon,ColossusLiberty@Weapon,Range$"/>.
+Button/Tooltip/FeedbackLiberty=Drains all energy from the target. Deals <d ref="(Effect,Feedback,VitalFractionCurrent[Energy])" Precision="2"/> damage per point of energy.
+Button/Tooltip/FluxVanesLotV=Increases the speed and acceleration of the <c val="ffff8a">Void Ray</c>.
 Button/Tooltip/GhostLotV1=Sniper. Can use Steady Targeting, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Steady Targeting deals 170 flat damage and doesn't have "cancel" range. Enhanced Shockwaves can be upgraded to give EMP +0.5 radius.<n/>
 Button/Tooltip/GhostLotV1@ChannelSnipe=After carefully aiming for <d ref="Effect,ChannelSnipeCreatePersistent,PeriodCount*Effect,ChannelSnipeCreatePersistent,PeriodicPeriodArray[0]" precision="2"/> seconds while not taking damage, the Ghost fires a sniper round dealing <d ref="Effect,GhostLotV1@ChannelSnipeDamage,Amount"/> damage. Ignores armor.<n/><n/><c val="#ColorAttackInfo">Can only target biological units.</c>
 Button/Tooltip/GhostLotV1@EMP=Creates an electromagnetic pulse that does 100 damage to shields and energy of all units in the targeted area. Cloaked units hit by EMP are revealed for a short time.
 Button/Tooltip/GhostWoL=Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Originally introduced in Wings of Liberty Beta. Snipe can instantly deal 45 flat damage. EMP has 3 radius and drains affected units energy.<n/>
 Button/Tooltip/GhostWoL@EMP=Creates an electromagnetic pulse that does 100 damage to shields and drains energy of all units in the targeted area. Cloaked units hit by EMP are revealed for a short time.
 Button/Tooltip/GhostWoL@Snipe=A careful shot, dealing <d ref="Effect,GhostWoL@SnipeDamage,Amount"/> damage. Ignores armor.<n/><n/><c val="#ColorAttackInfo">Can only target biological units.</c>
+Button/Tooltip/GraviticBoostersLotV1=Increases the movement speed of <c val="ffff8a">Observers</c>.
+Button/Tooltip/GraviticBoostersLotV2=Increases the movement speed of <c val="ffff8a">Observers</c>.
+Button/Tooltip/GravitonCatapultLotV1=Makes the <c val="ffff8a">Carrier</c> launch Interceptors more quickly.
+Button/Tooltip/GravitonCatapultLotV1@Passive=Makes the Carrier launch Interceptors more quickly.
+Button/Tooltip/GravitonCatapultLotV2=Makes the <c val="ffff8a">Carrier</c> launch Interceptors more quickly.
+Button/Tooltip/GravitonCatapultLotV2@Passive=Makes the Carrier launch Interceptors more quickly.
+Button/Tooltip/HellbatSwarmBeta@Build=Close range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/HellbatSwarmBeta@Hellbat=Close range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/HellionSwarmBeta=Fast scout. Has a flame attack that damages all enemy units in its line of fire. Can transform into a close range combat unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/HellionSwarmBeta@Hellion=Fast scout. Has a flame attack that damages all enemy units in its line of fire. Can transform into a close range combat unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/HighTemplarLiberty=Potent psionic master. Can use Feedback and be upgraded to use Psionic Storm. Can transform into an Archon.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/HurricaneThrusters@Passive=Increases the move speed of <c val="ffff8a">Cyclones</c>.
 Button/Tooltip/HurricaneThrusters@Research=Increases the move speed of <c val="ffff8a">Cyclones</c>.
+Button/Tooltip/ImmortalLiberty=Assault strider. Can use Barrier to absorb damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/ImmortalLiberty@HardenedShieldPassive=Reduces incoming damage to a maximum of 10 while the Immortal still has shields.
+Button/Tooltip/ImmortalLotV=Assault strider. Can use Barrier to absorb damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/ImmortalLotVBarrier=Absorbs up to <d ref="Behavior,ImmortalLotVBarrier@Barrier,DamageResponse.ModifyLimit"/> damage. Lasts for <d ref="Behavior,ImmortalLotVBarrier@Barrier,Duration"/> seconds. This effect can only occur once every <d ref="Abil,ImmortalLotVBarrier,Cost[0].Cooldown.TimeUse"/> seconds.
 Button/Tooltip/InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm=Improves the <c val="ffff8a">Hellion's</c> Infernal Flamethrower to deal +<d ref="$UpgradeEffectArrayValue:InfernalPreIgniterSwarm@InfernalPreIgniterSwarm:Effect,InfernalFlameThrower,AttributeBonus[Light]$"/> damage vs. light units.
+Button/Tooltip/InterceptorLotV1=Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/InterceptorLotV1Unit=Combat drones that automatically strafe their Carrier's target. Carriers may not attack without Interceptors.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/InterceptorLotV2=Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/InterceptorLotV2Unit=Combat drones that automatically strafe their Carrier's target. Carriers may not attack without Interceptors.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/KD8ChargeLotV1=Explodes after a short delay, dealing <d ref="Effect,KD8ChargeLotV1@Damage,Amount"/> damage and knocking back nearby units.
+Button/Tooltip/KhaydarinAmulet=Increases the starting energy of <c val="ffff8a">High Templar</c> by <d ref="Upgrade,KhaydarinAmulet,EffectArray[0].Value"/>.
+Button/Tooltip/KhaydarinAmulet@Passive=Increases the starting energy of <c val="ffff8a">High Templar</c> by <d ref="Upgrade,KhaydarinAmulet,EffectArray[0].Value"/>.
 Button/Tooltip/LiberatorAGLotV1@LiberatorAG=Immobile defender. Deals heavy single target damage to ground units. Can switch into Fighter mode to provide air support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LiberatorAGLotV2=Immobile defender. Deals heavy single target damage to ground units. Can switch into Fighter mode to provide air support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LiberatorAGLotV2@FighterMode=Reverts to Fighter Mode. In this mode Liberators can move, but they can only attack air targets.
 Button/Tooltip/LiberatorLotV1@BuildLiberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
 Button/Tooltip/LiberatorLotV1@Liberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
+Button/Tooltip/LiberatorLotV2=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
+Button/Tooltip/LiberatorLotV2@DefenderMode=Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.
+Button/Tooltip/MassRecallNexusLotV=Recalls all player units in the target area to the Mothership.
+Button/Tooltip/ModifiedAbility@MuleGatherWoL=Orders MULE to gather minerals from a selected Mineral Field.Collects 6x Minerals.
 Button/Tooltip/MoebiusReactor@MoebiusReactor=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
 Button/Tooltip/MoebiusReactor@ResearchMoebiusReactor=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
+Button/Tooltip/ObserverLotV1=Flying spy. Cloak renders the unit invisible to enemies without detection.<n/><n/><c val="FFE303">Detector</c>
+Button/Tooltip/ObserverLotV1@Siege=Transforms the Observer to Surveillance Mode. The Observer gains <d ref="(Unit,ObserverLotV1@Sieged,Sight/Unit,ObserverLotV1,Sight-1)*100"/>% wider vision, but loses the ability to move.
+Button/Tooltip/ObserverLotV1@SiegedUnsiege=Transforms the Observer to standard Observer Mode. Allows the Observer to move at the cost of decreased sight radius.
+Button/Tooltip/ObserverLotV2=Flying spy. Cloak renders the unit invisible to enemies without detection.<n/><n/><c val="FFE303">Detector</c>
+Button/Tooltip/ObserverLotV2@Siege=Transforms the Observer to Surveillance Mode. The Observer gains <d ref="(Unit,ObserverSiegeMode,Sight/Unit,Observer,Sight-1)*100"/>% wider vision, but loses the ability to move and is no longer cloaked.
+Button/Tooltip/ObserverLotV2@SiegedUnsiege=Transforms the Observer to standard Observer Mode. Allows the Observer to move at the cost of decreased sight radius.
+Button/Tooltip/OracleLotV1=Flying caster. Can use Revelation, Stasis Ward, and Pulsar Beam.
+Button/Tooltip/OracleLotV1@BuildStasisTrap=Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for <d ref="Behavior,OracleStasisTrapTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
+Button/Tooltip/OracleLotV1@Revelation=Causes enemy units and structures within the target area to grant vision for <d ref="Behavior,OracleLotV1@RevelationRevealed,Duration"/> seconds. Reveals cloaked or burrowed units and structures.
+Button/Tooltip/OracleRevelation2=Causes enemy units and structures within the target area to grant vision for <d ref="Behavior,OracleRevelation,Duration"/> seconds. Reveals cloaked or burrowed units and structures.
+Button/Tooltip/OracleSwarm=Flying caster. Can use Revelation, Stasis Ward, and Pulsar Beam.
+Button/Tooltip/OracleSwarm@PulsarBeam=Activates Oracle's Pulsar Beam on an enemy structure, dealing <d ref="Effect,OracleSwarm@PulsarBeamDamage,Amount[0]"/> damage every second.
+Button/Tooltip/OracleSwarm@Revelation=Causes enemy and neutral units and structures within the target area to grant vision for <d ref="Behavior,OracleSwarm@Revelation,Duration"/> seconds. Does not affect cloaked or burrowed units and structures.
+Button/Tooltip/OracleSwarm@TimeWarp=Warps spacetime within the target area for <d ref="Effect,OracleSwarm@TimeWarpCP,PeriodCount*Effect,OracleSwarm@TimeWarpCP,PeriodicPeriodArray[0]"/> seconds. Enemy ground units that enter the field have their movement speed reduced by <d ref="(1-Behavior,OracleSwarm@TimeWarp,Modification.MoveSpeedMultiplier)*100"/>%.
 Button/Tooltip/PointDefenseDroneSwarm@BuildPointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
 Button/Tooltip/PointDefenseDroneSwarm@PointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneTimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
+Button/Tooltip/PsiStormHighTemplarLiberty=Allows <c val="ffff8a">High Templar</c> to summon a storm of psionic energy, causing heavy damage to every unit in the target area.<n/><n/>Creates a storm of psionic energy that lasts <d time="4"/>, causing up to 80 damage to all units in the target area.
+Button/Tooltip/PsiStormLiberty=Creates a storm of psionic energy that lasts <d time="4"/>, causing up to 80 damage to all units in the target area.
+Button/Tooltip/PsionicTransferLotV=Projects an invulnerable Shade that can move but cannot attack. After <d time="10"/>, the Adept teleports to the Shade's location.
+Button/Tooltip/PulsarBeamSwarm@WeaponOff=Deactivates the Oracle's Pulsar Beam and prevents it from attacking.
+Button/Tooltip/PulsarBeamSwarm@WeaponOn=Charges the Oracle's Pulsar Beam and allows it to attack enemy ground units.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,OracleWeapon,Modification.VitalRegenArray[2] + Unit,Oracle,EnergyRegenRate)" precision="1"/> energy per second.</c>
+Button/Tooltip/PurificationNovaLotV1=Shoots out a ball of energy that lasts <d ref="Behavior,PurificationNovaLotV1@Target,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,PurificationNovaLotV1@Damage,Amount"/> splash damage and an additional <d ref="Effect,PurificationNovaLotV1@Damage,ShieldBonus"/> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.
+Button/Tooltip/PurificationNovaPhasedLotV1=Shoots out a ball of energy that lasts <d ref="Behavior,PurificationNovaLotV1@Target,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,PurificationNovaLotV1@Damage,Amount"/> splash damage and an additional <d ref="Effect,PurificationNovaLotV1@Damage,ShieldBonus"/> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.
 Button/Tooltip/RapidFireLaunchers@Passive=Improves the Lock On ability to fire the first 12 shots quickly.
 Button/Tooltip/RapidFireLaunchers@Research=Increases the attack speed of the first 12 shots of the <c val="ffff8a">Cyclone's</c> Lock On.
 Button/Tooltip/RavenAntiArmorMissile=Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <d ref="-1*Behavior,RavenAntiArmorMissile@ArmorReduction,Modification.LifeArmorBonus"/> for <d ref="Behavior,RavenAntiArmorMissile@ArmorReduction,Duration"/> seconds.
@@ -182,26 +401,53 @@ Button/Tooltip/ReaperLiberty@ResearchNitroPacks=Increases the movement speed of 
 Button/Tooltip/ReaperSwarm=Raider. Capable of jumping up and down cliffs. Can see up cliffs and through terrain that would normally block line of sight. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c></n></n>Originally Introduced in Heart of the Swarm Beta.<n/>
 Button/Tooltip/ReaperSwarm@PassiveButton=Allows Reapers to see up cliffs and through terrains that would normally block line of sight.
 Button/Tooltip/ReaperSwarm@ResearchNitroPacks=Increases the movement speed of Reapers.
+Button/Tooltip/ReleaseInterceptorsLotV1=Carrier launches all Interceptors at the target point with a <d ref="Behavior,ReleaseInterceptorsLotV1@TimedLife,Duration"/> second timed life. Interceptors remain at the area until they expire.
 Button/Tooltip/SalvageLiberty=Salvages the structure, removing it and returning 100% of its mineral and gas value. Salvage takes <d time="5"/> to finish. Warning: once Salvage is triggered, it cannot be canceled.
 Button/Tooltip/SeekerMissileSwarm=Deploys a Seeker Missile which activates after <d time="5"/> and pursues the target unit, dealing <d ref="Effect,SeekerMissileDamage,Amount"/> splash damage upon contact.
 Button/Tooltip/SensorTowerLotV1=Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy.
+Button/Tooltip/ShadowStrideLotV=Teleports the Dark Templar to a nearby target location. Ability can only be used once every <d ref="Abil,ShadowStrideLotV,Cost[0].Cooldown.TimeUse"/> seconds.
+Button/Tooltip/ShieldBatteryLotV=Defensive structure. Recharges shields of nearby units.
 Button/Tooltip/SiegeArmorLotV1=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/SiegeArmorLotV1@BuildSiegeArmor=Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c><n/><n/>Originalli introduced in Legacy of the Void. Can be picked up by Medivacs in SIege Mode.
 Button/Tooltip/SiegeArmorLotV1Morph@SiegeMode=Deploys into Siege Mode. In this mode 攻城坦克s have very long range and inflict area damage. 攻城坦克s in this mode cannot move or attack targets at close range, but can be picked up by Medivacs.
 Button/Tooltip/SiegeArmorLotV1Morph@Unsiege=Reverts to Tank Mode. In this mode 攻城坦克s can move, but they do less damage.
 Button/Tooltip/SiegeArmorSiegedLotV1=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/StalkerLiberty=Ranged support strider.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/StalkerLiberty@WarpIn=Ranged support strider.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/StasisWardLotV1=Ground unit trap. Cloak renders the Stasis Ward invisible to enemies without detection.
+Button/Tooltip/StasisWardLotV1@Activate=Traps nearby enemies in stasis for <d ref="Behavior,StasisWardLotV1@ActivateTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
+Button/Tooltip/StasisWardLotV1@ActivatePassive=Traps nearby enemies in stasis for <d ref="Behavior,OracleStasisTrapTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
+Button/Tooltip/StasisWardLotV1@PermanentlyCloakedPassive=The Stasis Ward is permanently cloaked.
+Button/Tooltip/TempestSwarm=Siege artillery craft. Attacks from long range.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/VoidRayLotV=Surgical strike craft.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/WarpInAdeptLotV=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/WarpInLiberty@Pylon=Provides supply.<n/>Supply allows you to warp in more units.<n/>Creates power for nearby structures.
+Button/Tooltip/WarpInLiberty@Research=Enables <c val="ffff8a">Gateways</c> to upgrade to Warp Gates.
+Button/Tooltip/WarpPrismLotV1=Flying transport. Can load units from a distance. Can also deploy to create a power field.
+Button/Tooltip/WarpPrismLotV1@Siege=Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode.
+Button/Tooltip/WarpPrismLotV1@Sieged=Immobile power provider. Can load units from a distance. Can switch to a mobile Transport Mode.
+Button/Tooltip/WarpPrismLotV1@SiegedUnsiege=Reverts the Warp Prism back to Transport Mode, allowing it to move.
 Button/Tooltip/WidowMineSwarm=Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Cyclone=Cyclone
 DataCollection/Name/90mmCannonsLotV1=90mm Cannons
+DataCollection/Name/AdeptLotV=Adept
 DataCollection/Name/AdvancedBallistics=Advanced Ballistics
+DataCollection/Name/AdvancedBallisticsLotV2=Advanced Ballistics
+DataCollection/Name/AmplifiedShieldingLotV=Amplified Shielding
 DataCollection/Name/AutoTurretSwarm=Raven Auto Turret
 DataCollection/Name/BarracksLiberty=Barracks
+DataCollection/Name/BatteryOverchargeLotV=Battery Overcharge
+DataCollection/Name/BlinkLiberty=Blink
 DataCollection/Name/BunkerLiberty=Bunker
 DataCollection/Name/CaduceusReactorSwarmBeta=Caduceus Reactor
+DataCollection/Name/CarrierLotV1=Carrier
+DataCollection/Name/CarrierLotV2=Carrier
 DataCollection/Name/ChargeLotV1=Charge
 DataCollection/Name/ChargeLotV2=Charge
 DataCollection/Name/ChargeZealotLotV1=Charge
 DataCollection/Name/ChargeZealotLotV2=Charge
+DataCollection/Name/ChronoBoostLotV=Chrono Boost
+DataCollection/Name/ColossusLiberty=Colossus
 DataCollection/Name/CorvidReactorLotV=Corvid Reactor
 DataCollection/Name/CorvidReactorSwarm=Corvid Reactor
 DataCollection/Name/CrucioShockCannonLotV1=Crucio Shock Cannon
@@ -209,25 +455,56 @@ DataCollection/Name/CycloneLockOnAirLoTV1=CycloneLockOnAirLoTV1
 DataCollection/Name/CycloneLockOnLotV2=CycloneLockOnLotV2
 DataCollection/Name/CycloneLotV1=CycloneLotV1
 DataCollection/Name/CycloneLotV2=CycloneLotV2
+DataCollection/Name/DisruptorLotV1=Disruptor
+DataCollection/Name/DisruptorLotV2=Disruptor
 DataCollection/Name/DrillingClaws=Drilling Claws
 DataCollection/Name/DurableMaterialsSwarm=Durable Materials
+DataCollection/Name/EnergyRechargeLotV=Energy Recharge
 DataCollection/Name/EnhancedShockwaves=Enhanced Shockwaves
+DataCollection/Name/ExtendedThermalLanceLiberty=Extended Thermal Lance
+DataCollection/Name/FeedbackLiberty=Feedback
+DataCollection/Name/FluxVanesLotV=Flux Vanes
 DataCollection/Name/GaussPistolLiberty=Pistol
 DataCollection/Name/GhostLotV1=GhostLotV1
 DataCollection/Name/GhostWoL=GhostWoL
+DataCollection/Name/GraviticBoostersLotV1=Gravitic Boosters
+DataCollection/Name/GraviticBoostersLotV2=Gravitic Boosters
+DataCollection/Name/GravitonCatapultLotV1=Graviton Catapult
+DataCollection/Name/GravitonCatapultLotV2=Graviton Catapult
 DataCollection/Name/GrenadeLiberty=Grenade
 DataCollection/Name/HellbatSwarmBeta=Hellbat
 DataCollection/Name/HellionSwarmBeta=Hellion
+DataCollection/Name/HighTemplarLiberty=High Templar
 DataCollection/Name/HurricaneThrusters=Hurricane Thrusters
+DataCollection/Name/ImmortalLiberty=Immortal
+DataCollection/Name/ImmortalLotV=Immortal
+DataCollection/Name/ImmortalLotVBarrier=Barrier
+DataCollection/Name/InfernalFlamethrowerWoL=Infernal Flamethrower
 DataCollection/Name/InfernalPreIgniterSwarm=Infernal Pre-Igniter
+DataCollection/Name/InterceptorLotV1=Interceptor
+DataCollection/Name/InterceptorLotV2=Interceptor
 DataCollection/Name/KD8ChargeLotV1=KD8 Charge
+DataCollection/Name/KhaydarinAmulet=Khaydarin Amulet
 DataCollection/Name/LiberatorAGLotV1=Liberator AG LotV1
+DataCollection/Name/LiberatorAGLotV2=Liberator AG
 DataCollection/Name/LiberatorLotV1=Liberator LotV1
+DataCollection/Name/LiberatorLotV2=Liberator AA
+DataCollection/Name/MassRecallNexusLotV=Mass Recall Nexus
 DataCollection/Name/ModifiedAbility=Modified
 DataCollection/Name/MoebiusReactor=Moebius Reactor
 DataCollection/Name/NapalmSpraySwarmBeta=Napalm Spray
+DataCollection/Name/ObserverLotV1=Observer
+DataCollection/Name/ObserverLotV2=Observer
+DataCollection/Name/OracleLotV1=Oracle
+DataCollection/Name/OracleSwarm=Oracle
 DataCollection/Name/PistolSwarm=Pistol
 DataCollection/Name/PointDefenseDroneSwarm=Raven Point Defense Drone
+DataCollection/Name/PsiStormHighTemplarLiberty=Psionic Storm
+DataCollection/Name/PsiStormLiberty=Psi Storm
+DataCollection/Name/PsionicTransferLotV=Psionic Transfer
+DataCollection/Name/PulsarBeamSwarm=Pulsar Beam
+DataCollection/Name/PurificationNovaLotV1=Purification Nova
+DataCollection/Name/PurificationNovaPhasedLotV1=Purification Nova (Phased)
 DataCollection/Name/RapidFireLaunchers=Rapid Fire Launchers
 DataCollection/Name/RavenAntiArmorMissile=Raven Anti-Armor Missile
 DataCollection/Name/RavenAutoTurret=Raven Auto Turret
@@ -237,24 +514,43 @@ DataCollection/Name/RavenSwarm=Raven
 DataCollection/Name/ReactorLiberty=Reactor
 DataCollection/Name/ReaperLiberty=Reaper
 DataCollection/Name/ReaperSwarm=Reaper
+DataCollection/Name/ReleaseInterceptorsLotV1=Release Interceptors
 DataCollection/Name/SalvageLiberty=Salvage
 DataCollection/Name/SeekerMissileSwarm=Raven Seeker Missile
 DataCollection/Name/SensorTowerLotV1=Sensor Tower
+DataCollection/Name/ShadowStrideLotV=Shadow Stride
+DataCollection/Name/ShieldBatteryLotV=Shield Battery
 DataCollection/Name/SiegeArmorLotV1=Siege Armor LotV1
 DataCollection/Name/SiegeArmorLotV1Morph=Siege Armor Morph
 DataCollection/Name/SiegeArmorSiegedLotV1=Siege Armor Sieged LotV1
+DataCollection/Name/StalkerLiberty=Stalker
+DataCollection/Name/StasisWardLotV1=Stasis Ward
+DataCollection/Name/TempestLotV1=Tempest
+DataCollection/Name/TempestSwarm=Tempest
 DataCollection/Name/TornadoBlaster=Tornado Blaster
 DataCollection/Name/TyphoonMissilePodLotV2=Typhoon Missile Pod
+DataCollection/Name/VoidRayLotV=Void Ray
+DataCollection/Name/WarpInLiberty=Warp In
+DataCollection/Name/WarpPrismLotV1=Warp Prism
 DataCollection/Name/WidowMineSwarm=Widow Mine
 DocInfo/DescShort=Any
 DocInfo/Name=IMBA兵种大乱斗
 Effect/Name/90mmCannonsLotV1@Damage=Damage
+Effect/Name/AdeptLotV@WeaponDamage=Damage
+Effect/Name/AdeptLotV@WeaponLM=LM
 Effect/Name/AutoTurretSwarm@AutoTurretDamage=Auto-Turret Damage
 Effect/Name/AutoTurretSwarm@CU=CU
 Effect/Name/AutoTurretSwarm@InitialSet=Initial Set
 Effect/Name/AutoTurretSwarm@LM=LM
 Effect/Name/AutoTurretSwarm@ReleaseSet=Release Set
 Effect/Name/AutoTurretSwarm@TimedLifeAB=Timed Life AB
+Effect/Name/BatteryOverchargeLotV@AB=AB
+Effect/Name/CarrierLotV1@WeaponCP=CP
+Effect/Name/CarrierLotV1@WeaponCPUpgraded=CP Upgraded
+Effect/Name/CarrierLotV1@WeaponUseMagazine=Use Magazine
+Effect/Name/CarrierLotV2@WeaponCP=CP
+Effect/Name/CarrierLotV2@WeaponCPUpgraded=CP Upgraded
+Effect/Name/CarrierLotV2@WeaponUseMagazine=Use Magazine
 Effect/Name/ChargeLotV1@ChargingAttackAB=Charging Attack AB
 Effect/Name/ChargeLotV1@ChargingAttackRB=Charging Attack RB
 Effect/Name/ChargeLotV1@ChargingCheckAB=Charging Check AB
@@ -263,6 +559,15 @@ Effect/Name/ChargeLotV1@ChargingDamage=Charging Damage
 Effect/Name/ChargeLotV1@ChargingDamageSecondary=Charging Damage Secondary
 Effect/Name/ChargeLotV1@ChargingPrimaryDamageSet=Charging Primary Damage Set
 Effect/Name/ChargeLotV1@InitialAB=Initial AB
+Effect/Name/ChronoBoostLotV@AB=AB
+Effect/Name/ColossusLiberty@WeaponBackwardsCP=Backwards CP
+Effect/Name/ColossusLiberty@WeaponBackwardsSearchArea=Backwards Search Area
+Effect/Name/ColossusLiberty@WeaponDamage=Weapon Damage
+Effect/Name/ColossusLiberty@WeaponDmageDelayCP=Damage Delay CP
+Effect/Name/ColossusLiberty@WeaponForwardCP=Forward CP
+Effect/Name/ColossusLiberty@WeaponForwardSearchArea=Forward Search Area
+Effect/Name/ColossusLiberty@WeaponFriendlyCP=Weapon Friendly CP
+Effect/Name/ColossusLiberty@WeaponSet=Weapon Set
 Effect/Name/CrucioShockCannonLotV1@Blast=Blast
 Effect/Name/CrucioShockCannonLotV1@Directed=Directed
 Effect/Name/CrucioShockCannonLotV1@Dummy=Dummy
@@ -315,6 +620,11 @@ Effect/Name/CycloneLockOnLotV2@LockOnRB=Lock On RB
 Effect/Name/CycloneLockOnLotV2@LockOnTurretClear=Lock On Turret Clear
 Effect/Name/CycloneLockOnLotV2@LockOnTurretStart=Lock On Turret Start
 Effect/Name/CycloneLockOnLotV2@WeaponLMSwitch=Weapon LM Switch
+Effect/Name/EnergyRechargeLotV@CP=CP
+Effect/Name/EnergyRechargeLotV@MU=MU
+Effect/Name/FeedbackLiberty@Damage=Damage
+Effect/Name/FeedbackLiberty@RemoveEnergy=Remove Energy
+Effect/Name/FeedbackLiberty@Set=Set
 Effect/Name/GaussPistolLiberty@CP=CP
 Effect/Name/GaussPistolLiberty@Damage=Damage
 Effect/Name/GhostLotV1@ChannelSnipeCreatePersistent=Channel Snipe Create Persistent
@@ -334,6 +644,12 @@ Effect/Name/GhostWoL@EMPSearch=EMP Search
 Effect/Name/GhostWoL@SnipeDamage=Damage
 Effect/Name/GrenadeLiberty@Damage=Damage
 Effect/Name/GrenadeLiberty@LM=LM
+Effect/Name/ImmortalLiberty@Damage=Damage
+Effect/Name/ImmortalLotVBarrier@AB=AB
+Effect/Name/ImmortalLotVBarrier@RB=RB
+Effect/Name/InfernalFlamethrowerWoL@CP=CP
+Effect/Name/InfernalFlamethrowerWoL@Damage=Damage
+Effect/Name/InfernalFlamethrowerWoL@SearchArea=Search Area
 Effect/Name/KD8ChargeLotV1@ChargeFateAB=Charge Fate AB
 Effect/Name/KD8ChargeLotV1@Damage=Damage
 Effect/Name/KD8ChargeLotV1@EndSet=End Set
@@ -348,6 +664,12 @@ Effect/Name/LiberatorAGLotV1@LMSet=LM Set
 Effect/Name/LiberatorAGLotV1@TargetAAMorphOrder=Target AA Morph Order
 Effect/Name/LiberatorAGLotV1@TargetAAMorphOrderSet=Target AA Morph Order Set
 Effect/Name/LiberatorAGLotV1@TargetAAMorphRB2=Target AA Morph RB
+Effect/Name/LiberatorAGLotV2@TargetAAMorphOrderSet=Target AA Morph Order Set
+Effect/Name/LiberatorAGLotV2@TargetAAMorphRB=Target AA Morph RB
+Effect/Name/LiberatorAGLotV2@TargetAAOrderMorphAA=Target AA Order Morph AA
+Effect/Name/LiberatorAGLotV2@WeaponDamage=Damage
+Effect/Name/LiberatorAGLotV2@WeaponLM=LM
+Effect/Name/LiberatorAGLotV2@WeaponLMSet=LM Set
 Effect/Name/LiberatorLotV1@BurstPersistent=Burst Persistent
 Effect/Name/LiberatorLotV1@Damage=Damage
 Effect/Name/LiberatorLotV1@InterruptedMorphDelayPersistent=Interrupted Morph Delay Persistent
@@ -359,10 +681,50 @@ Effect/Name/LiberatorLotV1@TargetMorphOrderInitialSet2=Target Morph Order Initia
 Effect/Name/LiberatorLotV1@TargetMorphPersistent=Target Morph Persistent
 Effect/Name/LiberatorLotV1@TargetMorphSearchAB=Target Morph Search AB
 Effect/Name/LiberatorLotV1@TargetMorphSearchArea=Target Morph Search Area
+Effect/Name/LiberatorLotV2@TargetAGCP=Target AG CP
+Effect/Name/LiberatorLotV2@TargetAGDelayCP=Target AG Delay CP
+Effect/Name/LiberatorLotV2@TargetAGInitialSet=Target AG Initial Set
+Effect/Name/LiberatorLotV2@TargetAGInterruptedDelayCP=Target AG Interrupted Delay CP
+Effect/Name/LiberatorLotV2@TargetAGMorphAB=Target AG Morph AB
+Effect/Name/LiberatorLotV2@TargetAGOrderMorphAG=Target AG Order Morph AG
+Effect/Name/LiberatorLotV2@TargetAGSearchAB=Target AG Search AB
+Effect/Name/LiberatorLotV2@TargetAGSearchArea=Target AG Search Area
 Effect/Name/LockOnCancelSet=Lock On Cancel Set
+Effect/Name/MassRecallNexusLotV@CastingAB=Casting AB
+Effect/Name/MassRecallNexusLotV@CastingRB=Casting RB
+Effect/Name/MassRecallNexusLotV@PhasedAB=Phased AB
+Effect/Name/MassRecallNexusLotV@PreTeleportDummy=Pre Teleport Dummy
+Effect/Name/MassRecallNexusLotV@Prevent2ndRecall=Prevent 2nd Recall
+Effect/Name/MassRecallNexusLotV@RecallSet=Recall Set
+Effect/Name/MassRecallNexusLotV@RecallTeleport=Recall Teleport
+Effect/Name/MassRecallNexusLotV@SearchArea=Search Area
+Effect/Name/MassRecallNexusLotV@WarpOutAB=Warp Out AB
+Effect/Name/MassRecallNexusLotV@WarpOutSet=Warp Out Set
 Effect/Name/NapalmSpraySwarmBeta@Damage=Damage
 Effect/Name/NapalmSpraySwarmBeta@Search=Search
 Effect/Name/NapalmSpraySwarmBeta@Set=Set
+Effect/Name/OracleLotV1@BuildStasisWardBuildBeamOff=Build Beam Off
+Effect/Name/OracleLotV1@BuildStasisWardBuildBeamOn=Build Beam On
+Effect/Name/OracleLotV1@RevelationAB=Revelation AB
+Effect/Name/OracleLotV1@RevelationDummyDamage=Revelation Dummy Damage
+Effect/Name/OracleLotV1@RevelationRevealCP=Revelation Reveal CP
+Effect/Name/OracleLotV1@RevelationRevealDP=Revelation Reveal DP
+Effect/Name/OracleLotV1@RevelationSearchArea=Revelation Search Area
+Effect/Name/OracleLotV1@RevelationSet=Revelation Set
+Effect/Name/OracleSwarm@PulsarBeamAB=Pulsar Beam AB
+Effect/Name/OracleSwarm@PulsarBeamCP=Pulsar Beam CP
+Effect/Name/OracleSwarm@PulsarBeamCPSet=Pulsar Beam CP Set
+Effect/Name/OracleSwarm@PulsarBeamDamage=Pulsar Beam Damage
+Effect/Name/OracleSwarm@PulsarBeamInitialDummyDamage=Pulsar Beam Initial Dummy Damage
+Effect/Name/OracleSwarm@PulsarBeamRB=Pulsar Beam RB
+Effect/Name/OracleSwarm@Revelation=Revelation Set
+Effect/Name/OracleSwarm@RevelationAB=Revelation AB
+Effect/Name/OracleSwarm@RevelationCP=Revelation CP
+Effect/Name/OracleSwarm@RevelationDP=Revelation DP
+Effect/Name/OracleSwarm@RevelationSearchArea=Revelation Search Area
+Effect/Name/OracleSwarm@TimeWarpAB=Time Warp AB
+Effect/Name/OracleSwarm@TimeWarpCP=Time Warp CP
+Effect/Name/OracleSwarm@TimeWarpSearchArea=Time Warp Search Area
 Effect/Name/PistolSwarm@CP=CP
 Effect/Name/PistolSwarm@Damage=Damage
 Effect/Name/PointDefenseDroneSwarm@CU=CU
@@ -376,6 +738,63 @@ Effect/Name/PointDefenseDroneSwarm@ReleaseSet=Release Set
 Effect/Name/PointDefenseDroneSwarm@RemoveEnergy=Remove Energy
 Effect/Name/PointDefenseDroneSwarm@SearchArea=Search Area
 Effect/Name/PointDefenseDroneSwarm@TimedLifeAB=Timed Life AB
+Effect/Name/PsiStormLiberty@AB=AB
+Effect/Name/PsiStormLiberty@CP=CP
+Effect/Name/PsiStormLiberty@Damage=Damage
+Effect/Name/PsiStormLiberty@DamageInitial=Damage Initial
+Effect/Name/PsiStormLiberty@SearchArea=Search Area
+Effect/Name/PsionicTransferLotV@CU=CU
+Effect/Name/PsionicTransferLotV@CancelAB=Cancel AB
+Effect/Name/PsionicTransferLotV@CancelRB=Cancel RB
+Effect/Name/PsionicTransferLotV@CasterAB=Caster AB
+Effect/Name/PsionicTransferLotV@CasterRB=Caster RB
+Effect/Name/PsionicTransferLotV@InitialSet=Initial Set
+Effect/Name/PsionicTransferLotV@IssueOrder=Issue Order
+Effect/Name/PsionicTransferLotV@KillDummy=Kill Dummy
+Effect/Name/PsionicTransferLotV@ModifyUnitSelect=Modify Unit Select
+Effect/Name/PsionicTransferLotV@RemoveDisablesSet=Remove Disables Set
+Effect/Name/PsionicTransferLotV@RemoveFungalGrowth=Remove Fungal Growth
+Effect/Name/PsionicTransferLotV@RemoveFungalMovement=Remove Fungal Movement
+Effect/Name/PsionicTransferLotV@RemoveGravitonBeamPersistant=Remove Graviton Beam Persistant
+Effect/Name/PsionicTransferLotV@RemoveMothershipCoreRecalled=Remove Mothership Core Recalled
+Effect/Name/PsionicTransferLotV@RemoveMothershipCoreRecalling=Remove Mothership Core Recalling
+Effect/Name/PsionicTransferLotV@RemoveMothershipRecalled=Remove Mothership Recalled
+Effect/Name/PsionicTransferLotV@RemoveMothershipRecalling=Remove Mothership Recalling
+Effect/Name/PsionicTransferLotV@RemoveNeuralParasite=Remove Neural Parasite
+Effect/Name/PsionicTransferLotV@RemoveRecallSet=Remove Recall Set
+Effect/Name/PsionicTransferLotV@RemoveStasisTrap=Remove Stasis Trap
+Effect/Name/PsionicTransferLotV@ShadeSpawnAB=Shade Spawn AB
+Effect/Name/PsionicTransferLotV@ShadeSpawnSet=Shade Spawn Set
+Effect/Name/PsionicTransferLotV@ShiftNeuraledShadeCP=Shift Neuraled Shade CP
+Effect/Name/PsionicTransferLotV@Teleport=Teleport
+Effect/Name/PsionicTransferLotV@TeleportSet=Teleport Set
+Effect/Name/PsionicTransferLotV@TimerCancelSet=Timer Cancel Set
+Effect/Name/PsionicTransferLotV@TimerSpawnAB=Timer Spawn AB
+Effect/Name/PsionicTransferLotV@UnitOrderQueue=Unit Order Queue
+Effect/Name/PulsarBeamSwarm@CP=CP
+Effect/Name/PulsarBeamSwarm@Damage=Damage
+Effect/Name/PurificationNovaLotV1@CU=CU
+Effect/Name/PurificationNovaLotV1@CasterAB=Caster AB
+Effect/Name/PurificationNovaLotV1@Damage=Damage
+Effect/Name/PurificationNovaLotV1@EndSet=End Set
+Effect/Name/PurificationNovaLotV1@InitialSet=Initial Set
+Effect/Name/PurificationNovaLotV1@Kill=Kill
+Effect/Name/PurificationNovaLotV1@SearchArea=Search Area
+Effect/Name/PurificationNovaLotV1@SpawnIssueOrder=Spawn Issue Order
+Effect/Name/PurificationNovaLotV1@SpawnSet=Spawn Set
+Effect/Name/PurificationNovaLotV1@SpawnTargetAB=Spawn Target AB
+Effect/Name/PurificationNovaPhasedLotV1@@SearchSet=Search Set
+Effect/Name/PurificationNovaPhasedLotV1@CooldownVisualAB=Cooldown Visual AB
+Effect/Name/PurificationNovaPhasedLotV1@IssueMorphBackOrder=Issue Morph Back Order
+Effect/Name/PurificationNovaPhasedLotV1@IssueMorphOrder=Issue Morph Order
+Effect/Name/PurificationNovaPhasedLotV1@NotificationDamage=Notification Damage
+Effect/Name/PurificationNovaPhasedLotV1@NotificationSearch=Notification Search
+Effect/Name/PurificationNovaPhasedLotV1@PhasedAB=Phased AB
+Effect/Name/PurificationNovaPhasedLotV1@PhasedEndAB=Phased End AB
+Effect/Name/PurificationNovaPhasedLotV1@SearchArea=Search Area
+Effect/Name/PurificationNovaPhasedLotV1@SearchSet=Search Set
+Effect/Name/PurificationNovaPhasedLotV1@Set=Set
+Effect/Name/PurificationNovaPhasedLotV1@SpeedBuffAB=Speed Buff AB
 Effect/Name/RavenAntiArmorMissile@ArmorReductionAB=Armor Reduction AB
 Effect/Name/RavenAntiArmorMissile@Damage=Damage
 Effect/Name/RavenAntiArmorMissile@ImpactSearchArea=Impact Search Area
@@ -400,6 +819,28 @@ Effect/Name/RavenInterferenceMatrix@Dummy=Dummy
 Effect/Name/RavenInterferenceMatrix@Initial=Initial Set
 Effect/Name/RavenInterferenceMatrix@InitialSwitch=Initial Switch
 Effect/Name/RavenInterferenceMatrix@LM=LM
+Effect/Name/ReleaseInterceptorsLotV1@BeaconAB=Beacon AB
+Effect/Name/ReleaseInterceptorsLotV1@BeaconCU=Beacon CU
+Effect/Name/ReleaseInterceptorsLotV1@BeaconRB=Beacon RB
+Effect/Name/ReleaseInterceptorsLotV1@InitialCP=Initial CP
+Effect/Name/ReleaseInterceptorsLotV1@IssueLeashOrder=Issue Leash Order
+Effect/Name/ReleaseInterceptorsLotV1@IssueMoveOrder=Issue Move Order
+Effect/Name/ReleaseInterceptorsLotV1@IterateMagazine=Iterate Magazine
+Effect/Name/ReleaseInterceptorsLotV1@LeashSet=Leash Set
+Effect/Name/ReleaseInterceptorsLotV1@PatrolCP=Patrol CP
+Effect/Name/ReleaseInterceptorsLotV1@PatrolIssueOrder=Patrol Issue Order
+Effect/Name/ReleaseInterceptorsLotV1@PatrolLeftTurnCP=Patrol Left Turn CP
+Effect/Name/ReleaseInterceptorsLotV1@PatrolRandomizerCP=Patrol Randomizer CP
+Effect/Name/ReleaseInterceptorsLotV1@PatrolRightTurnCP=Patrol Right Turn CP
+Effect/Name/ReleaseInterceptorsLotV1@ReleaseMagazine=Release Magezine
+Effect/Name/ReleaseInterceptorsLotV1@ReleaseSet=Release Set
+Effect/Name/ReleaseInterceptorsLotV1@RemoveBeacon=Remove Beacon
+Effect/Name/ReleaseInterceptorsLotV1@Set=Set
+Effect/Name/ReleaseInterceptorsLotV1@TimedLifeAB=Timed Life AB
+Effect/Name/ReleaseInterceptorsLotV1@TimedLifeFate=Timed Life Fate
+Effect/Name/ReleaseInterceptorsLotV1@TimedLifeWarningAB=Timed Life Warning AB
+Effect/Name/ReleaseInterceptorsLotV1@UseMagazine=Use Magazine
+Effect/Name/ReleaseInterceptorsLotV1@WanderDelayAB=Wander Delay AB
 Effect/Name/SalvageLiberty@AB=AB
 Effect/Name/SalvageLiberty@ModifyUnit=Modify Unit
 Effect/Name/SeekerMissileSwarm@Damage=Damage
@@ -410,6 +851,23 @@ Effect/Name/SeekerMissileSwarm@Suicide=Suicide
 Effect/Name/SeekerMissileSwarm@SuicideSet=Suicide Set
 Effect/Name/SeekerMissileSwarm@TargetTintAB=Target Tint AB
 Effect/Name/SeekerMissileSwarm@TargetTintCP=Target Tint CP
+Effect/Name/ShadowStrideLotV@Teleport=Teleport
+Effect/Name/StalkerLiberty@AttackDamage=Damage
+Effect/Name/StalkerLiberty@AttackLM=Attack LM
+Effect/Name/StasisWardLotV1@ActivateCP=Activate CP
+Effect/Name/StasisWardLotV1@ActivateCasterAB=Activate Caster AB
+Effect/Name/StasisWardLotV1@ActivateIssueHaltOrder=Activate Issue Halt Order
+Effect/Name/StasisWardLotV1@ActivateIssueStopOrder=Activate Issue Stop Order
+Effect/Name/StasisWardLotV1@ActivateReveal=Activate Reveal
+Effect/Name/StasisWardLotV1@ActivateSearchArea=Activate Search Area
+Effect/Name/StasisWardLotV1@ActivateSearchSet=Activate Search Set
+Effect/Name/StasisWardLotV1@ActivateSet=Activate Set
+Effect/Name/StasisWardLotV1@ActivateTargetAB=Activate Target AB
+Effect/Name/TempestSwarm@AAWeaponDamage=Damage
+Effect/Name/TempestSwarm@AAWeaponLM=LM
+Effect/Name/TempestSwarm@AGWeaponDamage=Damage
+Effect/Name/TempestSwarm@AGWeaponLM=LM
+Effect/Name/ThermalLancesMU=Weapon Friendly Damage
 Effect/Name/TornadoBlaster@Damage=Damage
 Effect/Name/TornadoBlaster@LMLeft=LM Left
 Effect/Name/TornadoBlaster@LMLeftSet=LM Left Set
@@ -438,22 +896,38 @@ Param/Expression/lib_B156CA28_17F87ABD=Player ~A~'s Index: ~B~
 Param/Expression/lib_B156CA28_41422E3B=Player ~A~ is using button: Panel ~B~ Item ~C~ Selection ~D~
 Param/Expression/lib_B156CA28_81A2A7C1=Panel Index: ~A~
 RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat=Factory
+RequirementNode/Tooltip/CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987=Must have at least 1 interceptor
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Research Advanced Ballistics at the Starport Techlab
+RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsLotV2CompleteOnly2325880491=Research Advanced Ballistics at the Fusion Core
+RequirementNode/Tooltip/CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174=Research Amplified Shielding at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276=Research Caduceus Reactor at the Starport Techlab
 RequirementNode/Tooltip/CountUpgradeChargeZealotLotV1CompleteOnly137519211TechTreeCheat=Research Charge at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat=Research Enhanced Shockwaves at the Ghost Academy
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwavesCompleteOnly2618611756TechTreeCheat2=Research Enhanced Shockwaves at the Ghost Academy
+RequirementNode/Tooltip/CountUpgradeGravitonCatapultLotV1CompleteOnly545093725=Research Graviton Catapult at the Fleet Beacon
+RequirementNode/Tooltip/CountUpgradeGravitonCatapultLotV2CompleteOnly545093725=Research Graviton Catapult at the Fleet Beacon
 RequirementNode/Tooltip/CountUpgradeHurricaneThrusters@UpgradeCompleteOnly3968802568=Research <d stringRef="Upgrade,HurricaneThrusters@Upgrade,Name"/> at the Factory Tech Lab
 RequirementNode/Tooltip/CountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarmCompleteOnly2156962955=Research Infernal Pre-Igniter at the Factory Techlab
+RequirementNode/Tooltip/CountUpgradeKhaydarinAmuletCompleteOnly1915283201=Research Khaydarin Amulet at the Templar Archives
 RequirementNode/Tooltip/CountUpgradeMoebiusReactor@UpgradeCompleteOnly3009616705TechTreeCheat=Research MoebiusReactor at the Ghost Academy
+RequirementNode/Tooltip/CountUpgradePsiStormHighTemplarLibertyCompleteOnly3263798822=Research Psionic Storm at the Templar Archives
 RequirementNode/Tooltip/CountUpgradeRapidFireLaunchers@UpgradeCompleteOnly1075727723=Research <d stringRef="Upgrade,RapidFireLaunchers@Upgrade,Name"/> at the Factory Tech Lab
+RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat=Research Nitro Packs at the Barracks Tech Lab
 RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat2=Research Nitro Packs at the Barracks Tech Lab
 RequirementNode/Tooltip/Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1=Terran Vehicle And Ship Weapons Level 1
 RequirementNode/Tooltip/Eq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1=Terran Vehicle And Ship Weapons Level 2
+RequirementNode/Tooltip/LT2210218377CountUnitInterceptorLotV1QueuedOrBetterAtUnit8=Carrier must have fewer than 8 Interceptors
+RequirementNode/Tooltip/LT2210218377CountUnitInterceptorLotV2QueuedOrBetterAtUnit8=Carrier must have fewer than 8 Interceptors
 RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit=Not Locked On
 RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit=Not Locked On
+Unit/Name/AdeptLotV=Adept
+Unit/Name/AdeptLotV@Shade=Shade
+Unit/Name/AdeptLotV@WeaponMissile=Weapon Missile
 Unit/Name/AutoTurretSwarm@AutoTurret=Auto-Turret
 Unit/Name/AutoTurretSwarm@ReleaseMissile=Release Missile
+Unit/Name/CarrierLotV1=Carrier
+Unit/Name/CarrierLotV2=Carrier
+Unit/Name/ColossusLiberty=Colossus
 Unit/Name/CycloneLockOnAirLoTV1@Missile=Missile
 Unit/Name/CycloneLockOnAirLoTV1@MissileAlternative=Missile Alternative
 Unit/Name/CycloneLockOnLotV2@Missile=Missile
@@ -461,6 +935,8 @@ Unit/Name/CycloneLotV1=
 Unit/Name/CycloneLotV1@Unit=Cyclone
 Unit/Name/CycloneLotV2=Cyclone
 Unit/Name/CycloneLotV2@Unit=Cyclone
+Unit/Name/DisruptorLotV1=Disruptor
+Unit/Name/DisruptorLotV1@Phased=Disruptor
 Unit/Name/GhostLotV1=Ghost
 Unit/Name/GhostLotV1@Unit=Cyclone
 Unit/Name/GhostWoL=Ghost
@@ -468,10 +944,23 @@ Unit/Name/GhostWoL@Ghost=Ghost
 Unit/Name/GrenadeLiberty@Missile=D8 Charge
 Unit/Name/HellbatSwarmBeta@Hellbat=Hellbat
 Unit/Name/HellionSwarmBeta@Hellion=Hellion
+Unit/Name/HighTemplarLiberty=High Templar
+Unit/Name/ImmortalLiberty=Immortal
+Unit/Name/ImmortalLotV=Immortal
+Unit/Name/InterceptorLotV1=Interceptor
+Unit/Name/InterceptorLotV2=Interceptor
 Unit/Name/LiberatorAGLotV1@LiberatorAG=Liberator
 Unit/Name/LiberatorAGLotV1@MorphModel=Liberator
+Unit/Name/LiberatorAGLotV2=Liberator
+Unit/Name/LiberatorAGLotV2@MorphModel=Liberator
 Unit/Name/LiberatorLotV1@Liberator=Liberator
 Unit/Name/LiberatorLotV1@MorphModel=Liberator
+Unit/Name/LiberatorLotV2=Liberator
+Unit/Name/LiberatorLotV2@MorphModel=Liberator
+Unit/Name/ObserverLotV1=Observer
+Unit/Name/ObserverLotV2=Observer
+Unit/Name/OracleLotV1=Oracle
+Unit/Name/OracleSwarm=Oracle
 Unit/Name/PointDefenseDroneSwarm@Missile=Missile
 Unit/Name/PointDefenseDroneSwarm@PointDefenseDrone=Point Defense Drone
 Unit/Name/PointDefenseDroneSwarm@Unit=Point Defense Drone
@@ -483,17 +972,31 @@ Unit/Name/RavenLotV1=Raven
 Unit/Name/RavenSwarm=Raven
 Unit/Name/ReaperLiberty=Reaper
 Unit/Name/ReaperSwarm=Reaper
+Unit/Name/ReleaseInterceptorsLotV1@Beacon=Release Interceptors Beacon
 Unit/Name/SeekerMissileSwarm@Missile=Missile
 Unit/Name/SensorTowerLotV1=Sensor Tower
+Unit/Name/ShieldBatteryLotV=Shield Battery
 Unit/Name/SiegeArmorLotV1=攻城坦克
 Unit/Name/SiegeArmorSiegedLotV1=攻城坦克
+Unit/Name/StalkerLiberty=Stalker
+Unit/Name/StalkerLiberty@AttackMissile=Attack Missile
+Unit/Name/StasisWardLotV1=Stasis Ward 
+Unit/Name/TempestSwarm=Tempest
+Unit/Name/TempestSwarm@AAWeaponAttackMissile=Weapon Attack Missile
+Unit/Name/TempestSwarm@AGWeaponMissile=Weapon Attack Missile
 Unit/Name/TornadoBlaster@Missile=Missile
 Unit/Name/TyphoonMissilePod@Missile=Missile
 Unit/Name/TyphoonMissilePodLotV2@Missile=Missile
+Unit/Name/VoidRayLotV=Void Ray
+Unit/Name/WarpInLiberty@Pylon=Pylon
+Unit/Name/WarpPrismLotV1=Warp Prism
+Unit/Name/WarpPrismLotV1@Sieged=Warp Prism
 Unit/Name/WidowMineSwarm=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMine=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMineBurrowed=Widow Mine
 Upgrade/Name/AdvancedBallistics=Advanced Ballistics
+Upgrade/Name/AdvancedBallisticsLotV2=Advanced Ballistics
+Upgrade/Name/AmplifiedShieldingLotV=Amplified Shielding
 Upgrade/Name/CaduceusReactorSwarmBeta@CaduceusReactor=Caduceus Reactor
 Upgrade/Name/ChargeZealotLotV1=Charge
 Upgrade/Name/ChargeZealotLotV2=Charge
@@ -502,16 +1005,35 @@ Upgrade/Name/CorvidReactorSwarm=Corvid Reactor
 Upgrade/Name/DrillingClaws@DrillingClaws=Drilling Claws
 Upgrade/Name/DurableMaterialsSwarm=Durable Materials
 Upgrade/Name/EnhancedShockwaves@Upgrade=Enhanced Shockwaves
+Upgrade/Name/ExtendedThermalLanceLiberty=Extended Thermal Lance
+Upgrade/Name/FluxVanesLotV=Flux Vanes
+Upgrade/Name/GraviticBoostersLotV1=Gravitic Boosters
+Upgrade/Name/GraviticBoostersLotV2=Gravitic Boosters
+Upgrade/Name/GravitonCatapultLotV1=Graviton Catapult
+Upgrade/Name/GravitonCatapultLotV2=Graviton Catapult
 Upgrade/Name/HurricaneThrusters@Upgrade=Hurricane Thrusters
 Upgrade/Name/InfernalPreIgniterSwarm@InfernalPreIgniterSwarm=Infernal Pre-Igniter
+Upgrade/Name/KhaydarinAmulet=Khaydarin Amulet
 Upgrade/Name/MarineUpgrade=Marine
 Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel1=Terran Vehicle And Ship Weapons Level 1
 Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel2=Terran Vehicle And Ship Weapons Level 2
 Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel3=Terran Vehicle And Ship Weapons Level 3
 Upgrade/Name/MoebiusReactor@Upgrade=Moebius Reactor
+Upgrade/Name/PsiStormHighTemplarLiberty=Psionic Storm
 Upgrade/Name/RapidFireLaunchers@Upgrade=Rapid Fire Launchers
+Upgrade/Name/ReactorRepairTime=Reactor Repair Time
 Upgrade/Name/ReaperLiberty@Upgrade=Nitro Packs
 Upgrade/Name/ReaperSwarm@Upgrade=Nitro Packs
+UserData/IMBA_ProtossUnits/Stalker_Selection_Expansion_Tip=Current
+UserData/IMBA_ProtossUnits/Stalker_Selection_Expansion_Tip_001=Liberty
+UserData/IMBA_ProtossUnits/Stalker_Selection_Title=CURRENT
+UserData/IMBA_ProtossUnits/Stalker_Selection_Title_001=LIBERTY
+UserData/IMBA_ProtossUnits/Zealot_Selection_Expansion_Tip=current
+UserData/IMBA_ProtossUnits/Zealot_Selection_Expansion_Tip_001=30 damage upon hit
+UserData/IMBA_ProtossUnits/Zealot_Selection_Expansion_Tip_002=8 damage upon hit, research cost reduced and increased movement speed
+UserData/IMBA_ProtossUnits/Zealot_Selection_Title=current
+UserData/IMBA_ProtossUnits/Zealot_Selection_Title_001=lotv beta
+UserData/IMBA_ProtossUnits/Zealot_Selection_Title_002=lotv 2
 UserData/IMBA_TerranUnits/Barracks_Selection_Expansion_Tip=current
 UserData/IMBA_TerranUnits/Barracks_Selection_Expansion_Tip_001=requires command center instead of supply depot. build tinme - 5 s
 UserData/IMBA_TerranUnits/Barracks_Selection_Title=current
@@ -591,17 +1113,28 @@ UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip_001=no longer decloa
 UserData/IMBA_TerranUnits/WidowMine_Selection_Title=Current
 UserData/IMBA_TerranUnits/WidowMine_Selection_Title_001=HotS
 Weapon/Name/90mmCannonsLotV1=90mm Cannons
+Weapon/Name/AdeptLotV@Weapon=Glaive Cannon
 Weapon/Name/AutoTurretSwarm@AutoTurretWeapon=12mm Gauss Cannon
+Weapon/Name/CarrierLotV1@Weapon=Interceptor Launch
+Weapon/Name/CarrierLotV2@Weapon=Interceptor Launch
+Weapon/Name/ColossusLiberty@Weapon=Thermal Lance
 Weapon/Name/CrucioShockCannonLotV1=Crucio Shock Cannon
 Weapon/Name/CycloneLockOnAirLoTV1@Dummy=Lock On Dummy
 Weapon/Name/GaussPistolLiberty=P-45 Gauss Pistol
 Weapon/Name/GrenadeLiberty=D-8 Charge
+Weapon/Name/ImmortalLiberty@Weapon=Phase Disruptors
+Weapon/Name/InfernalFlamethrowerWoL=Infernal Flamethrower
 Weapon/Name/LiberatorAGLotV1@Weapon=Concord Cannon
+Weapon/Name/LiberatorAGLotV2@Weapon=Concord Cannon
 Weapon/Name/LiberatorLotV1@Weapon=Lexington Rockets
 Weapon/Name/NapalmSpraySwarmBeta@NapalmSpray=Napalm Spray
 Weapon/Name/PistolSwarm=P-45 Gauss Pistol
 Weapon/Name/PointDefenseDroneSwarm@PointDefenseLaser=Point Defense Laser
+Weapon/Name/PulsarBeamSwarm=Pulsar Beam
 Weapon/Name/RavenAutoTurret@AutoTurretWeapon=12mm Gauss Cannon
+Weapon/Name/StalkerLiberty@ParticleDisruptors=Particle Disruptors
+Weapon/Name/TempestSwarm@AAWeapon=Kinetic Overload
+Weapon/Name/TempestSwarm@AGWeapon=Resonance Coil
 Weapon/Name/TornadoBlaster=Tornado Blaster
 Weapon/Name/TyphoonMissilePodLotV2@Weapon=Typhoon Missile Pod
 Weapon/Tip/GrenadeLiberty=Only used against structures.

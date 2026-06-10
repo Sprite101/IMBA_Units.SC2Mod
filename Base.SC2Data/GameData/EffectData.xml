@@ -34,7 +34,37 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="BatteryOverchargeLotV"/>
     </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="CarrierLotV2@WeaponCPUpgraded">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="8"/>
+        <PeriodicValidator value="CasterNotDead"/>
+        <PeriodicEffectArray value="CarrierLotV2@WeaponUseMagazine"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0.125"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <PeriodicPeriodArray value="0.25"/>
+        <PeriodicPeriodArray value="0.25"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="CarrierLotV2@WeaponCP">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="8"/>
+        <PeriodicValidator value="CasterNotDead"/>
+        <PeriodicEffectArray value="CarrierLotV2@WeaponUseMagazine"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
     <CEffectUseMagazine id="CarrierLotV1@WeaponUseMagazine">
+        <EditorCategories value="Race:Protoss"/>
+    </CEffectUseMagazine>
+    <CEffectUseMagazine id="CarrierLotV2@WeaponUseMagazine">
         <EditorCategories value="Race:Protoss"/>
     </CEffectUseMagazine>
     <CEffectApplyBehavior id="ChronoBoostLotV@AB">
@@ -43,6 +73,66 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="ChronoBoostLotV"/>
     </CEffectApplyBehavior>
+    <CEffectDamage id="InfernalFlamethrowerWoL@Damage" parent="DU_WEAP">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Light" value="6"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="8"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="InfernalFlamethrowerWoL@CP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourcePoint"/>
+        <InitialEffect value="InfernalFlamethrowerWoL@Damage"/>
+        <PeriodCount value="25"/>
+        <PeriodicEffectArray value="InfernalFlamethrowerWoL@SearchArea"/>
+        <PeriodicOffsetArray value="0,-0.25,0"/>
+        <PeriodicOffsetArray value="0,-0.5,0"/>
+        <PeriodicOffsetArray value="0,-0.75,0"/>
+        <PeriodicOffsetArray value="0,-1,0"/>
+        <PeriodicOffsetArray value="0,-1.25,0"/>
+        <PeriodicOffsetArray value="0,-1.5,0"/>
+        <PeriodicOffsetArray value="0,-1.75,0"/>
+        <PeriodicOffsetArray value="0,-2,0"/>
+        <PeriodicOffsetArray value="0,-2.25,0"/>
+        <PeriodicOffsetArray value="0,-2.5,0"/>
+        <PeriodicOffsetArray value="0,-2.75,0"/>
+        <PeriodicOffsetArray value="0,-3,0"/>
+        <PeriodicOffsetArray value="0,-3.25,0"/>
+        <PeriodicOffsetArray value="0,-3.5,0"/>
+        <PeriodicOffsetArray value="0,-3.75,0"/>
+        <PeriodicOffsetArray value="0,-4,0"/>
+        <PeriodicOffsetArray value="0,-4.25,0"/>
+        <PeriodicOffsetArray value="0,-4.5,0"/>
+        <PeriodicOffsetArray value="0,-4.75,0"/>
+        <PeriodicOffsetArray value="0,-5,0"/>
+        <PeriodicOffsetArray value="0,-5.25,0"/>
+        <PeriodicOffsetArray value="0,-5.5,0"/>
+        <PeriodicOffsetArray value="0,-5.75,0"/>
+        <PeriodicOffsetArray value="0,-6,0"/>
+        <PeriodicOffsetArray value="0,-6.5,0"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="InfernalFlamethrowerWoL@SearchArea">
+        <EditorCategories value="Race:Terran"/>
+        <ExcludeArray Value="Target"/>
+        <IncludeArray Effect="InfernalFlameThrowerCP" Value="Target"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.15" Effect="InfernalFlamethrowerWoL@Damage"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="OracleSwarm@RevelationAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="OracleSwarm@Revelation"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="OracleSwarm@RevelationSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Self,Player,Ally,Missile,Destructible,Cloaked,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="6" Effect="OracleSwarm@Revelation"/>
+    </CEffectEnumArea>
     <CEffectApplyBehavior id="OracleSwarm@TimeWarpAB">
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="OracleSwarm@TimeWarp"/>
@@ -138,7 +228,7 @@
         <PeriodCount value="8"/>
         <PeriodicValidator value="CasterNotDead"/>
         <PeriodicEffectArray value="CarrierLotV1@WeaponUseMagazine"/>
-        <PeriodicPeriodArray value="0.375"/>
+        <PeriodicPeriodArray value="0.5"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="CarrierLotV1@WeaponCPUpgraded">
         <EditorCategories value="Race:Protoss"/>
@@ -350,7 +440,7 @@
         <Behavior value="OracleSwarm@PulsarBeamEnergyCost"/>
     </CEffectApplyBehavior>
     <CEffectDamage id="OracleLotV1@RevelationDummyDamage">
-        <EditorCategories value=""/>
+        <EditorCategories value="Race:Protoss"/>
         <ResponseFlags index="Acquire" value="1"/>
         <Flags index="Notification" value="1"/>
         <Flags index="NoDamageTimerReset" value="1"/>
@@ -362,21 +452,21 @@
         <AreaArray Radius="6" Effect="OracleLotV1@RevelationSet"/>
     </CEffectEnumArea>
     <CEffectDestroyPersistent id="OracleLotV1@RevelationRevealDP">
-        <EditorCategories value=""/>
+        <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="TargetUnit"/>
         <Effect value="RevelationPersistent"/>
         <Count value="1"/>
         <Radius value="0.5"/>
     </CEffectDestroyPersistent>
     <CEffectCreatePersistent id="OracleLotV1@RevelationRevealCP">
-        <EditorCategories value=""/>
+        <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="TargetUnit"/>
         <ExpireDelay value="60"/>
         <RevealRadius value="3"/>
         <RevealFlags index="Unfog" value="1"/>
     </CEffectCreatePersistent>
     <CEffectSet id="OracleLotV1@RevelationSet">
-        <EditorCategories value=""/>
+        <EditorCategories value="Race:Protoss"/>
         <EffectArray value="OracleLotV1@RevelationAB"/>
         <EffectArray value="OracleLotV1@RevelationRevealCP"/>
         <EffectArray value="OracleLotV1@RevelationDummyDamage"/>
@@ -434,6 +524,28 @@
         <ArmorReduction value="0"/>
         <Kind value="Ranged"/>
     </CEffectDamage>
+    <CEffectDestroyPersistent id="OracleSwarm@RevelationDP">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Effect value="RevelationPersistent"/>
+        <Count value="1"/>
+        <Radius value="0.5"/>
+    </CEffectDestroyPersistent>
+    <CEffectCreatePersistent id="OracleSwarm@RevelationCP">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="28"/>
+        <RevealRadius value="3"/>
+        <RevealFlags index="Unfog" value="1"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="OracleSwarm@Revelation">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="OracleSwarm@RevelationAB"/>
+        <EffectArray value="OracleSwarm@RevelationCP"/>
+    </CEffectSet>
+    <CEffectSwitch id="RavenScramblerMissileABswitch">
+        <CaseArray index="0" Validator="ModifiedAbility@IsCarrier"/>
+    </CEffectSwitch>
     <CEffectCreateHealer id="ShieldBatteryRechargeEx5">
         <ValidatorArray index="4" value="ModifiedAbility@NotInterceptorCombined"/>
     </CEffectCreateHealer>
@@ -1718,7 +1830,7 @@
     </CEffectApplyBehavior>
     <CEffectSwitch id="RavenInterferenceMatrix@ABSwitch">
         <EditorCategories value="Race:Terran"/>
-        <CaseArray Validator="IsCarrier" Effect="RavenInterferenceMatrix@ABcarrier"/>
+        <CaseArray Validator="ModifiedAbility@IsCarrier" Effect="RavenInterferenceMatrix@ABcarrier"/>
         <CaseDefault value="RavenInterferenceMatrix@AB"/>
     </CEffectSwitch>
     <CEffectLaunchMissile id="RavenInterferenceMatrix@LM">

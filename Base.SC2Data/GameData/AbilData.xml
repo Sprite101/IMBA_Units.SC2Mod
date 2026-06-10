@@ -34,6 +34,14 @@
         <AINotifyEffect value="BatteryOverchargeCreateHealer"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BatteryOverchargeLotV"/>
     </CAbilEffectTarget>
+    <CAbilTrain id="CarrierLotV2@Train">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="120" Effect="WarpInEffect">
+            <Button DefaultButtonFace="CarrierLotV2" State="Restricted" Requirements="HaveFleetBeacon"/>
+            <Unit value="CarrierLotV2"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilArmMagazine id="CarrierLotV1@WeaponHangar">
         <AbilSetId value="CarrierHanger"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -46,6 +54,25 @@
                 <Flags index="ToSelection" value="1"/>
             </Button>
             <Flags index="AutoBuild" value="1"/>
+            <Flags index="LeashRetarget" value="1"/>
+        </InfoArray>
+        <Alert value="TrainComplete"/>
+        <EffectArray index="Death" value="InterceptorFate"/>
+        <MaxCount value="8"/>
+    </CAbilArmMagazine>
+    <CAbilArmMagazine id="CarrierLotV2@WeaponHangar">
+        <AbilSetId value="CarrierHanger"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Flags index="Retarget" value="1"/>
+        <Leash value="12"/>
+        <InfoArray index="Ammo1" Time="8" CountStart="4" Manage="Recall" Unit="InterceptorLotV2">
+            <Charge Link="CarrierInterceptor" Location="Unit"/>
+            <Cooldown Link="CarrierTrainInterceptor" TimeUse="0.01"/>
+            <Button DefaultButtonFace="InterceptorLotV2" Requirements="CarrierLotV2@WeaponHangarCount">
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+            <Flags index="AutoBuild" value="1"/>
+            <Flags index="AutoBuildOn" value="1"/>
             <Flags index="LeashRetarget" value="1"/>
         </InfoArray>
         <Alert value="TrainComplete"/>
@@ -97,6 +124,24 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilResearch id="GravitonCatapultLotV2@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="80" Upgrade="GravitonCatapultLotV2">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="GravitonCatapultLotV2" State="Restricted" Requirements="GravitonCatapultLotV2@LearnGravitonCatapult">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilTrain id="ImmortalLotV@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="55" Effect="WarpInEffect15">
+            <Button DefaultButtonFace="ImmortalLotV" State="Restricted"/>
+            <Unit value="ImmortalLotV"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilEffectInstant id="LiberatorAGLotV2@AATarget">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="LiberatorAGLotV2@TargetAAMorphOrderSet"/>
@@ -179,6 +224,19 @@
         <CursorEffect value="MassRecallNexusLotV@SearchArea"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MassRecallNexusLotV"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="OracleSwarm@Revelation">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="OracleSwarm@RevelationSearchArea"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+            <Cooldown TimeUse="14"/>
+        </Cost>
+        <Range value="9"/>
+        <CastOutroTime value="0.5"/>
+        <CursorEffect value="OracleSwarm@RevelationSearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="OracleSwarm@Revelation"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="OracleSwarm@TimeWarp">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Effect index="0" value="OracleSwarm@TimeWarpCP"/>
@@ -196,6 +254,30 @@
         <InfoArray index="Train1" Time="35" Effect="WarpInEffect">
             <Button DefaultButtonFace="OracleSwarm"/>
             <Unit value="OracleSwarm"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="ImmortalLiberty@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="55" Effect="WarpInEffect15">
+            <Button DefaultButtonFace="ImmortalLiberty" State="Restricted"/>
+            <Unit value="ImmortalLiberty"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="ColossusLiberty@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="75">
+            <Button DefaultButtonFace="ColossusLiberty" State="Restricted" Requirements="HaveRoboticsBay"/>
+            <Unit value="ColossusLiberty"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="DisruptorLotV1@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="50">
+            <Button DefaultButtonFace="DisruptorLotV1" Requirements="HaveRoboticsBay"/>
+            <Unit value="DisruptorLotV1"/>
         </InfoArray>
     </CAbilTrain>
     <CAbilEffectTarget id="ShieldBatteryRechargeEx5">
@@ -1017,13 +1099,13 @@
         <Activity value="UI/Building"/>
         <Range value="3"/>
         <InfoArray index="Train1" Time="30">
-            <Button DefaultButtonFace="HellionTank" State="Restricted" Requirements="HaveArmory"/>
+            <Button DefaultButtonFace="HellbatSwarmBeta@Build" State="Restricted" Requirements="HaveArmory"/>
             <Unit value="HellbatSwarmBeta@Hellbat"/>
         </InfoArray>
     </CAbilTrain>
     <CAbilHarvest id="ModifiedAbility@MuleGatherWoL">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="Gather" DefaultButtonFace="GatherMULE"/>
+        <CmdButtonArray index="Gather" DefaultButtonFace="ModifiedAbility@MuleGatherWoL"/>
         <Range value="0.5"/>
         <ReservedMarker Link="Abil/MULEGather"/>
         <ResourceAllowed index="Vespene" value="0"/>
@@ -1411,7 +1493,7 @@
         <Activity value="UI/Building"/>
         <Range value="3"/>
         <InfoArray index="Train1" Time="30">
-            <Button DefaultButtonFace="Hellion" State="Restricted"/>
+            <Button DefaultButtonFace="HellionSwarmBeta" State="Restricted"/>
             <Unit value="HellionSwarmBeta@Hellion"/>
         </InfoArray>
     </CAbilTrain>

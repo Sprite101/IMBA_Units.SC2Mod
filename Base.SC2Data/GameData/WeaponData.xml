@@ -29,6 +29,20 @@
         <Period value="0.8"/>
         <Effect value="AutoTurretSwarm@AutoTurretDamage"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="CarrierLotV2@Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <DisplayEffect value="Carrier"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <Period value="0.5"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="CarrierLotV2@WeaponCP"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="ImmortalLiberty@Weapon">
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
@@ -52,6 +66,22 @@
         <Backswing value="0"/>
         <Effect value="CarrierLotV1@WeaponCP"/>
         <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InfernalFlamethrowerWoL">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <DisplayEffect value="InfernalFlamethrowerWoL@Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="6.5"/>
+        <Range value="6"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2.5"/>
+        <DamagePoint value="0.25"/>
+        <Backswing value="0.75"/>
+        <Effect value="InfernalFlamethrowerWoL@CP"/>
+        <LegacyOptions index="LockTurretWhileFiring" value="1"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="LiberatorAGLotV2@Weapon">
         <EditorCategories value="Race:Terran"/>

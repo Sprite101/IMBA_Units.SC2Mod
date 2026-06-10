@@ -16,6 +16,10 @@
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="LT2210218377CountUnitInterceptorLotV1QueuedOrBetterAtUnit8"/>
     </CRequirement>
+    <CRequirement id="CarrierLotV2@WeaponHangarCount">
+        <EditorCategories value="Race:Protoss,TechType:Unit"/>
+        <NodeArray index="Use" Link="LT2210218377CountUnitInterceptorLotV2QueuedOrBetterAtUnit8"/>
+    </CRequirement>
     <CRequirement id="ExtendedThermalLanceLiberty@LearnExtendedThermalLance">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="AndNotCountUpgradeExtendedThermalLanceLibertyQueuedOrBetter"/>
@@ -39,6 +43,14 @@
     <CRequirement id="FluxVanesLotV@Learn">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeFluxVanesLotVQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="GravitonCatapultLotV2@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeGravitonCatapultLotV2CompleteOnly545093725"/>
+    </CRequirement>
+    <CRequirement id="GravitonCatapultLotV2@LearnGravitonCatapult">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeGravitonCatapultLotV2QueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="PsiStormHighTemplarLiberty@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>

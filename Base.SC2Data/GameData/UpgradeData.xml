@@ -138,6 +138,17 @@
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="ColossusLiberty"/>
     </CUpgrade>
+    <CUpgrade id="GravitonCatapultLotV2">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-gravitoncatapult.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Weapon,CarrierLotV2@Weapon,Effect" Value="CarrierLotV2@WeaponCPUpgraded"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="CarrierLotV2"/>
+    </CUpgrade>
     <CUpgrade id="HiSecAutoTracking">
         <EffectArray Reference="Weapon,AutoTurretSwarm@AutoTurretWeapon,Range" Value="1"/>
         <EffectArray Reference="Weapon,AutoTurretSwarm@AutoTurretWeapon,Level" Value="1"/>
@@ -153,9 +164,16 @@
         <Race value="Terr"/>
         <ScoreAmount value="200"/>
         <ScoreResult value="BuildOrder"/>
-        <EffectArray Reference="Effect,InfernalFlameThrower,AttributeBonus[Light]" Value="5"/>
+        <EffectArray Reference="Effect,InfernalFlameThrower,AttributeBonus[Light]" Value="10"/>
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <AffectedUnitArray value="HellionSwarmBeta@Hellion"/>
+    </CUpgrade>
+    <CUpgrade id="ReactorRepairTime">
+        <EffectArray Operation="Set" Reference="Unit,Reactor,RepairTime" Value="25"/>
+        <EffectArray Operation="Set" Reference="Unit,BarracksReactor,RepairTime" Value="25"/>
+        <EffectArray Operation="Set" Reference="Unit,FactoryReactor,RepairTime" Value="25"/>
+        <EffectArray Operation="Set" Reference="Unit,StarportReactor,RepairTime" Value="25"/>
+        <EditorCategories value="UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="ModifiedAbility@TerranVehicleAndShipWeaponsLevel2" parent="TerranVehicleWeapons">
         <Name value="Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel2"/>

@@ -15,13 +15,57 @@
         <AlertIcon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="CarrierLotV2">
+        <Icon value="Assets\Textures\btn-unit-protoss-carrier.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-carrier.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="ChronoBoostLotV">
         <Icon value="Assets\Textures\btn-ability-protoss-protoncharge-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ColossusLiberty">
+        <Icon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-colossus.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="EnergyRechargeLotV">
         <Icon value="Assets\Textures\btn-ability-zeratul-warpprism-transferlink.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-zeratul-warpprism-transferlink.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="HellionSwarmBeta">
+        <Icon value="Assets\Textures\btn-unit-terran-hellion.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-hellion.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="HellbatSwarmBeta@Build">
+        <Icon value="Assets\Textures\btn-unit-terran-hellionbattlemode.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-hellionbattlemode.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ModifiedAbility@MuleGatherWoL">
+        <Icon value="Assets\Textures\btn-ability-terran-gather.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-gather.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <HotkeyAlias value="GatherProt"/>
+        <Universal value="1"/>
+        <SimpleDisplayText value="SimpleDisplay/Gather"/>
+    </CButton>
+    <CButton id="GravitonCatapultLotV2">
+        <Icon value="Assets\Textures\BTN-Upgrade-Protoss-GravitonCatapult.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Protoss-GravitonCatapult.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="GravitonCatapultLotV2@Passive">
+        <Icon value="Assets\Textures\BTN-Upgrade-Protoss-GravitonCatapult.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Protoss-GravitonCatapult.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="InterceptorLotV2">
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="LiberatorAGLotV2@FighterMode">
@@ -44,6 +88,16 @@
     <CButton id="MassRecallNexusLotV">
         <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="OracleRevelation2">
+        <Icon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="OracleSwarm@Revelation">
+        <Icon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="OracleSwarm@TimeWarp">
@@ -559,6 +613,11 @@
         <AlertIcon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
         <EditorCategories value="Race:Terran"/>
         <HidesForSimpleText value="0"/>
+    </CButton>
+    <CButton id="DisruptorLotV1">
+        <Icon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <AlertIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="WidowMineSwarm">
         <Icon value="Assets\Textures\btn-unit-terran-widowmine.dds"/>
