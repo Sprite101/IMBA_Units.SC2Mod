@@ -163,6 +163,20 @@
             <Image value="Assets\Textures\Wireframe-Protoss-Carrier-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorAction id="ChargeLotV2@ChargeImpactDamageModel" parent="GenericAttack" effectAttack="ChargeLotV2@ChargingDamage">
+        <ImpactMap index="None">
+            <Model value="PurificationNovaImpact"/>
+            <Scale value="1.500000"/>
+            <Sound value=""/>
+            <ModelReaction value=""/>
+        </ImpactMap>
+        <ImpactMap index="Shield" Sound="" ModelReaction=""/>
+    </CActorAction>
+    <CActorSound id="ChargeLotV2@ChargingSound" parent="SoundContinuous">
+        <On Terms="Behavior.ChargeLotV2@Charging.Create" Send="Create"/>
+        <On Terms="Behavior.ChargeLotV2@Charging.Destroy" Send="Destroy"/>
+        <Sound value="Zealot_Charge"/>
+    </CActorSound>
     <CActorModel id="ChronoBoostLotV@Model" parent="ModelAnimationStyleContinuous">
         <Inherits index="BaseModelScale" value="1"/>
         <Inherits index="CloakEffect" value="1"/>
@@ -189,6 +203,34 @@
         <On Terms="Abil.ChronoBoostLotV.SourceCastStart" Send="Create"/>
         <Host Subject="_Unit"/>
         <Sound value="Obelisk_TimeWarpLaunch"/>
+    </CActorSound>
+    <CActorUnit id="WarpGate">
+        <CooldownDisplay index="0" value="WarpInLiberty@WarpGateTrain,Train10"/>
+        <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train11"/>
+        <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train9"/>
+        <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train7"/>
+        <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train5"/>
+        <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train4"/>
+        <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train6"/>
+        <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train2"/>
+        <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train1"/>
+    </CActorUnit>
+    <CActorProgress id="WarpInLiberty@WarpInProgress">
+        <On Terms="Abil.WarpInLiberty@WarpGateTrain.TargetStart" Send="Create"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="$Birth 0 0.000000 0.000000 5.000000 AsDuration"/>
+        <StageArray AnimProps="Stand"/>
+    </CActorProgress>
+    <CActorModel id="WarpInLiberty@WarpCastModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Abil.WarpInLiberty@WarpGateTrain.SourceStart" Send="Create"/>
+        <Model value="WarpGateWarpCast"/>
+    </CActorModel>
+    <CActorSound id="WarpInLiberty@GatewayMorphToWarpgateSound" parent="SoundOneShot">
+        <On Terms="Abil.WarpInLiberty@UpgradeToWarpGate.Start" Send="Create"/>
+        <On Terms="AbilMorph.WarpInLiberty@UpgradeToWarpGate.Pause" Send="SoundSetPaused 1"/>
+        <On Terms="AbilMorph.WarpInLiberty@UpgradeToWarpGate.Resume" Send="SoundSetPaused"/>
+        <Sound value="Gateway_MorphToWarpgate"/>
     </CActorSound>
     <CActorAction id="InfernalFlamethrowerWoL@AttackAction" parent="GenericAttackBase">
         <On Terms="Effect.InfernalFlamethrowerWoL@Damage.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>
@@ -307,7 +349,7 @@
         <Model value="GenericAttackModel"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
-    <CActorUnit id="MULE2" parent="GenericUnitStandard" unitName="MULEWoL">
+    <CActorUnit id="MULEWoL" parent="GenericUnitStandard" unitName="MULEWoL">
         <Aliases value="_UnitMedium"/>
         <Macros value="CarryAnim"/>
         <Macros value="PhysicsDeathsSwarmGround"/>
@@ -364,7 +406,6 @@
         </GroupIcon>
         <GroupSoundArray index="Help" value="Alert_TerranEconomyUnderAttack"/>
         <HeroIcon value="Assets\Textures\btn-unit-terran-mule.dds"/>
-        <HighlightTooltip value="Unit/Name/MULE2"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <SoundArray index="Birth" value=""/>
         <SoundArray index="Ready" value=""/>
@@ -1390,6 +1431,142 @@
         <On Terms="Effect.OracleSwarm@TimeWarpCP.Stop" Send="Create"/>
         <Sound value="Mothership_TimeWarpEnd"/>
     </CActorSound>
+    <CActorAction id="TempestLotV1@AGWeaponAttackAction" parent="GenericAttack" effectImpact="TempestLotV1@AGWeaponDamage" effectLaunch="TempestLotV1@AGWeaponLM">
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="Tempest_GroundAttackLaunch"/>
+        <Missile value="TempestLotV1@AGWeaponAttackMissile"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpUpDefault"/>
+        <ImpactMap index="None" Model="TempestGroundAttackImpact" Sound="Tempest_GroundAttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactModel value="TempestLotV1@AGWeaponAttackImpactModel"/>
+        <ImpactPhysics Name="KineticOverloadImpact" MatchKeys="Basic" Physics="TempestAttackForce"/>
+        <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorModel id="TempestLotV1@AGWeaponAttackImpactModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <Flags index="SuppressCreationErrors" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <Model value="GenericAttackModel"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorMissile id="TempestLotV1@AGWeaponAttackMissile" unitName="TempestWeapon">
+        <Aliases value="_Unit"/>
+        <Aliases value="_Missile"/>
+        <On Terms="UnitBirth.TempestLotV1@AGWeapon" Send="Create"/>
+        <On Terms="UnitBirth" Send="AnimBracketStart Lifetime Birth Walk"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor 219,151,255 0.000000 OneShot {} 100.000000"/>
+        <Model value="TempestWeaponGround"/>
+        <Scale value="0.900000"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <PreHost value="_ActorAction"/>
+    </CActorMissile>
+    <CActorAction id="TempestLotV1@AAWeaponAttackAction" parent="GenericAttack" effectImpact="TempestLotV1@AAWeaponDamage" effectLaunch="TempestLotV1@AAWeaponlm">
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="Tempest_AirAttackLaunch"/>
+        <Missile value="TempestLotV1@AAWeaponAttackMissile"/>
+        <ImpactPointSiteOps Ops="SOpTargetPointStationary SOpUpDefault"/>
+        <ImpactMap index="None" Model="TempestAttackImpact" Sound="Tempest_AirAttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactModel value="TempestLotV1@AAWeaponImpactModel"/>
+        <ImpactPhysics Name="KineticOverloadImpact" MatchKeys="Basic" Physics="TempestAttackForce"/>
+        <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorModel id="TempestLotV1@AAWeaponImpactModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <Flags index="SuppressCreationErrors" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <Model value="GenericAttackModel"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorMissile id="TempestLotV1@AAWeaponAttackMissile" unitName="TempestWeapon">
+        <Aliases value="_Unit"/>
+        <Aliases value="_Missile"/>
+        <Macros value="GlobalLoopMacro"/>
+        <Macros value="GlobalLoopMacroMore"/>
+        <On Terms="UnitBirth.TempestLotV1@AAWeapon" Send="Create"/>
+        <On Terms="UnitBirth" Send="AnimBracketStart Lifetime Birth Walk"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor 219,151,255 0.000000 OneShot {} 100.000000"/>
+        <Model value="TempestWeapon"/>
+        <Scale value="0.900000"/>
+        <PreHost value="_ActorAction"/>
+    </CActorMissile>
+    <CActorUnit id="TempestLotV1" parent="GenericUnitStandard" unitName="TempestLotV1">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="GlobalLoopMacro"/>
+        <Macros value="GlobalLoopMacroMore"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Tempest_Land"/>
+        <On Terms="ActorCreation" Send="Create StormSphereAttachment"/>
+        <On Terms="ActorCreation" Target="StormSphereAttachment" Send="Signal Birth"/>
+        <On Terms="Effect.TempestLaunchMissile.Start; At Caster" Target="StormSphereAttachment" Send="Signal Fire"/>
+        <On Terms="Behavior.WarpInEffect.On" Send="ModelSwap TempestWarpInStargate"/>
+        <On Terms="Behavior.WarpInEffect.On" Send="$Spell 0 0.000000 0.000000 2.100000 AsDuration"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="ModelSwap Tempest"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD GLbirth GLstand GLdeath"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD_A GLbirth,A GLstand,A GLdeath,A"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD_B GLbirth,B GLstand,B GLdeath,B"/>
+        <On Terms="Behavior.WarpInEffect.Off" Send="AnimBracketStart GL_BSD_C GLbirth,C GLstand,C GLdeath,C"/>
+        <On Terms="Effect.TempestLaunchMissileGround.Start; At Caster" Target="StormSphereAttachment" Send="Signal Fire"/>
+        <On Terms="Abil.TempestDisruptionBlast.TargetApproachStart; ValidateUnit TempestDisruptionBlastRangeCheck; !ScopeContains Tempest_DisruptionBlastRangedVO" Send="Create Tempest_DisruptionBlastRangedVO"/>
+        <HostSiteOps Ops="SOpBankerCarrier"/>
+        <Model value="Tempest"/>
+        <AnimBlendTime value="0.750000"/>
+        <ModelFlags index="AutomateGlobalLoops" value="0"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <Baselines index="Walk" BlendIn="1.500000" BlendOut="2.000000"/>
+        <BuildModel value="TempestWarpIn"/>
+        <DeathArray index="Normal" ModelLink="TempestDeath" SoundLink="Tempest_Explode"/>
+        <DeathCustoms>
+            <ActorModel value="TempestDeathRagdoll"/>
+            <ModelLink value="TempestDeathRagdoll"/>
+            <Name value="RagdollBasic"/>
+            <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+            <BodySquibs Name="Basic" Model="ProtossRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="Tempest"/>
+        <PortraitModel value="TempestPortrait"/>
+        <AbilSoundArray AbilCmd="TempestDisruptionBlast,Execute" Sound="Tempest_DisruptionBlastDummyVO"/>
+        <BarOffset value="86"/>
+        <BarWidth value="140"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <NameOffset value="99"/>
+        <SoundArray index="Ready" value="Tempest_Ready"/>
+        <SoundArray index="Help" value="Tempest_Help"/>
+        <SoundArray index="What" value="Tempest_What"/>
+        <SoundArray index="Yes" value="Tempest_Yes"/>
+        <SoundArray index="Attack" value="Tempest_Attack"/>
+        <SoundArray index="Pissed" value="Tempest_Pissed"/>
+        <SoundArray index="Movement" value="Tempest_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Tempest-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
     <CActorModel id="TemporalFieldImpactModel">
         <On index="4" Terms="ActorCreation; ValidateUnit ModifiedAbility@IsCarrier"/>
     </CActorModel>
@@ -2387,7 +2564,7 @@
         <PlacementSound value="Protoss_BuildingPlacementSmall"/>
         <PortraitModel value="HighTemplarPortrait"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <AbilSoundArray AbilCmd="PsiStorm,Execute" Sound="HighTemplar_PsionicStormVO"/>
+        <AbilSoundArray AbilCmd="PsiStormLiberty,Execute" Sound="HighTemplar_PsionicStormVO"/>
         <AbilSoundArray AbilCmd="ArchonWarp,SelectedUnits" Sound="HighTemplar_ArchonWarpVO"/>
         <AbilSoundArray AbilCmd="TemporalRift,Execute" Sound="HighTemplar_Attack"/>
         <BarOffset value="70"/>
@@ -2739,8 +2916,6 @@
         <On Terms="UnitDeath" Send="Destroy"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="ActorCreation" Send="SetTintColor 219,151,255 0.000000 OneShot {} 100.000000"/>
-        <On Terms="ActorCreation; ValidateUnit TempestGroundAttackUpgraded; ValidateCreationEffect IsStructureTarget" Send="ModelSwap TempestWeaponGroundUpgraded"/>
-        <On Terms="ActorCreation; ValidateUnit TempestGroundAttackUpgraded; ValidateCreationEffect IsStructureTarget" Send="SetTintColor {255,128,0 5.000000}"/>
         <Model value="TempestWeaponGround"/>
         <Scale value="0.900000"/>
         <ModelFlags index="AutomateGlobalLoops" value="1"/>
@@ -2766,8 +2941,6 @@
         <On Terms="UnitDeath" Send="Destroy"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="ActorCreation" Send="SetTintColor 219,151,255 0.000000 OneShot {} 100.000000"/>
-        <On Terms="ActorCreation; ValidateUnit TempestGroundAttackUpgraded; ValidateCreationEffect IsStructureTarget" Send="ModelSwap TempestWeaponGroundUpgraded"/>
-        <On Terms="ActorCreation; ValidateUnit TempestGroundAttackUpgraded; ValidateCreationEffect IsStructureTarget" Send="SetTintColor {255,128,0 5.000000}"/>
         <Model value="TempestWeapon"/>
         <Scale value="0.900000"/>
         <PreHost value="_ActorAction"/>
@@ -4791,7 +4964,7 @@
     </CActorModel>
     <CActorSimple id="RavenAntiArmorMissile@ArmorReductionTint">
         <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.On" Send="Create"/>
-        <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.On" Target="_Unit" Send="SetTintColor {255,153,85 2.000000} 0.100000 OneShot SeekerTargetArmor"/>
+        <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.On" Target="_Unit" Send="SetTintColor {255,100,0 2.000000} 0.100000 OneShot SeekerTargetArmor"/>
         <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.Off" Target="_Unit" Send="ClearTintColor 0.100000 SeekerTargetArmor"/>
         <On Terms="Behavior.RavenAntiArmorMissile@ArmorReduction.Off" Send="Destroy"/>
     </CActorSimple>
@@ -5926,6 +6099,26 @@
         <Icon value="Assets\Textures\PylonLowRingSplatGrey.dds"/>
         <IconArcLength value="0.750000"/>
     </CActorRange>
+    <CActorSound id="WarpInLiberty@WarpTrainLoopSound" parent="SoundContinuous">
+        <On Terms="Abil.WarpInLiberty@WarpGateTrain.TargetStart" Send="Create"/>
+        <On Terms="Abil.SuperWarpGateTrain.TargetStart" Send="Create"/>
+        <On Terms="Abil.WarpInLiberty@WarpGateTrain.TargetStop" Send="Destroy"/>
+        <On Terms="Abil.SuperWarpGateTrain.TargetStop" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <Sound value="WarpGate_TrainLoop"/>
+    </CActorSound>
+    <CActorSound id="WarpInLiberty@WarpTrainStartSound" parent="SoundOneShot">
+        <On Terms="Abil.WarpInLiberty@WarpGateTrain.TargetStart" Send="Create"/>
+        <On Terms="Abil.SuperWarpGateTrain.TargetStart" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <Sound value="WarpGate_TrainStart"/>
+    </CActorSound>
+    <CActorSound id="WarpInLiberty@WarpTrainStopSound" parent="SoundOneShot">
+        <On Terms="Abil.WarpInLiberty@WarpGateTrain.TargetStop" Send="Create"/>
+        <On Terms="Abil.SuperWarpGateTrain.TargetStop" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <Sound value="WarpGate_TrainFinish"/>
+    </CActorSound>
     <CActorRange id="WidowMineSwarm@AttackRange">
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.Start" Send="Create"/>
         <On Terms="SelectionLocalUpdate.WidowMineSwarm@WidowMineBurrowed.StartEditorGround" Send="Create"/>

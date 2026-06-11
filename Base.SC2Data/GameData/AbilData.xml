@@ -34,6 +34,40 @@
         <AINotifyEffect value="BatteryOverchargeCreateHealer"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BatteryOverchargeLotV"/>
     </CAbilEffectTarget>
+    <CAbilAugment id="ChargeLotV2">
+        <Alignment value="Negative"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DataCollection value="ChargeLotV1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ChargeLotV2" Requirements="ChargeZealotLotV2@UseCharge"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <AbilCmd value="attack,Execute"/>
+        <Cost>
+            <Cooldown Link="ChargeCharge2ChargeChargeLotV1ChargeCharge2ChargeChargeLotV12ChargeCharge2ChargeChargeLotV1ChargeCharge2ChargeChargeLotV2" Location="Unit" TimeUse="10"/>
+        </Cost>
+        <Effect value="ChargeLotV2@InitialAB"/>
+        <AutoCastValidatorArray value="CasterNotHoldingPosition"/>
+    </CAbilAugment>
+    <CAbilResearch id="ChargeZealotLotV2@ResearchCharge">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="100" Upgrade="ChargeZealotLotV2">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="ChargeZealotLotV2@ResearchCharge" State="Restricted" Requirements="ChargeZealotLotV2@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilResearch id="HighCapacityFuelTanksLotV@Research">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="80" Upgrade="HighCapacityFuelTanksLotV">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="HighCapacityFuelTanksLotV" State="Restricted" Requirements="HighCapacityFuelTanksLotV@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilEffectTarget id="MULEWoL@CalldownMULE">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="MULEWoL@CalldownMULECU"/>
@@ -291,9 +325,91 @@
             <Unit value="DisruptorLotV1"/>
         </InfoArray>
     </CAbilTrain>
+    <CAbilResearch id="RapidDeploymentLotV@Research">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="120" Upgrade="RapidDeploymentLotV">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="RapidDeploymentLotV" State="Restricted" Requirements="RapidDeploymentLotV@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilTrain id="RavenLotV1@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="60">
+            <Button DefaultButtonFace="RavenLotV1" State="Restricted" Requirements="HaveAttachedTechLab"/>
+            <Unit value="RavenLotV1"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilEffectTarget id="ShieldBatteryRechargeEx5">
         <AutoCastValidatorArray index="0" value="ModifiedAbility@CasterHas10EnergyOrCasterHasBatteryOverchargeBehavior"/>
     </CAbilEffectTarget>
+    <CAbilWarpTrain id="WarpInLiberty@WarpGateTrain">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Train1" Time="5" Unit="Zealot">
+            <Cooldown Link="WarpGateTrain" TimeUse="28"/>
+            <Button DefaultButtonFace="Zealot" State="Restricted"/>
+        </InfoArray>
+        <InfoArray index="Train2" Time="5" Unit="Stalker">
+            <Cooldown Link="WarpGateTrain" TimeUse="32"/>
+            <Button DefaultButtonFace="Stalker" State="Restricted" Requirements="HaveCyberneticsCore"/>
+        </InfoArray>
+        <InfoArray index="Train4" Time="5" Unit="HighTemplar">
+            <Cooldown Link="WarpGateTrain" TimeUse="45"/>
+            <Button DefaultButtonFace="HighTemplar" State="Restricted" Requirements="HaveTemplarArchives"/>
+        </InfoArray>
+        <InfoArray index="Train5" Time="5" Unit="DarkTemplar">
+            <Cooldown Link="WarpGateTrain" TimeUse="45"/>
+            <Button DefaultButtonFace="DarkTemplar" State="Restricted" Requirements="HaveDarkShrine"/>
+        </InfoArray>
+        <InfoArray index="Train6" Time="5" Unit="Sentry">
+            <Cooldown Link="WarpGateTrain" TimeUse="32"/>
+            <Button DefaultButtonFace="Sentry" State="Restricted" Requirements="HaveCyberneticsCore"/>
+        </InfoArray>
+        <InfoArray index="Train7" Time="5" Unit="Adept">
+            <Cooldown Link="WarpGateTrain" TimeUse="28"/>
+            <Button DefaultButtonFace="WarpInAdept" State="Restricted" Requirements="HaveCyberneticsCore"/>
+        </InfoArray>
+        <InfoArray index="Train9" Time="5" Unit="StalkerLiberty">
+            <Cooldown Link="WarpGateTrain" TimeUse="32"/>
+            <Button DefaultButtonFace="StalkerLiberty" State="Restricted" Requirements="HaveCyberneticsCore"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="5" Unit="AdeptLotV">
+            <Cooldown Link="WarpGateTrain" TimeUse="28"/>
+            <Button DefaultButtonFace="AdeptLotV" State="Restricted" Requirements="HaveCyberneticsCore"/>
+        </InfoArray>
+        <InfoArray index="Train11" Time="5" Unit="HighTemplarLiberty">
+            <Cooldown Link="WarpGateTrain" TimeUse="45"/>
+            <Button DefaultButtonFace="HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives"/>
+        </InfoArray>
+    </CAbilWarpTrain>
+    <CAbilMorph id="WarpInLiberty@UpgradeToWarpGate">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToWarpGate" State="Restricted" Requirements="UseWarpGate"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="Birth" value="1"/>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="FastBuild" value="1"/>
+        <Flags index="Produce" value="1"/>
+        <Flags index="ShowProgress" value="1"/>
+        <InfoArray Unit="WarpGate">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="10"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="10"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="10"/>
+            </SectionArray>
+        </InfoArray>
+        <Alert value="TransformationComplete"/>
+        <Activity value="UI/Transforming"/>
+    </CAbilMorph>
     <CAbilTrain id="VoidRayLotV@Build">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <Activity value="UI/Warping"/>
@@ -654,7 +770,7 @@
     </CAbilMorph>
     <CAbilBuild id="ProtossBuild">
         <InfoArray index="Build19" Unit="WarpInLiberty@Pylon" Time="25">
-            <Button DefaultButtonFace="Pylon"/>
+            <Button DefaultButtonFace="WarpInLiberty@Pylon"/>
         </InfoArray>
         <InfoArray index="Build20" Unit="ShieldBatteryLotV" Time="40">
             <Button DefaultButtonFace="ShieldBattery" State="Suppressed" Requirements="HaveCyberneticsCore"/>
@@ -751,11 +867,11 @@
         </CmdButtonArray>
     </CAbilEffectTarget>
     <CAbilResearch id="ChargeZealotLotV1@ResearchCharge">
-        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="100" Upgrade="ChargeZealotLotV1">
             <Resource index="Minerals" value="200"/>
             <Resource index="Vespene" value="200"/>
-            <Button DefaultButtonFace="ChargeZealotLotV1@ResearchCharge" State="Restricted" Requirements="ChargeZealotLotV1@LearnCharge">
+            <Button DefaultButtonFace="ChargeZealotLotV1@ResearchCharge" State="Restricted" Requirements="ChargeZealotLotV1@Learn">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
         </InfoArray>
@@ -795,12 +911,16 @@
     </CAbilBuild>
     <CAbilTrain id="GatewayTrain">
         <InfoArray index="Train9" Time="42">
-            <Button DefaultButtonFace="StalkerLiberty@WarpIn" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Button DefaultButtonFace="StalkerLiberty" State="Restricted" Requirements="HaveCyberneticsCore"/>
             <Unit value="StalkerLiberty"/>
         </InfoArray>
         <InfoArray index="Train10" Time="38">
-            <Button DefaultButtonFace="AdeptLotV@WarpIn" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Button DefaultButtonFace="AdeptLotV" State="Restricted" Requirements="HaveCyberneticsCore"/>
             <Unit value="AdeptLotV"/>
+        </InfoArray>
+        <InfoArray index="Train11" Time="55">
+            <Button DefaultButtonFace="HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives"/>
+            <Unit value="HighTemplarLiberty"/>
         </InfoArray>
     </CAbilTrain>
     <CAbilEffectTarget id="KD8ChargeLotV1">
@@ -984,7 +1104,7 @@
                 <TimeUse value="32"/>
             </Charge>
             <Cooldown Link="WarpGateTrain"/>
-            <Button DefaultButtonFace="StalkerLiberty@WarpIn" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Button DefaultButtonFace="StalkerLiberty" State="Restricted" Requirements="HaveCyberneticsCore"/>
         </InfoArray>
         <InfoArray index="Train10" Time="16" Unit="AdeptLotV">
             <Charge>
@@ -996,7 +1116,19 @@
                 <Flags index="EnableChargeTimeQueuing" value="1"/>
             </Charge>
             <Cooldown Link="WarpGateTrain"/>
-            <Button DefaultButtonFace="AdeptLotV@WarpIn" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Button DefaultButtonFace="AdeptLotV" State="Restricted" Requirements="HaveCyberneticsCore"/>
+        </InfoArray>
+        <InfoArray index="Train11" Time="16" Unit="HighTemplarLiberty">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value="WarpGateTrain"/>
+                <TimeUse value="45"/>
+                <Flags index="EnableChargeTimeQueuing" value="1"/>
+            </Charge>
+            <Cooldown Link="WarpGateTrain"/>
+            <Button DefaultButtonFace="HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives"/>
         </InfoArray>
     </CAbilWarpTrain>
     <CAbilWarpable id="WarpInLiberty@Warpable">
@@ -1042,7 +1174,7 @@
         <InfoArray index="Research1" Time="110" Upgrade="InfernalPreIgniterSwarm@InfernalPreIgniterSwarm">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>
-            <Button DefaultButtonFace="InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm" State="Restricted" Requirements="InfernalPreIgniterSwarm@LearnInfernalPreIgniterSwarm">
+            <Button DefaultButtonFace="InfernalPreIgniterSwarm" State="Restricted" Requirements="InfernalPreIgniterSwarm@LearnInfernalPreIgniterSwarm">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
         </InfoArray>
@@ -1148,7 +1280,7 @@
         <InfoArray index="Research1" Time="110" Upgrade="MoebiusReactor@Upgrade">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>
-            <Button DefaultButtonFace="MoebiusReactor@ResearchMoebiusReactor" State="Restricted" Requirements="MoebiusReactor@LearnMoebiusReactor">
+            <Button DefaultButtonFace="MoebiusReactor" State="Restricted" Requirements="MoebiusReactor@LearnMoebiusReactor">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
         </InfoArray>
@@ -1406,7 +1538,7 @@
         <InfoArray index="Research1" Time="100" Upgrade="RapidFireLaunchers@Upgrade">
             <Resource index="Minerals" value="75"/>
             <Resource index="Vespene" value="75"/>
-            <Button DefaultButtonFace="RapidFireLaunchers@Research" State="Restricted" Requirements="RapidFireLaunchers@LearnUpgrade">
+            <Button DefaultButtonFace="RapidFireLaunchers" State="Restricted" Requirements="RapidFireLaunchers@LearnUpgrade">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
         </InfoArray>

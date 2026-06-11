@@ -279,14 +279,23 @@
             <GameLink GameLink="Medivac">
                 <Field Id="Selection_Units" Index="1"/>
             </GameLink>
+            <GameLink GameLink="Medivac">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <GameLink GameLink="Medivac">
+                <Field Id="Selection_Units" Index="3"/>
+            </GameLink>
             <Image Image="Assets\Textures\btn-unit-terran-medivac.dds">
                 <Field Id="Info_Image"/>
             </Image>
-            <Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
                 <Field Id="Selection_Images" Index="2"/>
             </Image>
             <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
                 <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="3"/>
             </Image>
             <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Expansion_Tip">
                 <Field Id="Selection_Expansion_Tip"/>
@@ -299,6 +308,18 @@
             </Text>
             <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Title_001">
                 <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Title_003">
+                <Field Id="Selection_Title" Index="3"/>
+            </Text>
+            <Text Text="UserData/IMBA_TerranUnits/Medivac_Selection_Expansion_Tip_003">
+                <Field Id="Selection_Expansion_Tip" Index="3"/>
             </Text>
         </Instances>
         <Instances Id="Raven">
@@ -483,7 +504,7 @@
             <Image Image="Assets\Textures\btn-building-terran-barracks.dds">
                 <Field Id="Info_Image"/>
             </Image>
-            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
                 <Field Id="Selection_Images" Index="1"/>
             </Image>
             <Text Text="UserData/IMBA_TerranUnits/Barracks_Selection_Expansion_Tip">
@@ -607,6 +628,35 @@
                 <Field Id="Selection_Images"/>
             </Image>
         </Instances>
+        <Instances Id="Warp In">
+            <GameLink GameLink="Pylon">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="WarpGate">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="WarpGate">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-building-protoss-warpgate.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Warp In_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Warp In_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Warp In_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Warp In_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
         <Instances Id="Zealot">
             <GameLink GameLink="Zealot">
                 <Field Id="Info_Unit"/>
@@ -677,5 +727,61 @@
                 <Field Id="Selection_Title" Index="1"/>
             </Text>
         </Instances>
+        <Instances Id="Adept"/>
+        <Instances Id="High Templar"/>
+        <Instances Id="Dark Templar"/>
+        <Instances Id="Observer"/>
+        <Instances Id="Immortal"/>
+        <Instances Id="Warp Prism"/>
+        <Instances Id="Disruptor"/>
+        <Instances Id="Colossus"/>
+        <Instances Id="Void Ray"/>
+        <Instances Id="Oracle"/>
+        <Instances Id="Tempest"/>
+        <Instances Id="Carrier"/>
+        <Instances Id="Chrono Boost"/>
+        <Instances Id="Recall"/>
+        <Instances Id="Base Defense Ability">
+            <GameLink GameLink="Nexus">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Nexus">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="Nexus">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="Nexus">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-zeratul-warpprism-transferlink.dds">
+                <Field Id="Selection_Images"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-ability-zeratul-warpprism-transferlink.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Ability_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Ability_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Ability_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Ability_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Ability_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Ability_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+        </Instances>
+        <Instances Id="Base Defense Unit"/>
     </CUser>
 </Catalog>

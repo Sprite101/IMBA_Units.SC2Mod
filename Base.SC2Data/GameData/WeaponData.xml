@@ -255,6 +255,27 @@
         <Effect value="ColossusLiberty@WeaponSet"/>
         <LegacyOptions index="KeepChanneling" value="1"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="TempestLotV1@AGWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="TempestLotV1@AGWeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="10.5"/>
+        <Range value="10"/>
+        <Period value="3.3"/>
+        <Effect value="TempestLotV1@AGWeaponLM"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TempestLotV1@AAWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="TempestLotV1@AAWeaponDamage"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="15"/>
+        <Period value="3.3"/>
+        <Effect value="TempestLotV1@AAWeaponlm"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="TempestSwarm@AGWeapon">
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUnit id="Adept">
+        <AbilArray Link="WarpInLiberty@Warpable"/>
+    </CUnit>
     <CUnit id="AdeptLotV">
         <Description value="Button/Tooltip/WarpInAdeptLotV"/>
         <DeathRevealRadius value="3"/>
@@ -45,6 +48,7 @@
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="PsionicTransferLotV"/>
         <AbilArray Link="PsionicTransferLotV@Cancel"/>
+        <AbilArray Link="WarpInLiberty@Warpable"/>
         <WeaponArray Link="AdeptLotV@Weapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -116,6 +120,7 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="PsionicTransferLotV@Cancel"/>
+        <AbilArray Link="WarpInLiberty@Warpable"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -143,6 +148,9 @@
         <Race value="Prot"/>
         <Mover value="AdeptWeapon"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="AdeptPhaseShift">
+        <AbilArray Link="WarpInLiberty@Warpable"/>
     </CUnit>
     <!-- Balance change for balance patch of Nov 11th 2013 (combined Air/Ground vehicle upgrades)-->
     <!-- Balance test 3/12 (separate Air/Ground vehicle upgrades)-->
@@ -401,8 +409,15 @@
         <GlossaryWeakArray value="Tempest"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
+    <CUnit id="CyberneticsCore">
+        <AbilArray Link="WarpInLiberty@Research"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="WarpInLiberty@Research" Type="AbilCmd" AbilCmd="WarpInLiberty@Research,Research1" Row="2" Column="0"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="DarkTemplar">
         <AbilArray Link="ShadowStrideLotV"/>
+        <AbilArray Link="WarpInLiberty@Warpable"/>
         <CardLayouts index="0">
             <LayoutButtons Face="ShadowStrideLotV" Type="AbilCmd" AbilCmd="ShadowStrideLotV,Execute" Row="2" Column="1"/>
         </CardLayouts>
@@ -579,8 +594,16 @@
     </CUnit>
     <CUnit id="Gateway">
         <CardLayouts index="0">
-            <LayoutButtons Face="Stalker" Type="AbilCmd" AbilCmd="GatewayTrain,Train9" Row="0" Column="2"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="WarpInLiberty@UpgradeToWarpGate,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="StalkerLiberty" Type="AbilCmd" AbilCmd="GatewayTrain,Train9" Row="0" Column="2"/>
+            <LayoutButtons Face="HighTemplarLiberty" Type="AbilCmd" AbilCmd="GatewayTrain,Train11" Row="1" Column="0"/>
+            <LayoutButtons Face="UpgradeToWarpGate" Type="AbilCmd" AbilCmd="WarpInLiberty@UpgradeToWarpGate,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AdeptLotV" Type="AbilCmd" AbilCmd="GatewayTrain,Train10" Row="0" Column="3"/>
         </CardLayouts>
+        <AbilArray Link="WarpInLiberty@UpgradeToWarpGate"/>
+    </CUnit>
+    <CUnit id="HighTemplar">
+        <AbilArray Link="WarpInLiberty@Warpable"/>
     </CUnit>
     <CUnit id="HighTemplarLiberty">
         <DeathRevealRadius value="3"/>
@@ -639,6 +662,7 @@
         <AbilArray Link="FeedbackLiberty"/>
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="attack"/>
+        <AbilArray Link="WarpInLiberty@Warpable"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1152,10 +1176,10 @@
         <AbilArray Link="EnergyRechargeLotV"/>
         <AbilArray Link="MassRecallNexusLotV"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="BatteryOverchargeLotV" Type="AbilCmd" AbilCmd="BatteryOverchargeLotV,Execute" Row="1" Column="2"/>
-            <LayoutButtons Face="EnergyRechargeLotV" Type="AbilCmd" AbilCmd="EnergyRechargeLotV,Execute" Row="1" Column="3"/>
-            <LayoutButtons Face="ChronoBoostLotV" Type="AbilCmd" AbilCmd="ChronoBoostLotV,Execute" Row="1" Column="0"/>
-            <LayoutButtons Face="MassRecallNexusLotV" Type="AbilCmd" AbilCmd="MassRecallNexusLotV,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="ChronoBoostLotV" Type="AbilCmd" AbilCmd="ChronoBoostLotV,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="MassRecallNexusLotV" Type="AbilCmd" AbilCmd="MassRecallNexusLotV,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="BatteryOverchargeLotV" Type="AbilCmd" AbilCmd="BatteryOverchargeLotV,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="EnergyRechargeLotV" Type="AbilCmd" AbilCmd="EnergyRechargeLotV,Execute" Row="2" Column="2"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="ObserverLotV2">
@@ -1620,6 +1644,9 @@
     <CUnit id="PlanetaryFortress">
         <LifeArmor value="3"/>
     </CUnit>
+    <CUnit id="Sentry">
+        <AbilArray Link="WarpInLiberty@Warpable"/>
+    </CUnit>
     <CUnit id="ShieldBatteryLotV">
         <DeathRevealRadius value="3"/>
         <Race value="Prot"/>
@@ -1682,6 +1709,9 @@
         <GlossaryPriority value="201"/>
         <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
+    <CUnit id="Stalker">
+        <AbilArray Link="WarpInLiberty@Warpable"/>
+    </CUnit>
     <CUnit id="StasisWardLotV1">
         <Race value="Prot"/>
         <Mob value="Multiplayer"/>
@@ -1738,7 +1768,7 @@
     </CUnit>
     <CUnit id="Probe">
         <CardLayouts index="1">
-            <LayoutButtons Face="Pylon" Type="AbilCmd" AbilCmd="ProtossBuild,Build19" Row="1" Column="2"/>
+            <LayoutButtons Face="WarpInLiberty@Pylon" Type="AbilCmd" AbilCmd="ProtossBuild,Build19" Row="0" Column="2"/>
             <LayoutButtons Face="ShieldBattery" Type="AbilCmd" AbilCmd="ProtossBuild,Build20" Row="2" Column="3"/>
         </CardLayouts>
     </CUnit>
@@ -1764,6 +1794,80 @@
         <CardLayouts index="0">
             <LayoutButtons Face="TempestSwarm" Type="AbilCmd" AbilCmd="TempestSwarm@Build,Train1" Row="1" Column="3"/>
         </CardLayouts>
+    </CUnit>
+    <CUnit id="TempestLotV1">
+        <DeathRevealRadius value="3"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <LifeArmor value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldsStart value="125"/>
+        <ShieldsMax value="125"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Speed value="2.5"/>
+        <Acceleration value="2"/>
+        <Deceleration value="3"/>
+        <LateralAcceleration value="46.0625"/>
+        <Sight value="12"/>
+        <Height value="3.75"/>
+        <VisionHeight value="15"/>
+        <Food value="-5"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="250"/>
+        <CostResource index="Vespene" value="175"/>
+        <RepairTime value="75"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="120"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="Warpable"/>
+        <WeaponArray Link="TempestLotV1@AAWeapon"/>
+        <WeaponArray Link="TempestLotV1@AGWeapon"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="TempestDisruptionBlast,Cancel" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="1.125"/>
+        <SeparationRadius value="1.125"/>
+        <ScoreMake value="425"/>
+        <ScoreKill value="425"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="50"/>
+        <MinimapRadius value="1.125"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkTempest"/>
+        <Mass value="0.6"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="170"/>
+        <GlossaryStrongArray value="Liberator"/>
+        <GlossaryStrongArray value="BroodLord"/>
+        <GlossaryStrongArray value="Colossus"/>
+        <GlossaryWeakArray value="VikingFighter"/>
+        <GlossaryWeakArray value="Corruptor"/>
+        <GlossaryWeakArray value="VoidRay"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
     </CUnit>
     <CUnit id="TempestSwarm">
         <DeathRevealRadius value="3"/>
@@ -1844,6 +1948,16 @@
         <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
     </CUnit>
     <CUnit id="TempestSwarm@AGWeaponMissile" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="MissileDefault"/>
+        <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
+    </CUnit>
+    <CUnit id="TempestLotV1@AAWeapon" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="MissileDefault"/>
+        <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
+    </CUnit>
+    <CUnit id="TempestLotV1@AGWeapon" parent="MISSILE">
         <Race value="Prot"/>
         <Mover value="MissileDefault"/>
         <EditorCategories value="ObjectFamily:Melee,ObjectType:Projectile"/>
@@ -2314,7 +2428,7 @@
         <AbilArray Link="MoebiusReactor@ResearchMoebiusReactor"/>
         <CardLayouts index="0">
             <LayoutButtons Face="EnhancedShockwaves@ResearchEnhancedShockwaves" Type="AbilCmd" AbilCmd="EnhancedShockwaves@ResearchEnhancedShockwaves,Research1" Row="0" Column="1"/>
-            <LayoutButtons Face="MoebiusReactor@ResearchMoebiusReactor" Type="AbilCmd" AbilCmd="MoebiusReactor@ResearchMoebiusReactor,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="MoebiusReactor" Type="AbilCmd" AbilCmd="MoebiusReactor@ResearchMoebiusReactor,Research1" Row="0" Column="1"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="GhostLotV1">
@@ -2466,7 +2580,7 @@
             <LayoutButtons Face="GhostWoL@EMP" Type="AbilCmd" AbilCmd="GhostWoL@EMP,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="WeaponsFree" Type="AbilCmd" AbilCmd="GhostWeaponsFree,Execute" Row="1" Column="3"/>
             <LayoutButtons Face="GhostWoL@Snipe" Type="AbilCmd" AbilCmd="GhostWoL@Snipe,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="MoebiusReactor@MoebiusReactor" Type="Passive" Requirements="MoebiusReactor@HaveMoebiusReactor" Row="1" Column="1"/>
+            <LayoutButtons Face="MoebiusReactor@Passive" Type="Passive" Requirements="MoebiusReactor@HaveMoebiusReactor" Row="1" Column="1"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
@@ -2507,9 +2621,9 @@
         <AbilArray Link="DrillingClaws@ResearchDrillingClaws"/>
         <AbilArray Link="InfernalPreIgniterSwarm@ResearchInfernalPreIgniter"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm" Type="AbilCmd" AbilCmd="InfernalPreIgniterSwarm@ResearchInfernalPreIgniter,Research1" Row="0" Column="0"/>
+            <LayoutButtons Face="InfernalPreIgniterSwarm" Type="AbilCmd" AbilCmd="InfernalPreIgniterSwarm@ResearchInfernalPreIgniter,Research1" Row="0" Column="0"/>
             <LayoutButtons Face="DrillingClaws@ResearchDrillingClaws" Type="AbilCmd" AbilCmd="DrillingClaws@ResearchDrillingClaws,Research1" Row="0" Column="2"/>
-            <LayoutButtons Face="RapidFireLaunchers@Research" Type="AbilCmd" AbilCmd="CycloneLockOnAirLoTV1@Research,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="RapidFireLaunchers" Type="AbilCmd" AbilCmd="CycloneLockOnAirLoTV1@Research,Research1" Row="0" Column="1"/>
             <LayoutButtons Face="HurricaneThrusters@Research" Type="AbilCmd" AbilCmd="CycloneLockOnLotV2@Research,Research1" Row="0" Column="1"/>
         </CardLayouts>
     </CUnit>
@@ -2783,7 +2897,9 @@
     </CUnit>
     <CUnit id="Medivac">
         <CardLayouts index="0">
-            <LayoutButtons index="10" Face="CaduceusReactorSwarmBeta@ResearchCaduceusReactor" Requirements="CaduceusReactorSwarmBeta@HaveCaduceusReactor"/>
+            <LayoutButtons index="10" Face="RapidDeploymentLotV@Passive" Requirements="RapidDeploymentLotV@Have"/>
+            <LayoutButtons Face="HighCapacityFuelTanksLotV@Passive" Type="Passive" Requirements="HighCapacityFuelTanksLotV@Have" Row="1" Column="0"/>
+            <LayoutButtons Face="CaduceusReactorSwarmBeta@Passive" Type="Passive" Requirements="CaduceusReactorSwarmBeta@HaveCaduceusReactor" Row="1" Column="0"/>
             <LayoutButtons Face="CaduceusReactor" Type="Passive" Requirements="HaveMedivacEnergyUpgrade" Row="1" Column="0"/>
         </CardLayouts>
     </CUnit>
@@ -3485,8 +3601,10 @@
         <AbilArray Link="LiberatorLotV1@Train"/>
         <AbilArray Link="RavenSwarm@Train"/>
         <AbilArray Link="LiberatorLotV2@Build"/>
+        <AbilArray Link="RavenLotV1@Train"/>
         <CardLayouts index="0">
             <LayoutButtons Face="RavenSwarm" Type="AbilCmd" AbilCmd="RavenSwarm@Train,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="RavenLotV1" Type="AbilCmd" AbilCmd="RavenLotV1@Train,Train1" Row="0" Column="3"/>
             <LayoutButtons Face="ReactorLiberty" Type="AbilCmd" AbilCmd="StarportAddOns,Build3" Row="2" Column="1"/>
             <LayoutButtons Face="LiberatorLotV1@BuildLiberator" Type="AbilCmd" AbilCmd="LiberatorLotV1@Train,Train1" Row="0" Column="2"/>
             <LayoutButtons Face="LiberatorLotV2" Type="AbilCmd" AbilCmd="LiberatorLotV2@Build,Train1" Row="0" Column="2"/>
@@ -3505,12 +3623,16 @@
         <AbilArray Link="CorvidReactorSwarm@ResearchCorvidReactor"/>
         <AbilArray Link="DurableMaterialsSwarm@ResearchDurableMaterials"/>
         <AbilArray Link="CorvidReactorLotV@ResearchCorvidReactor"/>
+        <AbilArray Link="RapidDeploymentLotV@Research"/>
+        <AbilArray Link="HighCapacityFuelTanksLotV@Research"/>
         <CardLayouts index="0">
             <LayoutButtons index="3" Column="4"/>
             <LayoutButtons index="4" Face="CorvidReactorSwarm@ResearchCorvidReactor" AbilCmd="CorvidReactorSwarm@ResearchCorvidReactor,Research1"/>
             <LayoutButtons Face="CorvidReactorLotV@ResearchCorvidReactor" Type="AbilCmd" AbilCmd="CorvidReactorLotV@ResearchCorvidReactor,Research1" Row="0" Column="2"/>
             <LayoutButtons Face="ResearchRavenInterferenceMatrix" Type="AbilCmd" AbilCmd="StarportTechLabResearch,Research18" Row="0" Column="2"/>
             <LayoutButtons Face="CaduceusReactorSwarmBeta@ResearchCaduceusReactor" Type="AbilCmd" AbilCmd="CaduceusReactorSwarmBeta@ResearchCaduceusReactor,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="RapidDeploymentLotV" Type="AbilCmd" AbilCmd="RapidDeploymentLotV@Research,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="HighCapacityFuelTanksLotV" Type="AbilCmd" AbilCmd="HighCapacityFuelTanksLotV@Research,Research1" Row="0" Column="1"/>
             <LayoutButtons Face="DurableMaterialsSwarm@ResearchDurableMaterials" Type="AbilCmd" AbilCmd="DurableMaterialsSwarm@ResearchDurableMaterials,Research1" Row="0" Column="3"/>
             <LayoutButtons Face="AdvancedBallistics@ResearchAdvancedBallistics" Type="AbilCmd" AbilCmd="AdvancedBallistics@ResearchAdvancedBallistics,Research1" Row="1" Column="0"/>
         </CardLayouts>
@@ -3526,8 +3648,12 @@
     <CUnit id="TwilightCouncil">
         <AbilArray Link="BlinkLiberty@ResearchBlink"/>
         <AbilArray Link="AmplifiedShieldingLotV@Research"/>
+        <AbilArray Link="ChargeZealotLotV1@ResearchCharge"/>
+        <AbilArray Link="ChargeZealotLotV2@ResearchCharge"/>
         <CardLayouts index="0">
             <LayoutButtons Face="ResearchStalkerTeleport" Type="AbilCmd" AbilCmd="BlinkLiberty@ResearchBlink,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="ChargeZealotLotV1@ResearchCharge" Type="AbilCmd" AbilCmd="ChargeZealotLotV1@ResearchCharge,Research1" Row="0" Column="0"/>
+            <LayoutButtons Face="ChargeZealotLotV2@ResearchCharge" Type="AbilCmd" AbilCmd="ChargeZealotLotV2@ResearchCharge,Research1" Row="0" Column="0"/>
             <LayoutButtons Face="AmplifiedShieldingLotV" Type="AbilCmd" AbilCmd="AmplifiedShieldingLotV@Research,Research1" Row="0" Column="2"/>
         </CardLayouts>
     </CUnit>
@@ -3560,8 +3686,20 @@
     </CUnit>
     <CUnit id="WarpGate">
         <CardLayouts index="0">
-            <LayoutButtons Face="Stalker" Type="AbilCmd" AbilCmd="WarpGateTrain,Train9" Row="0" Column="2"/>
+            <LayoutButtons Face="Zealot" Type="AbilCmd" AbilCmd="WarpInLiberty@WarpGateTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="StalkerLiberty" Type="AbilCmd" AbilCmd="WarpGateTrain,Train9" Row="0" Column="2"/>
+            <LayoutButtons Face="Stalker" Type="AbilCmd" AbilCmd="WarpInLiberty@WarpGateTrain,Train2" Row="0" Column="2"/>
+            <LayoutButtons Face="StalkerLiberty" Type="AbilCmd" AbilCmd="WarpInLiberty@WarpGateTrain,Train9" Row="0" Column="2"/>
+            <LayoutButtons Face="HighTemplarLiberty" Type="AbilCmd" AbilCmd="WarpGateTrain,Train11" Row="1" Column="0"/>
+            <LayoutButtons Face="HighTemplar" Type="AbilCmd" AbilCmd="WarpInLiberty@WarpGateTrain,Train4" Row="1" Column="0"/>
+            <LayoutButtons Face="HighTemplarLiberty" Type="AbilCmd" AbilCmd="WarpInLiberty@WarpGateTrain,Train11" Row="1" Column="0"/>
+            <LayoutButtons Face="DarkTemplar" Type="AbilCmd" AbilCmd="WarpInLiberty@WarpGateTrain,Train5" Row="1" Column="1"/>
+            <LayoutButtons Face="Sentry" Type="AbilCmd" AbilCmd="WarpInLiberty@WarpGateTrain,Train6" Row="0" Column="1"/>
+            <LayoutButtons Face="AdeptLotV" Type="AbilCmd" AbilCmd="WarpGateTrain,Train10" Row="0" Column="3"/>
+            <LayoutButtons Face="WarpInAdept" Type="AbilCmd" AbilCmd="WarpInLiberty@WarpGateTrain,Train7" Row="0" Column="3"/>
+            <LayoutButtons Face="AdeptLotV" Type="AbilCmd" AbilCmd="WarpInLiberty@WarpGateTrain,Train10" Row="0" Column="3"/>
         </CardLayouts>
+        <AbilArray Link="WarpInLiberty@WarpGateTrain"/>
     </CUnit>
     <CUnit id="WarpPrismLotV1">
         <DeathRevealRadius value="3"/>
@@ -3835,8 +3973,11 @@
     </CUnit>
     <CUnit id="Zealot">
         <AbilArray Link="ChargeLotV1"/>
+        <AbilArray Link="WarpInLiberty@Warpable"/>
+        <AbilArray Link="ChargeLotV2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="ChargeLotV1" Type="AbilCmd" AbilCmd="ChargeLotV1,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="ChargeLotV2" Type="AbilCmd" AbilCmd="ChargeLotV2,Execute" Row="2" Column="0"/>
         </CardLayouts>
     </CUnit>
 </Catalog>

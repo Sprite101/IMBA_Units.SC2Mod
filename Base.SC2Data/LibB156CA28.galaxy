@@ -101,6 +101,8 @@ void libB156CA28_gf_SetupSelectionItem (int lp_panelIndex, string lp_race, int l
     // Automatic Variable Declarations
     const int auto90285ADA_ae = 4;
     int auto90285ADA_var;
+    const int auto156B53B7_ae = 4;
+    int auto156B53B7_var;
 
     // Variable Initialization
 
@@ -138,6 +140,39 @@ void libB156CA28_gf_SetupSelectionItem (int lp_panelIndex, string lp_race, int l
         libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][0], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Expansion_Tip", 4), PlayerGroupAll());
         libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][1], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Images", 4), PlayerGroupAll());
         libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][2], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Title", 4), PlayerGroupAll());
+    }
+    else if ((lp_race == "Prot")) {
+        if ((lv_userDataIndex > UserDataInstanceCount("IMBA_ProtossUnits"))) {
+            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], PlayerGroupAll(), false);
+        }
+        else {
+            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], PlayerGroupAll(), true);
+        }
+        TextExpressionSetToken("Param/Expression/lib_B156CA28_91C77510", "A", IntToText(lp_panelIndex));
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_91C77510"), false);
+        auto156B53B7_var = 1;
+        for ( ; auto156B53B7_var <= auto156B53B7_ae; auto156B53B7_var += 1 ) {
+            if ((UserDataGetGameLink("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Units", auto156B53B7_var) == "")) {
+                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto156B53B7_var-1)][0], PlayerGroupAll(), false);
+            }
+            else {
+                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto156B53B7_var-1)][0], PlayerGroupAll(), true);
+            }
+        }
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][0], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Info_Image", 1), PlayerGroupAll());
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][1], UnitTypeGetName(UserDataGetGameLink("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Info_Unit", 1)), PlayerGroupAll());
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 1), PlayerGroupAll());
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 1), PlayerGroupAll());
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 1), PlayerGroupAll());
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 2), PlayerGroupAll());
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 2), PlayerGroupAll());
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 2), PlayerGroupAll());
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 3), PlayerGroupAll());
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 3), PlayerGroupAll());
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 3), PlayerGroupAll());
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 4), PlayerGroupAll());
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 4), PlayerGroupAll());
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 4), PlayerGroupAll());
     }
 }
 
@@ -260,6 +295,7 @@ void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_i
     // Automatic Variable Declarations
     string autoB2629101_val;
     int auto242D2030_val;
+    int autoA537A4B5_val;
 
     // Variable Initialization
 
@@ -316,6 +352,20 @@ void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_i
         }
         else if (auto242D2030_val == 15) {
             libB156CA28_gf_Select_Reactor(lp_player, lv_selectionIndex);
+        }
+        else {
+        }
+    }
+    else if (autoB2629101_val == "Prot") {
+        autoA537A4B5_val = lp_itemIndex;
+        if (autoA537A4B5_val == 0) {
+            libB156CA28_gf_Select_WarpIn(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 1) {
+            libB156CA28_gf_Select_Charge(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 2) {
+            libB156CA28_gf_Select_Blink(lp_player, lv_selectionIndex);
         }
         else {
         }
@@ -493,9 +543,37 @@ void libB156CA28_gf_Select_Medivac (int lp_player, int lp_selectionIndex) {
     // Implementation
     if ((lp_selectionIndex == 0)) {
         TechTreeUpgradeAllow(lp_player, "CaduceusReactorSwarmBeta@CaduceusReactor", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CaduceusReactorSwarmBeta@ResearchCaduceusReactor", 0), false);
+        TechTreeUpgradeAllow(lp_player, "RapidDeploymentLotV", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("RapidDeploymentLotV@Research", 0), false);
+        TechTreeUpgradeAllow(lp_player, "HighCapacityFuelTanksLotV", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("HighCapacityFuelTanksLotV@Research", 0), false);
     }
     else if ((lp_selectionIndex == 1)) {
         TechTreeUpgradeAllow(lp_player, "CaduceusReactorSwarmBeta@CaduceusReactor", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CaduceusReactorSwarmBeta@ResearchCaduceusReactor", 0), true);
+        TechTreeUpgradeAllow(lp_player, "MedivacCaduceusReactor", false);
+        TechTreeUpgradeAllow(lp_player, "RapidDeploymentLotV", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("RapidDeploymentLotV@Research", 0), false);
+        TechTreeUpgradeAllow(lp_player, "HighCapacityFuelTanksLotV", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("HighCapacityFuelTanksLotV@Research", 0), false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeUpgradeAllow(lp_player, "RapidDeploymentLotV", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("RapidDeploymentLotV@Research", 0), true);
+        TechTreeUpgradeAllow(lp_player, "CaduceusReactorSwarmBeta@CaduceusReactor", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CaduceusReactorSwarmBeta@ResearchCaduceusReactor", 0), false);
+        TechTreeUpgradeAllow(lp_player, "MedivacCaduceusReactor", false);
+        TechTreeUpgradeAllow(lp_player, "HighCapacityFuelTanksLotV", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("HighCapacityFuelTanksLotV@Research", 0), false);
+    }
+    else if ((lp_selectionIndex == 3)) {
+        TechTreeUpgradeAllow(lp_player, "HighCapacityFuelTanksLotV", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("HighCapacityFuelTanksLotV@Research", 0), true);
+        TechTreeUpgradeAllow(lp_player, "RapidDeploymentLotV", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("RapidDeploymentLotV@Research", 0), false);
+        TechTreeUpgradeAllow(lp_player, "CaduceusReactorSwarmBeta@CaduceusReactor", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CaduceusReactorSwarmBeta@ResearchCaduceusReactor", 0), false);
         TechTreeUpgradeAllow(lp_player, "MedivacCaduceusReactor", false);
     }
 }
@@ -624,6 +702,7 @@ void libB156CA28_gf_Select_Barracks (int lp_player, int lp_selectionIndex) {
     }
     else if ((lp_selectionIndex == 1)) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 21), true);
+        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "BarracksLiberty@RepairTime", 1);
         TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 3), false);
     }
 }
@@ -638,6 +717,7 @@ void libB156CA28_gf_Select_Bunker (int lp_player, int lp_selectionIndex) {
     else if ((lp_selectionIndex == 1)) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 20), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("SalvageLiberty", 0), true);
+        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "BunkerLiberty@RepairTime", 1);
         TechTreeAbilityAllow(lp_player, AbilityCommand("TerranBuild", 6), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("SalvageEffect", 0), false);
     }
@@ -667,10 +747,117 @@ void libB156CA28_gf_Select_Reactor (int lp_player, int lp_selectionIndex) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksAddOns", 2), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryAddOns", 2), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("StarportAddOns", 2), true);
-        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "ReactorRepairTime", 1);
+        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "ReactorLiberty@RepairTime", 1);
         TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksAddOns", 1), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("FactoryAddOns", 1), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("StarportAddOns", 1), false);
+    }
+}
+
+void libB156CA28_gf_Select_WarpIn (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "WarpInLiberty@Pylon", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@UpgradeToWarpGate", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@UpgradeToWarpGate", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@Research", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 8), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 4), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 3), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 5), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 0), false);
+        TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PowerSource", false);
+        TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PrismPowerSource", false);
+        TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PowerUserWarpable", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@Warpable", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "WarpInLiberty@Pylon", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@UpgradeToWarpGate", 1), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@UpgradeToWarpGate", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@Research", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 8), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 6), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 4), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 3), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 5), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 1), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 0), true);
+        TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PowerSource", true);
+        TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PrismPowerSource", true);
+        TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PowerUserWarpable", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@Warpable", 0), true);
+        TechTreeUnitAllow(lp_player, "Pylon", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("UpgradeToWarpGate", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("UpgradeToWarpGate", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CyberneticsCoreResearch", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 10), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 8), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 4), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 3), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 5), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 0), false);
+        TechTreeBehaviorAllow(lp_player, "PowerSource", false);
+        TechTreeBehaviorAllow(lp_player, "PowerSourceFast", false);
+        TechTreeBehaviorAllow(lp_player, "FastEnablerGatewayMorphingPowerSource", false);
+        TechTreeBehaviorAllow(lp_player, "FastEnablerPowerSource", false);
+        TechTreeBehaviorAllow(lp_player, "FastEnablerPowerSourceNexus", false);
+        TechTreeBehaviorAllow(lp_player, "FastEnablerPowerUser", false);
+        TechTreeBehaviorAllow(lp_player, "WarpPrismPowerSourceFast", false);
+        TechTreeBehaviorAllow(lp_player, "PowerUserWarpable", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("Warpable", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_Charge (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeLotV1", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeZealotLotV1@ResearchCharge", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeLotV2", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeZealotLotV2@ResearchCharge", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeLotV1", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeZealotLotV1@ResearchCharge", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("Charge", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TwilightCouncilResearch", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeLotV2", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeZealotLotV2@ResearchCharge", 0), false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeLotV2", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeZealotLotV2@ResearchCharge", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeLotV1", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChargeZealotLotV1@ResearchCharge", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("Charge", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TwilightCouncilResearch", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_Blink (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "StalkerLiberty", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BlinkLiberty@ResearchBlink", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "StalkerLiberty", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BlinkLiberty@ResearchBlink", 0), true);
+        TechTreeUnitAllow(lp_player, "Stalker", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TwilightCouncilResearch", 1), false);
     }
 }
 

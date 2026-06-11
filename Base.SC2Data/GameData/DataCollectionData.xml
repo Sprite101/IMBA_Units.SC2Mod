@@ -39,7 +39,7 @@
         <Button value="SalvageLiberty"/>
     </CDataCollection>
     <CDataCollectionUpgrade id="ChargeZealotLotV2">
-        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
         <Button value="Charge"/>
         <TechInfoUpgrade value="Charge"/>
     </CDataCollectionUpgrade>
@@ -48,7 +48,7 @@
         <Button value="SalvageLiberty"/>
     </CDataCollection>
     <CDataCollectionUpgrade id="ChargeZealotLotV1">
-        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
     </CDataCollectionUpgrade>
     <CDataCollection id="ChronoBoostLotV">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
@@ -87,7 +87,7 @@
     </CDataCollectionUnit>
     <CDataCollectionUpgrade id="DrillingClaws">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
-        <Button value="MoebiusReactor@ResearchMoebiusReactor"/>
+        <Button value="MoebiusReactor"/>
         <TechInfoUpgrade value="MoebiusReactor@Upgrade"/>
     </CDataCollectionUpgrade>
     <CDataCollectionUpgrade id="DurableMaterialsSwarm">
@@ -149,6 +149,20 @@
     <CDataCollectionUnit id="HellbatSwarmBeta">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionUnit>
+    <CDataCollectionUpgrade id="HighCapacityFuelTanksLotV">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <DataRecord Entry="Abil,HighCapacityFuelTanksLotV@Research"/>
+        <DataRecord Entry="Upgrade,HighCapacityFuelTanksLotV"/>
+        <DataRecord Entry="Button,HighCapacityFuelTanksLotV@Passive"/>
+        <DataRecord Entry="Button,HighCapacityFuelTanksLotV"/>
+        <DataRecord Entry="Requirement,HighCapacityFuelTanksLotV@Have"/>
+        <DataRecord Entry="Requirement,HighCapacityFuelTanksLotV@Learn"/>
+        <DataRecord Entry="RequirementNode,AllowAbilHighCapacityFuelTanksLotV@Research0"/>
+        <DataRecord Entry="RequirementNode,CountUpgradeHighCapacityFuelTanksLotVCompleteOnly1137711410"/>
+        <DataRecord Entry="RequirementNode,CountUpgradeHighCapacityFuelTanksLotVQueuedOrBetter"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUnit id="HighTemplarLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
         <Button value="BarracksLiberty"/>
@@ -217,7 +231,6 @@
     </CDataCollection>
     <CDataCollectionUpgrade id="MoebiusReactor">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
-        <Button value="MoebiusReactor@ResearchMoebiusReactor"/>
         <TechInfoUpgrade value="MoebiusReactor@Upgrade"/>
     </CDataCollectionUpgrade>
     <CDataCollection id="GaussPistolLiberty">
@@ -311,6 +324,20 @@
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
+    <CDataCollectionUpgrade id="RapidDeploymentLotV">
+        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <DataRecord Entry="Abil,RapidDeploymentLotV@Research"/>
+        <DataRecord Entry="Upgrade,RapidDeploymentLotV"/>
+        <DataRecord Entry="Button,RapidDeploymentLotV@Passive"/>
+        <DataRecord Entry="Button,RapidDeploymentLotV"/>
+        <DataRecord Entry="Requirement,RapidDeploymentLotV@Have"/>
+        <DataRecord Entry="Requirement,RapidDeploymentLotV@Learn"/>
+        <DataRecord Entry="RequirementNode,AllowAbilRapidDeploymentLotV@Research0"/>
+        <DataRecord Entry="RequirementNode,CountUpgradeRapidDeploymentLotVCompleteOnly1137711410"/>
+        <DataRecord Entry="RequirementNode,CountUpgradeRapidDeploymentLotVQueuedOrBetter"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
     <CDataCollection id="RavenAntiArmorMissile">
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
         <Button value="SeekerMissileSwarm"/>

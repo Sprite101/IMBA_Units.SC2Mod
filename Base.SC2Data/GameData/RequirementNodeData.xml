@@ -3,6 +3,12 @@
     <CRequirementAllowAbil id="AllowAbilCaduceusReactorSwarmBeta@ResearchCaduceusReactor0">
         <Link value="CaduceusReactorSwarmBeta@ResearchCaduceusReactor"/>
     </CRequirementAllowAbil>
+    <CRequirementAllowAbil id="AllowAbilHighCapacityFuelTanksLotV@Research0">
+        <Link value="HighCapacityFuelTanksLotV@Research"/>
+    </CRequirementAllowAbil>
+    <CRequirementAllowAbil id="AllowAbilRapidDeploymentLotV@Research0">
+        <Link value="RapidDeploymentLotV@Research"/>
+    </CRequirementAllowAbil>
     <CRequirementAnd id="AndEq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1">
         <OperandArray value="Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1"/>
     </CRequirementAnd>
@@ -51,7 +57,6 @@
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitInterceptorLotV2QueuedOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="InterceptorLotV2" State="QueuedOrBetterAtUnit"/>
     </CRequirementCountUnit>
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsCompleteOnly1495348974">
@@ -92,6 +97,9 @@
     <CRequirementCountUpgrade id="CountUpgradeChargeZealotLotV1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="ChargeZealotLotV1" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeChargeZealotLotV2CompleteOnly137519211TechTreeCheat">
+        <Count Link="ChargeZealotLotV2" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCorvidReactorLotVQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
@@ -160,8 +168,19 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeGravitonCatapultLotV2QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="GravitonCatapultLotV2" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHighCapacityFuelTanksLotVCompleteOnly1137711410">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HighCapacityFuelTanksLotV" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHighCapacityFuelTanksLotVCompleteOnly533834589">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HighCapacityFuelTanksLotV" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHighCapacityFuelTanksLotVQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="HighCapacityFuelTanksLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeHurricaneThrusters@UpgradeCompleteOnly3968802568">
         <Flags index="TechTreeCheat" value="0"/>
@@ -221,6 +240,18 @@
     <CRequirementCountUpgrade id="CountUpgradePsiStormHighTemplarLibertyQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="PsiStormHighTemplarLiberty" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeRapidDeploymentLotVCompleteOnly1137711410">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="RapidDeploymentLotV" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeRapidDeploymentLotVCompleteOnly1198155126">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="RapidDeploymentLotV" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeRapidDeploymentLotVQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="RapidDeploymentLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeRapidFireLaunchers@UpgradeCompleteOnly1075727723">
         <Flags index="TechTreeCheat" value="0"/>
@@ -321,8 +352,10 @@
         <OperandArray index="0" value="CountUpgradeGravitonCatapultLotV1QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeGravitonCatapultLotV2QueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeGravitonCatapultLotV2QueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeHighCapacityFuelTanksLotVQueuedOrBetter">
+        <OperandArray index="0" value="CountUpgradeHighCapacityFuelTanksLotVQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeHurricaneThrusters@UpgradeQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeHurricaneThrusters@UpgradeQueuedOrBetter"/>
@@ -338,6 +371,9 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradePsiStormHighTemplarLibertyQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradePsiStormHighTemplarLibertyQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeRapidDeploymentLotVQueuedOrBetter">
+        <OperandArray index="0" value="CountUpgradeRapidDeploymentLotVQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeRapidFireLaunchers@UpgradeQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeRapidFireLaunchers@UpgradeQueuedOrBetter"/>

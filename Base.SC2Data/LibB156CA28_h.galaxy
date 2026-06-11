@@ -52,6 +52,9 @@ void libB156CA28_gf_Select_Barracks (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Bunker (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_SensorTower (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Reactor (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_WarpIn (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Charge (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Blink (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Default (int lp_player);
 
 // Trigger Declarations

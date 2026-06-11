@@ -15,6 +15,36 @@
         <AlertIcon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="CaduceusReactorSwarmBeta@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-terran-caduceusreactor.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ChargeLotV2">
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ChargeZealotLotV2@ResearchCharge">
+        <Icon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-charge-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="HighCapacityFuelTanksLotV">
+        <Icon value="Assets\Textures\btn-upgrade-terran-highcapacityfueltanks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-highcapacityfueltanks.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="HighCapacityFuelTanksLotV@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-terran-highcapacityfueltanks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-highcapacityfueltanks.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="HighTemplarLiberty">
+        <Icon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Universal value="1"/>
+    </CButton>
     <CButton id="MULEWoL">
         <Icon value="Assets\Textures\BTN-Unit-Terran-mule.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Unit-Terran-mule.dds"/>
@@ -135,7 +165,7 @@
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-OraclePulsarCannonOn.dds"/>
         <HotkeySet value="PulsarBeam"/>
     </CButton>
-    <CButton id="AdeptLotV@WarpIn">
+    <CButton id="AdeptLotV">
         <Icon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <EditorCategories value="Race:Protoss"/>
@@ -145,7 +175,28 @@
         <AlertIcon value="Assets\Textures\BTN-Upgrade-Protoss-FluxVanes.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
-    <CButton id="StalkerLiberty@WarpIn">
+    <CButton id="WarpInLiberty@Pylon">
+        <Icon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="RapidDeploymentLotV">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-rapiddeployment.dds"/>
+        <AlertIcon value="Assets\Textures\btn-techupgrade-terran-rapiddeployment.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="RapidDeploymentLotV@Passive">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-rapiddeployment.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="RavenLotV1">
+        <Icon value="Assets\Textures\btn-unit-terran-raven.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-raven.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="StalkerLiberty">
         <Icon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
         <EditorCategories value="Race:Protoss"/>
@@ -410,7 +461,7 @@
         <AlertIcon value="Assets\Textures\btn-unit-terran-ghost.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
-    <CButton id="MoebiusReactor@ResearchMoebiusReactor">
+    <CButton id="MoebiusReactor">
         <Icon value="Assets\Textures\btn-upgrade-terran-moebiusreactor.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
         <EditorCategories value="Race:Terran"/>
@@ -456,7 +507,7 @@
         <AlertIcon value="Assets\Textures\btn-unit-terran-liberator.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
-    <CButton id="MoebiusReactor@MoebiusReactor">
+    <CButton id="MoebiusReactor@Passive">
         <Icon value="Assets\Textures\btn-upgrade-terran-moebiusreactor.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-electricfield.dds"/>
         <EditorCategories value="Race:Terran"/>
@@ -498,7 +549,7 @@
         <AlertIcon value="Assets\Textures\btn-unit-terran-raven.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
-    <CButton id="InfernalPreIgniterSwarm@ResearchInfernalPreIgniterSwarm">
+    <CButton id="InfernalPreIgniterSwarm">
         <Icon value="Assets\Textures\btn-upgrade-terran-infernalpreigniter.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-infernalpreigniter.dds"/>
         <EditorCategories value="Race:Terran"/>
@@ -564,7 +615,7 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
-    <CButton id="RapidFireLaunchers@Research">
+    <CButton id="RapidFireLaunchers">
         <Icon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-raynor-ripwavemissiles.dds"/>
         <EditorCategories value="Race:Terran"/>

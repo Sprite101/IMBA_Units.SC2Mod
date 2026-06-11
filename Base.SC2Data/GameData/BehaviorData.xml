@@ -14,6 +14,37 @@
         <Duration value="20"/>
         <Modification HealDealtMultiplier="2"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="ChargeLotV2@Charging">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-charge.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="ChargeTargetAttacked"/>
+        <BuffFlags index="Channeling" value="1"/>
+        <Duration value="3.5"/>
+        <InitialEffect value="ChargeLotV2@ChargingCheckAB"/>
+        <FinalEffect value="ChargeLotV2@ChargingPrimaryDamageSet"/>
+        <Modification MoveSpeedMultiplier="2.2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ChargeLotV2@ChargingAttack">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="0.25"/>
+        <DamageResponse Handled="ChargeLotV2@ChargingDamageSecondary" Location="Attacker">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ChargeLotV2@ChargingAttackCheck">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="ChargeLotV2@IsCharging"/>
+        <Duration value="3.5"/>
+        <FinalEffect value="ChargeLotV2@ChargingAttackAB"/>
+        <DamageResponse Handled="ChargeLotV2@ChargingDamageSecondary" Location="Attacker">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
     <CBehaviorBuff id="ChronoBoostLotV">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-chronoboost.dds"/>
@@ -291,7 +322,7 @@
         <FinalEffect value="ChargeLotV1@ChargingPrimaryDamageSet"/>
         <Modification MoveSpeedMultiplier="2.2"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="ChargeLotV1@ChargingAttack2">
+    <CBehaviorBuff id="ChargeLotV1@ChargingAttack">
         <Alignment value="Positive"/>
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>

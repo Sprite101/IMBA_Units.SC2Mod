@@ -9,6 +9,10 @@
     <CValidatorUnitType id="CarrierLotV1@IsCarrier">
         <Value value="CarrierLotV1"/>
     </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="ChargeLotV2@IsCharging">
+        <Value value="1"/>
+        <Behavior value="ChargeLotV2@Charging"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="CloneBehaviorFilters">
         <CombineArray value="MULEWoL@NotWorkerMULE"/>
     </CValidatorCombine>
@@ -275,6 +279,13 @@
         <Pathing value="1"/>
         <Value Effect="ChargeLotV1@InitialAB" Value="TargetUnit"/>
     </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="ChargeLotV2@ChargeDamageDistance">
+        <WhichLocation Value="SourceUnit"/>
+        <Compare value="LT"/>
+        <Range value="0.1"/>
+        <Pathing value="1"/>
+        <Value Effect="ChargeLotV2@InitialAB" Value="TargetUnit"/>
+    </CValidatorLocationCompareRange>
     <CValidatorUnitCompareBehaviorCount id="ChargeLotV1@IsCharging">
         <Value value="1"/>
         <Behavior value="ChargeLotV1@Charging"/>
@@ -283,8 +294,16 @@
         <WhichUnit Effect="ChargeLotV1@InitialAB"/>
         <Filters value="Dead;-"/>
     </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="ChargeLotV2@ChargeTargetNotAlive">
+        <WhichUnit Effect="ChargeLotV2@InitialAB"/>
+        <Filters value="Dead;-"/>
+    </CValidatorUnitFilters>
     <CValidatorUnitFilters id="ChargeLotV1@ChargeTargetNotDead">
         <WhichUnit Effect="ChargeLotV1@InitialAB"/>
+        <Filters value="-;Dead"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="ChargeLotV2@ChargeTargetNotDead">
+        <WhichUnit Effect="ChargeLotV2@InitialAB"/>
         <Filters value="-;Dead"/>
     </CValidatorUnitFilters>
     <CValidatorUnitCompareBehaviorCount id="WarpInLiberty@IsNotWarpingIn">
@@ -505,6 +524,10 @@
     </CValidatorUnitType>
     <CValidatorUnitFilters id="ChargeLotV1@ChargeTargetNotHidden">
         <WhichUnit Effect="ChargeLotV1@InitialAB"/>
+        <Filters value="-;Hidden"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="ChargeLotV2@ChargeTargetNotHidden">
+        <WhichUnit Effect="ChargeLotV2@InitialAB"/>
         <Filters value="-;Hidden"/>
     </CValidatorUnitFilters>
     <CValidatorCombine id="isWorker">

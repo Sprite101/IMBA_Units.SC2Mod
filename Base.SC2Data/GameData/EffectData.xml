@@ -34,6 +34,54 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="BatteryOverchargeLotV"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="ChargeLotV2@ChargingAttackAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="ChargeLotV2@ChargingAttack"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="ChargeLotV2@ChargingAttackRB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="ChargeLotV2@ChargingAttack"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="ChargeLotV2@ChargingCheckAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="ChargeLotV2@ChargingAttackCheck"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="ChargeLotV2@ChargingCheckRB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="ChargeLotV2@ChargingAttackCheck"/>
+    </CEffectRemoveBehavior>
+    <CEffectDamage id="ChargeLotV2@ChargingDamage">
+        <ValidatorArray value="ChargeLotV2@ChargeDamageDistance"/>
+        <ValidatorArray value="ChargeLotV2@ChargeTargetNotHidden"/>
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Effect="ChargeLotV2@InitialAB" Value="TargetUnit"/>
+        <Amount value="8"/>
+    </CEffectDamage>
+    <CEffectDamage id="ChargeLotV2@ChargingDamageSecondary">
+        <ValidatorArray value="ChargeLotV2@ChargeTargetNotAlive"/>
+        <ValidatorArray value="NotHidden"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Amount value="8"/>
+    </CEffectDamage>
+    <CEffectSet id="ChargeLotV2@ChargingPrimaryDamageSet">
+        <ValidatorArray value="ChargeLotV2@ChargeTargetNotDead"/>
+        <ValidatorArray value="NotHidden"/>
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="ChargeLotV2@ChargingDamage"/>
+        <EffectArray value="ChargeLotV2@ChargingCheckRB"/>
+        <EffectArray value="ChargeLotV2@ChargingAttackRB"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="ChargeLotV2@InitialAB">
+        <ValidatorArray index="0" value="ChargeMinTriggerDistance"/>
+        <ValidatorArray value="ChargeMaxDistance"/>
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="ChargeLotV2@Charging"/>
+    </CEffectApplyBehavior>
     <CEffectCreatePersistent id="MULEWoL@CalldownMULECP">
         <EditorCategories value="Race:Terran"/>
         <WhichLocation Value="TargetUnitOrPoint"/>
@@ -1108,12 +1156,12 @@
     <CEffectApplyBehavior id="ChargeLotV1@ChargingAttackAB">
         <EditorCategories value="Race:Protoss"/>
         <WhichUnit Value="Caster"/>
-        <Behavior value="ChargeLotV1@ChargingAttack2"/>
+        <Behavior value="ChargeLotV1@ChargingAttack"/>
     </CEffectApplyBehavior>
     <CEffectRemoveBehavior id="ChargeLotV1@ChargingAttackRB">
         <EditorCategories value="Race:Protoss"/>
         <WhichUnit Value="Caster"/>
-        <BehaviorLink value="ChargingAttack"/>
+        <BehaviorLink value="ChargeLotV1@ChargingAttack"/>
     </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="ChargeLotV1@ChargingCheckAB">
         <EditorCategories value="Race:Protoss"/>
@@ -1123,7 +1171,7 @@
     <CEffectRemoveBehavior id="ChargeLotV1@ChargingCheckRB">
         <EditorCategories value="Race:Protoss"/>
         <WhichUnit Value="Caster"/>
-        <BehaviorLink value="ChargingAttackCheck"/>
+        <BehaviorLink value="ChargeLotV1@ChargingAttackCheck"/>
     </CEffectRemoveBehavior>
     <CEffectDamage id="ChargeLotV1@ChargingDamage">
         <ValidatorArray value="ChargeLotV1@ChargeDamageDistance"/>
@@ -2086,6 +2134,41 @@
         <Flags index="NoKillCredit" value="1"/>
         <Death value="Timeout"/>
     </CEffectDamage>
+    <CEffectDamage id="TempestLotV1@AGWeaponDamage">
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <ArmorReduction value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="40"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="TempestLotV1@AGWeaponLM">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="TempestLotV1@AGWeaponDamage"/>
+        <AmmoUnit value="TempestLotV1@AGWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="TempestLotV1@AAWeaponDamage">
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <AttributeBonus index="Massive" value="22"/>
+        <ArmorReduction value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="30"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="TempestLotV1@AAWeaponlm">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="TempestLotV1@AAWeaponDamage"/>
+        <AmmoUnit value="TempestLotV1@AAWeapon"/>
+    </CEffectLaunchMissile>
     <CEffectDamage id="TempestSwarm@AGWeaponDamage">
         <EditorCategories value="Race:Protoss"/>
         <ResponseFlags index="Acquire" value="1"/>

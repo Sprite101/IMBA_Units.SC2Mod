@@ -19,6 +19,13 @@
         <EditorCategories value="Race:Protoss,UpgradeType:AttackBonus"/>
         <AffectedUnitArray value="AdeptLotV"/>
     </CUpgrade>
+    <CUpgrade id="AdeptLotV2@Upgrade">
+        <EffectArray Operation="Set" Reference="Unit,Adept,LifeStart" Value="80"/>
+        <EffectArray Operation="Set" Reference="Unit,Adept,LifeMax" Value="80"/>
+        <EffectArray Operation="Set" Reference="Unit,AdeptPhaseShift,Sight" Value="9"/>
+        <EffectArray Operation="Set" Reference="Effect,AdeptDamage,AttributeBonus[Light]" Value="13"/>
+        <EditorCategories value="UpgradeType:Talents"/>
+    </CUpgrade>
     <CUpgrade id="GraviticBoostersLotV2">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-graviticbooster.dds"/>
@@ -157,6 +164,17 @@
         <EffectArray Reference="Effect,PointDefenseDroneSwarm@SearchArea,AreaArray[0].Radius" Value="1"/>
         <EffectArray Reference="Weapon,PointDefenseDroneSwarm@PointDefenseLaser,Range" Value="1"/>
     </CUpgrade>
+    <CUpgrade id="HighCapacityFuelTanksLotV">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-highcapacityfueltanks.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Terr"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Behavior,MedivacSpeedBoost,Duration" Value="4"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="Medivac"/>
+    </CUpgrade>
     <CUpgrade id="InfernalPreIgniterSwarm@InfernalPreIgniterSwarm">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infernalpreigniter.dds"/>
@@ -168,7 +186,18 @@
         <EditorCategories value="Race:Terran,UpgradeType:SpellResearch"/>
         <AffectedUnitArray value="HellionSwarmBeta@Hellion"/>
     </CUpgrade>
-    <CUpgrade id="ReactorRepairTime">
+    <CUpgrade id="RapidDeploymentLotV">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-techupgrade-terran-rapiddeployment.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Subtract" Reference="Abil,MedivacTransport,UnloadPeriod" Value="0.500000"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="Medivac"/>
+    </CUpgrade>
+    <CUpgrade id="ReactorLiberty@RepairTime">
         <EffectArray Operation="Set" Reference="Unit,Reactor,RepairTime" Value="25"/>
         <EffectArray Operation="Set" Reference="Unit,BarracksReactor,RepairTime" Value="25"/>
         <EffectArray Operation="Set" Reference="Unit,FactoryReactor,RepairTime" Value="25"/>
@@ -424,8 +453,12 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="CycloneLotV1"/>
     </CUpgrade>
-    <CUpgrade id="MULEWoL@CallDownReplaceUnit">
-        <EffectArray Operation="Set" Reference="Effect,CalldownMULEFinalSet,Chance" Value="1"/>
+    <CUpgrade id="BarracksLiberty@RepairTime">
+        <EffectArray Operation="Set" Reference="Unit,Barracks,RepairTime" Value="60"/>
+        <EditorCategories value="UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="BunkerLiberty@RepairTime">
+        <EffectArray Operation="Set" Reference="Unit,Bunker,RepairTime" Value="30"/>
         <EditorCategories value="UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="ReaperLiberty@Upgrade">
@@ -469,6 +502,9 @@
         <EffectArray Reference="Unit,ReaperSwarm,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,ReaperSwarm,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,ReaperSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
+        <EffectArray Reference="Unit,MULEWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,MULEWoL,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,MULEWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel1.dds"/>
     </CUpgrade>
     <CUpgrade id="TerranInfantryArmorsLevel2">
         <EffectArray Reference="Unit,GhostLotV1,LifeArmorLevel" Value="1"/>
@@ -483,6 +519,9 @@
         <EffectArray Reference="Unit,ReaperSwarm,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,ReaperSwarm,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,ReaperSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
+        <EffectArray Reference="Unit,MULEWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,MULEWoL,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,MULEWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel2.dds"/>
     </CUpgrade>
     <CUpgrade id="TerranInfantryArmorsLevel3">
         <EffectArray Reference="Unit,GhostLotV1,LifeArmorLevel" Value="1"/>
@@ -497,6 +536,9 @@
         <EffectArray Reference="Unit,ReaperSwarm,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,ReaperSwarm,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,ReaperSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
+        <EffectArray Reference="Unit,MULEWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,MULEWoL,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,MULEWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel3.dds"/>
     </CUpgrade>
     <CUpgrade id="TerranInfantryWeaponsLevel1">
         <!-- ReaperLiberty Anti Structure -->

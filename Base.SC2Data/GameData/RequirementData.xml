@@ -20,6 +20,14 @@
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="LT2210218377CountUnitInterceptorLotV2QueuedOrBetterAtUnit8"/>
     </CRequirement>
+    <CRequirement id="ChargeZealotLotV2@Learn">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeChargeZealotLotV1QueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="ChargeZealotLotV2@UseCharge">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeChargeZealotLotV2CompleteOnly137519211TechTreeCheat"/>
+    </CRequirement>
     <CRequirement id="ExtendedThermalLanceLiberty@LearnExtendedThermalLance">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="AndNotCountUpgradeExtendedThermalLanceLibertyQueuedOrBetter"/>
@@ -52,6 +60,15 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeGravitonCatapultLotV2QueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="HighCapacityFuelTanksLotV@Have">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeHighCapacityFuelTanksLotVCompleteOnly533834589"/>
+        <NodeArray index="Show" Link="AllowAbilHighCapacityFuelTanksLotV@Research0"/>
+    </CRequirement>
+    <CRequirement id="HighCapacityFuelTanksLotV@Learn">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeHighCapacityFuelTanksLotVQueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="PsiStormHighTemplarLiberty@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradePsiStormHighTemplarLibertyCompleteOnly3263798822"/>
@@ -76,7 +93,7 @@
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="CountBehaviorPsionicTransferLotV@CasterCompleteOnlyAtUnit"/>
     </CRequirement>
-    <CRequirement id="ChargeZealotLotV1@LearnCharge">
+    <CRequirement id="ChargeZealotLotV1@Learn">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Show" Link="NotCountUpgradeChargeZealotLotV1QueuedOrBetter"/>
     </CRequirement>
@@ -106,7 +123,7 @@
         <NodeArray index="Show" Link="NotCountUpgradeDrillingClaws@DrillingClawsQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="CaduceusReactorSwarmBeta@LearnCaduceusReactor">
-        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="EnhancedShockwaves@@LearnEnhancedShockwaves">
@@ -161,6 +178,15 @@
     <CRequirement id="AmplifiedShieldingLotV@Learn">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="NotCountUpgradeAmplifiedShieldingLotVQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="RapidDeploymentLotV@Have">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeRapidDeploymentLotVCompleteOnly1198155126"/>
+        <NodeArray index="Show" Link="AllowAbilRapidDeploymentLotV@Research0"/>
+    </CRequirement>
+    <CRequirement id="RapidDeploymentLotV@Learn">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeRapidDeploymentLotVQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="ReaperSwarm@LearnNitroPacks">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
