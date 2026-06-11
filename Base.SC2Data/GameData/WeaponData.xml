@@ -11,6 +11,17 @@
         <Period value="1.04"/>
         <Effect value="90mmCannonsLotV1@Damage"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="GlaiveCannonLotV2">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="GlaiveCannonLotV2@Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4"/>
+        <Period value="2.25"/>
+        <Effect value="GlaiveCannonLotV2@LM"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="AdeptLotV@Weapon">
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>

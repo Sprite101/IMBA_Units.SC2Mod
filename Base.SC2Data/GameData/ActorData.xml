@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorAction id="GlaiveCannonLotV2@AttackAction" parent="GenericAttack" effectImpact="GlaiveCannonLotV2@Damage" effectLaunch="GlaiveCannonLotV2@LM">
+        <LaunchAssets Sound="Adept_AttackLaunch"/>
+        <Missile value="GlaiveCannonLotV2@AttackMissile"/>
+        <ImpactMap index="None" Model="AdeptImpact" Sound="Adept_AttackImpact"/>
+        <ImpactModel value="GlaiveCannonLotV2@AttackImpactModel"/>
+    </CActorAction>
+    <CActorModel id="GlaiveCannonLotV2@AttackImpactModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <Flags index="SuppressCreationErrors" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <Model value="GenericAttackModel"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorMissile id="GlaiveCannonLotV2@AttackMissile" parent="GenericAttackMissile" unitName="GlaiveCannonLotV2@Missile">
+        <Model value="AdeptWeapon"/>
+    </CActorMissile>
     <CActorAction id="AdeptLotV@AttackAction" parent="GenericAttack" effectImpact="AdeptLotV@WeaponDamage" effectLaunch="AdeptLotV@WeaponLM">
         <LaunchAssets Sound="Adept_AttackLaunch"/>
         <Missile value="AdeptLotV@AttackMissile"/>
@@ -3303,14 +3318,15 @@
     </CActorRange>
     <CActorPower id="WarpInLiberty@PrismPower">
         <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; !Option Model Low; ValidateUnit WarpInLiberty@PrismHasPowerSourceLiberty" Send="Create"/>
-        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; !Option Model Low; ValidateUnit WarpInLiberty@PrismHasPowerSourceLiberty" Send="Destroy"/>
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; !Option Model Low" Send="Destroy"/>
         <On Terms="ActorCreation" Target="WarpPrismPowerFast" Send="Destroy"/>
         <VisualArray value="WarpInLiberty@UnpoweredVisualSplat"/>
         <VisualArray value="WarpInLiberty@PrismPowerVisualSplat"/>
     </CActorPower>
     <CActorPower id="WarpInLiberty@PrismPowerLow">
         <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Create; Option Model Low; ValidateUnit WarpInLiberty@PrismHasPowerSourceLiberty" Send="Create"/>
-        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; Option Model Low; ValidateUnit WarpInLiberty@PrismHasPowerSourceLiberty" Send="Destroy"/>
+        <On Terms="Behavior.WarpInLiberty@PrismPowerSource.Destroy; Option Model Low" Send="Destroy"/>
+        <On Terms="ActorCreation; Option Model Low" Target="WarpPrismPowerFastLow" Send="Destroy"/>
         <PowerSource value="WarpInLiberty@PrismPowerSource"/>
         <VisualArray value="WarpInLiberty@PrismUnpoweredVisualLow"/>
         <VisualArray value="WarpInLiberty@PrismPowerVisualLowRange"/>

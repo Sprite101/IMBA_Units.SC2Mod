@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="AdeptLotV2">
+        <Icon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ResonatingGlaivesLotV@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives-orange.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives-orange.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ResonatingGlaivesLotV">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="AdvancedBallisticsLotV2">
         <Icon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-advanceballistics.dds"/>

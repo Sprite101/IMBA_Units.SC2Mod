@@ -60,6 +60,11 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeGravitonCatapultLotV2QueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="ResonatingGlaivesLotV@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeResonatingGlaivesLotVCompleteOnly543136321TechTreeCheat"/>
+        <NodeArray index="Show" Link="AllowAbilResonatingGlaivesLotV@Research0"/>
+    </CRequirement>
     <CRequirement id="HighCapacityFuelTanksLotV@Have">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeHighCapacityFuelTanksLotVCompleteOnly533834589"/>
@@ -68,6 +73,10 @@
     <CRequirement id="HighCapacityFuelTanksLotV@Learn">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeHighCapacityFuelTanksLotVQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="ResonatingGlaivesLotV@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeResonatingGlaivesLotVQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="PsiStormHighTemplarLiberty@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>

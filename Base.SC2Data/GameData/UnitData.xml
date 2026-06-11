@@ -2,6 +2,11 @@
 <Catalog>
     <CUnit id="Adept">
         <AbilArray Link="WarpInLiberty@Warpable"/>
+        <WeaponArray Link="GlaiveCannonLotV2"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="8" Face="ResonatingGlaivesLotV" Requirements="ResonatingGlaivesLotV@Have"/>
+            <LayoutButtons Face="AdeptPiercingUpgrade" Type="Passive" Requirements="HaveAdeptPiercingAttack" Row="2" Column="1"/>
+        </CardLayouts>
     </CUnit>
     <CUnit id="AdeptLotV">
         <Description value="Button/Tooltip/WarpInAdeptLotV"/>
@@ -151,6 +156,11 @@
     </CUnit>
     <CUnit id="AdeptPhaseShift">
         <AbilArray Link="WarpInLiberty@Warpable"/>
+    </CUnit>
+    <CUnit id="GlaiveCannonLotV2@Missile" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="AdeptWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
     </CUnit>
     <!-- Balance change for balance patch of Nov 11th 2013 (combined Air/Ground vehicle upgrades)-->
     <!-- Balance test 3/12 (separate Air/Ground vehicle upgrades)-->
@@ -599,6 +609,7 @@
             <LayoutButtons Face="HighTemplarLiberty" Type="AbilCmd" AbilCmd="GatewayTrain,Train11" Row="1" Column="0"/>
             <LayoutButtons Face="UpgradeToWarpGate" Type="AbilCmd" AbilCmd="WarpInLiberty@UpgradeToWarpGate,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AdeptLotV" Type="AbilCmd" AbilCmd="GatewayTrain,Train10" Row="0" Column="3"/>
+            <LayoutButtons Face="AdeptLotV2" Type="AbilCmd" AbilCmd="GatewayTrain,Train12" Row="0" Column="3"/>
         </CardLayouts>
         <AbilArray Link="WarpInLiberty@UpgradeToWarpGate"/>
     </CUnit>
@@ -3650,11 +3661,13 @@
         <AbilArray Link="AmplifiedShieldingLotV@Research"/>
         <AbilArray Link="ChargeZealotLotV1@ResearchCharge"/>
         <AbilArray Link="ChargeZealotLotV2@ResearchCharge"/>
+        <AbilArray Link="ResonatingGlaivesLotV@Research"/>
         <CardLayouts index="0">
             <LayoutButtons Face="ResearchStalkerTeleport" Type="AbilCmd" AbilCmd="BlinkLiberty@ResearchBlink,Research1" Row="0" Column="1"/>
             <LayoutButtons Face="ChargeZealotLotV1@ResearchCharge" Type="AbilCmd" AbilCmd="ChargeZealotLotV1@ResearchCharge,Research1" Row="0" Column="0"/>
             <LayoutButtons Face="ChargeZealotLotV2@ResearchCharge" Type="AbilCmd" AbilCmd="ChargeZealotLotV2@ResearchCharge,Research1" Row="0" Column="0"/>
             <LayoutButtons Face="AmplifiedShieldingLotV" Type="AbilCmd" AbilCmd="AmplifiedShieldingLotV@Research,Research1" Row="0" Column="2"/>
+            <LayoutButtons Face="ResonatingGlaivesLotV" Type="AbilCmd" AbilCmd="ResonatingGlaivesLotV@Research,Research1" Row="0" Column="2"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="TyphoonMissilePodLotV2@Missile" parent="MISSILE">

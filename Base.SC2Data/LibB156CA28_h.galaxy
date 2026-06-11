@@ -27,6 +27,7 @@ struct libB156CA28_gs_PlayerFrames {
 int libB156CA28_gv_activePlayerNum;
 playergroup libB156CA28_gv_activePlayersGameInit;
 int[libB156CA28_gv_maxActivePlayer + 1][libB156CA28_gv_maxSelectionItems + 1] libB156CA28_gv_unitSelectionResults;
+int[libB156CA28_gv_maxActivePlayer + 1] libB156CA28_gv_warpInResults;
 libB156CA28_gs_PlayerFrames libB156CA28_gv_playerFrames;
 
 // Function Declarations
@@ -55,6 +56,7 @@ void libB156CA28_gf_Select_Reactor (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_WarpIn (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Charge (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Blink (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Adept (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Default (int lp_player);
 
 // Trigger Declarations

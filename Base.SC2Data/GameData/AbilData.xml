@@ -347,6 +347,16 @@
     <CAbilEffectTarget id="ShieldBatteryRechargeEx5">
         <AutoCastValidatorArray index="0" value="ModifiedAbility@CasterHas10EnergyOrCasterHasBatteryOverchargeBehavior"/>
     </CAbilEffectTarget>
+    <CAbilResearch id="ResonatingGlaivesLotV@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="140" Upgrade="ResonatingGlaivesLotV">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="ResonatingGlaivesLotV" Requirements="ResonatingGlaivesLotV@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilWarpTrain id="WarpInLiberty@WarpGateTrain">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <InfoArray index="Train1" Time="5" Unit="Zealot">
@@ -921,6 +931,10 @@
         <InfoArray index="Train11" Time="55">
             <Button DefaultButtonFace="HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives"/>
             <Unit value="HighTemplarLiberty"/>
+        </InfoArray>
+        <InfoArray index="Train12" Time="38">
+            <Button DefaultButtonFace="AdeptLotV2" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Unit value="Adept"/>
         </InfoArray>
     </CAbilTrain>
     <CAbilEffectTarget id="KD8ChargeLotV1">

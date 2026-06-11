@@ -1,4 +1,5 @@
 ﻿Button/Hotkey/AdeptLotV=H
+Button/Hotkey/AdeptLotV2=H
 Button/Hotkey/AdvancedBallistics@ResearchAdvancedBallistics=N
 Button/Hotkey/AdvancedBallisticsLotV2@ResearchAdvancedBallistics=N
 Button/Hotkey/AmplifiedShieldingLotV=S
@@ -98,6 +99,7 @@ Button/Hotkey/ReaperLiberty@ResearchNitroPacks=N
 Button/Hotkey/ReaperLiberty@TrainReaper=R
 Button/Hotkey/ReaperSwarm@ResearchNitroPacks=N
 Button/Hotkey/ReleaseInterceptorsLotV1=R
+Button/Hotkey/ResonatingGlaivesLotV=A
 Button/Hotkey/SalvageLiberty=V
 Button/Hotkey/SeekerMissileSwarm=R
 Button/Hotkey/SensorTowerLotV1=N
