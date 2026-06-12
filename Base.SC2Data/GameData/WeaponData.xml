@@ -106,6 +106,19 @@
         <DamagePoint value="0.125"/>
         <Effect value="LiberatorAGLotV2@WeaponLMSet"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="PhotonOverchargeSwarm@Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="PhotonOverchargeSwarm@WeaponDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="7"/>
+        <Range value="13"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <Period value="1.25"/>
+        <Effect value="PhotonOverchargeSwarm@WeaponLM"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="PulsarBeamSwarm">
         <EditorCategories value="Race:Protoss"/>
         <Options index="Disabled" value="1"/>

@@ -60,6 +60,10 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeGravitonCatapultLotV2QueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="PhotonOverchargeSwarm@HasPhotonOvercharge">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1"/>
+    </CRequirement>
     <CRequirement id="ResonatingGlaivesLotV@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeResonatingGlaivesLotVCompleteOnly543136321TechTreeCheat"/>

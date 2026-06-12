@@ -219,6 +219,162 @@
         <Host Subject="_Unit"/>
         <Sound value="Obelisk_TimeWarpLaunch"/>
     </CActorSound>
+    <CActorUnit id="MothershipCore">
+        <On Terms="Abil.PhotonOverchargeSwarm.SourceCastStart" Send="AnimPlay Activate Stand,Work,End"/>
+    </CActorUnit>
+    <CActorBeamSimple id="TimeWarpLotV1@Beam" parent="BeamSimpleAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <Remove Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death OpeningPlayForever"/>
+        <On Terms="Abil.TimeWarpLotV1.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.TimeWarpLotV1.SourceChannelStop" Send="Destroy"/>
+        <Model value="MothershipAttackBeam"/>
+        <HostLaunch Subject="_Selectable"/>
+        <HostLaunchSiteOps Ops="SOpAttachCenter"/>
+        <HostImpact Subject="_Selectable"/>
+        <HostImpactSiteOps Ops="SOpLowerBy375"/>
+    </CActorBeamSimple>
+    <CActorAction id="PhotonOverchargeSwarm@WeaponAttackAction" parent="GenericAttack" effectImpact="PhotonOverchargeSwarm@WeaponDamage" effectLaunch="PhotonOverchargeSwarm@WeaponLM">
+        <LaunchSiteOps Ops="SOpForwardTargetPoint SOp2DRotation SOpAttachOverhead"/>
+        <LaunchAttachQuery Methods="TurretZ"/>
+        <LaunchAssets Sound="PhotonCannon_AttackLaunch"/>
+        <Missile value="PhotonOverchargeSwarm@WeaponAttackMissile"/>
+        <ImpactMap index="None" Model="MothershipCoreWeaponAttackImpact" Sound="PhotonCannon_AttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="PurifyImpact" MatchKeys="Basic" Physics="MothershipCoreAttackForce"/>
+    </CActorAction>
+    <CActorMissile id="PhotonOverchargeSwarm@WeaponAttackMissile" parent="GenericAttackMissile" unitName="PhotonOverchargeSwarm@WeaponMissile">
+        <On Terms="UnitBirth" Send="AnimSetTimeScaleAbsolute Lifetime 1.000000"/>
+    </CActorMissile>
+    <CActorModel id="PhotonOverchargeSwarm@Model" parent="ModelAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <On Terms="Behavior.PhotonOverchargeSwarm.On" Send="Create"/>
+        <On Terms="Behavior.PhotonOverchargeSwarm.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Model value="MothershipCorePurifyLight"/>
+    </CActorModel>
+    <CActorRange id="PhotonOverchargeSwarm@Range">
+        <EditorCategories value=""/>
+        <On Terms="Abil.PhotonOverchargeSwarm.TargetOn" Send="Create"/>
+        <On Terms="Abil.PhotonOverchargeSwarm.TargetOff" Send="Destroy"/>
+        <On Terms="Abil.LightofAiur.TargetOn" Send="Create"/>
+        <On Terms="Abil.LightofAiur.TargetOff" Send="Destroy"/>
+        <Abil Link="MothershipCorePurifyNexus"/>
+        <Icon value="Assets\Textures\radaricon2.dds"/>
+    </CActorRange>
+    <CActorRange id="PhotonOverchargeSwarm@WeaponRange">
+        <Inherits index="Visibility" value="0"/>
+        <FogVisibility value="Visible"/>
+        <On Terms="Behavior.PhotonOverchargeSwarm.On" Send="Create"/>
+        <On Terms="Behavior.PhotonOverchargeSwarm.Off" Send="Destroy"/>
+        <Weapon value="MothershipCoreWeapon"/>
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorSound id="PhotonOverchargeSwarm@CastSound" parent="SoundOneShot">
+        <On Terms="Behavior.PhotonOverchargeSwarm.On" Send="Create"/>
+        <Sound value="Mothership_PhotonOverchargeActivate"/>
+    </CActorSound>
+    <CActorModel id="TimeWarpLotV1@Model">
+        <Macros value="GlobalLoopMacro"/>
+        <On Terms="Effect.TimeWarpLotV1@CP.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD {} Stand Death"/>
+        <On Terms="ActorCreation" Send="$Spell 0 0.000000"/>
+        <On Terms="Effect.TimeWarpLotV1@CP.Stop" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Model value="TemporalFieldAfterBubbleModel"/>
+        <Scale value="0.937500"/>
+    </CActorModel>
+    <CActorSound id="TimeWarpLotV1@EndSound" parent="SoundOneShot">
+        <On Terms="Effect.TimeWarpLotV1@PreCP.Stop" Send="Create"/>
+        <Sound value="Mothership_TimeWarpEnd"/>
+    </CActorSound>
+    <CActorSound id="TimeWarpLotV1@LaunchSound2" parent="SoundOneShot">
+        <On Terms="Effect.TimeWarpLotV1@PreCP.Start" Send="Create"/>
+        <Sound value="Mothership_TimeWarpLaunch2"/>
+    </CActorSound>
+    <CActorSound id="TimeWarpLotV1@LaunchSound3" parent="SoundOneShot">
+        <On Terms="Effect.TimeWarpLotV1@PreCP.Start" Send="Create"/>
+        <Sound value="Mothership_TimeWarpLaunch3"/>
+    </CActorSound>
+    <CActorSound id="TimeWarpLotV1@LaunchSound" parent="SoundOneShot">
+        <On Terms="Effect.TimeWarpLotV1@PreCP.Start" Send="Create"/>
+        <Sound value="Mothership_TimeWarpLaunch"/>
+    </CActorSound>
+    <CActorSound id="TimeWarpLotV1@LoopSound" parent="SoundContinuous">
+        <On Terms="Effect.TimeWarpLotV1@PreCP.Start" Send="Create"/>
+        <On Terms="Effect.TemporalFieldAfterBubbleCreatePersistent.Stop" Send="Destroy"/>
+        <Sound value="Mothership_TimeWarpLoop"/>
+    </CActorSound>
+    <CActorSplat id="TimeWarpLotV1@CursorSplat" parent="ProtossCursorSplat" abil="TimeWarpLotV1"/>
+    <CActorModel id="TimeWarpLotV1@PreModel">
+        <Macros value="GlobalLoopMacro"/>
+        <On Terms="Effect.TimeWarpLotV1@PreCP.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth {} {} 0 5.000000 AsDuration"/>
+        <On Terms="Effect.TimeWarpLotV1@PreCP.Stop" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Model value="TemporalFieldGrowingBubbleModel"/>
+    </CActorModel>
+    <CActorModel id="TimeWarpLotV1@ImpactModel" parent="ModelAnimationStyleOneShot">
+        <Terms value="Cap 1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <On Terms="Behavior.TimeWarpLotV1.On" Send="Create"/>
+        <On Terms="ActorCreation; ValidateUnit ModifiedAbility@IsCarrier" Send="SetScale 0.400000"/>
+        <On Terms="ActorCreation; ValidateUnit IsTempest" Send="SetScale 0.600000"/>
+        <On Terms="ActorCreation; ValidateUnit IsStalker" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsMothershipCore" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsMothership" Send="SetScale 0.300000"/>
+        <On Terms="ActorCreation; ValidateUnit IsOracle" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsColossus" Send="SetScale 0.600000"/>
+        <On Terms="ActorCreation; ValidateUnit IsImmortal" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsArchon" Send="SetScale 0.800000"/>
+        <On Terms="ActorCreation; ValidateUnit IsWarpPrism" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsWarpPrismPhasing" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsPhoenix" Send="SetScale 0.600000"/>
+        <On Terms="ActorCreation; ValidateUnit IsVoidRay" Send="SetScale 0.600000"/>
+        <On Terms="ActorCreation; ValidateUnit IsBattlecruiser" Send="SetScale 0.600000"/>
+        <On Terms="ActorCreation; ValidateUnit IsSiegeTank" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsThor" Send="SetScale 0.400000"/>
+        <On Terms="ActorCreation; ValidateUnit IsBanshee" Send="SetScale 0.600000"/>
+        <On Terms="ActorCreation; ValidateUnit IsViking" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsWarHound" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsHellion" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsHellionTank" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsMedivac" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsRaven" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsUltralisk" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsUltraliskBurrowed" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsQueen" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsQueenBurrowed" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsOverseer" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsOverlord" Send="SetScale 0.500000"/>
+        <On Terms="ActorCreation; ValidateUnit IsBroodLord" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsInfestor" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsInfestorBurrowed" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsHydralisk" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsHydraliskBurrowed" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsSwarmHost" Send="SetScale 0.700000"/>
+        <On Terms="ActorCreation; ValidateUnit IsSwarmHostBurrowed" Send="SetScale 0.700000"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="TemporalFieldImpactModel"/>
+        <AutoScaleFactor value="1.000000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorRange id="TimeWarpLotV1@Range">
+        <EditorCategories value=""/>
+        <On Terms="Abil.TimeWarpLotV1.TargetOn" Send="Create"/>
+        <On Terms="Abil.TimeWarpLotV1.TargetOff" Send="Destroy"/>
+        <Abil Link="TemporalField"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
     <CActorUnit id="WarpGate">
         <CooldownDisplay index="0" value="WarpInLiberty@WarpGateTrain,Train10"/>
         <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train11"/>

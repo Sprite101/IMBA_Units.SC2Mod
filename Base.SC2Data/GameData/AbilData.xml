@@ -269,6 +269,29 @@
         <CursorEffect value="MassRecallNexusLotV@SearchArea"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MassRecallNexusLotV"/>
     </CAbilEffectTarget>
+    <CAbilEffectInstant id="PhotonOverchargeSwarm@Cancel">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <Effect index="0" value="PhotonOverchargeSwarm@RB"/>
+        <CastIntroTime value="2"/>
+        <ShowProgressArray index="Cast" value="1"/>
+        <ProgressButtonArray index="Cast" value="ExitPurifyMode"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Cancel" Requirements="PhotonOverchargeSwarm@HasPhotonOvercharge"/>
+    </CAbilEffectInstant>
+    <CAbilEffectTarget id="PhotonOverchargeSwarm">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <Effect index="0" value="PhotonOverchargeSwarm@AB"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="100"/>
+        </Cost>
+        <TargetFilters value="-;Ally,Neutral,Enemy"/>
+        <Range value="10"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <DefaultError value="CantTargetThatUnit"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PhotonOverchargeSwarm"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="OracleSwarm@Revelation">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Effect index="0" value="OracleSwarm@RevelationSearchArea"/>
@@ -357,6 +380,21 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilEffectTarget id="TimeWarpLotV1">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="TimeWarpLotV1@PreCP"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Cooldown TimeUse="84"/>
+        </Cost>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <CursorEffect value="TimeWarpLotV1@SearchArea"/>
+        <AINotifyEffect value="TemporalFieldCreatePersistent"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TimeWarpLotV1"/>
+    </CAbilEffectTarget>
     <CAbilWarpTrain id="WarpInLiberty@WarpGateTrain">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <InfoArray index="Train1" Time="5" Unit="Zealot">
@@ -1816,4 +1854,14 @@
         <ProgressButtonArray index="Prep" value="YamatoGun"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="YamatoGun" Requirements="UseBattlecruiserSpecializations"/>
     </CAbilEffectTarget>
+    <CAbilAttack id="PhotonOverchargeSwarm@BuildingAttack">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <TargetMessage value="Abil/TargetMessage/attack"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AttackBuilding" Requirements="PhotonOverchargeSwarm@HasPhotonOvercharge"/>
+        <MinAttackSpeedMultiplier value="0.25"/>
+        <MaxAttackSpeedMultiplier value="128"/>
+    </CAbilAttack>
+    <CAbilStop id="PhotonOverchargeSwarm@BuildingStop">
+        <CmdButtonArray index="Stop" Requirements="PhotonOverchargeSwarm@HasPhotonOvercharge"/>
+    </CAbilStop>
 </Catalog>

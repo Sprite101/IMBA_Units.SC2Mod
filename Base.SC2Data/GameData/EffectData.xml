@@ -214,6 +214,30 @@
         <AreaArray Radius="0.15" Effect="InfernalFlamethrowerWoL@Damage"/>
         <SearchFlags index="CallForHelp" value="1"/>
     </CEffectEnumArea>
+    <CEffectDamage id="PhotonOverchargeSwarm@WeaponDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <Kind value="Ranged"/>
+        <Amount value="20"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="PhotonOverchargeSwarm@WeaponLM">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="PhotonOverchargeSwarm@WeaponDamage"/>
+        <AmmoUnit value="PhotonOverchargeSwarm@WeaponMissile"/>
+        <Movers Link="MothershipCoreWeaponWeaponClose" IfRangeLTE="4"/>
+        <Movers Link="MothershipCoreWeaponWeapon" IfRangeLTE="20"/>
+    </CEffectLaunchMissile>
+    <CEffectRemoveBehavior id="PhotonOverchargeSwarm@RB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="PhotonOverchargeSwarm"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="PhotonOverchargeSwarm@AB">
+        <ValidatorArray index="0" value="IsNexus"/>
+        <ValidatorArray value="IsNotConstructing"/>
+        <EditorCategories value=""/>
+        <Marker Link="Effect/MothershipCorePurifyNexusApply"/>
+        <Behavior value="PhotonOverchargeSwarm"/>
+    </CEffectApplyBehavior>
     <CEffectApplyBehavior id="OracleSwarm@RevelationAB">
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="OracleSwarm@Revelation"/>
@@ -236,7 +260,7 @@
     </CEffectCreatePersistent>
     <CEffectEnumArea id="OracleSwarm@TimeWarpSearchArea">
         <EditorCategories value="Race:Protoss"/>
-        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden"/>
+        <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden"/>
         <AreaArray Radius="3.5" Effect="OracleSwarm@TimeWarpAB"/>
     </CEffectEnumArea>
     <CEffectModifyUnit id="EnergyRechargeLotV@MU">
@@ -2218,6 +2242,47 @@
         <ImpactEffect value="TempestSwarm@AAWeaponDamage"/>
         <AmmoUnit value="TempestSwarm@AAWeaponAttackMissile"/>
     </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="TimeWarpLotV1@CP">
+        <EditorCategories value="Race:Protoss"/>
+        <InitialEffect value="TimeWarpLotV1@SearchAreaImpactDummy"/>
+        <PeriodCount value="160"/>
+        <PeriodicEffectArray value="TimeWarpLotV1@SearchArea"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="TimeWarpLotV1@SearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="4" Effect="TimeWarpLotV1@AB"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="TimeWarpLotV1@AB">
+        <ValidatorArray value="NotFrenzied"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="TimeWarpLotV1"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="TimeWarpLotV1@DamageDummy" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Flee" value="0"/>
+        <Kind value="Spell"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="TimeWarpLotV1@PreCP">
+        <EditorCategories value="Race:Protoss"/>
+        <OwningPlayer Value="Caster"/>
+        <InitialEffect value="TimeWarpLotV1@SearchAreaImpactDummy"/>
+        <ExpireDelay value="5"/>
+        <ExpireEffect value="TimeWarpLotV1@CP"/>
+        <PeriodicEffectArray value="TimeWarpLotV1@PreSearchArea"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="TimeWarpLotV1@PreSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="0.5" RadiusBonus="0.0437"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="TimeWarpLotV1@SearchAreaImpactDummy">
+        <EditorCategories value="Race:Protoss"/>
+        <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="4" Effect="TimeWarpLotV1@DamageDummy"/>
+    </CEffectEnumArea>
     <CEffectLaunchMissile id="TyphoonMissilePodLotV2@LMLeft">
         <EditorCategories value="Race:Terran"/>
         <LaunchLocation Value="CasterUnit"/>

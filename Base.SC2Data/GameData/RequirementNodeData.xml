@@ -10,9 +10,13 @@
         <Link value="RapidDeploymentLotV@Research"/>
     </CRequirementAllowAbil>
     <CRequirementAllowAbil id="AllowAbilResonatingGlaivesLotV@Research0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Link value="ResonatingGlaivesLotV@Research"/>
     </CRequirementAllowAbil>
+    <CRequirementAnd id="AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="CountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit"/>
+        <OperandArray value="1"/>
+    </CRequirementAnd>
     <CRequirementAnd id="AndEq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1">
         <OperandArray value="Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1"/>
     </CRequirementAnd>
@@ -39,6 +43,11 @@
     <CRequirementCountBehavior id="CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CycloneLockOnLotV2@LockOnCaster" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="PhotonOverchargeSwarm" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorPsionicTransferLotV@CasterCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
@@ -278,7 +287,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeResonatingGlaivesLotVQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ResonatingGlaivesLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementEq id="Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1">
@@ -397,7 +405,6 @@
         <OperandArray index="0" value="CountUpgradeReaperSwarm@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeResonatingGlaivesLotVQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeResonatingGlaivesLotVQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementOr id="OrCountBehaviorLockOnDisableAttackCompleteOnlyAtUnitCountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnitCountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit">

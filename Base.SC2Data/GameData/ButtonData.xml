@@ -5,6 +5,12 @@
         <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="PhotonOverchargeSwarm">
+        <Icon value="Assets\Textures\BTN-Ability-Protoss-Purify.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-Purify.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HidesForSimpleText value="0"/>
+    </CButton>
     <CButton id="ResonatingGlaivesLotV@Passive">
         <Icon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives-orange.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives-orange.dds"/>
@@ -188,6 +194,11 @@
     <CButton id="FluxVanesLotV">
         <Icon value="Assets\Textures\BTN-Upgrade-Protoss-FluxVanes.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Upgrade-Protoss-FluxVanes.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="TimeWarpLotV1">
+        <Icon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="WarpInLiberty@Pylon">

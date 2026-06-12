@@ -1181,16 +1181,33 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
     </CUnit>
+    <CUnit id="MothershipCore">
+        <AbilArray Link="PhotonOverchargeSwarm"/>
+        <AbilArray Link="OracleSwarm@TimeWarp"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="PhotonOverchargeSwarm" Type="AbilCmd" AbilCmd="PhotonOverchargeSwarm,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="OracleSwarm@TimeWarp" Type="AbilCmd" AbilCmd="OracleSwarm@TimeWarp,Execute" Row="1" Column="3"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="PhotonOverchargeSwarm@WeaponMissile" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="MothershipCoreWeaponWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
     <CUnit id="Nexus">
         <AbilArray Link="ChronoBoostLotV"/>
         <AbilArray Link="BatteryOverchargeLotV"/>
         <AbilArray Link="EnergyRechargeLotV"/>
         <AbilArray Link="MassRecallNexusLotV"/>
+        <AbilArray Link="PhotonOverchargeSwarm@BuildingAttack"/>
+        <AbilArray Link="PhotonOverchargeSwarm@BuildingStop"/>
         <CardLayouts index="0">
             <LayoutButtons Face="ChronoBoostLotV" Type="AbilCmd" AbilCmd="ChronoBoostLotV,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="MassRecallNexusLotV" Type="AbilCmd" AbilCmd="MassRecallNexusLotV,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="BatteryOverchargeLotV" Type="AbilCmd" AbilCmd="BatteryOverchargeLotV,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="EnergyRechargeLotV" Type="AbilCmd" AbilCmd="EnergyRechargeLotV,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="AttackBuildingPFort" Type="AbilCmd" AbilCmd="PhotonOverchargeSwarm@BuildingAttack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="PhotonOverchargeSwarm@BuildingStop,Stop" Row="0" Column="3"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="ObserverLotV2">

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUpgrade id="MothershipCoreSwarm@Upgrade">
+        <EffectArray Operation="Set" Reference="Unit,MothershipCore,Sight" Value="14"/>
+        <EditorCategories value="UpgradeType:Talents"/>
+    </CUpgrade>
     <CUpgrade id="ResonatingGlaivesLotV">
         <Icon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives.dds"/>
         <ScoreAmount value="200"/>
