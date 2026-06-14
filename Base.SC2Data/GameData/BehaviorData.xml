@@ -65,6 +65,29 @@
             <RateMultiplierArray index="Creep" value="2"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="CloakFieldEffect">
+        <DisableValidatorArray index="0" value="ModifiedAbility@NotMothershipCombine"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CloakFieldWoL@Effect">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="ModifiedAbility@NotMothershipCombine"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.5417"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CloakFieldWoL">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\BTN-Ability-Protoss-CloakField.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <BuffFlags index="DisableWhileUnderConstruction" value="1"/>
+        <Period value="0.2"/>
+        <PeriodicEffect value="CloakFieldWoL@SearchArea"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="OracleSwarm@Revelation">
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-status-detector.dds"/>
@@ -198,6 +221,15 @@
         <Duration value="60"/>
         <Modification>
             <WeaponArray Link="PhotonOverchargeSwarm@Weapon" Turret="Nexus"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="PhotonOverchargeLotV1">
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-purify.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="15"/>
+        <Modification>
+            <WeaponArray Link="PhotonOverchargeLotV1@Weapon"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="StasisWardLotV1@ActivateCaster">
@@ -485,6 +517,101 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Duration value="0.125"/>
         <Modification MoveSpeedMultiplier="0.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="VortexWoL@EventHorizon">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-blackhole.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="0.125"/>
+        <Modification>
+            <ModifyFlags index="Warpable" value="1"/>
+        </Modification>
+        <Replace value="FarthestDistance"/>
+        <ReplaceLocation Effect="VortexWoL@InitialCP" Value="TargetPoint"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="VortexWoL@DisableOther">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-blackhole.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="0.125"/>
+        <InitialEffect value="VortexWoL@Force"/>
+        <RefreshEffect value="VortexWoL@Force"/>
+        <Modification MoveSpeedMinimum="2">
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="Detected" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stasis" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressCloak" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+            <StateFlags index="SuppressDetection" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
+            <StateFlags index="SuppressLifeRegen" value="1"/>
+            <StateFlags index="SuppressShieldsRegen" value="1"/>
+            <StateFlags index="SuppressEnergyRegen" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
+            <AbilClassEnableArray index="CAbilMorph" value="1"/>
+            <AbilLinkEnableArray value="BroodLordQueue2"/>
+            <AbilLinkEnableArray value="BroodLordHangar"/>
+            <AbilLinkDisableArray value="MorphToOverseer"/>
+            <AbilLinkDisableArray value="MorphToBroodLord"/>
+            <BehaviorClassDisableArray index="CBehaviorPowerSource" value="1"/>
+            <BehaviorLinkEnableArray value="ReaperJump"/>
+            <BehaviorLinkDisableArray value="CloakField"/>
+            <BehaviorLinkDisableArray value="AreaDenialTank"/>
+        </Modification>
+        <Replace value="FarthestDistance"/>
+        <ReplaceLocation Effect="VortexWoL@InitialCP" Value="TargetPoint"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="VortexWoL@DisableEnemy">
+        <Name value="Behavior/Name/VortexBehavior"/>
+        <Tooltip value="Behavior/Tooltip/VortexBehavior"/>
+        <Alignment value="Negative"/>
+        <Cost>
+            <Charge Link="Behavior/VortexBehavior"/>
+            <Cooldown Link="Behavior/VortexBehavior"/>
+        </Cost>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-blackhole.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="0.125"/>
+        <InitialEffect value="VortexWoL@Force"/>
+        <RefreshEffect value="VortexWoL@Force"/>
+        <Modification MoveSpeedMinimum="2">
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="Detected" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stasis" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressCloak" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+            <StateFlags index="SuppressDetection" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
+            <StateFlags index="SuppressLifeRegen" value="1"/>
+            <StateFlags index="SuppressShieldsRegen" value="1"/>
+            <StateFlags index="SuppressEnergyRegen" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
+            <AbilClassEnableArray index="CAbilMorph" value="1"/>
+            <AbilLinkEnableArray value="BroodLordQueue2"/>
+            <AbilLinkEnableArray value="BroodLordHangar"/>
+            <AbilLinkDisableArray value="MorphToOverseer"/>
+            <AbilLinkDisableArray value="MorphToBroodLord"/>
+            <BehaviorClassDisableArray index="CBehaviorPowerSource" value="1"/>
+            <BehaviorLinkEnableArray value="ReaperJump"/>
+            <BehaviorLinkDisableArray value="CloakField"/>
+            <BehaviorLinkDisableArray value="AreaDenialTank"/>
+        </Modification>
+        <DamageResponse>
+            <Cost>
+                <Charge Link="Behavior/VortexBehavior"/>
+                <Cooldown Link="Behavior/VortexBehavior"/>
+            </Cost>
+        </DamageResponse>
+        <Replace value="FarthestDistance"/>
+        <ReplaceLocation Effect="VortexWoL@InitialCP" Value="TargetPoint"/>
     </CBehaviorBuff>
     <CBehaviorPowerSource id="WarpInLiberty@PrismPowerSource">
         <InfoFlags index="Hidden" value="1"/>

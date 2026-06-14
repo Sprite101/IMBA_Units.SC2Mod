@@ -269,13 +269,111 @@
         <CursorEffect value="MassRecallNexusLotV@SearchArea"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MassRecallNexusLotV"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="MassRecallWoL">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DataCollection value="MassRecallNexusLotV"/>
+        <Effect index="0" value="MassRecallSearch"/>
+        <Cost>
+            <Vital index="Energy" value="100"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CursorEffect value="MassRecallSearch"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MassRecallWoL"/>
+    </CAbilEffectTarget>
+    <CAbilMorph id="MorphToMothership">
+        <CmdButtonArray index="Execute" Requirements="ModifiedAbility@MothershipRequirements"/>
+    </CAbilMorph>
+    <CAbilMorph id="MothershipWoL@MorphToMothership">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="MothershipWoL@MorphToMothership" Requirements="ModifiedAbility@MothershipRequirements"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="CancelMothershipMorph"/>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="FastBuild" value="1"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnorePlacement" value="0"/>
+        <Flags index="Produce" value="1"/>
+        <Flags index="ShowProgress" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Score="1" Unit="MothershipWoL">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="100"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="100"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Delay" value="100"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="100"/>
+            </SectionArray>
+        </InfoArray>
+        <Alert value="MothershipComplete"/>
+        <ProgressButton value="MorphToMothership"/>
+    </CAbilMorph>
+    <CAbilTrain id="MothershipWoL@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="120">
+            <Button DefaultButtonFace="MothershipWoL" State="Restricted" Requirements="ModifiedAbility@MothershipRequirements"/>
+            <Unit value="MothershipWoL"/>
+        </InfoArray>
+        <Alert value="MothershipComplete"/>
+    </CAbilTrain>
+    <CAbilEffectTarget id="PhotonOverchargeLotV1">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <Effect index="0" value="PhotonOverchargeLotV1@AB"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+        </Cost>
+        <TargetFilters value="-;Ally,Neutral,Enemy"/>
+        <Range value="10"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <DefaultError value="CantTargetThatUnit"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PhotonOverchargeLotV1"/>
+    </CAbilEffectTarget>
+    <CAbilResearch id="GraviticDriveLotV@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="80" Upgrade="GraviticDriveLotV">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="GraviticDriveLotV" State="Restricted" Requirements="GraviticDriveLotV@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilTrain id="TempestLotV1@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="60" Effect="WarpInEffect">
+            <Button DefaultButtonFace="TempestLotV1" Requirements="HaveFleetBeacon"/>
+            <Unit value="TempestLotV1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilEffectTarget id="TimeWarpSwarm">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="OracleSwarm@TimeWarpCP"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="75"/>
+        </Cost>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <CursorEffect value="OracleSwarm@TimeWarpSearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TimeWarpSwarm"/>
+    </CAbilEffectTarget>
     <CAbilEffectInstant id="PhotonOverchargeSwarm@Cancel">
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <Effect index="0" value="PhotonOverchargeSwarm@RB"/>
         <CastIntroTime value="2"/>
         <ShowProgressArray index="Cast" value="1"/>
         <ProgressButtonArray index="Cast" value="ExitPurifyMode"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Cancel" Requirements="PhotonOverchargeSwarm@HasPhotonOvercharge"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Cancel" Requirements="PhotonOverchargeSwarm@HavePhotonOvercharge"/>
     </CAbilEffectInstant>
     <CAbilEffectTarget id="PhotonOverchargeSwarm">
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
@@ -386,14 +484,28 @@
         <Flags index="AllowMovement" value="1"/>
         <Flags index="NoDeceleration" value="1"/>
         <Flags index="RequireTargetVision" value="0"/>
-        <Cost>
-            <Cooldown TimeUse="84"/>
-        </Cost>
         <Range value="9"/>
+        <Cost>
+            <Vital index="Energy" value="100"/>
+        </Cost>
         <Arc value="360"/>
         <CursorEffect value="TimeWarpLotV1@SearchArea"/>
         <AINotifyEffect value="TemporalFieldCreatePersistent"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="TimeWarpLotV1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="VortexWoL">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="VortexWoL@InitialCP"/>
+        <Flags index="AbortOnAllianceChange" value="0"/>
+        <Cost>
+            <Vital index="Energy" value="75"/>
+            <Cooldown Link="VortexVortex2VortexVortexWoL"/>
+        </Cost>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <AutoCastFilters value="Visible;Self,Player,Ally"/>
+        <CursorEffect value="VortexWoL@SearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="VortexWoL"/>
     </CAbilEffectTarget>
     <CAbilWarpTrain id="WarpInLiberty@WarpGateTrain">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
@@ -865,6 +977,14 @@
         <InfoArray index="Train1" Time="30" Effect="WarpInEffect15">
             <Button DefaultButtonFace="ObserverLotV1" State="Restricted"/>
             <Unit value="ObserverLotV1"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="WarpPrismLotV1@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="50" Effect="WarpInEffect15">
+            <Button DefaultButtonFace="WarpPrismLotV1" State="Restricted"/>
+            <Unit value="WarpPrismLotV1"/>
         </InfoArray>
     </CAbilTrain>
     <CAbilResearch id="GraviticBoostersLotV1">
@@ -1857,11 +1977,11 @@
     <CAbilAttack id="PhotonOverchargeSwarm@BuildingAttack">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <TargetMessage value="Abil/TargetMessage/attack"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AttackBuilding" Requirements="PhotonOverchargeSwarm@HasPhotonOvercharge"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AttackBuilding" Requirements="ModifiedAbility@HavePhotonOverchargeCombined"/>
         <MinAttackSpeedMultiplier value="0.25"/>
         <MaxAttackSpeedMultiplier value="128"/>
     </CAbilAttack>
     <CAbilStop id="PhotonOverchargeSwarm@BuildingStop">
-        <CmdButtonArray index="Stop" Requirements="PhotonOverchargeSwarm@HasPhotonOvercharge"/>
+        <CmdButtonArray index="Stop" Requirements="ModifiedAbility@HavePhotonOverchargeCombined"/>
     </CAbilStop>
 </Catalog>

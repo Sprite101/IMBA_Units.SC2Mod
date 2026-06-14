@@ -5,6 +5,50 @@
         <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="CloakFieldWoL">
+        <Icon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="MassRecallWoL">
+        <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="MothershipWoL@MorphToMothership">
+        <Icon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HidesForSimpleText value="0"/>
+    </CButton>
+    <CButton id="MothershipWoL">
+        <Icon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="GraviticDriveLotV">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-graviticdrive.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-graviticdrive.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="TempestLotV1">
+        <Icon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="TimeWarpSwarm">
+        <Icon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="PhotonOverchargeLotV1">
+        <Icon value="Assets\Textures\BTN-Ability-Protoss-Purify.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-Purify.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HidesForSimpleText value="0"/>
+    </CButton>
     <CButton id="PhotonOverchargeSwarm">
         <Icon value="Assets\Textures\BTN-Ability-Protoss-Purify.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-Purify.dds"/>
@@ -142,8 +186,8 @@
         <HotkeySet value="LiberatorModes"/>
     </CButton>
     <CButton id="MassRecallNexusLotV">
-        <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-massrecall.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-massrecall.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="OracleRevelation2">
@@ -200,6 +244,11 @@
         <Icon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="VortexWoL">
+        <Icon value="Assets\Textures\btn-ability-protoss-blackhole.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <TintRacially value="1"/>
     </CButton>
     <CButton id="WarpInLiberty@Pylon">
         <Icon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
@@ -366,6 +415,11 @@
     <CButton id="TempestSwarm">
         <Icon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="WarpPrismLotV1">
+        <Icon value="Assets\Textures\btn-unit-protoss-warpprism.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-warpprism.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="WarpPrismLotV1@SiegedUnsiege">

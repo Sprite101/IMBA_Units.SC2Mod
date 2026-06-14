@@ -16,6 +16,10 @@
         <Model value="Assets\Effects\Protoss\TimebombAffected\TimeBombAffected.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
+    <CModel id="TimeWarpLotV1@Model" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\TimeWarp\TimeWarp.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
     <CModel id="WarpInLiberty@UnpoweredVisual" parent="UIFeedback">
         <Model value="Assets\UI\Feedback\PylonRadiusUnpowered_X1\PylonRadiusUnpowered_X1.m3"/>
     </CModel>

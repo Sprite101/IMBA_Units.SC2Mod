@@ -16,6 +16,63 @@
     <CValidatorCombine id="CloneBehaviorFilters">
         <CombineArray value="MULEWoL@NotWorkerMULE"/>
     </CValidatorCombine>
+    <CValidatorCombine id="IsVortexed">
+        <CombineArray value="VortexWoL@IsVortexdEnemy"/>
+        <CombineArray value="VortexWoL@IsVortexdOther"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="MothershipWoL@NotMothership">
+        <Value value="MothershipWoL"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="NotVortexd">
+        <CombineArray value="VortexWoL@NotVortexdEnemy"/>
+        <CombineArray value="VortexWoL@NotVortexdOther"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="ModifiedAbility@NotMothershipCombine">
+        <Type value="And"/>
+        <CombineArray value="NotMothership"/>
+        <CombineArray value="MothershipWoL@NotMothership"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="VortexWoL@NotVortexdOther">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Behavior value="VortexWoL@DisableOther"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="VortexWoL@NotVortexdEnemy">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Behavior value="VortexWoL@DisableEnemy"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="VortexWoL@IsVortexdEnemy">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Value value="1"/>
+        <Behavior value="VortexWoL@DisableEnemy"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="VortexWoL@IsVortexdOther">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Value value="1"/>
+        <Behavior value="VortexWoL@DisableOther"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="ModifiedAbility@IsPylon">
+        <CombineArray value="IsPylon"/>
+        <CombineArray value="WarpInLiberty@PylonIsPylon"/>
+    </CValidatorCombine>
+    <CValidatorUnitOrderQueue id="ModifiedAbility@ProbeBuildingPylon">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="ProtossBuild"/>
+        <AbilCmdIndex value="20"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorUnitOrderQueue id="ModifiedAbility@ProbeBuildingShieldBattery">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="ProtossBuild"/>
+        <AbilCmdIndex value="21"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorCombine id="ProbeBuildingCombine">
+        <CombineArray value="ModifiedAbility@ProbeBuildingPylon"/>
+        <CombineArray value="ModifiedAbility@ProbeBuildingShieldBattery"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="WarpInLiberty@PylonIsPylon">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Value value="WarpInLiberty@Pylon"/>
+    </CValidatorUnitType>
     <CValidatorLocationPlacement id="MULEWoL@MULEPlacementCheck">
         <Range value="2"/>
         <Unit value="MULEWoL"/>

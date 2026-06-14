@@ -157,6 +157,20 @@
     <CUnit id="AdeptPhaseShift">
         <AbilArray Link="WarpInLiberty@Warpable"/>
     </CUnit>
+    <CUnit id="ChronoBoostLotV">
+        <Race value="Prot"/>
+        <EditorCategories value="ObjectFamily:Melee,ObjectType:Unit"/>
+    </CUnit>
+    <CUnit id="FleetBeacon">
+        <AbilArray Link="FluxVanesLotV@Research"/>
+        <AbilArray Link="GravitonCatapultLotV1@Research"/>
+        <AbilArray Link="GravitonCatapultLotV2@Research"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="FluxVanesLotV" Type="AbilCmd" AbilCmd="FluxVanesLotV@Research,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="GravitonCatapultLotV1" Type="AbilCmd" AbilCmd="GravitonCatapultLotV1@Research,Research1" Row="1" Column="0"/>
+            <LayoutButtons Face="GravitonCatapultLotV2" Type="AbilCmd" AbilCmd="GravitonCatapultLotV2@Research,Research1" Row="1" Column="0"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="GlaiveCannonLotV2@Missile" parent="MISSILE">
         <Race value="Prot"/>
         <Mover value="AdeptWeapon"/>
@@ -1181,13 +1195,105 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
     </CUnit>
+    <CUnit id="MothershipWoL">
+        <DeathRevealRadius value="3"/>
+        <Facing value="45"/>
+        <Race value="Prot"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <DefaultAcquireLevel value="Passive"/>
+        <Response value="Nothing"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <LifeArmor value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossBuildingPlating"/>
+        <EnergyStart value="50"/>
+        <EnergyMax value="200"/>
+        <EnergyRegenRate value="0.5625"/>
+        <ShieldsStart value="400"/>
+        <ShieldsMax value="400"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Speed value="1.6054"/>
+        <Acceleration value="1.3125"/>
+        <LateralAcceleration value="2.0625"/>
+        <Sight value="14"/>
+        <Height value="3.75"/>
+        <VisionHeight value="15"/>
+        <Food value="-6"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="400"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="50"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="VortexWoL"/>
+        <AbilArray Link="MassRecallWoL"/>
+        <BehaviorArray Link="CloakFieldWoL"/>
+        <WeaponArray Link="MothershipWoL@Weapon" Turret="FreeRotate"/>
+        <WeaponArray Turret="MothershipRotate"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="VortexWoL" Type="AbilCmd" AbilCmd="VortexWoL,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="MassRecallWoL" Type="AbilCmd" AbilCmd="MassRecallWoL,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="CloakFieldWoL" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.375"/>
+        <SeparationRadius value="1.375"/>
+        <ScoreMake value="600"/>
+        <ScoreKill value="600"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="96"/>
+        <MinimapRadius value="1.375"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkMothership"/>
+        <AIEvalFactor value="0.8"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="190"/>
+        <GlossaryWeakArray value="VikingFighter"/>
+        <GlossaryWeakArray value="Corruptor"/>
+        <GlossaryWeakArray value="Tempest"/>
+        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
+        <AlliedPushPriority value="1"/>
+    </CUnit>
     <CUnit id="MothershipCore">
         <AbilArray Link="PhotonOverchargeSwarm"/>
-        <AbilArray Link="OracleSwarm@TimeWarp"/>
+        <AbilArray Link="TimeWarpSwarm"/>
+        <AbilArray Link="TimeWarpLotV1"/>
+        <AbilArray Link="PhotonOverchargeLotV1"/>
+        <AbilArray Link="MothershipWoL@MorphToMothership"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="PhotonOverchargeSwarm" Type="AbilCmd" AbilCmd="PhotonOverchargeSwarm,Execute" Row="1" Column="1"/>
-            <LayoutButtons Face="OracleSwarm@TimeWarp" Type="AbilCmd" AbilCmd="OracleSwarm@TimeWarp,Execute" Row="1" Column="3"/>
+            <LayoutButtons index="5" Face="PhotonOverchargeSwarm" AbilCmd="PhotonOverchargeSwarm,Execute"/>
+            <LayoutButtons index="8" Face="MorphToMothership" AbilCmd="MorphToMothership,Execute" Row="1" Column="0"/>
+            <LayoutButtons index="9" Face="PhotonOverchargeLotV1" AbilCmd="PhotonOverchargeLotV1,Execute" Row="2"/>
+            <LayoutButtons index="10" Face="CancelUpgradeMorph" AbilCmd="MothershipWoL@MorphToMothership,Cancel"/>
+            <LayoutButtons index="11" Face="TimeWarpSwarm" AbilCmd="TimeWarpSwarm,Execute"/>
+            <LayoutButtons Face="MothershipWoL@MorphToMothership" Type="AbilCmd" AbilCmd="MothershipWoL@MorphToMothership,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="TimeWarpLotV1" Type="AbilCmd" AbilCmd="TimeWarpLotV1,Execute" Row="2" Column="2"/>
         </CardLayouts>
+    </CUnit>
+    <CUnit id="PhotonOverchargeLotV1@WeaponMissile" parent="MISSILE">
+        <Race value="Prot"/>
+        <Mover value="MothershipCoreWeaponWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
     </CUnit>
     <CUnit id="PhotonOverchargeSwarm@WeaponMissile" parent="MISSILE">
         <Race value="Prot"/>
@@ -1195,14 +1301,23 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
     </CUnit>
     <CUnit id="Nexus">
-        <AbilArray Link="ChronoBoostLotV"/>
+        <AbilArray index="5" Link="NexusInvulnerability"/>
+        <AbilArray index="6" Link="NexusTrainMothership"/>
+        <AbilArray index="7" Link="NexusMassRecall"/>
+        <AbilArray index="8" Link="EnergyRecharge"/>
+        <AbilArray index="10" Link="ChronoBoostLotV"/>
         <AbilArray Link="BatteryOverchargeLotV"/>
         <AbilArray Link="EnergyRechargeLotV"/>
         <AbilArray Link="MassRecallNexusLotV"/>
         <AbilArray Link="PhotonOverchargeSwarm@BuildingAttack"/>
         <AbilArray Link="PhotonOverchargeSwarm@BuildingStop"/>
+        <AbilArray Link="MothershipWoL@Build"/>
+        <AbilArray Link="NexusTrainMothershipCore"/>
         <CardLayouts index="0">
+            <LayoutButtons index="5" Face="MothershipCore" AbilCmd="NexusTrainMothershipCore,Train1"/>
             <LayoutButtons Face="ChronoBoostLotV" Type="AbilCmd" AbilCmd="ChronoBoostLotV,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Mothership" Type="AbilCmd" AbilCmd="NexusTrainMothership,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="MothershipWoL" Type="AbilCmd" AbilCmd="MothershipWoL@Build,Train1" Row="0" Column="1"/>
             <LayoutButtons Face="MassRecallNexusLotV" Type="AbilCmd" AbilCmd="MassRecallNexusLotV,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="BatteryOverchargeLotV" Type="AbilCmd" AbilCmd="BatteryOverchargeLotV,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="EnergyRechargeLotV" Type="AbilCmd" AbilCmd="EnergyRechargeLotV,Execute" Row="2" Column="2"/>
@@ -1672,6 +1787,44 @@
     <CUnit id="PlanetaryFortress">
         <LifeArmor value="3"/>
     </CUnit>
+    <CUnit id="Pylon">
+        <AbilArray index="1" Link="PhotonOverchargeSwarm@BuildingAttack"/>
+        <AbilArray Link="PhotonOverchargeSwarm@BuildingStop"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="PhotonOverchargeSwarm@BuildingStop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="AttackBuildingPFort" Type="AbilCmd" AbilCmd="PhotonOverchargeSwarm@BuildingAttack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="RoboticsBay">
+        <AbilArray Link="GraviticBoostersLotV1"/>
+        <AbilArray Link="GraviticBoostersLotV2"/>
+        <AbilArray Link="ExtendedThermalLanceLiberty@Research"/>
+        <AbilArray Link="GraviticDriveLotV@Research"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="ExtendedThermalLanceLiberty" Type="AbilCmd" AbilCmd="ExtendedThermalLanceLiberty@Research,Research1" Row="0" Column="2"/>
+            <LayoutButtons Face="GraviticBoostersLotV1" Type="AbilCmd" AbilCmd="GraviticBoostersLotV1,Research1" Row="0" Column="0"/>
+            <LayoutButtons Face="GraviticBoostersLotV2" Type="AbilCmd" AbilCmd="GraviticBoostersLotV2,Research1" Row="0" Column="0"/>
+            <LayoutButtons Face="GraviticDriveLotV" Type="AbilCmd" AbilCmd="GraviticDriveLotV@Research,Research1" Row="0" Column="1"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="RoboticsFacility">
+        <AbilArray Link="ObserverLotV1@Build"/>
+        <AbilArray Link="ObserverLotV2@Build"/>
+        <AbilArray Link="ImmortalLiberty@Build"/>
+        <AbilArray Link="ImmortalLotV@Build"/>
+        <AbilArray Link="DisruptorLotV1@Build"/>
+        <AbilArray Link="ColossusLiberty@Build"/>
+        <AbilArray Link="WarpPrismLotV1@Build"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="ColossusLiberty" Type="AbilCmd" AbilCmd="ColossusLiberty@Build,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="ObserverLotV1" Type="AbilCmd" AbilCmd="ObserverLotV1@Build,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="ObserverLotV2" Type="AbilCmd" AbilCmd="ObserverLotV2@Build,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="WarpPrismLotV1" Type="AbilCmd" AbilCmd="WarpPrismLotV1@Build,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="ImmortalLiberty" Type="AbilCmd" AbilCmd="ImmortalLiberty@Build,Train1" Row="0" Column="2"/>
+            <LayoutButtons Face="ImmortalLotV" Type="AbilCmd" AbilCmd="ImmortalLotV@Build,Train1" Row="0" Column="2"/>
+            <LayoutButtons Face="DisruptorLotV1" Type="AbilCmd" AbilCmd="DisruptorLotV1@Build,Train1" Row="0" Column="4"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="Sentry">
         <AbilArray Link="WarpInLiberty@Warpable"/>
     </CUnit>
@@ -1797,7 +1950,7 @@
     <CUnit id="Probe">
         <CardLayouts index="1">
             <LayoutButtons Face="WarpInLiberty@Pylon" Type="AbilCmd" AbilCmd="ProtossBuild,Build19" Row="0" Column="2"/>
-            <LayoutButtons Face="ShieldBattery" Type="AbilCmd" AbilCmd="ProtossBuild,Build20" Row="2" Column="3"/>
+            <LayoutButtons Face="ShieldBattery" Type="AbilCmd" AbilCmd="ProtossBuild,Build20" Row="2" Column="2"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="ReleaseInterceptorsLotV1@Beacon">
@@ -1818,9 +1971,21 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
     </CUnit>
     <CUnit id="Stargate">
+        <AbilArray Link="OracleSwarm@Build"/>
+        <AbilArray Link="OracleLotV1@Build"/>
+        <AbilArray Link="VoidRayLotV@Build"/>
         <AbilArray Link="TempestSwarm@Build"/>
+        <AbilArray Link="TempestLotV1@Build"/>
+        <AbilArray Link="CarrierLotV1@Train"/>
+        <AbilArray Link="CarrierLotV2@Train"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="TempestSwarm" Type="AbilCmd" AbilCmd="TempestSwarm@Build,Train1" Row="1" Column="3"/>
+            <LayoutButtons Face="CarrierLotV1" Type="AbilCmd" AbilCmd="CarrierLotV1@Train,Train1" Row="0" Column="4"/>
+            <LayoutButtons Face="CarrierLotV2" Type="AbilCmd" AbilCmd="CarrierLotV2@Train,Train1" Row="0" Column="4"/>
+            <LayoutButtons Face="VoidRayLotV" Type="AbilCmd" AbilCmd="VoidRayLotV@Build,Train1" Row="0" Column="2"/>
+            <LayoutButtons Face="OracleSwarm" Type="AbilCmd" AbilCmd="OracleSwarm@Build,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="OracleLotV1" Type="AbilCmd" AbilCmd="OracleLotV1@Build,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="TempestSwarm" Type="AbilCmd" AbilCmd="TempestSwarm@Build,Train1" Row="0" Column="3"/>
+            <LayoutButtons Face="TempestLotV1" Type="AbilCmd" AbilCmd="TempestLotV1@Build,Train1" Row="0" Column="3"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="TempestLotV1">
@@ -2102,11 +2267,15 @@
         <CostResource index="Minerals" value="100"/>
         <AttackTargetPriority value="11"/>
         <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="PhotonOverchargeSwarm@BuildingAttack"/>
+        <AbilArray Link="PhotonOverchargeSwarm@BuildingStop"/>
         <BehaviorArray Link="WarpInLiberty@PowerSource"/>
         <TurretArray value="PylonCrystalRotate"/>
         <TurretArray value="PylonRingRotate"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="PhotonOverchargeSwarm@BuildingStop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="AttackBuildingPFort" Type="AbilCmd" AbilCmd="PhotonOverchargeSwarm@BuildingAttack,Execute" Row="0" Column="4"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>

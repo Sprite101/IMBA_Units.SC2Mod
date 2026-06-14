@@ -57,6 +57,22 @@ void libB156CA28_gf_Select_WarpIn (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Charge (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Blink (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Adept (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_HighTemplar (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_ShadowStride (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Observer (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Immortal (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_WarpPrism (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Disruptor (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Colossus (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_VoidRay (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Oracle (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Tempest (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Carrier (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Mothership (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_ChronoBoost (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_Recall (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_BaseDefenceAbility (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_BaseDefenceUnit (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Default (int lp_player);
 
 // Trigger Declarations

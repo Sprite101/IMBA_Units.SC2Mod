@@ -219,9 +219,229 @@
         <Host Subject="_Unit"/>
         <Sound value="Obelisk_TimeWarpLaunch"/>
     </CActorSound>
+    <CActorSplat id="MassRecallWoL@CursorSplat" parent="ProtossCursorSplat" abil="MassRecallWoL"/>
+    <CActorUnit id="Mothership">
+        <On index="71" Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo Mothership"/>
+        <On index="72" Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo Mothership"/>
+        <On index="73" Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo Mothership"/>
+        <On index="74" Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo Mothership"/>
+        <On index="75" Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo Mothership"/>
+        <On index="76" Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo Mothership"/>
+        <On index="77" Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo Mothership"/>
+        <On index="78" Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo Mothership"/>
+        <On index="79" Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo Mothership"/>
+    </CActorUnit>
+    <CActorModel id="MothershipWoL@BuildIndicator" parent="ModelAnimationStyleContinuous">
+        <On Terms="Abil.MothershipWoL@Build.Start" Send="Create"/>
+        <On Terms="Abil.MothershipWoL@Build.Stop" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="MotherShipBeaconLight"/>
+    </CActorModel>
+    <CActorSound id="MothershipWoL@WeaponAttackImpactSound" parent="SoundContinuous">
+        <On Terms="Effect.MothershipWoL@WeaponDamage.Start; EffectExecuteIndex 1" Send="Create"/>
+        <On Terms="Effect.MothershipWoL@WeaponCP.Stop" Send="Destroy"/>
+        <Sound value="Mothership_AttackImpact"/>
+    </CActorSound>
+    <CActorAction id="MothershipWoL@WeaponAttackSecondaryAction" parent="GenericAttackBase">
+        <On Terms="Effect.MothershipWoL@WeaponCPSecondary.Start" Send="Create"/>
+        <On Terms="Effect.MothershipWoL@WeaponDamage.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <!-- Need to delay the attack long enough to be able kill a beam during its death anim, when
+             the target teleports. -->
+        <On Terms="Effect.MothershipWoL@WeaponCP.Stop" Send="Destroy WhenReady"/>
+        <LaunchAttachQuery Methods="AMFilterWeaponSetA0 AMClosest2ToTarget AMPatternMothershipBeam"/>
+        <Beam value="MothershipWoL@WeaponAttackSecondaryBeam"/>
+        <ActionFlags index="AlignedImpactsAndDamages" value="1"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+        <Lifetime value="-1.000000"/>
+    </CActorAction>
+    <CActorBeamSimple id="MothershipWoL@WeaponAttackSecondaryBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <Macros value="ActionTargetTeleportDestroy"/>
+        <On Terms="Effect.MothershipWoL@WeaponCPSecondary.Stop" Send="AnimBracketStop BSD"/>
+        <Model value="MothershipAttackBeam"/>
+    </CActorBeamSimple>
+    <CActorAction id="MothershipWoL@WeaponAttackAction" parent="GenericAttackBase">
+        <On Terms="Effect.MothershipWoL@WeaponCP.Start" Send="Create"/>
+        <On Terms="Effect.MothershipWoL@WeaponDamage.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.MothershipWoL@WeaponCP.Stop" Send="Destroy WhenReady"/>
+        <LaunchAttachQuery Methods="AMFilterWeaponSetA0 AMClosest2ToTarget AMPatternMothershipBeam"/>
+        <LaunchAssets Sound="Mothership_AttackLaunch"/>
+        <Beam value="MothershipWoL@WeaponAttackBeam"/>
+        <ActionFlags index="AlignedImpactsAndDamages" value="1"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+        <Lifetime value="-1.000000"/>
+    </CActorAction>
+    <CActorBeamSimple id="MothershipWoL@WeaponAttackBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <Macros value="ActionTargetTeleportDestroy"/>
+        <On Terms="Effect.MothershipWoL@WeaponCP.Stop" Send="AnimBracketStop BSD"/>
+        <Model value="MothershipAttackBeam"/>
+    </CActorBeamSimple>
+    <CActorUnit id="MothershipWoL" parent="GenericUnitBase" unitName="MothershipWoL">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="Abil.VortexWoL.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.MassRecallWoL.SourceCastStart" Send="$Spell"/>
+        <On Terms="UnitBirth.MothershipWoL.Normal" Send="Create MothershipTeleportOut"/>
+        <On Terms="UnitBirth.MothershipWoL.Normal" Send="SetScale 0.100000"/>
+        <On Terms="UnitBirth.MothershipWoL.Normal" Send="SetScale 1.000000 0.400000"/>
+        <On Terms="Effect.MassRecallNexusLotV@RecallTeleport.Start" Send="CombatRevealClearTimers"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Mothership_Land"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo MothershipWoL" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo MothershipWoL" Send="SetScale 0.010000"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo MothershipWoL" Send="SetScale 1.000000 0.500000"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo MothershipWoL" Send="Create MothershipCoreTeleportIn"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo MothershipWoL" Send="Create MothershipCore_UpgradeToMothershipEnd"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo MothershipWoL" Send="Create MothershipCore_UpgradeToMothershipEnd2"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo MothershipWoL" Send="Create MothershipCore_UpgradeToMothershipEnd3"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom MothershipCore; MorphTo MothershipWoL" Send="Create MothershipCore_UpgradeToMothershipEndHit"/>
+        <On Terms="Abil.MothershipCoreTeleport.SourceCastStart" Send="SetScale 0.010000 0.500000"/>
+        <On Terms="Abil.MothershipCoreTeleport.SourceCastStart" Send="Create MothershipCoreTeleportOut"/>
+        <On Terms="Abil.MothershipCoreTeleport.SourceFinishStart" Send="Create MothershipCoreTeleportIn"/>
+        <On Terms="Abil.MothershipCoreTeleport.SourceCastStart" Send="TimerSet 0.500000 ShrinkDelay"/>
+        <On Terms="TimerExpired; TimerName ShrinkDelay" Target="::Main" Send="SetScale 1.000000 0.500000"/>
+        <Model value="Mothership"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <Baselines index="Walk" AnimProps="Walk,01"/>
+        <BuildModel value="MothershipTeleportIn"/>
+        <DeathArray index="Normal" ModelLink="MothershipDeath" SoundLink="Mothership_Explode_Start"/>
+        <DeathCustoms>
+            <ActorModel value="MothershipDeathRagdoll"/>
+            <ModelLink value="MothershipDeathRagdoll"/>
+            <Name value="RagdollBasic"/>
+            <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+            <BodySquibs Name="BasicHeavy" Model="ProtossLargeRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="FireHeavy"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="FireHeavy"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionFlier"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <PlacementModel value="Mothership"/>
+        <PortraitModel value="MothershipPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMassive3"/>
+        </TerrainSquibs>
+        <AbilSoundArray AbilCmd="Vortex,Execute" Sound="Mothership_VortexVO"/>
+        <AbilSoundArray AbilCmd="WormholeTransit,Execute" Sound="Mothership_WormholeTransitVO"/>
+        <BarOffset value="180"/>
+        <BarWidth value="216"/>
+        <GlossaryAnim value="GLstand"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Mothership.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <NameOffset value="130"/>
+        <SelectAbilCmd value="Vortex,Execute"/>
+        <SoundArray index="Birth" value="Mothership_Birth"/>
+        <SoundArray index="Ready" value="Mothership_Ready"/>
+        <SoundArray index="Help" value="Mothership_Help"/>
+        <SoundArray index="What" value="Mothership_What"/>
+        <SoundArray index="Yes" value="Mothership_Yes"/>
+        <SoundArray index="Attack" value="Mothership_Attack"/>
+        <SoundArray index="Pissed" value="Mothership_Pissed"/>
+        <SoundArray index="Movement" value="Mothership_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Mothership.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Mothership-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Mothership-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Mothership-Shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
     <CActorUnit id="MothershipCore">
         <On Terms="Abil.PhotonOverchargeSwarm.SourceCastStart" Send="AnimPlay Activate Stand,Work,End"/>
+        <On Terms="Abil.PhotonOverchargeLotV1.SourceCastStart" Send="AnimPlay Activate Stand,Work,End"/>
+        <On Terms="Abil.MothershipWoL@MorphToMothership.Start" Send="Create MothershipCoreMorphAddition"/>
+        <On Terms="Abil.MothershipWoL@MorphToMothership.Start" Send="Create MothershipCore_UpgradeToMothershipStart"/>
+        <On Terms="Abil.MothershipWoL@MorphToMothership.Start" Send="Create MothershipCore_UpgradeToMothershipStart2"/>
+        <On Terms="Abil.MothershipWoL@MorphToMothership.Start" Send="Create MothershipCore_UpgradeToMothershipStart3"/>
+        <On Terms="Abil.MothershipWoL@MorphToMothership.Start" Send="Create MothershipCore_UpgradeToMothershipStart4"/>
     </CActorUnit>
+    <CActorSound id="CloakFieldWoL@EffectOnSould" parent="SoundOneShot">
+        <Terms value="ValidateUnit NotWorkerAndNotCloaked"/>
+        <On Terms="Behavior.CloakFieldWoL@Effect.On" Send="Create"/>
+        <Sound value="Mothership_CloakFieldOn"/>
+    </CActorSound>
+    <CActorSound id="CloakFieldWoL@EffectOffSound" parent="SoundOneShot">
+        <Terms value="ValidateUnit NotWorkerAndNotCloakedAndNotDead"/>
+        <On Terms="Behavior.CloakFieldWoL@Effect.Off" Send="Create"/>
+        <Sound value="Mothership_CloakFieldOff"/>
+    </CActorSound>
+    <CActorAction id="PhotonOverchargeLotV1@WeaponAttackAction" parent="GenericAttack" effectImpact="PhotonOverchargeLotV1@WeaponDamage" effectLaunch="PhotonOverchargeLotV1@WeaponLM">
+        <LaunchSiteOps Ops="SOpForwardTargetPoint SOp2DRotation SOpAttachOverhead"/>
+        <LaunchAttachQuery Methods="TurretZ"/>
+        <LaunchAssets Sound="PhotonCannon_AttackLaunch"/>
+        <Missile value="PhotonOverchargeLotV1@WeaponAttackMissile"/>
+        <ImpactMap index="None" Model="MothershipCoreWeaponAttackImpact" Sound="PhotonCannon_AttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="PurifyImpact" MatchKeys="Basic" Physics="MothershipCoreAttackForce"/>
+    </CActorAction>
+    <CActorMissile id="PhotonOverchargeLotV1@WeaponAttackMissile" parent="GenericAttackMissile" unitName="PhotonOverchargeLotV1@WeaponMissile">
+        <On Terms="UnitBirth" Send="AnimSetTimeScaleAbsolute Lifetime 1.000000"/>
+        <Model value="MothershipCoreWeaponWeapon"/>
+    </CActorMissile>
+    <CActorModel id="PhotonOverchargeLotV1@Model" parent="ModelAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <On Terms="Behavior.PhotonOverchargeLotV1.On" Send="Create"/>
+        <On Terms="Behavior.PhotonOverchargeLotV1.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Model value="MothershipCorePurifyLight"/>
+    </CActorModel>
+    <CActorRange id="PhotonOverchargeLotV1@Range">
+        <EditorCategories value=""/>
+        <On Terms="Abil.PhotonOverchargeLotV1.TargetOn" Send="Create"/>
+        <On Terms="Abil.PhotonOverchargeLotV1.TargetOff" Send="Destroy"/>
+        <Abil Link="PhotonOverchargeLotV1"/>
+        <Icon value="Assets\Textures\radaricon2.dds"/>
+    </CActorRange>
+    <CActorRange id="PhotonOverchargeLotV1@WeaponRange">
+        <Inherits index="Visibility" value="0"/>
+        <FogVisibility value="Visible"/>
+        <On Terms="Behavior.PhotonOverchargeLotV1.On" Send="Create"/>
+        <On Terms="Behavior.PhotonOverchargeLotV1.Off" Send="Destroy"/>
+        <Weapon value="PhotonOverchargeLotV1@Weapon"/>
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorSound id="PhotonOverchargeLotV1@CastSound" parent="SoundOneShot">
+        <On Terms="Behavior.PhotonOverchargeLotV1.On" Send="Create"/>
+        <Sound value="Mothership_PhotonOverchargeActivate"/>
+    </CActorSound>
+    <CActorBeamSimple id="ShieldBatteryRechargeEx5@Beam">
+        <On Terms="ActorCreation; ValidateUnit BatteryOverchargeLotV@CasterHasBatteryOverchargeBehavior" Send="SetTintColor 0,255,108 0.000000 OneShot Overcharge"/>
+        <On Terms="Behavior.BatteryOverchargeLotV.On" Send="SetTintColor 0,255,108 0.000000 OneShot Overcharge"/>
+        <On Terms="Behavior.BatteryOverchargeLotV.Off" Send="ClearTintColor 0.000000 Overcharge"/>
+        <On Terms="ActorCreation; ValidateUnit BatteryOverchargeLotV@CasterHasBatteryOverchargeBehavior" Send="SetScale 2.000000 0.000000 OverchargeScale"/>
+        <On Terms="Behavior.BatteryOverchargeLotV.On" Send="SetScale 2.000000 0.000000 OverchargeScale"/>
+        <On Terms="Behavior.BatteryOverchargeLotV.Off" Send="ClearScale 0.000000 OverchargeScale"/>
+    </CActorBeamSimple>
+    <CActorRange id="TimeWarpSwarm@Range" parent="RangeAbil" abil="TimeWarpSwarm">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorSplat id="TimeWarpSwarm@CursorSplat" parent="ProtossCursorSplat" abil="TimeWarpSwarm"/>
     <CActorBeamSimple id="TimeWarpLotV1@Beam" parent="BeamSimpleAnimationStyleOneShot">
         <EditorCategories value=""/>
         <Remove Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
@@ -245,6 +465,7 @@
     </CActorAction>
     <CActorMissile id="PhotonOverchargeSwarm@WeaponAttackMissile" parent="GenericAttackMissile" unitName="PhotonOverchargeSwarm@WeaponMissile">
         <On Terms="UnitBirth" Send="AnimSetTimeScaleAbsolute Lifetime 1.000000"/>
+        <Model value="MothershipCoreWeaponWeapon"/>
     </CActorMissile>
     <CActorModel id="PhotonOverchargeSwarm@Model" parent="ModelAnimationStyleContinuous">
         <Inherits index="CloakEffect" value="1"/>
@@ -270,7 +491,7 @@
         <FogVisibility value="Visible"/>
         <On Terms="Behavior.PhotonOverchargeSwarm.On" Send="Create"/>
         <On Terms="Behavior.PhotonOverchargeSwarm.Off" Send="Destroy"/>
-        <Weapon value="MothershipCoreWeapon"/>
+        <Weapon value="PhotonOverchargeSwarm@Weapon"/>
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
     </CActorRange>
@@ -287,8 +508,6 @@
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
         <HostSiteOps Ops="SOpShadow"/>
-        <Model value="TemporalFieldAfterBubbleModel"/>
-        <Scale value="0.937500"/>
     </CActorModel>
     <CActorSound id="TimeWarpLotV1@EndSound" parent="SoundOneShot">
         <On Terms="Effect.TimeWarpLotV1@PreCP.Stop" Send="Create"/>
@@ -308,19 +527,19 @@
     </CActorSound>
     <CActorSound id="TimeWarpLotV1@LoopSound" parent="SoundContinuous">
         <On Terms="Effect.TimeWarpLotV1@PreCP.Start" Send="Create"/>
-        <On Terms="Effect.TemporalFieldAfterBubbleCreatePersistent.Stop" Send="Destroy"/>
+        <On Terms="Effect.TimeWarpLotV1@CP.Stop" Send="Destroy"/>
         <Sound value="Mothership_TimeWarpLoop"/>
     </CActorSound>
     <CActorSplat id="TimeWarpLotV1@CursorSplat" parent="ProtossCursorSplat" abil="TimeWarpLotV1"/>
     <CActorModel id="TimeWarpLotV1@PreModel">
         <Macros value="GlobalLoopMacro"/>
         <On Terms="Effect.TimeWarpLotV1@PreCP.Start" Send="Create"/>
-        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth {} {} 0 5.000000 AsDuration"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth"/>
         <On Terms="Effect.TimeWarpLotV1@PreCP.Stop" Send="Destroy"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
         <HostSiteOps Ops="SOpShadow"/>
-        <Model value="TemporalFieldGrowingBubbleModel"/>
+        <Model value="TimeWarpLotV1@Model"/>
     </CActorModel>
     <CActorModel id="TimeWarpLotV1@ImpactModel" parent="ModelAnimationStyleOneShot">
         <Terms value="Cap 1"/>
@@ -364,7 +583,7 @@
         <On Terms="ActorCreation; ValidateUnit IsSwarmHostBurrowed" Send="SetScale 0.700000"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachOrigin"/>
-        <Model value="TemporalFieldImpactModel"/>
+        <Model value="OracleSwarm@TimeWarpImpactModel"/>
         <AutoScaleFactor value="1.000000"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
@@ -375,6 +594,33 @@
         <Abil Link="TemporalField"/>
         <IconArcLength value="3.250000"/>
     </CActorRange>
+    <CActorSound id="VortexWoL@BirthSound" parent="SoundOneShot">
+        <On Terms="Effect.VortexWoL@CP.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Sound value="Mothership_VortexStart"/>
+    </CActorSound>
+    <CActorSound id="VortexWoL@LoopSound" parent="SoundContinuous">
+        <On Terms="Effect.VortexWoL@CP.Start" Send="Create"/>
+        <On Terms="Effect.VortexWoL@CP.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Sound value="Mothership_VortexLoop"/>
+    </CActorSound>
+    <CActorSound id="VortexWoL@DeathSound" parent="SoundOneShot">
+        <On Terms="Effect.VortexWoL@CP.Stop" Send="Create"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Sound value="Mothership_VortexEnd"/>
+    </CActorSound>
+    <CActorSplat id="VortexWoL@CursorSplat" parent="ProtossCursorSplat" abil="VortexWoL"/>
+    <CActorRange id="VortexWoL@Range" parent="RangeAbil" abil="VortexWoL">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorModel id="VortexWoL@Model" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.VortexWoL@CP.Start" Send="Create"/>
+        <On Terms="Effect.VortexWoL@CP.Stop" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Model value="VortexModel"/>
+    </CActorModel>
     <CActorUnit id="WarpGate">
         <CooldownDisplay index="0" value="WarpInLiberty@WarpGateTrain,Train10"/>
         <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train11"/>
@@ -1533,8 +1779,6 @@
         <On Terms="ActorCreation; ModelName ShieldBatteryPlacement" Send="Create ShieldBatteryRange"/>
         <On Terms="ActorCreation; ModelName ShieldBattery; ModelIsLowQuality" Send="Create ShieldBatteryRange"/>
         <On Terms="ActorDestruction" Target="ShieldBatteryRange" Send="Destroy"/>
-        <On Terms="ActorCreation" Target="::external.NexusShieldBatteryRangeIndicatorHelperList" Send="Signal ShieldBatteryPlacementOn"/>
-        <On Terms="ActorDestruction" Target="::external.NexusShieldBatteryRangeIndicatorHelperList" Send="Signal ShieldBatteryPlacementOff"/>
     </CActorModel>
     <CActorModel id="OracleSwarm@TimeWarpImpactModel" parent="ModelAnimationStyleOneShot">
         <Terms value="Cap 1"/>

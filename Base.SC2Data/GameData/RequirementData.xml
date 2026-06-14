@@ -60,9 +60,24 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeGravitonCatapultLotV2QueuedOrBetter"/>
     </CRequirement>
-    <CRequirement id="PhotonOverchargeSwarm@HasPhotonOvercharge">
+    <CRequirement id="GraviticDriveLotV@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeGraviticDriveQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@MothershipRequirements">
+        <EditorCategories value="Race:Protoss,TechType:Unit"/>
+        <NodeArray index="Use" Link="AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatAnd1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="MothershipCoreRequirements">
+        <NodeArray index="Use" Link="AndEq1042292496CountUnitMothershipCoreQueuedOrBetter0And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0CountUnitCyberneticsCoreCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="PhotonOverchargeSwarm@HavePhotonOvercharge">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@HavePhotonOverchargeCombined">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="OrAndCountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit1AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1"/>
     </CRequirement>
     <CRequirement id="ResonatingGlaivesLotV@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>

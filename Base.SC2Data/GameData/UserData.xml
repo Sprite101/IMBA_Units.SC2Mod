@@ -768,19 +768,472 @@
                 <Field Id="Selection_Title" Index="2"/>
             </Text>
         </Instances>
-        <Instances Id="High Templar"/>
-        <Instances Id="Dark Templar"/>
-        <Instances Id="Observer"/>
-        <Instances Id="Immortal"/>
-        <Instances Id="Warp Prism"/>
-        <Instances Id="Disruptor"/>
-        <Instances Id="Colossus"/>
-        <Instances Id="Void Ray"/>
-        <Instances Id="Oracle"/>
-        <Instances Id="Tempest"/>
-        <Instances Id="Carrier"/>
-        <Instances Id="Chrono Boost"/>
-        <Instances Id="Recall"/>
+        <Instances Id="High Templar">
+            <GameLink GameLink="HighTemplar">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="HighTemplar">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HighTemplar">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\btn-unit-protoss-hightemplar.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/High Templar_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/High Templar_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/High Templar_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/High Templar_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Dark Templar">
+            <GameLink GameLink="DarkTemplar">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="DarkTemplar">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="DarkTemplar">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-darktemplar.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Dark Templar_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Dark Templar_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Dark Templar_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Dark Templar_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Observer">
+            <GameLink GameLink="Observer">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Observer">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="ObserverLotV1">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ObserverLotV2">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-observer.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Observer_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Observer_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Observer_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Observer_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Observer_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Observer_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+        </Instances>
+        <Instances Id="Immortal">
+            <GameLink GameLink="Immortal">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Immortal">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="ImmortalLiberty">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ImmortalLotV">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-immortal.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Immortal_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Immortal_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Immortal_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Immortal_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Immortal_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Immortal_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+        </Instances>
+        <Instances Id="Warp Prism">
+            <GameLink GameLink="WarpPrism">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="WarpPrism">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="WarpPrismLotV1">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-warpprism.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Warp Prism_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Warp Prism_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Warp Prism_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Warp Prism_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Disruptor">
+            <GameLink GameLink="Disruptor">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Disruptor">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="DisruptorLotV1">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-disruptor.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Disruptor_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Disruptor_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Disruptor_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Disruptor_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Colossus">
+            <GameLink GameLink="Colossus">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Colossus">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="ColossusLiberty">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-colossus.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Colossus_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Colossus_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Colossus_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Colossus_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Void Ray">
+            <GameLink GameLink="VoidRay">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="VoidRay">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="VoidRayLotV">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-warpray.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Void Ray_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Void Ray_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Void Ray_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Void Ray_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Oracle">
+            <GameLink GameLink="Oracle">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Oracle">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="OracleSwarm">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="OracleLotV1">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-oracle.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image>
+                <Field Id="Selection_Images" Index="3"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Oracle_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Oracle_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Oracle_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Oracle_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Oracle_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Oracle_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+        </Instances>
+        <Instances Id="Tempest">
+            <GameLink GameLink="Tempest">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Tempest">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="TempestSwarm">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="TempestLotV1">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-tempest.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Tempest_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Tempest_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Tempest_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Tempest_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Tempest_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Tempest_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+        </Instances>
+        <Instances Id="Carrier">
+            <GameLink GameLink="Carrier">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Carrier">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="CarrierLotV1">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="CarrierLotV2">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-carrier.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Carrier_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Carrier_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Carrier_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Carrier_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Carrier_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Carrier_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+        </Instances>
+        <Instances Id="Mothership">
+            <GameLink GameLink="Mothership">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Mothership">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="MothershipWoL">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-protoss-mothership.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Mothership_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Mothership_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Mothership_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Mothership_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Chrono Boost">
+            <GameLink GameLink="Nexus">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="Nexus">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="ChronoBoostLotV">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-ability-protoss-chronoboost.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Chrono Boost_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Chrono Boost_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Chrono Boost_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Chrono Boost_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Recall">
+            <GameLink GameLink="Nexus">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="Nexus">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-ability-protoss-massrecall.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Recall_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Recall_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Recall_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Recall_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
         <Instances Id="Base Defense Ability">
             <GameLink GameLink="Nexus">
                 <Field Id="Info_Unit"/>
@@ -803,6 +1256,9 @@
             <Image Image="Assets\Textures\btn-ability-zeratul-warpprism-transferlink.dds">
                 <Field Id="Selection_Images" Index="2"/>
             </Image>
+            <Image Image="Assets\Textures\btn-command-protoss-buildstructure.dds">
+                <Field Id="Info_Image"/>
+            </Image>
             <Text Text="UserData/IMBA_ProtossUnits/Base Defense Ability_Selection_Title">
                 <Field Id="Selection_Title"/>
             </Text>
@@ -822,6 +1278,43 @@
                 <Field Id="Selection_Expansion_Tip" Index="2"/>
             </Text>
         </Instances>
-        <Instances Id="Base Defense Unit"/>
+        <Instances Id="Base Defense Unit">
+            <GameLink GameLink="ShieldBattery">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="ShieldBatteryLotV">
+                <Field Id="Selection_Units" Index="3"/>
+            </GameLink>
+            <GameLink GameLink="MothershipCore">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="MothershipCore">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-command-protoss-buildadvancedstructure.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="3"/>
+            </Image>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Unit_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Unit_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Unit_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_ProtossUnits/Base Defense Unit_Selection_Title_003">
+                <Field Id="Selection_Title" Index="3"/>
+            </Text>
+        </Instances>
     </CUser>
 </Catalog>

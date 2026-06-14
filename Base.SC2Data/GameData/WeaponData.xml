@@ -106,6 +106,37 @@
         <DamagePoint value="0.125"/>
         <Effect value="LiberatorAGLotV2@WeaponLMSet"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="MothershipWoL@Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="MothershipWoL@WeaponDamage"/>
+        <DisplayAttackCount value="8"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <TeleportResetRange value="0"/>
+        <Arc value="360"/>
+        <Period value="2.21"/>
+        <DamagePoint value="0"/>
+        <Effect value="MothershipWoL@WeaponSet"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="PhotonOverchargeLotV1@Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="PhotonOverchargeLotV1@WeaponDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="7"/>
+        <Range value="7"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <Period value="1.25"/>
+        <Effect value="PhotonOverchargeLotV1@WeaponLM"/>
+        <AllowedMovement value="Slowing"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="PhotonOverchargeSwarm@Weapon">
         <EditorCategories value="Race:Protoss"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>

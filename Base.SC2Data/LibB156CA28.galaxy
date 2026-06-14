@@ -370,6 +370,54 @@ void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_i
         else if (autoA537A4B5_val == 3) {
             libB156CA28_gf_Select_Adept(lp_player, lv_selectionIndex);
         }
+        else if (autoA537A4B5_val == 4) {
+            libB156CA28_gf_Select_HighTemplar(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 5) {
+            libB156CA28_gf_Select_ShadowStride(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 6) {
+            libB156CA28_gf_Select_Observer(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 7) {
+            libB156CA28_gf_Select_Immortal(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 8) {
+            libB156CA28_gf_Select_WarpPrism(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 9) {
+            libB156CA28_gf_Select_Disruptor(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 10) {
+            libB156CA28_gf_Select_Colossus(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 11) {
+            libB156CA28_gf_Select_VoidRay(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 12) {
+            libB156CA28_gf_Select_Oracle(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 13) {
+            libB156CA28_gf_Select_Tempest(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 14) {
+            libB156CA28_gf_Select_Carrier(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 15) {
+            libB156CA28_gf_Select_Mothership(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 16) {
+            libB156CA28_gf_Select_ChronoBoost(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 17) {
+            libB156CA28_gf_Select_Recall(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 18) {
+            libB156CA28_gf_Select_BaseDefenceAbility(lp_player, lv_selectionIndex);
+        }
+        else if (autoA537A4B5_val == 19) {
+            libB156CA28_gf_Select_BaseDefenceUnit(lp_player, lv_selectionIndex);
+        }
         else {
         }
     }
@@ -915,6 +963,300 @@ void libB156CA28_gf_Select_Adept (int lp_player, int lp_selectionIndex) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("AmplifiedShieldingLotV@Research", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_HighTemplar (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "HighTemplarLiberty", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 10), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("KhaydarinAmulet", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("PsiStormHighTemplarLiberty", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "HighTemplarLiberty", true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("KhaydarinAmulet", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("PsiStormHighTemplarLiberty", 0), true);
+        if ((libB156CA28_gv_warpInResults[lp_player] == 0)) {
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 10), true);
+        }
+        else if ((libB156CA28_gv_warpInResults[lp_player] == 1)) {
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 10), false);
+        }
+        TechTreeUnitAllow(lp_player, "HighTemplar", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TemplarArchivesResearch", 4), false);
+    }
+}
+
+void libB156CA28_gf_Select_ShadowStride (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ShadowStrideLotV", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ShadowStrideLotV", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("DarkTemplarBlink", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_Observer (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "ObserverLotV1", false);
+        TechTreeUpgradeAllow(lp_player, "GraviticBoostersLotV1", false);
+        TechTreeUnitAllow(lp_player, "ObserverLotV2", false);
+        TechTreeUpgradeAllow(lp_player, "GraviticBoostersLotV2", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "ObserverLotV1", true);
+        TechTreeUpgradeAllow(lp_player, "GraviticBoostersLotV1", true);
+        TechTreeUnitAllow(lp_player, "Observer", false);
+        TechTreeUpgradeAllow(lp_player, "ObserverGraviticBooster", false);
+        TechTreeUnitAllow(lp_player, "ObserverLotV2", false);
+        TechTreeUpgradeAllow(lp_player, "GraviticBoostersLotV2", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "ObserverLotV2", true);
+        TechTreeUpgradeAllow(lp_player, "GraviticBoostersLotV2", true);
+        TechTreeUnitAllow(lp_player, "ObserverLotV1", false);
+        TechTreeUpgradeAllow(lp_player, "GraviticBoostersLotV1", false);
+        TechTreeUnitAllow(lp_player, "Observer", false);
+        TechTreeUpgradeAllow(lp_player, "ObserverGraviticBooster", false);
+    }
+}
+
+void libB156CA28_gf_Select_Immortal (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "ImmortalLiberty", false);
+        TechTreeUnitAllow(lp_player, "ImmortalLotV", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "ImmortalLiberty", true);
+        TechTreeUnitAllow(lp_player, "ImmortalLotV", false);
+        TechTreeUnitAllow(lp_player, "Immortal", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "ImmortalLotV", true);
+        TechTreeUnitAllow(lp_player, "ImmortalLiberty", false);
+        TechTreeUnitAllow(lp_player, "Immortal", false);
+    }
+}
+
+void libB156CA28_gf_Select_WarpPrism (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "WarpPrismLotV1", false);
+        TechTreeUnitAllow(lp_player, "WarpPrismLotV1@Sieged", false);
+        TechTreeUpgradeAllow(lp_player, "GraviticDriveLotV", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "WarpPrismLotV1", true);
+        TechTreeUnitAllow(lp_player, "WarpPrismLotV1@Sieged", true);
+        TechTreeUpgradeAllow(lp_player, "GraviticDriveLotV", true);
+        TechTreeUnitAllow(lp_player, "WarpPrism", false);
+        TechTreeUnitAllow(lp_player, "WarpPrismPhasing", false);
+        TechTreeUpgradeAllow(lp_player, "GraviticDrive", false);
+    }
+}
+
+void libB156CA28_gf_Select_Disruptor (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "DisruptorLotV1", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "DisruptorLotV1", true);
+        TechTreeUnitAllow(lp_player, "Disruptor", false);
+    }
+}
+
+void libB156CA28_gf_Select_Colossus (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "ColossusLiberty", false);
+        TechTreeUpgradeAllow(lp_player, "ExtendedThermalLanceLiberty", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "ColossusLiberty", true);
+        TechTreeUpgradeAllow(lp_player, "ExtendedThermalLanceLiberty", true);
+        TechTreeUnitAllow(lp_player, "Colossus", false);
+        TechTreeUpgradeAllow(lp_player, "ExtendedThermalLance", false);
+    }
+}
+
+void libB156CA28_gf_Select_VoidRay (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "VoidRayLotV", false);
+        TechTreeUpgradeAllow(lp_player, "FluxVanesLotV", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "VoidRayLotV", true);
+        TechTreeUpgradeAllow(lp_player, "FluxVanesLotV", true);
+        TechTreeUnitAllow(lp_player, "VoidRay", false);
+        TechTreeUpgradeAllow(lp_player, "VoidRaySpeedUpgrade", false);
+    }
+}
+
+void libB156CA28_gf_Select_Oracle (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "OracleSwarm", false);
+        TechTreeUnitAllow(lp_player, "OracleLotV1", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "OracleSwarm", true);
+        TechTreeUnitAllow(lp_player, "Oracle", false);
+        TechTreeUnitAllow(lp_player, "OracleLotV1", false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeUnitAllow(lp_player, "OracleLotV1", true);
+        TechTreeUnitAllow(lp_player, "OracleSwarm", false);
+        TechTreeUnitAllow(lp_player, "Oracle", false);
+    }
+}
+
+void libB156CA28_gf_Select_Tempest (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "TempestSwarm", false);
+        TechTreeUnitAllow(lp_player, "TempestLotV1", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "TempestSwarm", true);
+        TechTreeUnitAllow(lp_player, "Tempest", false);
+        TechTreeUpgradeAllow(lp_player, "TempestGroundAttackUpgrade", false);
+        TechTreeUnitAllow(lp_player, "TempestLotV1", false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeUnitAllow(lp_player, "TempestLotV1", true);
+        TechTreeUnitAllow(lp_player, "TempestSwarm", false);
+        TechTreeUnitAllow(lp_player, "Tempest", false);
+        TechTreeUpgradeAllow(lp_player, "TempestGroundAttackUpgrade", false);
+    }
+}
+
+void libB156CA28_gf_Select_Carrier (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "CarrierLotV1", false);
+        TechTreeUpgradeAllow(lp_player, "GravitonCatapultLotV1", false);
+        TechTreeUnitAllow(lp_player, "CarrierLotV2", false);
+        TechTreeUpgradeAllow(lp_player, "GravitonCatapultLotV2", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "CarrierLotV1", true);
+        TechTreeUpgradeAllow(lp_player, "GravitonCatapultLotV1", true);
+        TechTreeUnitAllow(lp_player, "Carrier", false);
+        TechTreeUnitAllow(lp_player, "CarrierLotV2", false);
+        TechTreeUpgradeAllow(lp_player, "GravitonCatapultLotV2", false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeUnitAllow(lp_player, "CarrierLotV2", true);
+        TechTreeUpgradeAllow(lp_player, "GravitonCatapultLotV2", true);
+        TechTreeUnitAllow(lp_player, "CarrierLotV1", false);
+        TechTreeUpgradeAllow(lp_player, "GravitonCatapultLotV1", false);
+        TechTreeUnitAllow(lp_player, "Carrier", false);
+    }
+}
+
+void libB156CA28_gf_Select_Mothership (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "MothershipWoL", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeUnitAllow(lp_player, "MothershipWoL", true);
+        TechTreeUnitAllow(lp_player, "Mothership", false);
+    }
+}
+
+void libB156CA28_gf_Select_ChronoBoost (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChronoBoostLotV", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChronoBoostLotV", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ChronoBoostEnergyCost", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_Recall (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MassRecallNexusLotV", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MassRecallNexusLotV", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("NexusMassRecall", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_BaseDefenceAbility (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BatteryOverchargeLotV", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("EnergyRechargeLotV", 0), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BatteryOverchargeLotV", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("EnergyRecharge", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("EnergyRechargeLotV", 0), false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("EnergyRechargeLotV", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BatteryOverchargeLotV", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("EnergyRecharge", 0), false);
+    }
+}
+
+void libB156CA28_gf_Select_BaseDefenceUnit (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeUnitAllow(lp_player, "MothershipCore", false);
+        TechTreeUnitAllow(lp_player, "ShieldBatteryLotV", false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("NexusTrainMothershipCore", 0), true);
+        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "MothershipCoreSwarm@Upgrade", 1);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("PhotonOverchargeLotV1", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TimeWarpLotV1", 0), false);
+        TechTreeUnitAllow(lp_player, "ShieldBatteryLotV", false);
+        TechTreeUnitAllow(lp_player, "ShieldBattery", false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("NexusTrainMothershipCore", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("PhotonOverchargeSwarm", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("TimeWarpSwarm", 0), false);
+        TechTreeUnitAllow(lp_player, "ShieldBatteryLotV", false);
+        TechTreeUnitAllow(lp_player, "ShieldBattery", false);
+    }
+    else if ((lp_selectionIndex == 3)) {
+        TechTreeUnitAllow(lp_player, "ShieldBatteryLotV", true);
+        TechTreeUnitAllow(lp_player, "MothershipCore", false);
+        TechTreeUnitAllow(lp_player, "ShieldBattery", false);
     }
 }
 

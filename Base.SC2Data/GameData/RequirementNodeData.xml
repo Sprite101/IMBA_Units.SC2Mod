@@ -12,10 +12,28 @@
     <CRequirementAllowAbil id="AllowAbilResonatingGlaivesLotV@Research0">
         <Link value="ResonatingGlaivesLotV@Research"/>
     </CRequirementAllowAbil>
+    <CRequirementAnd id="And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0">
+        <OperandArray value="EqCountUnitMothershipQueuedOrBetter0"/>
+        <OperandArray value="EqCountUnitMothershipWoLQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit1">
+        <OperandArray value="CountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit"/>
+        <OperandArray value="1"/>
+    </CRequirementAnd>
     <CRequirementAnd id="AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="CountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit"/>
         <OperandArray value="1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatAnd1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq1042292496CountUnitMothershipCoreQueuedOrBetter0And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0CountUnitCyberneticsCoreCompleteOnlyTechTreeCheat">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="Eq1042292496CountUnitMothershipCoreQueuedOrBetter0"/>
+        <OperandArray value="And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0"/>
+        <OperandArray value="CountUnitCyberneticsCoreCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1">
         <OperandArray value="Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1"/>
@@ -44,9 +62,12 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CycloneLockOnLotV2@LockOnCaster" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="PhotonOverchargeLotV1" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="PhotonOverchargeSwarm" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountBehavior id="CountBehaviorPsionicTransferLotV@CasterCompleteOnlyAtUnit">
@@ -71,6 +92,11 @@
     <CRequirementCountUnit id="CountUnitInterceptorLotV2QueuedOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="InterceptorLotV2" State="QueuedOrBetterAtUnit"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitMothershipWoLQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="MothershipWoL" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsCompleteOnly1495348974">
         <Flags index="TechTreeCheat" value="0"/>
@@ -297,6 +323,16 @@
         <OperandArray index="0" value="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
+    <CRequirementEq id="EqCountUnitMothershipQueuedOrBetter0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUnitMothershipQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUnitMothershipWoLQueuedOrBetter0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUnitMothershipWoLQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1QueuedOrBetter0">
         <OperandArray index="0" value="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
@@ -407,6 +443,10 @@
     <CRequirementNot id="NotCountUpgradeResonatingGlaivesLotVQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeResonatingGlaivesLotVQueuedOrBetter"/>
     </CRequirementNot>
+    <CRequirementOr id="OrAndCountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit1AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1">
+        <OperandArray value="AndCountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit1"/>
+        <OperandArray value="AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1"/>
+    </CRequirementOr>
     <CRequirementOr id="OrCountBehaviorLockOnDisableAttackCompleteOnlyAtUnitCountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnitCountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit">
         <OperandArray value="CountBehaviorLockOnDisableAttackCompleteOnlyAtUnit"/>
         <OperandArray value="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit"/>

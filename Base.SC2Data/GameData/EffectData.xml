@@ -7,6 +7,26 @@
         <Amount value="15"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectApplyBehavior id="CloakFieldWoL@AB">
+        <ValidatorArray index="0" value="ModifiedAbility@NotMothershipCombine"/>
+        <ValidatorArray value="NotMothershipCore"/>
+        <ValidatorArray value="IsNotDisruptorPhased"/>
+        <ValidatorArray value="DisruptorLotV1@PhasedIsNotDisruptorPhased"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="CloakFieldWoL@Effect"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="CloakFieldWoL@SearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="-;Self,Neutral,Enemy,Missile,Dead,Hidden"/>
+        <AreaArray Radius="5" Effect="CloakFieldWoL@AB"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="CloakingField">
+        <ValidatorArray index="0" value="ModifiedAbility@NotMothershipCombine"/>
+        <ValidatorArray index="2" value="DisruptorLotV1@PhasedIsNotDisruptorPhased"/>
+        <ValidatorArray value="IsNotDisruptorPhased"/>
+    </CEffectApplyBehavior>
     <CEffectDamage id="GlaiveCannonLotV2@Damage" parent="DU_WEAP">
         <ValidatorArray value="noMarkers"/>
         <EditorCategories value="Race:Protoss"/>
@@ -214,6 +234,60 @@
         <AreaArray Radius="0.15" Effect="InfernalFlamethrowerWoL@Damage"/>
         <SearchFlags index="CallForHelp" value="1"/>
     </CEffectEnumArea>
+    <CEffectCreatePersistent id="MothershipWoL@WeaponCPSecondary">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialDelay value="0.25"/>
+        <InitialEffect value="MothershipBeamDummy"/>
+        <PeriodCount value="4"/>
+        <PeriodicValidator value="MothershipRangeCheckCombine"/>
+        <PeriodicEffectArray value="MothershipWoL@WeaponDamage"/>
+        <PeriodicPeriodArray value="0.375"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="MothershipWoL@WeaponDamage" parent="DU_WEAP_MISSILE">
+        <ValidatorArray value="MothershipRangeCheck"/>
+        <ValidatorArray value="NotHidden"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Visibility value="Visible"/>
+        <Amount value="6"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="MothershipWoL@WeaponCP">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="MothershipBeamDummy"/>
+        <PeriodCount value="4"/>
+        <PeriodicValidator value="CasterNotDead"/>
+        <PeriodicEffectArray value="MothershipWoL@WeaponDamage"/>
+        <PeriodicPeriodArray value="0.375"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="MothershipWoL@WeaponSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="MothershipWoL@WeaponCP"/>
+        <EffectArray value="MothershipWoL@WeaponCPSecondary"/>
+    </CEffectSet>
+    <CEffectDamage id="PhotonOverchargeLotV1@WeaponDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <Kind value="Ranged"/>
+        <Amount value="30"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="PhotonOverchargeLotV1@WeaponLM">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactEffect value="PhotonOverchargeLotV1@WeaponDamage"/>
+        <AmmoUnit value="PhotonOverchargeLotV1@WeaponMissile"/>
+        <Movers Link="MothershipCoreWeaponWeaponClose" IfRangeLTE="4"/>
+        <Movers Link="MothershipCoreWeaponWeapon" IfRangeLTE="20"/>
+    </CEffectLaunchMissile>
+    <CEffectApplyBehavior id="PhotonOverchargeLotV1@AB">
+        <ValidatorArray index="0" value="ModifiedAbility@IsPylon"/>
+        <ValidatorArray value="IsNotConstructing"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="PhotonOverchargeLotV1"/>
+    </CEffectApplyBehavior>
     <CEffectDamage id="PhotonOverchargeSwarm@WeaponDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Ranged"/>
@@ -2268,10 +2342,10 @@
         <EditorCategories value="Race:Protoss"/>
         <OwningPlayer Value="Caster"/>
         <InitialEffect value="TimeWarpLotV1@SearchAreaImpactDummy"/>
-        <ExpireDelay value="5"/>
         <ExpireEffect value="TimeWarpLotV1@CP"/>
         <PeriodicEffectArray value="TimeWarpLotV1@PreSearchArea"/>
         <PeriodicPeriodArray value="0.0625"/>
+        <PeriodCount value="80"/>
     </CEffectCreatePersistent>
     <CEffectEnumArea id="TimeWarpLotV1@PreSearchArea">
         <EditorCategories value="Race:Protoss"/>
@@ -2697,12 +2771,73 @@
         <ImpactUnit Value="Caster"/>
         <ModifyTurret Action="ClearTarget" Turret="CycloneLotV1@LockOnTurret"/>
     </CEffectModifyUnit>
+    <CEffectApplyBehavior id="VortexWoL@EventHorizonAB">
+        <ValidatorArray index="0" value="NoYoink"/>
+        <ValidatorArray value="IsNotMothershipCorePurifyNexus"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="VortexWoL@EventHorizon"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="VortexWoL@EventHorizonSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <SearchFilters value="-;Self,Structure,Missile,Item,Dead,Hidden"/>
+        <AreaArray Radius="3.5" Effect="VortexWoL@EventHorizonAB"/>
+    </CEffectEnumArea>
+    <CEffectApplyForce id="VortexWoL@Force">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Effect="VortexWoL@CP" Value="TargetPoint"/>
+        <Amount value="-0.1"/>
+    </CEffectApplyForce>
+    <CEffectApplyBehavior id="VortexWoL@DisableABOther">
+        <ValidatorArray index="0" value="IsNotWarpingIn"/>
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="VortexWoL@DisableOther"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="VortexWoL@DisableABEnemy">
+        <ValidatorArray index="0" value="IsNotWarpingIn"/>
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="VortexWoL@DisableEnemy"/>
+    </CEffectApplyBehavior>
+    <CEffectSwitch id="VortexWoL@DisableABSwitch">
+        <EditorCategories value="Race:Protoss"/>
+        <CaseArray Validator="TargetIsEnemy" Effect="VortexWoL@DisableABEnemy"/>
+        <CaseDefault value="VortexWoL@DisableABOther"/>
+    </CEffectSwitch>
     <CEffectApplyBehavior id="VortexApplyDisableEnemy">
         <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="VortexApplyDisableOther">
         <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="VortexWoL@EffectSet">
+        <ValidatorArray value="NoYoink"/>
+        <ValidatorArray value="IsNotMothershipCorePurifyNexus"/>
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="VortexKillForceField"/>
+        <EffectArray value="VortexUnburrow"/>
+        <EffectArray value="VortexDummy"/>
+        <EffectArray value="VortexUnsiege"/>
+        <EffectArray value="VortexWoL@DisableABSwitch"/>
+    </CEffectSet>
+    <CEffectEnumArea id="VortexWoL@SearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <SearchFilters value="-;Self,Structure,Missile,Item,Dead,Hidden"/>
+        <AreaArray Radius="3" Effect="VortexWoL@EffectSet"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="VortexWoL@CP">
+        <EditorCategories value="Race:Protoss"/>
+        <PeriodCount value="320"/>
+        <PeriodicEffectArray value="VortexWoL@SearchArea"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="VortexWoL@InitialCP">
+        <EditorCategories value="Race:Protoss"/>
+        <InitialEffect value="VortexWoL@CP"/>
+        <PeriodCount value="336"/>
+        <PeriodicEffectArray value="VortexWoL@EventHorizonSearchArea"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
     <CEffectSet id="WidowMineSwarm@AttackSet">
         <ValidatorArray value="NoMineDroneCountdown"/>
         <ValidatorArray value="NotLarva"/>
