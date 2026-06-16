@@ -11,6 +11,11 @@
         <EditorCategories value="Race:Protoss"/>
         <TintRacially value="1"/>
     </CButton>
+    <CButton id="DisruptorLotV2">
+        <Icon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <AlertIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
     <CButton id="MassRecallWoL">
         <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit.dds"/>
@@ -32,6 +37,10 @@
         <Icon value="Assets\Textures\btn-upgrade-protoss-graviticdrive.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-graviticdrive.dds"/>
         <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="PurificationNovaLotV2">
+        <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
     </CButton>
     <CButton id="TempestLotV1">
         <Icon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>

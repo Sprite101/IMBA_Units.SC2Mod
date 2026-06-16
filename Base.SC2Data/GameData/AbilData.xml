@@ -58,6 +58,95 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilResearch id="ModifiedAbility@CyberneticsCoreResearch">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="160" Upgrade="ModifiedAbility@ProtossAirWeaponsLevel1">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="ProtossAirWeaponsLevel1" State="Restricted" Requirements="ModifiedAbility@LearnProtossAirWeapon1"/>
+        </InfoArray>
+        <InfoArray index="Research2" Time="190" Upgrade="ModifiedAbility@ProtossAirWeaponsLevel2">
+            <Resource index="Minerals" value="175"/>
+            <Resource index="Vespene" value="175"/>
+            <Button DefaultButtonFace="ProtossAirWeaponsLevel2" State="Restricted" Requirements="ModifiedAbility@LearnProtossAirWeapon2"/>
+        </InfoArray>
+        <InfoArray index="Research3" Time="220" Upgrade="ModifiedAbility@ProtossAirWeaponsLevel3">
+            <Resource index="Minerals" value="250"/>
+            <Resource index="Vespene" value="250"/>
+            <Button DefaultButtonFace="ProtossAirWeaponsLevel3" State="Restricted" Requirements="ModifiedAbility@LearnProtossAirWeapon3"/>
+        </InfoArray>
+        <InfoArray index="Research4" Time="160" Upgrade="ModifiedAbility@ProtossAirArmorsLevel1">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="ProtossAirArmorLevel1" State="Restricted" Requirements="ModifiedAbility@LearnProtossAirArmor1"/>
+        </InfoArray>
+        <InfoArray index="Research5" Time="190" Upgrade="ModifiedAbility@ProtossAirArmorsLevel2">
+            <Resource index="Minerals" value="225"/>
+            <Resource index="Vespene" value="225"/>
+            <Button DefaultButtonFace="ProtossAirArmorLevel2" State="Restricted" Requirements="ModifiedAbility@LearnProtossAirArmor2"/>
+        </InfoArray>
+        <InfoArray index="Research6" Time="220" Upgrade="ModifiedAbility@ProtossAirArmorsLevel3">
+            <Resource index="Minerals" value="300"/>
+            <Resource index="Vespene" value="300"/>
+            <Button DefaultButtonFace="ProtossAirArmorLevel3" State="Restricted" Requirements="ModifiedAbility@LearnProtossAirArmor3"/>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilTrain id="DisruptorLotV2@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="50">
+            <Button DefaultButtonFace="DisruptorLotV2" Requirements="HaveRoboticsBay"/>
+            <Unit value="DisruptorLotV2"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilResearch id="ModifiedAbility@ForgeResearch">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="160" Upgrade="ModifiedAbility@ProtossGroundWeaponsLevel1">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="ProtossGroundWeaponsLevel1" State="Restricted" Requirements="ModifiedAbility@LearnProtossGroundWeapon1"/>
+        </InfoArray>
+        <InfoArray index="Research2" Time="190" Upgrade="ModifiedAbility@ProtossGroundWeaponsLevel2">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="ProtossGroundWeaponsLevel2" State="Restricted" Requirements="ModifiedAbility@LearnProtossGroundWeapon2"/>
+        </InfoArray>
+        <InfoArray index="Research3" Time="220" Upgrade="ModifiedAbility@ProtossGroundWeaponsLevel3">
+            <Resource index="Minerals" value="200"/>
+            <Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="ProtossGroundWeaponsLevel3" State="Restricted" Requirements="ModifiedAbility@LearnProtossGroundWeapon3"/>
+        </InfoArray>
+        <InfoArray index="Research4" Time="160" Upgrade="ModifiedAbility@ProtossGroundArmorsLevel1">
+            <Resource index="Minerals" value="100"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="ProtossGroundArmorLevel1" State="Restricted" Requirements="ModifiedAbility@LearnProtossGroundArmor1"/>
+        </InfoArray>
+        <InfoArray index="Research5" Time="190" Upgrade="ModifiedAbility@ProtossGroundArmorsLevel2">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="ProtossGroundArmorLevel2" State="Restricted" Requirements="ModifiedAbility@LearnProtossGroundArmor2"/>
+        </InfoArray>
+        <InfoArray index="Research6" Time="220" Upgrade="ModifiedAbility@ProtossGroundArmorsLevel3">
+            <Resource index="Minerals" value="200"/>
+            <Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="ProtossGroundArmorLevel3" State="Restricted" Requirements="ModifiedAbility@LearnProtossGroundArmor3"/>
+        </InfoArray>
+        <InfoArray index="Research7" Time="160" Upgrade="ModifiedAbility@ProtossShieldsLevel1">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="ProtossShieldsLevel1" State="Restricted" Requirements="ModifiedAbility@LearnProtossShield1"/>
+        </InfoArray>
+        <InfoArray index="Research8" Time="190" Upgrade="ModifiedAbility@ProtossShieldsLevel2">
+            <Resource index="Minerals" value="200"/>
+            <Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="ProtossShieldsLevel2" State="Restricted" Requirements="ModifiedAbility@LearnProtossShield2"/>
+        </InfoArray>
+        <InfoArray index="Research9" Time="220" Upgrade="ModifiedAbility@ProtossShieldsLevel3">
+            <Resource index="Minerals" value="250"/>
+            <Resource index="Vespene" value="250"/>
+            <Button DefaultButtonFace="ProtossShieldsLevel3" State="Restricted" Requirements="ModifiedAbility@LearnProtossShield3"/>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilResearch id="HighCapacityFuelTanksLotV@Research">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Time="80" Upgrade="HighCapacityFuelTanksLotV">
@@ -347,6 +436,22 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilEffectTarget id="PurificationNovaLotV2">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <SharedFlags index="RegisterChargeEvent" value="1"/>
+        <SharedFlags index="RegisterCooldownEvent" value="1"/>
+        <DataCollection value="PurificationNovaLotV1"/>
+        <Effect index="0" value="PurificationNovaLotV2@InitialSet"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Cooldown TimeUse="20"/>
+        </Cost>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PurificationNovaLotV2">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
     <CAbilTrain id="TempestLotV1@Build">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <Activity value="UI/Warping"/>
@@ -1982,6 +2087,7 @@
         <MaxAttackSpeedMultiplier value="128"/>
     </CAbilAttack>
     <CAbilStop id="PhotonOverchargeSwarm@BuildingStop">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <CmdButtonArray index="Stop" Requirements="ModifiedAbility@HavePhotonOverchargeCombined"/>
     </CAbilStop>
 </Catalog>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorCombine id="ModifiedAbility@IsSiegeTankSiegedCombine">
+        <CombineArray value="IsSiegedSiegeTank"/>
+        <CombineArray value="SiegeTankLotV1@IsSiegeTankSieged"/>
+    </CValidatorCombine>
     <CValidatorUnitType id="CarrierLotV2@IsCarrier">
         <Value value="CarrierLotV2"/>
     </CValidatorUnitType>
@@ -16,6 +20,17 @@
     <CValidatorCombine id="CloneBehaviorFilters">
         <CombineArray value="MULEWoL@NotWorkerMULE"/>
     </CValidatorCombine>
+    <CValidatorUnitType id="DisruptorLotV2@PhasedIsNotDisruptorPhased">
+        <Value value="DisruptorLotV2@Phased"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="DisruptorLotV2@IsNotDisruptor">
+        <Value value="DisruptorLotV2"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="SiegeTankLotV1@IsSiegeTankSieged">
+        <Value value="SiegeTankSiegedLotV1"/>
+    </CValidatorUnitType>
     <CValidatorCombine id="IsVortexed">
         <CombineArray value="VortexWoL@IsVortexdEnemy"/>
         <CombineArray value="VortexWoL@IsVortexdOther"/>
@@ -252,6 +267,8 @@
         <CombineArray value="IsNotDisruptorPhased"/>
         <CombineArray value="DisruptorLotV1@IsNotDisruptor"/>
         <CombineArray value="DisruptorLotV1@PhasedIsNotDisruptorPhased"/>
+        <CombineArray value="DisruptorLotV2@IsNotDisruptor"/>
+        <CombineArray value="DisruptorLotV2@PhasedIsNotDisruptorPhased"/>
     </CValidatorCombine>
     <CValidatorPlayerRequirement id="ExtendedThermalLanceLiberty@Upgraded">
         <WhichPlayer Value="Caster"/>

@@ -73,6 +73,7 @@ void libB156CA28_gf_Select_ChronoBoost (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_Recall (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_BaseDefenceAbility (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_BaseDefenceUnit (int lp_player, int lp_selectionIndex);
+void libB156CA28_gf_Select_WeaponArmorShieldsUpgrade (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Default (int lp_player);
 
 // Trigger Declarations

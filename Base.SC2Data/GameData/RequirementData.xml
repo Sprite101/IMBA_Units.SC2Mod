@@ -64,6 +64,76 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeGraviticDriveQueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossAirArmor1">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter0AllowUnitPhoenix"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossAirArmor2">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq4283478838CountUpgradeModifiedAbility@ProtossAirArmorsLevel1CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel2QueuedOrBetter0AllowUnitPhoenix"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossAirArmor3">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq2731442398CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel3QueuedOrBetter0AllowUnitPhoenix"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossAirWeapon1">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel1QueuedOrBetter0AllowUnitPhoenix"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossAirWeapon2">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel2QueuedOrBetter0AllowUnitPhoenix"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossAirWeapon3">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq524089035CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel3QueuedOrBetter0AllowUnitPhoenix"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossGroundArmor1">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@ProtossGroundArmorsLevel1QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossGroundArmor2">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq3569156689CountUpgradeModifiedAbility@ProtossGroundArmorsLevel1CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@ProtossGroundArmorsLevel2QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossGroundArmor3">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq419273267CountUpgradeModifiedAbility@ProtossGroundArmorsLevel2CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@ProtossGroundArmorsLevel3QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossGroundWeapon1">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossGroundWeapon2">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq1740904084CountUpgradeProtossGroundWeaponsLevel1CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeProtossGroundWeaponsLevel2QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossGroundWeapon3">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq629999927CountUpgradeProtossGroundWeaponsLevel2CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeProtossGroundWeaponsLevel3QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossShield1">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@ProtossShieldsLevel1QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossShield2">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq3354561256CountUpgradeModifiedAbility@ProtossShieldsLevel1CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@ProtossShieldsLevel2QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ModifiedAbility@LearnProtossShield3">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq3751249461CountUpgradeModifiedAbility@ProtossShieldsLevel2CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@ProtossShieldsLevel3QueuedOrBetter0"/>
+    </CRequirement>
     <CRequirement id="ModifiedAbility@MothershipRequirements">
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatAnd1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0"/>

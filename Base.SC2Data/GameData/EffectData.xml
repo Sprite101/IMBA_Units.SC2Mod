@@ -732,6 +732,119 @@
         <EffectArray value="OracleSwarm@RevelationAB"/>
         <EffectArray value="OracleSwarm@RevelationCP"/>
     </CEffectSet>
+    <CEffectSet id="PurificationNovaLotV2@EndSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PurificationNovaLotV2@SearchArea"/>
+        <EffectArray value="PurificationNovaLotV2@Kill"/>
+    </CEffectSet>
+    <CEffectDamage id="PurificationNovaLotV2@Kill">
+        <EditorCategories value="Race:Protoss"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Flags index="Kill" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="PurificationNovaLotV2@DetonateSiegeTankSearch">
+        <EditorCategories value=""/>
+        <SearchFilters value="Ground,Visible;Self,Player,Ally,Neutral,Structure,RawResource,HarvestableResource,Missile,Dead,Invulnerable"/>
+        <AreaArray MaxCount="1" Radius="0.65" Effect="PurificationNovaLotV2@DetonateSiegedTankSet"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="PurificationNovaLotV2@DetonateSiegedTankSet">
+        <ValidatorArray value="TargetNotChangeling"/>
+        <ValidatorArray value="ModifiedAbility@IsSiegeTankSiegedCombine"/>
+        <EditorCategories value=""/>
+        <EffectArray value="PurificationNovaLotV2@SearchArea"/>
+        <EffectArray value="PurificationNovaLotV2@DetonateRBTarget"/>
+        <EffectArray value="PurificationNovaLotV2@DetonateRBCaster"/>
+    </CEffectSet>
+    <CEffectDamage id="PurificationNovaLotV2@Damage">
+        <ValidatorArray value="DisruptorLotV1@DisruptorDamageFilter"/>
+        <EditorCategories value=""/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ShieldBonus value="55"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="145"/>
+        <Death value="Electrocute"/>
+    </CEffectDamage>
+    <CEffectRemoveBehavior id="PurificationNovaLotV2@DetonateRBTarget">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Source"/>
+        <BehaviorLink value="PurificationNovaLotV2@Target"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="PurificationNovaLotV2@DetonateRBCaster">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="PurificationNovaLotV2@Caster"/>
+    </CEffectRemoveBehavior>
+    <CEffectEnumArea id="PurificationNovaLotV2@DetonateSearch">
+        <EditorCategories value=""/>
+        <SearchFilters value="Ground,Visible;Self,Player,Ally,Neutral,Structure,RawResource,HarvestableResource,Missile,Dead,Invulnerable"/>
+        <AreaArray MaxCount="1" Radius="0.25" Effect="PurificationNovaLotV2@DetonateSet"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="PurificationNovaLotV2@DetonateSet">
+        <ValidatorArray value="TargetNotChangeling"/>
+        <ValidatorArray value="IsNotSiegedSiegeTank"/>
+        <EditorCategories value=""/>
+        <EffectArray value="PurificationNovaLotV2@SearchArea"/>
+        <EffectArray value="PurificationNovaLotV2@DetonateRBTarget"/>
+        <EffectArray value="PurificationNovaLotV2@DetonateRBCaster"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="PurificationNovaLotV2@SpawnIssueOrder">
+        <EditorCategories value="Race:Protoss"/>
+        <Abil value="move"/>
+        <Target Effect="PurificationNovaLotV2@CU" Value="TargetPoint"/>
+    </CEffectIssueOrder>
+    <CEffectSet id="PurificationNovaLotV2@SpawnSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PurificationNovaLotV2@SpawnTargetAB"/>
+        <EffectArray value="PurificationNovaLotV2@SpawnIssueOrder"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="PurificationNovaLotV2@SpawnTargetAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="PurificationNovaLotV2@Target"/>
+    </CEffectApplyBehavior>
+    <CEffectCreateUnit id="PurificationNovaLotV2@CU">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="CasterUnit"/>
+        <CreateFlags index="DropOff" value="0"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="TechComplete" value="0"/>
+        <CreateFlags index="UseFood" value="0"/>
+        <SpawnEffect value="PurificationNovaLotV2@SpawnSet"/>
+        <SpawnUnit value="DisruptorLotV2@Phased"/>
+        <SpawnRange value="1"/>
+    </CEffectCreateUnit>
+    <CEffectApplyBehavior id="PurificationNovaLotV2@CasterAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="PurificationNovaLotV2@Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="PurificationNovaLotV2@InitialSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PurificationNovaLotV2@CasterAB"/>
+        <EffectArray value="PurificationNovaLotV2@CU"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="PurificationNovaLotV2@PeriodicSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="PurificationNovaNotificationSearch"/>
+        <EffectArray value="PurificationNovaLotV2@DetonateSearch"/>
+        <EffectArray value="PurificationNovaLotV2@DetonateSiegeTankSearch"/>
+    </CEffectSet>
+    <CEffectEnumArea id="PurificationNovaLotV2@SearchArea">
+        <ValidatorArray value="CasterIsVisible"/>
+        <EditorCategories value=""/>
+        <LaunchLocation Value="TargetUnit"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <SearchFilters value="Ground;Self,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.5" Effect="PurificationNovaLotV2@Damage"/>
+        <SearchFlags index="SameCliff" value="1"/>
+    </CEffectEnumArea>
     <CEffectSwitch id="RavenScramblerMissileABswitch">
         <CaseArray index="0" Validator="ModifiedAbility@IsCarrier"/>
     </CEffectSwitch>

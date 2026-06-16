@@ -355,6 +355,10 @@
     <CDataCollection id="PulsarBeamSwarm">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Protoss"/>
     </CDataCollection>
+    <CDataCollection id="PurificationNovaLotV2">
+        <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollection id="PurificationNovaPhasedLotV1">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>

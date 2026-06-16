@@ -1,10 +1,12 @@
-﻿Abil/EditorPrefix/CycloneLockOnAirLoTV1@LockOnAIR=Cyclone -
+﻿Abil/EditorPrefix/CyberneticsCoreResearch2=Cybernetics Core -
+Abil/EditorPrefix/CycloneLockOnAirLoTV1@LockOnAIR=Cyclone -
 Abil/EditorPrefix/MULEGather2=MULE -
 Abil/EditorPrefix/PulsarBeamSwarm@Weapon=Oracle -
 Abil/EditorSuffix/MULEGather2=
 Actor/EditorPrefix/EnergyRechargeLotVLaunchModel=Nexus -
 Actor/EditorPrefix/PulsarBeamSwarm@Range=Oracle -
 Actor/EditorSuffix/DisruptorLotV1@Phased=(Phased)
+Actor/EditorSuffix/DisruptorLotV2@Phased=(Phased)
 Actor/EditorSuffix/TempestSwarm@AAWeaponAttackAction=(AA)
 Actor/EditorSuffix/TempestSwarm@AAWeaponAttackMissile=(AA)
 Actor/EditorSuffix/TempestSwarm@AGWeaponAttackAction=(AG)
@@ -80,6 +82,8 @@ Actor/Name/CycloneLotV2@Unit=Unit
 Actor/Name/CycloneLotV2@WeaponTurretLookAt=Weapon Turret Look At
 Actor/Name/DisruptorLotV1=Disruptor
 Actor/Name/DisruptorLotV1@Phased=Disruptor
+Actor/Name/DisruptorLotV2=Disruptor
+Actor/Name/DisruptorLotV2@Phased=Disruptor
 Actor/Name/EnergyRechargeLotV@ImpactModel=Impact Model
 Actor/Name/EnergyRechargeLotV@ImpactSound=Impact Sound
 Actor/Name/EnergyRechargeLotV@LaunchModel=Launch Model
@@ -282,13 +286,23 @@ Actor/Name/PurificationNovaLotV1@CursorSplat=Cursor Splat
 Actor/Name/PurificationNovaLotV1@Force=Force
 Actor/Name/PurificationNovaLotV1@ForceUp=Force Up
 Actor/Name/PurificationNovaLotV1@ImpactModel=Impact Model
-Actor/Name/PurificationNovaLotV1@ImpactSoumd=Impact Sound
+Actor/Name/PurificationNovaLotV1@ImpactSound=Impact Sound
 Actor/Name/PurificationNovaLotV1@Indicator=Indicator
 Actor/Name/PurificationNovaLotV1@LaunchSound=Launch Sound
 Actor/Name/PurificationNovaLotV1@LoopSound=Loop Sound
 Actor/Name/PurificationNovaLotV1@Range=Range
 Actor/Name/PurificationNovaLotV1@StopSound=Stop Sound
 Actor/Name/PurificationNovaLotV1@TargetImpactModel=Target Impact Model
+Actor/Name/PurificationNovaLotV2@Beam=Beam
+Actor/Name/PurificationNovaLotV2@CursorSplat=Cursor Splat
+Actor/Name/PurificationNovaLotV2@Force=Force
+Actor/Name/PurificationNovaLotV2@ImpactModel=Impact Model
+Actor/Name/PurificationNovaLotV2@ImpactSound=Impact Sound
+Actor/Name/PurificationNovaLotV2@Indicator=Indicator
+Actor/Name/PurificationNovaLotV2@LaunchSound=Launch Sound
+Actor/Name/PurificationNovaLotV2@LoopSound=Loop Sound
+Actor/Name/PurificationNovaLotV2@StopSound=Stop Sound
+Actor/Name/PurificationNovaLotV2@TargetImpactModel=Target Impact Model
 Actor/Name/PurificationNovaPhasedLotV1@ExplosionForce=Explosion Force
 Actor/Name/RavenAntiArmorMissile@ArmorReductionTint=Armor Reduction Tint
 Actor/Name/RavenAntiArmorMissile@AttackAction=Attack Action
@@ -490,6 +504,7 @@ Behavior/Name/PsionicTransferLotV@ShadeSpawn=Shade Spawn
 Behavior/Name/PsionicTransferLotV@Timer=Timer
 Behavior/Name/PurificationNovaLotV1@Caster=Caster
 Behavior/Name/PurificationNovaLotV1@Target=Target
+Behavior/Name/PurificationNovaLotV2@Caster=Caster
 Behavior/Name/PurificationNovaPhasedLotV1@CooldownVisual=Cooldown Visual
 Behavior/Name/PurificationNovaPhasedLotV1@SpeedBuff=Speed Buff
 Behavior/Name/RavenAutoTurret@AutoTurretTimedLife=Timed Life
@@ -594,6 +609,7 @@ DataCollection/EditorPrefix/PsiStormLibertyUpgrade=Scrapped Upgrade -
 DataCollection/EditorPrefix/PsionicTransferLotV=Scrapped Ability -
 DataCollection/EditorPrefix/PulsarBeamSwarm=Scrapped Weapon -
 DataCollection/EditorPrefix/PurificationNovaLotV1=Scrapped Ability -
+DataCollection/EditorPrefix/PurificationNovaLotV2=Scrapped Ability -
 DataCollection/EditorPrefix/PurificationNovaPhasedLotV1=Scrapped Ability -
 DataCollection/EditorPrefix/RapidDeploymentLotV=Scrapped Upgrade -
 DataCollection/EditorPrefix/RapidFireLaunchers=Scrapped Upgrade -
@@ -720,6 +736,7 @@ DataCollection/EditorSuffix/PsiStormLibertyUpgrade=(High Templar)
 DataCollection/EditorSuffix/PsionicTransferLotV=- 2.5.0 BU
 DataCollection/EditorSuffix/PulsarBeamSwarm=(Oracle)
 DataCollection/EditorSuffix/PurificationNovaLotV1=- LotV1
+DataCollection/EditorSuffix/PurificationNovaLotV2=- LotV2
 DataCollection/EditorSuffix/PurificationNovaPhasedLotV1=- LotV1
 DataCollection/EditorSuffix/RapidDeploymentLotV=(Medivac 2.5.2)
 DataCollection/EditorSuffix/RapidFireLaunchers=(Cyclone)
@@ -825,6 +842,21 @@ Requirement/Name/InfernalPreIgniterSwarm@LearnInfernalPreIgniterSwarm=Learn Infe
 Requirement/Name/KhaydarinAmulet@HaveKhaydarinAmulet=Have Khaydarin Amulet
 Requirement/Name/KhaydarinAmulet@LearnKhaydarinAmulet=Learn Khaydarin Amulet
 Requirement/Name/ModifiedAbility@HavePhotonOverchargeCombined=Have Photon Overcharge Combined
+Requirement/Name/ModifiedAbility@LearnProtossAirArmor1=Learn Protoss Air Armor1 
+Requirement/Name/ModifiedAbility@LearnProtossAirArmor2=Learn Protoss Air Armor2 
+Requirement/Name/ModifiedAbility@LearnProtossAirArmor3=Learn Protoss Air Armor3 
+Requirement/Name/ModifiedAbility@LearnProtossAirWeapon1=Learn Protoss Air Weapon1 
+Requirement/Name/ModifiedAbility@LearnProtossAirWeapon2=Learn Protoss Air Weapon2 
+Requirement/Name/ModifiedAbility@LearnProtossAirWeapon3=Learn Protoss Air Weapon3 
+Requirement/Name/ModifiedAbility@LearnProtossGroundArmor1=Learn Protoss Ground Armor1
+Requirement/Name/ModifiedAbility@LearnProtossGroundArmor2=Learn Protoss Ground Armor2
+Requirement/Name/ModifiedAbility@LearnProtossGroundArmor3=Learn Protoss Ground Armor3
+Requirement/Name/ModifiedAbility@LearnProtossGroundWeapon1=Learn Protoss Ground Weapon1
+Requirement/Name/ModifiedAbility@LearnProtossGroundWeapon2=Learn Protoss Ground Weapon2
+Requirement/Name/ModifiedAbility@LearnProtossGroundWeapon3=Learn Protoss Ground Weapon3
+Requirement/Name/ModifiedAbility@LearnProtossShield1=Learn Protoss Shield1
+Requirement/Name/ModifiedAbility@LearnProtossShield2=Learn Protoss Shield2
+Requirement/Name/ModifiedAbility@LearnProtossShield3=Learn Protoss Shield3
 Requirement/Name/ModifiedAbility@LearnTerranVehicleAndShipWeapon1=Learn Terran Vehicle And Ship Weapon 1
 Requirement/Name/ModifiedAbility@LearnTerranVehicleAndShipWeapon2=Learn Terran Vehicle And Ship Weapon 2
 Requirement/Name/ModifiedAbility@LearnTerranVehicleAndShipWeapon3=Learn Terran Vehicle And Ship Weapon 3
@@ -858,7 +890,21 @@ RequirementNode/Name/AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1=Co
 RequirementNode/Name/AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatAnd1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0=CountUnit(FleetBeacon,CompleteOnly)[TechTreeCheat] && (CountUnit(Mothership,QueuedOrBetter) == 0 && {No Mothership}CountUnit(MothershipWoL,QueuedOrBetter) == 0)
 RequirementNode/Name/AndEq1042292496CountUnitMothershipCoreQueuedOrBetter0And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0CountUnitCyberneticsCoreCompleteOnlyTechTreeCheat=CountUnit(MothershipCore,QueuedOrBetter) == {No Mothership Core}0 && (CountUnit(Mothership,QueuedOrBetter) == 0 && {No Mothership}CountUnit(MothershipWoL,QueuedOrBetter) == 0) && CountUnit(CyberneticsCore,CompleteOnly)[TechTreeCheat]
 RequirementNode/Name/AndEq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel1,CompleteOnly) == {Terran Vehicle And Ship Weapons Level 1}1 && ()
+RequirementNode/Name/AndEq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel1,CompleteOnly) == {Protoss Air Weapons Level 1}1 && CountUnit(FleetBeacon,CompleteOnly)[TechTreeCheat]
+RequirementNode/Name/AndEq2731442398CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel2,CompleteOnly) == {Protoss Air Armor Level 2}1 && CountUnit(FleetBeacon,CompleteOnly)[TechTreeCheat]
+RequirementNode/Name/AndEq3354561256CountUpgradeModifiedAbility@ProtossShieldsLevel1CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat=CountUpgrade(ModifiedAbility@ProtossShieldsLevel1,CompleteOnly) == {Protoss Shields Level 1}1 && CountUnit(TwilightCouncil,CompleteOnly)[TechTreeCheat]
+RequirementNode/Name/AndEq3569156689CountUpgradeModifiedAbility@ProtossGroundArmorsLevel1CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel1,CompleteOnly) == {Protoss Ground Armor Level 1}1 && CountUnit(TwilightCouncil,CompleteOnly)[TechTreeCheat]
+RequirementNode/Name/AndEq3751249461CountUpgradeModifiedAbility@ProtossShieldsLevel2CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat=CountUpgrade(ModifiedAbility@ProtossShieldsLevel2,CompleteOnly) == {Protoss Shields Level 2}1 && CountUnit(TwilightCouncil,CompleteOnly)[TechTreeCheat]
+RequirementNode/Name/AndEq419273267CountUpgradeModifiedAbility@ProtossGroundArmorsLevel2CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel2,CompleteOnly) == {Protoss Ground Armor Level 2}1 && CountUnit(TwilightCouncil,CompleteOnly)[TechTreeCheat]
+RequirementNode/Name/AndEq4283478838CountUpgradeModifiedAbility@ProtossAirArmorsLevel1CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel1,CompleteOnly) == {Protoss Air Armor Level 1}1 && CountUnit(FleetBeacon,CompleteOnly)[TechTreeCheat]
 RequirementNode/Name/AndEq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel2,CompleteOnly) == {Terran Vehicle And Ship Weapons Level 2}1 && ()
+RequirementNode/Name/AndEq524089035CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel2,CompleteOnly) == {Protoss Air Weapons Level 2}1 && CountUnit(FleetBeacon,CompleteOnly)[TechTreeCheat]
+RequirementNode/Name/AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter0AllowUnitPhoenix=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel1,QueuedOrBetter) == 0 && AllowUnit(Phoenix)
+RequirementNode/Name/AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel2QueuedOrBetter0AllowUnitPhoenix=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel2,QueuedOrBetter) == 0 && AllowUnit(Phoenix)
+RequirementNode/Name/AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel3QueuedOrBetter0AllowUnitPhoenix=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel3,QueuedOrBetter) == 0 && AllowUnit(Phoenix)
+RequirementNode/Name/AndEqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel1QueuedOrBetter0AllowUnitPhoenix=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel1,QueuedOrBetter) == 0 && AllowUnit(Phoenix)
+RequirementNode/Name/AndEqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel2QueuedOrBetter0AllowUnitPhoenix=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel2,QueuedOrBetter) == 0 && AllowUnit(Phoenix)
+RequirementNode/Name/AndEqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel3QueuedOrBetter0AllowUnitPhoenix=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel3,QueuedOrBetter) == 0 && AllowUnit(Phoenix)
 RequirementNode/Name/AndNotCountBehaviorRavenScramblerMissileQueuedOrBetterAtUnitNotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit=!CountBehavior(RavenScramblerMissile,QueuedOrBetterAtUnit) && !CountBehavior(RavenInterferenceMatrix,QueuedOrBetterAtUnit)
 RequirementNode/Name/AndNotCountUpgradeExtendedThermalLanceLibertyQueuedOrBetter=!CountUpgrade(ExtendedThermalLanceLiberty,QueuedOrBetter) && ()
 RequirementNode/Name/AndNotCountUpgradeGraviticBoostersLotV1QueuedOrBetter=!CountUpgrade(GraviticBoostersLotV1,QueuedOrBetter) && ()
@@ -909,6 +955,27 @@ RequirementNode/Name/CountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarm
 RequirementNode/Name/CountUpgradeInfernalPreIgniterSwarm@InfernalPreIgniterSwarmQueuedOrBetter=CountUpgrade(InfernalPreIgniterSwarm@InfernalPreIgniterSwarm,QueuedOrBetter)
 RequirementNode/Name/CountUpgradeKhaydarinAmuletCompleteOnly1915283201=CountUpgrade(KhaydarinAmulet,CompleteOnly){Research Khaydarin Amulet at the Templar Archives}
 RequirementNode/Name/CountUpgradeKhaydarinAmuletQueuedOrBetter=CountUpgrade(KhaydarinAmulet,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirArmorsLevel1CompleteOnly=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel1,CompleteOnly)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel1,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel2,CompleteOnly)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirArmorsLevel2QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel2,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirArmorsLevel3QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel3,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel1,CompleteOnly)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel1,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel2,CompleteOnly)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel2,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossAirWeaponsLevel3QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel3,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossGroundArmorsLevel1CompleteOnly=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel1,CompleteOnly)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossGroundArmorsLevel1QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel1,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossGroundArmorsLevel2CompleteOnly=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel2,CompleteOnly)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossGroundArmorsLevel2QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel2,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossGroundArmorsLevel3QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel3,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossGroundWeaponsLevel1,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossShieldsLevel1CompleteOnly=CountUpgrade(ModifiedAbility@ProtossShieldsLevel1,CompleteOnly)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossShieldsLevel1QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossShieldsLevel1,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossShieldsLevel2CompleteOnly=CountUpgrade(ModifiedAbility@ProtossShieldsLevel2,CompleteOnly)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossShieldsLevel2QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossShieldsLevel2,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeModifiedAbility@ProtossShieldsLevel3QueuedOrBetter=CountUpgrade(ModifiedAbility@ProtossShieldsLevel3,QueuedOrBetter)
 RequirementNode/Name/CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel1,CompleteOnly)
 RequirementNode/Name/CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1QueuedOrBetter=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel1,QueuedOrBetter)
 RequirementNode/Name/CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel2,CompleteOnly)
@@ -930,9 +997,30 @@ RequirementNode/Name/CountUpgradeReaperSwarm@UpgradeQueuedOrBetter=CountUpgrade(
 RequirementNode/Name/CountUpgradeResonatingGlaivesLotVCompleteOnly543136321TechTreeCheat=CountUpgrade(ResonatingGlaivesLotV,CompleteOnly){Research Resonating Glaives at the Twilight Council}[TechTreeCheat]
 RequirementNode/Name/CountUpgradeResonatingGlaivesLotVQueuedOrBetter=CountUpgrade(ResonatingGlaivesLotV,QueuedOrBetter)
 RequirementNode/Name/Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel1,CompleteOnly) == {Terran Vehicle And Ship Weapons Level 1}1
+RequirementNode/Name/Eq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel1,CompleteOnly) == {Protoss Air Weapons Level 1}1
+RequirementNode/Name/Eq2731442398CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel2,CompleteOnly) == {Protoss Air Armor Level 2}1
+RequirementNode/Name/Eq3354561256CountUpgradeModifiedAbility@ProtossShieldsLevel1CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossShieldsLevel1,CompleteOnly) == {Protoss Shields Level 1}1
+RequirementNode/Name/Eq3569156689CountUpgradeModifiedAbility@ProtossGroundArmorsLevel1CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel1,CompleteOnly) == {Protoss Ground Armor Level 1}1
+RequirementNode/Name/Eq3751249461CountUpgradeModifiedAbility@ProtossShieldsLevel2CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossShieldsLevel2,CompleteOnly) == {Protoss Shields Level 2}1
+RequirementNode/Name/Eq419273267CountUpgradeModifiedAbility@ProtossGroundArmorsLevel2CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel2,CompleteOnly) == {Protoss Ground Armor Level 2}1
+RequirementNode/Name/Eq4283478838CountUpgradeModifiedAbility@ProtossAirArmorsLevel1CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel1,CompleteOnly) == {Protoss Air Armor Level 1}1
 RequirementNode/Name/Eq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel2,CompleteOnly) == {Terran Vehicle And Ship Weapons Level 2}1
+RequirementNode/Name/Eq524089035CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel2,CompleteOnly) == {Protoss Air Weapons Level 2}1
 RequirementNode/Name/EqCountUnitMothershipQueuedOrBetter0=CountUnit(Mothership,QueuedOrBetter) == 0
 RequirementNode/Name/EqCountUnitMothershipWoLQueuedOrBetter0=CountUnit(MothershipWoL,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel1,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossAirArmorsLevel2QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel2,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossAirArmorsLevel3QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossAirArmorsLevel3,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel1QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel1,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel2QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel2,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel3QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel3,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossGroundArmorsLevel1QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel1,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossGroundArmorsLevel2QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel2,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossGroundArmorsLevel3QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossGroundArmorsLevel3,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossGroundWeaponsLevel1,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossShieldsLevel1QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossShieldsLevel1,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossShieldsLevel2QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossShieldsLevel2,QueuedOrBetter) == 0
+RequirementNode/Name/EqCountUpgradeModifiedAbility@ProtossShieldsLevel3QueuedOrBetter0=CountUpgrade(ModifiedAbility@ProtossShieldsLevel3,QueuedOrBetter) == 0
 RequirementNode/Name/EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1QueuedOrBetter0=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel1,QueuedOrBetter) == 0
 RequirementNode/Name/EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2QueuedOrBetter0=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel2,QueuedOrBetter) == 0
 RequirementNode/Name/EqCountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel3QueuedOrBetter0=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel3,QueuedOrBetter) == 0
@@ -980,13 +1068,20 @@ Turret/Name/RavenAutoTurret@AutoTurret=Auto-Turret Turret
 Turret/Name/SiegeTankLotV1=Turret
 Turret/Name/SiegeTankSiegedLotV1=Turret
 Turret/Name/WarpPrismLotV1@SiegedRotate=Rotate
+Unit/EditorSuffix/BaseDefenseAbility=(Dummy)
+Unit/EditorSuffix/BaseDefenseUnit=(Dummy)
+Unit/EditorSuffix/BaseDefenseUnit2=(Dummy)
 Unit/EditorSuffix/ChronoBoostLotV=(Dummy)
 Unit/EditorSuffix/DisruptorLotV1@Phased=(Phased)
+Unit/EditorSuffix/DisruptorLotV2@Phased=(Phased)
+Unit/EditorSuffix/MassRecallLotV=(Dummy)
+Unit/EditorSuffix/MassRecallNexusLotV=(Dummy)
 Unit/EditorSuffix/ObserverLotV1@Sieged=(Sieged)
 Unit/EditorSuffix/ObserverLotV2@Sieged=(Siege Mode)
 Unit/EditorSuffix/TempestSwarm@AAWeaponAttackMissile=(AA)
 Unit/EditorSuffix/TempestSwarm@AGWeaponMissile=(AG)
 Unit/EditorSuffix/WarpPrismLotV1@Sieged=(Sieged)
+Unit/EditorSuffix/WeaponArmorShieldsUpgrade=(Dummy)
 Unit/EditorSuffix/WidowMineSwarm@WidowMineBurrowed=Burrowed
 User/Name/IMBA_ProtossUnits=IMBA_ProtossUnits
 User/Name/IMBA_TerranUnits=IMBA_TerranUnits
@@ -1035,6 +1130,8 @@ Validator/Name/DisruptorLotV1@IsNotDisruptors=Is Not Disruptors
 Validator/Name/DisruptorLotV1@PhasedIsDisruptorPhased=Is Disruptor Phased
 Validator/Name/DisruptorLotV1@PhasedIsNotDisruptorPhased=Is Not Disruptor Phased
 Validator/Name/DisruptorLotV1@PhasedNotHavePhasedBehavior=Not Have Phased Behavior
+Validator/Name/DisruptorLotV2@IsNotDisruptor=Is Not Disruptor
+Validator/Name/DisruptorLotV2@PhasedIsNotDisruptorPhased=Is Not Disruptor Phased
 Validator/Name/EnhancedShockwaves@Upgraded=Upgraded
 Validator/Name/ExtendedThermalLanceLiberty@Upgraded=Upgraded
 Validator/Name/GhostLotV1@ChannelSnipeValidators=Channel Snipe Validators
@@ -1063,6 +1160,7 @@ Validator/Name/ModifiedAbility@IsNexusMassRecallWarpingOutOrRecalled=Is Nexus Ma
 Validator/Name/ModifiedAbility@IsNotRecallingCombine=Is Not Recalling Combine
 Validator/Name/ModifiedAbility@IsPylon=Is Pylon Combined
 Validator/Name/ModifiedAbility@IsShieldBattery=Is Shield Battery
+Validator/Name/ModifiedAbility@IsSiegeTankSiegedCombine=Is Siege Tank Sieged Combine
 Validator/Name/ModifiedAbility@NotInterceptorCombined=Not Interceptor Combined
 Validator/Name/ModifiedAbility@NotMothershipCombine=Not Mothership Combine
 Validator/Name/ModifiedAbility@ProbeBuildingPylon=Probe Building Pylon
@@ -1089,6 +1187,7 @@ Validator/Name/SeekerMissileSwarm@NotInLastMotionPhase=Not In Last Motion Phase
 Validator/Name/ShadowStrideLotV@RangeCheck=Range Check
 Validator/Name/ShieldBatteryLotV@Is=Is Shield Battery
 Validator/Name/ShieldBatteryLotV@Not=Not Shield Battery
+Validator/Name/SiegeTankLotV1@IsSiegeTankSieged=Is Siege Tank Sieged
 Validator/Name/StasisWardLotV1@ActivateValidators=Activate Validators
 Validator/Name/StasisWardLotV1@NotTrappedbyStasisWard=Not Trapped by Stasis Ward
 Validator/Name/StasisWardLotV1@TargetInRange=Target In Range

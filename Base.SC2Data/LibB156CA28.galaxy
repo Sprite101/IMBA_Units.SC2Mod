@@ -418,6 +418,9 @@ void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_i
         else if (autoA537A4B5_val == 19) {
             libB156CA28_gf_Select_BaseDefenceUnit(lp_player, lv_selectionIndex);
         }
+        else if (autoA537A4B5_val == 20) {
+            libB156CA28_gf_Select_WeaponArmorShieldsUpgrade(lp_player, lv_selectionIndex);
+        }
         else {
         }
     }
@@ -1074,10 +1077,17 @@ void libB156CA28_gf_Select_Disruptor (int lp_player, int lp_selectionIndex) {
     // Implementation
     if ((lp_selectionIndex == 0)) {
         TechTreeUnitAllow(lp_player, "DisruptorLotV1", false);
+        TechTreeUnitAllow(lp_player, "DisruptorLotV2", false);
     }
     else if ((lp_selectionIndex == 1)) {
         TechTreeUnitAllow(lp_player, "DisruptorLotV1", true);
         TechTreeUnitAllow(lp_player, "Disruptor", false);
+        TechTreeUnitAllow(lp_player, "DisruptorLotV2", false);
+    }
+    else if ((lp_selectionIndex == 2)) {
+        TechTreeUnitAllow(lp_player, "DisruptorLotV2", true);
+        TechTreeUnitAllow(lp_player, "Disruptor", false);
+        TechTreeUnitAllow(lp_player, "DisruptorLotV1", false);
     }
 }
 
@@ -1257,6 +1267,60 @@ void libB156CA28_gf_Select_BaseDefenceUnit (int lp_player, int lp_selectionIndex
         TechTreeUnitAllow(lp_player, "ShieldBatteryLotV", true);
         TechTreeUnitAllow(lp_player, "MothershipCore", false);
         TechTreeUnitAllow(lp_player, "ShieldBattery", false);
+    }
+}
+
+void libB156CA28_gf_Select_WeaponArmorShieldsUpgrade (int lp_player, int lp_selectionIndex) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_selectionIndex == 0)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 2), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 3), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 4), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 5), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 7), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 8), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 2), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 3), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 4), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 5), false);
+    }
+    else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 1), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 2), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 3), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 4), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 5), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 6), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 7), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ForgeResearch", 8), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 1), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 2), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 3), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 4), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@CyberneticsCoreResearch", 5), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ForgeResearch", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ForgeResearch", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ForgeResearch", 2), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ForgeResearch", 3), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ForgeResearch", 4), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ForgeResearch", 5), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ForgeResearch", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ForgeResearch", 7), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ForgeResearch", 8), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CyberneticsCoreResearch", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CyberneticsCoreResearch", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CyberneticsCoreResearch", 2), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CyberneticsCoreResearch", 3), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CyberneticsCoreResearch", 4), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("CyberneticsCoreResearch", 5), false);
     }
 }
 
