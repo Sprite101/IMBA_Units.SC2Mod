@@ -17,6 +17,7 @@ Abil/Name/ChronoBoostLotV=Chrono Boost
 Abil/Name/ColossusLiberty@Build=Build
 Abil/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
+Abil/Name/CyberneticsCoreResearch2=Research
 Abil/Name/CycloneLockOnAirLoTV1@LockOn=Lock On
 Abil/Name/CycloneLockOnAirLoTV1@Research=Research
 Abil/Name/CycloneLockOnLotV2@LockOn=Lock On
@@ -24,6 +25,7 @@ Abil/Name/CycloneLockOnLotV2@Research=Research
 Abil/Name/CycloneLotV1@Train=Build
 Abil/Name/CycloneLotV2@Train=Build
 Abil/Name/DisruptorLotV1@Build=Build
+Abil/Name/DisruptorLotV2@Build=Build
 Abil/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Abil/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
 Abil/Name/EnergyRechargeLotV=Energy Recharge
@@ -69,6 +71,8 @@ Abil/Name/MULEWoL@Gather=Gather
 Abil/Name/MassRecallNexusLotV=Mass Recall
 Abil/Name/MassRecallWoL=Mass Recall
 Abil/Name/ModifiedAbility@ArmoryResearch=Armory Research
+Abil/Name/ModifiedAbility@CyberneticsCoreResearch=Cybernetics Core Research
+Abil/Name/ModifiedAbility@ForgeResearch=Research (Forge)
 Abil/Name/ModifiedAbility@Hyperjump=Tactical Jump
 Abil/Name/ModifiedAbility@Yamato=Yamato Gun
 Abil/Name/ModifiedAbility@YamatoGunResearch=Yamato Gun Research
@@ -100,6 +104,7 @@ Abil/Name/PsionicTransferLotV=Psionic Transfer
 Abil/Name/PsionicTransferLotV@Cancel=Cancel
 Abil/Name/PulsarBeamSwarm@Weapon=Weapon
 Abil/Name/PurificationNovaLotV1=Purification Nova
+Abil/Name/PurificationNovaLotV2=Purification Nova
 Abil/Name/PurificationNovaPhasedLotV1=Purification Nova
 Abil/Name/PurificationNovaPhasedLotV1@Morph=Morph
 Abil/Name/PurificationNovaPhasedLotV1@MorphBack=Morph Back
@@ -158,6 +163,7 @@ Behavior/Name/PhotonOverchargeLotV1=Photon Overcharge
 Behavior/Name/PhotonOverchargeSwarm=Photon Overcharge
 Behavior/Name/PsiStormLiberty=Psionic Storm
 Behavior/Name/PulsarBeamSwarm@WeaponOn=Pulsar Beam
+Behavior/Name/PurificationNovaLotV2@Target=Target
 Behavior/Name/PurificationNovaPhasedLotV1@Phased=Phased
 Behavior/Name/PurificationNovaPhasedLotV1@PhasedEnd=Phased End
 Behavior/Name/RavenAntiArmorMissile@ArmorReduction=Armor Reduction
@@ -226,6 +232,7 @@ Button/Name/CycloneLockOnLotV2@Button=Lock On
 Button/Name/CycloneLotV1@BuildCyclone=Build Cyclone
 Button/Name/CycloneLotV2@BuildCyclone=Build Cyclone
 Button/Name/DisruptorLotV1=Warp In Disruptor
+Button/Name/DisruptorLotV2=Warp In Disruptor
 Button/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Button/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
 Button/Name/EnergyRechargeLotV=Energy Recharge
@@ -299,6 +306,7 @@ Button/Name/PsionicTransferLotV=Psionic Transfer
 Button/Name/PulsarBeamSwarm@WeaponOff=Deactivate Pulsar Beam
 Button/Name/PulsarBeamSwarm@WeaponOn=Activate Pulsar Beam
 Button/Name/PurificationNovaLotV1=Purification Nova
+Button/Name/PurificationNovaLotV2=Purification Nova
 Button/Name/PurificationNovaPhasedLotV1=Purification Nova
 Button/Name/RapidDeploymentLotV=Research Rapid Deployment
 Button/Name/RapidDeploymentLotV@Passive=Rapid Deployment
@@ -354,6 +362,8 @@ Button/Tooltip/AmplifiedShieldingLotV@Passive=Increases the <c val="ffff8a">Adep
 Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AutoTurretSwarm@AutoTurret=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BarracksLiberty=Infantry-production facility.<n/><n/><c val="ffff8a">Enables:</c><n/>- Marines<n/>- Reapers<n/>- Bunkers from SCVs<n/>- Orbital Commands from Command Centers
+Button/Tooltip/BaseDefenseUnit=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
+Button/Tooltip/BaseDefenseUnit2=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
 Button/Tooltip/BatteryOverchargeLotV=Overcharges a target Shield Battery near a Nexus, increasing its shield restoration rate by <d ref="Behavior,BatteryOverchargeLotV,Modification.HealDealtMultiplier * 100 - 100"/>% and allowing it to restore shields without consuming energy for <d ref="Behavior,BatteryOverchargeLotV,Duration"/> seconds.
 Button/Tooltip/BuildCycloneLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BuildCycloneLotV2=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -379,6 +389,8 @@ Button/Tooltip/CycloneLotV1@BuildCyclone=Mobile assault vehicle. Can use Lock On
 Button/Tooltip/CycloneLotV2@BuildCyclone=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Originally introduced in 2023 balance revamp and removed in 2024 balance revamp.<n/>
 Button/Tooltip/DisruptorLotV1=Robotic disruption unit. Can use Purification Nova to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/DisruptorLotV1@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,PurificationNovaTargettedTarget,Duration"/> seconds, dealing area damage.
+Button/Tooltip/DisruptorLotV2=Robotic disruption unit. Can use Purification Nova to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/DisruptorLotV2@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,PurificationNovaTargettedTarget,Duration"/> seconds, dealing area damage.
 Button/Tooltip/DrillingClaws@ResearchDrillingClaws=Allows <c val="ffff8a">Widow Mines</c> to burrow and activate two times as fast.
 Button/Tooltip/DurableMaterialsSwarm@ResearchDurableMaterials=Extends the timed duration of Raven <c val="ffff8a">Auto-Turrets</c> and <c val="ffff8a">Point Defense Drones</c>.
 Button/Tooltip/EnergyRechargeLotV=Instantly recharges <d ref="Effect,EnergyRechargeLotV@MU,VitalArray[Energy].Change * (Effect,EnergyRechargeLotV@CP,PeriodCount + 1)"/> energy to a unit near a Nexus.
@@ -430,7 +442,7 @@ Button/Tooltip/LiberatorLotV2=Artillery fighter. Loaded with missiles that deal 
 Button/Tooltip/LiberatorLotV2@DefenderMode=Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.
 Button/Tooltip/MULEWoL=Drops an experimental robotic MULE miner onto the target Mineral Field. MULEs collect minerals more quickly than SCVs.  <n/><n/>MULEs last <d ref="Behavior,MULETimedLife,Duration"/> seconds before their systems fail.
 Button/Tooltip/MULEWoL@Gather=Orders MULE to gather minerals from a selected Mineral Field.Collects 6x Minerals.
-Button/Tooltip/MassRecallNexusLotV=Recalls all units owned by the player in the target area to the Nexus.
+Button/Tooltip/MassRecallNexusLotV=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
 Button/Tooltip/MassRecallWoL=Recalls all player units in the target area to the Mothership.
 Button/Tooltip/MoebiusReactor=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
 Button/Tooltip/MoebiusReactor@Passive=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
@@ -460,6 +472,7 @@ Button/Tooltip/PsionicTransferLotV=Projects an invulnerable Shade that can move 
 Button/Tooltip/PulsarBeamSwarm@WeaponOff=Deactivates the Oracle's Pulsar Beam and prevents it from attacking.
 Button/Tooltip/PulsarBeamSwarm@WeaponOn=Charges the Oracle's Pulsar Beam and allows it to attack enemy ground units.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,OracleWeapon,Modification.VitalRegenArray[2] + Unit,Oracle,EnergyRegenRate)" precision="1"/> energy per second.</c>
 Button/Tooltip/PurificationNovaLotV1=Shoots out a ball of energy that lasts <d ref="Behavior,PurificationNovaLotV1@Target,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,PurificationNovaLotV1@Damage,Amount"/> splash damage and an additional <d ref="Effect,PurificationNovaLotV1@Damage,ShieldBonus"/> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.
+Button/Tooltip/PurificationNovaLotV2=Shoots out a ball of energy that lasts <d ref="Behavior,PurificationNovaLotV2@Target,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,PurificationNovaLotV2@Damage,Amount"/> splash damage and an additional <d ref="Effect,PurificationNovaLotV2@Damage,ShieldBonus"/> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.<n/>Will detonate upon contact with enemy units.
 Button/Tooltip/PurificationNovaPhasedLotV1=Shoots out a ball of energy that lasts <d ref="Behavior,PurificationNovaLotV1@Target,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,PurificationNovaLotV1@Damage,Amount"/> splash damage and an additional <d ref="Effect,PurificationNovaLotV1@Damage,ShieldBonus"/> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.
 Button/Tooltip/RapidDeploymentLotV=Allows <c val="ffff8a">Medivac</c> to deploy loaded troops twice as fast.
 Button/Tooltip/RapidDeploymentLotV@Passive=The <c val="ffff8a">Medivac</c> deploys loaded troops twice as fast.
@@ -510,6 +523,7 @@ Button/Tooltip/WarpPrismLotV1=Flying transport. Can load units from a distance. 
 Button/Tooltip/WarpPrismLotV1@Siege=Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode.
 Button/Tooltip/WarpPrismLotV1@Sieged=Immobile power provider. Can load units from a distance. Can switch to a mobile Transport Mode.
 Button/Tooltip/WarpPrismLotV1@SiegedUnsiege=Reverts the Warp Prism back to Transport Mode, allowing it to move.
+Button/Tooltip/WeaponArmorShieldsUpgrade=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
 Button/Tooltip/WidowMineSwarm=Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Cyclone=Cyclone
 DataCollection/Name/90mmCannonsLotV1=90mm Cannons
@@ -598,6 +612,7 @@ DataCollection/Name/PsiStormLiberty=Psi Storm
 DataCollection/Name/PsionicTransferLotV=Psionic Transfer
 DataCollection/Name/PulsarBeamSwarm=Pulsar Beam
 DataCollection/Name/PurificationNovaLotV1=Purification Nova
+DataCollection/Name/PurificationNovaLotV2=Purification Nova
 DataCollection/Name/PurificationNovaPhasedLotV1=Purification Nova (Phased)
 DataCollection/Name/RapidDeploymentLotV=Rapid Deployment
 DataCollection/Name/RapidFireLaunchers=Rapid Fire Launchers
@@ -910,6 +925,24 @@ Effect/Name/PurificationNovaLotV1@SearchArea=Search Area
 Effect/Name/PurificationNovaLotV1@SpawnIssueOrder=Spawn Issue Order
 Effect/Name/PurificationNovaLotV1@SpawnSet=Spawn Set
 Effect/Name/PurificationNovaLotV1@SpawnTargetAB=Spawn Target AB
+Effect/Name/PurificationNovaLotV1@SpawnTargetAB2=Spawn Target AB
+Effect/Name/PurificationNovaLotV2@CU=CU
+Effect/Name/PurificationNovaLotV2@CasterAB=Caster AB
+Effect/Name/PurificationNovaLotV2@Damage=Damage
+Effect/Name/PurificationNovaLotV2@DetonateRBCaster=Detonate RB Caster
+Effect/Name/PurificationNovaLotV2@DetonateRBTarget=Detonate RB Target
+Effect/Name/PurificationNovaLotV2@DetonateSearch=Detonate Search
+Effect/Name/PurificationNovaLotV2@DetonateSet=Detonate Set
+Effect/Name/PurificationNovaLotV2@DetonateSiegeTankSearch=Detonate Siege Tank Search
+Effect/Name/PurificationNovaLotV2@DetonateSiegedTankSet=Detonate Siege Tank Set
+Effect/Name/PurificationNovaLotV2@EndSet=End Set
+Effect/Name/PurificationNovaLotV2@InitialSet=Initial Set
+Effect/Name/PurificationNovaLotV2@Kill=Kill
+Effect/Name/PurificationNovaLotV2@PeriodicSet=Periodic Set
+Effect/Name/PurificationNovaLotV2@SearchArea=Search Area
+Effect/Name/PurificationNovaLotV2@SpawnIssueOrder=Spawn Issue Order
+Effect/Name/PurificationNovaLotV2@SpawnSet=Spawn Set
+Effect/Name/PurificationNovaLotV2@SpawnTargetAB=Spawn Target AB
 Effect/Name/PurificationNovaPhasedLotV1@@SearchSet=Search Set
 Effect/Name/PurificationNovaPhasedLotV1@CooldownVisualAB=Cooldown Visual AB
 Effect/Name/PurificationNovaPhasedLotV1@IssueMorphBackOrder=Issue Morph Back Order
@@ -1044,6 +1077,10 @@ Param/Expression/lib_B156CA28_17F87ABD=Player ~A~'s Index: ~B~
 Param/Expression/lib_B156CA28_41422E3B=Player ~A~ is using button: Panel ~B~ Item ~C~ Selection ~D~
 Param/Expression/lib_B156CA28_81A2A7C1=Panel Index: ~A~
 Param/Expression/lib_B156CA28_91C77510=Panel Index: ~A~
+Param/Expression/lib_B156CA28_9AEED7A8=UPDATEING PLAYER ~A~
+Param/Expression/lib_B156CA28_B6F59028=Player ~A~ is No. ~B~ in NonCPUPlayerGroup, Panel Index ~C~
+Param/Expression/lib_B156CA28_C1F6DD1A=Player ~A~ is No. ~B~ in NonCPUPlayerGroup, Panel Index ~C~
+Param/Expression/lib_B156CA28_F10084BD=Player ~A~ panel index error, skipped
 RequirementNode/Tooltip/And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0=No Mothership
 RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat=Factory
 RequirementNode/Tooltip/CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987=Must have at least 1 interceptor
@@ -1071,16 +1108,30 @@ RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877T
 RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat2=Research Nitro Packs at the Barracks Tech Lab
 RequirementNode/Tooltip/CountUpgradeResonatingGlaivesLotVCompleteOnly543136321TechTreeCheat=Research Resonating Glaives at the Twilight Council
 RequirementNode/Tooltip/Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1=Terran Vehicle And Ship Weapons Level 1
+RequirementNode/Tooltip/Eq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1=Protoss Air Weapons Level 1
+RequirementNode/Tooltip/Eq2731442398CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly1=Protoss Air Armor Level 2
+RequirementNode/Tooltip/Eq3354561256CountUpgradeModifiedAbility@ProtossShieldsLevel1CompleteOnly1=Protoss Shields Level 1
+RequirementNode/Tooltip/Eq3569156689CountUpgradeModifiedAbility@ProtossGroundArmorsLevel1CompleteOnly1=Protoss Ground Armor Level 1
+RequirementNode/Tooltip/Eq3751249461CountUpgradeModifiedAbility@ProtossShieldsLevel2CompleteOnly1=Protoss Shields Level 2
+RequirementNode/Tooltip/Eq419273267CountUpgradeModifiedAbility@ProtossGroundArmorsLevel2CompleteOnly1=Protoss Ground Armor Level 2
+RequirementNode/Tooltip/Eq4283478838CountUpgradeModifiedAbility@ProtossAirArmorsLevel1CompleteOnly1=Protoss Air Armor Level 1
 RequirementNode/Tooltip/Eq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1=Terran Vehicle And Ship Weapons Level 2
+RequirementNode/Tooltip/Eq524089035CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly1=Protoss Air Weapons Level 2
 RequirementNode/Tooltip/LT2210218377CountUnitInterceptorLotV1QueuedOrBetterAtUnit8=Carrier must have fewer than 8 Interceptors
 RequirementNode/Tooltip/LT2210218377CountUnitInterceptorLotV2QueuedOrBetterAtUnit8=Carrier must have fewer than 8 Interceptors
 RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit=Not Locked On
 RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit=Not Locked On
+UI/PickStage/Select=Select your units
+UI/PickStage/ViewDisabled=You can view other players' options as soon as you are ready.
+UI/PickStage/Wait=Game will start soon
+UI/PickStage/WaitForPlayer=Waiting for other players
 Unit/Name/AdeptLotV=Adept
 Unit/Name/AdeptLotV@Shade=Shade
 Unit/Name/AdeptLotV@WeaponMissile=Weapon Missile
 Unit/Name/AutoTurretSwarm@AutoTurret=Auto-Turret
 Unit/Name/AutoTurretSwarm@ReleaseMissile=Release Missile
+Unit/Name/BaseDefenseUnit=Base Defense Unit
+Unit/Name/BaseDefenseUnit2=Base Defense Unit
 Unit/Name/CarrierLotV1=Carrier
 Unit/Name/CarrierLotV2=Carrier
 Unit/Name/ChronoBoostLotV=Chrono Boost
@@ -1094,6 +1145,8 @@ Unit/Name/CycloneLotV2=Cyclone
 Unit/Name/CycloneLotV2@Unit=Cyclone
 Unit/Name/DisruptorLotV1=Disruptor
 Unit/Name/DisruptorLotV1@Phased=Disruptor
+Unit/Name/DisruptorLotV2=Disruptor
+Unit/Name/DisruptorLotV2@Phased=Disruptor
 Unit/Name/GhostLotV1=Ghost
 Unit/Name/GhostLotV1@Unit=Cyclone
 Unit/Name/GhostWoL=Ghost
@@ -1116,6 +1169,7 @@ Unit/Name/LiberatorLotV1@MorphModel=Liberator
 Unit/Name/LiberatorLotV2=Liberator
 Unit/Name/LiberatorLotV2@MorphModel=Liberator
 Unit/Name/MULEWoL=MULE
+Unit/Name/MassRecallNexusLotV=Mass Recall
 Unit/Name/MothershipWoL=Mothership
 Unit/Name/ObserverLotV1=Observer
 Unit/Name/ObserverLotV2=Observer
@@ -1156,6 +1210,7 @@ Unit/Name/VoidRayLotV=Void Ray
 Unit/Name/WarpInLiberty@Pylon=Pylon
 Unit/Name/WarpPrismLotV1=Warp Prism
 Unit/Name/WarpPrismLotV1@Sieged=Warp Prism
+Unit/Name/WeaponArmorShieldsUpgrade=Weapon/Armor/Shields Upgrade
 Unit/Name/WidowMineSwarm=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMine=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMineBurrowed=Widow Mine
@@ -1185,6 +1240,22 @@ Upgrade/Name/HurricaneThrusters@Upgrade=Hurricane Thrusters
 Upgrade/Name/InfernalPreIgniterSwarm@InfernalPreIgniterSwarm=Infernal Pre-Igniter
 Upgrade/Name/KhaydarinAmulet=Khaydarin Amulet
 Upgrade/Name/MarineUpgrade=Marine
+Upgrade/Name/ModifiedAbility@ProtossAirArmorsLevel1=Protoss Air Armor Level 1
+Upgrade/Name/ModifiedAbility@ProtossAirArmorsLevel2=Protoss Air Armor Level 2
+Upgrade/Name/ModifiedAbility@ProtossAirArmorsLevel3=Protoss Air Armor Level 3
+Upgrade/Name/ModifiedAbility@ProtossAirWeaponsLevel1=Protoss Air Weapons Level 1
+Upgrade/Name/ModifiedAbility@ProtossAirWeaponsLevel2=Protoss Air Weapons Level 2
+Upgrade/Name/ModifiedAbility@ProtossAirWeaponsLevel3=Protoss Air Weapons Level 3
+Upgrade/Name/ModifiedAbility@ProtossGroundArmorsLevel1=Protoss Ground Armor Level 1
+Upgrade/Name/ModifiedAbility@ProtossGroundArmorsLevel2=Protoss Ground Armor Level 2
+Upgrade/Name/ModifiedAbility@ProtossGroundArmorsLevel3=Protoss Ground Armor Level 3
+Upgrade/Name/ModifiedAbility@ProtossGroundWeapons=Protoss Ground Weapons
+Upgrade/Name/ModifiedAbility@ProtossGroundWeaponsLevel1=Protoss Ground Weapons Level 1
+Upgrade/Name/ModifiedAbility@ProtossGroundWeaponsLevel2=Protoss Ground Weapons Level 2
+Upgrade/Name/ModifiedAbility@ProtossGroundWeaponsLevel3=Protoss Ground Weapons Level 3
+Upgrade/Name/ModifiedAbility@ProtossShieldsLevel1=Protoss Shields Level 1
+Upgrade/Name/ModifiedAbility@ProtossShieldsLevel2=Protoss Shields Level 2
+Upgrade/Name/ModifiedAbility@ProtossShieldsLevel3=Protoss Shields Level 3
 Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel1=Terran Vehicle And Ship Weapons Level 1
 Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel2=Terran Vehicle And Ship Weapons Level 2
 Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel3=Terran Vehicle And Ship Weapons Level 3
@@ -1233,8 +1304,10 @@ UserData/IMBA_ProtossUnits/Dark Templar_Selection_Title=current
 UserData/IMBA_ProtossUnits/Dark Templar_Selection_Title_001=lotv
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Expansion_Tip=current
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Expansion_Tip_001=deals more damage and costs less supply
+UserData/IMBA_ProtossUnits/Disruptor_Selection_Expansion_Tip_002=detonates upon contact with enemy units
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Title=current
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Title_001=lotv1
+UserData/IMBA_ProtossUnits/Disruptor_Selection_Title_002=lotv2
 UserData/IMBA_ProtossUnits/High Templar_Selection_Expansion_Tip=CURRENT
 UserData/IMBA_ProtossUnits/High Templar_Selection_Expansion_Tip_001=Psi storm deals less damage but faster. Feedback deals 1:1 damage. No attack weapon. Can upgrade to have +25 starting energy.
 UserData/IMBA_ProtossUnits/High Templar_Selection_Title=current
@@ -1287,6 +1360,10 @@ UserData/IMBA_ProtossUnits/Warp Prism_Selection_Expansion_Tip=current
 UserData/IMBA_ProtossUnits/Warp Prism_Selection_Expansion_Tip_001=+20 hp, cost less and pick up has 1 extra range
 UserData/IMBA_ProtossUnits/Warp Prism_Selection_Title=current
 UserData/IMBA_ProtossUnits/Warp Prism_Selection_Title_001=lotv
+UserData/IMBA_ProtossUnits/Weapon/Armor/Shields Upgrade_Selection_Expansion_Tip=current
+UserData/IMBA_ProtossUnits/Weapon/Armor/Shields Upgrade_Selection_Expansion_Tip_001=upgrades faster but costs more
+UserData/IMBA_ProtossUnits/Weapon/Armor/Shields Upgrade_Selection_Title=current
+UserData/IMBA_ProtossUnits/Weapon/Armor/Shields Upgrade_Selection_Title_001=lotv
 UserData/IMBA_ProtossUnits/Zealot_Selection_Expansion_Tip=current
 UserData/IMBA_ProtossUnits/Zealot_Selection_Expansion_Tip_001=30 damage upon hit
 UserData/IMBA_ProtossUnits/Zealot_Selection_Expansion_Tip_002=8 damage upon hit, research cost reduced and increased movement speed

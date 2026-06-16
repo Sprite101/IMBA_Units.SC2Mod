@@ -4,6 +4,11 @@
 <Asset path="assets\textures\ui_glues_scorescreen_racebg_zerg.dds" Type="Image"/>
 <Asset path="assets\textures\ui_glues_scorescreen_racebg_terr.dds" Type="Image"/>
 <Actor id="SYSTEM_ActorConfig"/>
+<Sound id="ModUtilityVoiceModUtilityVoice00106"/>
+<Sound id="AC_UI_Countdown_5MxFull"/>
+<Sound id="UI_Bnet_MatchCountdown1"/>
+<Sound id="UI_Bnet_MatchCountdownGo"/>
+<Sound id="UI_BnetCountdown"/>
 <Unit id="Zealot"/>
 <Unit id="Stalker"/>
 <Unit id="HighTemplar"/>

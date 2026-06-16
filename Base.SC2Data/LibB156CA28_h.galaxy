@@ -4,6 +4,8 @@ include "TriggerLibs/natives"
 // Library: IMBA Units
 //--------------------------------------------------------------------------------------------------
 // Constants
+const int libB156CA28_gv_countdownDuration = 15;
+const int libB156CA28_gv_displayDuration = 5;
 const int libB156CA28_gv_maxPlayer = 14;
 const int libB156CA28_gv_maxActivePlayer = 8;
 const int libB156CA28_gv_maxSelectionItems = 24;
@@ -12,6 +14,7 @@ const int libB156CA28_gv_maxSelectionItems = 24;
 struct libB156CA28_gs_PlayerFrames {
     int lv_mainPanel;
     int lv_timeRemaining;
+    int lv_statusLabel;
     int[libB156CA28_gv_maxActivePlayer + 1] lv_playerButton;
     int[libB156CA28_gv_maxActivePlayer + 1] lv_playerButtonName;
     int lv_confirmButton;
@@ -24,10 +27,11 @@ struct libB156CA28_gs_PlayerFrames {
 };
 
 // Variable Declarations
-int libB156CA28_gv_activePlayerNum;
+int libB156CA28_gv_nonComputer_ActivePlayerNum;
 playergroup libB156CA28_gv_activePlayersGameInit;
 int[libB156CA28_gv_maxActivePlayer + 1][libB156CA28_gv_maxSelectionItems + 1] libB156CA28_gv_unitSelectionResults;
 int[libB156CA28_gv_maxActivePlayer + 1] libB156CA28_gv_warpInResults;
+int libB156CA28_gv_playerReadyNum;
 libB156CA28_gs_PlayerFrames libB156CA28_gv_playerFrames;
 
 // Function Declarations
@@ -75,10 +79,15 @@ void libB156CA28_gf_Select_BaseDefenceAbility (int lp_player, int lp_selectionIn
 void libB156CA28_gf_Select_BaseDefenceUnit (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_WeaponArmorShieldsUpgrade (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Default (int lp_player);
+void libB156CA28_gf_GameInit ();
+void libB156CA28_gf_PickStop ();
 
 // Trigger Declarations
 trigger libB156CA28_gt_ConfirmButtonUsed;
 trigger libB156CA28_gt_SelectionButtonUsed;
+trigger libB156CA28_gt_Countdown;
+trigger libB156CA28_gt_ViewResultsInGame;
+trigger libB156CA28_gt_HideResultsInGame;
 trigger libB156CA28_gt_MapInit;
 trigger libB156CA28_gt_UnitTest;
 

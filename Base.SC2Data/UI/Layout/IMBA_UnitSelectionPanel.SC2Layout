@@ -477,7 +477,7 @@
         
             <State name="Disabled">
                 <When type="Property" Enabled="false"/>
-                <Action type="SetProperty" Tooltip="Can only view other players' options when both you and they are ready."/>
+                <Action type="SetProperty" Tooltip="@UI/PickStage/ViewDisabled"/>
             </State>
         
             <State name="DefaultState">
@@ -841,7 +841,7 @@
             </Frame>
 
             <Frame type="Frame" name="Dummy" template="IMBA_UnitSelectionPanel/ListItemTemplate">
-                <Anchor side="Top" relative="$parent/Item23" pos="Max" offset="4"/>
+                <Anchor side="Top" relative="$parent/Item22" pos="Min" offset="0"/>
                 <Anchor side="Right" relative="$parent" pos="Mid" offset="-5"/>
                 <Alpha val="0"/>
                 <Visible val="false"/>
