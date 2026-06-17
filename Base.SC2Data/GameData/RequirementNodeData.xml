@@ -37,12 +37,15 @@
         <OperandArray value="Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="Eq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1"/>
         <OperandArray value="CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
-    <CRequirementAnd id="AndEq2731442398CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat">
+    <CRequirementAnd id="AndEq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat">
         <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="Eq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1"/>
+        <OperandArray value="CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq2731442398CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat">
         <OperandArray value="Eq2731442398CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly1"/>
         <OperandArray value="CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
@@ -63,7 +66,6 @@
         <OperandArray value="CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEq4283478838CountUpgradeModifiedAbility@ProtossAirArmorsLevel1CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="Eq4283478838CountUpgradeModifiedAbility@ProtossAirArmorsLevel1CompleteOnly1"/>
         <OperandArray value="CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
@@ -71,37 +73,35 @@
         <OperandArray value="Eq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEq524089035CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly1CountUnitFleetBeaconCompleteOnlyTechTreeCheat">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="Eq524089035CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly1"/>
         <OperandArray value="CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
-    <CRequirementAnd id="AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter0AllowUnitPhoenix">
+    <CRequirementAnd id="AndEq629999927CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat">
         <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="Eq629999927CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly1"/>
+        <OperandArray value="CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter0AllowUnitPhoenix">
         <OperandArray value="EqCountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter0"/>
         <OperandArray value="AllowUnitPhoenix"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel2QueuedOrBetter0AllowUnitPhoenix">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="EqCountUpgradeModifiedAbility@ProtossAirArmorsLevel2QueuedOrBetter0"/>
         <OperandArray value="AllowUnitPhoenix"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel3QueuedOrBetter0AllowUnitPhoenix">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="EqCountUpgradeModifiedAbility@ProtossAirArmorsLevel3QueuedOrBetter0"/>
         <OperandArray value="AllowUnitPhoenix"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel1QueuedOrBetter0AllowUnitPhoenix">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="EqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel1QueuedOrBetter0"/>
         <OperandArray value="AllowUnitPhoenix"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel2QueuedOrBetter0AllowUnitPhoenix">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="EqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel2QueuedOrBetter0"/>
         <OperandArray value="AllowUnitPhoenix"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel3QueuedOrBetter0AllowUnitPhoenix">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="EqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel3QueuedOrBetter0"/>
         <OperandArray value="AllowUnitPhoenix"/>
     </CRequirementAnd>
@@ -310,52 +310,42 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirArmorsLevel1CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirArmorsLevel1" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirArmorsLevel1" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirArmorsLevel2" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirArmorsLevel2QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirArmorsLevel2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirArmorsLevel3QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirArmorsLevel3" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirWeaponsLevel1" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirWeaponsLevel1" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirWeaponsLevel2" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirWeaponsLevel2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel3QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossAirWeaponsLevel3" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundArmorsLevel1CompleteOnly">
@@ -378,9 +368,29 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="ModifiedAbility@ProtossGroundArmorsLevel3" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="ModifiedAbility@ProtossGroundWeaponsLevel1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="ModifiedAbility@ProtossGroundWeaponsLevel1" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="ModifiedAbility@ProtossGroundWeaponsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="ModifiedAbility@ProtossGroundWeaponsLevel2" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel3QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="ModifiedAbility@ProtossGroundWeaponsLevel3" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossShieldsLevel1CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
@@ -480,6 +490,10 @@
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
+    <CRequirementEq id="Eq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
     <CRequirementEq id="Eq2731442398CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly1">
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly"/>
         <OperandArray index="1" value="1"/>
@@ -512,6 +526,10 @@
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementEq>
+    <CRequirementEq id="Eq629999927CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
     <CRequirementEq id="EqCountUnitMothershipQueuedOrBetter0">
         <OperandArray index="0" value="CountUnitMothershipQueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
@@ -521,32 +539,26 @@
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossAirArmorsLevel2QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossAirArmorsLevel2QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossAirArmorsLevel3QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossAirArmorsLevel3QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel1QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel2QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossAirWeaponsLevel3QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossAirWeaponsLevel3QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
@@ -564,6 +576,16 @@
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1QueuedOrBetter0">
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2QueuedOrBetter0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossGroundWeaponsLevel3QueuedOrBetter0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel3QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossShieldsLevel1QueuedOrBetter0">

@@ -20887,6 +20887,8 @@
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="F4A9F977"/>
             <FunctionCall Type="Comment" Library="B156CA28" Id="90F26F3C"/>
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="7D7DD608"/>
+            <FunctionCall Type="Comment" Library="B156CA28" Id="A91F246D"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="F4684040"/>
         </Element>
         <Element Type="Comment" Id="ACEA3510">
             <Comment>
@@ -20902,6 +20904,8 @@
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="AF6B8279"/>
             <FunctionCall Type="Comment" Library="B156CA28" Id="539DD42D"/>
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="11257C0D"/>
+            <FunctionCall Type="Comment" Library="B156CA28" Id="40B82F95"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="45B58D06"/>
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="B8AF5D51"/>
         </Element>
         <Element Type="Comment" Id="80533BCD">
@@ -20964,6 +20968,33 @@
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Unit"/>
         </Element>
+        <Element Type="Comment" Id="40B82F95">
+            <Comment>
+                Ban LotV Beta
+            </Comment>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="45B58D06">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="51A273F5"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="B156CA28" Id="83646FE3"/>
+            <Parameter Type="Param" Library="B156CA28" Id="A7F00B2E"/>
+            <Parameter Type="Param" Library="B156CA28" Id="DA3E5ADC"/>
+        </Element>
+        <Element Type="Param" Id="83646FE3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B15D29C1"/>
+            <Parameter Type="ParamDef" Library="B156CA28" Id="F9C069D8"/>
+        </Element>
+        <Element Type="Param" Id="A7F00B2E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C26556EA"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="DA3E5ADC">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="BC66D9AD"/>
+            <Value>DisruptorLotVBeta</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Unit"/>
+        </Element>
         <Element Type="FunctionCall" Id="B8AF5D51">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
             <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C60B9062"/>
@@ -20999,6 +21030,8 @@
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="5E43DFC6"/>
             <FunctionCall Type="Comment" Library="B156CA28" Id="C485A180"/>
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="E1CEBAE4"/>
+            <FunctionCall Type="Comment" Library="B156CA28" Id="5AC687B5"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="7DFA39AA"/>
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="9C6F61D1"/>
         </Element>
         <Element Type="Comment" Id="D0383055">
@@ -21082,6 +21115,33 @@
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Unit"/>
         </Element>
+        <Element Type="Comment" Id="5AC687B5">
+            <Comment>
+                Ban LotV Beta
+            </Comment>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="7DFA39AA">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="51A273F5"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="B156CA28" Id="969F94FC"/>
+            <Parameter Type="Param" Library="B156CA28" Id="C681F7FB"/>
+            <Parameter Type="Param" Library="B156CA28" Id="D8AF8FDB"/>
+        </Element>
+        <Element Type="Param" Id="969F94FC">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B15D29C1"/>
+            <Parameter Type="ParamDef" Library="B156CA28" Id="F9C069D8"/>
+        </Element>
+        <Element Type="Param" Id="C681F7FB">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C26556EA"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="D8AF8FDB">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="BC66D9AD"/>
+            <Value>DisruptorLotVBeta</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Unit"/>
+        </Element>
         <Element Type="FunctionCall" Id="9C6F61D1">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
             <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C60B9062"/>
@@ -21117,6 +21177,8 @@
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="617D85FC"/>
             <FunctionCall Type="Comment" Library="B156CA28" Id="1D70A24F"/>
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="9F5CDCD2"/>
+            <FunctionCall Type="Comment" Library="B156CA28" Id="16357DB0"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="2FC928A7"/>
             <FunctionCall Type="FunctionCall" Library="B156CA28" Id="0DD5289C"/>
         </Element>
         <Element Type="Comment" Id="79237805">
@@ -21200,6 +21262,33 @@
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Unit"/>
         </Element>
+        <Element Type="Comment" Id="16357DB0">
+            <Comment>
+                Ban LotV Beta
+            </Comment>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="2FC928A7">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="51A273F5"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="B156CA28" Id="96EAB96B"/>
+            <Parameter Type="Param" Library="B156CA28" Id="03A4891C"/>
+            <Parameter Type="Param" Library="B156CA28" Id="72AB603E"/>
+        </Element>
+        <Element Type="Param" Id="96EAB96B">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B15D29C1"/>
+            <Parameter Type="ParamDef" Library="B156CA28" Id="F9C069D8"/>
+        </Element>
+        <Element Type="Param" Id="03A4891C">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C26556EA"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="72AB603E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="BC66D9AD"/>
+            <Value>DisruptorLotVBeta</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Unit"/>
+        </Element>
         <Element Type="FunctionCall" Id="0DD5289C">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
             <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C60B9062"/>
@@ -21218,6 +21307,153 @@
         <Element Type="Param" Id="2910BB1D">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
             <Value>2</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Comment" Id="A91F246D">
+            <Comment>
+                LotV Beta
+            </Comment>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C7699CD9"/>
+        </Element>
+        <Element Type="FunctionCall" Id="F4684040">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="BB1891ED"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C7699CD9"/>
+            <FunctionCall Type="Comment" Library="B156CA28" Id="E5291543"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="AED1BF19"/>
+            <FunctionCall Type="Comment" Library="B156CA28" Id="3A33914F"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="CDC48815"/>
+            <FunctionCall Type="Comment" Library="B156CA28" Id="04316BC1"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="3C9C22EA"/>
+            <FunctionCall Type="Comment" Library="B156CA28" Id="86A83C98"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="1274CFF0"/>
+            <FunctionCall Type="FunctionCall" Library="B156CA28" Id="4D00659A"/>
+        </Element>
+        <Element Type="Comment" Id="E5291543">
+            <Comment>
+                Allow LotV Beta
+            </Comment>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="AED1BF19">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="51A273F5"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="B156CA28" Id="8D7D5AFF"/>
+            <Parameter Type="Param" Library="B156CA28" Id="1FE9FB6B"/>
+            <Parameter Type="Param" Library="B156CA28" Id="14B5ACF9"/>
+        </Element>
+        <Element Type="Param" Id="8D7D5AFF">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B15D29C1"/>
+            <Parameter Type="ParamDef" Library="B156CA28" Id="F9C069D8"/>
+        </Element>
+        <Element Type="Param" Id="1FE9FB6B">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C26556EA"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000106"/>
+        </Element>
+        <Element Type="Param" Id="14B5ACF9">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="BC66D9AD"/>
+            <Value>DisruptorLotVBeta</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Unit"/>
+        </Element>
+        <Element Type="Comment" Id="3A33914F">
+            <Comment>
+                Ban Current
+            </Comment>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="CDC48815">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="51A273F5"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="B156CA28" Id="AE970204"/>
+            <Parameter Type="Param" Library="B156CA28" Id="939FEDD4"/>
+            <Parameter Type="Param" Library="B156CA28" Id="A8B9F282"/>
+        </Element>
+        <Element Type="Param" Id="AE970204">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B15D29C1"/>
+            <Parameter Type="ParamDef" Library="B156CA28" Id="F9C069D8"/>
+        </Element>
+        <Element Type="Param" Id="939FEDD4">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C26556EA"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="A8B9F282">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="BC66D9AD"/>
+            <Value>Disruptor</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Unit"/>
+        </Element>
+        <Element Type="Comment" Id="04316BC1">
+            <Comment>
+                Ban LotV1
+            </Comment>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="3C9C22EA">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="51A273F5"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="B156CA28" Id="5326A7BE"/>
+            <Parameter Type="Param" Library="B156CA28" Id="7F7EE5C8"/>
+            <Parameter Type="Param" Library="B156CA28" Id="0924A640"/>
+        </Element>
+        <Element Type="Param" Id="5326A7BE">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B15D29C1"/>
+            <Parameter Type="ParamDef" Library="B156CA28" Id="F9C069D8"/>
+        </Element>
+        <Element Type="Param" Id="7F7EE5C8">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C26556EA"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="0924A640">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="BC66D9AD"/>
+            <Value>DisruptorLotV1</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Unit"/>
+        </Element>
+        <Element Type="Comment" Id="86A83C98">
+            <Comment>
+                Ban LotV2
+            </Comment>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="1274CFF0">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="51A273F5"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="BF750C3C"/>
+            <Parameter Type="Param" Library="B156CA28" Id="2DC674F3"/>
+            <Parameter Type="Param" Library="B156CA28" Id="802EB763"/>
+            <Parameter Type="Param" Library="B156CA28" Id="6522AE35"/>
+        </Element>
+        <Element Type="Param" Id="2DC674F3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B15D29C1"/>
+            <Parameter Type="ParamDef" Library="B156CA28" Id="F9C069D8"/>
+        </Element>
+        <Element Type="Param" Id="802EB763">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C26556EA"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="00000107"/>
+        </Element>
+        <Element Type="Param" Id="6522AE35">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="BC66D9AD"/>
+            <Value>DisruptorLotV2</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Unit"/>
+        </Element>
+        <Element Type="FunctionCall" Id="4D00659A">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="C60B9062"/>
+            <Parameter Type="Param" Library="B156CA28" Id="E545498F"/>
+            <Parameter Type="Param" Library="B156CA28" Id="6FFD2F4E"/>
+            <Parameter Type="Param" Library="B156CA28" Id="C1235983"/>
+        </Element>
+        <Element Type="Param" Id="E545498F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <Parameter Type="ParamDef" Library="B156CA28" Id="65C58A91"/>
+        </Element>
+        <Element Type="Param" Id="6FFD2F4E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="C1235983">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>3</Value>
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="1A1EE4EA">

@@ -747,9 +747,9 @@
         <EditorCategories value=""/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
-        <ShieldBonus value="100"/>
+        <ShieldBonus value="55"/>
         <Flags index="Notification" value="1"/>
-        <Amount value="100"/>
+        <Amount value="145"/>
         <Death value="Electrocute"/>
     </CEffectDamage>
     <CEffectSet id="PurificationNovaLotV2@EndSet">

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitCompareCooldown id="OverchargeLotV@OnCooldown">
+        <Compare value="GT"/>
+        <CooldownLink value="Abil/OverchargeLotV"/>
+        <Ability value="OverchargeLotV"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareBehaviorCount id="OverchargeLotV@HavePhasedPostBehavior">
+        <Value value="1"/>
+        <Behavior value="OverchargeLotV@PhasedPost"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="ModifiedAbility@IsSiegeTankSiegedCombine">
         <CombineArray value="IsSiegedSiegeTank"/>
         <CombineArray value="SiegeTankLotV1@IsSiegeTankSieged"/>
@@ -24,8 +33,16 @@
         <Value value="DisruptorLotV2@Phased"/>
         <Find value="0"/>
     </CValidatorUnitType>
+    <CValidatorUnitType id="DisruptorLotVBeta@PhasedIsNotDisruptorPhased">
+        <Value value="DisruptorLotVBeta@Phased"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
     <CValidatorUnitType id="DisruptorLotV2@IsNotDisruptor">
         <Value value="DisruptorLotV2"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="DisruptorLotVBeta@IsNotDisruptor">
+        <Value value="DisruptorLotVBeta"/>
         <Find value="0"/>
     </CValidatorUnitType>
     <CValidatorUnitType id="SiegeTankLotV1@IsSiegeTankSieged">
@@ -269,6 +286,8 @@
         <CombineArray value="DisruptorLotV1@PhasedIsNotDisruptorPhased"/>
         <CombineArray value="DisruptorLotV2@IsNotDisruptor"/>
         <CombineArray value="DisruptorLotV2@PhasedIsNotDisruptorPhased"/>
+        <CombineArray value="DisruptorLotVBeta@IsNotDisruptor"/>
+        <CombineArray value="DisruptorLotVBeta@PhasedIsNotDisruptorPhased"/>
     </CValidatorCombine>
     <CValidatorPlayerRequirement id="ExtendedThermalLanceLiberty@Upgraded">
         <WhichPlayer Value="Caster"/>

@@ -225,6 +225,7 @@
             <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="Benign" value="1"/>
             <StateFlags index="Passive" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="PurificationNovaLotV2@Target">
@@ -280,6 +281,7 @@
             <StateFlags index="Invulnerable" value="1"/>
             <StateFlags index="Benign" value="1"/>
             <StateFlags index="Passive" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="OverchargeLotV@SpeedBoost">

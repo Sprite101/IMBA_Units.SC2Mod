@@ -409,7 +409,7 @@ Button/Tooltip/DisruptorLotV1@Phased=Highly concentrated solar energy. Explodes 
 Button/Tooltip/DisruptorLotV2=Robotic disruption unit. Can use Overcharge to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/DisruptorLotV2@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,PurificationNovaTargettedTarget,Duration"/> seconds, dealing area damage.
 Button/Tooltip/DisruptorLotVBeta=Robotic disruption unit. Can use Purification Nova to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
-Button/Tooltip/DisruptorLotVBeta@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,PurificationNovaTargettedTarget,Duration"/> seconds, dealing area damage.
+Button/Tooltip/DisruptorLotVBeta@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,OverchargeLotV@Phased,Duration"/> seconds, dealing area damage.
 Button/Tooltip/DrillingClaws@ResearchDrillingClaws=Allows <c val="ffff8a">Widow Mines</c> to burrow and activate two times as fast.
 Button/Tooltip/DurableMaterialsSwarm@ResearchDurableMaterials=Extends the timed duration of Raven <c val="ffff8a">Auto-Turrets</c> and <c val="ffff8a">Point Defense Drones</c>.
 Button/Tooltip/EnergyRechargeLotV=Instantly recharges <d ref="Effect,EnergyRechargeLotV@MU,VitalArray[Energy].Change * (Effect,EnergyRechargeLotV@CP,PeriodCount + 1)"/> energy to a unit near a Nexus.
@@ -1157,6 +1157,7 @@ RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877T
 RequirementNode/Tooltip/CountUpgradeResonatingGlaivesLotVCompleteOnly543136321TechTreeCheat=Research Resonating Glaives at the Twilight Council
 RequirementNode/Tooltip/Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1=Terran Vehicle And Ship Weapons Level 1
 RequirementNode/Tooltip/Eq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1=Protoss Air Weapons Level 1
+RequirementNode/Tooltip/Eq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1=Protoss Ground Weapons Level 1
 RequirementNode/Tooltip/Eq2731442398CountUpgradeModifiedAbility@ProtossAirArmorsLevel2CompleteOnly1=Protoss Air Armor Level 2
 RequirementNode/Tooltip/Eq3354561256CountUpgradeModifiedAbility@ProtossShieldsLevel1CompleteOnly1=Protoss Shields Level 1
 RequirementNode/Tooltip/Eq3569156689CountUpgradeModifiedAbility@ProtossGroundArmorsLevel1CompleteOnly1=Protoss Ground Armor Level 1
@@ -1165,6 +1166,7 @@ RequirementNode/Tooltip/Eq419273267CountUpgradeModifiedAbility@ProtossGroundArmo
 RequirementNode/Tooltip/Eq4283478838CountUpgradeModifiedAbility@ProtossAirArmorsLevel1CompleteOnly1=Protoss Air Armor Level 1
 RequirementNode/Tooltip/Eq514164946CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel2CompleteOnly1=Terran Vehicle And Ship Weapons Level 2
 RequirementNode/Tooltip/Eq524089035CountUpgradeModifiedAbility@ProtossAirWeaponsLevel2CompleteOnly1=Protoss Air Weapons Level 2
+RequirementNode/Tooltip/Eq629999927CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly1=Protoss Ground Weapons Level 2
 RequirementNode/Tooltip/LT2210218377CountUnitInterceptorLotV1QueuedOrBetterAtUnit8=Carrier must have fewer than 8 Interceptors
 RequirementNode/Tooltip/LT2210218377CountUnitInterceptorLotV2QueuedOrBetterAtUnit8=Carrier must have fewer than 8 Interceptors
 RequirementNode/Tooltip/Not361380870CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit=Not Locked On
@@ -1360,9 +1362,11 @@ UserData/IMBA_ProtossUnits/Dark Templar_Selection_Title_001=lotv
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Expansion_Tip=current
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Expansion_Tip_001=deals more damage and costs less supply
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Expansion_Tip_002=detonates upon contact with enemy units
+UserData/IMBA_ProtossUnits/Disruptor_Selection_Expansion_Tip_003=charges towards enemy and detonates shortly
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Title=current
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Title_001=lotv1
 UserData/IMBA_ProtossUnits/Disruptor_Selection_Title_002=lotv2
+UserData/IMBA_ProtossUnits/Disruptor_Selection_Title_003=beta
 UserData/IMBA_ProtossUnits/High Templar_Selection_Expansion_Tip=CURRENT
 UserData/IMBA_ProtossUnits/High Templar_Selection_Expansion_Tip_001=Psi storm deals less damage but faster. Feedback deals 1:1 damage. No attack weapon. Can upgrade to have +25 starting energy.
 UserData/IMBA_ProtossUnits/High Templar_Selection_Title=current

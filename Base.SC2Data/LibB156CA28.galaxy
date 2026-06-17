@@ -1094,16 +1094,25 @@ void libB156CA28_gf_Select_Disruptor (int lp_player, int lp_selectionIndex) {
     if ((lp_selectionIndex == 0)) {
         TechTreeUnitAllow(lp_player, "DisruptorLotV1", false);
         TechTreeUnitAllow(lp_player, "DisruptorLotV2", false);
+        TechTreeUnitAllow(lp_player, "DisruptorLotVBeta", false);
     }
     else if ((lp_selectionIndex == 1)) {
         TechTreeUnitAllow(lp_player, "DisruptorLotV1", true);
         TechTreeUnitAllow(lp_player, "Disruptor", false);
         TechTreeUnitAllow(lp_player, "DisruptorLotV2", false);
+        TechTreeUnitAllow(lp_player, "DisruptorLotVBeta", false);
     }
     else if ((lp_selectionIndex == 2)) {
         TechTreeUnitAllow(lp_player, "DisruptorLotV2", true);
         TechTreeUnitAllow(lp_player, "Disruptor", false);
         TechTreeUnitAllow(lp_player, "DisruptorLotV1", false);
+        TechTreeUnitAllow(lp_player, "DisruptorLotVBeta", false);
+    }
+    else if ((lp_selectionIndex == 3)) {
+        TechTreeUnitAllow(lp_player, "DisruptorLotVBeta", true);
+        TechTreeUnitAllow(lp_player, "Disruptor", false);
+        TechTreeUnitAllow(lp_player, "DisruptorLotV1", false);
+        TechTreeUnitAllow(lp_player, "DisruptorLotV2", false);
     }
 }
 

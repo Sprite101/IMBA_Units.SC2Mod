@@ -7,7 +7,7 @@
         <Magnitude value="40.000000,3.000000"/>
         <Radius value="3.000000,0.200000"/>
     </CActorForceSphere>
-    <CActorUnit id="DisruptorLotV1@Phased2" parent="GenericUnitStandard" unitName="DisruptorLotVBeta@Phased">
+    <CActorUnit id="DisruptorLotVBeta@Phased" parent="GenericUnitStandard" unitName="DisruptorLotVBeta@Phased">
         <Aliases value="_UnitLarge"/>
         <Macros value="ChargingAnim"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -32,7 +32,6 @@
         <GroupIcon>
             <Image value="Assets\Textures\wireframe-protoss-disruptorphasemod.dds"/>
         </GroupIcon>
-        <HighlightTooltip value="Unit/Name/DisruptorLotV1@Phased2"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
         <SoundArray index="Ready" value="Pusher_Ready"/>
         <SoundArray index="Help" value="Pusher_Help"/>
@@ -46,6 +45,8 @@
         <Wireframe>
             <Image value="Assets\Textures\wireframe-protoss-disruptorphasemod.dds"/>
         </Wireframe>
+        <On Terms="AbilMorph.*.Start; MorphFrom DisruptorLotVBeta" Send="Create"/>
+        <On Terms="Behavior.OverchargeLotV@Phased.Off" Send="Destroy"/>
     </CActorUnit>
     <CActorUnit id="DisruptorLotVBeta" parent="GenericUnitStandard" unitName="DisruptorLotVBeta">
         <Aliases value="_UnitLarge"/>
@@ -56,11 +57,13 @@
         <On Terms="UnitHeightUpdate.*.Land" Send="Create Disruptor_Land"/>
         <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
         <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
-        <On Terms="Behavior.OverchargeLotV@Phased.On" Send="ModelSwap PurificationNovaModelSwap"/>
         <On Terms="Behavior.OverchargeLotV@Phased.On" Send="Create PurificationNovaBirth"/>
-        <On Terms="Behavior.OverchargeLotV@Phased.Off" Send="ModelSwap Disruptor"/>
-        <On Terms="AbilCooldown.OverchargeLotV.Spend" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="Behavior.OverchargeLotV@Phased.Off" Send="Create"/>
+        <On Terms="ActorCreation; ValidateUnit OverchargeLotV@HavePhasedPostBehavior" Send="AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"/>
+        <On Terms="Behavior.OverchargeLotV@PhasedPost.Off" Send="AnimBracketStop Work"/>
+        <On Terms="ActorCreation; ValidateUnit OverchargeLotV@OnCooldown" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
         <On Terms="AbilCooldown.OverchargeLotV.Regen" Send="AnimBracketStop Cover"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom DisruptorLotVBeta" Send="Destroy"/>
         <Model value="Disruptor"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <BuildModel value="Disruptor"/>

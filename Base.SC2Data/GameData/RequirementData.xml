@@ -112,13 +112,13 @@
     </CRequirement>
     <CRequirement id="ModifiedAbility@LearnProtossGroundWeapon2">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
-        <NodeArray index="Use" Link="AndEq1740904084CountUpgradeProtossGroundWeaponsLevel1CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
-        <NodeArray index="Show" Link="EqCountUpgradeProtossGroundWeaponsLevel2QueuedOrBetter0"/>
+        <NodeArray index="Use" Link="AndEq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2QueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="ModifiedAbility@LearnProtossGroundWeapon3">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
-        <NodeArray index="Use" Link="AndEq629999927CountUpgradeProtossGroundWeaponsLevel2CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
-        <NodeArray index="Show" Link="EqCountUpgradeProtossGroundWeaponsLevel3QueuedOrBetter0"/>
+        <NodeArray index="Use" Link="AndEq629999927CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeModifiedAbility@ProtossGroundWeaponsLevel3QueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="ModifiedAbility@LearnProtossShield1">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
