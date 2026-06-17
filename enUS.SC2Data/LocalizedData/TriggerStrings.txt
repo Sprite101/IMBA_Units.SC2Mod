@@ -148,7 +148,6 @@ Structure/Name/lib_B156CA28_37E1C1F8=PlayerFrames
 Trigger/Name/lib_B156CA28_102E566D=Hide Results In Game
 Trigger/Name/lib_B156CA28_1FF4E7FF=Map Init
 Trigger/Name/lib_B156CA28_560D3664=Countdown
-Trigger/Name/lib_B156CA28_8330C59E=Unit Test
 Trigger/Name/lib_B156CA28_8B055175=Selection Button Used
 Trigger/Name/lib_B156CA28_9E2A6E58=Confirm Button Used
 Trigger/Name/lib_B156CA28_E21D2A6B=View Results In Game

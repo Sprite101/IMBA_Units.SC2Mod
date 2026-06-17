@@ -26,6 +26,7 @@ Abil/Name/CycloneLotV1@Train=Build
 Abil/Name/CycloneLotV2@Train=Build
 Abil/Name/DisruptorLotV1@Build=Build
 Abil/Name/DisruptorLotV2@Build=Build
+Abil/Name/DisruptorLotVBeta@Build=Build
 Abil/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Abil/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
 Abil/Name/EnergyRechargeLotV=Energy Recharge
@@ -92,6 +93,9 @@ Abil/Name/OracleSwarm@Build=Build
 Abil/Name/OracleSwarm@PulsarBeam=Pulsar Beam
 Abil/Name/OracleSwarm@Revelation=Revelation
 Abil/Name/OracleSwarm@TimeWarp=Time Warp
+Abil/Name/OverchargeLotV=Overcharge
+Abil/Name/OverchargeLotV@Morph=Morph
+Abil/Name/OverchargeLotV@MorphBack=Morph Back
 Abil/Name/PhotonOverchargeLotV1=Photon Overcharge
 Abil/Name/PhotonOverchargeSwarm=Photon Overcharge
 Abil/Name/PhotonOverchargeSwarm@BuildingAttack=Building Attack
@@ -126,6 +130,9 @@ Abil/Name/ShadowStrideLotV=Shadow Stride
 Abil/Name/SiegeArmorLotV1@Train=Build
 Abil/Name/SiegeArmorLotV1Morph@SiegeMode=Siege
 Abil/Name/SiegeArmorLotV1Morph@Unsiege=Unsiege
+Abil/Name/SiegeTankLotV1@Train=Build
+Abil/Name/SiegeTankLotV1Morph@SiegeMode=Siege Mode
+Abil/Name/SiegeTankLotV1Morph@Unsiege=Unsiege
 Abil/Name/StasisWardLotV1@Activate=Activate
 Abil/Name/TempestLotV1@Build=Build
 Abil/Name/TempestSwarm@Build=Build
@@ -133,6 +140,8 @@ Abil/Name/TimeWarpLotV1=Time Warp
 Abil/Name/TimeWarpSwarm=Time Warp
 Abil/Name/VoidRayLotV@Build=Build
 Abil/Name/VortexWoL=Vortex
+Abil/Name/WarhoundSwarm@HaywireMissiles=Haywire Missiles
+Abil/Name/WarhoundSwarm@Train=Build
 Abil/Name/WarpInLiberty@Research=Research
 Abil/Name/WarpInLiberty@UpgradeToWarpGate=Morph Building (Gateway -> Warp Gate)
 Abil/Name/WarpInLiberty@WarpGateTrain=Warp Gate Train
@@ -142,7 +151,6 @@ Abil/Name/WarpPrismLotV1@Siege=Siege
 Abil/Name/WarpPrismLotV1@SiegedUnsiege=Unsiege
 Abil/Name/WarpPrismLotV1@Transport=Transport
 Abil/Name/WidowMineSwarm@Train=Build
-Abil/Name/WidowMineSwarm@Train2=Build
 Abil/Name/WidowMineSwarm@WidowMineAttack=Widow Mine Attack
 Abil/Name/WidowMineSwarm@WidowMineBurrow=Widow Mine Burrow
 Abil/Name/WidowMineSwarm@WidowMineUnburrow=Widow Mine Unburrow 
@@ -159,6 +167,8 @@ Behavior/Name/OracleLotV1@RevelationRevealed=Revealed
 Behavior/Name/OracleSwarm@PulsarBeamEnergyCost=Pulsar Beam
 Behavior/Name/OracleSwarm@Revelation=Revealed
 Behavior/Name/OracleSwarm@TimeWarp=Time Warp
+Behavior/Name/OverchargeLotV@Phased=Phased
+Behavior/Name/OverchargeLotV@PhasedPost=Phased
 Behavior/Name/PhotonOverchargeLotV1=Photon Overcharge
 Behavior/Name/PhotonOverchargeSwarm=Photon Overcharge
 Behavior/Name/PsiStormLiberty=Psionic Storm
@@ -188,6 +198,8 @@ Behavior/Tooltip/CycloneLockOnLotV2@LockOn=This unit has been targeted by a Cycl
 Behavior/Tooltip/OracleLotV1@RevelationRevealed=This unit or structure is providing vision for the caster.
 Behavior/Tooltip/OracleSwarm@PulsarBeamEnergyCost=This Oracle's is attacking a structure target.
 Behavior/Tooltip/OracleSwarm@Revelation=This unit or structure is providing vision for the caster.
+Behavior/Tooltip/OverchargeLotV@Phased=This unit is invulnerable and is able to move through other units.
+Behavior/Tooltip/OverchargeLotV@PhasedPost=This unit is invulnerable and is able to move through other units.
 Behavior/Tooltip/PhotonOverchargeLotV1=This Pylon has a powerful long-ranged attack.
 Behavior/Tooltip/PhotonOverchargeSwarm=This Nexus has a powerful long-ranged attack.
 Behavior/Tooltip/PsiStormLiberty=Target is under the effects of Psionic Storm and will take massive damage while in this area of effect.
@@ -233,6 +245,7 @@ Button/Name/CycloneLotV1@BuildCyclone=Build Cyclone
 Button/Name/CycloneLotV2@BuildCyclone=Build Cyclone
 Button/Name/DisruptorLotV1=Warp In Disruptor
 Button/Name/DisruptorLotV2=Warp In Disruptor
+Button/Name/DisruptorLotVBeta=Warp In Disruptor
 Button/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Button/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
 Button/Name/EnergyRechargeLotV=Energy Recharge
@@ -297,6 +310,7 @@ Button/Name/OracleSwarm=Warp In Oracle
 Button/Name/OracleSwarm@PulsarBeam=Pulsar Beam
 Button/Name/OracleSwarm@Revelation=Revelation
 Button/Name/OracleSwarm@TimeWarp=Time Warp
+Button/Name/OverchargeLotV=Overcharge
 Button/Name/PhotonOverchargeLotV1=Photon Overcharge
 Button/Name/PhotonOverchargeSwarm=Photon Overcharge
 Button/Name/PointDefenseDroneSwarm@BuildPointDefenseDrone=Build Point Defense Drone
@@ -334,6 +348,7 @@ Button/Name/ShadowStrideLotV=Shadow Stride
 Button/Name/SiegeArmorLotV1@BuildSiegeArmor=Build 攻城坦克
 Button/Name/SiegeArmorLotV1Morph@SiegeMode=Siege Mode
 Button/Name/SiegeArmorLotV1Morph@Unsiege=Tank Mode
+Button/Name/SiegeTankLotV1@BuildSiegeTank=Build Siege Tank
 Button/Name/StalkerLiberty=Warp In Stalker
 Button/Name/StasisWardLotV1@Activate=Stasis Trap 
 Button/Name/StasisWardLotV1@ActivatePassive=Stasis Trap
@@ -344,6 +359,8 @@ Button/Name/TimeWarpLotV1=Time Warp
 Button/Name/TimeWarpSwarm=Time Warp
 Button/Name/VoidRayLotV=Warp In Void Ray
 Button/Name/VortexWoL=Vortex
+Button/Name/WarhoundSwarm=Build Warhound
+Button/Name/WarhoundSwarm@HaywireMissiles=Haywire Missiles
 Button/Name/WarpInLiberty@Pylon=Warp In Pylon
 Button/Name/WarpInLiberty@Research=Research Warp Gate
 Button/Name/WarpPrismLotV1=Warp In Warp Prism
@@ -389,8 +406,10 @@ Button/Tooltip/CycloneLotV1@BuildCyclone=Mobile assault vehicle. Can use Lock On
 Button/Tooltip/CycloneLotV2@BuildCyclone=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Originally introduced in 2023 balance revamp and removed in 2024 balance revamp.<n/>
 Button/Tooltip/DisruptorLotV1=Robotic disruption unit. Can use Purification Nova to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/DisruptorLotV1@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,PurificationNovaTargettedTarget,Duration"/> seconds, dealing area damage.
-Button/Tooltip/DisruptorLotV2=Robotic disruption unit. Can use Purification Nova to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/DisruptorLotV2=Robotic disruption unit. Can use Overcharge to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/DisruptorLotV2@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,PurificationNovaTargettedTarget,Duration"/> seconds, dealing area damage.
+Button/Tooltip/DisruptorLotVBeta=Robotic disruption unit. Can use Purification Nova to deal heavy area damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/DisruptorLotVBeta@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,PurificationNovaTargettedTarget,Duration"/> seconds, dealing area damage.
 Button/Tooltip/DrillingClaws@ResearchDrillingClaws=Allows <c val="ffff8a">Widow Mines</c> to burrow and activate two times as fast.
 Button/Tooltip/DurableMaterialsSwarm@ResearchDurableMaterials=Extends the timed duration of Raven <c val="ffff8a">Auto-Turrets</c> and <c val="ffff8a">Point Defense Drones</c>.
 Button/Tooltip/EnergyRechargeLotV=Instantly recharges <d ref="Effect,EnergyRechargeLotV@MU,VitalArray[Energy].Change * (Effect,EnergyRechargeLotV@CP,PeriodCount + 1)"/> energy to a unit near a Nexus.
@@ -462,6 +481,7 @@ Button/Tooltip/OracleSwarm=Flying caster. Can use Revelation, Stasis Ward, and P
 Button/Tooltip/OracleSwarm@PulsarBeam=Activates Oracle's Pulsar Beam on an enemy structure, dealing <d ref="Effect,OracleSwarm@PulsarBeamDamage,Amount[0]"/> damage every second.
 Button/Tooltip/OracleSwarm@Revelation=Causes enemy and neutral units and structures within the target area to grant vision for <d ref="Behavior,OracleSwarm@Revelation,Duration"/> seconds. Does not affect cloaked or burrowed units and structures.
 Button/Tooltip/OracleSwarm@TimeWarp=Warps spacetime within the target area for <d ref="Effect,OracleSwarm@TimeWarpCP,PeriodCount*Effect,OracleSwarm@TimeWarpCP,PeriodicPeriodArray[0]"/> seconds. Enemy ground units that enter the field have their movement speed reduced by <d ref="(1-Behavior,OracleSwarm@TimeWarp,Modification.MoveSpeedMultiplier)*100"/>%.
+Button/Tooltip/OverchargeLotV=Enters Phased Mode. While phased, Disruptor's movement speed is increased for <d ref="Behavior,OverchargeLotV@Phased,Duration"/> seconds and is invulnerable, untargetable, and can pass through all units. After that, Disruptor exits Phased Mode, dealing <d ref="Effect,OverchargeLotV@Damage,Amount"/> splash damage and an additional <d ref="Effect,OverchargeLotV@Damage,ShieldBonus"/> shield damage to nearby ground units and structures, and stays invulnerable for another <d ref="Behavior,OverchargeLotV@PhasedPost,Duration"/> seconds.
 Button/Tooltip/PhotonOverchargeLotV1=Energizes the target Pylon's khaydarin crystal, turning it into a powerful long-range weapon for <d ref="Behavior,PhotonOverchargeLotV1,Duration[0]"/> seconds that deals <d ref="Effect,PhotonOverchargeLotV1@WeaponDamage,Amount[0]"/> damage.
 Button/Tooltip/PhotonOverchargeSwarm=Energizes the target Pylon's khaydarin crystal, turning it into a powerful long-range weapon for <d ref="Behavior,Purify,Duration[0]"/> seconds that deals <d ref="Effect,MothershipCoreWeaponDamage,Amount[0]"/> damage.
 Button/Tooltip/PointDefenseDroneSwarm@BuildPointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,PointDefenseDroneSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
@@ -516,6 +536,8 @@ Button/Tooltip/TimeWarpLotV1=After a <d ref="(Effect,TemporalFieldGrowingBubbleC
 Button/Tooltip/TimeWarpSwarm=Warps spacetime within the target area for <d ref="Effect,OracleSwarm@TimeWarpCP,PeriodCount*Effect,OracleSwarm@TimeWarpCP,PeriodicPeriodArray[0]"/> seconds. Enemy ground units that enter the field have their movement speed reduced by <d ref="(1-Behavior,OracleSwarm@TimeWarp,Modification.MoveSpeedMultiplier)*100"/>%.
 Button/Tooltip/VoidRayLotV=Surgical strike craft.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/VortexWoL=Creates a gravity Vortex that stuns ground and air units in the target area. Units within the Vortex are invulnerable to all damage and effects. Lasts for <d time="20"/>.
+Button/Tooltip/WarhoundSwarm=Anti-vehicle mech. Haywire missiles do bonus damage to mechanical units. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/WarhoundSwarm@HaywireMissiles=When attacking a mechanical unit, the Warhound launches electrically charged missiles at its target, dealing 30 damage per volley.<n/><c val="#ColorAttackInfo">Can attack ground units.</c> 
 Button/Tooltip/WarpInAdeptLotV=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/WarpInLiberty@Pylon=Provides supply.<n/>Supply allows you to warp in more units.<n/>Creates power for nearby structures.
 Button/Tooltip/WarpInLiberty@Research=Enables <c val="ffff8a">Gateways</c> to upgrade to Warp Gates.
@@ -556,6 +578,7 @@ DataCollection/Name/CycloneLotV1=CycloneLotV1
 DataCollection/Name/CycloneLotV2=CycloneLotV2
 DataCollection/Name/DisruptorLotV1=Disruptor
 DataCollection/Name/DisruptorLotV2=Disruptor
+DataCollection/Name/DisruptorLotVBeta=Disruptor
 DataCollection/Name/DrillingClaws=Drilling Claws
 DataCollection/Name/DurableMaterialsSwarm=Durable Materials
 DataCollection/Name/EnergyRechargeLotV=Energy Recharge
@@ -603,6 +626,7 @@ DataCollection/Name/ObserverLotV1=Observer
 DataCollection/Name/ObserverLotV2=Observer
 DataCollection/Name/OracleLotV1=Oracle
 DataCollection/Name/OracleSwarm=Oracle
+DataCollection/Name/OverchargeLotV=Overcharge
 DataCollection/Name/PhotonOverchargeLotV1=Photon Overcharge
 DataCollection/Name/PhotonOverchargeSwarm=Photon Overcharge
 DataCollection/Name/PistolSwarm=Pistol
@@ -634,6 +658,9 @@ DataCollection/Name/ShieldBatteryLotV=Shield Battery
 DataCollection/Name/SiegeArmorLotV1=Siege Armor LotV1
 DataCollection/Name/SiegeArmorLotV1Morph=Siege Armor Morph
 DataCollection/Name/SiegeArmorSiegedLotV1=Siege Armor Sieged LotV1
+DataCollection/Name/SiegeTankLotV1=Siege Tank
+DataCollection/Name/SiegeTankLotV1Morph=Siege Tank Morph
+DataCollection/Name/SiegeTankSiegedLotV1=Siege Tank Sieged
 DataCollection/Name/StalkerLiberty=Stalker
 DataCollection/Name/StasisWardLotV1=Stasis Ward
 DataCollection/Name/TempestLotV1=Tempest
@@ -644,6 +671,7 @@ DataCollection/Name/TornadoBlaster=Tornado Blaster
 DataCollection/Name/TyphoonMissilePodLotV2=Typhoon Missile Pod
 DataCollection/Name/VoidRayLotV=Void Ray
 DataCollection/Name/VortexWoL=Vortex
+DataCollection/Name/WarhoundSwarm=Warhound
 DataCollection/Name/WarpInLiberty=Warp In
 DataCollection/Name/WarpPrismLotV1=Warp Prism
 DataCollection/Name/WidowMineSwarm=Widow Mine
@@ -860,6 +888,15 @@ Effect/Name/OracleSwarm@RevelationSearchArea=Revelation Search Area
 Effect/Name/OracleSwarm@TimeWarpAB=Time Warp AB
 Effect/Name/OracleSwarm@TimeWarpCP=Time Warp CP
 Effect/Name/OracleSwarm@TimeWarpSearchArea=Time Warp Search Area
+Effect/Name/OverchargeLotV@Damage=Damage
+Effect/Name/OverchargeLotV@EndSet=End Set
+Effect/Name/OverchargeLotV@IssueOrderMorph=Issue Order Morph
+Effect/Name/OverchargeLotV@IssueOrderMorphBack=Issue Order Morph Back
+Effect/Name/OverchargeLotV@PhasedAB=Phased AB
+Effect/Name/OverchargeLotV@PhasedPostAB=Phased Post AB
+Effect/Name/OverchargeLotV@SearchArea=Search Area
+Effect/Name/OverchargeLotV@Set=Set
+Effect/Name/OverchargeLotV@SpeedAB=Speed AB
 Effect/Name/PhotonOverchargeLotV1@AB=AB
 Effect/Name/PhotonOverchargeLotV1@WeaponDamage=Damage
 Effect/Name/PhotonOverchargeLotV1@WeaponLM=Weapon LM
@@ -943,6 +980,8 @@ Effect/Name/PurificationNovaLotV2@SearchArea=Search Area
 Effect/Name/PurificationNovaLotV2@SpawnIssueOrder=Spawn Issue Order
 Effect/Name/PurificationNovaLotV2@SpawnSet=Spawn Set
 Effect/Name/PurificationNovaLotV2@SpawnTargetAB=Spawn Target AB
+Effect/Name/PurificationNovaNotificationDamage2=Purification Nova
+Effect/Name/PurificationNovaNotificationSearch2=Purification Nova
 Effect/Name/PurificationNovaPhasedLotV1@@SearchSet=Search Set
 Effect/Name/PurificationNovaPhasedLotV1@CooldownVisualAB=Cooldown Visual AB
 Effect/Name/PurificationNovaPhasedLotV1@IssueMorphBackOrder=Issue Morph Back Order
@@ -1065,6 +1104,15 @@ Effect/Name/VortexWoL@EventHorizonSearchArea=Event Horizon Search Area
 Effect/Name/VortexWoL@Force=Force
 Effect/Name/VortexWoL@InitialCP=Initial CP
 Effect/Name/VortexWoL@SearchArea=Search Area
+Effect/Name/WarhoundSwarm@HaywireMissilesCP=Haywire Missiles CP
+Effect/Name/WarhoundSwarm@HaywireMissilesDamage=Haywire Missiles Damage
+Effect/Name/WarhoundSwarm@HaywireMissilesDamageDummy=Haywire Missiles Damage Dummy
+Effect/Name/WarhoundSwarm@HaywireMissilesLM=Haywire Missiles LM
+Effect/Name/WarhoundSwarm@HaywireMissilesLMDummy=Haywire Missiles LM Dummy
+Effect/Name/WarhoundSwarm@HaywireMissilesLMSet=Haywire Missiles LM Set
+Effect/Name/WarhoundSwarm@WeaponDamage=Weapon Damage
+Effect/Name/WarhoundSwarm@WeaponLM=Weapon LM
+Effect/Name/WarhoundSwarm@WeaponMeleeDamage=Weapon Melee Damage
 Effect/Name/WidowMineSwarm@AttackSet=Attack Set
 Effect/Name/WidowMineSwarm@ExplodeDirectDamage=Explode Direct Damage
 Effect/Name/WidowMineSwarm@ExplodeSet=Explode Set
@@ -1147,6 +1195,8 @@ Unit/Name/DisruptorLotV1=Disruptor
 Unit/Name/DisruptorLotV1@Phased=Disruptor
 Unit/Name/DisruptorLotV2=Disruptor
 Unit/Name/DisruptorLotV2@Phased=Disruptor
+Unit/Name/DisruptorLotVBeta=Disruptor
+Unit/Name/DisruptorLotVBeta@Phased=Disruptor
 Unit/Name/GhostLotV1=Ghost
 Unit/Name/GhostLotV1@Unit=Cyclone
 Unit/Name/GhostWoL=Ghost
@@ -1194,6 +1244,7 @@ Unit/Name/SensorTowerLotV1=Sensor Tower
 Unit/Name/ShieldBatteryLotV=Shield Battery
 Unit/Name/SiegeArmorLotV1=攻城坦克
 Unit/Name/SiegeArmorSiegedLotV1=攻城坦克
+Unit/Name/SiegeTankLotV1=Siege Tank
 Unit/Name/StalkerLiberty=Stalker
 Unit/Name/StalkerLiberty@AttackMissile=Attack Missile
 Unit/Name/StasisWardLotV1=Stasis Ward 
@@ -1207,6 +1258,10 @@ Unit/Name/TornadoBlaster@Missile=Missile
 Unit/Name/TyphoonMissilePod@Missile=Missile
 Unit/Name/TyphoonMissilePodLotV2@Missile=Missile
 Unit/Name/VoidRayLotV=Void Ray
+Unit/Name/WarhoundSwarm=Warhound 
+Unit/Name/WarhoundSwarm@HaywireMissilesWeapon=Haywire Missiles Weapon
+Unit/Name/WarhoundSwarm@HaywireMissilesWeaponDummy=Haywire Missiles Weapon Dummy
+Unit/Name/WarhoundSwarm@WeaponMissile=Weapon Missile
 Unit/Name/WarpInLiberty@Pylon=Pylon
 Unit/Name/WarpPrismLotV1=Warp Prism
 Unit/Name/WarpPrismLotV1@Sieged=Warp Prism
@@ -1484,4 +1539,6 @@ Weapon/Name/TempestSwarm@AAWeapon=Kinetic Overload
 Weapon/Name/TempestSwarm@AGWeapon=Resonance Coil
 Weapon/Name/TornadoBlaster=Tornado Blaster
 Weapon/Name/TyphoonMissilePodLotV2@Weapon=Typhoon Missile Pod
+Weapon/Name/WarhoundSwarm@Weapon=Railgun
+Weapon/Name/WarhoundSwarm@WeaponMelee=Weapon Melee
 Weapon/Tip/GrenadeLiberty=Only used against structures.

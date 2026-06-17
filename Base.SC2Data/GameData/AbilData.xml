@@ -58,6 +58,14 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilTrain id="DisruptorLotVBeta@Build">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="60">
+            <Button DefaultButtonFace="DisruptorLotVBeta" Requirements="HaveRoboticsBay"/>
+            <Unit value="DisruptorLotVBeta"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilResearch id="ModifiedAbility@CyberneticsCoreResearch">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="160" Upgrade="ModifiedAbility@ProtossAirWeaponsLevel1">
@@ -436,6 +444,17 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilEffectInstant id="OverchargeLotV">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <SharedFlags index="RegisterChargeEvent" value="1"/>
+        <SharedFlags index="RegisterCooldownEvent" value="1"/>
+        <Effect index="0" value="OverchargeLotV@Set"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="23.8"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="OverchargeLotV"/>
+    </CAbilEffectInstant>
     <CAbilEffectTarget id="PurificationNovaLotV2">
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <SharedFlags index="RegisterChargeEvent" value="1"/>
@@ -452,6 +471,18 @@
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectTarget>
+    <CAbilMorph id="OverchargeLotV@Morph">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="OverchargeLotV"/>
+        <Flags index="Transient" value="1"/>
+        <InfoArray Unit="DisruptorLotVBeta@Phased"/>
+    </CAbilMorph>
+    <CAbilMorph id="OverchargeLotV@MorphBack">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="OverchargeLotV"/>
+        <Flags index="Transient" value="1"/>
+        <InfoArray Unit="DisruptorLotVBeta"/>
+    </CAbilMorph>
     <CAbilEffectTarget id="ShieldBatteryRechargeEx5">
         <AutoCastValidatorArray index="0" value="ModifiedAbility@CasterHas10EnergyOrCasterHasBatteryOverchargeBehavior"/>
     </CAbilEffectTarget>
@@ -598,6 +629,18 @@
         <AINotifyEffect value="TemporalFieldCreatePersistent"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="TimeWarpLotV1"/>
     </CAbilEffectTarget>
+    <CAbilAugment id="WarhoundSwarm@HaywireMissiles">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="WarhoundSwarm@HaywireMissiles"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <AbilCmd value="attack,Execute"/>
+        <Cost>
+            <Cooldown TimeUse="6"/>
+        </Cost>
+        <Effect value="WarhoundSwarm@HaywireMissilesCP"/>
+        <AutoCastFilters value="Ground,Mechanical,Visible;Self,Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CAbilAugment>
     <CAbilEffectTarget id="VortexWoL">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Effect index="0" value="VortexWoL@InitialCP"/>
@@ -1985,6 +2028,15 @@
         </Marker>
         <CmdButtonArray index="Execute" DefaultButtonFace="GhostWoL@Snipe"/>
     </CAbilEffectTarget>
+    <CAbilTrain id="WarhoundSwarm@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Building"/>
+        <Range value="3"/>
+        <InfoArray index="Train1" Time="45">
+            <Button DefaultButtonFace="WarhoundSwarm"/>
+            <Unit value="WarhoundSwarm"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilEffectTarget id="WidowMineSwarm@WidowMineAttack">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="WidowMineSwarm@AttackSet"/>

@@ -210,6 +210,23 @@
         </Modification>
         <Alignment value="Positive"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="OverchargeLotV@Phased">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-arcshield.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="3"/>
+        <Period value="0.125"/>
+        <ExpireEffect value="OverchargeLotV@EndSet"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Benign" value="1"/>
+            <StateFlags index="Passive" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="PurificationNovaLotV2@Target">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-arcshield.dds"/>
@@ -248,6 +265,28 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <Duration value="3"/>
         <Modification MoveSpeedBonus="-2.2382"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="OverchargeLotV@PhasedPost">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-arcshield.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="3"/>
+        <FinalEffect value="OverchargeLotV@IssueOrderMorphBack"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Benign" value="1"/>
+            <StateFlags index="Passive" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="OverchargeLotV@SpeedBoost">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="3"/>
+        <Modification MoveSpeedBonus="2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="PurificationNovaTargettedTarget">
         <RemoveValidatorArray index="7" value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>

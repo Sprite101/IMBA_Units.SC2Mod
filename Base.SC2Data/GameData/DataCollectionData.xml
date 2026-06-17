@@ -24,6 +24,11 @@
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
+    <CDataCollectionUnit id="DisruptorLotVBeta">
+        <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
+        <Button value="DisruptorLotV1"/>
+        <TechInfoUnit value="DisruptorLotV1"/>
+    </CDataCollectionUnit>
     <CDataCollectionUpgrade id="GraviticDriveLotV">
         <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
         <Button value="AmplifiedShieldingLotV"/>
@@ -43,6 +48,10 @@
         <Button value="BarracksLiberty"/>
         <TechInfoUnit value="StalkerLiberty"/>
     </CDataCollectionUnit>
+    <CDataCollection id="OverchargeLotV">
+        <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollection id="PhotonOverchargeLotV1">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
@@ -514,6 +523,10 @@
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
+    <CDataCollectionUnit id="WarhoundSwarm">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+        <Button value="BarracksLiberty"/>
+    </CDataCollectionUnit>
     <CDataCollectionUnit id="WarpInLiberty">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
     </CDataCollectionUnit>

@@ -732,6 +732,26 @@
         <EffectArray value="OracleSwarm@RevelationAB"/>
         <EffectArray value="OracleSwarm@RevelationCP"/>
     </CEffectSet>
+    <CEffectApplyBehavior id="OverchargeLotV@PhasedAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="OverchargeLotV@Phased"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="OverchargeLotV@SpeedAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="OverchargeLotV@SpeedBoost"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="OverchargeLotV@Damage">
+        <ValidatorArray value="DisruptorLotV1@DisruptorDamageFilter"/>
+        <EditorCategories value=""/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ShieldBonus value="100"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="100"/>
+        <Death value="Electrocute"/>
+    </CEffectDamage>
     <CEffectSet id="PurificationNovaLotV2@EndSet">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="PurificationNovaLotV2@SearchArea"/>
@@ -845,6 +865,40 @@
         <AreaArray Radius="1.5" Effect="PurificationNovaLotV2@Damage"/>
         <SearchFlags index="SameCliff" value="1"/>
     </CEffectEnumArea>
+    <CEffectIssueOrder id="OverchargeLotV@IssueOrderMorph">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="OverchargeLotV@Morph"/>
+    </CEffectIssueOrder>
+    <CEffectIssueOrder id="OverchargeLotV@IssueOrderMorphBack">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Abil value="OverchargeLotV@MorphBack"/>
+    </CEffectIssueOrder>
+    <CEffectApplyBehavior id="OverchargeLotV@PhasedPostAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="OverchargeLotV@PhasedPost"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="OverchargeLotV@SearchArea">
+        <ValidatorArray value="CasterIsVisible"/>
+        <EditorCategories value=""/>
+        <ImpactLocation Value="SourceUnitOrPoint"/>
+        <SearchFilters value="Ground;Self,Missile,Item,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.5" Effect="OverchargeLotV@Damage"/>
+        <SearchFlags index="SameCliff" value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="OverchargeLotV@EndSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="OverchargeLotV@SearchArea"/>
+        <EffectArray value="OverchargeLotV@PhasedPostAB"/>
+    </CEffectSet>
+    <CEffectSet id="OverchargeLotV@Set">
+        <EditorCategories value=""/>
+        <EffectArray value="OverchargeLotV@IssueOrderMorph"/>
+        <EffectArray value="OverchargeLotV@PhasedAB"/>
+        <EffectArray value="OverchargeLotV@SpeedAB"/>
+    </CEffectSet>
     <CEffectSwitch id="RavenScramblerMissileABswitch">
         <CaseArray index="0" Validator="ModifiedAbility@IsCarrier"/>
     </CEffectSwitch>
@@ -2470,6 +2524,45 @@
         <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden"/>
         <AreaArray Radius="4" Effect="TimeWarpLotV1@DamageDummy"/>
     </CEffectEnumArea>
+    <CEffectCreatePersistent id="WarhoundSwarm@HaywireMissilesCP">
+        <ValidatorArray value="TornadoMaxDistance"/>
+        <ValidatorArray value="TornadoMissileFilters"/>
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="WarhoundSwarm@HaywireMissilesLMSet"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="WarhoundSwarm@HaywireMissilesDamage" parent="DU_WEAP">
+        <ValidatorArray value="NotHidden"/>
+        <EditorCategories value="Race:Terran"/>
+        <Kind value="Ranged"/>
+        <Amount value="10"/>
+    </CEffectDamage>
+    <CEffectDamage id="WarhoundSwarm@HaywireMissilesDamageDummy">
+        <EditorCategories value="Race:Terran"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="WarhoundSwarm@HaywireMissilesLM">
+        <ValidatorArray value="NotHidden"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="WarhoundSwarm@HaywireMissilesDamage"/>
+        <AmmoUnit value="WarhoundSwarm@HaywireMissilesWeapon"/>
+        <Movers Link="TornadoMissileWeaponClose" IfRangeLTE="6"/>
+        <Movers Link="TornadoMissileWeapon" IfRangeLTE="20"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="WarhoundSwarm@HaywireMissilesLMDummy">
+        <ValidatorArray value="IsHidden"/>
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="WarhoundSwarm@HaywireMissilesDamageDummy"/>
+        <AmmoUnit value="WarhoundSwarm@HaywireMissilesWeaponDummy"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="WarhoundSwarm@HaywireMissilesLMSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="WarhoundSwarm@HaywireMissilesLM"/>
+        <EffectArray value="WarhoundSwarm@HaywireMissilesLMDummy"/>
+    </CEffectSet>
     <CEffectLaunchMissile id="TyphoonMissilePodLotV2@LMLeft">
         <EditorCategories value="Race:Terran"/>
         <LaunchLocation Value="CasterUnit"/>
@@ -2951,6 +3044,28 @@
         <PeriodicEffectArray value="VortexWoL@EventHorizonSearchArea"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
+    <CEffectDamage id="WarhoundSwarm@WeaponMeleeDamage">
+        <EditorCategories value="Race:Terran"/>
+        <Marker Link="Effect/WarhoundSwarm@WeaponDamage"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Kind value="Melee"/>
+        <Amount value="23"/>
+    </CEffectDamage>
+    <CEffectDamage id="WarhoundSwarm@WeaponDamage">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="23"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="WarhoundSwarm@WeaponLM">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="WarhoundSwarm@WeaponDamage"/>
+        <AmmoUnit value="WarhoundSwarm@WeaponMissile"/>
+    </CEffectLaunchMissile>
     <CEffectSet id="WidowMineSwarm@AttackSet">
         <ValidatorArray value="NoMineDroneCountdown"/>
         <ValidatorArray value="NotLarva"/>

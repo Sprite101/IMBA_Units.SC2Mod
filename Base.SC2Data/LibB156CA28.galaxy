@@ -1806,20 +1806,6 @@ void libB156CA28_gt_MapInit_Init () {
     TriggerAddEventMapInit(libB156CA28_gt_MapInit);
 }
 
-//--------------------------------------------------------------------------------------------------
-// Trigger: Unit Test
-//--------------------------------------------------------------------------------------------------
-bool libB156CA28_gt_UnitTest_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libB156CA28_gt_UnitTest_Init () {
-    libB156CA28_gt_UnitTest = TriggerCreate("libB156CA28_gt_UnitTest_Func");
-    TriggerAddEventMapInit(libB156CA28_gt_UnitTest);
-}
-
 void libB156CA28_InitTriggers () {
     libB156CA28_gt_ConfirmButtonUsed_Init();
     libB156CA28_gt_SelectionButtonUsed_Init();
@@ -1827,7 +1813,6 @@ void libB156CA28_InitTriggers () {
     libB156CA28_gt_ViewResultsInGame_Init();
     libB156CA28_gt_HideResultsInGame_Init();
     libB156CA28_gt_MapInit_Init();
-    libB156CA28_gt_UnitTest_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

@@ -3332,6 +3332,11 @@
         <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
         <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <!-- Warhound Swarm -->
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponMeleeDamage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,WarhoundSwarm@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WarhoundSwarm@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <!--  Thor -->
         <EffectArray Reference="Effect,ThorsHammerDamage,Amount" Value="3"/>
         <EffectArray Reference="Weapon,ThorsHammer,Level" Value="1"/>
@@ -3457,6 +3462,11 @@
         <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
         <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <!-- Warhound Swarm -->
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponMeleeDamage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,WarhoundSwarm@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WarhoundSwarm@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <!--  Thor -->
         <EffectArray Reference="Effect,ThorsHammerDamage,Amount" Value="3"/>
         <EffectArray Reference="Weapon,ThorsHammer,Level" Value="1"/>
@@ -3785,6 +3795,10 @@
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,CycloneLotV2@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
+        <!-- Warhound Swarm -->
+        <EffectArray Reference="Unit,WarhoundSwarm,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,WarhoundSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,WarhoundSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel1.dds"/>
         <!-- WidowMine -->
         <EffectArray Reference="Unit,WidowMineSwarm,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,WidowMineSwarm,LifeArmorLevel" Value="1"/>
@@ -3841,6 +3855,10 @@
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,CycloneLotV2@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
+        <!-- Warhound Swarm -->
+        <EffectArray Reference="Unit,WarhoundSwarm,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,WarhoundSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,WarhoundSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel2.dds"/>
         <!-- WidowMine -->
         <EffectArray Reference="Unit,WidowMineSwarm,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,WidowMineSwarm,LifeArmorLevel" Value="1"/>
@@ -3897,6 +3915,10 @@
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,CycloneLotV2,LifeArmorLevel" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,CycloneLotV2@Unit,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
+        <!-- Warhound Swarm -->
+        <EffectArray Reference="Unit,WarhoundSwarm,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,WarhoundSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,WarhoundSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel3.dds"/>
         <!-- WidowMine -->
         <EffectArray Reference="Unit,WidowMineSwarm,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,WidowMineSwarm,LifeArmorLevel" Value="1"/>
@@ -3976,6 +3998,11 @@
         <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
         <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <!-- Warhound Swarm -->
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponMeleeDamage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,WarhoundSwarm@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WarhoundSwarm@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
     </CUpgrade>
     <CUpgrade id="ModifiedAbility@TerranVehicleAndShipWeaponsLevel1">
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
@@ -4041,6 +4068,11 @@
         <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
         <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <!-- Warhound Swarm -->
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponMeleeDamage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,WarhoundSwarm@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WarhoundSwarm@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <!--  Thor -->
         <EffectArray Reference="Effect,ThorsHammerDamage,Amount" Value="3"/>
         <EffectArray Reference="Weapon,ThorsHammer,Level" Value="1"/>
@@ -4128,6 +4160,11 @@
         <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
         <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
+        <!-- Warhound Swarm -->
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponMeleeDamage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,WarhoundSwarm@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WarhoundSwarm@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
     </CUpgrade>
     <CUpgrade id="TerranVehicleWeaponsLevel3">
         <!--  Hellion WoL -->
@@ -4161,6 +4198,11 @@
         <EffectArray Reference="Effect,CycloneLockOnLotV2@Damage,Amount" Value="1"/>
         <EffectArray Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Level" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,TyphoonMissilePodLotV2@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
+        <!-- Warhound Swarm -->
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponMeleeDamage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,WarhoundSwarm@WeaponDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,WarhoundSwarm@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,WarhoundSwarm@Weapon,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
     </CUpgrade>
     <CUpgrade id="FluxVanesLotV">
         <Flags index="TechTreeCheat" value="1"/>

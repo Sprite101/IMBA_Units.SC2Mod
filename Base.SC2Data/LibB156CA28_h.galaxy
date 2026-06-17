@@ -89,7 +89,6 @@ trigger libB156CA28_gt_Countdown;
 trigger libB156CA28_gt_ViewResultsInGame;
 trigger libB156CA28_gt_HideResultsInGame;
 trigger libB156CA28_gt_MapInit;
-trigger libB156CA28_gt_UnitTest;
 
 // Library Initialization
 void libB156CA28_InitVariables ();

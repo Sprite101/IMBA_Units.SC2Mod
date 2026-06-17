@@ -1,5 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorForceSphere id="OverchargeLotV@ExplosionForce">
+        <On Terms="Effect.OverchargeLotV@SearchArea.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create DisruptorExplosionUpForce"/>
+        <Duration value="0.150000"/>
+        <Magnitude value="40.000000,3.000000"/>
+        <Radius value="3.000000,0.200000"/>
+    </CActorForceSphere>
+    <CActorUnit id="DisruptorLotV1@Phased2" parent="GenericUnitStandard" unitName="DisruptorLotVBeta@Phased">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ChargingAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Model value="PurificationNovaModelSwap"/>
+        <DeathArray index="Normal" SoundLink="Disruptor_Death"/>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathSmall" Name="Hallucination"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="DisruptorPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="0.600000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMedium"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="90"/>
+        <BarWidth value="65"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-protoss-disruptorphasemod.dds"/>
+        </GroupIcon>
+        <HighlightTooltip value="Unit/Name/DisruptorLotV1@Phased2"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="Pusher_Ready"/>
+        <SoundArray index="Help" value="Pusher_Help"/>
+        <SoundArray index="What" value="Pusher_What"/>
+        <SoundArray index="Yes" value="Pusher_Yes"/>
+        <SoundArray index="Attack" value="Pusher_Attack"/>
+        <SoundArray index="Pissed" value="Pusher_Pissed"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <UnitIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-protoss-disruptorphasemod.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="DisruptorLotVBeta" parent="GenericUnitStandard" unitName="DisruptorLotVBeta">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ChargingAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Disruptor_Land"/>
+        <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
+        <On Terms="Behavior.OverchargeLotV@Phased.On" Send="ModelSwap PurificationNovaModelSwap"/>
+        <On Terms="Behavior.OverchargeLotV@Phased.On" Send="Create PurificationNovaBirth"/>
+        <On Terms="Behavior.OverchargeLotV@Phased.Off" Send="ModelSwap Disruptor"/>
+        <On Terms="AbilCooldown.OverchargeLotV.Spend" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="AbilCooldown.OverchargeLotV.Regen" Send="AnimBracketStop Cover"/>
+        <Model value="Disruptor"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Disruptor"/>
+        <DeathArray index="Normal" ModelLink="DisruptorDeath" SoundLink="Disruptor_Death"/>
+        <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathSmall" Name="Hallucination"/>
+        <DeathCustoms ActorModel="DisruptorDeathRagdoll" ModelLink="DisruptorDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="BloodReduced"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdollWithTeamColor" ModelLink="DisruptorDeathRagdoll" Name="RagdollSpineCrawlerHurl">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <DeathActorModel value="DisruptorDeath"/>
+        <PlacementModel value="Disruptor"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="DisruptorPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="0.600000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMedium"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="83"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor.dds"/>
+        </GroupIcon>
+        <GroupSoundArray index="What" value="Zealot_GroupWhat"/>
+        <GroupSoundArray index="Yes" value="Zealot_GroupYes"/>
+        <GroupSoundArray index="Attack" value="Zealot_GroupAttack"/>
+        <GroupSoundArray index="Movement" value="Disruptor_Movement"/>
+        <GroupSoundArray index="Board" value="Zealot_GroupBoard"/>
+        <HeroIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds"/>
+        <SoundArray index="Ready" value="Pusher_Ready"/>
+        <SoundArray index="Help" value="Pusher_Help"/>
+        <SoundArray index="What" value="Pusher_What"/>
+        <SoundArray index="Yes" value="Pusher_Yes"/>
+        <SoundArray index="Attack" value="Pusher_Attack"/>
+        <SoundArray index="Pissed" value="Pusher_Pissed"/>
+        <SoundArray index="Movement" value="Disruptor_Movement"/>
+        <SoundArray index="Turning" value="Observer_Turning"/>
+        <SoundArray index="Board" value="Observer_Board"/>
+        <SoundArray index="Click" value="Observer_Click"/>
+        <SoundArray index="ClickError" value="Observer_ClickError"/>
+        <SoundArray index="Highlight" value="Observer_Highlight"/>
+        <UnitIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor-shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor-shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-protoss-disruptor-shield03.dds"/>
+        </WireframeShield>
+    </CActorUnit>
     <CActorUnit id="DisruptorLotV2@Phased" parent="GenericUnitStandard" unitName="DisruptorLotV2@Phased">
         <Aliases value="_UnitLarge"/>
         <Macros value="ChargingAnim"/>
@@ -129,6 +264,33 @@
             <Image value="Assets\Textures\Wireframe-protoss-disruptor-shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorRange id="DisruptorPurificationNovaTargettedRange">
+        <On Terms="SelectionLocalUpdate.DisruptorLotV1.Start" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.DisruptorLotV1.Stop" Send="Destroy"/>
+        <On Terms="SelectionLocalUpdate.DisruptorLotV2.Start" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.DisruptorLotV2.Stop" Send="Destroy"/>
+    </CActorRange>
+    <CActorSound id="OverchargeLotV@AttackSound" parent="SoundOneShot">
+        <On Terms="Effect.OverchargeLotV@SearchArea.Start" Send="Create"/>
+        <On Terms="Effect.PurificationNovaTargettedSearch.Start" Send="Create"/>
+        <Sound value="Disruptor_DisruptionOvercharge_Attack"/>
+        <Layers Sound="Disruptor_DisruptionOvercharge_Discharge">
+            <Chance value="100"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorSound id="OverchargeLotV@StartSound" parent="SoundOneShot">
+        <On Terms="Behavior.OverchargeLotV@Phased.On" Send="Create"/>
+        <On Terms="Behavior.PurificationNovaTargettedTarget.On" Send="Create"/>
+        <Sound value="Disruptor_DisruptionOvercharge_Start"/>
+    </CActorSound>
+    <CActorSound id="OverchargeLotV@StopSound" parent="SoundOneShot">
+        <On Terms="Effect.OverchargeLotV@SearchArea.Start" Send="Create"/>
+        <On Terms="Effect.PurificationNovaTargettedSearch.Start" Send="Create"/>
+        <Sound value="Disruptor_DisruptionOvercharge_Stop"/>
+    </CActorSound>
     <CActorAction id="GlaiveCannonLotV2@AttackAction" parent="GenericAttack" effectImpact="GlaiveCannonLotV2@Damage" effectLaunch="GlaiveCannonLotV2@LM">
         <LaunchAssets Sound="Adept_AttackLaunch"/>
         <Missile value="GlaiveCannonLotV2@AttackMissile"/>
@@ -558,6 +720,39 @@
         <On Terms="Behavior.PhotonOverchargeLotV1.On" Send="Create"/>
         <Sound value="Mothership_PhotonOverchargeActivate"/>
     </CActorSound>
+    <CActorModel id="OverchargeLotV@Model" parent="ModelAnimationStyleOneShot">
+        <FogVisibility value="Hidden"/>
+        <On Terms="Effect.OverchargeLotV@SearchArea.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.PurificationNovaTargettedSearch.Start; At Target" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldPosition="1" HoldRotation="1"/>
+        <Model value="PurificationNova"/>
+    </CActorModel>
+    <CActorForceSphere id="OverchargeLotV@Force">
+        <On Terms="Effect.OverchargeLotV@Damage.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create PurificationNovaForceUp"/>
+        <HostSiteOps Ops="SOpShadow SOpRandomPointInCircleDot25"/>
+        <Duration value="0.300000"/>
+        <Magnitude value="16.000000,8.000000"/>
+        <Radius value="2.100000,0.300000"/>
+    </CActorForceSphere>
+    <CActorModel id="OverchargeLotV@ImpactModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.OverchargeLotV@Damage.Start; At Target" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="PurificationNovaImpact"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="OverchargeLotV@RangeIndicator" parent="ModelAnimationStyleContinuous">
+        <On Terms="Behavior.OverchargeLotV@Phased.On" Send="Create"/>
+        <On Terms="Behavior.OverchargeLotV@Phased.Off" Send="Destroy"/>
+        <On Terms="Behavior.PurificationNovaTargettedTarget.On" Send="Create"/>
+        <On Terms="Behavior.PurificationNovaTargettedTarget.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOrigin"/>
+        <Model value="PurificationNovaRangeIndicator"/>
+    </CActorModel>
     <CActorBeamSimple id="ShieldBatteryRechargeEx5@Beam">
         <On Terms="ActorCreation; ValidateUnit BatteryOverchargeLotV@CasterHasBatteryOverchargeBehavior" Send="SetTintColor 0,255,108 0.000000 OneShot Overcharge"/>
         <On Terms="Behavior.BatteryOverchargeLotV.On" Send="SetTintColor 0,255,108 0.000000 OneShot Overcharge"/>
@@ -723,6 +918,24 @@
         <Abil Link="TemporalField"/>
         <IconArcLength value="3.250000"/>
     </CActorRange>
+    <CActorAction id="WarhoundSwarm@HaywireMissilesAttackAction" parent="GenericAttack" effectImpact="WarhoundSwarm@HaywireMissilesDamage" effectLaunch="WarhoundSwarm@HaywireMissilesLM">
+        <LaunchAttachQuery Methods="AMFilterWarHound AMPatternWarHound"/>
+        <LaunchAssets Model="TornadoMissileAttackLaunch" Sound="WarHound_Missile_Launch"/>
+        <Missile value="WarhoundSwarm@HaywireMissilesAttackMissile"/>
+        <ImpactMap index="None" Model="TornadoMissileAttackImpact" Sound="WarHound_Missile_Impact"/>
+        <ImpactPhysics Name="TornadoMissileImpact" MatchKeys="Basic" Physics="WarhoundMissileAttackForce"/>
+    </CActorAction>
+    <CActorMissile id="WarhoundSwarm@HaywireMissilesAttackMissile" parent="GenericAttackMissile" unitName="WarhoundSwarm@HaywireMissilesWeapon">
+        <Model value="TornadoMissileWeapon"/>
+    </CActorMissile>
+    <CActorAction id="WarhoundSwarm@HaywireMissilesDummyAttack" parent="GenericAttack" effectImpact="WarhoundSwarm@HaywireMissilesDamageDummy" effectLaunch="WarhoundSwarm@HaywireMissilesLMDummy">
+        <LaunchAttachQuery Methods="AMFilterWarHoundDummy AMPatternWarHoundDummy"/>
+        <LaunchAssets Model="TornadoMissileDummyAttackLaunch" Sound="WarHound_Missile_Launch"/>
+        <ImpactMap index="None" Sound="WarHound_Missile_Impact"/>
+    </CActorAction>
+    <CActorMissile id="WarhoundSwarm@HaywireMissilesDummyAttackMissile" parent="GenericAttackMissile" unitName="WarhoundSwarm@HaywireMissilesWeaponDummy">
+        <Model value="TornadoMissileDummyWeapon"/>
+    </CActorMissile>
     <CActorSound id="VortexWoL@BirthSound" parent="SoundOneShot">
         <On Terms="Effect.VortexWoL@CP.Start" Send="Create"/>
         <HostSiteOps Ops="SOpShadow"/>
@@ -750,6 +963,120 @@
         <HostSiteOps Ops="SOpShadow"/>
         <Model value="VortexModel"/>
     </CActorModel>
+    <CActorAction id="WarhoundSwarm@WeaponMeleeAttackAction" parent="GenericAttack" effectAttack="WarhoundSwarm@WeaponMeleeDamage">
+        <ImpactMap index="None" Sound="WarHound_MeleeAttackLaunch"/>
+        <ImpactPhysics>
+            <Name value="AttackOverhead"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="00"/>
+            <Physics value="WarhoundMeleeAttackForceOverhead"/>
+        </ImpactPhysics>
+        <ImpactPhysics>
+            <Name value="AttackSwipe"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="01"/>
+            <Physics value="WarhoundMeleeAttackForceLateral"/>
+        </ImpactPhysics>
+        <ShieldFlashType value="Header"/>
+    </CActorAction>
+    <CActorAction id="WarhoundSwarm@WeaponAttackAction" parent="GenericAttack" effectImpact="WarhoundSwarm@WeaponDamage" effectLaunch="WarhoundSwarm@WeaponLM">
+        <LaunchAssets Sound="RailGun_Launch"/>
+        <BeamScope value="Caster"/>
+        <Missile value="WarhoundSwarm@WeaponAttackMissile"/>
+        <ImpactMap index="None" Model="WarHoundAttackImpact" Sound="RailGun_Impact"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="RailgunAttackDeathForce"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+    </CActorAction>
+    <CActorMissile id="WarhoundSwarm@WeaponAttackMissile" parent="GenericAttackMissile" unitName="WarhoundSwarm@WeaponMissile">
+        <Model value="Invisible"/>
+    </CActorMissile>
+    <CActorBeamSimple id="WarhoundSwarm@WeaponBeam" parent="GenericAttackBeam">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.WarhoundSwarm@WeaponLM.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.WarHound.Start" Send="Create WarHoundImpactHoldingSite"/>
+        <On Terms="Effect.WarHound.Start" Send="RefSet ::HostImpact WarHoundImpactHoldingSite"/>
+        <Host Subject="_Selectable"/>
+        <Model value="WarHoundBeam"/>
+        <HostLaunch Subject="_Selectable" Actor="Find"/>
+        <HostLaunchSiteOps Ops="SOpAttachWeapon" HoldPosition="1" HoldRotation="1"/>
+        <HostImpact Subject="_Missile" Actor="Find"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+    </CActorBeamSimple>
+    <CActorUnit id="WarhoundSwarm" parent="GenericUnitBase" unitName="WarhoundSwarm">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="WeaponStart.WarhoundSwarm@Weapon.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.WarhoundSwarm@Weapon.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="WeaponStart.WarhoundSwarm@Weapon.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart AttackSuperior Attack,Superior"/>
+        <On Terms="WeaponStart.WarhoundSwarm@Weapon.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart AttackInferior Attack,Inferior"/>
+        <On Terms="WeaponStop.WarhoundSwarm@Weapon.AttackStop" Send="AnimBracketStop AttackSuperior"/>
+        <On Terms="WeaponStop.WarhoundSwarm@Weapon.AttackStop" Send="AnimBracketStop AttackInferior"/>
+        <On Terms="WeaponStart.WarhoundSwarm@WeaponMelee.AttackStart" Send="AnimBracketStart Attack Spell,A"/>
+        <On Terms="WeaponStop.WarhoundSwarm@WeaponMelee.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Effect.WarhoundSwarm@HaywireMissilesCP.Start; At Caster" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="Effect.WarhoundSwarm@HaywireMissilesCP.Stop; At Caster" Send="AnimBracketStop Cover"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Warhound_Land"/>
+        <On Terms="UnitDeathCustomize; Option Model Low" Send="DeathCustomize Low"/>
+        <Model value="WarHound"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="WarHound"/>
+        <DeathArray index="Normal" ModelLink="WarHoundDeath" SoundLink="SiegeTank_Explode"/>
+        <DeathCustoms ModelLink="WarhoundDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="Basic" Model="TerranSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ModelLink="TerranLargeUnitDeathLow" Name="Low"/>
+        <DeathActorModel value="UnitDeathModelUnscaled"/>
+        <PlacementModel value="WarHound"/>
+        <PortraitModel value="WarhoundPortrait"/>
+        <StandAnimTurnTime value="3.33"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="2.000000"/>
+            <RangeDown value="2.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleWarhound"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.7968"/>
+        <BarOffset value="125"/>
+        <BarWidth value="90"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-terran-warhound.dds"/>
+        </GroupIcon>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
+        <NameOffset value="40"/>
+        <SoundArray index="Ready" value="WarHound_Ready"/>
+        <SoundArray index="What" value="WarHound_What"/>
+        <SoundArray index="Yes" value="WarHound_Yes"/>
+        <SoundArray index="Attack" value="WarHound_Attack"/>
+        <SoundArray index="Pissed" value="WarHound_Pissed"/>
+        <SoundArray index="Movement" value="WarHound_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-warhound.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-terran-warhound.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorUnit id="WarpGate">
         <CooldownDisplay index="0" value="WarpInLiberty@WarpGateTrain,Train10"/>
         <CooldownDisplay value="WarpInLiberty@WarpGateTrain,Train11"/>
@@ -2459,6 +2786,7 @@
     </CActorUnit>
     <CActorEventMacro id="PhysicsDeathsVoidGround">
         <On Terms="UnitDeathCustomize; KilledByEffect PurificationNovaLotV1@Damage" Send="DeathCustomize RagdollSiegeTank"/>
+        <On Terms="UnitDeathCustomize; KilledByEffect PurificationNovaLotV2@Damage" Send="DeathCustomize RagdollSiegeTank"/>
     </CActorEventMacro>
     <CActorForceSphere id="PurificationNovaLotV1@ForceUp">
         <HostSiteOps Ops="SOpShadow SOpRotVariancerUp35"/>
