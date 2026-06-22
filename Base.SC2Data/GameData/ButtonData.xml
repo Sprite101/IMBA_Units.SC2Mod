@@ -5,6 +5,16 @@
         <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="CentrifugalHooksLotV1">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="CentrifugalHooksLotV1@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="CloakFieldWoL">
         <Icon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
@@ -46,10 +56,12 @@
     <CButton id="OverchargeLotV">
         <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="PurificationNovaLotV2">
         <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="TempestLotV1">
         <Icon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
@@ -208,11 +220,6 @@
         <AlertIcon value="Assets\Textures\btn-ability-protoss-massrecall.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
-    <CButton id="OracleRevelation2">
-        <Icon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
-        <EditorCategories value="Race:Protoss"/>
-    </CButton>
     <CButton id="OracleSwarm@Revelation">
         <Icon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-preordain.dds"/>
@@ -241,11 +248,13 @@
     <CButton id="PulsarBeamSwarm@WeaponOff">
         <Icon value="Assets\Textures\BTN-Ability-Protoss-OraclePulsarCannonOff.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-OraclePulsarCannonOff.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <HotkeySet value="PulsarBeam"/>
     </CButton>
     <CButton id="PulsarBeamSwarm@WeaponOn">
         <Icon value="Assets\Textures\BTN-Ability-Protoss-OraclePulsarCannonOn.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-OraclePulsarCannonOn.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <HotkeySet value="PulsarBeam"/>
     </CButton>
     <CButton id="AdeptLotV">
@@ -262,6 +271,16 @@
         <Icon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="TunnelingJawsSwarm">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingjaws.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-tunnelingjaws.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="TunnelingJawsSwarm@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingjaws.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-tunnelingjaws.dds"/>
+        <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="WarhoundSwarm">
         <Icon value="Assets\Textures\btn-unit-terran-warhound.dds"/>
@@ -435,10 +454,12 @@
     <CButton id="PurificationNovaPhasedLotV1">
         <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="PurificationNovaLotV1">
         <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="TempestSwarm">
         <Icon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>

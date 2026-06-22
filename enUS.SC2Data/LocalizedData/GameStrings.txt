@@ -2,6 +2,11 @@
 Abil/Name/AdvancedBallisticsLotV2@Research=Research Advanced Ballistics
 Abil/Name/AmplifiedShieldingLotV@Research=Research
 Abil/Name/AutoTurretSwarm=Place Auto Turret
+Abil/Name/BanelingLotV1@Burrow=Burrow
+Abil/Name/BanelingLotV1@Explode=Explode
+Abil/Name/BanelingLotV1@MorphToBaneling=Morph To Baneling
+Abil/Name/BanelingLotV1@MorphZerglingToBaneling=Morph Zergling to Baneling
+Abil/Name/BanelingLotV1@Unburrow=Unburrow
 Abil/Name/BatteryOverchargeLotV=Battery Overcharge
 Abil/Name/BlinkLiberty@ResearchBlink=Research
 Abil/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
@@ -9,6 +14,7 @@ Abil/Name/CarrierLotV1@Train=Build
 Abil/Name/CarrierLotV1@WeaponHangar=Hangar
 Abil/Name/CarrierLotV2@Train=Build
 Abil/Name/CarrierLotV2@WeaponHangar=Hangar
+Abil/Name/CentrifugalHooksLotV1@Research=Research
 Abil/Name/ChargeLotV1=Charge
 Abil/Name/ChargeLotV2=Charge
 Abil/Name/ChargeZealotLotV1@ResearchCharge=Research Charge
@@ -138,7 +144,9 @@ Abil/Name/TempestLotV1@Build=Build
 Abil/Name/TempestSwarm@Build=Build
 Abil/Name/TimeWarpLotV1=Time Warp
 Abil/Name/TimeWarpSwarm=Time Warp
+Abil/Name/TunnelingJawsSwarm@Research=Research
 Abil/Name/VoidRayLotV@Build=Build
+Abil/Name/VolatileBurstLiberty@ToggleBuilding=Toggle Building
 Abil/Name/VortexWoL=Vortex
 Abil/Name/WarhoundSwarm@HaywireMissiles=Haywire Missiles
 Abil/Name/WarhoundSwarm@Train=Build
@@ -230,6 +238,8 @@ Button/Name/CaduceusReactorSwarmBeta@Passive=Caduceus Reactor
 Button/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
 Button/Name/CarrierLotV1=Warp In Carrier
 Button/Name/CarrierLotV2=Warp In Carrier
+Button/Name/CentrifugalHooksLotV1=Research Centrifugal Hooks
+Button/Name/CentrifugalHooksLotV1@Passive=Centrifugal Hooks
 Button/Name/ChargeLotV1=Charge
 Button/Name/ChargeLotV2=Charge
 Button/Name/ChargeZealotLotV1@ResearchCharge=Research Charge
@@ -305,7 +315,6 @@ Button/Name/ObserverLotV2@SiegedUnsiege=Observer Mode
 Button/Name/OracleLotV1=Warp In Oracle
 Button/Name/OracleLotV1@BuildStasisTrap=Build Stasis Ward
 Button/Name/OracleLotV1@Revelation=Revelation
-Button/Name/OracleRevelation2=Revelation
 Button/Name/OracleSwarm=Warp In Oracle
 Button/Name/OracleSwarm@PulsarBeam=Pulsar Beam
 Button/Name/OracleSwarm@Revelation=Revelation
@@ -357,6 +366,8 @@ Button/Name/TempestLotV1=Warp In Tempest
 Button/Name/TempestSwarm=Warp In Tempest
 Button/Name/TimeWarpLotV1=Time Warp
 Button/Name/TimeWarpSwarm=Time Warp
+Button/Name/TunnelingJawsSwarm=Research Tunneling Jaws
+Button/Name/TunnelingJawsSwarm@Passive=Tunneling Jaws
 Button/Name/VoidRayLotV=Warp In Void Ray
 Button/Name/VortexWoL=Vortex
 Button/Name/WarhoundSwarm=Build Warhound
@@ -378,6 +389,7 @@ Button/Tooltip/AmplifiedShieldingLotV=Increases the <c val="ffff8a">Adept's</c> 
 Button/Tooltip/AmplifiedShieldingLotV@Passive=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShielding:Unit,Adept,ShieldsMax$"/>.
 Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AutoTurretSwarm@AutoTurret=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/BanelingLotV1=Suicide unit. Does damage over a small area on death. <n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/BarracksLiberty=Infantry-production facility.<n/><n/><c val="ffff8a">Enables:</c><n/>- Marines<n/>- Reapers<n/>- Bunkers from SCVs<n/>- Orbital Commands from Command Centers
 Button/Tooltip/BaseDefenseUnit=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
 Button/Tooltip/BaseDefenseUnit2=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
@@ -390,6 +402,8 @@ Button/Tooltip/CaduceusReactorSwarmBeta@Passive=Increases Health restored per se
 Button/Tooltip/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Increases Health restored per second from 9 to 15 and reduces energy cost from 3 health per 1 energy to 5 health per 1 energy.
 Button/Tooltip/CarrierLotV1=Capital ship. Can build and launch Interceptors to make attacks. Can use Release Interceptors ability.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/CarrierLotV2=Capital ship. Can build and launch Interceptors to make attacks. Can use Release Interceptors ability.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/CentrifugalHooksLotV1=<c val="ffff8a">Banelings</c> gain increased movement speed and +10 health.
+Button/Tooltip/CentrifugalHooksLotV1@Passive=<c val="ffff8a">Banelings</c> gain increased movement speed and +10 health.
 Button/Tooltip/ChargeLotV1=Allows Zealots to intercept nearby enemies. Deals <d ref="Effect,ChargeLotV1@ChargingDamage,Amount"/> damage upon impcat. Also increases the movement speed of Zealots. Ability can only be used once every <d ref="Abil,ChargeLotV1,Cost.Cooldown.TimeUse"/> seconds.
 Button/Tooltip/ChargeLotV2=Allows Zealots to intercept nearby enemies. Deals <d ref="Effect,ChargeLotV2@ChargingDamage,Amount"/> damage upon impcat. Also increases the movement speed of Zealots. Ability can only be used once every <d ref="Abil,ChargeLotV2,Cost.Cooldown.TimeUse"/> seconds.
 Button/Tooltip/ChargeZealotLotV1@ResearchCharge=Allows <c val="ffff8a">Zealots</c> to intercept nearby enemies and deal <d ref="Effect,ChargeLotV1@ChargingDamage,Amount"/> damage upon impact. Also increases the movement speed of <c val="ffff8a">Zealots</c>. Ability can only be used once every <d ref="Abil,Charge,Cost.Cooldown.TimeUse"/> seconds.
@@ -476,7 +490,6 @@ Button/Tooltip/ObserverLotV2@SiegedUnsiege=Transforms the Observer to standard O
 Button/Tooltip/OracleLotV1=Flying caster. Can use Revelation, Stasis Ward, and Pulsar Beam.
 Button/Tooltip/OracleLotV1@BuildStasisTrap=Places a cloaked Stasis Ward at the target location. Once activated by an enemy ground unit, the ward traps nearby enemies in stasis for <d ref="Behavior,OracleStasisTrapTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
 Button/Tooltip/OracleLotV1@Revelation=Causes enemy units and structures within the target area to grant vision for <d ref="Behavior,OracleLotV1@RevelationRevealed,Duration"/> seconds. Reveals cloaked or burrowed units and structures.
-Button/Tooltip/OracleRevelation2=Causes enemy units and structures within the target area to grant vision for <d ref="Behavior,OracleRevelation,Duration"/> seconds. Reveals cloaked or burrowed units and structures.
 Button/Tooltip/OracleSwarm=Flying caster. Can use Revelation, Stasis Ward, and Pulsar Beam.
 Button/Tooltip/OracleSwarm@PulsarBeam=Activates Oracle's Pulsar Beam on an enemy structure, dealing <d ref="Effect,OracleSwarm@PulsarBeamDamage,Amount[0]"/> damage every second.
 Button/Tooltip/OracleSwarm@Revelation=Causes enemy and neutral units and structures within the target area to grant vision for <d ref="Behavior,OracleSwarm@Revelation,Duration"/> seconds. Does not affect cloaked or burrowed units and structures.
@@ -534,6 +547,8 @@ Button/Tooltip/TempestLotV1=Siege artillery craft. Attacks from long range.<n/><
 Button/Tooltip/TempestSwarm=Siege artillery craft. Attacks from long range.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/TimeWarpLotV1=After a <d ref="(Effect,TemporalFieldGrowingBubbleCreatePersistent,PeriodCount*Effect,TemporalFieldGrowingBubbleCreatePersistent,PeriodicPeriodArray[0])"/> second delay, warps spacetime within the target area for <d ref="Effect,TemporalFieldAfterBubbleCreatePersistent,PeriodCount*Effect,TemporalFieldAfterBubbleCreatePersistent,PeriodicPeriodArray[0]"/> seconds. All enemy units and structures within the field will have attack and movement speeds reduced by <d ref="(1-Behavior,TemporalField,Modification.MoveSpeedMultiplier)*100"/>%.
 Button/Tooltip/TimeWarpSwarm=Warps spacetime within the target area for <d ref="Effect,OracleSwarm@TimeWarpCP,PeriodCount*Effect,OracleSwarm@TimeWarpCP,PeriodicPeriodArray[0]"/> seconds. Enemy ground units that enter the field have their movement speed reduced by <d ref="(1-Behavior,OracleSwarm@TimeWarp,Modification.MoveSpeedMultiplier)*100"/>%.
+Button/Tooltip/TunnelingJawsSwarm=<c val="ffff8a">Banelings</c> gain increased movement speed and +10 health.
+Button/Tooltip/TunnelingJawsSwarm@Passive=<c val="ffff8a">Banelings</c> gain increased movement speed and +10 health.
 Button/Tooltip/VoidRayLotV=Surgical strike craft.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/VortexWoL=Creates a gravity Vortex that stuns ground and air units in the target area. Units within the Vortex are invulnerable to all damage and effects. Lasts for <d time="20"/>.
 Button/Tooltip/WarhoundSwarm=Anti-vehicle mech. Haywire missiles do bonus damage to mechanical units. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
@@ -555,6 +570,7 @@ DataCollection/Name/AdvancedBallistics=Advanced Ballistics
 DataCollection/Name/AdvancedBallisticsLotV2=Advanced Ballistics
 DataCollection/Name/AmplifiedShieldingLotV=Amplified Shielding
 DataCollection/Name/AutoTurretSwarm=Raven Auto Turret
+DataCollection/Name/BanelingLotV1=Baneling
 DataCollection/Name/BarracksLiberty=Barracks
 DataCollection/Name/BatteryOverchargeLotV=Battery Overcharge
 DataCollection/Name/BlinkLiberty=Blink
@@ -562,6 +578,7 @@ DataCollection/Name/BunkerLiberty=Bunker
 DataCollection/Name/CaduceusReactorSwarmBeta=Caduceus Reactor
 DataCollection/Name/CarrierLotV1=Carrier
 DataCollection/Name/CarrierLotV2=Carrier
+DataCollection/Name/CentrifugalHooksLotV1=Centrifugal Hooks
 DataCollection/Name/ChargeLotV1=Charge
 DataCollection/Name/ChargeLotV2=Charge
 DataCollection/Name/ChargeZealotLotV1=Charge
@@ -668,8 +685,10 @@ DataCollection/Name/TempestSwarm=Tempest
 DataCollection/Name/TimeWarpLotV1=Time Warp
 DataCollection/Name/TimeWarpSwarm=Time Warp
 DataCollection/Name/TornadoBlaster=Tornado Blaster
+DataCollection/Name/TunnelingJawsSwarm=Tunneling Jaws
 DataCollection/Name/TyphoonMissilePodLotV2=Typhoon Missile Pod
 DataCollection/Name/VoidRayLotV=Void Ray
+DataCollection/Name/VolatileBurstLiberty=Volatile Burst
 DataCollection/Name/VortexWoL=Vortex
 DataCollection/Name/WarhoundSwarm=Warhound
 DataCollection/Name/WarpInLiberty=Warp In
@@ -1094,6 +1113,11 @@ Effect/Name/TyphoonMissilePodLotV2@LMLeftSet=LM Left Set
 Effect/Name/TyphoonMissilePodLotV2@LMRight=LM Right
 Effect/Name/TyphoonMissilePodLotV2@LMSwitch=LM Switch
 Effect/Name/TyphoonMissilePodLotV2@WeaponLMRightSet=LM Right Set
+Effect/Name/VolatileBurstLiberty@BuildingDamage=Building Damage
+Effect/Name/VolatileBurstLiberty@Damage=Damage
+Effect/Name/VolatileBurstLiberty@FriendlySwitch=Friendly Switch
+Effect/Name/VolatileBurstLiberty@RB=RB
+Effect/Name/VolatileBurstLiberty@Set=Set
 Effect/Name/VortexWoL@CP=CP
 Effect/Name/VortexWoL@DisableABEnemy=Disable AB Enemy
 Effect/Name/VortexWoL@DisableABOther=Disable AB Other
@@ -1136,6 +1160,7 @@ RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Res
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsLotV2CompleteOnly2325880491=Research Advanced Ballistics at the Fusion Core
 RequirementNode/Tooltip/CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174=Research Amplified Shielding at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276=Research Caduceus Reactor at the Starport Techlab
+RequirementNode/Tooltip/CountUpgradeCentrifugalHooksLotV1CompleteOnly1566137605=Research Centrifical Hooks at the Baneling Nest
 RequirementNode/Tooltip/CountUpgradeChargeZealotLotV1CompleteOnly137519211TechTreeCheat=Research Charge at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeChargeZealotLotV2CompleteOnly137519211TechTreeCheat=Research Charge at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat=Research Enhanced Shockwaves at the Ghost Academy
@@ -1155,6 +1180,7 @@ RequirementNode/Tooltip/CountUpgradeRapidFireLaunchers@UpgradeCompleteOnly107572
 RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat=Research Nitro Packs at the Barracks Tech Lab
 RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat2=Research Nitro Packs at the Barracks Tech Lab
 RequirementNode/Tooltip/CountUpgradeResonatingGlaivesLotVCompleteOnly543136321TechTreeCheat=Research Resonating Glaives at the Twilight Council
+RequirementNode/Tooltip/CountUpgradeTunnelingJawsSwarmCompleteOnly3718727159=Research Tunneling Jaws at the Baneling Nest
 RequirementNode/Tooltip/Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1=Terran Vehicle And Ship Weapons Level 1
 RequirementNode/Tooltip/Eq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1=Protoss Air Weapons Level 1
 RequirementNode/Tooltip/Eq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1=Protoss Ground Weapons Level 1
@@ -1180,6 +1206,8 @@ Unit/Name/AdeptLotV@Shade=Shade
 Unit/Name/AdeptLotV@WeaponMissile=Weapon Missile
 Unit/Name/AutoTurretSwarm@AutoTurret=Auto-Turret
 Unit/Name/AutoTurretSwarm@ReleaseMissile=Release Missile
+Unit/Name/BanelingLotV1=Baneling
+Unit/Name/BanelingLotV1@Cocoon=Baneling Cocoon
 Unit/Name/BaseDefenseUnit=Base Defense Unit
 Unit/Name/BaseDefenseUnit2=Base Defense Unit
 Unit/Name/CarrierLotV1=Carrier
@@ -1278,6 +1306,7 @@ Upgrade/Name/AmplifiedShieldingLotV=Amplified Shielding
 Upgrade/Name/BarracksLiberty@RepairTime=Repair Time
 Upgrade/Name/BunkerLiberty@RepairTime=Repair Time
 Upgrade/Name/CaduceusReactorSwarmBeta@CaduceusReactor=Caduceus Reactor
+Upgrade/Name/CentrifugalHooksLotV1=Centrifugal Hooks
 Upgrade/Name/ChargeZealotLotV1=Charge
 Upgrade/Name/ChargeZealotLotV2=Charge
 Upgrade/Name/CorvidReactorLotV=Corvid Reactor
@@ -1325,6 +1354,7 @@ Upgrade/Name/ReactorLiberty@RepairTime=Repair Time
 Upgrade/Name/ReaperLiberty@Upgrade=Nitro Packs
 Upgrade/Name/ReaperSwarm@Upgrade=Nitro Packs
 Upgrade/Name/ResonatingGlaivesLotV=Resonating Glaives 
+Upgrade/Name/TunnelingJawsSwarm=Tunneling Jaws
 UserData/IMBA_ProtossUnits/Adept_Selection_Expansion_Tip=Current
 UserData/IMBA_ProtossUnits/Adept_Selection_Expansion_Tip_001=Can research Amplified Shield to greatly increase Shield.
 UserData/IMBA_ProtossUnits/Adept_Selection_Expansion_Tip_002=Functions as it does today with better stats.
@@ -1511,6 +1541,8 @@ UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip=Current
 UserData/IMBA_TerranUnits/WidowMine_Selection_Expansion_Tip_001=no longer decloaks while weapon is in cooldown. target is not tinted and won't be connected by a visible line.
 UserData/IMBA_TerranUnits/WidowMine_Selection_Title=Current
 UserData/IMBA_TerranUnits/WidowMine_Selection_Title_001=HotS
+VolatileBurstLiberty@FriendlyBuildingDamage=Friendly Building Damage
+VolatileBurstLiberty@FriendlyDamage=Friendly Damage
 Weapon/Name/90mmCannonsLotV1=90mm Cannons
 Weapon/Name/AdeptLotV@Weapon=Glaive Cannon
 Weapon/Name/AutoTurretSwarm@AutoTurretWeapon=12mm Gauss Cannon
@@ -1543,6 +1575,10 @@ Weapon/Name/TempestSwarm@AAWeapon=Kinetic Overload
 Weapon/Name/TempestSwarm@AGWeapon=Resonance Coil
 Weapon/Name/TornadoBlaster=Tornado Blaster
 Weapon/Name/TyphoonMissilePodLotV2@Weapon=Typhoon Missile Pod
+Weapon/Name/VolatileBurstLiberty=Volatile Burst 
+Weapon/Name/VolatileBurstLiberty@Building=Volatile Burst
+Weapon/Name/VolatileBurstLiberty@Dummy=Volatile Burst
 Weapon/Name/WarhoundSwarm@Weapon=Railgun
 Weapon/Name/WarhoundSwarm@WeaponMelee=Weapon Melee
 Weapon/Tip/GrenadeLiberty=Only used against structures.
+Weapon/Tip/VolatileBurstLiberty@Dummy=Only used against units.

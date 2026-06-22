@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorPlayerRequirement id="CentrifugalHooksLotV1@Upgraded">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="CentrifugalHooksLotV1@Have"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitType id="BanelingLotV1@IsBanelingBurrowed">
+        <Value value="BanelingBurrowed"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="IsNotBurrowedUnit">
+        <CombineArray value="BanelingLotV1@IsBanelingBurrowed"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareCooldown id="OverchargeLotV@OnCooldown">
         <Compare value="GT"/>
         <CooldownLink value="Abil/OverchargeLotV"/>

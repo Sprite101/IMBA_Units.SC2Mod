@@ -34,6 +34,66 @@
         <AINotifyEffect value="BatteryOverchargeCreateHealer"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BatteryOverchargeLotV"/>
     </CAbilEffectTarget>
+    <CAbilMorph id="BanelingLotV1@Burrow">
+        <AbilSetId value="BrwD"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BurrowDown" Requirements="UseBurrow">
+            <Flags index="ShowInGlossary" value="0"/>
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <ActorKey value="BurrowDown"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnorePlacement" value="0"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="BanelingLotV1@Burrowed" RandomDelayMax="0.3703">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="1"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Delay" value="0.5556"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="1"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="BanelingLotV1@Unburrow">
+        <AbilSetId value="BrwU"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BurrowUp">
+            <Flags index="ShowInGlossary" value="0"/>
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <ActorKey value="BurrowUp"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="BanelingLotV1" RandomDelayMax="0.5">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="1"/>
+            </SectionArray>
+        </InfoArray>
+        <AutoCastFilters value="Ground,Visible;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden"/>
+        <AutoCastValidatorArray value="TargetNotChangeling"/>
+        <AutoCastRange value="1"/>
+        <AutoCastCountMin value="1"/>
+    </CAbilMorph>
+    <CAbilResearch id="CentrifugalHooksLotV1@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="110" Upgrade="CentrifugalHooksLotV1">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="CentrifugalHooksLotV1" State="Restricted" Requirements="CentrifugalHooksLotV1@LearnGravitonCatapult">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilAugment id="ChargeLotV2">
         <Alignment value="Negative"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -66,6 +126,11 @@
             <Unit value="DisruptorLotVBeta"/>
         </InfoArray>
     </CAbilTrain>
+    <CAbilEffectInstant id="BanelingLotV1@Explode">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Effect index="0" value="VolatileBurstLiberty@Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Explode"/>
+    </CAbilEffectInstant>
     <CAbilResearch id="ModifiedAbility@CyberneticsCoreResearch">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="160" Upgrade="ModifiedAbility@ProtossAirWeaponsLevel1">
@@ -378,9 +443,62 @@
         <CursorEffect value="MassRecallSearch"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MassRecallWoL"/>
     </CAbilEffectTarget>
+    <CAbilMorph id="BanelingLotV1@MorphToBaneling">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Baneling" Requirements="HaveBanelingNest"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="Birth" value="1"/>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="FastBuild" value="1"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="Produce" value="1"/>
+        <Flags index="Rally" value="1"/>
+        <Flags index="RallyReset" value="1"/>
+        <Flags index="ShowProgress" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="BanelingLotV1@Cocoon"/>
+        <InfoArray Score="1" Unit="BanelingLotV1">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="20"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="20"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="20"/>
+                <EffectArray index="Finish" value="PostMorphHeal"/>
+            </SectionArray>
+        </InfoArray>
+        <Alert value="MorphComplete_Zerg"/>
+    </CAbilMorph>
     <CAbilMorph id="MorphToMothership">
         <CmdButtonArray index="Execute" Requirements="ModifiedAbility@MothershipRequirements"/>
     </CAbilMorph>
+    <CAbilTrain id="BanelingLotV1@MorphZerglingToBaneling">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <RefundFraction>
+            <Resource index="Minerals" value="-0.75"/>
+            <Resource index="Vespene" value="-0.75"/>
+            <Resource index="Terrazine" value="-0.75"/>
+            <Resource index="Custom" value="-0.75"/>
+        </RefundFraction>
+        <Activity value="UI/Morphing"/>
+        <ActorKey value="BanelingAspect"/>
+        <Flags index="KillOnFinish" value="1"/>
+        <Flags index="Select" value="1"/>
+        <MorphUnit value="BanelingLotV1@Cocoon"/>
+        <InfoArray index="Train1" Time="20" Alert="MorphComplete_Zerg">
+            <Button DefaultButtonFace="Baneling" Requirements="HaveBanelingNest">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+            <Unit value="BanelingLotV1"/>
+            <Flags index="IgnorePlacement" value="1"/>
+        </InfoArray>
+        <Alert value="MorphComplete_Zerg"/>
+    </CAbilTrain>
     <CAbilMorph id="MothershipWoL@MorphToMothership">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MothershipWoL@MorphToMothership" Requirements="ModifiedAbility@MothershipRequirements"/>
@@ -629,6 +747,28 @@
         <AINotifyEffect value="TemporalFieldCreatePersistent"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="TimeWarpLotV1"/>
     </CAbilEffectTarget>
+    <CAbilResearch id="TunnelingJawsSwarm@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="90" Upgrade="TunnelingJawsSwarm">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="TunnelingJawsSwarm" State="Restricted" Requirements="TunnelingJawsSwarm@LearnGravitonCatapult">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
+    <CAbilBehavior id="VolatileBurstLiberty@ToggleBuilding">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="EnableBuildingAttack">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Off" DefaultButtonFace="DisableBuildingAttack">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="VolatileBurstLiberty@ToggleBuilding"/>
+    </CAbilBehavior>
     <CAbilAugment id="WarhoundSwarm@HaywireMissiles">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="WarhoundSwarm@HaywireMissiles"/>

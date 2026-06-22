@@ -17,9 +17,25 @@
         <DataRecord Entry="Button,AdvancedBallisticsLotV2@ResearchAdvancedBallistics"/>
         <Button value="AdvancedBallistics@ResearchAdvancedBallistics"/>
     </CDataCollectionUpgrade>
+    <CDataCollectionUnit id="BanelingLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <DataRecord Entry="Unit,BanelingLotV1"/>
+        <DataRecord Entry="Actor,GhostLotV1@Unit"/>
+    </CDataCollectionUnit>
     <CDataCollectionUnit id="BarracksLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionUnit>
+    <CDataCollectionUpgrade id="CentrifugalHooksLotV1">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,CentrifugalHooksLotV1@Research"/>
+        <DataRecord Entry="Upgrade,CentrifugalHooksLotV1"/>
+        <DataRecord Entry="Button,CentrifugalHooksLotV1@Passive"/>
+        <DataRecord Entry="Button,CentrifugalHooksLotV1"/>
+        <DataRecord Entry="Requirement,CentrifugalHooksLotV1@Have"/>
+        <DataRecord Entry="Requirement,CentrifugalHooksLotV1@LearnGravitonCatapult"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
     <CDataCollection id="CloakFieldWoL">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
@@ -511,6 +527,17 @@
     <CDataCollection id="90mmCannonsLotV1">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>
+    <CDataCollectionUpgrade id="TunnelingJawsSwarm">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,TunnelingJawsSwarm@Research"/>
+        <DataRecord Entry="Upgrade,TunnelingJawsSwarm"/>
+        <DataRecord Entry="Button,TunnelingJawsSwarm@Passive"/>
+        <DataRecord Entry="Button,TunnelingJawsSwarm"/>
+        <DataRecord Entry="Requirement,TunnelingJawsSwarm@Have"/>
+        <DataRecord Entry="Requirement,TunnelingJawsSwarm@LearnGravitonCatapult"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
     <CDataCollection id="TyphoonMissilePodLotV2">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>
@@ -519,6 +546,9 @@
         <Button value="BarracksLiberty"/>
         <TechInfoUnit value="StalkerLiberty"/>
     </CDataCollectionUnit>
+    <CDataCollection id="VolatileBurstLiberty">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Zerg"/>
+    </CDataCollection>
     <CDataCollection id="VortexWoL">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>

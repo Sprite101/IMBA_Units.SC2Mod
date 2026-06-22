@@ -3,6 +3,23 @@
     <CBehaviorBuff id="AdeptPhaseShiftTimer">
         <RemoveValidatorArray value="MassRecallNexusLotV@CasterIsNotNexusMassRecallWarpingOut"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="VolatileBurstLiberty@ToggleBuilding">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Modification>
+            <WeaponEnableArray value="VolatileBurstLiberty@Building"/>
+            <WeaponDisableArray value="VolatileBurstLiberty"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="VolatileBurstLiberty@Explode">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Modification>
+            <DeathResponse Chance="1" Effect="VolatileBurstLiberty@Set"/>
+        </Modification>
+        <AINotifyEffect value="VolatileBurstLiberty@Damage"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="BatteryOverchargeLotV">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>

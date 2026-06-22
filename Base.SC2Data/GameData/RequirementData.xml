@@ -20,6 +20,14 @@
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="LT2210218377CountUnitInterceptorLotV2QueuedOrBetterAtUnit8"/>
     </CRequirement>
+    <CRequirement id="CentrifugalHooksLotV1@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeCentrifugalHooksLotV1CompleteOnly1566137605"/>
+    </CRequirement>
+    <CRequirement id="CentrifugalHooksLotV1@LearnGravitonCatapult">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeCentrifugalHooksLotV1QueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="ChargeZealotLotV2@Learn">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Show" Link="NotCountUpgradeChargeZealotLotV1QueuedOrBetter"/>
@@ -320,5 +328,13 @@
     <CRequirement id="ReleaseInterceptorsLotV1">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Use" Link="CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987"/>
+    </CRequirement>
+    <CRequirement id="TunnelingJawsSwarm@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeTunnelingJawsSwarmCompleteOnly3718727159"/>
+    </CRequirement>
+    <CRequirement id="TunnelingJawsSwarm@LearnGravitonCatapult">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeTunnelingJawsSwarmQueuedOrBetter"/>
     </CRequirement>
 </Catalog>

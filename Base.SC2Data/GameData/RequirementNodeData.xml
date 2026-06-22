@@ -41,7 +41,6 @@
         <OperandArray value="CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="Eq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1"/>
         <OperandArray value="CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
@@ -77,7 +76,6 @@
         <OperandArray value="CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndEq629999927CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly1CountUnitTwilightCouncilCompleteOnlyTechTreeCheat">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="Eq629999927CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly1"/>
         <OperandArray value="CountUnitTwilightCouncilCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
@@ -192,6 +190,15 @@
     <CRequirementCountUpgrade id="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CaduceusReactorSwarmBeta@CaduceusReactor" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCentrifugalHooksLotV1CompleteOnly1566137605">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CentrifugalHooksLotV1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCentrifugalHooksLotV1QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="CentrifugalHooksLotV1" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeChargeZealotLotV1CompleteOnly137519211TechTreeCheat">
         <Count Link="ChargeZealotLotV1" State="CompleteOnly"/>
@@ -370,7 +377,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossGroundWeaponsLevel1" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1QueuedOrBetter">
@@ -379,17 +385,14 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2CompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossGroundWeaponsLevel2" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossGroundWeaponsLevel2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel3QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ModifiedAbility@ProtossGroundWeaponsLevel3" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeModifiedAbility@ProtossShieldsLevel1CompleteOnly">
@@ -481,6 +484,15 @@
     <CRequirementCountUpgrade id="CountUpgradeResonatingGlaivesLotVQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="ResonatingGlaivesLotV" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTunnelingJawsSwarmCompleteOnly3718727159">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="TunnelingJawsSwarm" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTunnelingJawsSwarmQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="TunnelingJawsSwarm" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementEq id="Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1">
         <OperandArray index="0" value="CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly"/>
@@ -579,12 +591,10 @@
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel2QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
     <CRequirementEq id="EqCountUpgradeModifiedAbility@ProtossGroundWeaponsLevel3QueuedOrBetter0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel3QueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
@@ -640,6 +650,10 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeCentrifugalHooksLotV1QueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeCentrifugalHooksLotV1QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeChargeZealotLotV1QueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeChargeZealotLotV1QueuedOrBetter"/>
@@ -710,6 +724,10 @@
     <CRequirementNot id="NotCountUpgradeResonatingGlaivesLotVQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeResonatingGlaivesLotVQueuedOrBetter"/>
     </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeTunnelingJawsSwarmQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeTunnelingJawsSwarmQueuedOrBetter"/>
+    </CRequirementNot>
     <CRequirementOr id="OrAndCountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit1AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1">
         <OperandArray value="AndCountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit1"/>
         <OperandArray value="AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1"/>
@@ -719,4 +737,10 @@
         <OperandArray value="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit"/>
         <OperandArray value="CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit"/>
     </CRequirementOr>
+    <CRequirementCountUpgrade id="UpgradeBaneling2CompleteOnly">
+        <Count Link="BanelingLotV1"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeBaneling2QueuedOrBetter">
+        <Count Link="BanelingLotV1"/>
+    </CRequirementCountUpgrade>
 </Catalog>

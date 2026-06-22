@@ -1,5 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorModel id="BanelingLotV1@BanelingCocoonHatchModel">
+        <On Terms="AbilMorph.*.Start; MorphFrom BanelingLotV1@Cocoon" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom BanelingLotV1@Cocoon" Send="$Death"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1@Cocoon" Send="Destroy"/>
+        <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="Create CocoonCancelOrCocoonComplete"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Model value="BanelingCocoon"/>
+    </CActorModel>
+    <CActorSound id="BanelingLotV1@CocoonBirthSound" parent="SoundOneShot">
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1@Cocoon; MorphFrom Zergling" Send="Create"/>
+        <On Terms="AbilMorph.*.Cancel; MorphTo BanelingLotV1@Cocoon; MorphFrom Zergling" Send="Destroy"/>
+        <Sound value="BanelingEgg_Creation"/>
+    </CActorSound>
+    <CActorAction id="VolatileBurstLiberty@BuildingAttackAction" parent="AoESplashShieldHitter" effectHit="VolatileBurstLiberty@BuildingDamage">
+        <LaunchAssets Sound=""/>
+    </CActorAction>
+    <CActorAction id="VolatileBurstLiberty@AttackAction" parent="AoESplashShieldHitter" effectHit="VolatileBurstLiberty@Damage">
+        <LaunchAssets Sound="Baneling_AttackLaunch"/>
+    </CActorAction>
+    <CActorAction id="VolatileBurstLiberty@FriendlyAttackAction" parent="GenericAttack" effectAttack="VolatileBurstLiberty@FriendlyDamage">
+        <On Terms="Effect.VolatileBurstLiberty@FriendlyBuildingDamage.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On Terms="Effect.VolatileBurstLiberty@FriendlyBuildingDamage.Start; At Caster" Send="Create"/>
+    </CActorAction>
+    <CActorForceSphere id="VolatileBurstLiberty@Force">
+        <On Terms="Effect.VolatileBurstLiberty@Damage.Start; At Caster" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create BanelingAttackForceUp"/>
+        <HostSiteOps Ops="SOpShadow SOpRandomPointInCircleDot25"/>
+        <Duration value="0.300000"/>
+        <Magnitude value="16.000000,8.000000"/>
+        <Radius value="2.100000,0.300000"/>
+    </CActorForceSphere>
+    <CActorUnit id="BanelingLotV1@Cocoon" parent="GenericUnitMorph" unitName="BanelingLotV1@Cocoon">
+        <Aliases value="_UnitSmall"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1@Cocoon; MorphFrom Zergling" Send="AnimBaselineStop"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1@Cocoon; MorphFrom Zergling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AnimBaselineStart"/>
+        <HostSiteOps Ops="SOpRotVariancerForward30"/>
+        <Model value="BanelingCocoon"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="BanelingCocoon"/>
+        <DeathArray index="Normal" ModelLink="BanelingCocoonDeath" SoundLink="BanelingEgg_Explode"/>
+        <PlacementModel value="BanelingCocoon"/>
+        <PortraitModel value="BanelingCocoonPortrait"/>
+        <BarOffset value="40"/>
+        <BarWidth value="36"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-BanelingEgg.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\Wireframe-Zerg-BanelingEgg.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="What" value="Egg_What"/>
+        <UnitIcon value="Assets\Textures\Wireframe-Zerg-BanelingEgg.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-BanelingEgg.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorSound id="BanelingLotV1@CocoonDeathSound" parent="SoundOneShot">
+        <On Terms="UnitDeath.BanelingLotV1@Cocoon; PassChance 25.000000" Send="Create"/>
+        <Sound value="BanelingEgg_Death"/>
+    </CActorSound>
+    <CActorUnit id="BanelingLotV1" parent="GenericBurrowerStandard" unitName="BanelingLotV1">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergSmallBurrowEffects"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <AcceptedHostedPropTransfers index="Scale" value="0"/>
+        <Remove Terms="UnitDeathCustomize; ValidateUnit NotStructure; IsStatus InAir 1" Send="DeathCustomize AntiGravGeneric"/>
+        <Remove Terms="UnitDeathCustomize; ValidateUnit IsZergUnit; IsStatus InAir 1" Send="DeathCustomize AntiGravZerg"/>
+        <On index="69" Terms="UnitBirth.BanelingLotV1@Burrowed" Send="Create"/>
+        <On index="70" Terms="UnitBirth.BanelingLotV1@Burrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant,DontResetOnUnhide"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1; MorphFrom BanelingLotV1@Cocoon" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1; MorphFrom BanelingLotV1@Cocoon" Send="$Birth 0 0.000000"/>
+        <On Terms="ActorCreation; ValidateUnit CentrifugalHooksLotV1@Upgraded" Send="AnimGroupApply Superior"/>
+        <On Terms="ActorCreation; ValidateUnit CentrifugalHooksLotV1@Upgraded" Send="SetWalkAnimMoveSpeed 3"/>
+        <On Terms="Upgrade.CentrifugalHooksLotV1.Add" Send="AnimGroupApply Superior"/>
+        <On Terms="Upgrade.CentrifugalHooksLotV1.Add" Send="SetWalkAnimMoveSpeed 3"/>
+        <On Terms="Upgrade.CentrifugalHooksLotV1.Remove" Send="AnimGroupRemove Superior"/>
+        <On Terms="Upgrade.CentrifugalHooksLotV1.Remove" Send="SetWalkAnimMoveSpeed 2"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom BanelingLotV1; MorphTo BanelingLotV1@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1; MorphFrom BanelingLotV1@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1; MorphFrom BanelingLotV1@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="WeaponStart.VolatileBurstLiberty.AttackStart" Send="StatusSet DeathSuicide 1"/>
+        <On Terms="Abil.BanelingLotV1@Explode.SourceCastStart" Send="StatusSet DeathSuicide 1"/>
+        <On Terms="WeaponStart.VolatileBurstLiberty@Building.AttackStart" Send="StatusSet DeathSuicide 1"/>
+        <On Terms="UnitDeathCustomize; IsStatus DeathSuicide 1" Send="Create BanelingDeathSuicideSound"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="UnitBirth.BanelingLotV1" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1; MorphFrom BanelingLotV1@Burrowed" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BanelingLotV1@Burrowed; MorphFrom BanelingLotV1" Send="TerrainSquibDeactivate"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Baneling_Land"/>
+        <On Terms="UnitDeathCustomize; IsStatus DeathSuicide 0" Send="Create BanelingDeathNormalSound"/>
+        <Model value="Baneling"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Baneling"/>
+        <DeathArray index="Normal" ModelLink="BanelingDeath" SoundLink=""/>
+        <PlacementModel value="Baneling"/>
+        <PortraitModel value="BanelingPortrait"/>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSmall"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2"/>
+        <BarOffset value="35"/>
+        <BarWidth value="36"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Baneling.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-baneling.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="Ready" value="Baneling_Ready"/>
+        <SoundArray index="Help" value="Baneling_Help"/>
+        <SoundArray index="What" value="Baneling_What"/>
+        <SoundArray index="Yes" value="Baneling_Yes"/>
+        <SoundArray index="Attack" value="Baneling_Attack"/>
+        <SoundArray index="Pissed" value="Baneling_Pissed"/>
+        <SoundArray index="Movement" value="Baneling_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-baneling.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Baneling.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorForceSphere id="OverchargeLotV@ExplosionForce">
         <On Terms="Effect.OverchargeLotV@SearchArea.Start" Send="Create"/>
         <On Terms="ActorCreation" Send="Create DisruptorExplosionUpForce"/>
@@ -2790,6 +2919,7 @@
     <CActorEventMacro id="PhysicsDeathsVoidGround">
         <On Terms="UnitDeathCustomize; KilledByEffect PurificationNovaLotV1@Damage" Send="DeathCustomize RagdollSiegeTank"/>
         <On Terms="UnitDeathCustomize; KilledByEffect PurificationNovaLotV2@Damage" Send="DeathCustomize RagdollSiegeTank"/>
+        <On Terms="UnitDeathCustomize; KilledByEffect VolatileBurstLiberty@Damage" Send="DeathCustomize RagdollBaneling"/>
     </CActorEventMacro>
     <CActorForceSphere id="PurificationNovaLotV1@ForceUp">
         <HostSiteOps Ops="SOpShadow SOpRotVariancerUp35"/>
@@ -7208,4 +7338,8 @@
         </ImpactMap>
         <ImpactMap index="Shield" Sound="" ModelReaction=""/>
     </CActorAction>
+    <CActorUnit id="Zergling">
+        <On Terms="AbilMorph.*.Finish; MorphTo Zergling; MorphFrom BanelingLotV1@Cocoon; !AbilKey BurrowUp" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom Zergling; MorphTo BanelingLotV1@Cocoon; !AbilKey BurrowDown" Send="Destroy"/>
+    </CActorUnit>
 </Catalog>

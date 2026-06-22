@@ -375,6 +375,52 @@
         <DamagePoint value="0.05"/>
         <Effect value="TyphoonMissilePodLotV2@LMSwitch"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="VolatileBurstLiberty@Dummy">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-banelingspooge.dds"/>
+        <DisplayEffect value="VolatileBurstLiberty@Damage"/>
+        <TargetFilters value="Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.25"/>
+        <Cost>
+            <Cooldown Link="Weapon/VolatileBurstLiberty"/>
+        </Cost>
+        <Period value="0.833"/>
+        <DamagePoint value="0"/>
+        <Effect value=""/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="VolatileBurstLiberty@Building">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <DisplayEffect value="VolatileBurstLiberty@Set"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireFilters value="Ground,Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.25"/>
+        <Period value="0.833"/>
+        <DamagePoint value="0"/>
+        <Effect value="VolatileBurstLiberty@Set"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="VolatileBurstLiberty">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.25"/>
+        <Period value="0.833"/>
+        <DamagePoint value="0"/>
+        <AllowedMovement value="Moving"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="Melee" value="1"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AcquireFilters value="Ground,Visible;Self,Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Effect value="VolatileBurstLiberty@Set"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="WarhoundSwarm@WeaponMelee">
         <EditorCategories value="Race:Terran"/>
         <Options index="Hidden" value="1"/>
