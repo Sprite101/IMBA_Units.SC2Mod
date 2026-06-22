@@ -346,7 +346,7 @@
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorDown,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowUltraliskDown,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="EnableBuildingAttack" Type="AbilCmd" AbilCmd="VolatileBurstLiberty@ToggleBuilding,On" Row="2" Column="1"/>
-            <LayoutButtons Face="DisableBuildingAttack" Type="AbilCmd" AbilCmd="VolatileBurstLiberty@ToggleBuilding,On" Row="2" Column="2"/>
+            <LayoutButtons Face="DisableBuildingAttack" Type="AbilCmd" AbilCmd="VolatileBurstLiberty@ToggleBuilding,Off" Row="2" Column="2"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDroneUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowZerglingUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowBanelingUp,Execute" Row="2" Column="4"/>

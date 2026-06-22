@@ -27696,7 +27696,7 @@
         </Element>
         <Element Type="Param" Id="E0BF32A7">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="00000419"/>
-            <Value>2.0</Value>
+            <Value>3.0</Value>
             <ValueType Type="fixed"/>
         </Element>
         <Element Type="Param" Id="C27EAD0B">

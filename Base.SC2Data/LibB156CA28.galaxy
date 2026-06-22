@@ -1797,7 +1797,7 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
             DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[(lv_panelIndex-1)][autoB5F9DAD6_var], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, lv_panelIndex)), true);
         }
     }
-    Wait(2.0, c_timeGame);
+    Wait(3.0, c_timeGame);
     autoF9637C6D_g = libB156CA28_gv_activePlayersGameInit;
     autoF9637C6D_var = -1;
     while (true) {

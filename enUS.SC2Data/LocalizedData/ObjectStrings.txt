@@ -30,6 +30,7 @@ Actor/Name/AutoTurretSwarm@ReleaseMissile=Release Missile
 Actor/Name/AutoTurretSwarm@Turret=Turret
 Actor/Name/BanelingLotV1=Baneling
 Actor/Name/BanelingLotV1@BanelingCocoonHatchModel=Baneling Cocoon Hatch Model
+Actor/Name/BanelingLotV1@BurrowedSplat=Baneling Burrowed Splat
 Actor/Name/BanelingLotV1@Cocoon=Baneling Cocoon
 Actor/Name/BanelingLotV1@CocoonBirthSound=Baneling Cocoon Birth Sound
 Actor/Name/BanelingLotV1@CocoonDeathSound=Baneling Cocoon Death Sound

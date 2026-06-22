@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorSplat id="BanelingLotV1@BurrowedSplat" parent="BurrowedSplat" unitName="BanelingLotV1">
+        <On index="2" Terms="UnitBirth.BanelingLotV1@Burrowed" Send="Create"/>
+        <On index="3" Terms="AbilMorph.*.Start; MorphTo BanelingLotV1@Burrowed" Send="Create"/>
+        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom BanelingLotV1@Burrowed" Send="RefClear ::Host"/>
+        <On index="5" Terms="AbilMorph.*.Start; MorphFrom BanelingLotV1@Burrowed" Send="TimerSet 4.000000,2.000000 DelayDestroy"/>
+    </CActorSplat>
     <CActorModel id="BanelingLotV1@BanelingCocoonHatchModel">
         <On Terms="AbilMorph.*.Start; MorphFrom BanelingLotV1@Cocoon" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom BanelingLotV1@Cocoon" Send="$Death"/>
