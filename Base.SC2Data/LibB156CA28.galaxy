@@ -64,6 +64,8 @@ void libB156CA28_InitVariables () {
             }
         }
     }
+    libB156CA28_gv_gameTimer = c_invalidDialogControlId;
+    libB156CA28_gv_txt_GameTimer = c_invalidDialogControlId;
 }
 
 // Functions
@@ -195,6 +197,10 @@ void libB156CA28_gf_Hookups_PlayerFrames () {
     // Variable Initialization
 
     // Implementation
+    DialogControlHookupStandard(c_triggerControlTypeLabel, "UIContainer/ConsoleUIContainer/MissionTimePanel/TimeLabel");
+    libB156CA28_gv_gameTimer = DialogControlLastCreated();
+    DialogControlHookupStandard(c_triggerControlTypeLabel, "UIContainer/ConsoleUIContainer/MissionTimePanel/IMBA_TimeLabel");
+    libB156CA28_gv_txt_GameTimer = DialogControlLastCreated();
     DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/FullscreenLowerContainer/IMBA_Selection_Panel");
     libB156CA28_gv_playerFrames.lv_mainPanel = DialogControlLastCreated();
     DialogControlHookup(DialogControlLastCreated(), c_triggerControlTypeLabel, libNtve_gf_ConvertStringToUILayoutFrameName("Title"));
@@ -1399,17 +1405,17 @@ void libB156CA28_gf_GameInit () {
     // Implementation
     libNtve_gf_HideGameUI(false, PlayerGroupAll());
     UISetWorldVisible(PlayerGroupAll(), false);
-    UnitPauseAll(true);
-    libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_statusLabel, StringExternal("UI/PickStage/Select"), PlayerGroupAll());
     autoB651DAAB_g = PlayerGroupAll();
     autoB651DAAB_var = -1;
     while (true) {
         autoB651DAAB_var = PlayerGroupNextPlayer(autoB651DAAB_g, autoB651DAAB_var);
         if (autoB651DAAB_var < 0) { break; }
         CameraLockInput(autoB651DAAB_var, true);
+        UISetSelectionTypeEnabled(PlayerGroupSingle(autoB651DAAB_var), c_localSelectionTypeUnknown, false);
     }
     TriggerEnable(libB156CA28_gt_ViewResultsInGame, false);
     TriggerEnable(libB156CA28_gt_HideResultsInGame, false);
+    TriggerEnable(libB156CA28_gt_Periodic, false);
 }
 
 void libB156CA28_gf_PickStop () {
@@ -1463,6 +1469,7 @@ void libB156CA28_gf_PickStop () {
     }
     libNtve_gf_HideGameUI(true, PlayerGroupAll());
     UISetWorldVisible(PlayerGroupAll(), true);
+    Wait(1.0, c_timeGame);
     UnitPauseAll(false);
     auto8F523FC6_g = PlayerGroupAll();
     auto8F523FC6_var = -1;
@@ -1470,9 +1477,12 @@ void libB156CA28_gf_PickStop () {
         auto8F523FC6_var = PlayerGroupNextPlayer(auto8F523FC6_g, auto8F523FC6_var);
         if (auto8F523FC6_var < 0) { break; }
         CameraLockInput(auto8F523FC6_var, false);
+        UISetSelectionTypeEnabled(PlayerGroupSingle(auto8F523FC6_var), c_localSelectionTypeUnknown, true);
     }
     TriggerEnable(libB156CA28_gt_ViewResultsInGame, true);
     TriggerEnable(libB156CA28_gt_HideResultsInGame, true);
+    TriggerEnable(libB156CA28_gt_Periodic, true);
+    TriggerExecute(libB156CA28_gt_Periodic, true, false);
 }
 
 // Triggers
@@ -1735,6 +1745,7 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
 
     libB156CA28_gf_GameInit();
     libB156CA28_gf_Hookups_PlayerFrames();
+    libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_statusLabel, StringExternal("UI/PickStage/Select"), PlayerGroupAll());
     auto9C49B4CE_g = PlayerGroupActive();
     auto9C49B4CE_var = -1;
     while (true) {
@@ -1797,7 +1808,8 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
             DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[(lv_panelIndex-1)][autoB5F9DAD6_var], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, lv_panelIndex)), true);
         }
     }
-    Wait(3.0, c_timeGame);
+    Wait(0.01, c_timeGame);
+    UnitPauseAll(true);
     autoF9637C6D_g = libB156CA28_gv_activePlayersGameInit;
     autoF9637C6D_var = -1;
     while (true) {
@@ -1815,6 +1827,46 @@ void libB156CA28_gt_MapInit_Init () {
     TriggerAddEventMapInit(libB156CA28_gt_MapInit);
 }
 
+//--------------------------------------------------------------------------------------------------
+// Trigger: Periodic
+//--------------------------------------------------------------------------------------------------
+bool libB156CA28_gt_Periodic_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libB156CA28_gt_UpdateGameTimer, true, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libB156CA28_gt_Periodic_Init () {
+    libB156CA28_gt_Periodic = TriggerCreate("libB156CA28_gt_Periodic_Func");
+    TriggerAddEventTimePeriodic(libB156CA28_gt_Periodic, 1.0, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Update Game Timer
+//--------------------------------------------------------------------------------------------------
+bool libB156CA28_gt_UpdateGameTimer_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SetDialogItemText(libB156CA28_gv_txt_GameTimer, TextTimeFormat(StringToText("<mintotal/>:<sec2/>"), libB156CA28_gv_timeElapsed), PlayerGroupAll());
+    libB156CA28_gv_timeElapsed = (libB156CA28_gv_timeElapsed+1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libB156CA28_gt_UpdateGameTimer_Init () {
+    libB156CA28_gt_UpdateGameTimer = TriggerCreate("libB156CA28_gt_UpdateGameTimer_Func");
+}
+
 void libB156CA28_InitTriggers () {
     libB156CA28_gt_ConfirmButtonUsed_Init();
     libB156CA28_gt_SelectionButtonUsed_Init();
@@ -1822,6 +1874,8 @@ void libB156CA28_InitTriggers () {
     libB156CA28_gt_ViewResultsInGame_Init();
     libB156CA28_gt_HideResultsInGame_Init();
     libB156CA28_gt_MapInit_Init();
+    libB156CA28_gt_Periodic_Init();
+    libB156CA28_gt_UpdateGameTimer_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

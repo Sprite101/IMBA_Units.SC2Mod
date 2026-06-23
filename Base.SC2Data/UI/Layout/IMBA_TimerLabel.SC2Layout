@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="MissionTimePanel" name="GameUI/UIContainer/ConsoleUIContainer/MissionTimePanel" file="GameUI">
+
+        <Frame type="Label" name="TimeLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="7"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-4"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Style val="@@@MissionTimePanel"/>
+            <AcceptsMouse val="true"/>
+            <Tooltip val="@UI/MissionTimeTooltip"/>
+            <Visible val="false"/>
+        </Frame>
+
+
+        <Frame type="Label" name="IMBA_TimeLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="7"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-4"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="15"/>
+            <Style val="@@@MissionTimePanel"/>
+            <AcceptsMouse val="true"/>
+            <Tooltip val="@UI/MissionTimeTooltip"/>
+        </Frame>
+  </Frame>
+</Desc>

@@ -2,4 +2,5 @@
 <Desc>
     <Include path="UI/Layout/IMBA_UnitSelectionPanel.SC2Layout"/>
     <Include path="UI/Layout/IMBA_Panel.SC2Layout"/>
+    <Include path="UI/Layout/IMBA_TimerLabel.SC2Layout"/>
 </Desc>

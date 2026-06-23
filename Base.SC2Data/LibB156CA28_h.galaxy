@@ -4,7 +4,7 @@ include "TriggerLibs/natives"
 // Library: IMBA Units
 //--------------------------------------------------------------------------------------------------
 // Constants
-const int libB156CA28_gv_countdownDuration = 15;
+const int libB156CA28_gv_countdownDuration = 90;
 const int libB156CA28_gv_displayDuration = 5;
 const int libB156CA28_gv_maxPlayer = 14;
 const int libB156CA28_gv_maxActivePlayer = 8;
@@ -33,6 +33,9 @@ int[libB156CA28_gv_maxActivePlayer + 1][libB156CA28_gv_maxSelectionItems + 1] li
 int[libB156CA28_gv_maxActivePlayer + 1] libB156CA28_gv_warpInResults;
 int libB156CA28_gv_playerReadyNum;
 libB156CA28_gs_PlayerFrames libB156CA28_gv_playerFrames;
+int libB156CA28_gv_gameTimer;
+int libB156CA28_gv_txt_GameTimer;
+int libB156CA28_gv_timeElapsed;
 
 // Function Declarations
 void libB156CA28_gf_SetupSelectionPanel (int lp_player, int lp_panelIndex);
@@ -89,6 +92,8 @@ trigger libB156CA28_gt_Countdown;
 trigger libB156CA28_gt_ViewResultsInGame;
 trigger libB156CA28_gt_HideResultsInGame;
 trigger libB156CA28_gt_MapInit;
+trigger libB156CA28_gt_Periodic;
+trigger libB156CA28_gt_UpdateGameTimer;
 
 // Library Initialization
 void libB156CA28_InitVariables ();
