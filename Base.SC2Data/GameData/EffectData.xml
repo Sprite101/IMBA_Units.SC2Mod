@@ -7,6 +7,12 @@
         <Amount value="15"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectDamage id="CanisterRifleLiberty@Damage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Light" value="10"/>
+        <Kind value="Ranged"/>
+        <Amount value="10"/>
+    </CEffectDamage>
     <CEffectRemoveBehavior id="VolatileBurstLiberty@RB">
         <EditorCategories value="Race:Zerg"/>
         <WhichUnit Value="Caster"/>

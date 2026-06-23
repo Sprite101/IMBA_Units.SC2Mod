@@ -1964,7 +1964,7 @@
         <AbilArray index="6" Link="NexusTrainMothership"/>
         <AbilArray index="7" Link="NexusMassRecall"/>
         <AbilArray index="8" Link="EnergyRecharge"/>
-        <AbilArray index="10" Link="ChronoBoostLotV"/>
+        <AbilArray Link="ChronoBoostLotV"/>
         <AbilArray Link="BatteryOverchargeLotV"/>
         <AbilArray Link="EnergyRechargeLotV"/>
         <AbilArray Link="MassRecallNexusLotV"/>
@@ -3335,7 +3335,7 @@
         <AbilArray Link="GhostHoldFire"/>
         <AbilArray Link="GhostLotV1@EMP"/>
         <AbilArray Link="GhostWeaponsFree"/>
-        <WeaponArray Link="C10CanisterRifle"/>
+        <WeaponArray Link="CanisterRifleLiberty"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -3425,7 +3425,7 @@
         <AbilArray Link="GhostHoldFire"/>
         <AbilArray Link="GhostWoL@EMP"/>
         <AbilArray Link="GhostWeaponsFree"/>
-        <WeaponArray Link="C10CanisterRifle"/>
+        <WeaponArray Link="CanisterRifleLiberty"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>

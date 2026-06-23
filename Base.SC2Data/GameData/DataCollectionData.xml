@@ -25,6 +25,9 @@
     <CDataCollectionUnit id="BarracksLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionUnit>
+    <CDataCollection id="CanisterRifleLiberty">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
+    </CDataCollection>
     <CDataCollectionUpgrade id="CentrifugalHooksLotV1">
         <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
         <DataRecord Entry="Abil,CentrifugalHooksLotV1@Research"/>

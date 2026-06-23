@@ -3736,6 +3736,11 @@
         <EffectArray Operation="Set" Reference="Weapon,PistolSwarm,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
         <EffectArray Reference="Weapon,PistolSwarm,Level" Value="1"/>
         <EffectArray Reference="Effect,PistolSwarm@Damage,Amount" Value="1.000000"/>
+        <!-- Ghost Liberty -->
+        <EffectArray Operation="Set" Reference="Weapon,CanisterRifleLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EffectArray Reference="Weapon,CanisterRifleLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,CanisterRifleLiberty@Damage,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,CanisterRifleLiberty@Damage,AttributeBonus[Light]" Value="1"/>
     </CUpgrade>
     <CUpgrade id="TerranInfantryWeaponsLevel2">
         <EffectArray Operation="Set" Reference="Weapon,GrenadeLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
@@ -3747,6 +3752,11 @@
         <EffectArray Operation="Set" Reference="Weapon,PistolSwarm,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
         <EffectArray Reference="Weapon,PistolSwarm,Level" Value="1"/>
         <EffectArray Reference="Effect,PistolSwarm@Damage,Amount" Value="1.000000"/>
+        <!-- Ghost Liberty -->
+        <EffectArray Operation="Set" Reference="Weapon,CanisterRifleLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel2.dds"/>
+        <EffectArray Reference="Weapon,CanisterRifleLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,CanisterRifleLiberty@Damage,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,CanisterRifleLiberty@Damage,AttributeBonus[Light]" Value="1"/>
     </CUpgrade>
     <CUpgrade id="TerranInfantryWeaponsLevel3">
         <EffectArray Operation="Set" Reference="Weapon,GrenadeLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
@@ -3758,6 +3768,11 @@
         <EffectArray Operation="Set" Reference="Weapon,PistolSwarm,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
         <EffectArray Reference="Weapon,PistolSwarm,Level" Value="1"/>
         <EffectArray Reference="Effect,PistolSwarm@Damage,Amount" Value="1.000000"/>
+        <!-- Ghost Liberty -->
+        <EffectArray Operation="Set" Reference="Weapon,CanisterRifleLiberty,Icon" Value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel3.dds"/>
+        <EffectArray Reference="Weapon,CanisterRifleLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,CanisterRifleLiberty@Damage,Amount" Value="1.000000"/>
+        <EffectArray Reference="Effect,CanisterRifleLiberty@Damage,AttributeBonus[Light]" Value="1"/>
     </CUpgrade>
     <CUpgrade id="TerranShipWeaponsLevel1">
         <!-- Liberator LotV1 -->

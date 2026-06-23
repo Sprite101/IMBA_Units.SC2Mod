@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CActorSplat id="BanelingLotV1@BurrowedSplat" parent="BurrowedSplat" unitName="BanelingLotV1">
-        <On index="2" Terms="UnitBirth.BanelingLotV1@Burrowed" Send="Create"/>
-        <On index="3" Terms="AbilMorph.*.Start; MorphTo BanelingLotV1@Burrowed" Send="Create"/>
-        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom BanelingLotV1@Burrowed" Send="RefClear ::Host"/>
-        <On index="5" Terms="AbilMorph.*.Start; MorphFrom BanelingLotV1@Burrowed" Send="TimerSet 4.000000,2.000000 DelayDestroy"/>
+        <On index="2" Terms="UnitBirth.BanelingLotV1@Burrowed"/>
+        <On index="3" Terms="AbilMorph.*.Start; MorphTo BanelingLotV1@Burrowed"/>
+        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom BanelingLotV1@Burrowed"/>
+        <On index="5" Terms="AbilMorph.*.Start; MorphFrom BanelingLotV1@Burrowed"/>
     </CActorSplat>
     <CActorModel id="BanelingLotV1@BanelingCocoonHatchModel">
         <On Terms="AbilMorph.*.Start; MorphFrom BanelingLotV1@Cocoon" Send="Create"/>
@@ -21,6 +21,16 @@
         <On Terms="AbilMorph.*.Cancel; MorphTo BanelingLotV1@Cocoon; MorphFrom Zergling" Send="Destroy"/>
         <Sound value="BanelingEgg_Creation"/>
     </CActorSound>
+    <CActorAction id="CanisterRifleLiberty@AttackAction" parent="GenericAttack" effectAttack="CanisterRifleLiberty@Damage">
+        <LaunchAssets Model="GhostAttackLaunch" Sound="Ghost_AttackLaunch"/>
+        <ContainerAssets Model="GhostBunkerAttackLaunch" Sound="Ghost_BunkerAttackLaunch"/>
+        <ImpactMap index="None" Model="GhostAttackImpact" Sound="Ghost_AttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="CannisterRifleImpact" MatchKeys="Basic" Physics="GhostAttackDeathForce"/>
+        <AcquisitionYawHalfArc value="10.000000"/>
+        <AcquisitionPitchHalfArc value="15.000000"/>
+        <AccuracyHalfArc value="5.000000"/>
+    </CActorAction>
     <CActorAction id="VolatileBurstLiberty@BuildingAttackAction" parent="AoESplashShieldHitter" effectHit="VolatileBurstLiberty@BuildingDamage">
         <LaunchAssets Sound=""/>
     </CActorAction>
@@ -7210,10 +7220,10 @@
     </CActorRange>
     <CActorSplat id="WidowMineSwarm@BurrowedSplat" parent="BurrowedSplat" unitName="WidowMine">
         <Inherits index="Visibility" value="0"/>
-        <On index="2" Terms="UnitBirth.WidowMineSwarm@WidowMineBurrowed" Send="Create"/>
-        <On index="3" Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm@WidowMineBurrowed" Send="Create"/>
-        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom WidowMineSwarm@WidowMineBurrowed" Send="RefClear ::Host"/>
-        <On index="5" Terms="AbilMorph.*.Start; MorphFrom WidowMineSwarm@WidowMineBurrowed" Send="TimerSet 4.000000,2.000000 DelayDestroy"/>
+        <On index="2" Terms="UnitBirth.WidowMineSwarm@WidowMineBurrowed"/>
+        <On index="3" Terms="AbilMorph.*.Start; MorphTo WidowMineSwarm@WidowMineBurrowed"/>
+        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom WidowMineSwarm@WidowMineBurrowed"/>
+        <On index="5" Terms="AbilMorph.*.Start; MorphFrom WidowMineSwarm@WidowMineBurrowed"/>
         <HostSiteOps Ops="SOpAttachHardPoint"/>
         <Model value="WidowMineBurrowedSplat"/>
     </CActorSplat>
