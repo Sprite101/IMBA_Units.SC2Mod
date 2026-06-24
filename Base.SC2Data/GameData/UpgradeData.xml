@@ -4262,4 +4262,20 @@
         <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
         <AffectedUnitArray value="BanelingLotV1"/>
     </CUpgrade>
+    <CUpgrade id="WarpGateResearch">
+        <EffectArray Operation="Multiply" Reference="Abil,GatewayTrain,InfoArray[Train9].Time" Value="0.600000"/>
+        <EffectArray Operation="Multiply" Reference="Abil,GatewayTrain,InfoArray[Train10].Time" Value="0.600000"/>
+        <EffectArray Operation="Multiply" Reference="Abil,GatewayTrain,InfoArray[Train11].Time" Value="0.600000"/>
+        <EffectArray Operation="Multiply" Reference="Abil,GatewayTrain,InfoArray[Train12].Time" Value="0.600000"/>
+    </CUpgrade>
+    <CUpgrade id="WarpInLiberty@WarpGate">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\BTN-Building-Protoss-WarpGate.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Prot"/>
+        <ScoreAmount value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
+        <AffectedUnitArray value="Gateway"/>
+    </CUpgrade>
 </Catalog>

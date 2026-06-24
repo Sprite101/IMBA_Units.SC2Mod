@@ -21,6 +21,22 @@
         <EditorCategories value="Race:Protoss"/>
         <TintRacially value="1"/>
     </CButton>
+    <CButton id="ModifiedAbility@AdeptLotV1">
+        <Icon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ModifiedAbility@AdeptLotV2">
+        <Icon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ModifiedAbility@DarkTemplar">
+        <Icon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-darktemplar.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Universal value="1"/>
+    </CButton>
     <CButton id="DisruptorLotVBeta">
         <Icon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
         <AlertIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
@@ -31,11 +47,29 @@
         <AlertIcon value="Assets\Textures\Btn-unit-protoss-disruptor.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="ModifiedAbility@HighTemplar">
+        <Icon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Universal value="1"/>
+    </CButton>
     <CButton id="MassRecallWoL">
         <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <TintRacially value="1"/>
+    </CButton>
+    <CButton id="ModifiedAbility@HighTemplarLiberty">
+        <Icon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-hightemplar.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="ModifiedAbility@StalkerLiberty">
+        <Icon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Universal value="1"/>
     </CButton>
     <CButton id="MothershipWoL@MorphToMothership">
         <Icon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
@@ -62,6 +96,18 @@
         <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
         <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ModifiedAbility@Stalker">
+        <Icon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="ModifiedAbility@Sentry">
+        <Icon value="Assets\Textures\btn-unit-protoss-sentry.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-sentry.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Universal value="1"/>
     </CButton>
     <CButton id="TempestLotV1">
         <Icon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
@@ -296,6 +342,11 @@
         <Icon value="Assets\Textures\btn-ability-protoss-blackhole.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <TintRacially value="1"/>
+    </CButton>
+    <CButton id="ModifiedAbility@Adept">
+        <Icon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="WarpInLiberty@Pylon">
         <Icon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
@@ -808,5 +859,11 @@
         <Icon value="Assets\Textures\btn-unit-terran-widowmine.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-terran-widowmine.dds"/>
         <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="ModifiedAbility@Zealot">
+        <Icon value="Assets\Textures\btn-unit-protoss-zealot.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-zealot.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Universal value="1"/>
     </CButton>
 </Catalog>

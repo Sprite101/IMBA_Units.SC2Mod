@@ -1,5 +1,4 @@
-﻿Abil/EditorPrefix/CyberneticsCoreResearch2=Cybernetics Core -
-Abil/EditorPrefix/CycloneLockOnAirLoTV1@LockOnAIR=Cyclone -
+﻿Abil/EditorPrefix/CycloneLockOnAirLoTV1@LockOnAIR=Cyclone -
 Abil/EditorPrefix/MULEGather2=MULE -
 Abil/EditorPrefix/PulsarBeamSwarm@Weapon=Oracle -
 Abil/EditorSuffix/MULEGather2=
@@ -559,6 +558,16 @@ Behavior/Name/WarpInLiberty@PowerSource=Power Source
 Behavior/Name/WarpInLiberty@PrismPowerSource=Prism Power Source
 Behavior/Tooltip/ImmortalLiberty@HardenedShield=This unit takes a maximum of 10 damage from any single attack.
 Behavior/Tooltip/SensorTowerLotV1@Radar=This structure is able to expose enemy movements within its search radius. Does not reveal the area.
+Button/EditorSuffix/ModifiedAbility@Adept=(Liberty Train)
+Button/EditorSuffix/ModifiedAbility@AdeptLotV1=- LotV1 (Liberty Train)
+Button/EditorSuffix/ModifiedAbility@AdeptLotV2=- LotV2 (Liberty Train)
+Button/EditorSuffix/ModifiedAbility@DarkTemplar=(Liberty Train)
+Button/EditorSuffix/ModifiedAbility@HighTemplar=(Liberty Train)
+Button/EditorSuffix/ModifiedAbility@HighTemplarLiberty=- Liberty (Liberty Train)
+Button/EditorSuffix/ModifiedAbility@Sentry=(Liberty Train)
+Button/EditorSuffix/ModifiedAbility@Stalker=(Liberty Train)
+Button/EditorSuffix/ModifiedAbility@StalkerLiberty=- Liberty (Liberty Train)
+Button/EditorSuffix/ModifiedAbility@Zealot=(Liberty Train)
 DataCollection/EditorPrefix/90mmCannonsLotV1=Scrapped Weapon -
 DataCollection/EditorPrefix/AdeptLotV=Scrapped Unit -
 DataCollection/EditorPrefix/AdeptLotV2=Scrapped Unit -
@@ -945,6 +954,8 @@ Requirement/Name/ResonatingGlaivesLotV@Have=Have Resonating Glaives
 Requirement/Name/ResonatingGlaivesLotV@Learn=Learn Resonating Glaives
 Requirement/Name/TunnelingJawsSwarm@Have=Have Tunneling Jaws
 Requirement/Name/TunnelingJawsSwarm@LearnGravitonCatapult=Learn Tunneling Jaws
+Requirement/Name/WarpInLiberty@HaveWarpGate=Have Warp Gate
+Requirement/Name/WarpInLiberty@LearnWarpGate=Learn Warp Gate
 RequirementNode/Name/1=1
 RequirementNode/Name/8=8
 RequirementNode/Name/AllowAbilCaduceusReactorSwarmBeta@ResearchCaduceusReactor0=AllowAbil(CaduceusReactorSwarmBeta@ResearchCaduceusReactor,0)
@@ -1073,6 +1084,8 @@ RequirementNode/Name/CountUpgradeResonatingGlaivesLotVCompleteOnly543136321TechT
 RequirementNode/Name/CountUpgradeResonatingGlaivesLotVQueuedOrBetter=CountUpgrade(ResonatingGlaivesLotV,QueuedOrBetter)
 RequirementNode/Name/CountUpgradeTunnelingJawsSwarmCompleteOnly3718727159=CountUpgrade(TunnelingJawsSwarm,CompleteOnly){Research Tunneling Jaws at the Baneling Nest}
 RequirementNode/Name/CountUpgradeTunnelingJawsSwarmQueuedOrBetter=CountUpgrade(TunnelingJawsSwarm,QueuedOrBetter)
+RequirementNode/Name/CountUpgradeWarpInLiberty@WarpGateCompleteOnly3112877171TechTreeCheat=CountUpgrade(WarpInLiberty@WarpGate,CompleteOnly){Research Warp Gate at the Cybernetics Core}[TechTreeCheat]
+RequirementNode/Name/CountUpgradeWarpInLiberty@WarpGateQueuedOrBetter=CountUpgrade(WarpInLiberty@WarpGate,QueuedOrBetter)
 RequirementNode/Name/Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1=CountUpgrade(ModifiedAbility@TerranVehicleAndShipWeaponsLevel1,CompleteOnly) == {Terran Vehicle And Ship Weapons Level 1}1
 RequirementNode/Name/Eq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossAirWeaponsLevel1,CompleteOnly) == {Protoss Air Weapons Level 1}1
 RequirementNode/Name/Eq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1=CountUpgrade(ModifiedAbility@ProtossGroundWeaponsLevel1,CompleteOnly) == {Protoss Ground Weapons Level 1}1
@@ -1137,6 +1150,7 @@ RequirementNode/Name/NotCountUpgradeRapidFireLaunchers@UpgradeQueuedOrBetter=!Co
 RequirementNode/Name/NotCountUpgradeReaperSwarm@UpgradeQueuedOrBetter=!CountUpgrade(ReaperSwarm@Upgrade,QueuedOrBetter)
 RequirementNode/Name/NotCountUpgradeResonatingGlaivesLotVQueuedOrBetter=!CountUpgrade(ResonatingGlaivesLotV,QueuedOrBetter)
 RequirementNode/Name/NotCountUpgradeTunnelingJawsSwarmQueuedOrBetter=!CountUpgrade(TunnelingJawsSwarm,QueuedOrBetter)
+RequirementNode/Name/NotCountUpgradeWarpInLiberty@WarpGateQueuedOrBetter=!CountUpgrade(WarpInLiberty@WarpGate,QueuedOrBetter)
 RequirementNode/Name/OrAndCountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit1AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1=(CountBehavior(PhotonOverchargeLotV1,CompleteOnlyAtUnit) && 1) || (CountBehavior(PhotonOverchargeSwarm,CompleteOnlyAtUnit) && 1)
 RequirementNode/Name/OrCountBehaviorLockOnDisableAttackCompleteOnlyAtUnitCountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnitCountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit=CountBehavior(LockOnDisableAttack,CompleteOnlyAtUnit) || CountBehavior(CycloneLockOnAirLoTV1@LockOnCaster,CompleteOnlyAtUnit) || CountBehavior(CycloneLockOnLotV2@LockOnCaster,CompleteOnlyAtUnit)
 TargetSort/Name/OracleSwarm@PulsarBeamTSThreatensOracle=TSThreatenOracle

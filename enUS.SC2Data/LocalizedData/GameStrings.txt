@@ -23,7 +23,6 @@ Abil/Name/ChronoBoostLotV=Chrono Boost
 Abil/Name/ColossusLiberty@Build=Build
 Abil/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
-Abil/Name/CyberneticsCoreResearch2=Research
 Abil/Name/CycloneLockOnAirLoTV1@LockOn=Lock On
 Abil/Name/CycloneLockOnAirLoTV1@Research=Research
 Abil/Name/CycloneLockOnLotV2@LockOn=Lock On
@@ -302,6 +301,16 @@ Button/Name/MULEWoL=Calldown: MULE
 Button/Name/MULEWoL@Gather=Gather
 Button/Name/MassRecallNexusLotV=Mass Recall
 Button/Name/MassRecallWoL=Mass Recall
+Button/Name/ModifiedAbility@Adept=Warp In Adept
+Button/Name/ModifiedAbility@AdeptLotV1=Warp In Adept
+Button/Name/ModifiedAbility@AdeptLotV2=Warp In Adept
+Button/Name/ModifiedAbility@DarkTemplar=Warp In Dark Templar
+Button/Name/ModifiedAbility@HighTemplar=Warp In High Templar
+Button/Name/ModifiedAbility@HighTemplarLiberty=Warp In High Templar
+Button/Name/ModifiedAbility@Sentry=Warp In Sentry
+Button/Name/ModifiedAbility@Stalker=Warp In Stalker
+Button/Name/ModifiedAbility@StalkerLiberty=Warp In Stalker
+Button/Name/ModifiedAbility@Zealot=Warp In Zealot
 Button/Name/MoebiusReactor=Research Moebius Reactor
 Button/Name/MoebiusReactor@Passive=Moebius Reactor
 Button/Name/MothershipWoL=Warp In Mothership
@@ -477,6 +486,16 @@ Button/Tooltip/MULEWoL=Drops an experimental robotic MULE miner onto the target 
 Button/Tooltip/MULEWoL@Gather=Orders MULE to gather minerals from a selected Mineral Field.Collects 6x Minerals.
 Button/Tooltip/MassRecallNexusLotV=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
 Button/Tooltip/MassRecallWoL=Recalls all player units in the target area to the Mothership.
+Button/Tooltip/ModifiedAbility@Adept=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/ModifiedAbility@AdeptLotV1=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/ModifiedAbility@AdeptLotV2=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/ModifiedAbility@DarkTemplar=Deadly warrior-assassin. Cloak renders the unit invisible to enemies without detection. Can transform into an Archon.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/ModifiedAbility@HighTemplar=Potent psionic master. Can use Feedback and be upgraded to use Psionic Storm. Can transform into an Archon.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/ModifiedAbility@HighTemplarLiberty=Potent psionic master. Can use Feedback and be upgraded to use Psionic Storm. Can transform into an Archon.<n/><n/><c val="ffff8a">Can attack ground units.</c>
+Button/Tooltip/ModifiedAbility@Sentry=Energy-manipulator unit. Can use Force Field, Guardian Shield, and Hallucination.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/ModifiedAbility@Stalker=Ranged support strider.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/ModifiedAbility@StalkerLiberty=Ranged support strider.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/ModifiedAbility@Zealot=Powerful melee warrior.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/MoebiusReactor=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
 Button/Tooltip/MoebiusReactor@Passive=Increases the starting energy of <c val="ffff8a">Ghosts</c> by <d ref="Upgrade,MoebiusReactor@Upgrade,EffectArray[0].Value"/>.
 Button/Tooltip/MothershipWoL=Ultimate Protoss vessel. Can use Vortex and Mass Recall. Cloaks nearby friendly units and structures.  <n/><n/><c val="ffff8a">Can attack ground and air units.</c>
@@ -1183,6 +1202,7 @@ RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877T
 RequirementNode/Tooltip/CountUpgradeReaperLiberty@UpgradeCompleteOnly1852580877TechTreeCheat2=Research Nitro Packs at the Barracks Tech Lab
 RequirementNode/Tooltip/CountUpgradeResonatingGlaivesLotVCompleteOnly543136321TechTreeCheat=Research Resonating Glaives at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeTunnelingJawsSwarmCompleteOnly3718727159=Research Tunneling Jaws at the Baneling Nest
+RequirementNode/Tooltip/CountUpgradeWarpInLiberty@WarpGateCompleteOnly3112877171TechTreeCheat=Research Warp Gate at the Cybernetics Core
 RequirementNode/Tooltip/Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1=Terran Vehicle And Ship Weapons Level 1
 RequirementNode/Tooltip/Eq1491800815CountUpgradeModifiedAbility@ProtossAirWeaponsLevel1CompleteOnly1=Protoss Air Weapons Level 1
 RequirementNode/Tooltip/Eq1740904084CountUpgradeModifiedAbility@ProtossGroundWeaponsLevel1CompleteOnly1=Protoss Ground Weapons Level 1
@@ -1357,6 +1377,7 @@ Upgrade/Name/ReaperLiberty@Upgrade=Nitro Packs
 Upgrade/Name/ReaperSwarm@Upgrade=Nitro Packs
 Upgrade/Name/ResonatingGlaivesLotV=Resonating Glaives 
 Upgrade/Name/TunnelingJawsSwarm=Tunneling Jaws
+Upgrade/Name/WarpInLiberty@WarpGate=Warp Gate
 UserData/IMBA_ProtossUnits/Adept_Selection_Expansion_Tip=Current
 UserData/IMBA_ProtossUnits/Adept_Selection_Expansion_Tip_001=Can research Amplified Shield to greatly increase Shield.
 UserData/IMBA_ProtossUnits/Adept_Selection_Expansion_Tip_002=Functions as it does today with better stats.

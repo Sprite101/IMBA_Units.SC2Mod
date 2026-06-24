@@ -72,6 +72,14 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeGraviticDriveQueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="WarpInLiberty@HaveWarpGate">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Use" Link="CountUpgradeWarpInLiberty@WarpGateCompleteOnly3112877171TechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="WarpInLiberty@LearnWarpGate">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="NotCountUpgradeWarpInLiberty@WarpGateQueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="ModifiedAbility@LearnProtossAirArmor1">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AndEqCountUpgradeModifiedAbility@ProtossAirArmorsLevel1QueuedOrBetter0AllowUnitPhoenix"/>

@@ -848,6 +848,16 @@ void libB156CA28_gf_Select_WarpIn (int lp_player, int lp_selectionIndex) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 5), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 1), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 13), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 14), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 19), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 17), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 15), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 21), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 16), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 18), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 20), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 22), false);
         TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PowerSource", false);
         TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PrismPowerSource", false);
         TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PowerUserWarpable", false);
@@ -859,15 +869,26 @@ void libB156CA28_gf_Select_WarpIn (int lp_player, int lp_selectionIndex) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@UpgradeToWarpGate", 1), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@UpgradeToWarpGate", 0), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@Research", 0), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 8), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 6), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 4), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 3), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 5), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 1), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 0), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 1), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 8), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 5), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 3), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 4), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 6), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 11), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 13), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 14), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 19), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 17), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 15), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 21), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 16), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 18), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 20), true);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 22), true);
         TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PowerSource", true);
         TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PrismPowerSource", true);
         TechTreeBehaviorAllow(lp_player, "WarpInLiberty@PowerUserWarpable", true);
@@ -875,16 +896,28 @@ void libB156CA28_gf_Select_WarpIn (int lp_player, int lp_selectionIndex) {
         TechTreeUnitAllow(lp_player, "Pylon", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("UpgradeToWarpGate", 1), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("UpgradeToWarpGate", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("MorphBuildingGatewayWarpGateFree", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("CyberneticsCoreResearch", 6), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 10), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 8), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 6), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 4), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 3), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 5), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 1), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 8), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 5), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 3), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 10), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 4), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 11), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 8), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 5), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 3), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 10), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 4), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 9), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 11), false);
         TechTreeBehaviorAllow(lp_player, "PowerSource", false);
         TechTreeBehaviorAllow(lp_player, "PowerSourceFast", false);
         TechTreeBehaviorAllow(lp_player, "FastEnablerGatewayMorphingPowerSource", false);
@@ -929,6 +962,8 @@ void libB156CA28_gf_Select_Blink (int lp_player, int lp_selectionIndex) {
     // Implementation
     if ((lp_selectionIndex == 0)) {
         TechTreeUnitAllow(lp_player, "StalkerLiberty", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 19), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 8), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 8), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 8), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("BlinkLiberty@ResearchBlink", 0), false);
@@ -937,11 +972,15 @@ void libB156CA28_gf_Select_Blink (int lp_player, int lp_selectionIndex) {
         TechTreeUnitAllow(lp_player, "StalkerLiberty", true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("BlinkLiberty@ResearchBlink", 0), true);
         if ((libB156CA28_gv_warpInResults[lp_player] == 0)) {
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 19), false);
             TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 8), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 8), true);
             TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 8), true);
         }
         else if ((libB156CA28_gv_warpInResults[lp_player] == 1)) {
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 19), true);
             TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 8), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 8), false);
             TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 8), false);
         }
         TechTreeUnitAllow(lp_player, "Stalker", false);
@@ -954,40 +993,71 @@ void libB156CA28_gf_Select_Adept (int lp_player, int lp_selectionIndex) {
     // Implementation
     if ((lp_selectionIndex == 0)) {
         TechTreeUnitAllow(lp_player, "AdeptLotV", false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("AmplifiedShieldingLotV@Research", 0), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 11), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 9), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 20), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ResonatingGlaivesLotV@Research", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 11), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 22), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 11), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 11), false);
         libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AdeptLotV2@Upgrade", 0);
     }
     else if ((lp_selectionIndex == 1)) {
         TechTreeUnitAllow(lp_player, "AdeptLotV", true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("AmplifiedShieldingLotV@Research", 0), true);
         if ((libB156CA28_gv_warpInResults[lp_player] == 0)) {
-            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 9), true);
             TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 20), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), false);
         }
         else if ((libB156CA28_gv_warpInResults[lp_player] == 1)) {
-            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 9), false);
             TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 20), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), true);
         }
-        TechTreeUnitAllow(lp_player, "Adept", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 18), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 6), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("TwilightCouncilResearch", 2), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 11), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ResonatingGlaivesLotV@Research", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 11), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 22), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 11), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 11), false);
         libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AdeptLotV2@Upgrade", 0);
     }
     else if ((lp_selectionIndex == 2)) {
-        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 11), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ResonatingGlaivesLotV@Research", 0), true);
         libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AdeptLotV2@Upgrade", 1);
+        if ((libB156CA28_gv_warpInResults[lp_player] == 0)) {
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 11), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 11), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 22), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 11), false);
+        }
+        else if ((libB156CA28_gv_warpInResults[lp_player] == 1)) {
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 11), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 11), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 22), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 11), true);
+        }
         TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 18), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 6), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 6), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("TwilightCouncilResearch", 2), false);
         TechTreeUnitAllow(lp_player, "AdeptLotV", false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("AmplifiedShieldingLotV@Research", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 9), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 20), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 9), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 9), false);
     }
 }
 
@@ -996,6 +1066,8 @@ void libB156CA28_gf_Select_HighTemplar (int lp_player, int lp_selectionIndex) {
     // Implementation
     if ((lp_selectionIndex == 0)) {
         TechTreeUnitAllow(lp_player, "HighTemplarLiberty", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 21), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 10), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 10), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("KhaydarinAmulet", 0), false);
@@ -1006,12 +1078,16 @@ void libB156CA28_gf_Select_HighTemplar (int lp_player, int lp_selectionIndex) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("KhaydarinAmulet", 0), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("PsiStormHighTemplarLiberty", 0), true);
         if ((libB156CA28_gv_warpInResults[lp_player] == 0)) {
-            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 10), true);
             TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 10), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 21), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), false);
         }
         else if ((libB156CA28_gv_warpInResults[lp_player] == 1)) {
-            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 10), false);
             TechTreeAbilityAllow(lp_player, AbilityCommand("WarpGateTrain", 10), false);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("GatewayTrain", 21), true);
+            TechTreeAbilityAllow(lp_player, AbilityCommand("WarpInLiberty@WarpGateTrain", 10), true);
         }
         TechTreeUnitAllow(lp_player, "HighTemplar", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("TemplarArchivesResearch", 4), false);

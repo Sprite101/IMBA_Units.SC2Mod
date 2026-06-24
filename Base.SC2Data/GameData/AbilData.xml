@@ -833,10 +833,14 @@
             <Cooldown Link="WarpGateTrain" TimeUse="45"/>
             <Button DefaultButtonFace="HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives"/>
         </InfoArray>
+        <InfoArray index="Train12" Time="5" Unit="Adept">
+            <Cooldown Link="WarpGateTrain" TimeUse="28"/>
+            <Button DefaultButtonFace="AdeptLotV2" State="Restricted" Requirements="HaveCyberneticsCore"/>
+        </InfoArray>
     </CAbilWarpTrain>
     <CAbilMorph id="WarpInLiberty@UpgradeToWarpGate">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:MorphsandBurrows"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToWarpGate" State="Restricted" Requirements="UseWarpGate"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradeToWarpGate" State="Restricted" Requirements="WarpInLiberty@HaveWarpGate"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
         <Flags index="BestUnit" value="1"/>
         <Flags index="Birth" value="1"/>
@@ -892,10 +896,10 @@
     </CAbilEffectTarget>
     <CAbilResearch id="WarpInLiberty@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
-        <InfoArray index="Research1" Time="60" Upgrade="WarpGateResearch">
+        <InfoArray index="Research1" Time="60" Upgrade="WarpInLiberty@WarpGate">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="50"/>
-            <Button DefaultButtonFace="WarpInLiberty@Research" State="Restricted" Requirements="LearnWarpGate">
+            <Button DefaultButtonFace="WarpInLiberty@Research" State="Restricted" Requirements="WarpInLiberty@LearnWarpGate">
                 <Flags index="ShowInGlossary" value="1"/>
             </Button>
         </InfoArray>
@@ -1367,19 +1371,67 @@
     </CAbilBuild>
     <CAbilTrain id="GatewayTrain">
         <InfoArray index="Train9" Time="42">
-            <Button DefaultButtonFace="StalkerLiberty" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Button DefaultButtonFace="StalkerLiberty" State="Restricted" Requirements="HaveCyberneticsCore">
+                <Flags index="ToSelection" value="1"/>
+            </Button>
             <Unit value="StalkerLiberty"/>
         </InfoArray>
         <InfoArray index="Train10" Time="38">
-            <Button DefaultButtonFace="AdeptLotV" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Button DefaultButtonFace="AdeptLotV" State="Restricted" Requirements="HaveCyberneticsCore">
+                <Flags index="ToSelection" value="1"/>
+            </Button>
             <Unit value="AdeptLotV"/>
         </InfoArray>
-        <InfoArray index="Train11" Time="55">
-            <Button DefaultButtonFace="HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives"/>
+        <InfoArray index="Train11" Time="60.66">
+            <Button DefaultButtonFace="HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives">
+                <Flags index="ToSelection" value="1"/>
+            </Button>
             <Unit value="HighTemplarLiberty"/>
         </InfoArray>
         <InfoArray index="Train12" Time="38">
-            <Button DefaultButtonFace="AdeptLotV2" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Button DefaultButtonFace="AdeptLotV2" State="Restricted" Requirements="HaveCyberneticsCore">
+                <Flags index="ToSelection" value="1"/>
+            </Button>
+            <Unit value="Adept"/>
+        </InfoArray>
+        <InfoArray index="Train14" Time="38">
+            <Button DefaultButtonFace="ModifiedAbility@Zealot" State="Restricted"/>
+            <Unit value="Zealot"/>
+        </InfoArray>
+        <InfoArray index="Train15" Time="38">
+            <Button DefaultButtonFace="ModifiedAbility@Stalker" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Unit value="Stalker"/>
+        </InfoArray>
+        <InfoArray index="Train16" Time="55">
+            <Button DefaultButtonFace="ModifiedAbility@HighTemplar" State="Restricted" Requirements="HaveTemplarArchives"/>
+            <Unit value="HighTemplar"/>
+        </InfoArray>
+        <InfoArray index="Train17" Time="55">
+            <Button DefaultButtonFace="ModifiedAbility@DarkTemplar" State="Restricted" Requirements="HaveDarkShrine"/>
+            <Unit value="DarkTemplar"/>
+        </InfoArray>
+        <InfoArray index="Train18" Time="37">
+            <Button DefaultButtonFace="ModifiedAbility@Sentry" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Unit value="Sentry"/>
+        </InfoArray>
+        <InfoArray index="Train19" Time="38">
+            <Button DefaultButtonFace="ModifiedAbility@Adept" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Unit value="Adept"/>
+        </InfoArray>
+        <InfoArray index="Train20" Time="42">
+            <Button DefaultButtonFace="ModifiedAbility@StalkerLiberty" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Unit value="StalkerLiberty"/>
+        </InfoArray>
+        <InfoArray index="Train21" Time="38">
+            <Button DefaultButtonFace="ModifiedAbility@AdeptLotV1" State="Restricted" Requirements="HaveCyberneticsCore"/>
+            <Unit value="AdeptLotV"/>
+        </InfoArray>
+        <InfoArray index="Train22" Time="55">
+            <Button DefaultButtonFace="ModifiedAbility@HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives"/>
+            <Unit value="HighTemplarLiberty"/>
+        </InfoArray>
+        <InfoArray index="Train23" Time="38">
+            <Button DefaultButtonFace="ModifiedAbility@AdeptLotV2" State="Restricted" Requirements="HaveCyberneticsCore"/>
             <Unit value="Adept"/>
         </InfoArray>
     </CAbilTrain>
@@ -1589,6 +1641,18 @@
             </Charge>
             <Cooldown Link="WarpGateTrain"/>
             <Button DefaultButtonFace="HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives"/>
+        </InfoArray>
+        <InfoArray index="Train12" Time="16" Unit="Adept">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value="WarpGateTrain"/>
+                <TimeUse value="28"/>
+                <Flags index="EnableChargeTimeQueuing" value="1"/>
+            </Charge>
+            <Cooldown Link="WarpGateTrain"/>
+            <Button DefaultButtonFace="AdeptLotV2" State="Restricted" Requirements="HaveCyberneticsCore"/>
         </InfoArray>
     </CAbilWarpTrain>
     <CAbilWarpable id="WarpInLiberty@Warpable">
