@@ -25,10 +25,8 @@ void libB156CA28_InitVariables () {
 
     libB156CA28_InitVariables_completed = true;
 
-    libB156CA28_gv_players = PlayerGroupEmpty();
-    libB156CA28_gv_observer = CatalogFieldValueGetAsInt(c_gameCatalogGameUI, "Dflt", "DefaultObservedPlayerId", c_playerAny);
-    libB156CA28_gv_observerGroup = PlayerGroupSingle(CatalogFieldValueGetAsInt(c_gameCatalogGameUI, "Dflt", "DefaultObservedPlayerId", c_playerAny));
-    libB156CA28_gv_players_Observers_PlayerGroup = PlayerGroupEmpty();
+    libB156CA28_gv_gameTimer = c_invalidDialogControlId;
+    libB156CA28_gv_txt_GameTimer = c_invalidDialogControlId;
     libB156CA28_gv_playerFrames.lv_mainPanel = c_invalidDialogControlId;
     libB156CA28_gv_playerFrames.lv_timeRemaining = c_invalidDialogControlId;
     libB156CA28_gv_playerFrames.lv_statusLabel = c_invalidDialogControlId;
@@ -67,121 +65,13 @@ void libB156CA28_InitVariables () {
             }
         }
     }
-    libB156CA28_gv_gameTimer = c_invalidDialogControlId;
-    libB156CA28_gv_txt_GameTimer = c_invalidDialogControlId;
+    libB156CA28_gv_playerGroup = PlayerGroupEmpty();
+    libB156CA28_gv_observer = CatalogFieldValueGetAsInt(c_gameCatalogGameUI, "Dflt", "DefaultObservedPlayerId", c_playerAny);
+    libB156CA28_gv_observerGroup = PlayerGroupSingle(CatalogFieldValueGetAsInt(c_gameCatalogGameUI, "Dflt", "DefaultObservedPlayerId", c_playerAny));
+    libB156CA28_gv_playerObserverGroup = PlayerGroupEmpty();
 }
 
 // Functions
-void libB156CA28_gf_SetupSelectionPanel (int lp_player, int lp_panelIndex) {
-    // Variable Declarations
-    string lv_race;
-
-    // Automatic Variable Declarations
-    int auto1FEF2F5F_ae;
-    int auto1FEF2F5F_var;
-
-    // Variable Initialization
-
-    // Implementation
-    lv_race = PlayerRace(lp_player);
-    if ((lv_race == "Terr")) {
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_BG[lp_panelIndex], "Assets\\Textures\\ui_glues_scorescreen_racebg_terr.dds", PlayerGroupAll());
-    }
-    else if ((lv_race == "Prot")) {
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_BG[lp_panelIndex], "Assets\\Textures\\ui_glues_scorescreen_racebg_prot.dds", PlayerGroupAll());
-    }
-    else if ((lv_race == "Zerg")) {
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_BG[lp_panelIndex], "Assets\\Textures\\ui_glues_scorescreen_racebg_zerg.dds", PlayerGroupAll());
-    }
-    auto1FEF2F5F_ae = (libB156CA28_gv_maxSelectionItems-1);
-    auto1FEF2F5F_var = 0;
-    for ( ; auto1FEF2F5F_var <= auto1FEF2F5F_ae; auto1FEF2F5F_var += 1 ) {
-        libB156CA28_gf_SetupSelectionItem(lp_panelIndex, lv_race, auto1FEF2F5F_var);
-    }
-}
-
-void libB156CA28_gf_SetupSelectionItem (int lp_panelIndex, string lp_race, int lp_itemIndex) {
-    // Variable Declarations
-    int lv_userDataIndex;
-
-    // Automatic Variable Declarations
-    const int auto90285ADA_ae = 4;
-    int auto90285ADA_var;
-    const int auto156B53B7_ae = 4;
-    int auto156B53B7_var;
-
-    // Variable Initialization
-
-    // Implementation
-    lv_userDataIndex = (lp_itemIndex+1);
-    if ((lp_race == "Terr")) {
-        if ((lv_userDataIndex > UserDataInstanceCount("IMBA_TerranUnits"))) {
-            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], PlayerGroupAll(), false);
-        }
-        else {
-            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], PlayerGroupAll(), true);
-        }
-        TextExpressionSetToken("Param/Expression/lib_B156CA28_81A2A7C1", "A", IntToText(lp_panelIndex));
-        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_81A2A7C1"), false);
-        auto90285ADA_var = 1;
-        for ( ; auto90285ADA_var <= auto90285ADA_ae; auto90285ADA_var += 1 ) {
-            if ((UserDataGetGameLink("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Units", auto90285ADA_var) == "")) {
-                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto90285ADA_var-1)][0], PlayerGroupAll(), false);
-            }
-            else {
-                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto90285ADA_var-1)][0], PlayerGroupAll(), true);
-            }
-        }
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][0], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Info_Image", 1), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][1], UnitTypeGetName(UserDataGetGameLink("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Info_Unit", 1)), PlayerGroupAll());
-        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][0], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Expansion_Tip", 1), PlayerGroupAll());
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][1], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Images", 1), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][2], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Title", 1), PlayerGroupAll());
-        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][0], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Expansion_Tip", 2), PlayerGroupAll());
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][1], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Images", 2), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][2], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Title", 2), PlayerGroupAll());
-        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][0], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Expansion_Tip", 3), PlayerGroupAll());
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][1], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Images", 3), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][2], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Title", 3), PlayerGroupAll());
-        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][0], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Expansion_Tip", 4), PlayerGroupAll());
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][1], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Images", 4), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][2], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Title", 4), PlayerGroupAll());
-    }
-    else if ((lp_race == "Prot")) {
-        if ((lv_userDataIndex > UserDataInstanceCount("IMBA_ProtossUnits"))) {
-            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], PlayerGroupAll(), false);
-        }
-        else {
-            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], PlayerGroupAll(), true);
-        }
-        TextExpressionSetToken("Param/Expression/lib_B156CA28_91C77510", "A", IntToText(lp_panelIndex));
-        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_91C77510"), false);
-        auto156B53B7_var = 1;
-        for ( ; auto156B53B7_var <= auto156B53B7_ae; auto156B53B7_var += 1 ) {
-            if ((UserDataGetGameLink("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Units", auto156B53B7_var) == "")) {
-                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto156B53B7_var-1)][0], PlayerGroupAll(), false);
-            }
-            else {
-                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto156B53B7_var-1)][0], PlayerGroupAll(), true);
-            }
-        }
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][0], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Info_Image", 1), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][1], UnitTypeGetName(UserDataGetGameLink("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Info_Unit", 1)), PlayerGroupAll());
-        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 1), PlayerGroupAll());
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 1), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 1), PlayerGroupAll());
-        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 2), PlayerGroupAll());
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 2), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 2), PlayerGroupAll());
-        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 3), PlayerGroupAll());
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 3), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 3), PlayerGroupAll());
-        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 4), PlayerGroupAll());
-        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 4), PlayerGroupAll());
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 4), PlayerGroupAll());
-    }
-}
-
 void libB156CA28_gf_Hookups_PlayerFrames () {
     // Variable Declarations
     int lv_panelIndex;
@@ -254,6 +144,116 @@ void libB156CA28_gf_Hookups_PlayerFrames () {
     }
 }
 
+void libB156CA28_gf_SetupSelectionPanel (int lp_player, int lp_panelIndex) {
+    // Variable Declarations
+    string lv_race;
+
+    // Automatic Variable Declarations
+    int auto1FEF2F5F_ae;
+    int auto1FEF2F5F_var;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_race = PlayerRace(lp_player);
+    if ((lv_race == "Terr")) {
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_BG[lp_panelIndex], "Assets\\Textures\\ui_glues_scorescreen_racebg_terr.dds", libB156CA28_gv_playerObserverGroup);
+    }
+    else if ((lv_race == "Prot")) {
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_BG[lp_panelIndex], "Assets\\Textures\\ui_glues_scorescreen_racebg_prot.dds", libB156CA28_gv_playerObserverGroup);
+    }
+    else if ((lv_race == "Zerg")) {
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_BG[lp_panelIndex], "Assets\\Textures\\ui_glues_scorescreen_racebg_zerg.dds", libB156CA28_gv_playerObserverGroup);
+    }
+    auto1FEF2F5F_ae = (libB156CA28_gv_maxSelectionItems-1);
+    auto1FEF2F5F_var = 0;
+    for ( ; auto1FEF2F5F_var <= auto1FEF2F5F_ae; auto1FEF2F5F_var += 1 ) {
+        libB156CA28_gf_SetupSelectionItem(lp_panelIndex, lv_race, auto1FEF2F5F_var);
+    }
+}
+
+void libB156CA28_gf_SetupSelectionItem (int lp_panelIndex, string lp_race, int lp_itemIndex) {
+    // Variable Declarations
+    int lv_userDataIndex;
+
+    // Automatic Variable Declarations
+    const int auto90285ADA_ae = 4;
+    int auto90285ADA_var;
+    const int auto156B53B7_ae = 4;
+    int auto156B53B7_var;
+
+    // Variable Initialization
+
+    // Implementation
+    lv_userDataIndex = (lp_itemIndex+1);
+    if ((lp_race == "Terr")) {
+        if ((lv_userDataIndex > UserDataInstanceCount("IMBA_TerranUnits"))) {
+            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], libB156CA28_gv_playerObserverGroup, false);
+        }
+        else {
+            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], libB156CA28_gv_playerObserverGroup, true);
+        }
+        TextExpressionSetToken("Param/Expression/lib_B156CA28_81A2A7C1", "A", IntToText(lp_panelIndex));
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_81A2A7C1"), false);
+        auto90285ADA_var = 1;
+        for ( ; auto90285ADA_var <= auto90285ADA_ae; auto90285ADA_var += 1 ) {
+            if ((UserDataGetGameLink("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Units", auto90285ADA_var) == "")) {
+                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto90285ADA_var-1)][0], libB156CA28_gv_playerObserverGroup, false);
+            }
+            else {
+                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto90285ADA_var-1)][0], libB156CA28_gv_playerObserverGroup, true);
+            }
+        }
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][0], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Info_Image", 1), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][1], UnitTypeGetName(UserDataGetGameLink("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Info_Unit", 1)), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][0], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Expansion_Tip", 1), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][1], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Images", 1), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][2], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Title", 1), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][0], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Expansion_Tip", 2), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][1], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Images", 2), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][2], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Title", 2), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][0], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Expansion_Tip", 3), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][1], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Images", 3), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][2], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Title", 3), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][0], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Expansion_Tip", 4), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][1], UserDataGetImagePath("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Images", 4), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][2], UserDataGetText("IMBA_TerranUnits", UserDataInstance("IMBA_TerranUnits", lv_userDataIndex), "Selection_Title", 4), libB156CA28_gv_playerObserverGroup);
+    }
+    else if ((lp_race == "Prot")) {
+        if ((lv_userDataIndex > UserDataInstanceCount("IMBA_ProtossUnits"))) {
+            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], libB156CA28_gv_playerObserverGroup, false);
+        }
+        else {
+            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lp_panelIndex][lp_itemIndex], libB156CA28_gv_playerObserverGroup, true);
+        }
+        TextExpressionSetToken("Param/Expression/lib_B156CA28_91C77510", "A", IntToText(lp_panelIndex));
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_91C77510"), false);
+        auto156B53B7_var = 1;
+        for ( ; auto156B53B7_var <= auto156B53B7_ae; auto156B53B7_var += 1 ) {
+            if ((UserDataGetGameLink("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Units", auto156B53B7_var) == "")) {
+                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto156B53B7_var-1)][0], libB156CA28_gv_playerObserverGroup, false);
+            }
+            else {
+                DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][(auto156B53B7_var-1)][0], libB156CA28_gv_playerObserverGroup, true);
+            }
+        }
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][0], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Info_Image", 1), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_UnitInfo[lp_panelIndex][lp_itemIndex][1], UnitTypeGetName(UserDataGetGameLink("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Info_Unit", 1)), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 1), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 1), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][0][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 1), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 2), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 2), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][1][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 2), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 3), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 3), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][2][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 3), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemTooltip(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][0], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Expansion_Tip", 4), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemImage(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][1], UserDataGetImagePath("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Images", 4), libB156CA28_gv_playerObserverGroup);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_selectionPanel_Unit_Selection[lp_panelIndex][lp_itemIndex][3][2], UserDataGetText("IMBA_ProtossUnits", UserDataInstance("IMBA_ProtossUnits", lv_userDataIndex), "Selection_Title", 4), libB156CA28_gv_playerObserverGroup);
+    }
+}
+
 int libB156CA28_gf_GetPlayersPanelIndex (int lp_player) {
     // Variable Declarations
     int lv_panelIndex;
@@ -265,10 +265,10 @@ int libB156CA28_gf_GetPlayersPanelIndex (int lp_player) {
     // Variable Initialization
 
     // Implementation
-    autoA2BB11F8_ae = PlayerGroupCount(libB156CA28_gv_players);
+    autoA2BB11F8_ae = PlayerGroupCount(libB156CA28_gv_playerGroup);
     autoA2BB11F8_var = 1;
     for ( ; autoA2BB11F8_var <= autoA2BB11F8_ae; autoA2BB11F8_var += 1 ) {
-        if ((PlayerGroupPlayer(libB156CA28_gv_players, autoA2BB11F8_var) == lp_player)) {
+        if ((PlayerGroupPlayer(libB156CA28_gv_playerGroup, autoA2BB11F8_var) == lp_player)) {
             lv_panelIndex = (autoA2BB11F8_var-1);
             TextExpressionSetToken("Param/Expression/lib_B156CA28_C1F6DD1A", "A", IntToText(lp_player));
             TextExpressionSetToken("Param/Expression/lib_B156CA28_C1F6DD1A", "B", IntToText(autoA2BB11F8_var));
@@ -1434,6 +1434,114 @@ void libB156CA28_gf_Select_WeaponArmorShieldsUpgrade (int lp_player, int lp_sele
     }
 }
 
+void libB156CA28_gf_SetupPlayerGroups () {
+    // Automatic Variable Declarations
+    playergroup autoF80CE8EE_g;
+    int autoF80CE8EE_var;
+    playergroup auto3F8217D2_g;
+    int auto3F8217D2_var;
+
+    // Implementation
+    autoF80CE8EE_g = PlayerGroupActive();
+    autoF80CE8EE_var = -1;
+    while (true) {
+        autoF80CE8EE_var = PlayerGroupNextPlayer(autoF80CE8EE_g, autoF80CE8EE_var);
+        if (autoF80CE8EE_var < 0) { break; }
+        if ((PlayerType(autoF80CE8EE_var) != c_playerTypeComputer)) {
+            PlayerGroupAdd(libB156CA28_gv_playerGroup, autoF80CE8EE_var);
+            PlayerGroupAdd(libB156CA28_gv_playerObserverGroup, autoF80CE8EE_var);
+        }
+
+    }
+    auto3F8217D2_g = libB156CA28_gv_observerGroup;
+    auto3F8217D2_var = -1;
+    while (true) {
+        auto3F8217D2_var = PlayerGroupNextPlayer(auto3F8217D2_g, auto3F8217D2_var);
+        if (auto3F8217D2_var < 0) { break; }
+        PlayerGroupAdd(libB156CA28_gv_playerObserverGroup, auto3F8217D2_var);
+    }
+}
+
+void libB156CA28_gf_GameInitSettings () {
+    // Automatic Variable Declarations
+    playergroup autoB651DAAB_g;
+    int autoB651DAAB_var;
+
+    // Implementation
+    libNtve_gf_HideGameUI(false, libB156CA28_gv_playerObserverGroup);
+    UISetWorldVisible(libB156CA28_gv_playerObserverGroup, false);
+    autoB651DAAB_g = libB156CA28_gv_playerObserverGroup;
+    autoB651DAAB_var = -1;
+    while (true) {
+        autoB651DAAB_var = PlayerGroupNextPlayer(autoB651DAAB_g, autoB651DAAB_var);
+        if (autoB651DAAB_var < 0) { break; }
+        CameraLockInput(autoB651DAAB_var, true);
+    }
+    UISetSelectionTypeEnabled(libB156CA28_gv_playerObserverGroup, c_localSelectionTypeUnknown, false);
+    TriggerEnable(libB156CA28_gt_ViewResultsInGame, false);
+    TriggerEnable(libB156CA28_gt_HideResultsInGame, false);
+    TriggerEnable(libB156CA28_gt_Periodic, false);
+}
+
+void libB156CA28_gf_PickStop () {
+    // Variable Declarations
+    int lv_sec;
+
+    // Automatic Variable Declarations
+    playergroup auto07FBFE44_g;
+    int auto07FBFE44_var;
+    const int auto42EE39DC_ae = 0;
+    const int auto42EE39DC_ai = -1;
+    playergroup auto8F523FC6_g;
+    int auto8F523FC6_var;
+
+    // Variable Initialization
+
+    // Implementation
+    SoundStop(SoundLastPlayed(), false);
+    libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_statusLabel, StringExternal("UI/PickStage/Wait"), libB156CA28_gv_playerObserverGroup);
+    auto07FBFE44_g = libB156CA28_gv_playerGroup;
+    auto07FBFE44_var = -1;
+    while (true) {
+        auto07FBFE44_var = PlayerGroupNextPlayer(auto07FBFE44_g, auto07FBFE44_var);
+        if (auto07FBFE44_var < 0) { break; }
+        TextExpressionSetToken("Param/Expression/lib_B156CA28_9AEED7A8", "A", IntToText(auto07FBFE44_var));
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_9AEED7A8"), false);
+        libB156CA28_gf_SetupTech(auto07FBFE44_var);
+    }
+    Wait(2.0, c_timeReal);
+    lv_sec = libB156CA28_gv_displayDuration;
+    for ( ; ( (auto42EE39DC_ai >= 0 && lv_sec <= auto42EE39DC_ae) || (auto42EE39DC_ai < 0 && lv_sec >= auto42EE39DC_ae) ) ; lv_sec += auto42EE39DC_ai ) {
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_timeRemaining, IntToText(lv_sec), libB156CA28_gv_playerObserverGroup);
+        Wait(1.0, c_timeReal);
+        if ((lv_sec <= 5) && (lv_sec > 0)) {
+            SoundPlayForPlayer(SoundLink("UI_Bnet_MatchCountdown1", -1), c_maxPlayers, libB156CA28_gv_playerObserverGroup, 100.0, 0.0);
+        }
+
+        if ((lv_sec == 0)) {
+            SoundPlayForPlayer(SoundLink("UI_Bnet_MatchCountdownGo", -1), c_maxPlayers, libB156CA28_gv_playerObserverGroup, 100.0, 0.0);
+        }
+
+    }
+    DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, libB156CA28_gv_playerObserverGroup, false);
+    libNtve_gf_HideGameUI(true, libB156CA28_gv_playerObserverGroup);
+    UISetWorldVisible(libB156CA28_gv_playerObserverGroup, true);
+    Wait(1.0, c_timeGame);
+    UnitPauseAll(false);
+    auto8F523FC6_g = libB156CA28_gv_playerObserverGroup;
+    auto8F523FC6_var = -1;
+    while (true) {
+        auto8F523FC6_var = PlayerGroupNextPlayer(auto8F523FC6_g, auto8F523FC6_var);
+        if (auto8F523FC6_var < 0) { break; }
+        CameraLockInput(auto8F523FC6_var, false);
+    }
+    UISetSelectionTypeEnabled(libB156CA28_gv_playerObserverGroup, c_localSelectionTypeUnknown, true);
+    TriggerEnable(libB156CA28_gt_ViewResultsInGame, true);
+    TriggerEnable(libB156CA28_gt_HideResultsInGame, true);
+    TriggerEnable(libB156CA28_gt_Periodic, true);
+    TriggerExecute(libB156CA28_gt_Periodic, true, false);
+}
+
 void libB156CA28_gf_Default (int lp_player) {
     // Automatic Variable Declarations
     // Implementation
@@ -1474,94 +1582,6 @@ void libB156CA28_gf_Default (int lp_player) {
     TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 1), false);
     TechTreeAbilityAllow(lp_player, AbilityCommand("ModifiedAbility@ArmoryResearch", 2), false);
     TechTreeAbilityAllow(lp_player, AbilityCommand("MULEWoL@Gather", 0), false);
-}
-
-void libB156CA28_gf_GameInit () {
-    // Automatic Variable Declarations
-    playergroup autoB651DAAB_g;
-    int autoB651DAAB_var;
-
-    // Implementation
-    libNtve_gf_HideGameUI(false, PlayerGroupAll());
-    UISetWorldVisible(PlayerGroupAll(), false);
-    autoB651DAAB_g = PlayerGroupAll();
-    autoB651DAAB_var = -1;
-    while (true) {
-        autoB651DAAB_var = PlayerGroupNextPlayer(autoB651DAAB_g, autoB651DAAB_var);
-        if (autoB651DAAB_var < 0) { break; }
-        CameraLockInput(autoB651DAAB_var, true);
-        UISetSelectionTypeEnabled(PlayerGroupSingle(autoB651DAAB_var), c_localSelectionTypeUnknown, false);
-    }
-    TriggerEnable(libB156CA28_gt_ViewResultsInGame, false);
-    TriggerEnable(libB156CA28_gt_HideResultsInGame, false);
-    TriggerEnable(libB156CA28_gt_Periodic, false);
-}
-
-void libB156CA28_gf_PickStop () {
-    // Variable Declarations
-    int lv_sec;
-
-    // Automatic Variable Declarations
-    playergroup auto07FBFE44_g;
-    int auto07FBFE44_var;
-    const int auto42EE39DC_ae = 0;
-    const int auto42EE39DC_ai = -1;
-    playergroup auto25AD2001_g;
-    int auto25AD2001_var;
-    playergroup auto8F523FC6_g;
-    int auto8F523FC6_var;
-
-    // Variable Initialization
-
-    // Implementation
-    SoundStop(SoundLastPlayed(), false);
-    libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_statusLabel, StringExternal("UI/PickStage/Wait"), PlayerGroupAll());
-    auto07FBFE44_g = libB156CA28_gv_players;
-    auto07FBFE44_var = -1;
-    while (true) {
-        auto07FBFE44_var = PlayerGroupNextPlayer(auto07FBFE44_g, auto07FBFE44_var);
-        if (auto07FBFE44_var < 0) { break; }
-        TextExpressionSetToken("Param/Expression/lib_B156CA28_9AEED7A8", "A", IntToText(auto07FBFE44_var));
-        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_9AEED7A8"), false);
-        libB156CA28_gf_SetupTech(auto07FBFE44_var);
-    }
-    Wait(2.0, c_timeReal);
-    lv_sec = libB156CA28_gv_displayDuration;
-    for ( ; ( (auto42EE39DC_ai >= 0 && lv_sec <= auto42EE39DC_ae) || (auto42EE39DC_ai < 0 && lv_sec >= auto42EE39DC_ae) ) ; lv_sec += auto42EE39DC_ai ) {
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_timeRemaining, IntToText(lv_sec), PlayerGroupAll());
-        Wait(1.0, c_timeReal);
-        if ((lv_sec <= 5) && (lv_sec > 0)) {
-            SoundPlayForPlayer(SoundLink("UI_Bnet_MatchCountdown1", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
-        }
-
-        if ((lv_sec == 0)) {
-            SoundPlayForPlayer(SoundLink("UI_Bnet_MatchCountdownGo", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
-        }
-
-    }
-    auto25AD2001_g = libB156CA28_gv_players;
-    auto25AD2001_var = -1;
-    while (true) {
-        auto25AD2001_var = PlayerGroupNextPlayer(auto25AD2001_g, auto25AD2001_var);
-        if (auto25AD2001_var < 0) { break; }
-        DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, PlayerGroupSingle(auto25AD2001_var), false);
-    }
-    libNtve_gf_HideGameUI(true, PlayerGroupAll());
-    UISetWorldVisible(PlayerGroupAll(), true);
-    Wait(1.0, c_timeGame);
-    UnitPauseAll(false);
-    auto8F523FC6_g = PlayerGroupAll();
-    auto8F523FC6_var = -1;
-    while (true) {
-        auto8F523FC6_var = PlayerGroupNextPlayer(auto8F523FC6_g, auto8F523FC6_var);
-        if (auto8F523FC6_var < 0) { break; }
-        CameraLockInput(auto8F523FC6_var, false);
-        UISetSelectionTypeEnabled(PlayerGroupSingle(auto8F523FC6_var), c_localSelectionTypeUnknown, true);
-    }
-    TriggerEnable(libB156CA28_gt_ViewResultsInGame, true);
-    TriggerEnable(libB156CA28_gt_HideResultsInGame, true);
-    TriggerEnable(libB156CA28_gt_Periodic, true);
-    TriggerExecute(libB156CA28_gt_Periodic, true, false);
 }
 
 // Triggers
@@ -1605,7 +1625,7 @@ bool libB156CA28_gt_ConfirmButtonUsed_Func (bool testConds, bool runActions) {
         DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto675BBB04_var-1)], PlayerGroupSingle(EventPlayer()), true);
     }
     libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_statusLabel, StringExternal("UI/PickStage/WaitForPlayer"), PlayerGroupSingle(EventPlayer()));
-    if ((PlayerGroupHasPlayer(libB156CA28_gv_players, EventPlayer()) == true)) {
+    if ((PlayerGroupHasPlayer(libB156CA28_gv_playerGroup, EventPlayer()) == true)) {
         libB156CA28_gv_playerReadyNum = (libB156CA28_gv_playerReadyNum+1);
     }
 
@@ -1661,17 +1681,23 @@ bool libB156CA28_gt_SelectionButtonUsed_Func (bool testConds, bool runActions) {
                 TextExpressionSetToken("Param/Expression/lib_B156CA28_41422E3B", "D", IntToText(lv_selectionIndex));
                 TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_41422E3B"), false);
                 libB156CA28_gv_unitSelectionResults[lv_panelIndex][lv_itemIndex] = lv_selectionIndex;
+                break;
             }
 
         }
     }
     if ((lv_isSelection == true)) {
-        auto38CF0C7E_g = PlayerGroupAll();
+        auto38CF0C7E_g = libB156CA28_gv_playerObserverGroup;
         auto38CF0C7E_var = -1;
         while (true) {
             auto38CF0C7E_var = PlayerGroupNextPlayer(auto38CF0C7E_g, auto38CF0C7E_var);
             if (auto38CF0C7E_var < 0) { break; }
             if ((auto38CF0C7E_var == EventPlayer())) {
+                TextExpressionSetToken("Param/Expression/lib_B156CA28_8D80DA3F", "A", IntToText(EventPlayer()));
+                TextExpressionSetToken("Param/Expression/lib_B156CA28_8D80DA3F", "B", IntToText(lv_panelIndex));
+                TextExpressionSetToken("Param/Expression/lib_B156CA28_8D80DA3F", "C", IntToText(lv_itemIndex));
+                TextExpressionSetToken("Param/Expression/lib_B156CA28_8D80DA3F", "D", IntToText(lv_selectionIndex));
+                TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_8D80DA3F"), false);
             }
             else {
                 auto8A72A75C_var = 0;
@@ -1714,22 +1740,22 @@ bool libB156CA28_gt_Countdown_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    SoundPlayForPlayer(SoundLink("ModUtilityVoiceModUtilityVoice00106", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    SoundPlayForPlayer(SoundLink("ModUtilityVoiceModUtilityVoice00106", -1), c_maxPlayers, libB156CA28_gv_playerObserverGroup, 100.0, 0.0);
     lv_sec = libB156CA28_gv_countdownDuration;
     for ( ; ( (autoE5ABCD66_ai >= 0 && lv_sec <= autoE5ABCD66_ae) || (autoE5ABCD66_ai < 0 && lv_sec >= autoE5ABCD66_ae) ) ; lv_sec += autoE5ABCD66_ai ) {
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_timeRemaining, IntToText(lv_sec), PlayerGroupAll());
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_timeRemaining, IntToText(lv_sec), libB156CA28_gv_playerObserverGroup);
         Wait(1.0, c_timeReal);
-        if ((libB156CA28_gv_playerReadyNum == PlayerGroupCount(libB156CA28_gv_players))) {
+        if ((libB156CA28_gv_playerReadyNum == PlayerGroupCount(libB156CA28_gv_playerGroup))) {
             libB156CA28_gf_PickStop();
             break;
         }
 
         if ((lv_sec <= 14) && (lv_sec > 6)) {
-            SoundPlayForPlayer(SoundLink("UI_BnetCountdown", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+            SoundPlayForPlayer(SoundLink("UI_BnetCountdown", -1), c_maxPlayers, libB156CA28_gv_playerObserverGroup, 100.0, 0.0);
         }
 
         if ((lv_sec == 6)) {
-            SoundPlayForPlayer(SoundLink("AC_UI_Countdown_5MxFull", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+            SoundPlayForPlayer(SoundLink("AC_UI_Countdown_5MxFull", -1), c_maxPlayers, libB156CA28_gv_playerObserverGroup, 100.0, 0.0);
         }
 
         if ((lv_sec == 0)) {
@@ -1794,12 +1820,10 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
     int lv_panelIndex;
 
     // Automatic Variable Declarations
-    playergroup auto9C49B4CE_g;
-    int auto9C49B4CE_var;
-    int autoA128BA4D_ae;
-    int autoA128BA4D_var;
     int auto96E81FDE_ae;
     int auto96E81FDE_var;
+    int autoA128BA4D_ae;
+    int autoA128BA4D_var;
     const int auto43FFE8EF_ae = libB156CA28_gv_maxActivePlayer;
     int auto43FFE8EF_var;
     const int auto0293B99C_ae = libB156CA28_gv_maxActivePlayer;
@@ -1812,8 +1836,6 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
     int auto40239EE0_var;
     int autoB5F9DAD6_ae;
     int autoB5F9DAD6_var;
-    playergroup autoF9637C6D_g;
-    int autoF9637C6D_var;
 
     // Variable Initialization
 
@@ -1822,50 +1844,39 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    libB156CA28_gf_GameInit();
+    libB156CA28_gf_SetupPlayerGroups();
     libB156CA28_gf_Hookups_PlayerFrames();
-    libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_statusLabel, StringExternal("UI/PickStage/Select"), PlayerGroupAll());
-    auto9C49B4CE_g = PlayerGroupActive();
-    auto9C49B4CE_var = -1;
-    while (true) {
-        auto9C49B4CE_var = PlayerGroupNextPlayer(auto9C49B4CE_g, auto9C49B4CE_var);
-        if (auto9C49B4CE_var < 0) { break; }
-        if ((PlayerType(auto9C49B4CE_var) != c_playerTypeComputer)) {
-            PlayerGroupAdd(libB156CA28_gv_players, auto9C49B4CE_var);
-            TriggerDebugOutput(1, IntToText(auto9C49B4CE_var), false);
-            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, PlayerGroupSingle(auto9C49B4CE_var), false);
-        }
-        else {
-            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, PlayerGroupSingle(auto9C49B4CE_var), false);
-        }
-    }
-    libB156CA28_gv_nonComputer_ActivePlayerNum = PlayerGroupCount(libB156CA28_gv_players);
-    autoA128BA4D_ae = libB156CA28_gv_nonComputer_ActivePlayerNum;
-    autoA128BA4D_var = 1;
-    for ( ; autoA128BA4D_var <= autoA128BA4D_ae; autoA128BA4D_var += 1 ) {
-        TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "A", PlayerName(PlayerGroupPlayer(libB156CA28_gv_players, autoA128BA4D_var)));
-        TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "B", IntToText(autoA128BA4D_var));
-        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_17F87ABD"), false);
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_playerButtonName[(autoA128BA4D_var-1)], PlayerName(PlayerGroupPlayer(libB156CA28_gv_players, autoA128BA4D_var)), PlayerGroupAll());
-        libB156CA28_gf_SetupSelectionPanel(PlayerGroupPlayer(libB156CA28_gv_players, autoA128BA4D_var), (autoA128BA4D_var-1));
-    }
+    libB156CA28_gf_GameInitSettings();
+    libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_statusLabel, StringExternal("UI/PickStage/Select"), libB156CA28_gv_playerObserverGroup);
+    DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, libB156CA28_gv_playerObserverGroup, false);
+    libB156CA28_gv_nonComputer_ActivePlayerNum = PlayerGroupCount(libB156CA28_gv_playerGroup);
+    TriggerDebugOutput(1, IntToText(libB156CA28_gv_nonComputer_ActivePlayerNum), false);
     if ((libB156CA28_gv_nonComputer_ActivePlayerNum < 8)) {
         auto96E81FDE_ae = (libB156CA28_gv_maxActivePlayer-1);
         auto96E81FDE_var = libB156CA28_gv_nonComputer_ActivePlayerNum;
         for ( ; auto96E81FDE_var <= auto96E81FDE_ae; auto96E81FDE_var += 1 ) {
-            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_playerButton[(auto96E81FDE_var)], PlayerGroupAll(), false);
+            DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_playerButton[(auto96E81FDE_var)], libB156CA28_gv_playerObserverGroup, false);
         }
     }
 
+    autoA128BA4D_ae = libB156CA28_gv_nonComputer_ActivePlayerNum;
+    autoA128BA4D_var = 1;
+    for ( ; autoA128BA4D_var <= autoA128BA4D_ae; autoA128BA4D_var += 1 ) {
+        TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "A", PlayerName(PlayerGroupPlayer(libB156CA28_gv_playerGroup, autoA128BA4D_var)));
+        TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "B", IntToText(autoA128BA4D_var));
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_17F87ABD"), false);
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_playerButtonName[(autoA128BA4D_var-1)], PlayerName(PlayerGroupPlayer(libB156CA28_gv_playerGroup, autoA128BA4D_var)), libB156CA28_gv_playerObserverGroup);
+        libB156CA28_gf_SetupSelectionPanel(PlayerGroupPlayer(libB156CA28_gv_playerGroup, autoA128BA4D_var), (autoA128BA4D_var-1));
+    }
     auto43FFE8EF_var = 1;
     for ( ; auto43FFE8EF_var <= auto43FFE8EF_ae; auto43FFE8EF_var += 1 ) {
-        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto43FFE8EF_var-1)], libB156CA28_gv_players, false);
+        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto43FFE8EF_var-1)], libB156CA28_gv_playerGroup, false);
     }
     auto0293B99C_var = 1;
     for ( ; auto0293B99C_var <= auto0293B99C_ae; auto0293B99C_var += 1 ) {
-        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_players, auto0293B99C_var)), true);
-        DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_players, auto0293B99C_var)), true);
-        libNtve_gf_SetDialogItemToggled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], true, PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_players, auto0293B99C_var)));
+        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_playerGroup, auto0293B99C_var)), true);
+        DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_playerGroup, auto0293B99C_var)), true);
+        libNtve_gf_SetDialogItemToggled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], true, PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_playerGroup, auto0293B99C_var)));
     }
     auto13614462_ae = (libB156CA28_gv_maxActivePlayer-1);
     auto13614462_var = 0;
@@ -1874,7 +1885,7 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
         autoC405D06A_ae = (libB156CA28_gv_maxSelectionItems-1);
         autoC405D06A_var = 0;
         for ( ; autoC405D06A_var <= autoC405D06A_ae; autoC405D06A_var += 1 ) {
-            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][autoC405D06A_var], libB156CA28_gv_players, false);
+            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][autoC405D06A_var], libB156CA28_gv_playerObserverGroup, false);
         }
     }
     auto40239EE0_ae = libB156CA28_gv_nonComputer_ActivePlayerNum;
@@ -1884,18 +1895,12 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
         autoB5F9DAD6_ae = (libB156CA28_gv_maxSelectionItems-1);
         autoB5F9DAD6_var = 0;
         for ( ; autoB5F9DAD6_var <= autoB5F9DAD6_ae; autoB5F9DAD6_var += 1 ) {
-            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[(lv_panelIndex-1)][autoB5F9DAD6_var], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_players, lv_panelIndex)), true);
+            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[(lv_panelIndex-1)][autoB5F9DAD6_var], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_playerGroup, lv_panelIndex)), true);
         }
     }
     Wait(0.01, c_timeGame);
     UnitPauseAll(true);
-    autoF9637C6D_g = libB156CA28_gv_players;
-    autoF9637C6D_var = -1;
-    while (true) {
-        autoF9637C6D_var = PlayerGroupNextPlayer(autoF9637C6D_g, autoF9637C6D_var);
-        if (autoF9637C6D_var < 0) { break; }
-        DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, PlayerGroupSingle(autoF9637C6D_var), true);
-    }
+    DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, libB156CA28_gv_playerObserverGroup, true);
     TriggerSendEvent("StartPick");
     return true;
 }
@@ -1936,7 +1941,7 @@ bool libB156CA28_gt_UpdateGameTimer_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    libNtve_gf_SetDialogItemText(libB156CA28_gv_txt_GameTimer, TextTimeFormat(StringToText("<mintotal/>:<sec2/>"), libB156CA28_gv_timeElapsed), PlayerGroupAll());
+    libNtve_gf_SetDialogItemText(libB156CA28_gv_txt_GameTimer, TextTimeFormat(StringToText("<mintotal/>:<sec2/>"), libB156CA28_gv_timeElapsed), libB156CA28_gv_playerObserverGroup);
     libB156CA28_gv_timeElapsed = (libB156CA28_gv_timeElapsed+1);
     return true;
 }
@@ -1944,26 +1949,6 @@ bool libB156CA28_gt_UpdateGameTimer_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libB156CA28_gt_UpdateGameTimer_Init () {
     libB156CA28_gt_UpdateGameTimer = TriggerCreate("libB156CA28_gt_UpdateGameTimer_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Map_Init_Observer
-//--------------------------------------------------------------------------------------------------
-bool libB156CA28_gt_Map_Init_Observer_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UISetWorldVisible(libB156CA28_gv_observerGroup, false);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libB156CA28_gt_Map_Init_Observer_Init () {
-    libB156CA28_gt_Map_Init_Observer = TriggerCreate("libB156CA28_gt_Map_Init_Observer_Func");
-    TriggerAddEventMapInit(libB156CA28_gt_Map_Init_Observer);
 }
 
 void libB156CA28_InitTriggers () {
@@ -1975,7 +1960,6 @@ void libB156CA28_InitTriggers () {
     libB156CA28_gt_MapInit_Init();
     libB156CA28_gt_Periodic_Init();
     libB156CA28_gt_UpdateGameTimer_Init();
-    libB156CA28_gt_Map_Init_Observer_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

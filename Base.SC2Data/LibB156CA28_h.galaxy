@@ -27,23 +27,23 @@ struct libB156CA28_gs_PlayerFrames {
 };
 
 // Variable Declarations
+int libB156CA28_gv_gameTimer;
+int libB156CA28_gv_txt_GameTimer;
+libB156CA28_gs_PlayerFrames libB156CA28_gv_playerFrames;
 int libB156CA28_gv_nonComputer_ActivePlayerNum;
-playergroup libB156CA28_gv_players;
+playergroup libB156CA28_gv_playerGroup;
 int libB156CA28_gv_observer;
 playergroup libB156CA28_gv_observerGroup;
-playergroup libB156CA28_gv_players_Observers_PlayerGroup;
+playergroup libB156CA28_gv_playerObserverGroup;
 int[libB156CA28_gv_maxActivePlayer + 1][libB156CA28_gv_maxSelectionItems + 1] libB156CA28_gv_unitSelectionResults;
 int[libB156CA28_gv_maxActivePlayer + 1] libB156CA28_gv_warpInResults;
 int libB156CA28_gv_playerReadyNum;
-libB156CA28_gs_PlayerFrames libB156CA28_gv_playerFrames;
-int libB156CA28_gv_gameTimer;
-int libB156CA28_gv_txt_GameTimer;
 int libB156CA28_gv_timeElapsed;
 
 // Function Declarations
+void libB156CA28_gf_Hookups_PlayerFrames ();
 void libB156CA28_gf_SetupSelectionPanel (int lp_player, int lp_panelIndex);
 void libB156CA28_gf_SetupSelectionItem (int lp_panelIndex, string lp_race, int lp_itemIndex);
-void libB156CA28_gf_Hookups_PlayerFrames ();
 int libB156CA28_gf_GetPlayersPanelIndex (int lp_player);
 void libB156CA28_gf_SetupTech (int lp_player);
 void libB156CA28_gf_SetupTechperItem (int lp_player, int lp_panelIndex, int lp_itemIndex);
@@ -84,9 +84,10 @@ void libB156CA28_gf_Select_Recall (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_BaseDefenceAbility (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_BaseDefenceUnit (int lp_player, int lp_selectionIndex);
 void libB156CA28_gf_Select_WeaponArmorShieldsUpgrade (int lp_player, int lp_selectionIndex);
-void libB156CA28_gf_Default (int lp_player);
-void libB156CA28_gf_GameInit ();
+void libB156CA28_gf_SetupPlayerGroups ();
+void libB156CA28_gf_GameInitSettings ();
 void libB156CA28_gf_PickStop ();
+void libB156CA28_gf_Default (int lp_player);
 
 // Trigger Declarations
 trigger libB156CA28_gt_ConfirmButtonUsed;
@@ -97,7 +98,6 @@ trigger libB156CA28_gt_HideResultsInGame;
 trigger libB156CA28_gt_MapInit;
 trigger libB156CA28_gt_Periodic;
 trigger libB156CA28_gt_UpdateGameTimer;
-trigger libB156CA28_gt_Map_Init_Observer;
 
 // Library Initialization
 void libB156CA28_InitVariables ();
