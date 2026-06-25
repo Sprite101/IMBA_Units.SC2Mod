@@ -1440,6 +1440,8 @@ void libB156CA28_gf_SetupPlayerGroups () {
     int autoF80CE8EE_var;
     playergroup auto3F8217D2_g;
     int auto3F8217D2_var;
+    playergroup autoA34B7182_g;
+    int autoA34B7182_var;
 
     // Implementation
     autoF80CE8EE_g = PlayerGroupActive();
@@ -1459,6 +1461,18 @@ void libB156CA28_gf_SetupPlayerGroups () {
         auto3F8217D2_var = PlayerGroupNextPlayer(auto3F8217D2_g, auto3F8217D2_var);
         if (auto3F8217D2_var < 0) { break; }
         PlayerGroupAdd(libB156CA28_gv_playerObserverGroup, auto3F8217D2_var);
+    }
+    UIUnitColorStyleOverride(libB156CA28_gv_observerGroup, c_unitColorStyleNormal);
+    autoA34B7182_g = PlayerGroupActive();
+    autoA34B7182_var = -1;
+    while (true) {
+        autoA34B7182_var = PlayerGroupNextPlayer(autoA34B7182_g, autoA34B7182_var);
+        if (autoA34B7182_var < 0) { break; }
+        libNtve_gf_SetAllianceOneWay(libB156CA28_gv_observer, autoA34B7182_var, libNtve_ge_AllianceSetting_Neutral);
+        PlayerSetAlliance(autoA34B7182_var, c_allianceIdDefeat, libB156CA28_gv_observer, true);
+        PlayerSetAlliance(autoA34B7182_var, c_allianceIdPassive, libB156CA28_gv_observer, true);
+        PlayerSetAlliance(autoA34B7182_var, c_allianceIdControl, libB156CA28_gv_observer, true);
+        PlayerSetAlliance(autoA34B7182_var, c_allianceIdVision, libB156CA28_gv_observer, true);
     }
 }
 

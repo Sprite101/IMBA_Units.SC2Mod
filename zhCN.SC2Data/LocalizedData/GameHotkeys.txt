@@ -59,6 +59,7 @@ Button/Hotkey/ImmortalLotVBarrier=B
 Button/Hotkey/InfernalPreIgniterSwarm=I
 Button/Hotkey/InterceptorLotV1=I
 Button/Hotkey/InterceptorLotV2=I
+Button/Hotkey/KD8ChargeLotV1=D
 Button/Hotkey/KhaydarinAmulet=K
 Button/Hotkey/KhaydarinAmulet@Passive=
 Button/Hotkey/LiberatorAGLotV2@FighterMode=D

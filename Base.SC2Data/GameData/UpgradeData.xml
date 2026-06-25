@@ -39,6 +39,7 @@
     </CUpgrade>
     <CUpgrade id="MothershipCoreSwarm@Upgrade">
         <EffectArray Operation="Set" Reference="Unit,MothershipCore,Sight" Value="14"/>
+        <LeaderAlias value=""/>
         <EditorCategories value="UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="ModifiedAbility@ProtossGroundArmorsLevel1">
@@ -3102,6 +3103,7 @@
         <EffectArray Operation="Set" Reference="Weapon,Adept,Options[Disabled]" Value="1"/>
         <EffectArray Operation="Set" Reference="Weapon,Adept,Options[Hidden]" Value="1"/>
         <EditorCategories value="UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
     </CUpgrade>
     <CUpgrade id="GraviticBoostersLotV2">
         <Flags index="TechTreeCheat" value="1"/>
@@ -3279,6 +3281,7 @@
         <EffectArray Operation="Set" Reference="Unit,BarracksReactor,RepairTime" Value="25"/>
         <EffectArray Operation="Set" Reference="Unit,FactoryReactor,RepairTime" Value="25"/>
         <EffectArray Operation="Set" Reference="Unit,StarportReactor,RepairTime" Value="25"/>
+        <LeaderAlias value=""/>
         <EditorCategories value="UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="ModifiedAbility@TerranVehicleAndShipWeaponsLevel2">
@@ -3638,10 +3641,12 @@
     </CUpgrade>
     <CUpgrade id="BarracksLiberty@RepairTime">
         <EffectArray Operation="Set" Reference="Unit,Barracks,RepairTime" Value="60"/>
+        <LeaderAlias value=""/>
         <EditorCategories value="UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="BunkerLiberty@RepairTime">
         <EffectArray Operation="Set" Reference="Unit,Bunker,RepairTime" Value="30"/>
+        <LeaderAlias value=""/>
         <EditorCategories value="UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="ReaperLiberty@Upgrade">
