@@ -30,7 +30,7 @@
     </CRequirement>
     <CRequirement id="ChargeZealotLotV2@Learn">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
-        <NodeArray index="Show" Link="NotCountUpgradeChargeZealotLotV1QueuedOrBetter"/>
+        <NodeArray index="Show" Link="NotCountUpgradeChargeZealotLotV2QueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="ChargeZealotLotV2@UseCharge">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>

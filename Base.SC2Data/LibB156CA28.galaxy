@@ -25,7 +25,10 @@ void libB156CA28_InitVariables () {
 
     libB156CA28_InitVariables_completed = true;
 
-    libB156CA28_gv_activePlayersGameInit = PlayerGroupEmpty();
+    libB156CA28_gv_players = PlayerGroupEmpty();
+    libB156CA28_gv_observer = CatalogFieldValueGetAsInt(c_gameCatalogGameUI, "Dflt", "DefaultObservedPlayerId", c_playerAny);
+    libB156CA28_gv_observerGroup = PlayerGroupSingle(CatalogFieldValueGetAsInt(c_gameCatalogGameUI, "Dflt", "DefaultObservedPlayerId", c_playerAny));
+    libB156CA28_gv_players_Observers_PlayerGroup = PlayerGroupEmpty();
     libB156CA28_gv_playerFrames.lv_mainPanel = c_invalidDialogControlId;
     libB156CA28_gv_playerFrames.lv_timeRemaining = c_invalidDialogControlId;
     libB156CA28_gv_playerFrames.lv_statusLabel = c_invalidDialogControlId;
@@ -262,10 +265,10 @@ int libB156CA28_gf_GetPlayersPanelIndex (int lp_player) {
     // Variable Initialization
 
     // Implementation
-    autoA2BB11F8_ae = PlayerGroupCount(libB156CA28_gv_activePlayersGameInit);
+    autoA2BB11F8_ae = PlayerGroupCount(libB156CA28_gv_players);
     autoA2BB11F8_var = 1;
     for ( ; autoA2BB11F8_var <= autoA2BB11F8_ae; autoA2BB11F8_var += 1 ) {
-        if ((PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, autoA2BB11F8_var) == lp_player)) {
+        if ((PlayerGroupPlayer(libB156CA28_gv_players, autoA2BB11F8_var) == lp_player)) {
             lv_panelIndex = (autoA2BB11F8_var-1);
             TextExpressionSetToken("Param/Expression/lib_B156CA28_C1F6DD1A", "A", IntToText(lp_player));
             TextExpressionSetToken("Param/Expression/lib_B156CA28_C1F6DD1A", "B", IntToText(autoA2BB11F8_var));
@@ -1513,7 +1516,7 @@ void libB156CA28_gf_PickStop () {
     // Implementation
     SoundStop(SoundLastPlayed(), false);
     libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_statusLabel, StringExternal("UI/PickStage/Wait"), PlayerGroupAll());
-    auto07FBFE44_g = libB156CA28_gv_activePlayersGameInit;
+    auto07FBFE44_g = libB156CA28_gv_players;
     auto07FBFE44_var = -1;
     while (true) {
         auto07FBFE44_var = PlayerGroupNextPlayer(auto07FBFE44_g, auto07FBFE44_var);
@@ -1536,7 +1539,7 @@ void libB156CA28_gf_PickStop () {
         }
 
     }
-    auto25AD2001_g = libB156CA28_gv_activePlayersGameInit;
+    auto25AD2001_g = libB156CA28_gv_players;
     auto25AD2001_var = -1;
     while (true) {
         auto25AD2001_var = PlayerGroupNextPlayer(auto25AD2001_g, auto25AD2001_var);
@@ -1602,7 +1605,7 @@ bool libB156CA28_gt_ConfirmButtonUsed_Func (bool testConds, bool runActions) {
         DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto675BBB04_var-1)], PlayerGroupSingle(EventPlayer()), true);
     }
     libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_statusLabel, StringExternal("UI/PickStage/WaitForPlayer"), PlayerGroupSingle(EventPlayer()));
-    if ((PlayerGroupHasPlayer(libB156CA28_gv_activePlayersGameInit, EventPlayer()) == true)) {
+    if ((PlayerGroupHasPlayer(libB156CA28_gv_players, EventPlayer()) == true)) {
         libB156CA28_gv_playerReadyNum = (libB156CA28_gv_playerReadyNum+1);
     }
 
@@ -1716,7 +1719,7 @@ bool libB156CA28_gt_Countdown_Func (bool testConds, bool runActions) {
     for ( ; ( (autoE5ABCD66_ai >= 0 && lv_sec <= autoE5ABCD66_ae) || (autoE5ABCD66_ai < 0 && lv_sec >= autoE5ABCD66_ae) ) ; lv_sec += autoE5ABCD66_ai ) {
         libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_timeRemaining, IntToText(lv_sec), PlayerGroupAll());
         Wait(1.0, c_timeReal);
-        if ((libB156CA28_gv_playerReadyNum == PlayerGroupCount(libB156CA28_gv_activePlayersGameInit))) {
+        if ((libB156CA28_gv_playerReadyNum == PlayerGroupCount(libB156CA28_gv_players))) {
             libB156CA28_gf_PickStop();
             break;
         }
@@ -1828,7 +1831,7 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
         auto9C49B4CE_var = PlayerGroupNextPlayer(auto9C49B4CE_g, auto9C49B4CE_var);
         if (auto9C49B4CE_var < 0) { break; }
         if ((PlayerType(auto9C49B4CE_var) != c_playerTypeComputer)) {
-            PlayerGroupAdd(libB156CA28_gv_activePlayersGameInit, auto9C49B4CE_var);
+            PlayerGroupAdd(libB156CA28_gv_players, auto9C49B4CE_var);
             TriggerDebugOutput(1, IntToText(auto9C49B4CE_var), false);
             DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, PlayerGroupSingle(auto9C49B4CE_var), false);
         }
@@ -1836,15 +1839,15 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
             DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_mainPanel, PlayerGroupSingle(auto9C49B4CE_var), false);
         }
     }
-    libB156CA28_gv_nonComputer_ActivePlayerNum = PlayerGroupCount(libB156CA28_gv_activePlayersGameInit);
+    libB156CA28_gv_nonComputer_ActivePlayerNum = PlayerGroupCount(libB156CA28_gv_players);
     autoA128BA4D_ae = libB156CA28_gv_nonComputer_ActivePlayerNum;
     autoA128BA4D_var = 1;
     for ( ; autoA128BA4D_var <= autoA128BA4D_ae; autoA128BA4D_var += 1 ) {
-        TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "A", PlayerName(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, autoA128BA4D_var)));
+        TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "A", PlayerName(PlayerGroupPlayer(libB156CA28_gv_players, autoA128BA4D_var)));
         TextExpressionSetToken("Param/Expression/lib_B156CA28_17F87ABD", "B", IntToText(autoA128BA4D_var));
         TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_B156CA28_17F87ABD"), false);
-        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_playerButtonName[(autoA128BA4D_var-1)], PlayerName(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, autoA128BA4D_var)), PlayerGroupAll());
-        libB156CA28_gf_SetupSelectionPanel(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, autoA128BA4D_var), (autoA128BA4D_var-1));
+        libNtve_gf_SetDialogItemText(libB156CA28_gv_playerFrames.lv_playerButtonName[(autoA128BA4D_var-1)], PlayerName(PlayerGroupPlayer(libB156CA28_gv_players, autoA128BA4D_var)), PlayerGroupAll());
+        libB156CA28_gf_SetupSelectionPanel(PlayerGroupPlayer(libB156CA28_gv_players, autoA128BA4D_var), (autoA128BA4D_var-1));
     }
     if ((libB156CA28_gv_nonComputer_ActivePlayerNum < 8)) {
         auto96E81FDE_ae = (libB156CA28_gv_maxActivePlayer-1);
@@ -1856,13 +1859,13 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
 
     auto43FFE8EF_var = 1;
     for ( ; auto43FFE8EF_var <= auto43FFE8EF_ae; auto43FFE8EF_var += 1 ) {
-        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto43FFE8EF_var-1)], libB156CA28_gv_activePlayersGameInit, false);
+        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto43FFE8EF_var-1)], libB156CA28_gv_players, false);
     }
     auto0293B99C_var = 1;
     for ( ; auto0293B99C_var <= auto0293B99C_ae; auto0293B99C_var += 1 ) {
-        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, auto0293B99C_var)), true);
-        DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, auto0293B99C_var)), true);
-        libNtve_gf_SetDialogItemToggled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], true, PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, auto0293B99C_var)));
+        DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_players, auto0293B99C_var)), true);
+        DialogControlSetVisible(libB156CA28_gv_playerFrames.lv_selectionPanel[(auto0293B99C_var-1)], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_players, auto0293B99C_var)), true);
+        libNtve_gf_SetDialogItemToggled(libB156CA28_gv_playerFrames.lv_playerButton[(auto0293B99C_var-1)], true, PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_players, auto0293B99C_var)));
     }
     auto13614462_ae = (libB156CA28_gv_maxActivePlayer-1);
     auto13614462_var = 0;
@@ -1871,7 +1874,7 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
         autoC405D06A_ae = (libB156CA28_gv_maxSelectionItems-1);
         autoC405D06A_var = 0;
         for ( ; autoC405D06A_var <= autoC405D06A_ae; autoC405D06A_var += 1 ) {
-            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][autoC405D06A_var], libB156CA28_gv_activePlayersGameInit, false);
+            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[lv_panelIndex][autoC405D06A_var], libB156CA28_gv_players, false);
         }
     }
     auto40239EE0_ae = libB156CA28_gv_nonComputer_ActivePlayerNum;
@@ -1881,12 +1884,12 @@ bool libB156CA28_gt_MapInit_Func (bool testConds, bool runActions) {
         autoB5F9DAD6_ae = (libB156CA28_gv_maxSelectionItems-1);
         autoB5F9DAD6_var = 0;
         for ( ; autoB5F9DAD6_var <= autoB5F9DAD6_ae; autoB5F9DAD6_var += 1 ) {
-            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[(lv_panelIndex-1)][autoB5F9DAD6_var], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_activePlayersGameInit, lv_panelIndex)), true);
+            DialogControlSetEnabled(libB156CA28_gv_playerFrames.lv_selectionPanel_Items[(lv_panelIndex-1)][autoB5F9DAD6_var], PlayerGroupSingle(PlayerGroupPlayer(libB156CA28_gv_players, lv_panelIndex)), true);
         }
     }
     Wait(0.01, c_timeGame);
     UnitPauseAll(true);
-    autoF9637C6D_g = libB156CA28_gv_activePlayersGameInit;
+    autoF9637C6D_g = libB156CA28_gv_players;
     autoF9637C6D_var = -1;
     while (true) {
         autoF9637C6D_var = PlayerGroupNextPlayer(autoF9637C6D_g, autoF9637C6D_var);
@@ -1943,6 +1946,26 @@ void libB156CA28_gt_UpdateGameTimer_Init () {
     libB156CA28_gt_UpdateGameTimer = TriggerCreate("libB156CA28_gt_UpdateGameTimer_Func");
 }
 
+//--------------------------------------------------------------------------------------------------
+// Trigger: Map_Init_Observer
+//--------------------------------------------------------------------------------------------------
+bool libB156CA28_gt_Map_Init_Observer_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UISetWorldVisible(libB156CA28_gv_observerGroup, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libB156CA28_gt_Map_Init_Observer_Init () {
+    libB156CA28_gt_Map_Init_Observer = TriggerCreate("libB156CA28_gt_Map_Init_Observer_Func");
+    TriggerAddEventMapInit(libB156CA28_gt_Map_Init_Observer);
+}
+
 void libB156CA28_InitTriggers () {
     libB156CA28_gt_ConfirmButtonUsed_Init();
     libB156CA28_gt_SelectionButtonUsed_Init();
@@ -1952,6 +1975,7 @@ void libB156CA28_InitTriggers () {
     libB156CA28_gt_MapInit_Init();
     libB156CA28_gt_Periodic_Init();
     libB156CA28_gt_UpdateGameTimer_Init();
+    libB156CA28_gt_Map_Init_Observer_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

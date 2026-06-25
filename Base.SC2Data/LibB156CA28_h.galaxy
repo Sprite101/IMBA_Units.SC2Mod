@@ -28,7 +28,10 @@ struct libB156CA28_gs_PlayerFrames {
 
 // Variable Declarations
 int libB156CA28_gv_nonComputer_ActivePlayerNum;
-playergroup libB156CA28_gv_activePlayersGameInit;
+playergroup libB156CA28_gv_players;
+int libB156CA28_gv_observer;
+playergroup libB156CA28_gv_observerGroup;
+playergroup libB156CA28_gv_players_Observers_PlayerGroup;
 int[libB156CA28_gv_maxActivePlayer + 1][libB156CA28_gv_maxSelectionItems + 1] libB156CA28_gv_unitSelectionResults;
 int[libB156CA28_gv_maxActivePlayer + 1] libB156CA28_gv_warpInResults;
 int libB156CA28_gv_playerReadyNum;
@@ -94,6 +97,7 @@ trigger libB156CA28_gt_HideResultsInGame;
 trigger libB156CA28_gt_MapInit;
 trigger libB156CA28_gt_Periodic;
 trigger libB156CA28_gt_UpdateGameTimer;
+trigger libB156CA28_gt_Map_Init_Observer;
 
 // Library Initialization
 void libB156CA28_InitVariables ();

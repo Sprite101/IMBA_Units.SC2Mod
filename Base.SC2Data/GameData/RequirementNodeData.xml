@@ -209,6 +209,11 @@
     <CRequirementCountUpgrade id="CountUpgradeChargeZealotLotV2CompleteOnly137519211TechTreeCheat">
         <Count Link="ChargeZealotLotV2" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeChargeZealotLotV2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="ChargeZealotLotV2" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCorvidReactorLotVQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CorvidReactorLotV" State="QueuedOrBetter"/>
@@ -497,7 +502,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeWarpInLiberty@WarpGateQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="WarpInLiberty@WarpGate" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementEq id="Eq1256514689CountUpgradeModifiedAbility@TerranVehicleAndShipWeaponsLevel1CompleteOnly1">
@@ -663,6 +667,10 @@
     <CRequirementNot id="NotCountUpgradeChargeZealotLotV1QueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeChargeZealotLotV1QueuedOrBetter"/>
     </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeChargeZealotLotV2QueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeChargeZealotLotV2QueuedOrBetter"/>
+    </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCorvidReactorLotVQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeCorvidReactorLotVQueuedOrBetter"/>
     </CRequirementNot>
@@ -733,7 +741,6 @@
         <OperandArray index="0" value="CountUpgradeTunnelingJawsSwarmQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeWarpInLiberty@WarpGateQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeWarpInLiberty@WarpGateQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementOr id="OrAndCountBehaviorPhotonOverchargeLotV1CompleteOnlyAtUnit1AndCountBehaviorPhotonOverchargeSwarmCompleteOnlyAtUnit1">

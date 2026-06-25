@@ -1284,6 +1284,7 @@
             <LayoutButtons index="14" Face="ModifiedAbility@DarkTemplar" AbilCmd="GatewayTrain,Train17"/>
             <LayoutButtons index="15" Face="ModifiedAbility@Sentry" AbilCmd="GatewayTrain,Train18"/>
             <LayoutButtons index="16" Face="AdeptLotV" AbilCmd="GatewayTrain,Train10"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="WarpInLiberty@UpgradeToWarpGate,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Zealot" Type="AbilCmd" AbilCmd="WarpGateTrain,Train1" Row="0" Column="0"/>
             <LayoutButtons Face="ModifiedAbility@Stalker" Type="AbilCmd" AbilCmd="GatewayTrain,Train15" Row="0" Column="2"/>
             <LayoutButtons Face="ModifiedAbility@StalkerLiberty" Type="AbilCmd" AbilCmd="GatewayTrain,Train20" Row="0" Column="2"/>
@@ -1302,6 +1303,7 @@
             <LayoutButtons Face="WarpInAdept" Type="AbilCmd" AbilCmd="WarpGateTrain,Train7" Row="0" Column="3"/>
             <LayoutButtons Face="AdeptLotV" Type="AbilCmd" AbilCmd="WarpGateTrain,Train10" Row="0" Column="3"/>
             <LayoutButtons Face="AdeptLotV2" Type="AbilCmd" AbilCmd="WarpGateTrain,Train12" Row="0" Column="3"/>
+            <LayoutButtons Face="UpgradeToWarpGate" Type="AbilCmd" AbilCmd="WarpInLiberty@UpgradeToWarpGate,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <AbilArray Link="WarpInLiberty@UpgradeToWarpGate"/>
     </CUnit>

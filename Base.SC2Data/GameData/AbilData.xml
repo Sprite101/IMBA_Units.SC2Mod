@@ -1607,7 +1607,7 @@
         </InfoArray>
     </CAbilBuild>
     <CAbilWarpTrain id="WarpGateTrain">
-        <InfoArray index="Train9" Time="16" Unit="StalkerLiberty">
+        <InfoArray index="Train9" Time="5.6" Unit="StalkerLiberty">
             <Charge>
                 <CountMax value="1"/>
                 <CountStart value="1"/>
@@ -1618,7 +1618,7 @@
             <Cooldown Link="WarpGateTrain"/>
             <Button DefaultButtonFace="StalkerLiberty" State="Restricted" Requirements="HaveCyberneticsCore"/>
         </InfoArray>
-        <InfoArray index="Train10" Time="16" Unit="AdeptLotV">
+        <InfoArray index="Train10" Time="5.6" Unit="AdeptLotV">
             <Charge>
                 <CountMax value="1"/>
                 <CountStart value="1"/>
@@ -1630,7 +1630,7 @@
             <Cooldown Link="WarpGateTrain"/>
             <Button DefaultButtonFace="AdeptLotV" State="Restricted" Requirements="HaveCyberneticsCore"/>
         </InfoArray>
-        <InfoArray index="Train11" Time="16" Unit="HighTemplarLiberty">
+        <InfoArray index="Train11" Time="5.6" Unit="HighTemplarLiberty">
             <Charge>
                 <CountMax value="1"/>
                 <CountStart value="1"/>
@@ -1642,7 +1642,7 @@
             <Cooldown Link="WarpGateTrain"/>
             <Button DefaultButtonFace="HighTemplarLiberty" State="Restricted" Requirements="HaveTemplarArchives"/>
         </InfoArray>
-        <InfoArray index="Train12" Time="16" Unit="Adept">
+        <InfoArray index="Train12" Time="5.6" Unit="Adept">
             <Charge>
                 <CountMax value="1"/>
                 <CountStart value="1"/>
