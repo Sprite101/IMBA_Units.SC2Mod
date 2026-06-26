@@ -1,5 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUnit id="QueenLotV@Burrowed">
+        <Name value="Unit/Name/QueenLotV"/>
+        <Description value="Button/Tooltip/QueenLotV"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="Buried" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Psionic" value="1"/>
+        <LifeStart value="175"/>
+        <LifeMax value="175"/>
+        <LifeArmor value="1"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <EnergyStart value="60"/>
+        <EnergyMax value="200"/>
+        <EnergyRegenRate value="0.5625"/>
+        <Mover value="Burrowed"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="5"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="150"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="30"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="QueenLotV@Unburrow"/>
+        <CardLayouts>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="QueenLotV@Unburrow,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDroneUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowZerglingUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowBanelingUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowRoachUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowHydraliskUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowRavagerUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="MorphToSwarmHostMP,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowQueenUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorTerranUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowUltraliskUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowDroneDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowZerglingDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowBanelingDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowRoachDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowHydraliskDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowRavagerDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="MorphToSwarmHostBurrowedMP,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowQueenDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorTerranDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowUltraliskDown,Execute" Row="2" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0"/>
+        <InnerRadius value="0.5"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="101"/>
+        <MinimapRadius value="0.875"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="QueenBurrowed"/>
+        <TacticalAIThink value="AIThinkQueen"/>
+        <LeaderAlias value="Queen"/>
+        <HotkeyAlias value="Queen"/>
+        <SelectAlias value="Queen"/>
+        <SubgroupAlias value="Queen"/>
+        <TechAliasArray value="Alias_Queen"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <AIEvaluateAlias value="Queen"/>
+    </CUnit>
+    <CUnit id="QueenLotV">
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <FlagArray index="AISupport" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Psionic" value="1"/>
+        <LifeStart value="175"/>
+        <LifeMax value="175"/>
+        <LifeArmor value="1"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <EnergyStart value="25"/>
+        <EnergyMax value="200"/>
+        <EnergyRegenRate value="0.5625"/>
+        <Speed value="0.9375"/>
+        <SpeedMultiplierCreep value="2.6665"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="9"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="150"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="30"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="QueenLotV@Burrow"/>
+        <AbilArray Link="QueenBuild"/>
+        <AbilArray Link="SpawnLarva"/>
+        <AbilArray Link="Transfusion"/>
+        <BehaviorArray Link="QueenMustBeOnCreep"/>
+        <WeaponArray Link="AcidSpines"/>
+        <WeaponArray Link="Talons"/>
+        <WeaponArray Link="TalonsMissile"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MorphMorphalisk" Type="AbilCmd" AbilCmd="SpawnLarva,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="BuildCreepTumor" Type="AbilCmd" AbilCmd="QueenBuild,Build1" Row="2" Column="0"/>
+            <LayoutButtons Face="Transfusion" Type="AbilCmd" AbilCmd="Transfusion,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="QueenLotV@Burrow,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowDroneDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowZerglingDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowBanelingDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowRoachDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowHydraliskDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowRavagerDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="MorphToSwarmHostBurrowedMP,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowQueenDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorTerranDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowUltraliskDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDroneUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowZerglingUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowBanelingUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowRoachUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowHydraliskUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowRavagerUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="MorphToSwarmHostMP,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowQueenUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorTerranUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowUltraliskUp,Execute" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0.875"/>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="2"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="150"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="101"/>
+        <MinimapRadius value="0.875"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="Queen"/>
+        <TacticalAIThink value="AIThinkQueen"/>
+        <AIEvalFactor value="0.55"/>
+        <TechAliasArray value="Alias_Queen"/>
+        <GlossaryCategory value="Unit/Category/ZergUnits"/>
+        <GlossaryPriority value="217"/>
+        <GlossaryStrongArray value="Hellion"/>
+        <GlossaryStrongArray value="Mutalisk"/>
+        <GlossaryStrongArray value="Oracle"/>
+        <GlossaryWeakArray value="Marine"/>
+        <GlossaryWeakArray value="Zergling"/>
+        <GlossaryWeakArray value="Zealot"/>
+        <HotkeyCategory value="Unit/Category/ZergUnits"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="50"/>
+            <ChanceArray index="Idle" value="50"/>
+        </Fidget>
+        <TauntDuration index="Dance" value="5"/>
+    </CUnit>
+    <CUnit id="RoachWoL@RangedWeaponMissile" parent="MISSILE">
+        <Race value="Zerg"/>
+        <Mover value="AcidSalivaWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
     <CUnit id="Adept">
         <AbilArray Link="WarpInLiberty@Warpable"/>
         <WeaponArray Link="GlaiveCannonLotV2"/>
@@ -547,6 +747,192 @@
             <ChanceArray index="Idle" value="70"/>
             <ChanceArray index="Turn" value="10"/>
         </Fidget>
+    </CUnit>
+    <CUnit id="RoachWoL">
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="145"/>
+        <LifeMax value="145"/>
+        <LifeArmor value="2"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <Speed value="2.25"/>
+        <SpeedMultiplierCreep value="1.3"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="9"/>
+        <Food value="-1"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="25"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="15"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="RoachWoL@Burrow"/>
+        <AbilArray Link="MorphToRavager"/>
+        <WeaponArray Link="RoachWoL@MeleeWeapon"/>
+        <WeaponArray Link="RoachWoL@RangedWeapon"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="RapidRegeneration" Type="Passive" Requirements="UseBurrow" Row="2" Column="1"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="RoachWoL@Burrow,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowDroneDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowZerglingDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowBanelingDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="RoachWoL@Burrow,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowHydraliskDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowRavagerDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="MorphToSwarmHostBurrowedMP,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowQueenDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorTerranDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowUltraliskDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="Ravager" Type="AbilCmd" AbilCmd="MorphToRavager,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDroneUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowZerglingUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowBanelingUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="RoachWoL@Unburrow,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowHydraliskUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowRavagerUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="MorphToSwarmHostMP,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowQueenUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorTerranUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowUltraliskUp,Execute" Row="2" Column="4"/>
+        </CardLayouts>
+        <InnerRadius value="0.625"/>
+        <CargoSize value="2"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="80"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="Roach"/>
+        <GlossaryCategory value="Unit/Category/ZergUnits"/>
+        <GlossaryPriority value="65"/>
+        <GlossaryStrongArray value="Hellion"/>
+        <GlossaryStrongArray value="Zergling"/>
+        <GlossaryStrongArray value="Adept"/>
+        <GlossaryWeakArray value="Marauder"/>
+        <GlossaryWeakArray value="LurkerMP"/>
+        <GlossaryWeakArray value="Immortal"/>
+        <HotkeyCategory value="Unit/Category/ZergUnits"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="RoachWoL@Burrowed">
+        <Name value="Unit/Name/RoachWoL"/>
+        <Description value="Button/Tooltip/RoachWoL"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Buried" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="145"/>
+        <LifeMax value="145"/>
+        <LifeArmor value="2"/>
+        <LifeRegenRate value="10"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <Mover value="Burrowed"/>
+        <SpeedMultiplierCreep value="1.3"/>
+        <Sight value="5"/>
+        <Food value="-1"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="25"/>
+        <AttackTargetPriority value="19"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="15"/>
+        <AbilArray Link="RoachWoL@Unburrow"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray Link="PermanentBurrowMoveCloaked"/>
+        <CardLayouts>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="RoachWoL@Unburrow,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDroneUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowZerglingUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowBanelingUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowRoachUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowHydraliskUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowRavagerUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="MorphToSwarmHostMP,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowQueenUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorTerranUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowUltraliskUp,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="RapidRegeneration" Type="Passive" Row="2" Column="0"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons>
+                <Face value="Stop"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="stop,Stop"/>
+                <Requirements value="TunnelingClawsWoL@Have"/>
+                <Row value="0"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowDroneDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowZerglingDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowBanelingDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowRoachDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowHydraliskDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowRavagerDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="MorphToSwarmHostBurrowedMP,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowQueenDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorTerranDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorDown,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowUltraliskDown,Execute" Row="2" Column="3"/>
+        </CardLayouts>
+        <InnerRadius value="0.625"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="80"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="RoachBurrowed"/>
+        <LeaderAlias value="Roach"/>
+        <HotkeyAlias value="Roach"/>
+        <SelectAlias value="Roach"/>
+        <SubgroupAlias value="Roach"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <AIEvaluateAlias value="Roach"/>
     </CUnit>
     <CUnit id="WarhoundSwarm@HaywireMissilesWeaponDummy" parent="MISSILE">
         <Race value="Terr"/>

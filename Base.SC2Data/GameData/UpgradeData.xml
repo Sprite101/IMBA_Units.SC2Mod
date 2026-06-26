@@ -24,6 +24,17 @@
         <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
         <AffectedUnitArray value="BanelingLotV1"/>
     </CUpgrade>
+    <CUpgrade id="GlialReconstitutionWoL">
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,RoachWoL,Speed" Value="0.750000"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-glialreconstitution.dds"/>
+        <ScoreAmount value="200"/>
+        <Race value="Zerg"/>
+        <Alert value="ResearchComplete"/>
+        <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="RoachWoL"/>
+    </CUpgrade>
     <CUpgrade id="GraviticDriveLotV">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-graviticdrive.dds"/>
@@ -381,6 +392,18 @@
         <AffectedUnitArray value="DisruptorLotV2"/>
         <LeaderAlias value="ModifiedAbility@ProtossGroundArmors"/>
         <LeaderLevel value="3"/>
+    </CUpgrade>
+    <CUpgrade id="OrganicCarapaceWoL">
+        <Race value="Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-organiccarapace.dds"/>
+        <EffectArray Reference="Unit,RoachWoL,LifeRegenRate" Value="10.000000"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,LifeRegenRate" Value="20.000000"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <ScoreResult value="BuildOrder"/>
+        <AffectedUnitArray value="RoachWoL"/>
+        <AffectedUnitArray value="RoachWoL@Burrowed"/>
+        <ScoreAmount value="300"/>
+        <Alert value="ResearchComplete"/>
     </CUpgrade>
     <CUpgrade id="ProtossGroundArmorsLevel1">
         <!-- IMBA Units -->
@@ -4253,9 +4276,24 @@
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="VoidRayLotV"/>
     </CUpgrade>
+    <CUpgrade id="TunnelingClawsWoL">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingclaws.dds"/>
+        <Race value="Zerg"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,Speed" Value="2.00000"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,Acceleration" Value="1000.000000"/>
+        <EffectArray Operation="Set" Reference="Unit,RoachWoL@Burrowed,Collide[Land1]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Unit,RoachWoL@Burrowed,Collide[Land6]" Value="1"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <Alert value="ResearchComplete"/>
+        <Flags index="TechTreeCheat" value="1"/>
+        <AffectedUnitArray value="RoachWoL"/>
+        <AffectedUnitArray value="RoachWoL@Burrowed"/>
+    </CUpgrade>
     <CUpgrade id="TunnelingJawsSwarm">
         <Flags index="TechTreeCheat" value="1"/>
-        <Icon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingjaws.dds"/>
         <Alert value="ResearchComplete"/>
         <Race value="Prot"/>
         <ScoreAmount value="300"/>

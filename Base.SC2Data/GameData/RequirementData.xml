@@ -22,9 +22,9 @@
     </CRequirement>
     <CRequirement id="CentrifugalHooksLotV1@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
-        <NodeArray index="Use" Link="CountUpgradeCentrifugalHooksLotV1CompleteOnly1566137605"/>
+        <NodeArray index="Use" Link="CountUpgradeCentrifugalHooksLotV1CompleteOnly3524559499"/>
     </CRequirement>
-    <CRequirement id="CentrifugalHooksLotV1@LearnGravitonCatapult">
+    <CRequirement id="CentrifugalHooksLotV1@Learn">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeCentrifugalHooksLotV1QueuedOrBetter"/>
     </CRequirement>
@@ -43,6 +43,14 @@
     <CRequirement id="ExtendedThermalLanceLiberty@HaveExtendedThermalLance">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Use" Link="CountUpgradeExtendedThermalLanceLibertyCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="GlialReconstitutionWoL@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeGlialReconstitutionWoLCompleteOnly2747955788"/>
+    </CRequirement>
+    <CRequirement id="GlialReconstitutionWoL@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeGlialReconstitutionWoLQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="GraviticBoostersLotV2@Learn">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
@@ -71,6 +79,22 @@
     <CRequirement id="GraviticDriveLotV@Learn">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeGraviticDriveQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="OrganicCarapaceWoL@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeOrganicCarapaceWoLCompleteOnly3576986407"/>
+    </CRequirement>
+    <CRequirement id="OrganicCarapaceWoL@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeOrganicCarapaceWoLQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="TunnelingClawsWoL@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeTunnelingClawsWoLCompleteOnly3631464287"/>
+    </CRequirement>
+    <CRequirement id="TunnelingClawsWoL@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeTunnelingClawsWoLQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="WarpInLiberty@HaveWarpGate">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
@@ -339,9 +363,9 @@
     </CRequirement>
     <CRequirement id="TunnelingJawsSwarm@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
-        <NodeArray index="Use" Link="CountUpgradeTunnelingJawsSwarmCompleteOnly3718727159"/>
+        <NodeArray index="Use" Link="CountUpgradeTunnelingJawsSwarmCompleteOnly3093285022"/>
     </CRequirement>
-    <CRequirement id="TunnelingJawsSwarm@LearnGravitonCatapult">
+    <CRequirement id="TunnelingJawsSwarm@Learn">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeTunnelingJawsSwarmQueuedOrBetter"/>
     </CRequirement>

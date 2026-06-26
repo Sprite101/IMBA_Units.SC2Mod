@@ -35,7 +35,7 @@
         <DataRecord Entry="Button,CentrifugalHooksLotV1@Passive"/>
         <DataRecord Entry="Button,CentrifugalHooksLotV1"/>
         <DataRecord Entry="Requirement,CentrifugalHooksLotV1@Have"/>
-        <DataRecord Entry="Requirement,CentrifugalHooksLotV1@LearnGravitonCatapult"/>
+        <DataRecord Entry="Requirement,CentrifugalHooksLotV1@Learn"/>
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
@@ -48,6 +48,15 @@
         <Button value="DisruptorLotV1"/>
         <TechInfoUnit value="DisruptorLotV1"/>
     </CDataCollectionUnit>
+    <CDataCollectionUpgrade id="GlialReconstitutionWoL">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,GlialReconstitutionWoL@Research"/>
+        <DataRecord Entry="Upgrade,GlialReconstitutionWoL"/>
+        <DataRecord Entry="Button,GlialReconstitutionWoL@Passive"/>
+        <DataRecord Entry="Button,GlialReconstitutionWoL"/>
+        <DataRecord Entry="Requirement,GlialReconstitutionWoL@Have"/>
+        <DataRecord Entry="Requirement,GlialReconstitutionWoL@Learn"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUpgrade id="GraviticDriveLotV">
         <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
         <Button value="AmplifiedShieldingLotV"/>
@@ -67,6 +76,15 @@
         <Button value="BarracksLiberty"/>
         <TechInfoUnit value="StalkerLiberty"/>
     </CDataCollectionUnit>
+    <CDataCollectionUpgrade id="OrganicCarapaceWoL">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,OrganicCarapaceWoL@Research"/>
+        <DataRecord Entry="Upgrade,OrganicCarapaceWoL"/>
+        <DataRecord Entry="Button,OrganicCarapaceWoL@Passive"/>
+        <DataRecord Entry="Button,OrganicCarapaceWoL"/>
+        <DataRecord Entry="Requirement,OrganicCarapaceWoL@Have"/>
+        <DataRecord Entry="Requirement,OrganicCarapaceWoL@Learn"/>
+    </CDataCollectionUpgrade>
     <CDataCollection id="OverchargeLotV">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
@@ -84,7 +102,7 @@
         <Button value="SalvageLiberty"/>
     </CDataCollection>
     <CDataCollectionUpgrade id="BlinkLiberty">
-        <EditorCategories value="DataFamily:Melee,Race:Terran"/>
+        <EditorCategories value="DataFamily:Melee,Race:Protoss"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
     <CDataCollectionUnit id="BunkerLiberty">
@@ -395,6 +413,11 @@
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
+    <CDataCollectionUnit id="QueenLotV">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <DataRecord Entry="Unit,QueenLotV"/>
+        <DataRecord Entry="Actor,GhostLotV1@Unit"/>
+    </CDataCollectionUnit>
     <CDataCollectionUpgrade id="RapidDeploymentLotV">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>
         <DataRecord Entry="Abil,RapidDeploymentLotV@Research"/>
@@ -436,6 +459,11 @@
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
+    <CDataCollectionUnit id="RoachWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <DataRecord Entry="Unit,RoachWoL"/>
+        <DataRecord Entry="Actor,GhostLotV1@Unit"/>
+    </CDataCollectionUnit>
     <CDataCollection id="SalvageLiberty">
         <EditorCategories value="DataGroup:Ability,Race:Terran,DataFamily:Melee"/>
     </CDataCollection>
@@ -530,6 +558,15 @@
     <CDataCollection id="90mmCannonsLotV1">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>
+    <CDataCollectionUpgrade id="TunnelingClawsWoL">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,TunnelingClawsWoL@Research"/>
+        <DataRecord Entry="Upgrade,TunnelingClawsWoL"/>
+        <DataRecord Entry="Button,TunnelingClawsWoL@Passive"/>
+        <DataRecord Entry="Button,TunnelingClawsWoL"/>
+        <DataRecord Entry="Requirement,TunnelingClawsWoL@Have"/>
+        <DataRecord Entry="Requirement,TunnelingClawsWoL@Learn"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUpgrade id="TunnelingJawsSwarm">
         <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
         <DataRecord Entry="Abil,TunnelingJawsSwarm@Research"/>
@@ -537,7 +574,7 @@
         <DataRecord Entry="Button,TunnelingJawsSwarm@Passive"/>
         <DataRecord Entry="Button,TunnelingJawsSwarm"/>
         <DataRecord Entry="Requirement,TunnelingJawsSwarm@Have"/>
-        <DataRecord Entry="Requirement,TunnelingJawsSwarm@LearnGravitonCatapult"/>
+        <DataRecord Entry="Requirement,TunnelingJawsSwarm@Learn"/>
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>

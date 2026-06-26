@@ -7,6 +7,25 @@
         <Amount value="15"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectDamage id="RoachWoL@MeleeWeaponDamage" parent="DU_WEAP_MISSILE">
+        <Name value="Effect/Name/AcidSalivaU"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="Effect/AcidSalivaU"/>
+        <Kind value="Melee"/>
+        <Amount value="16"/>
+        <Death value="Eviscerate"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="RoachWoL@RangedWeaponLM">
+        <ValidatorArray index="0" value="RoachLMTargetFilters"/>
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="RoachWoL@RangedWeaponDamage"/>
+        <AmmoUnit value="RoachWoL@RangedWeaponMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="RoachWoL@RangedWeaponDamage" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Zerg"/>
+        <Amount value="16"/>
+        <Death value="Disintegrate"/>
+    </CEffectDamage>
     <CEffectDamage id="CanisterRifleLiberty@Damage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <AttributeBonus index="Light" value="10"/>

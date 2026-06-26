@@ -11,6 +11,31 @@
         <Period value="1.04"/>
         <Effect value="90mmCannonsLotV1@Damage"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="RoachWoL@MeleeWeapon">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="RoachWoL@MeleeWeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.5"/>
+        <Marker Link="Weapon/AcidSaliva"/>
+        <Cost>
+            <Cooldown Link="Weapon/AcidSaliva"/>
+        </Cost>
+        <Period value="2"/>
+        <Effect value="RoachWoL@MeleeWeaponDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="RoachWoL@RangedWeapon">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <DisplayEffect value="RoachWoL@RangedWeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="3"/>
+        <MinimumRange value="0.6"/>
+        <Period value="2"/>
+        <Effect value="RoachWoL@RangedWeaponLM"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="CanisterRifleLiberty">
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>

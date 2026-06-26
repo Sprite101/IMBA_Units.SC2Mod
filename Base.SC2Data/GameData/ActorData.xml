@@ -31,6 +31,244 @@
         <AcquisitionPitchHalfArc value="15.000000"/>
         <AccuracyHalfArc value="5.000000"/>
     </CActorAction>
+    <CActorUnit id="QueenLotV" parent="GenericUnitBase" unitName="QueenLotV">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergLargeBurrowEffects"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitBirth.QueenLotV@Burrowed" Send="Create"/>
+        <On Terms="UnitBirth.QueenLotV@Burrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant"/>
+        <On Terms="UnitBirth.QueenLotV.Normal" Send="AnimPlay Unburrow Unburrow 0 0.000000"/>
+        <On Terms="Abil.QueenBuild.WorkerStart" Send="AnimPlay WorkStart Stand,Work,Start"/>
+        <On Terms="AnimDone; AnimName WorkStart" Send="AnimPlay WorkEnd Stand,Work,End"/>
+        <On Terms="Abil.FungalGrowth.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.SpawnLarva.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
+        <On Terms="Abil.Transfusion.SourceFinishStart" Send="AnimPlay SpellB Spell,B"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownLarge"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom QueenLotV; MorphTo QueenLotV@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo QueenLotV; MorphFrom QueenLotV@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo QueenLotV; MorphFrom QueenLotV@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="WeaponStart.AcidSpines.AttackStart" Send="AnimBracketStart Attack Spell,C"/>
+        <On Terms="WeaponStart.Talons.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Attack,Cover"/>
+        <On Terms="WeaponStart.Talons.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On Terms="UnitBirth.QueenLotV" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="UnitBirth.QueenLotV" Send="Create QueenCreepBirth"/>
+        <On Terms="UnitBirth.QueenLotV" Send="Create Queen_Birth"/>
+        <On Terms="UnitBirth.QueenLotV" Send="Create Queen_Birth2"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo QueenLotV; MorphFrom QueenLotV@Burrowed" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo QueenLotV@Burrowed; MorphFrom QueenLotV" Send="TerrainSquibDeactivate"/>
+        <On Terms="WeaponStart.TalonsMissile.AttackStart" Send="AnimBracketStart Attack Spell,C"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Queen_Land"/>
+        <Model value="Queen"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Queen"/>
+        <DeathArray index="Normal" ModelLink="QueenDeath" SoundLink="Queen_Explode"/>
+        <DeathArray index="Disintegrate" ModelLink="QueenDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="QueenDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <DeathCustoms ModelLink="ZergLargeUnitDeathLow" Name="AntiGravZerg"/>
+        <DeathCustoms ActorModel="QueenDeathRagdoll" ModelLink="QueenDeathRagdoll" Name="RagdollBasic"/>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PlacementModel value="Queen"/>
+        <PortraitModel value="QueenPortrait"/>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="2.000000"/>
+            <RangeDown value="2.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleQueen"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="1.7031"/>
+        <BarOffset value="75"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Queen.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <MovementHerdNode value="HerdNode_ZergQueens"/>
+        <SoundArray index="Birth" value="Queen_Birth"/>
+        <SoundArray index="Ready" value="QueenReady"/>
+        <SoundArray index="Help" value="QueenHelp"/>
+        <SoundArray index="What" value="QueenWhat"/>
+        <SoundArray index="Yes" value="QueenYes"/>
+        <SoundArray index="Attack" value="Queen_Attack"/>
+        <SoundArray index="Pissed" value="Queen_Pissed"/>
+        <SoundArray index="Movement" value="zQueen_moveLoop"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Queen.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorSplat id="RoachWoL@BurrowedSplat" parent="BurrowedSplatBase">
+        <On Terms="UnitBirth.RoachWoL@Burrowed" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo RoachWoL@Burrowed" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom RoachWoL@Burrowed" Send="TimerSet 5.000000 DelayDestroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom RoachWoL@Burrowed" Send="RefClear ::Host"/>
+        <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
+    </CActorSplat>
+    <CActorSound id="RoachWoL@MeleeWeaponAttackSound" parent="SoundOneShot">
+        <On Terms="WeaponStart.RoachWoL@MeleeWeapon.AttackStart" Send="Create"/>
+        <Sound value="Roach_AttackLaunchMelee"/>
+    </CActorSound>
+    <CActorAction id="RoachWoL@MeleeWeaponAttackAction" parent="GenericAttack" effectAttack="RoachWoL@MeleeWeaponDamage">
+        <ImpactMap index="None" Model="RoachAttackImpact" Sound="Roach_AttackImpactMelee"/>
+        <ImpactPhysics>
+            <Name value="Attack00"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="Cover,00"/>
+            <Physics value="RoachMeleeAttackRightBladeForce"/>
+        </ImpactPhysics>
+        <ImpactPhysics>
+            <Name value="Attack01"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="Cover,01"/>
+            <Physics value="RoachMeleeAttackRightBladeForce"/>
+        </ImpactPhysics>
+        <ImpactPhysics>
+            <Name value="Attack02"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="Cover,02"/>
+            <Physics value="RoachMeleeAttackForce02"/>
+        </ImpactPhysics>
+        <ImpactPhysics>
+            <Name value="Attack03"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="Cover,03"/>
+            <Physics value="RoachMeleeAttackForce03"/>
+        </ImpactPhysics>
+        <AttackAnimName value="AttackCover"/>
+    </CActorAction>
+    <CActorAction id="RoachWoL@RangedWeaponAttackAction" parent="GenericAttack" effectImpact="RoachWoL@RangedWeaponDamage" effectLaunch="RoachWoL@RangedWeaponLM">
+        <LaunchAttachQuery Methods="Head"/>
+        <LaunchAssets Sound="Roach_AttackLaunchRanged"/>
+        <Missile value="RoachWoL@RangedWeaponAttackMissile"/>
+        <ImpactMap index="None" Model="RoachMissileImpact" Sound="Roach_AttackImpactRanged"/>
+        <ImpactPhysics Name="AcidSalivaImpact" MatchKeys="Basic" Physics="RoachAttackDeathForce"/>
+        <AcquisitionYawHalfArc value="10.000000"/>
+        <AcquisitionPitchHalfArc value="15.000000"/>
+        <AccuracyHalfArc value="15.000000"/>
+    </CActorAction>
+    <CActorMissile id="RoachWoL@RangedWeaponAttackMissile" parent="GenericAttackMissile" unitName="RoachWoL@RangedWeaponMissile">
+        <Model value="AcidSalivaWeapon"/>
+    </CActorMissile>
+    <CActorUnit id="RoachWoL" parent="GenericUnitBase" unitName="RoachWoL">
+        <Aliases value="_UnitMedium"/>
+        <Macros value="ZergBurrowMobileTransientAnimMacro"/>
+        <Macros value="ZergMediumBurrowEffects"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitMovementUpdate.RoachWoL@Burrowed.Stand" Send="Create RoachWoL@BurrowedSplat"/>
+        <On Terms="UnitMovementUpdate.RoachWoL@Burrowed.Walk" Target="RoachWoL@BurrowedSplat" Send="Destroy"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="WeaponStart.RoachWoL@RangedWeapon.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.RoachWoL@RangedWeapon.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="WeaponStart.RoachWoL@MeleeWeapon.AttackStart" Send="AnimBracketStart AttackCover Attack,Cover"/>
+        <On Terms="WeaponStop.RoachWoL@MeleeWeapon.AttackStop" Send="AnimBracketStop AttackCover"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On Terms="UnitBirth.RoachWoL@Burrowed" Send="Create"/>
+        <On Terms="UnitBirth.RoachWoL@Burrowed" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull,Instant"/>
+        <On Terms="ActorCreation; ValidateUnit TunnelingClawsWoL@Have" Send="ModelSwap RoachUpgrade"/>
+        <On Terms="Upgrade.TunnelingClawsWoL.Add" Send="ModelSwap RoachUpgrade"/>
+        <On Terms="Upgrade.TunnelingClawsWoL.Add; ValidateUnit IsBuried" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull,Instant"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownMedium"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="AnimClear Fidget"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom RoachWoL; MorphTo RoachWoL@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RoachWoL; MorphFrom RoachWoL@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="UnitBirth.RoachWoL" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RoachWoL; MorphFrom RoachWoL@Burrowed" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RoachWoL@Burrowed; MorphFrom RoachWoL" Send="TerrainSquibDeactivate"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Roach_Land"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RavagerCocoon" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom RavagerCocoon; MorphTo RoachWoL" Send="Create"/>
+        <On Terms="UnitMovementUpdate.*.Walk; ValidateUnit IsBuried" Send="Create ZergUnit_BurrowedMoveLoopSound"/>
+        <On Terms="UnitMovementUpdate.*.Stand" Target="ZergUnit_BurrowedMoveLoopSound" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphTo RoachWoL" Target="ZergUnit_BurrowedMoveLoopSound" Send="Destroy"/>
+        <Model value="Roach"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Roach"/>
+        <DeathArray index="Normal" ModelLink="RoachDeath" SoundLink="Roach_Explode"/>
+        <DeathArray index="Disintegrate" ModelLink="RoachDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="RoachDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <DeathCustoms ModelLink="RoachDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="FireOnMetal"/>
+            <BodySquibs Name="BloodReduced" IsFallback="1"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <PlacementModel value="Roach"/>
+        <PortraitModel value="RoachPortrait"/>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleLarge"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="55"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Roach.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="Ready" value="Roach_Ready"/>
+        <SoundArray index="What" value="Roach_What"/>
+        <SoundArray index="Yes" value="Roach_Yes"/>
+        <SoundArray index="Attack" value="Roach_Attack"/>
+        <SoundArray index="Pissed" value="Roach_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Roach.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorAction id="VolatileBurstLiberty@BuildingAttackAction" parent="AoESplashShieldHitter" effectHit="VolatileBurstLiberty@BuildingDamage">
         <LaunchAssets Sound=""/>
     </CActorAction>

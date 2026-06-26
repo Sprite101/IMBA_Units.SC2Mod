@@ -191,7 +191,7 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CaduceusReactorSwarmBeta@CaduceusReactor" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="CountUpgradeCentrifugalHooksLotV1CompleteOnly1566137605">
+    <CRequirementCountUpgrade id="CountUpgradeCentrifugalHooksLotV1CompleteOnly3524559499">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="CentrifugalHooksLotV1" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
@@ -211,7 +211,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeChargeZealotLotV2QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="ChargeZealotLotV2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCorvidReactorLotVQueuedOrBetter">
@@ -258,6 +257,15 @@
     <CRequirementCountUpgrade id="CountUpgradeFluxVanesLotVQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="FluxVanesLotV" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGlialReconstitutionWoLCompleteOnly2747955788">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="GlialReconstitutionWoL" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeGlialReconstitutionWoLQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="GlialReconstitutionWoL" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeGraviticBoostersLotV1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
@@ -446,6 +454,15 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="MoebiusReactor@Upgrade" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeOrganicCarapaceWoLCompleteOnly3576986407">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="OrganicCarapaceWoL" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeOrganicCarapaceWoLQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="OrganicCarapaceWoL" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradePsiStormHighTemplarLibertyCompleteOnly3263798822">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="PsiStormHighTemplarLiberty" State="CompleteOnly"/>
@@ -489,7 +506,16 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="ResonatingGlaivesLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="CountUpgradeTunnelingJawsSwarmCompleteOnly3718727159">
+    <CRequirementCountUpgrade id="CountUpgradeTunnelingClawsWoLCompleteOnly3631464287">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="TunnelingClawsWoL" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTunnelingClawsWoLQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="TunnelingClawsWoL" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTunnelingJawsSwarmCompleteOnly3093285022">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="TunnelingJawsSwarm" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
@@ -668,7 +694,6 @@
         <OperandArray index="0" value="CountUpgradeChargeZealotLotV1QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeChargeZealotLotV2QueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeChargeZealotLotV2QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCorvidReactorLotVQueuedOrBetter">
@@ -691,6 +716,10 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeFluxVanesLotVQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeFluxVanesLotVQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeGlialReconstitutionWoLQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeGlialReconstitutionWoLQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeGraviticBoostersLotV1QueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeGraviticBoostersLotV1QueuedOrBetter"/>
@@ -719,6 +748,10 @@
     <CRequirementNot id="NotCountUpgradeMoebiusReactor@UpgradeQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeMoebiusReactor@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeOrganicCarapaceWoLQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeOrganicCarapaceWoLQueuedOrBetter"/>
+    </CRequirementNot>
     <CRequirementNot id="NotCountUpgradePsiStormHighTemplarLibertyQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradePsiStormHighTemplarLibertyQueuedOrBetter"/>
     </CRequirementNot>
@@ -737,6 +770,10 @@
     <CRequirementNot id="NotCountUpgradeResonatingGlaivesLotVQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeResonatingGlaivesLotVQueuedOrBetter"/>
     </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeTunnelingClawsWoLQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeTunnelingClawsWoLQueuedOrBetter"/>
+    </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeTunnelingJawsSwarmQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeTunnelingJawsSwarmQueuedOrBetter"/>
     </CRequirementNot>
@@ -752,6 +789,9 @@
         <OperandArray value="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit"/>
         <OperandArray value="CountBehaviorCycloneLockOnLotV2@LockOnCasterCompleteOnlyAtUnit"/>
     </CRequirementOr>
+    <CRequirementCountUnit id="UnitQueen2QueuedOrBetter">
+        <Count Link="QueenLotV"/>
+    </CRequirementCountUnit>
     <CRequirementCountUpgrade id="UpgradeBaneling2CompleteOnly">
         <Count Link="BanelingLotV1"/>
     </CRequirementCountUpgrade>

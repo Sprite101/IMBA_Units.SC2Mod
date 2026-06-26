@@ -21,6 +21,16 @@
         <EditorCategories value="Race:Protoss"/>
         <TintRacially value="1"/>
     </CButton>
+    <CButton id="GlialReconstitutionWoL">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-glialreconstitution.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-glialreconstitution.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="GlialReconstitutionWoL@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-glialreconstitution.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-glialreconstitution.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="ModifiedAbility@AdeptLotV1">
         <Icon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
@@ -86,6 +96,16 @@
         <Icon value="Assets\Textures\btn-upgrade-protoss-graviticdrive.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-graviticdrive.dds"/>
         <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="OrganicCarapaceWoL">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-organiccarapace.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-organiccarapace.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="OrganicCarapaceWoL@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-organiccarapace.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-organiccarapace.dds"/>
+        <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="OverchargeLotV">
         <Icon value="Assets\Textures\BTN-Ability-Protoss-PurificationNova.dds"/>
@@ -317,6 +337,16 @@
         <Icon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="TunnelingClawsWoL">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingclaws.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-tunnelingclaws.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="TunnelingClawsWoL@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingclaws.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-tunnelingclaws.dds"/>
+        <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="TunnelingJawsSwarm">
         <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingjaws.dds"/>
