@@ -9,6 +9,8 @@ Abil/Name/BanelingLotV1@MorphZerglingToBaneling=Morph Zergling to Baneling
 Abil/Name/BanelingLotV1@Unburrow=Unburrow
 Abil/Name/BatteryOverchargeLotV=Battery Overcharge
 Abil/Name/BlinkLiberty@ResearchBlink=Research
+Abil/Name/BuildCreepTumorLiberty_Queen=Build
+Abil/Name/BuildCreepTumorTumor=Build
 Abil/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
 Abil/Name/CarrierLotV1@Train=Build
 Abil/Name/CarrierLotV1@WeaponHangar=Hangar
@@ -23,6 +25,7 @@ Abil/Name/ChronoBoostLotV=Chrono Boost
 Abil/Name/ColossusLiberty@Build=Build
 Abil/Name/CorvidReactorLotV@ResearchCorvidReactor=Research Corvid Reactor
 Abil/Name/CorvidReactorSwarm@ResearchCorvidReactor=Research Corvid Reactor
+Abil/Name/CreepTumorWoL_Queen@Burrow=Burrow
 Abil/Name/CycloneLockOnAirLoTV1@LockOn=Lock On
 Abil/Name/CycloneLockOnAirLoTV1@Research=Research
 Abil/Name/CycloneLockOnLotV2@LockOn=Lock On
@@ -149,6 +152,7 @@ Abil/Name/TempestLotV1@Build=Build
 Abil/Name/TempestSwarm@Build=Build
 Abil/Name/TimeWarpLotV1=Time Warp
 Abil/Name/TimeWarpSwarm=Time Warp
+Abil/Name/TransfusionWoL=Transfusion
 Abil/Name/TunnelingClawsWoL@Research=Research
 Abil/Name/TunnelingJawsSwarm@Research=Research
 Abil/Name/VoidRayLotV@Build=Build
@@ -386,6 +390,7 @@ Button/Name/TempestLotV1=Warp In Tempest
 Button/Name/TempestSwarm=Warp In Tempest
 Button/Name/TimeWarpLotV1=Time Warp
 Button/Name/TimeWarpSwarm=Time Warp
+Button/Name/TransfusionWoL=Transfusion
 Button/Name/TunnelingClawsWoL=Evolve Tunneling Claws
 Button/Name/TunnelingClawsWoL@Passive=Tunneling Claws
 Button/Name/TunnelingJawsSwarm=Research Tunneling Jaws
@@ -435,6 +440,8 @@ Button/Tooltip/CloakFieldWoL=Cloaking Field passively cloaks friendly nearby uni
 Button/Tooltip/ColossusLiberty=Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/CorvidReactorLotV@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
 Button/Tooltip/CorvidReactorSwarm@ResearchCorvidReactor=Increases the starting energy of <c val="ffff8a">Ravens</c> by <d ref="Upgrade,CorvidReactorSwarm,EffectArray[0].Value"/>.
+Button/Tooltip/CreepTumorWoL=A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn one additional Creep Tumor.<n/><n/><c val="#ColorAttackInfo">Bonus: Zerg move faster on creep.</c>
+Button/Tooltip/CreepTumorWoL@Burrowed=A burrowed creep generator. Creep feeds nearby Zerg structures.<n/><n/><c val="#ColorAttackInfo">Bonus: Zerg move faster on creep.</c>
 Button/Tooltip/CycloneLockOnAirLoTV1@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
 Button/Tooltip/CycloneLockOnAirLoTV1@UpgradeButton=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First <c val="#ColorAttackInfo">12</c> shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
 Button/Tooltip/CycloneLockOnLotV2@Button=Locks the Cyclone's weapons on the target air unit or air structure, dealing <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodCount*Effect,CycloneLockOnAirLoTV1@LockOnWeaponDamage,Amount"/> damage over <d ref="Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[0] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[1] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[2] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[3] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[4] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[5] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[6] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[7] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[8] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[9] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[10] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[11] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[12] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[13] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[14] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[15] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[16] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[17] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[18] + Effect,CycloneLockOnAirLoTV1@LockOnCP,PeriodicPeriodArray[19]"/> seconds. First four shots fire quickly. Can move while firing. Cancels if target moves out of range.<n/><n/><c val="#ColorAttackInfo">Cannot target ground units or ground structures.</c>
@@ -585,6 +592,7 @@ Button/Tooltip/TempestLotV1=Siege artillery craft. Attacks from long range.<n/><
 Button/Tooltip/TempestSwarm=Siege artillery craft. Attacks from long range.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/TimeWarpLotV1=After a <d ref="(Effect,TemporalFieldGrowingBubbleCreatePersistent,PeriodCount*Effect,TemporalFieldGrowingBubbleCreatePersistent,PeriodicPeriodArray[0])"/> second delay, warps spacetime within the target area for <d ref="Effect,TemporalFieldAfterBubbleCreatePersistent,PeriodCount*Effect,TemporalFieldAfterBubbleCreatePersistent,PeriodicPeriodArray[0]"/> seconds. All enemy units and structures within the field will have attack and movement speeds reduced by <d ref="(1-Behavior,TemporalField,Modification.MoveSpeedMultiplier)*100"/>%.
 Button/Tooltip/TimeWarpSwarm=Warps spacetime within the target area for <d ref="Effect,OracleSwarm@TimeWarpCP,PeriodCount*Effect,OracleSwarm@TimeWarpCP,PeriodicPeriodArray[0]"/> seconds. Enemy ground units that enter the field have their movement speed reduced by <d ref="(1-Behavior,OracleSwarm@TimeWarp,Modification.MoveSpeedMultiplier)*100"/>%.
+Button/Tooltip/TransfusionWoL=Instantly heals target biological unit or structure for <d ref="Effect,TransfusionWoL@MU,VitalArray[Life].Change"/> life.
 Button/Tooltip/TunnelingClawsWoL=Enables <c val="ffff8a">Roaches</c> to move while burrowed.
 Button/Tooltip/TunnelingClawsWoL@Passive=Enables <c val="ffff8a">Roaches</c> to move while burrowed.
 Button/Tooltip/TunnelingJawsSwarm=<c val="ffff8a">Banelings</c> gain increased movement speed and +10 health.
@@ -614,6 +622,8 @@ DataCollection/Name/BanelingLotV1=Baneling
 DataCollection/Name/BarracksLiberty=Barracks
 DataCollection/Name/BatteryOverchargeLotV=Battery Overcharge
 DataCollection/Name/BlinkLiberty=Blink
+DataCollection/Name/BuildCreepTumorLiberty_Queen=Build Creep Tumor
+DataCollection/Name/BuildCreepTumorTumor=Build Creep Tumor
 DataCollection/Name/BunkerLiberty=Bunker
 DataCollection/Name/CaduceusReactorSwarmBeta=Caduceus Reactor
 DataCollection/Name/CanisterRifleLiberty=Canister Rifle
@@ -629,6 +639,8 @@ DataCollection/Name/CloakFieldWoL=Cloak Field
 DataCollection/Name/ColossusLiberty=Colossus
 DataCollection/Name/CorvidReactorLotV=Corvid Reactor
 DataCollection/Name/CorvidReactorSwarm=Corvid Reactor
+DataCollection/Name/CreepTumorWoL=Creep Tumor
+DataCollection/Name/CreepTumorWoL_Queen=Creep Tumor
 DataCollection/Name/CrucioShockCannonLotV1=Crucio Shock Cannon
 DataCollection/Name/CycloneLockOnAirLoTV1=CycloneLockOnAirLoTV1
 DataCollection/Name/CycloneLockOnLotV2=CycloneLockOnLotV2
@@ -723,6 +735,7 @@ DataCollection/Name/SiegeArmorSiegedLotV1=Siege Armor Sieged LotV1
 DataCollection/Name/SiegeTankLotV1=Siege Tank
 DataCollection/Name/SiegeTankLotV1Morph=Siege Tank Morph
 DataCollection/Name/SiegeTankSiegedLotV1=Siege Tank Sieged
+DataCollection/Name/SpawnLarvaeWoL=Spawn Larvae
 DataCollection/Name/StalkerLiberty=Stalker
 DataCollection/Name/StasisWardLotV1=Stasis Ward
 DataCollection/Name/TempestLotV1=Tempest
@@ -730,6 +743,7 @@ DataCollection/Name/TempestSwarm=Tempest
 DataCollection/Name/TimeWarpLotV1=Time Warp
 DataCollection/Name/TimeWarpSwarm=Time Warp
 DataCollection/Name/TornadoBlaster=Tornado Blaster
+DataCollection/Name/TransfusionWoL=Transfusion
 DataCollection/Name/TunnelingClawsWoL=Tunneling Claws
 DataCollection/Name/TunnelingJawsSwarm=Tunneling Jaws
 DataCollection/Name/TyphoonMissilePodLotV2=Typhoon Missile Pod
@@ -753,6 +767,9 @@ Effect/Name/AutoTurretSwarm@LM=LM
 Effect/Name/AutoTurretSwarm@ReleaseSet=Release Set
 Effect/Name/AutoTurretSwarm@TimedLifeAB=Timed Life AB
 Effect/Name/BatteryOverchargeLotV@AB=AB
+Effect/Name/BuildCreepTumorTumor@ImpactDummy=Impact Dummy
+Effect/Name/BuildCreepTumorTumor@LM=LM
+Effect/Name/BuildCreepTumorTumor@LMSet=LM Set
 Effect/Name/CanisterRifleLiberty@Damage=Damage
 Effect/Name/CarrierLotV1@WeaponCP=CP
 Effect/Name/CarrierLotV1@WeaponCPUpgraded=CP Upgraded
@@ -1061,6 +1078,8 @@ Effect/Name/PurificationNovaPhasedLotV1@SearchArea=Search Area
 Effect/Name/PurificationNovaPhasedLotV1@SearchSet=Search Set
 Effect/Name/PurificationNovaPhasedLotV1@Set=Set
 Effect/Name/PurificationNovaPhasedLotV1@SpeedBuffAB=Speed Buff AB
+Effect/Name/QueenLotV@AAWeaponDamage=AA Weapon Damage
+Effect/Name/QueenLotV@AAWeaponLM=AA Weapon LM
 Effect/Name/RavenAntiArmorMissile@ArmorReductionAB=Armor Reduction AB
 Effect/Name/RavenAntiArmorMissile@Damage=Damage
 Effect/Name/RavenAntiArmorMissile@ImpactSearchArea=Impact Search Area
@@ -1153,6 +1172,7 @@ Effect/Name/TornadoBlaster@LMLeftSet=LM Left Set
 Effect/Name/TornadoBlaster@LMRight=LM Right
 Effect/Name/TornadoBlaster@LMRightSet=LM Right Set
 Effect/Name/TornadoBlaster@LMSwitch=LM Switch
+Effect/Name/TransfusionWoL@MU=MU
 Effect/Name/TyphoonMissilePod@LMLeft=LM Left
 Effect/Name/TyphoonMissilePod@LMLeftSet=LM Left Set
 Effect/Name/TyphoonMissilePod@LMRight=LM Right
@@ -1265,10 +1285,14 @@ Unit/Name/BanelingLotV1=Baneling
 Unit/Name/BanelingLotV1@Cocoon=Baneling Cocoon
 Unit/Name/BaseDefenseUnit=Base Defense Unit
 Unit/Name/BaseDefenseUnit2=Base Defense Unit
+Unit/Name/BuildCreepTumorTumor@Missile=Missile
 Unit/Name/CarrierLotV1=Carrier
 Unit/Name/CarrierLotV2=Carrier
 Unit/Name/ChronoBoostLotV=Chrono Boost
 Unit/Name/ColossusLiberty=Colossus
+Unit/Name/CreepTumorWoL=Creep Tumor
+Unit/Name/CreepTumorWoL@Burrowed=Creep Tumor
+Unit/Name/CreepTumorWoL_Queen=Creep Tumor 
 Unit/Name/CycloneLockOnAirLoTV1@Missile=Missile
 Unit/Name/CycloneLockOnAirLoTV1@MissileAlternative=Missile Alternative
 Unit/Name/CycloneLockOnLotV2@Missile=Missile
@@ -1316,6 +1340,7 @@ Unit/Name/PointDefenseDroneSwarm@Missile=Missile
 Unit/Name/PointDefenseDroneSwarm@PointDefenseDrone=Point Defense Drone
 Unit/Name/PointDefenseDroneSwarm@Unit=Point Defense Drone
 Unit/Name/QueenLotV=Queen
+Unit/Name/QueenLotV@AAWeapon=Acid Spines Weapon
 Unit/Name/RavenAntiArmorMissile@Weapon=Weapon
 Unit/Name/RavenAutoTurret@AutoTurret=Auto-Turret
 Unit/Name/RavenAutoTurret@ReleaseWeapon=Release Weapon
@@ -1630,6 +1655,7 @@ Weapon/Name/PhotonOverchargeSwarm@Weapon=Purify
 Weapon/Name/PistolSwarm=P-45 Gauss Pistol
 Weapon/Name/PointDefenseDroneSwarm@PointDefenseLaser=Point Defense Laser
 Weapon/Name/PulsarBeamSwarm=Pulsar Beam
+Weapon/Name/QueenLotV@AAWeapon=Acid Spines
 Weapon/Name/RavenAutoTurret@AutoTurretWeapon=12mm Gauss Cannon
 Weapon/Name/RoachWoL@MeleeWeapon=Needle Spines
 Weapon/Name/RoachWoL@RangedWeapon=Acid Saliva
@@ -1646,4 +1672,5 @@ Weapon/Name/VolatileBurstLiberty@Dummy=Volatile Burst
 Weapon/Name/WarhoundSwarm@Weapon=Railgun
 Weapon/Name/WarhoundSwarm@WeaponMelee=Weapon Melee
 Weapon/Tip/GrenadeLiberty=Only used against structures.
+Weapon/Tip/QueenLotV@AAWeapon=
 Weapon/Tip/VolatileBurstLiberty@Dummy=Only used against units.

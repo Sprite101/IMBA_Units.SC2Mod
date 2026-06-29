@@ -25,6 +25,14 @@
     <CDataCollectionUnit id="BarracksLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionUnit>
+    <CDataCollection id="BuildCreepTumorLiberty_Queen">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
+    <CDataCollection id="BuildCreepTumorTumor">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollection id="CanisterRifleLiberty">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>
@@ -43,6 +51,13 @@
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
     </CDataCollection>
+    <CDataCollectionUnit id="CreepTumorWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <TechInfoUnit value="CreepTumorWoL_Queen"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="CreepTumorWoL_Queen">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+    </CDataCollectionUnit>
     <CDataCollectionUnit id="DisruptorLotVBeta">
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
         <Button value="DisruptorLotV1"/>
@@ -62,6 +77,10 @@
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
+    <CDataCollection id="SpawnLarvaeWoL">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollection id="MassRecallWoL">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
@@ -557,6 +576,10 @@
     </CDataCollection>
     <CDataCollection id="90mmCannonsLotV1">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
+    </CDataCollection>
+    <CDataCollection id="TransfusionWoL">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
     </CDataCollection>
     <CDataCollectionUpgrade id="TunnelingClawsWoL">
         <EditorCategories value="DataFamily:Melee,Race:Zerg"/>

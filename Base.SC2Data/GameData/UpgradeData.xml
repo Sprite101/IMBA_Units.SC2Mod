@@ -4283,8 +4283,10 @@
         <ScoreResult value="BuildOrder"/>
         <EffectArray Reference="Unit,RoachWoL@Burrowed,Speed" Value="2.00000"/>
         <EffectArray Reference="Unit,RoachWoL@Burrowed,Acceleration" Value="1000.000000"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,Deceleration" Value="1000.000000"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,LateralAcceleration" Value="46.063"/>
         <EffectArray Operation="Set" Reference="Unit,RoachWoL@Burrowed,Collide[Land1]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Unit,RoachWoL@Burrowed,Collide[Land6]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Unit,RoachWoL@Burrowed,Collide[Land7]" Value="1"/>
         <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
         <Alert value="ResearchComplete"/>
         <Flags index="TechTreeCheat" value="1"/>

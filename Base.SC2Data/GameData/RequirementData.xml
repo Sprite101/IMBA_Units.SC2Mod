@@ -92,6 +92,10 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeTunnelingClawsWoLCompleteOnly3631464287"/>
     </CRequirement>
+    <CRequirement id="TunnelingClawsWoL@HaveShow">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="CountUpgradeTunnelingClawsWoLCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="TunnelingClawsWoL@Learn">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeTunnelingClawsWoLQueuedOrBetter"/>

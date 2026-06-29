@@ -338,6 +338,11 @@
         <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="TransfusionWoL">
+        <Icon value="Assets\Textures\btn-ability-zerg-transfusion-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-transfusion-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="TunnelingClawsWoL">
         <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingclaws.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-zerg-tunnelingclaws.dds"/>

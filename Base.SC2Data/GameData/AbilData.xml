@@ -84,6 +84,61 @@
         <AutoCastRange value="1"/>
         <AutoCastCountMin value="1"/>
     </CAbilMorph>
+    <CAbilBuild id="BuildCreepTumorLiberty_Queen">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <FlagArray index="RangeIncludesBuilding" value="0"/>
+        <Alert value="BuildComplete_Zerg"/>
+        <InfoArray index="Build1" Unit="CreepTumorWoL_Queen" Delay="2" Time="15">
+            <Vital index="Energy" value="25"/>
+            <Button DefaultButtonFace="CreepTumor">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilBuild>
+    <CAbilBuild id="BuildCreepTumorTumor">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <SharedFlags index="RegisterChargeEvent" value="1"/>
+        <SharedFlags index="RegisterCooldownEvent" value="1"/>
+        <Alert value="BuildComplete_Zerg"/>
+        <InfoArray index="Build1" Unit="CreepTumorWoL" Time="15">
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Location value="Unit"/>
+            </Charge>
+            <Cooldown Location="Unit" TimeStart="15" TimeUse="15"/>
+            <Button DefaultButtonFace="CreepTumor"/>
+        </InfoArray>
+        <Range value="10"/>
+        <EffectArray index="Start" value="BuildCreepTumorTumor@LMSet"/>
+    </CAbilBuild>
+    <CAbilMorph id="CreepTumorWoL_Queen@Burrow">
+        <AbilSetId value="BrwD"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BurrowDown">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <ActorKey value="BurrowDown"/>
+        <Flags index="Automatic" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <Cost>
+            <Cooldown Link="BurrowCreepTumorDownBurrowCreepTumorDown2BurrowCreepTumorDownCreepTumorWoL_Queen@Burrow" Location="Unit"/>
+        </Cost>
+        <InfoArray Unit="CreepTumorWoL@Burrowed" RandomDelayMax="0.37">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="1"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Delay" value="0.5556"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="1"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
     <CAbilMorph id="QueenLotV@Unburrow">
         <AbilSetId value="BrwU"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
@@ -171,9 +226,6 @@
         <Flags index="IgnoreFood" value="1"/>
         <Flags index="IgnoreUnitCost" value="1"/>
         <Flags index="Transient" value="1"/>
-        <Cost>
-            <Cooldown TimeUse="1.4"/>
-        </Cost>
         <InfoArray Unit="RoachWoL@Burrowed" RandomDelayMax="0.1">
             <SectionArray index="Actor">
                 <DurationArray index="Duration" value="0.31"/>
@@ -875,6 +927,24 @@
         <CursorEffect value="TimeWarpLotV1@SearchArea"/>
         <AINotifyEffect value="TemporalFieldCreatePersistent"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="TimeWarpLotV1"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="TransfusionWoL">
+        <Alignment value="Positive"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="TransfusionWoL@MU"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+            <Cooldown Link="TransfusionTransfusion2TransfusionTransfusionWoL" TimeUse="1"/>
+        </Cost>
+        <TargetFilters value="Biological,Visible;Self,Neutral,Enemy,Missile,Stasis,UnderConstruction,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <CastIntroTime value="0.2"/>
+        <FinishTime value="0.8"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value="Transfusion2"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="TransfusionWoL"/>
     </CAbilEffectTarget>
     <CAbilResearch id="TunnelingClawsWoL@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>

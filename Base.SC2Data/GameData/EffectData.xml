@@ -7,6 +7,33 @@
         <Amount value="15"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectDamage id="QueenLotV@AAWeaponDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Zerg"/>
+        <Kind value="Ranged"/>
+        <Amount value="9"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="QueenLotV@AAWeaponLM">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="QueenLotV@AAWeaponDamage"/>
+        <AmmoUnit value="QueenLotV@AAWeapon"/>
+        <Movers Link="AcidSpinesWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="BuildCreepTumorTumor@ImpactDummy">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="CreepTumorBuildRB"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="BuildCreepTumorTumor@LM">
+        <ValidatorArray value="NotDead"/>
+        <EditorCategories value="Race:Zerg"/>
+        <FinishEffect value="BuildCreepTumorTumor@ImpactDummy"/>
+        <Flags index="TravelValidation" value="1"/>
+        <AmmoUnit value="BuildCreepTumorTumor@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="BuildCreepTumorTumor@LMSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="CreepTumorBuildAB"/>
+        <EffectArray value="BuildCreepTumorTumor@LM"/>
+    </CEffectSet>
     <CEffectDamage id="RoachWoL@MeleeWeaponDamage" parent="DU_WEAP_MISSILE">
         <Name value="Effect/Name/AcidSalivaU"/>
         <EditorCategories value="Race:Zerg"/>
@@ -32,6 +59,14 @@
         <Kind value="Ranged"/>
         <Amount value="10"/>
     </CEffectDamage>
+    <CEffectModifyUnit id="TransfusionWoL@MU">
+        <ValidatorArray value="LifeNotFull"/>
+        <ValidatorArray value="NotDisintegrating"/>
+        <EditorCategories value="Race:Zerg"/>
+        <VitalArray index="Life">
+            <Change value="125"/>
+        </VitalArray>
+    </CEffectModifyUnit>
     <CEffectRemoveBehavior id="VolatileBurstLiberty@RB">
         <EditorCategories value="Race:Zerg"/>
         <WhichUnit Value="Caster"/>

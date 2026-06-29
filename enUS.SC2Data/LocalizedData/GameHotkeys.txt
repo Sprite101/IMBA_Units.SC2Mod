@@ -141,6 +141,7 @@ Button/Hotkey/TempestLotV1=T
 Button/Hotkey/TempestSwarm=T
 Button/Hotkey/TimeWarpLotV1=T
 Button/Hotkey/TimeWarpSwarm=T
+Button/Hotkey/TransfusionWoL=T
 Button/Hotkey/TunnelingClawsWoL=G
 Button/Hotkey/TunnelingClawsWoL@Passive=
 Button/Hotkey/TunnelingJawsSwarm=G

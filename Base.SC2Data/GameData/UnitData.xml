@@ -1,5 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CUnit id="QueenLotV@AAWeapon" parent="MISSILE">
+        <Race value="Zerg"/>
+        <Mover value="AcidSpinesWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="BuildCreepTumorTumor@Missile" parent="MISSILE_INVULNERABLE">
+        <Race value="Zerg"/>
+        <Mover value="CreepTumorMissile"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
+    <CUnit id="CreepTumorWoL">
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AILifetime" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <EditorFlags index="NoPlacement" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="CreepTumor" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="50"/>
+        <LifeMax value="50"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergBuildingArmor"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="11"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="CreepTumorWoL_Queen@Burrow"/>
+        <BehaviorArray Link="makeCreep4x4"/>
+        <BehaviorArray Link="CreepTumorActive"/>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.5"/>
+        <Footprint value="CreepTumor"/>
+        <PlacementFootprint value="CreepTumor"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <AIEvalFactor value="0"/>
+        <HotkeyAlias value="CreepTumorBurrowed"/>
+        <SubgroupAlias value="CreepTumorBurrowed"/>
+        <TechAliasArray value="Alias_CreepTumor"/>
+    </CUnit>
+    <CUnit id="CreepTumorWoL@Burrowed">
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="Buried" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="AILifetime" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="CreepTumor" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="50"/>
+        <LifeMax value="50"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergBuildingArmor"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="11"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="BuildCreepTumorTumor"/>
+        <AbilArray Link="BuildInProgress"/>
+        <BehaviorArray Link="makeCreep4x4"/>
+        <BehaviorArray Link="CreepTumorActive"/>
+        <CardLayouts>
+            <LayoutButtons Face="BuildCreepTumorPropagate" Type="AbilCmd" AbilCmd="BuildCreepTumorTumor,Build1" Row="2" Column="0"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="BuildCreepTumorTumor,Halt" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.5"/>
+        <Footprint value="CreepTumorBurrowed"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkCreepTumor"/>
+        <AIEvalFactor value="0"/>
+        <LeaderAlias value="CreepTumor"/>
+        <SelectAlias value="CreepTumor"/>
+        <TechAliasArray value="Alias_CreepTumor"/>
+        <GlossaryPriority value="257"/>
+        <HotkeyCategory value="Unit/Category/ZergUnits"/>
+    </CUnit>
+    <CUnit id="CreepTumorWoL_Queen">
+        <Name value="Unit/Name/CreepTumor"/>
+        <Description value="Button/Tooltip/CreepTumor"/>
+        <DeathRevealRadius value="3"/>
+        <ReviveType value="CreepTumor"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <EditorFlags index="NoPlacement" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="50"/>
+        <LifeMax value="50"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergBuildingArmor"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="11"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="CreepTumorWoL_Queen@Burrow"/>
+        <BehaviorArray Link="makeCreep4x4"/>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.5"/>
+        <Footprint value="CreepTumorQueen"/>
+        <PlacementFootprint value="CreepTumorQueen"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <CardLayouts>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+        </CardLayouts>
+        <AIEvalFactor value="0"/>
+        <LeaderAlias value="CreepTumor"/>
+        <HotkeyAlias value="CreepTumorBurrowed"/>
+        <SelectAlias value="CreepTumor"/>
+        <SubgroupAlias value="CreepTumorBurrowed"/>
+        <TechAliasArray value="Alias_CreepTumor"/>
+        <AIEvaluateAlias value="CreepTumor"/>
+    </CUnit>
     <CUnit id="QueenLotV@Burrowed">
         <Name value="Unit/Name/QueenLotV"/>
         <Description value="Button/Tooltip/QueenLotV"/>
@@ -124,11 +297,11 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="QueenLotV@Burrow"/>
-        <AbilArray Link="QueenBuild"/>
+        <AbilArray Link="BuildCreepTumorLiberty_Queen"/>
         <AbilArray Link="SpawnLarva"/>
-        <AbilArray Link="Transfusion"/>
+        <AbilArray Link="TransfusionWoL"/>
         <BehaviorArray Link="QueenMustBeOnCreep"/>
-        <WeaponArray Link="AcidSpines"/>
+        <WeaponArray Link="QueenLotV@AAWeapon"/>
         <WeaponArray Link="Talons"/>
         <WeaponArray Link="TalonsMissile"/>
         <CardLayouts>
@@ -138,8 +311,8 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MorphMorphalisk" Type="AbilCmd" AbilCmd="SpawnLarva,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="BuildCreepTumor" Type="AbilCmd" AbilCmd="QueenBuild,Build1" Row="2" Column="0"/>
-            <LayoutButtons Face="Transfusion" Type="AbilCmd" AbilCmd="Transfusion,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="BuildCreepTumor" Type="AbilCmd" AbilCmd="BuildCreepTumorLiberty_Queen,Build1" Row="2" Column="0"/>
+            <LayoutButtons Face="TransfusionWoL" Type="AbilCmd" AbilCmd="TransfusionWoL,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="QueenLotV@Burrow,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowDroneDown,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowZerglingDown,Execute" Row="2" Column="3"/>
@@ -902,7 +1075,7 @@
                 <Face value="Stop"/>
                 <Type value="AbilCmd"/>
                 <AbilCmd value="stop,Stop"/>
-                <Requirements value="TunnelingClawsWoL@Have"/>
+                <Requirements value="TunnelingClawsWoL@HaveShow"/>
                 <Row value="0"/>
                 <Column value="1"/>
             </LayoutButtons>
