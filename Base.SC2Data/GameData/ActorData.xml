@@ -1,5 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorAction id="HydraliskLotV1@WeaponAttackAction" parent="GenericAttack" effectImpact="HydraliskLotV1@WeaponDamage" effectLaunch="HydraliskLotV1@WeaponLM">
+        <LaunchSiteOps Ops="SOpAttachHarness SOpForwardImpactGuide"/>
+        <LaunchAttachQuery Methods="AMFilterWeaponSetA0"/>
+        <LaunchAssets Sound="Hydralisk_GroundAttackLaunch"/>
+        <Missile value="HydraliskLotV1@WeaponAttackMissile"/>
+        <ImpactMap index="None" Model="HydraliskAttackImpact" Sound="Hydralisk_AttackImpactRanged"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="NeedleSpinesImpact" MatchKeys="Basic" Physics="HydraliskAttackDeathForce"/>
+        <AcquisitionYawHalfArc value="20.000000"/>
+        <AcquisitionPitchHalfArc value="20.000000"/>
+        <AccuracyHalfArc value="25.000000"/>
+    </CActorAction>
+    <CActorMissile id="HydraliskLotV1@WeaponAttackMissile" parent="GenericAttackMissile" unitName="HydraliskLotV1@WeaponMissile">
+        <On Terms="ActorCreation; ValidateUnit GroovedSpinesLotV1@Upgraded" Send="ModelSwap HydraliskMissile_Upgrade"/>
+        <Model value="NeedleSpinesWeapon"/>
+    </CActorMissile>
+    <CActorUnit id="HydraliskLotV1" parent="GenericUnitBase" unitName="HydraliskLotV1">
+        <Aliases value="_UnitMedium"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergMediumBurrowEffects"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="WeaponStart.HydraliskLotV1@Weapon.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart AttackSuperior Attack,Superior {} {} 0 1.245509 AsTimeScale"/>
+        <On Terms="WeaponStart.HydraliskLotV1@Weapon.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart AttackInferior Attack,Inferior {} {} 0 1.245509 AsTimeScale"/>
+        <On Terms="WeaponStart.HydraliskLotV1@Melee.AttackStart" Send="AnimPlay AttackCover Attack,Cover 0 -1.000000 -1.000000 1.500000 AsTimeScale"/>
+        <On Terms="WeaponStart.HydraliskLotV1@Weapon.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 1.245509 AsTimeScale"/>
+        <On Terms="WeaponStop.HydraliskLotV1@Weapon.AttackStop" Send="AnimBracketStop AttackSuperior"/>
+        <On Terms="WeaponStop.HydraliskLotV1@Weapon.AttackStop" Send="AnimBracketStop AttackInferior"/>
+        <On Terms="WeaponStop.HydraliskLotV1@Weapon.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On Terms="WeaponStart.HydraliskLotV1@Melee.AttackStart; AnimPlaying AttackCover Cover,00" Send="TimerSet 0.267000 MeleeAttackLaunch"/>
+        <On Terms="WeaponStart.HydraliskLotV1@Melee.AttackStart; AnimPlaying AttackCover Cover,01" Send="TimerSet 0.066700 MeleeAttackLaunch"/>
+        <On Terms="TimerExpired; TimerName MeleeAttackLaunch" Send="Create HydraliskMeleeAttackLaunch"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownMedium"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom HydraliskLotV1; MorphTo HydraliskLotV1@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo HydraliskLotV1; MorphFrom HydraliskLotV1@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo HydraliskLotV1; MorphFrom HydraliskLotV1@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="UnitBirth.HydraliskLotV1@Burrowed" Send="Create"/>
+        <On Terms="UnitBirth.HydraliskLotV1@Burrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="UnitBirth.HydraliskLotV1" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo HydraliskLotV1; MorphFrom HydraliskLotV1@Burrowed" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo HydraliskLotV1@Burrowed; MorphFrom HydraliskLotV1" Send="TerrainSquibDeactivate"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Hydra_Land"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo LurkerMPEgg" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom LurkerMPEgg; MorphTo HydraliskLotV1" Send="Create"/>
+        <Model value="Hydralisk"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <EventDataSound Name="HydraliskAttackImpactMelee" Actor="UnitSound" Sound="Hydralisk_AttackImpactMelee"/>
+        <BuildModel value="Hydralisk"/>
+        <DeathArray index="Normal" ModelLink="HydraliskDeath" SoundLink="Hydralisk_Explode"/>
+        <DeathArray index="Disintegrate" ModelLink="HydraliskDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="HydraliskDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <DeathCustoms ModelLink="HydraliskDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="FireOnMetal"/>
+            <BodySquibs Name="BloodReduced" IsFallback="1"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <PlacementModel value="Hydralisk"/>
+        <PortraitModel value="HydraliskPortrait"/>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleLarge"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.6484"/>
+        <BarOffset value="60"/>
+        <BarWidth value="48"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Hydralisk.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-hydralisk.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="Ready" value="Hydralisk_Ready"/>
+        <SoundArray index="What" value="Hydralisk_What"/>
+        <SoundArray index="Yes" value="Hydralisk_Yes"/>
+        <SoundArray index="Attack" value="Hydralisk_Attack"/>
+        <SoundArray index="Pissed" value="Hydralisk_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-hydralisk.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Hydralisk.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorSplat id="HydraliskLotV1@BurrowedSplat" parent="BurrowedSplat" unitName="HydraliskLotV1@Burrowed">
+        <On index="2" Terms="UnitBirth.HydraliskLotV1@Burrowed"/>
+        <On index="3" Terms="AbilMorph.*.Start; MorphTo HydraliskLotV1@Burrowed"/>
+        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom HydraliskLotV1@Burrowed"/>
+        <On index="5" Terms="AbilMorph.*.Start; MorphFrom HydraliskLotV1@Burrowed"/>
+    </CActorSplat>
+    <CActorAction id="HydraliskLotV1@MeleeAttackAction" parent="GenericAttack" effectAttack="HydraliskLotV1@MeleeDamage">
+        <ImpactPhysics>
+            <Name value="Attack"/>
+            <MatchKeys value="Basic"/>
+            <AttackAnimProps value="Cover"/>
+            <Physics value="HydraliskMeleeAttackForce"/>
+        </ImpactPhysics>
+        <ShieldFlashType value="Header"/>
+        <AttackAnimName value="AttackCover"/>
+    </CActorAction>
+    <CActorAction id="RavagerLotV@WeaponAttackAction" parent="GenericAttack" effectImpact="RavagerLotV@WeaponDamage" effectLaunch="RavagerLotV@WeaponLM">
+        <LaunchAssets Model="" Sound="Ravager_AttackLaunch"/>
+        <Missile value="RavagerLotV@WeaponMissile"/>
+        <ImpactMap index="None" Model="RavagerWeaponImpact" Sound="Ravager_Attack_Impact"/>
+    </CActorAction>
+    <CActorSplat id="RavagerLotV@BurrowedSplat" parent="BurrowedSplat" unitName="RavagerLotV@Burrowed">
+        <On index="2" Terms="UnitBirth.RavagerLotV@Burrowed"/>
+        <On index="3" Terms="AbilMorph.*.Start; MorphTo RavagerLotV@Burrowed"/>
+        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom RavagerLotV@Burrowed"/>
+        <On index="5" Terms="AbilMorph.*.Start; MorphFrom RavagerLotV@Burrowed"/>
+        <Scale value="1.100000"/>
+    </CActorSplat>
+    <CActorMissile id="RavagerLotV@WeaponMissile" parent="GenericAttackMissile" unitName="RavagerLotV@WeaponMissile">
+        <Model value="RavagerWeaponMissile"/>
+    </CActorMissile>
+    <CActorModel id="SpawnLarvaeWoL@LarvaModelInitial" parent="SpawningMutantLarva">
+        <On index="3" Terms="Behavior.SpawnLarvaeWoL@Timer.On" Send="Create"/>
+        <On index="4" Terms="Behavior.SpawnLarvaeWoL@Timer.Off" Send="AnimBracketStop BSD"/>
+    </CActorModel>
+    <CActorSplat id="QueenWoL@BurrowedSplat" parent="BurrowedSplat" unitName="QueenLotV@Burrowed">
+        <On index="2" Terms="UnitBirth.QueenLotV@Burrowed"/>
+        <On index="3" Terms="AbilMorph.*.Start; MorphTo QueenLotV@Burrowed"/>
+        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom QueenLotV@Burrowed"/>
+        <On index="5" Terms="AbilMorph.*.Start; MorphFrom QueenLotV@Burrowed"/>
+    </CActorSplat>
+    <CActorUnit id="QueenWoL" parent="GenericUnitBase" unitName="QueenWoL">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergLargeBurrowEffects"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitBirth.QueenWoL@Burrowed" Send="Create"/>
+        <On Terms="UnitBirth.QueenWoL@Burrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant"/>
+        <On Terms="UnitBirth.QueenWoL.Normal" Send="AnimPlay Unburrow Unburrow 0 0.000000"/>
+        <On Terms="Abil.BuildCreepTumorLiberty_Queen.WorkerStart" Send="AnimPlay WorkStart Stand,Work,Start"/>
+        <On Terms="AnimDone; AnimName WorkStart" Send="AnimPlay WorkEnd Stand,Work,End"/>
+        <On Terms="Abil.FungalGrowth.SourceCastStart" Send="$Spell"/>
+        <On Terms="Abil.SpawnLarva.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
+        <On Terms="Abil.TransfusionWoL.SourceFinishStart" Send="AnimPlay SpellB Spell,B"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownLarge"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom QueenWoL; MorphTo QueenWoL@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo QueenWoL; MorphFrom QueenWoL@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo QueenWoL; MorphFrom QueenWoL@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="WeaponStart.AcidSpines.AttackStart" Send="AnimBracketStart Attack Spell,C"/>
+        <On Terms="WeaponStart.Talons.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Attack,Cover"/>
+        <On Terms="WeaponStart.Talons.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On Terms="UnitBirth.QueenWoL" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="UnitBirth.QueenWoL" Send="Create QueenCreepBirth"/>
+        <On Terms="UnitBirth.QueenWoL" Send="Create Queen_Birth"/>
+        <On Terms="UnitBirth.QueenWoL" Send="Create Queen_Birth2"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo QueenWoL; MorphFrom QueenWoL@Burrowed" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo QueenWoL@Burrowed; MorphFrom QueenWoL" Send="TerrainSquibDeactivate"/>
+        <On Terms="WeaponStart.TalonsMissile.AttackStart" Send="AnimBracketStart Attack Spell,C"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Queen_Land"/>
+        <Model value="Queen"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Queen"/>
+        <DeathArray index="Normal" ModelLink="QueenDeath" SoundLink="Queen_Explode"/>
+        <DeathArray index="Disintegrate" ModelLink="QueenDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="QueenDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <DeathCustoms ModelLink="ZergLargeUnitDeathLow" Name="AntiGravZerg"/>
+        <DeathCustoms ActorModel="QueenDeathRagdoll" ModelLink="QueenDeathRagdoll" Name="RagdollBasic"/>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PlacementModel value="Queen"/>
+        <PortraitModel value="QueenPortrait"/>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="2.000000"/>
+            <RangeDown value="2.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleQueen"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="1.7031"/>
+        <BarOffset value="75"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="Alert_ZergBuildError" GroupSound="Alert_ZergBuildError"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Queen.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <MovementHerdNode value="HerdNode_ZergQueens"/>
+        <SoundArray index="Birth" value="Queen_Birth"/>
+        <SoundArray index="Ready" value="QueenReady"/>
+        <SoundArray index="Help" value="QueenHelp"/>
+        <SoundArray index="What" value="QueenWhat"/>
+        <SoundArray index="Yes" value="QueenYes"/>
+        <SoundArray index="Attack" value="Queen_Attack"/>
+        <SoundArray index="Pissed" value="Queen_Pissed"/>
+        <SoundArray index="Movement" value="zQueen_moveLoop"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Queen.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorAction id="QueenLotV@AAWeaponAttackAction" parent="GenericAttack" effectImpact="QueenLotV@AAWeaponDamage" effectLaunch="QueenLotV@AAWeaponLM">
         <LaunchAttachQuery Methods="Weapon"/>
         <LaunchAssets Model="AcidSpinesAttackLaunch" Sound="AcidSpines_AttackLaunch"/>
@@ -179,7 +422,7 @@
         <On Terms="Abil.BuildCreepTumorLiberty_Queen.WorkerStart" Send="AnimPlay WorkStart Stand,Work,Start"/>
         <On Terms="AnimDone; AnimName WorkStart" Send="AnimPlay WorkEnd Stand,Work,End"/>
         <On Terms="Abil.FungalGrowth.SourceCastStart" Send="$Spell"/>
-        <On Terms="Abil.SpawnLarva.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
+        <On Terms="Abil.SpawnLarvaeWoL.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
         <On Terms="Abil.TransfusionWoL.SourceFinishStart" Send="AnimPlay SpellB Spell,B"/>
         <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownLarge"/>
         <On Terms="AbilMorph.*.Cancel; MorphFrom QueenLotV; MorphTo QueenLotV@Burrowed" Send="AnimClear Burrow"/>
@@ -260,6 +503,122 @@
             <Image value="Assets\Textures\Wireframe-Zerg-Queen.dds"/>
         </Wireframe>
     </CActorUnit>
+    <CActorUnit id="RavagerLotV" parent="GenericBurrowerStandard" unitName="RavagerLotV">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergMediumBurrowEffects"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <On index="69" Terms="UnitBirth.RavagerLotV@Burrowed" Send="Create"/>
+        <On index="70" Terms="UnitBirth.RavagerLotV@Burrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant,DontResetOnUnhide"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Ravager_Land"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownMedium"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="AnimClear Fidget"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom RavagerLotV; MorphTo RavagerLotV@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RavagerLotV; MorphFrom RavagerLotV@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RavagerLotV; MorphFrom RavagerLotV@Cocoon" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RavagerLotV; MorphFrom RavagerLotV@Cocoon" Send="$Birth 0 0.000000"/>
+        <On Terms="Abil.RavagerCorrosiveBile.SourceCastStart" Send="TimerSet 0.100000 RavAnimationSwitch"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Spell"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Birth"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="AnimClear Spell"/>
+        <On Terms="TimerExpired; UnitWalking; TimerName RavAnimationSwitch" Send="$Spell 0 3.000000 2.000000 1.000000 AsTimeScale 0.000000 1"/>
+        <On Terms="Abil.RavagerCorrosiveBile.SourceCastStart" Send="$Spell"/>
+        <Model value="Ravager"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="Ravager"/>
+        <DeathArray index="Normal" ModelLink="RavagerDeath" SoundLink="Roach_Explode"/>
+        <DeathArray index="Disintegrate" ModelLink="RavagerDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="RavagerDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <DeathCustoms ActorModel="RavagerDeathRagdoll" ModelLink="RavagerDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="FireOnMetal"/>
+            <BodySquibs Name="Blood" IsFallback="1"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdollBloodPrevent" ModelLink="RavagerDeathRagdoll" Name="RagdollSpineCrawlerHurl">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <PlacementModel value="Ravager"/>
+        <PortraitModel value="RavagerPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleImmortal"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="85"/>
+        <BarWidth value="75"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-zerg-ravagers.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-ravager.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="Ready" value="Ravager_Ready"/>
+        <SoundArray index="What" value="Ravager_What"/>
+        <SoundArray index="Yes" value="Ravager_Yes"/>
+        <SoundArray index="Attack" value="Ravager_Attack"/>
+        <SoundArray index="Pissed" value="Ravager_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-ravager.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-zerg-ravagers.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="RavagerLotV@Cocoon" parent="GenericUnitMorph" unitName="RavagerLotV@Cocoon">
+        <Aliases value="_UnitMedium"/>
+        <On Terms="ActorCreation" Send="Create RavagerCocoonBirthSound"/>
+        <On Terms="ActorCreation" Send="$Birth 0 0.000000"/>
+        <Model value="RavagerCocoon"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="RavagerCocoon"/>
+        <DeathArray index="Normal" ModelLink="RavagerCocoonDeath" SoundLink="Egg_Explode"/>
+        <PlacementModel value="RavagerCocoon"/>
+        <PortraitModel value="RavagerCocoonPortrait"/>
+        <BarOffset value="40"/>
+        <BarWidth value="36"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-RavagersEgg.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-egg.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="What" value="RavagerCocoon_What"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-egg.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-RavagersEgg.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="Roach">
+        <On Terms="AbilMorph.*.Finish; MorphTo RavagerLotV@Cocoon" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom RavagerLotV@Cocoon; MorphTo Roach" Send="Create"/>
+    </CActorUnit>
+    <CActorSound id="SpawnLarvaeWoL@LarvaBirthSound" parent="SoundOneShot">
+        <On Terms="Behavior.SpawnLarvaeWoL@Spawn.Create" Send="Create"/>
+        <Sound value="Queen_SpawnLarvaLarvaBirth"/>
+    </CActorSound>
+    <CActorSound id="SpawnLarvaeWoL@LaunchSound" parent="SoundOneShot">
+        <On Terms="Effect.SpawnLarvaeWoL@TimerAB.Start" Send="Create"/>
+        <Sound value="Queen_SpawnLarvaLaunch"/>
+    </CActorSound>
     <CActorSplat id="RoachWoL@BurrowedSplat" parent="BurrowedSplatBase">
         <On Terms="UnitBirth.RoachWoL@Burrowed" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo RoachWoL@Burrowed" Send="Create"/>
@@ -314,7 +673,6 @@
     </CActorMissile>
     <CActorUnit id="RoachWoL" parent="GenericUnitBase" unitName="RoachWoL">
         <Aliases value="_UnitMedium"/>
-        <Macros value="ZergBurrowMobileTransientAnimMacro"/>
         <Macros value="ZergMediumBurrowEffects"/>
         <Macros value="UnloadDropAnim"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -344,6 +702,8 @@
         <On Terms="UnitHeightUpdate.*.Land" Send="Create Roach_Land"/>
         <On Terms="AbilMorph.*.Finish; MorphTo RavagerCocoon" Send="Destroy"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom RavagerCocoon; MorphTo RoachWoL" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RavagerLotV@Cocoon" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom RavagerLotV@Cocoon; MorphTo RoachWoL" Send="Create"/>
         <On Terms="UnitMovementUpdate.*.Walk; ValidateUnit IsBuried" Send="Create ZergUnit_BurrowedMoveLoopSound"/>
         <On Terms="UnitMovementUpdate.*.Stand" Target="ZergUnit_BurrowedMoveLoopSound" Send="Destroy"/>
         <On Terms="AbilMorph.*.Start; MorphTo RoachWoL" Target="ZergUnit_BurrowedMoveLoopSound" Send="Destroy"/>
@@ -403,6 +763,26 @@
             <Image value="Assets\Textures\Wireframe-Zerg-Roach.dds"/>
         </Wireframe>
     </CActorUnit>
+    <CActorModel id="SpawnLarvaeWoL@LarvaModel1" parent="SpawningMutantLarva">
+        <HostSiteOps Ops="SOpAttachHardPoint01"/>
+        <On index="3" Terms="Behavior.SpawnLarvaeWoL@Timer.On" Send="Create"/>
+        <On index="4" Terms="Behavior.SpawnLarvaeWoL@Timer.Off" Send="AnimBracketStop BSD"/>
+    </CActorModel>
+    <CActorModel id="SpawnLarvaeWoL@LarvaModel2" parent="SpawningMutantLarva">
+        <On index="3" Terms="Behavior.SpawnLarvaeWoL@Timer.On" Send="Create"/>
+        <On index="4" Terms="Behavior.SpawnLarvaeWoL@Timer.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachHardPoint02"/>
+    </CActorModel>
+    <CActorModel id="SpawnLarvaeWoL@LarvaModel3" parent="SpawningMutantLarva">
+        <On index="3" Terms="Behavior.SpawnLarvaeWoL@Timer.On" Send="Create"/>
+        <On index="4" Terms="Behavior.SpawnLarvaeWoL@Timer.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachHardPoint03"/>
+    </CActorModel>
+    <CActorModel id="SpawnLarvaeWoL@LarvaModel4" parent="SpawningMutantLarva">
+        <On index="3" Terms="Behavior.SpawnLarvaeWoL@Timer.On" Send="Create"/>
+        <On index="4" Terms="Behavior.SpawnLarvaeWoL@Timer.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachHardPoint04"/>
+    </CActorModel>
     <CActorModel id="TransfusionWoL@Model" parent="ModelAnimationStyleOneShot">
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="Visibility" value="1"/>

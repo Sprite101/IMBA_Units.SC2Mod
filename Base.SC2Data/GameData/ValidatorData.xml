@@ -8,6 +8,11 @@
     <CValidatorUnitType id="BanelingLotV1@IsBanelingBurrowed">
         <Value value="BanelingBurrowed"/>
     </CValidatorUnitType>
+    <CValidatorPlayerRequirement id="GroovedSpinesLotV1@Upgraded">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="GroovedSpinesLotV1@Have"/>
+    </CValidatorPlayerRequirement>
     <CValidatorCombine id="IsBurrowedUnit">
         <CombineArray value="RoachWoL@IsBurrowed"/>
     </CValidatorCombine>
@@ -15,6 +20,10 @@
         <CombineArray value="BanelingLotV1@IsBanelingBurrowed"/>
         <CombineArray value="RoachWoL@IsBurrowed"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="SpawnLarvaeWoL@NotSpawningLarvaeWoL">
+        <ResultFailed value="AlreadySpawningLarva"/>
+        <Behavior value="SpawnLarvaeWoL@Timer"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitType id="RoachWoL@IsBurrowed">
         <Value value="RoachWoL@Burrowed"/>
     </CValidatorUnitType>

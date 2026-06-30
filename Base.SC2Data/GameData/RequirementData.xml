@@ -80,6 +80,22 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeGraviticDriveQueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="GroovedSpinesLotV1@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeGroovedSpinesLotV1CompleteOnly2108416373"/>
+    </CRequirement>
+    <CRequirement id="GroovedSpinesLotV1@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeGroovedSpinesLotV1QueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="MuscularAugmentsLotV1@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeMuscularAugmentsLotV1CompleteOnly1065347226"/>
+    </CRequirement>
+    <CRequirement id="MuscularAugmentsLotV1@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeMuscularAugmentsLotV1QueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="OrganicCarapaceWoL@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeOrganicCarapaceWoLCompleteOnly3576986407"/>

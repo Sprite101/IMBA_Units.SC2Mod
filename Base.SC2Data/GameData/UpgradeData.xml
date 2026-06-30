@@ -9,6 +9,39 @@
         <EditorCategories value="Race:Protoss,UpgradeType:AttackBonus"/>
         <LeaderAlias value=""/>
     </CUpgrade>
+    <CUpgrade id="GroovedSpinesLotV1">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-hotsgroovedspines.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Zerg"/>
+        <ScoreAmount value="200"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Weapon,HydraliskLotV1@Weapon,MinScanRange" Value="2"/>
+        <EffectArray Reference="Weapon,HydraliskLotV1@Weapon,Range" Value="2"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <AffectedUnitArray value="HydraliskLotV1"/>
+        <AffectedUnitArray value="HydraliskLotV1@Burrowed"/>
+    </CUpgrade>
+    <CUpgrade id="MuscularAugmentsLotV1">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\BTN-Upgrade-Zerg-EvolveMuscularAugments.dds"/>
+        <Alert value="ResearchComplete"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Unit,HydraliskLotV,Speed" Value="2.812500"/>
+        <EffectArray Operation="Set" Reference="Unit,HydraliskLotV,SpeedMultiplierCreep" Value="1.2"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <AffectedUnitArray value="HydraliskLotV"/>
+        <AffectedUnitArray value="HydraliskLotV@Burrowed"/>
+    </CUpgrade>
+    <CUpgrade id="QueenLotV@Upgrade">
+        <EffectArray Operation="Set" Reference="Weapon,GlaiveCannonLotV2,Options[Disabled]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,GlaiveCannonLotV2,Options[Hidden]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,Adept,Options[Disabled]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,Adept,Options[Hidden]" Value="1"/>
+        <EditorCategories value="UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
     <CUpgrade id="CentrifugalHooksLotV1">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>

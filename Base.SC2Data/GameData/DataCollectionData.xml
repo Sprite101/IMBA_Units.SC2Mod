@@ -77,6 +77,50 @@
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
+    <CDataCollectionUpgrade id="GroovedSpinesLotV1">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,GroovedSpinesLotV1@Research"/>
+        <DataRecord Entry="Upgrade,GroovedSpinesLotV1"/>
+        <DataRecord Entry="Button,GroovedSpinesLotV1@Passive"/>
+        <DataRecord Entry="Button,GroovedSpinesLotV1"/>
+        <DataRecord Entry="Requirement,GroovedSpinesLotV1@Have"/>
+        <DataRecord Entry="Requirement,GroovedSpinesLotV1@Learn"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
+    <CDataCollectionUnit id="HydraliskLotV1">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <DataRecord Entry="Abil,HydraliskLotV1@Burrow"/>
+        <DataRecord Entry="Abil,HydraliskLotV1@Unburrow"/>
+        <DataRecord Entry="Unit,HydraliskLotV1"/>
+        <DataRecord Entry="Unit,HydraliskLotV1@Burrowed"/>
+        <DataRecord Entry="Actor,HydraliskLotV1"/>
+        <DataRecord Entry="Actor,HydraliskLotV1@BurrowedSplat"/>
+        <Button value="RavagerLotV"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUpgrade id="MuscularAugmentsLotV1">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,MuscularAugmentsLotV1@Research"/>
+        <DataRecord Entry="Upgrade,MuscularAugmentsLotV1"/>
+        <DataRecord Entry="Button,MuscularAugmentsLotV1@Passive"/>
+        <DataRecord Entry="Button,MuscularAugmentsLotV1"/>
+        <DataRecord Entry="Requirement,MuscularAugmentsLotV1@Have"/>
+        <DataRecord Entry="Requirement,MuscularAugmentsLotV1@Learn"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
+    <CDataCollectionUnit id="QueenWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="RavagerLotV">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <DataRecord Entry="Abil,RavagerLotV@Burrow"/>
+        <DataRecord Entry="Abil,RavagerLotV@Unburrow"/>
+        <DataRecord Entry="Unit,RavagerLotV"/>
+        <DataRecord Entry="Unit,RavagerLotV@Burrowed"/>
+        <DataRecord Entry="Actor,RavagerLotV"/>
+        <DataRecord Entry="Actor,RavagerLotV@BurrowedSplat"/>
+    </CDataCollectionUnit>
     <CDataCollection id="SpawnLarvaeWoL">
         <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
@@ -434,8 +478,6 @@
     </CDataCollection>
     <CDataCollectionUnit id="QueenLotV">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
-        <DataRecord Entry="Unit,QueenLotV"/>
-        <DataRecord Entry="Actor,GhostLotV1@Unit"/>
     </CDataCollectionUnit>
     <CDataCollectionUpgrade id="RapidDeploymentLotV">
         <EditorCategories value="DataFamily:Melee,Race:Terran"/>

@@ -31,6 +31,16 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-zerg-glialreconstitution.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
+    <CButton id="GroovedSpinesLotV1">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-hotsgroovedspines.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-hotsgroovedspines.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="GroovedSpinesLotV1@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-hotsgroovedspines.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-hotsgroovedspines.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="ModifiedAbility@AdeptLotV1">
         <Icon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
@@ -80,6 +90,37 @@
         <AlertIcon value="Assets\Textures\btn-unit-protoss-stalker.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Universal value="1"/>
+    </CButton>
+    <CButton id="MuscularAugmentsLotV1">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-evolvemuscularaugments.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-evolvemuscularaugments.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="MuscularAugmentsLotV1@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-evolvemuscularaugments.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-evolvemuscularaugments.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="QueenWoL">
+        <Icon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="QueenLotV">
+        <Icon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-queen.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="RavagerLotV">
+        <Icon value="Assets\Textures\btn-unit-zerg-ravager.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-ravager.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="SpawnLarvaeWoL">
+        <Icon value="Assets\Textures\BTN-Unit-Zerg-Larva.dds"/>
+        <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="MothershipWoL@MorphToMothership">
         <Icon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
@@ -241,9 +282,10 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="MULEWoL@Gather">
+        <TooltipAppender/>
         <Icon value="Assets\Textures\btn-ability-terran-gather.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-gather.dds"/>
-        <EditorCategories value="Race:Neutral"/>
+        <EditorCategories value="Race:Terran"/>
         <TintRacially value="1"/>
         <HotkeyAlias value="GatherProt"/>
         <Universal value="1"/>
