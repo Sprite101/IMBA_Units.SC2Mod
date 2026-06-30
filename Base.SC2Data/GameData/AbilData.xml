@@ -399,7 +399,7 @@
         </InfoArray>
     </CAbilMorph>
     <CAbilResearch id="GlialReconstitutionWoL@Research">
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Time="110" Upgrade="GlialReconstitutionWoL">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>
@@ -409,7 +409,7 @@
         </InfoArray>
     </CAbilResearch>
     <CAbilResearch id="OrganicCarapaceWoL@Research">
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Time="110" Upgrade="OrganicCarapaceWoL">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>
@@ -421,55 +421,48 @@
     <CAbilMorph id="RoachWoL@Burrow">
         <AbilSetId value="BrwD"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <ActorKey value="BurrowDown"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BurrowDown" Requirements="UseBurrow">
-            <Flags index="ShowInGlossary" value="0"/>
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
-        <ActorKey value="BurrowDown"/>
         <Flags index="Interruptible" value="1"/>
         <Flags index="IgnoreFacing" value="1"/>
-        <Flags index="IgnoreFood" value="1"/>
-        <Flags index="IgnoreUnitCost" value="1"/>
-        <Flags index="Transient" value="1"/>
+        <Flags index="IgnorePlacement" value="0"/>
         <InfoArray Unit="RoachWoL@Burrowed" RandomDelayMax="0.1">
             <SectionArray index="Actor">
-                <DurationArray index="Duration" value="0.31"/>
+                <DurationArray index="Duration" value="0.5556"/>
             </SectionArray>
             <SectionArray index="Collide">
-                <DurationArray index="Delay" value="0.1"/>
+                <DurationArray index="Delay" value="0.5556"/>
             </SectionArray>
             <SectionArray index="Stats">
-                <DurationArray index="Delay" value="0.31"/>
+                <DurationArray index="Delay" value="0.5556"/>
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
     <CAbilMorph id="RoachWoL@Unburrow">
         <AbilSetId value="BrwU"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="BurrowUp">
-            <Flags index="ShowInGlossary" value="0"/>
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
         <ActorKey value="BurrowUp"/>
-        <Flags index="AutoCast" value="1"/>
-        <Flags index="Interruptible" value="1"/>
-        <Flags index="IgnoreFacing" value="1"/>
-        <Flags index="IgnoreFood" value="1"/>
-        <Flags index="IgnoreUnitCost" value="1"/>
-        <Flags index="Transient" value="1"/>
-        <InfoArray Unit="RoachWoL" RandomDelayMax="0.1">
-            <SectionArray index="Actor">
-                <DurationArray index="Duration" value="0.7517"/>
-            </SectionArray>
-            <SectionArray index="Stats">
-                <DurationArray index="Duration" value="0.7517"/>
-            </SectionArray>
-        </InfoArray>
         <AutoCastFilters value="Ground,Visible;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden"/>
-        <AutoCastValidatorArray value="TargetNotChangeling"/>
         <AutoCastRange value="2"/>
         <AutoCastCountMin value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BurrowUp">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="RoachWoL" RandomDelayMax="0.1">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="0.4443"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="0.4443"/>
+            </SectionArray>
+        </InfoArray>
+        <AutoCastValidatorArray value="TargetNotChangeling"/>
     </CAbilMorph>
     <CAbilResearch id="CentrifugalHooksLotV1@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -1192,7 +1185,7 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="TransfusionWoL"/>
     </CAbilEffectTarget>
     <CAbilResearch id="TunnelingClawsWoL@Research">
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Time="110" Upgrade="TunnelingClawsWoL">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>

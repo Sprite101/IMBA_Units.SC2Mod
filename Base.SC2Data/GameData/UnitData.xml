@@ -436,6 +436,9 @@
         <HotkeyAlias value="CreepTumorBurrowed"/>
         <SubgroupAlias value="CreepTumorBurrowed"/>
         <TechAliasArray value="Alias_CreepTumor"/>
+        <CardLayouts>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+        </CardLayouts>
     </CUnit>
     <CUnit id="CreepTumorWoL@Burrowed">
         <DeathRevealRadius value="3"/>
@@ -539,9 +542,6 @@
         <SubgroupPriority value="2"/>
         <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
-        <CardLayouts>
-            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
-        </CardLayouts>
         <AIEvalFactor value="0"/>
         <LeaderAlias value="CreepTumor"/>
         <HotkeyAlias value="CreepTumorBurrowed"/>
@@ -1640,7 +1640,6 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="attack"/>
-        <BehaviorArray Link="PermanentBurrowMoveCloaked"/>
         <CardLayouts>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="RoachWoL@Unburrow,Execute" Row="2" Column="4"/>

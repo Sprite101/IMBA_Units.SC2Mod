@@ -162,7 +162,7 @@
         <On Terms="Abil.BuildCreepTumorLiberty_Queen.WorkerStart" Send="AnimPlay WorkStart Stand,Work,Start"/>
         <On Terms="AnimDone; AnimName WorkStart" Send="AnimPlay WorkEnd Stand,Work,End"/>
         <On Terms="Abil.FungalGrowth.SourceCastStart" Send="$Spell"/>
-        <On Terms="Abil.SpawnLarva.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
+        <On Terms="Abil.SpawnLarvaeWoL.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
         <On Terms="Abil.TransfusionWoL.SourceFinishStart" Send="AnimPlay SpellB Spell,B"/>
         <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownLarge"/>
         <On Terms="AbilMorph.*.Cancel; MorphFrom QueenWoL; MorphTo QueenWoL@Burrowed" Send="AnimClear Burrow"/>
@@ -293,6 +293,7 @@
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="ActorCreation" Send="SetScale 10.500000"/>
         <On Terms="ActorCreation" Send="SetTintColor 0,32,0"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
     </CActorSplat>
     <CActorRange id="BuildCreepTumorTumor@BuildRange" parent="RangeAbil" abil="BuildCreepTumorTumor">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
@@ -306,6 +307,7 @@
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="ActorCreation" Send="SetScale 10.500000"/>
         <On Terms="ActorCreation" Send="SetTintColor 0,32,0"/>
+        <On Terms="ActorCreation" Send="Destroy"/>
     </CActorSplat>
     <CActorAction id="BuildCreepTumorTumor@AttackAction" parent="GenericAttack" effectImpact="BuildCreepTumorTumor@ImpactDummy" effectLaunch="BuildCreepTumorTumor@LM">
         <LaunchSiteOps Ops="SOpAttachOrigin SOpShadow"/>
@@ -422,7 +424,7 @@
         <On Terms="Abil.BuildCreepTumorLiberty_Queen.WorkerStart" Send="AnimPlay WorkStart Stand,Work,Start"/>
         <On Terms="AnimDone; AnimName WorkStart" Send="AnimPlay WorkEnd Stand,Work,End"/>
         <On Terms="Abil.FungalGrowth.SourceCastStart" Send="$Spell"/>
-        <On Terms="Abil.SpawnLarvaeWoL.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
+        <On Terms="Abil.SpawnLarva.SourceCastStart" Send="AnimPlay SpellA Spell,A"/>
         <On Terms="Abil.TransfusionWoL.SourceFinishStart" Send="AnimPlay SpellB Spell,B"/>
         <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownLarge"/>
         <On Terms="AbilMorph.*.Cancel; MorphFrom QueenLotV; MorphTo QueenLotV@Burrowed" Send="AnimClear Burrow"/>
@@ -610,6 +612,7 @@
     <CActorUnit id="Roach">
         <On Terms="AbilMorph.*.Finish; MorphTo RavagerLotV@Cocoon" Send="Destroy"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom RavagerLotV@Cocoon; MorphTo Roach" Send="Create"/>
+        <Macros value="ZergBurrowMobileTransientAnimMacro"/>
     </CActorUnit>
     <CActorSound id="SpawnLarvaeWoL@LarvaBirthSound" parent="SoundOneShot">
         <On Terms="Behavior.SpawnLarvaeWoL@Spawn.Create" Send="Create"/>
@@ -678,6 +681,7 @@
         <Macros value="TerrainSquibAnimations"/>
         <Macros value="PhysicsDeathsSwarmGround"/>
         <Macros value="PhysicsDeathsVoidGround"/>
+        <Macros value="ZergBurrowMobileAnimMacro"/>
         <On Terms="UnitMovementUpdate.RoachWoL@Burrowed.Stand" Send="Create RoachWoL@BurrowedSplat"/>
         <On Terms="UnitMovementUpdate.RoachWoL@Burrowed.Walk" Target="RoachWoL@BurrowedSplat" Send="Destroy"/>
         <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
