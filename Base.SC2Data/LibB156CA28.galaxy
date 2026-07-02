@@ -458,23 +458,26 @@ void libB156CA28_gf_Select_Reaper (int lp_player, int lp_selectionIndex) {
     // Implementation
     if ((lp_selectionIndex == 0)) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("KD8Charge", 0), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("KD8ChargeLotV1", 0), false);
         TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), false);
         TechTreeUnitAllow(lp_player, "ReaperSwarm", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@Train", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("KD8ChargeLotV1", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLotV@Train", 0), false);
     }
     else if ((lp_selectionIndex == 1)) {
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLotV@Train", 0), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("KD8ChargeLotV1", 0), true);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("KD8Charge", 0), false);
         TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), false);
         TechTreeUnitAllow(lp_player, "ReaperSwarm", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@Train", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksTrain", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("KD8Charge", 0), false);
     }
     else if ((lp_selectionIndex == 2)) {
         TechTreeUnitAllow(lp_player, "ReaperLiberty", true);
@@ -482,19 +485,21 @@ void libB156CA28_gf_Select_Reaper (int lp_player, int lp_selectionIndex) {
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), true);
         TechTreeUnitAllow(lp_player, "Reaper", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksTrain", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLotV@Train", 0), false);
         TechTreeUnitAllow(lp_player, "ReaperSwarm", false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@Train", 0), false);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), false);
     }
     else if ((lp_selectionIndex == 3)) {
-        TechTreeUnitAllow(lp_player, "Reaper", false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksTrain", 1), false);
-        TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), false);
-        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), false);
         TechTreeUnitAllow(lp_player, "ReaperSwarm", true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@Train", 0), true);
         TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperSwarm@ResearchNitroPacks", 0), true);
+        TechTreeUnitAllow(lp_player, "Reaper", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("BarracksTrain", 1), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLotV@Train", 0), false);
+        TechTreeUnitAllow(lp_player, "ReaperLiberty", false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@Train", 0), false);
+        TechTreeAbilityAllow(lp_player, AbilityCommand("ReaperLiberty@ResearchNitroPacks", 0), false);
     }
 }
 

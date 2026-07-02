@@ -180,7 +180,200 @@
     </CUnit>
     <CUnit id="HydraliskLotV1@WeaponMissile" parent="MISSILE">
         <Name value="Unit/Name/HydraliskGroundWeapon"/>
+        <Race value="Zerg"/>
         <Mover value="NeedleSpinesWeapon"/>
+    </CUnit>
+    <CUnit id="LurkerDenMP">
+        <AbilArray Link="AdaptiveTalonsLotV@Research"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AdaptiveTalonsLotV" Type="AbilCmd" AbilCmd="AdaptiveTalonsLotV@Research,Research1" Row="1" Column="0"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="LurkerLotV">
+        <DeathRevealRadius value="3"/>
+        <Facing value="45"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <FlagArray index="AIPreferBurrow" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <LifeArmor value="1"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <Speed value="2.9531"/>
+        <SpeedMultiplierCreep value="1.3"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-3"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="150"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="50"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="LurkerLotV@Burrow"/>
+        <AbilArray Link="attack"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="BurrowLurkerMP" Type="AbilCmd" AbilCmd="LurkerLotV@Burrow,Execute" Row="2" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.9375"/>
+        <SeparationRadius value="0.75"/>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="93"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="LurkerMP"/>
+        <EquipmentArray Weapon="Spinesdisabled"/>
+        <GlossaryCategory value="Unit/Category/ZergUnits"/>
+        <GlossaryPriority value="71"/>
+        <GlossaryStrongArray value="Marine"/>
+        <GlossaryStrongArray value="Roach"/>
+        <GlossaryStrongArray value="Stalker"/>
+        <GlossaryWeakArray value="SiegeTank"/>
+        <GlossaryWeakArray value="Viper"/>
+        <GlossaryWeakArray value="Disruptor"/>
+        <HotkeyCategory value="Unit/Category/ZergUnits"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+    </CUnit>
+    <CUnit id="LurkerLotV@Burrowed">
+        <Name value="Unit/Name/LurkerMP"/>
+        <Description value="Button/Tooltip/LurkerMP"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="Buried" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <FlagArray index="AIPreferBurrow" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <LifeArmor value="1"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <Mover value="Burrowed"/>
+        <Sight value="10"/>
+        <Food value="-3"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="150"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="50"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="LurkerLotV@Unburrow"/>
+        <AbilArray Link="LurkerLotV@Burrow"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="LurkerHoldFire"/>
+        <AbilArray Link="LurkerRemoveHoldFire"/>
+        <WeaponArray Link="LurkerMP" Turret="Lurker"/>
+        <CardLayouts>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="LurkerBurrowUp" Type="AbilCmd" AbilCmd="LurkerLotV@Unburrow,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="LurkerHoldFire" Type="AbilCmd" AbilCmd="LurkerHoldFire,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="LurkerCancelHoldFire" Type="AbilCmd" AbilCmd="LurkerRemoveHoldFire,Execute" Row="1" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0"/>
+        <InnerRadius value="0.25"/>
+        <ScoreKill value="300"/>
+        <SubgroupPriority value="93"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="LurkerMPBurrowed"/>
+        <LeaderAlias value="LurkerMP"/>
+        <HotkeyAlias value="LurkerMP"/>
+        <SelectAlias value="LurkerMP"/>
+        <SubgroupAlias value="LurkerMP"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <AIEvaluateAlias value="LurkerMP"/>
+    </CUnit>
+    <CUnit id="LurkerLotV@Cocoon">
+        <DeathRevealRadius value="3"/>
+        <Facing value="45"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <LifeArmor value="1"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <Speed value="3.375"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="5"/>
+        <Food value="-2"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="10"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="40"/>
+        <AbilArray Link="LurkerLotV@MorphToLurker"/>
+        <AbilArray Link="Rally"/>
+        <CardLayouts>
+            <LayoutButtons Face="CancelCocoonMorph" Type="AbilCmd" AbilCmd="LurkerLotV@MorphToLurker,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="2" Column="4"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <ScoreKill value="300"/>
+        <SubgroupPriority value="54"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
     </CUnit>
     <CUnit id="QueenWoL@Burrowed">
         <Name value="Unit/Name/QueenLotV"/>
@@ -4253,12 +4446,14 @@
         <AbilArray Link="GhostWoL@Train"/>
         <AbilArray Link="ReaperLiberty@Train"/>
         <AbilArray Link="ReaperSwarm@Train"/>
+        <AbilArray Link="ReaperLotV@Train"/>
         <CardLayouts index="0">
             <LayoutButtons Face="GhostLotV1@TrainGhost" Type="AbilCmd" AbilCmd="GhostLotV1@Train,Train1" Row="0" Column="3"/>
             <LayoutButtons Face="GhostWoL@TrainGhost" Type="AbilCmd" AbilCmd="GhostWoL@Train,Train1" Row="0" Column="3"/>
             <LayoutButtons Face="ReactorLiberty" Type="AbilCmd" AbilCmd="BarracksAddOns,Build3" Row="2" Column="1"/>
             <LayoutButtons Face="ReaperLiberty@TrainReaper" Type="AbilCmd" AbilCmd="ReaperLiberty@Train,Train1" Row="0" Column="1"/>
             <LayoutButtons Face="ReaperSwarm@TrainReaper" Type="AbilCmd" AbilCmd="ReaperSwarm@Train,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="ReaperLotV" Type="AbilCmd" AbilCmd="ReaperLotV@Train,255" Row="0" Column="1"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="BarracksTechLab">

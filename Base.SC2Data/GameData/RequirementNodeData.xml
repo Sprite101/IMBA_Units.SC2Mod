@@ -159,6 +159,15 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="MothershipWoL" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
+    <CRequirementCountUpgrade id="CountUpgradeAdaptiveTalonsLotVCompleteOnly660444659">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AdaptiveTalonsLotV" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAdaptiveTalonsLotVQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="AdaptiveTalonsLotV" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsCompleteOnly1495348974">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AdvancedBallistics" State="CompleteOnly"/>
@@ -296,7 +305,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeGroovedSpinesLotV1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="GroovedSpinesLotV1" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeHighCapacityFuelTanksLotVCompleteOnly1137711410">
@@ -468,7 +476,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeMuscularAugmentsLotV1QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="MuscularAugmentsLotV1" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeOrganicCarapaceWoLCompleteOnly3576986407">
@@ -694,6 +701,10 @@
     <CRequirementNot id="NotCountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit">
         <OperandArray index="0" value="CountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeAdaptiveTalonsLotVQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeAdaptiveTalonsLotVQueuedOrBetter"/>
+    </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAdvancedBallisticsLotV2QueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeAdvancedBallisticsLotV2QueuedOrBetter"/>
     </CRequirementNot>
@@ -752,7 +763,6 @@
         <OperandArray index="0" value="CountUpgradeGravitonCatapultLotV2QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeGroovedSpinesLotV1QueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeGroovedSpinesLotV1QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeHighCapacityFuelTanksLotVQueuedOrBetter">
@@ -771,7 +781,6 @@
         <OperandArray index="0" value="CountUpgradeMoebiusReactor@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeMuscularAugmentsLotV1QueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeMuscularAugmentsLotV1QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeOrganicCarapaceWoLQueuedOrBetter">

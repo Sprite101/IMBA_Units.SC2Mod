@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="AdaptiveTalonsLotV">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-adaptivetalons.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-adaptivetalons.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="AdaptiveTalonsLotV@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-adaptivetalons.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-adaptivetalons.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="AdeptLotV2">
         <Icon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
@@ -39,6 +49,11 @@
     <CButton id="GroovedSpinesLotV1@Passive">
         <Icon value="Assets\Textures\btn-upgrade-zerg-hotsgroovedspines.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-zerg-hotsgroovedspines.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="HydraliskLotV1">
+        <Icon value="Assets\Textures\btn-unit-zerg-hydralisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-hydralisk.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="ModifiedAbility@AdeptLotV1">
@@ -117,6 +132,11 @@
         <Icon value="Assets\Textures\btn-unit-zerg-ravager.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-zerg-ravager.dds"/>
         <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="ReaperLotV">
+        <Icon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-terran-reaper.dds"/>
+        <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="SpawnLarvaeWoL">
         <Icon value="Assets\Textures\BTN-Unit-Zerg-Larva.dds"/>

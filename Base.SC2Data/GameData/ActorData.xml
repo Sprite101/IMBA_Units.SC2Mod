@@ -123,6 +123,121 @@
         <ShieldFlashType value="Header"/>
         <AttackAnimName value="AttackCover"/>
     </CActorAction>
+    <CActorRange id="LurkerLotV@AttackRange" parent="RangeWeapon">
+        <EditorCategories value=""/>
+        <On Terms="SelectionLocalUpdate.LurkerLotV@Burrowed.Start" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.LurkerLotV@Burrowed.Stop" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphTo LurkerLotV@Burrowed; Selected" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo LurkerLotV" Send="Destroy"/>
+        <Weapon value="LurkerMP"/>
+    </CActorRange>
+    <CActorSplat id="LurkerLotV@BurrowedSplat" parent="BurrowedSplat" unitName="LurkerLotV">
+        <On index="2" Terms="UnitBirth.LurkerLotV@Burrowed"/>
+        <On index="3" Terms="AbilMorph.*.Start; MorphTo LurkerLotV@Burrowed"/>
+        <On index="4" Terms="AbilMorph.*.Finish; MorphFrom LurkerLotV@Burrowed"/>
+        <On index="5" Terms="AbilMorph.*.Start; MorphFrom LurkerLotV@Burrowed"/>
+        <Scale value="0.800000"/>
+    </CActorSplat>
+    <CActorUnit id="LurkerLotV@Cocoon" parent="GenericUnitMorph" unitName="LurkerLotV@Cocoon">
+        <Aliases value="_UnitMedium"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo LurkerMPEgg; MorphFrom Hydralisk" Send="AnimBaselineStop"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo LurkerMPEgg; MorphFrom Hydralisk" Send="$Birth 0 0.000000 -1.000000 1.750000 AsTimeScale"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AnimBaselineStart"/>
+        <HostSiteOps Ops="SOpBasicScopeFollow"/>
+        <Model value="LurkerMPEgg"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="LurkerMPEgg"/>
+        <DeathArray index="Normal" ModelLink="LurkerMPEggDeath" SoundLink="LurkerEgg_Explode"/>
+        <PlacementModel value="LurkerMPEgg"/>
+        <PortraitModel value="LurkerCocoonPortrait"/>
+        <BarOffset value="40"/>
+        <BarWidth value="36"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-LurkerEgg.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-egg.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="What" value="LurkerMPEgg_What"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-egg.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-LurkerEgg.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="LurkerLotV" parent="GenericBurrowerStandard" unitName="LurkerLotV">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergMediumBurrowEffects"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Macros value="UnloadDropAnim"/>
+        <AcceptedHostedPropTransfers index="Scale" value="0"/>
+        <On index="69" Terms="UnitBirth.LurkerLotV@Burrowed" Send="Create"/>
+        <On index="70" Terms="UnitBirth.LurkerLotV@Burrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant,DontResetOnUnhide"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo LurkerLotV; MorphFrom LurkerLotV@Cocoon" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo LurkerLotV; MorphFrom LurkerLotV@Cocoon" Send="AnimBaselineStop"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo LurkerLotV; MorphFrom LurkerLotV@Cocoon" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AnimBaselineStart"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownLurkerMP"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom LurkerLotV; MorphTo LurkerLotV@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo LurkerLotV; MorphFrom LurkerLotV@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo LurkerLotV; MorphFrom LurkerLotV@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Lurker_Land"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimPlay Attack Attack DontResetOnUnhide"/>
+        <On Terms="WeaponStart.*.AttackStart; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <DeathArray index="Normal" ModelLink="LurkerMPDeath" SoundLink="Lurker_Explode"/>
+        <DeathArray index="Disintegrate" ModelLink="LurkerMPDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="LurkerMPDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <DeathCustoms ActorModel="LurkerMPDeathRagdoll" ModelLink="LurkerMPDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="FireOnMetal"/>
+            <BodySquibs Name="Blood" IsFallback="1"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdollBloodPrevent" ModelLink="LurkerMPDeathRagdoll" Name="RagdollSpineCrawlerHurl">
+            <BodySquibs Name="None"/>
+        </DeathCustoms>
+        <PortraitModel value="LurkerMPPortrait"/>
+        <WalkAnimMoveSpeed value="3"/>
+        <BarOffset value="70"/>
+        <BarWidth value="80"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Lurker.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-lurker.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="Birth" value="Lurker_Birth"/>
+        <SoundArray index="Ready" value="Lurker_Ready"/>
+        <SoundArray index="Help" value="Lurker_Help"/>
+        <SoundArray index="What" value="Lurker_What"/>
+        <SoundArray index="Yes" value="Lurker_Yes"/>
+        <SoundArray index="Attack" value="Lurker_Yes"/>
+        <SoundArray index="Pissed" value="Lurker_Pissed"/>
+        <SoundArray index="Movement" value="Lurker_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-lurker.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Lurker.dds"/>
+        </Wireframe>
+        <Model value="LurkerMP"/>
+        <BuildModel value="LurkerMP"/>
+        <PlacementModel value="LurkerMP"/>
+    </CActorUnit>
     <CActorAction id="RavagerLotV@WeaponAttackAction" parent="GenericAttack" effectImpact="RavagerLotV@WeaponDamage" effectLaunch="RavagerLotV@WeaponLM">
         <LaunchAssets Model="" Sound="Ravager_AttackLaunch"/>
         <Missile value="RavagerLotV@WeaponMissile"/>

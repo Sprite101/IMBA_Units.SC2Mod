@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirement id="AdaptiveTalonsLotV@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeAdaptiveTalonsLotVCompleteOnly660444659"/>
+    </CRequirement>
+    <CRequirement id="AdaptiveTalonsLotV@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUnitHiveCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="NotCountUpgradeAdaptiveTalonsLotVQueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="AdvancedBallisticsLotV2@Have">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeAdvancedBallisticsLotV2CompleteOnly2325880491"/>

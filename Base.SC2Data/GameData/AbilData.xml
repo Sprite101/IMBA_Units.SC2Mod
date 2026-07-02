@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilResearch id="AdaptiveTalonsLotV@Research">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="80" Upgrade="AdaptiveTalonsLotV">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="AdaptiveTalonsLotV" State="Restricted" Requirements="AdaptiveTalonsLotV@Learn">
+                <Flags index="ShowInGlossary" value="1"/>
+            </Button>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilResearch id="AdvancedBallisticsLotV2@Research">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <InfoArray index="Research1" Time="90" Upgrade="AdvancedBallisticsLotV2">
@@ -20,6 +30,79 @@
             </Button>
         </InfoArray>
     </CAbilResearch>
+    <CAbilMorph id="LurkerLotV@Burrow">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BurrowDown"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <ActorKey value="BurrowDown"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnorePlacement" value="0"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="LurkerLotV@Burrowed" RandomDelayMax="0.25">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="2.5"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Delay" value="1.8332"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="1.8332"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="LurkerLotV@Unburrow">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BurrowUp">
+            <Flags index="ShowInGlossary" value="0"/>
+        </CmdButtonArray>
+        <ActorKey value="BurrowUp"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="LurkerLotV" RandomDelayMax="0.25">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="0.625"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="LurkerLotV@MorphToLurker">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LurkerMP" Requirements="HaveLurkerDen"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="Birth" value="1"/>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="FastBuild" value="1"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="Produce" value="1"/>
+        <Flags index="Rally" value="1"/>
+        <Flags index="RallyReset" value="1"/>
+        <Flags index="ShowProgress" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="LurkerLotV@Cocoon"/>
+        <InfoArray Score="1" Unit="LurkerLotV">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="25.25"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="25.25"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="25.25"/>
+                <EffectArray index="Finish" value="PostMorphHeal"/>
+            </SectionArray>
+        </InfoArray>
+        <Alert value="MorphComplete_Zerg"/>
+    </CAbilMorph>
+    <CAbilTrain id="ReaperLotV@Train">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Train1" Time="45">
+            <Button DefaultButtonFace="ReaperLotV" State="Restricted"/>
+            <Unit value="Reaper"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilEffectTarget id="BatteryOverchargeLotV">
         <Alignment value="Negative"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -2730,7 +2813,6 @@
         <InfoArray Unit="WidowMineSwarm@WidowMineBurrowed" RandomDelayMax="0.25">
             <SectionArray index="Actor">
                 <DurationArray index="Duration" value="3.125"/>
-                <EffectArray index="Start" value="WidowMineNotificationSearch"/>
             </SectionArray>
             <SectionArray index="Collide">
                 <DurationArray index="Delay" value="0.6806"/>

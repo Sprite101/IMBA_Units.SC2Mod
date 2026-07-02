@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CDataCollectionUpgrade id="AdaptiveTalonsLotV">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,AdaptiveTalonsLotV@Research"/>
+        <DataRecord Entry="Upgrade,AdaptiveTalonsLotV"/>
+        <DataRecord Entry="Button,AdaptiveTalonsLotV@Passive"/>
+        <DataRecord Entry="Button,AdaptiveTalonsLotV"/>
+        <DataRecord Entry="Requirement,AdaptiveTalonsLotV@Have"/>
+        <DataRecord Entry="Requirement,AdaptiveTalonsLotV@Learn"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUnit id="AdeptLotV">
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
         <Button value="BarracksLiberty"/>
@@ -96,6 +107,20 @@
         <DataRecord Entry="Unit,HydraliskLotV1@Burrowed"/>
         <DataRecord Entry="Actor,HydraliskLotV1"/>
         <DataRecord Entry="Actor,HydraliskLotV1@BurrowedSplat"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="HydraliskLotV2">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <Button value="HydraliskLotV1"/>
+        <TechInfoUnit value="HydraliskLotV1"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="LurkerLotV">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <DataRecord Entry="Abil,LurkerLotV@Burrow"/>
+        <DataRecord Entry="Abil,LurkerLotV@Unburrow"/>
+        <DataRecord Entry="Unit,LurkerLotV"/>
+        <DataRecord Entry="Unit,LurkerLotV@Burrowed"/>
+        <DataRecord Entry="Actor,LurkerLotV"/>
+        <DataRecord Entry="Actor,LurkerLotV@BurrowedSplat"/>
         <Button value="RavagerLotV"/>
     </CDataCollectionUnit>
     <CDataCollectionUpgrade id="MuscularAugmentsLotV1">
@@ -121,6 +146,9 @@
         <DataRecord Entry="Actor,RavagerLotV"/>
         <DataRecord Entry="Actor,RavagerLotV@BurrowedSplat"/>
     </CDataCollectionUnit>
+    <CDataCollectionAbil id="ReaperLotV">
+        <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
+    </CDataCollectionAbil>
     <CDataCollection id="SpawnLarvaeWoL">
         <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>

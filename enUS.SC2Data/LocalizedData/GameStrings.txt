@@ -1,4 +1,5 @@
-﻿Abil/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
+﻿Abil/Name/AdaptiveTalonsLotV@Research=Research
+Abil/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
 Abil/Name/AdvancedBallisticsLotV2@Research=Research Advanced Ballistics
 Abil/Name/AmplifiedShieldingLotV@Research=Research
 Abil/Name/AutoTurretSwarm=Place Auto Turret
@@ -78,6 +79,9 @@ Abil/Name/LiberatorLotV1@Train=Build
 Abil/Name/LiberatorLotV2@AGTarget=AG Target
 Abil/Name/LiberatorLotV2@Build=Build
 Abil/Name/LiberatorLotV2@MorphtoAG=Morph to AG
+Abil/Name/LurkerLotV@Burrow=Burrow
+Abil/Name/LurkerLotV@MorphToLurker=Morph To Lurker
+Abil/Name/LurkerLotV@Unburrow=Unburrow
 Abil/Name/MULEGather2=Gather
 Abil/Name/MULEWoL@CalldownMULE=Calldown MULE
 Abil/Name/MULEWoL@Gather=Gather
@@ -143,6 +147,7 @@ Abil/Name/RavenLotV1@Train=Build
 Abil/Name/RavenSwarm@Train=Build
 Abil/Name/ReaperLiberty@ResearchNitroPacks=Research Nitro Packs
 Abil/Name/ReaperLiberty@Train=Train
+Abil/Name/ReaperLotV@Train=Train
 Abil/Name/ReaperSwarm@ResearchNitroPacks=Research Nitro Packs
 Abil/Name/ReaperSwarm@Train=Train
 Abil/Name/ReleaseInterceptorsLotV1=Release Interceptors
@@ -247,6 +252,8 @@ Behavior/Tooltip/StasisWardLotV1@ActivateTarget=This unit cannot move, attack, o
 Behavior/Tooltip/TimeWarpLotV1=This unit's attack and movement speeds are reduced by <d ref="100 - (100 * Behavior,TemporalField,Modification.AttackSpeedMultiplier)"/>%.
 Behavior/Tooltip/VortexWoL@DisableOther=Units caught within the Vortex are stunned until the Vortex ends.
 Behavior/Tooltip/WarpInLiberty@PowerUserWarpable=Unit is being materialized by a Warp Gate.
+Button/Name/AdaptiveTalonsLotV=Evolve Adaptive Talons
+Button/Name/AdaptiveTalonsLotV@Passive=Adaptive Talons
 Button/Name/AdeptLotV=Warp In Adept
 Button/Name/AdeptLotV2=Warp In Adept
 Button/Name/AdvancedBallistics=Advanced Ballistics
@@ -313,6 +320,7 @@ Button/Name/HighCapacityFuelTanksLotV@Passive=High Capacity Fuel Tanks
 Button/Name/HighTemplarLiberty=Warp In High Templar
 Button/Name/HurricaneThrusters@Passive=Hurricane Thrusters
 Button/Name/HurricaneThrusters@Research=Research Hurricane Thrusters
+Button/Name/HydraliskLotV1=Morph to Hydralisk
 Button/Name/ImmortalLiberty=Warp In Immortal
 Button/Name/ImmortalLiberty@HardenedShieldPassive=Hardened Shield
 Button/Name/ImmortalLotV=Warp In Immortal
@@ -390,6 +398,7 @@ Button/Name/ReactorLiberty=Build Reactor
 Button/Name/ReaperLiberty@PassiveButton=Jet Pack
 Button/Name/ReaperLiberty@ResearchNitroPacks=Research Nitro Packs
 Button/Name/ReaperLiberty@TrainReaper=Train Reaper
+Button/Name/ReaperLotV=Train Reaper
 Button/Name/ReaperSwarm@PassiveButton=Battlefield Awareness
 Button/Name/ReaperSwarm@ResearchNitroPacks=Research Nitro Packs
 Button/Name/ReaperSwarm@TrainReaper=Train Reaper
@@ -428,6 +437,8 @@ Button/Name/WarpPrismLotV1=Warp In Warp Prism
 Button/Name/WarpPrismLotV1@Siege=Phasing Mode
 Button/Name/WarpPrismLotV1@SiegedUnsiege=Transport Mode
 Button/Name/WidowMineSwarm=Build Widow Mine
+Button/Tooltip/AdaptiveTalonsLotV=Reduces the time <c val="ffff8a">Lurkers</c> take to burrow by 65% and increases <c val="ffff8a">Lurkers</c> movement speed by 10%.
+Button/Tooltip/AdaptiveTalonsLotV@Passive=Reduces the time <c val="ffff8a">Lurkers</c> take to burrow by 65% and increases <c val="ffff8a">Lurkers</c> movement speed by 10%.
 Button/Tooltip/AdeptLotV=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AdeptLotV2=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AdeptLotV@Shade=Projects an invulnerable Shade that can move but cannot attack. After <d time="10"/>, the Adept teleports to the Shade's location.
@@ -530,6 +541,8 @@ Button/Tooltip/LiberatorLotV1@BuildLiberator=Artillery fighter. Loaded with miss
 Button/Tooltip/LiberatorLotV1@Liberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
 Button/Tooltip/LiberatorLotV2=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
 Button/Tooltip/LiberatorLotV2@DefenderMode=Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.
+Button/Tooltip/LurkerLotV=Anti-ground ambusher. Has a spine attack that damages all enemy units in its line of fire.<n/><n/><c val="ffff8a">Can attack ground units.<n/>Must burrow to attack.</c>
+Button/Tooltip/LurkerLotV@Cocoon=This cocoon contains a Hydralisk that is morphing into a Lurker.
 Button/Tooltip/MULEWoL=Drops an experimental robotic MULE miner onto the target Mineral Field. MULEs collect minerals more quickly than SCVs.  <n/><n/>MULEs last <d ref="Behavior,MULETimedLife,Duration"/> seconds before their systems fail.
 Button/Tooltip/MULEWoL@Gather=Orders MULE to gather minerals from a selected Mineral Field.
 Button/Tooltip/MassRecallNexusLotV=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
@@ -598,6 +611,7 @@ Button/Tooltip/ReactorLiberty=Allows 2 units to be created simultaneously.
 Button/Tooltip/ReaperLiberty=Raider. Capable of jumping up and down cliffs. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/ReaperLiberty@PassiveButton=Reapers can jump up and down cliffs.  
 Button/Tooltip/ReaperLiberty@ResearchNitroPacks=Increases the movement speed of Reapers.
+Button/Tooltip/ReaperLotV=Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/ReaperSwarm=Raider. Capable of jumping up and down cliffs. Can see up cliffs and through terrain that would normally block line of sight. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c></n></n>Originally Introduced in Heart of the Swarm Beta.<n/>
 Button/Tooltip/ReaperSwarm@PassiveButton=Allows Reapers to see up cliffs and through terrains that would normally block line of sight.
 Button/Tooltip/ReaperSwarm@ResearchNitroPacks=Increases the movement speed of Reapers.
@@ -645,6 +659,7 @@ Button/Tooltip/WeaponArmorShieldsUpgrade=Places target structure in a Chrono Boo
 Button/Tooltip/WidowMineSwarm=Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Cyclone=Cyclone
 DataCollection/Name/90mmCannonsLotV1=90mm Cannons
+DataCollection/Name/AdaptiveTalonsLotV=Adaptive Talons
 DataCollection/Name/AdeptLotV=Adept
 DataCollection/Name/AdeptLotV2=Adept
 DataCollection/Name/AdvancedBallistics=Advanced Ballistics
@@ -707,6 +722,7 @@ DataCollection/Name/HighCapacityFuelTanksLotV=High Capacity Fuel Tanks
 DataCollection/Name/HighTemplarLiberty=High Templar
 DataCollection/Name/HurricaneThrusters=Hurricane Thrusters
 DataCollection/Name/HydraliskLotV1=Hydralisk
+DataCollection/Name/HydraliskLotV2=Hydralisk
 DataCollection/Name/ImmortalLiberty=Immortal
 DataCollection/Name/ImmortalLotV=Immortal
 DataCollection/Name/ImmortalLotVBarrier=Barrier
@@ -720,6 +736,7 @@ DataCollection/Name/LiberatorAGLotV1=Liberator AG LotV1
 DataCollection/Name/LiberatorAGLotV2=Liberator AG
 DataCollection/Name/LiberatorLotV1=Liberator LotV1
 DataCollection/Name/LiberatorLotV2=Liberator AA
+DataCollection/Name/LurkerLotV=Lurker
 DataCollection/Name/MULEWoL=MULE
 DataCollection/Name/MassRecallNexusLotV=Mass Recall Nexus
 DataCollection/Name/MassRecallWoL=Mass Recall
@@ -758,6 +775,7 @@ DataCollection/Name/RavenLotV1=Raven
 DataCollection/Name/RavenSwarm=Raven
 DataCollection/Name/ReactorLiberty=Reactor
 DataCollection/Name/ReaperLiberty=Reaper
+DataCollection/Name/ReaperLotV=Reaper
 DataCollection/Name/ReaperSwarm=Reaper
 DataCollection/Name/ReleaseInterceptorsLotV1=Release Interceptors
 DataCollection/Name/ResonatingGlaivesLotV=Resonating Glaives
@@ -1272,6 +1290,7 @@ Param/Expression/lib_B156CA28_F10084BD=Player ~A~ panel index error, skipped
 RequirementNode/Tooltip/And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0=No Mothership
 RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat=Factory
 RequirementNode/Tooltip/CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987=Must have at least 1 interceptor
+RequirementNode/Tooltip/CountUpgradeAdaptiveTalonsLotVCompleteOnly660444659=Evolve Adaptive Talons at the Lurker Den
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Research Advanced Ballistics at the Starport Techlab
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsLotV2CompleteOnly2325880491=Research Advanced Ballistics at the Fusion Core
 RequirementNode/Tooltip/CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174=Research Amplified Shielding at the Twilight Council
@@ -1363,7 +1382,6 @@ Unit/Name/HellbatSwarmBeta@Hellbat=Hellbat
 Unit/Name/HellionSwarmBeta@Hellion=Hellion
 Unit/Name/HighTemplarLiberty=High Templar
 Unit/Name/HydraliskGroundWeapon=Weapon Missile
-Unit/Name/HydraliskLotV1=Hydralisk
 Unit/Name/ImmortalLiberty=Immortal
 Unit/Name/ImmortalLotV=Immortal
 Unit/Name/InterceptorLotV1=Interceptor
@@ -1376,6 +1394,8 @@ Unit/Name/LiberatorLotV1@Liberator=Liberator
 Unit/Name/LiberatorLotV1@MorphModel=Liberator
 Unit/Name/LiberatorLotV2=Liberator
 Unit/Name/LiberatorLotV2@MorphModel=Liberator
+Unit/Name/LurkerLotV=Lurker
+Unit/Name/LurkerLotV@Cocoon=Lurker Cocoon
 Unit/Name/MULEWoL=MULE
 Unit/Name/MassRecallNexusLotV=Mass Recall
 Unit/Name/MothershipWoL=Mothership
@@ -1436,6 +1456,7 @@ Unit/Name/WeaponArmorShieldsUpgrade=Weapon/Armor/Shields Upgrade
 Unit/Name/WidowMineSwarm=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMine=Widow Mine
 Unit/Name/WidowMineSwarm@WidowMineBurrowed=Widow Mine
+Upgrade/Name/AdaptiveTalonsLotV=Adaptive Talons
 Upgrade/Name/AdeptLotV2@Upgrade=Adept LotV2
 Upgrade/Name/AdvancedBallistics=Advanced Ballistics
 Upgrade/Name/AdvancedBallisticsLotV2=Advanced Ballistics
