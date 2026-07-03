@@ -43,6 +43,7 @@ Abil/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockw
 Abil/Name/ExtendedThermalLanceLiberty@Research=Research
 Abil/Name/FeedbackLiberty=Feedback
 Abil/Name/FluxVanesLotV@Research=Research
+Abil/Name/FungalGrowthWoL=Fungal Growth
 Abil/Name/GhostLotV1@ChannelSnipe=Channel Snipe
 Abil/Name/GhostLotV1@EMP=EMP
 Abil/Name/GhostLotV1@Train=Train
@@ -63,10 +64,17 @@ Abil/Name/HellionSwarmBeta@Train=Build
 Abil/Name/HighCapacityFuelTanksLotV@Research=Research High Capacity Fuel Tanks
 Abil/Name/HydraliskLotV1@Burrow=Burrow
 Abil/Name/HydraliskLotV1@Unburrow=Unburrow
+Abil/Name/HydraliskLotV2@Burrow=Burrow
+Abil/Name/HydraliskLotV2@Unburrow=Unburrow
 Abil/Name/ImmortalLiberty@Build=Build
 Abil/Name/ImmortalLotV@Build=Build
 Abil/Name/ImmortalLotVBarrier=Barrier
 Abil/Name/InfernalPreIgniterSwarm@ResearchInfernalPreIgniter=Research Infernal Pre-Igniter
+Abil/Name/InfestedTerranWoL@Burrow=Burrow
+Abil/Name/InfestedTerranWoL@MorphToInfestedTerran=Morph To Infested Terran
+Abil/Name/InfestedTerranWoL@Unburrow=Unburrow
+Abil/Name/InfestorWoL@Burrow=Burrow
+Abil/Name/InfestorWoL@Unburrow=Unburrow
 Abil/Name/KD8ChargeLotV1=KD8 Charge
 Abil/Name/KhaydarinAmulet=Research
 Abil/Name/LiberatorAGLotV1@AATarget=AA Target
@@ -80,7 +88,7 @@ Abil/Name/LiberatorLotV2@AGTarget=AG Target
 Abil/Name/LiberatorLotV2@Build=Build
 Abil/Name/LiberatorLotV2@MorphtoAG=Morph to AG
 Abil/Name/LurkerLotV@Burrow=Burrow
-Abil/Name/LurkerLotV@MorphToLurker=Morph To Lurker
+Abil/Name/LurkerLotV@MorphToLurker=Morph to Lurker
 Abil/Name/LurkerLotV@Unburrow=Unburrow
 Abil/Name/MULEGather2=Gather
 Abil/Name/MULEWoL@CalldownMULE=Calldown MULE
@@ -97,6 +105,7 @@ Abil/Name/MoebiusReactor@ResearchMoebiusReactor=Research Moebius Reactor
 Abil/Name/MothershipWoL@Build=Train Mothership
 Abil/Name/MothershipWoL@MorphToMothership=Morph To Mothership
 Abil/Name/MuscularAugmentsLotV1@Research=Research
+Abil/Name/MuscularAugmentsLotV2@Research=Muscular Augments
 Abil/Name/ObserverLotV1@Build=Build
 Abil/Name/ObserverLotV1@Siege=Siege
 Abil/Name/ObserverLotV1@SiegedUnsiege=Unsiege
@@ -163,6 +172,7 @@ Abil/Name/SiegeArmorLotV1Morph@Unsiege=Unsiege
 Abil/Name/SiegeTankLotV1@Train=Build
 Abil/Name/SiegeTankLotV1Morph@SiegeMode=Siege Mode
 Abil/Name/SiegeTankLotV1Morph@Unsiege=Unsiege
+Abil/Name/SpawnInfestedTerranWoL=Infested Terrans
 Abil/Name/SpawnLarvaeWoL=Spawn Larvae
 Abil/Name/StasisWardLotV1@Activate=Activate
 Abil/Name/TempestLotV1@Build=Build
@@ -199,6 +209,7 @@ Behavior/Name/CloakFieldWoLEffect=Cloaking Field
 Behavior/Name/CycloneLockOnAirLoTV1@LockOn=Lock On Target
 Behavior/Name/CycloneLockOnAirLoTV1@LockOnCaster=Locked On
 Behavior/Name/CycloneLockOnLotV2@LockOn=Lock On Target
+Behavior/Name/FungalGrowthWoL=Fungal Growth
 Behavior/Name/OracleLotV1@RevelationRevealed=Revealed
 Behavior/Name/OracleSwarm@PulsarBeamEnergyCost=Pulsar Beam
 Behavior/Name/OracleSwarm@Revelation=Revealed
@@ -252,8 +263,8 @@ Behavior/Tooltip/StasisWardLotV1@ActivateTarget=This unit cannot move, attack, o
 Behavior/Tooltip/TimeWarpLotV1=This unit's attack and movement speeds are reduced by <d ref="100 - (100 * Behavior,TemporalField,Modification.AttackSpeedMultiplier)"/>%.
 Behavior/Tooltip/VortexWoL@DisableOther=Units caught within the Vortex are stunned until the Vortex ends.
 Behavior/Tooltip/WarpInLiberty@PowerUserWarpable=Unit is being materialized by a Warp Gate.
-Button/Name/AdaptiveTalonsLotV=Evolve Adaptive Talons
-Button/Name/AdaptiveTalonsLotV@Passive=Adaptive Talons
+Button/Name/AdaptiveTalonsLotV=Adaptive Talons
+Button/Name/AdaptiveTalonsLotV@Passive=Evolve Adaptive Talons
 Button/Name/AdeptLotV=Warp In Adept
 Button/Name/AdeptLotV2=Warp In Adept
 Button/Name/AdvancedBallistics=Advanced Ballistics
@@ -296,6 +307,7 @@ Button/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shoc
 Button/Name/ExtendedThermalLanceLiberty=Research Extended Thermal Lance
 Button/Name/FeedbackLiberty=Feedback
 Button/Name/FluxVanesLotV=Research Flux Vanes
+Button/Name/FungalGrowthWoL=Fungal Growth
 Button/Name/GhostLotV1@ChannelSnipe=Steady Targeting
 Button/Name/GhostLotV1@EMP=EMP Round
 Button/Name/GhostLotV1@TrainGhost=Train Ghost
@@ -321,11 +333,13 @@ Button/Name/HighTemplarLiberty=Warp In High Templar
 Button/Name/HurricaneThrusters@Passive=Hurricane Thrusters
 Button/Name/HurricaneThrusters@Research=Research Hurricane Thrusters
 Button/Name/HydraliskLotV1=Morph to Hydralisk
+Button/Name/HydraliskLotV2=Morph to Hydralisk
 Button/Name/ImmortalLiberty=Warp In Immortal
 Button/Name/ImmortalLiberty@HardenedShieldPassive=Hardened Shield
 Button/Name/ImmortalLotV=Warp In Immortal
 Button/Name/ImmortalLotVBarrier=Barrier
 Button/Name/InfernalPreIgniterSwarm=Research Infernal Pre-Igniter
+Button/Name/InfestorWoL=Morph to Infestor
 Button/Name/InterceptorLotV1=Build Interceptor
 Button/Name/InterceptorLotV2=Build Interceptor
 Button/Name/KD8ChargeLotV1=KD8 Charge
@@ -355,6 +369,8 @@ Button/Name/MothershipWoL=Warp In Mothership
 Button/Name/MothershipWoL@MorphToMothership=Upgrade to Mothership
 Button/Name/MuscularAugmentsLotV1=Evolve Muscular Augments
 Button/Name/MuscularAugmentsLotV1@Passive=Muscular Augments
+Button/Name/MuscularAugmentsLotV2=Evolve Muscular Augments
+Button/Name/MuscularAugmentsLotV2@Passive=Muscular Augments
 Button/Name/ObserverLotV1=Warp In Observer
 Button/Name/ObserverLotV1@Siege=Surveillance Mode
 Button/Name/ObserverLotV1@SiegedUnsiege=Observer Mode
@@ -413,6 +429,9 @@ Button/Name/SiegeArmorLotV1@BuildSiegeArmor=Build 攻城坦克
 Button/Name/SiegeArmorLotV1Morph@SiegeMode=Siege Mode
 Button/Name/SiegeArmorLotV1Morph@Unsiege=Tank Mode
 Button/Name/SiegeTankLotV1@BuildSiegeTank=Build Siege Tank
+Button/Name/SiegeTankLotV1Morph@SiegeMode=Siege Mode
+Button/Name/SiegeTankLotV1Morph@Unsiege=Tank Mode
+Button/Name/SpawnInfestedTerranWoL=Infested Terran
 Button/Name/SpawnLarvaeWoL=Spawn Larvae
 Button/Name/StalkerLiberty=Warp In Stalker
 Button/Name/StasisWardLotV1@Activate=Stasis Trap 
@@ -437,8 +456,7 @@ Button/Name/WarpPrismLotV1=Warp In Warp Prism
 Button/Name/WarpPrismLotV1@Siege=Phasing Mode
 Button/Name/WarpPrismLotV1@SiegedUnsiege=Transport Mode
 Button/Name/WidowMineSwarm=Build Widow Mine
-Button/Tooltip/AdaptiveTalonsLotV=Reduces the time <c val="ffff8a">Lurkers</c> take to burrow by 65% and increases <c val="ffff8a">Lurkers</c> movement speed by 10%.
-Button/Tooltip/AdaptiveTalonsLotV@Passive=Reduces the time <c val="ffff8a">Lurkers</c> take to burrow by 65% and increases <c val="ffff8a">Lurkers</c> movement speed by 10%.
+Button/Tooltip/AdaptiveTalonsLotV=Reduces the time <c val="ffff8a">Lurkers</c> take to burrow from <d ref="Abil,LurkerLotV@Burrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" precision="1"/> seconds to <d time="1" precision="1"/> seconds  Lurkers</c> by 10%.
 Button/Tooltip/AdeptLotV=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AdeptLotV2=Ranged specialist. Can use Psionic Transfer.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AdeptLotV@Shade=Projects an invulnerable Shade that can move but cannot attack. After <d time="10"/>, the Adept teleports to the Shade's location.
@@ -495,6 +513,7 @@ Button/Tooltip/EnhancedShockwaves@ResearchEnhancedShockwaves=Increases the <c va
 Button/Tooltip/ExtendedThermalLanceLiberty=Increases the range of the <c val="ffff8a">Colossus</c> weapon by <d ref="$UpgradeEffectArrayValue:ExtendedThermalLanceLiberty:Weapon,ColossusLiberty@Weapon,Range$"/>.
 Button/Tooltip/FeedbackLiberty=Drains all energy from the target. Deals <d ref="(Effect,Feedback,VitalFractionCurrent[Energy])" Precision="2"/> damage per point of energy.
 Button/Tooltip/FluxVanesLotV=Increases the speed and acceleration of the <c val="ffff8a">Void Ray</c>.
+Button/Tooltip/FungalGrowthWoL=Target units take <d ref="(Behavior,FungalGrowthWoL,Duration / Behavior,FungalGrowthWoL,Period) * Effect,FungalGrowthWoL@Damage,Amount"/> damage over <d ref="Behavior,FungalGrowthWoL,Duration"/> seconds and are immobile. Reveals cloaked and burrowed units. Affected units cannot Blink or load into transports or buildings.
 Button/Tooltip/GhostLotV1=Sniper. Can use Steady Targeting, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c></n></n>Steady Targeting deals 170 flat damage and doesn't have "cancel" range. Enhanced Shockwaves can be upgraded to give EMP +0.5 radius.<n/>
 Button/Tooltip/GhostLotV1@ChannelSnipe=After carefully aiming for <d ref="Effect,ChannelSnipeCreatePersistent,PeriodCount*Effect,ChannelSnipeCreatePersistent,PeriodicPeriodArray[0]" precision="2"/> seconds while not taking damage, the Ghost fires a sniper round dealing <d ref="Effect,GhostLotV1@ChannelSnipeDamage,Amount"/> damage. Ignores armor.<n/><n/><c val="#ColorAttackInfo">Can only target biological units.</c>
 Button/Tooltip/GhostLotV1@EMP=Creates an electromagnetic pulse that does 100 damage to shields and energy of all units in the targeted area. Cloaked units hit by EMP are revealed for a short time.
@@ -522,11 +541,15 @@ Button/Tooltip/HighTemplarLiberty=Potent psionic master. Can use Feedback and be
 Button/Tooltip/HurricaneThrusters@Passive=Increases the move speed of <c val="ffff8a">Cyclones</c>.
 Button/Tooltip/HurricaneThrusters@Research=Increases the move speed of <c val="ffff8a">Cyclones</c>.
 Button/Tooltip/HydraliskLotV1=Ranged attacker. Can morph into a Lurker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/HydraliskLotV2=Ranged attacker. Can morph into a Lurker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/ImmortalLiberty=Assault strider. Can use Barrier to absorb damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/ImmortalLiberty@HardenedShieldPassive=Reduces incoming damage to a maximum of 10 while the Immortal still has shields.
 Button/Tooltip/ImmortalLotV=Assault strider. Can use Barrier to absorb damage.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/ImmortalLotVBarrier=Absorbs up to <d ref="Behavior,ImmortalLotVBarrier@Barrier,DamageResponse.ModifyLimit"/> damage. Lasts for <d ref="Behavior,ImmortalLotVBarrier@Barrier,Duration"/> seconds. This effect can only occur once every <d ref="Abil,ImmortalLotVBarrier,Cost[0].Cooldown.TimeUse"/> seconds.
 Button/Tooltip/InfernalPreIgniterSwarm=Improves the <c val="ffff8a">Hellion's</c> Infernal Flamethrower to deal +<d ref="$UpgradeEffectArrayValue:InfernalPreIgniterSwarm@InfernalPreIgniterSwarm:Effect,InfernalFlamethrowerWoL@Damage,AttributeBonus[Light]$"/> damage vs. light units.
+Button/Tooltip/InfestedTerranWoL=An Infested Terran does moderate damage and lasts for <d ref="Behavior,InfestedTerranTimedLife,Duration"/> seconds.<n/><n/><c val="FFFF8A">Can attack ground and air units.</c>
+Button/Tooltip/InfestedTerranWoL@Egg=Hatches into an Infested Terran after a short period.
+Button/Tooltip/InfestorWoL=Infestation specialist. Can move while burrowed. Can use the Infested Terran, Fungal Growth, and Neural Parasite abilities.
 Button/Tooltip/InterceptorLotV1=Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/InterceptorLotV1Unit=Combat drones that automatically strafe their Carrier's target. Carriers may not attack without Interceptors.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/InterceptorLotV2=Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -541,8 +564,6 @@ Button/Tooltip/LiberatorLotV1@BuildLiberator=Artillery fighter. Loaded with miss
 Button/Tooltip/LiberatorLotV1@Liberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
 Button/Tooltip/LiberatorLotV2=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
 Button/Tooltip/LiberatorLotV2@DefenderMode=Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.
-Button/Tooltip/LurkerLotV=Anti-ground ambusher. Has a spine attack that damages all enemy units in its line of fire.<n/><n/><c val="ffff8a">Can attack ground units.<n/>Must burrow to attack.</c>
-Button/Tooltip/LurkerLotV@Cocoon=This cocoon contains a Hydralisk that is morphing into a Lurker.
 Button/Tooltip/MULEWoL=Drops an experimental robotic MULE miner onto the target Mineral Field. MULEs collect minerals more quickly than SCVs.  <n/><n/>MULEs last <d ref="Behavior,MULETimedLife,Duration"/> seconds before their systems fail.
 Button/Tooltip/MULEWoL@Gather=Orders MULE to gather minerals from a selected Mineral Field.
 Button/Tooltip/MassRecallNexusLotV=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
@@ -563,6 +584,8 @@ Button/Tooltip/MothershipWoL=Ultimate Protoss vessel. Can use Vortex and Mass Re
 Button/Tooltip/MothershipWoL@MorphToMothership=Upgrades into the Mothership. Can use Vortex and Mass Recall. Cloaks nearby friendly units and structures. 
 Button/Tooltip/MuscularAugmentsLotV1=Increases the movement speed of <c val="ffff8a">Hydralisks</c>.
 Button/Tooltip/MuscularAugmentsLotV1@Passive=Increases the movement speed of <c val="ffff8a">Hydralisks</c>.
+Button/Tooltip/MuscularAugmentsLotV2=Increases the movement speed of <c val="ffff8a">Hydralisks</c> by 25% and attack range by +<d ref="$UpgradeEffectArrayValue:MuscularAugmentsLotV2:Weapon,HydraliskLotV1@Weapon,Range$"/>.
+Button/Tooltip/MuscularAugmentsLotV2@Passive=Increases the movement speed of <c val="ffff8a">Hydralisks</c> by 25% and attack range by +<d ref="$UpgradeEffectArrayValue:MuscularAugmentsLotV2:Weapon,HydraliskLotV1@Weapon,Range$"/>.
 Button/Tooltip/ObserverLotV1=Flying spy. Cloak renders the unit invisible to enemies without detection.<n/><n/><c val="FFE303">Detector</c>
 Button/Tooltip/ObserverLotV1@Siege=Transforms the Observer to Surveillance Mode. The Observer gains <d ref="(Unit,ObserverLotV1@Sieged,Sight/Unit,ObserverLotV1,Sight-1)*100"/>% wider vision, but loses the ability to move.
 Button/Tooltip/ObserverLotV1@SiegedUnsiege=Transforms the Observer to standard Observer Mode. Allows the Observer to move at the cost of decreased sight radius.
@@ -611,7 +634,6 @@ Button/Tooltip/ReactorLiberty=Allows 2 units to be created simultaneously.
 Button/Tooltip/ReaperLiberty=Raider. Capable of jumping up and down cliffs. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/ReaperLiberty@PassiveButton=Reapers can jump up and down cliffs.  
 Button/Tooltip/ReaperLiberty@ResearchNitroPacks=Increases the movement speed of Reapers.
-Button/Tooltip/ReaperLotV=Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/ReaperSwarm=Raider. Capable of jumping up and down cliffs. Can see up cliffs and through terrain that would normally block line of sight. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c></n></n>Originally Introduced in Heart of the Swarm Beta.<n/>
 Button/Tooltip/ReaperSwarm@PassiveButton=Allows Reapers to see up cliffs and through terrains that would normally block line of sight.
 Button/Tooltip/ReaperSwarm@ResearchNitroPacks=Increases the movement speed of Reapers.
@@ -629,6 +651,7 @@ Button/Tooltip/SiegeArmorLotV1@BuildSiegeArmor=Heavy tank. Can switch into Siege
 Button/Tooltip/SiegeArmorLotV1Morph@SiegeMode=Deploys into Siege Mode. In this mode 攻城坦克s have very long range and inflict area damage. 攻城坦克s in this mode cannot move or attack targets at close range, but can be picked up by Medivacs.
 Button/Tooltip/SiegeArmorLotV1Morph@Unsiege=Reverts to Tank Mode. In this mode 攻城坦克s can move, but they do less damage.
 Button/Tooltip/SiegeArmorSiegedLotV1=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/SpawnInfestedTerranWoL=Spawn an Infested Terran. Infested Terrans last <d ref="Behavior,SpawnInfestedTerranWoL@TimedLife,Duration"/> seconds.<n/><n/><c val="ffff8a">Can cast while burrowed.</c>
 Button/Tooltip/SpawnLarvaeWoL=Target Hatchery, Lair, or Hive spawns <d ref="Effect,SpawnMutantLarvaApplySpawnBehavior,Count"/> Larvae in <d ref="Behavior,QueenSpawnLarvaTimer,Duration"/> seconds. If Hatchery, Lair, or Hive has more than 3 Larvae at one time, regular Larva production will stop until there are fewer than 3 Larvae. 
 Button/Tooltip/StalkerLiberty=Ranged support strider.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/StasisWardLotV1=Ground unit trap. Cloak renders the Stasis Ward invisible to enemies without detection.
@@ -704,6 +727,7 @@ DataCollection/Name/EnhancedShockwaves=Enhanced Shockwaves
 DataCollection/Name/ExtendedThermalLanceLiberty=Extended Thermal Lance
 DataCollection/Name/FeedbackLiberty=Feedback
 DataCollection/Name/FluxVanesLotV=Flux Vanes
+DataCollection/Name/FungalGrowthWoL=Fungal Growth
 DataCollection/Name/GaussPistolLiberty=Pistol
 DataCollection/Name/GhostLotV1=GhostLotV1
 DataCollection/Name/GhostWoL=GhostWoL
@@ -728,6 +752,8 @@ DataCollection/Name/ImmortalLotV=Immortal
 DataCollection/Name/ImmortalLotVBarrier=Barrier
 DataCollection/Name/InfernalFlamethrowerWoL=Infernal Flamethrower
 DataCollection/Name/InfernalPreIgniterSwarm=Infernal Pre-Igniter
+DataCollection/Name/InfestedTerranWoL=Infested Terran
+DataCollection/Name/InfestorWoL=Infestor
 DataCollection/Name/InterceptorLotV1=Interceptor
 DataCollection/Name/InterceptorLotV2=Interceptor
 DataCollection/Name/KD8ChargeLotV1=KD8 Charge
@@ -745,6 +771,7 @@ DataCollection/Name/MoebiusReactor=Moebius Reactor
 DataCollection/Name/MothershipCoreSwarm=Mothership Core
 DataCollection/Name/MothershipWoL=Mothership
 DataCollection/Name/MuscularAugmentsLotV1=Muscular Augments
+DataCollection/Name/MuscularAugmentsLotV2=Muscular Augments
 DataCollection/Name/NapalmSpraySwarmBeta=Napalm Spray
 DataCollection/Name/ObserverLotV1=Observer
 DataCollection/Name/ObserverLotV2=Observer
@@ -791,6 +818,7 @@ DataCollection/Name/SiegeArmorSiegedLotV1=Siege Armor Sieged LotV1
 DataCollection/Name/SiegeTankLotV1=Siege Tank
 DataCollection/Name/SiegeTankLotV1Morph=Siege Tank Morph
 DataCollection/Name/SiegeTankSiegedLotV1=Siege Tank Sieged
+DataCollection/Name/SpawnInfestedTerranWoL=Spawn Infested Terran
 DataCollection/Name/SpawnLarvaeWoL=Spawn Larvae
 DataCollection/Name/StalkerLiberty=Stalker
 DataCollection/Name/StasisWardLotV1=Stasis Ward
@@ -917,6 +945,13 @@ Effect/Name/EnergyRechargeLotV@MU=MU
 Effect/Name/FeedbackLiberty@Damage=Damage
 Effect/Name/FeedbackLiberty@RemoveEnergy=Remove Energy
 Effect/Name/FeedbackLiberty@Set=Set
+Effect/Name/FungalGrowthWoL@AB=AB
+Effect/Name/FungalGrowthWoL@ABRoot=AB Root
+Effect/Name/FungalGrowthWoL@Damage=Damage
+Effect/Name/FungalGrowthWoL@DummyDamage=Dummy Damage
+Effect/Name/FungalGrowthWoL@InitialSet=Initial Set
+Effect/Name/FungalGrowthWoL@SearchArea=Search Area
+Effect/Name/FungalGrowthWoL@Set=Set
 Effect/Name/GaussPistolLiberty@CP=CP
 Effect/Name/GaussPistolLiberty@Damage=Damage
 Effect/Name/GhostLotV1@ChannelSnipeCreatePersistent=Channel Snipe Create Persistent
@@ -946,6 +981,8 @@ Effect/Name/ImmortalLotVBarrier@RB=RB
 Effect/Name/InfernalFlamethrowerWoL@CP=CP
 Effect/Name/InfernalFlamethrowerWoL@Damage=Damage
 Effect/Name/InfernalFlamethrowerWoL@SearchArea=Search Area
+Effect/Name/InfestedTerranWoL@EggIssueMorphOrder=Egg Issue Morph Order
+Effect/Name/InfestedTerranWoL@WeaponWeaponDamage=Weapon Damage
 Effect/Name/KD8ChargeLotV1@ChargeFateAB=Charge Fate AB
 Effect/Name/KD8ChargeLotV1@Damage=Damage
 Effect/Name/KD8ChargeLotV1@EndSet=End Set
@@ -1200,6 +1237,11 @@ Effect/Name/SeekerMissileSwarm@SuicideSet=Suicide Set
 Effect/Name/SeekerMissileSwarm@TargetTintAB=Target Tint AB
 Effect/Name/SeekerMissileSwarm@TargetTintCP=Target Tint CP
 Effect/Name/ShadowStrideLotV@Teleport=Teleport
+Effect/Name/SpawnInfestedTerranWoL@CU=CU
+Effect/Name/SpawnInfestedTerranWoL@ImpactSet=Impact Set
+Effect/Name/SpawnInfestedTerranWoL@InitialSet=Initial Set
+Effect/Name/SpawnInfestedTerranWoL@LM=LM
+Effect/Name/SpawnInfestedTerranWoL@TimedLifeAB=Timed Life AB
 Effect/Name/SpawnLarvaeWoL@SpawnAB=Spawn AB
 Effect/Name/SpawnLarvaeWoL@TimerAB=Timer AB
 Effect/Name/StalkerLiberty@AttackDamage=Damage
@@ -1290,7 +1332,6 @@ Param/Expression/lib_B156CA28_F10084BD=Player ~A~ panel index error, skipped
 RequirementNode/Tooltip/And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0=No Mothership
 RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat=Factory
 RequirementNode/Tooltip/CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987=Must have at least 1 interceptor
-RequirementNode/Tooltip/CountUpgradeAdaptiveTalonsLotVCompleteOnly660444659=Evolve Adaptive Talons at the Lurker Den
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Research Advanced Ballistics at the Starport Techlab
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsLotV2CompleteOnly2325880491=Research Advanced Ballistics at the Fusion Core
 RequirementNode/Tooltip/CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174=Research Amplified Shielding at the Twilight Council
@@ -1382,8 +1423,13 @@ Unit/Name/HellbatSwarmBeta@Hellbat=Hellbat
 Unit/Name/HellionSwarmBeta@Hellion=Hellion
 Unit/Name/HighTemplarLiberty=High Templar
 Unit/Name/HydraliskGroundWeapon=Weapon Missile
+Unit/Name/HydraliskLotV1=Hydralisk
+Unit/Name/HydraliskLotV2=Hydralisk
 Unit/Name/ImmortalLiberty=Immortal
 Unit/Name/ImmortalLotV=Immortal
+Unit/Name/InfestedTerranWoL=Infested Terran
+Unit/Name/InfestedTerranWoL@Egg=Infested Swarm Egg
+Unit/Name/InfestorWoL=Infestor
 Unit/Name/InterceptorLotV1=Interceptor
 Unit/Name/InterceptorLotV2=Interceptor
 Unit/Name/LiberatorAGLotV1@LiberatorAG=Liberator
@@ -1432,6 +1478,7 @@ Unit/Name/ShieldBatteryLotV=Shield Battery
 Unit/Name/SiegeArmorLotV1=攻城坦克
 Unit/Name/SiegeArmorSiegedLotV1=攻城坦克
 Unit/Name/SiegeTankLotV1=Siege Tank
+Unit/Name/SpawnInfestedTerranWoL@WeaponMissile=Weapon Missile
 Unit/Name/StalkerLiberty=Stalker
 Unit/Name/StalkerLiberty@AttackMissile=Attack Missile
 Unit/Name/StasisWardLotV1=Stasis Ward 
@@ -1508,6 +1555,7 @@ Upgrade/Name/ModifiedAbility@TerranVehicleAndShipWeaponsLevel3=Terran Vehicle An
 Upgrade/Name/MoebiusReactor@Upgrade=Moebius Reactor
 Upgrade/Name/MothershipCoreSwarm@Upgrade=Sight
 Upgrade/Name/MuscularAugmentsLotV1=Muscular Augments
+Upgrade/Name/MuscularAugmentsLotV2=Muscular Augments
 Upgrade/Name/OrganicCarapaceWoL=Organic Carapace
 Upgrade/Name/PsiStormHighTemplarLiberty=Psionic Storm
 Upgrade/Name/QueenLotV@Upgrade=Queen WoL
@@ -1724,6 +1772,7 @@ Weapon/Name/HydraliskLotV1@Melee=Melee
 Weapon/Name/HydraliskLotV1@Weapon=Needle Spines
 Weapon/Name/ImmortalLiberty@Weapon=Phase Disruptors
 Weapon/Name/InfernalFlamethrowerWoL=Infernal Flamethrower
+Weapon/Name/InfestedTerranWoL@Weapon=Infested Gauss Rifle
 Weapon/Name/LiberatorAGLotV1@Weapon=Concord Cannon
 Weapon/Name/LiberatorAGLotV2@Weapon=Concord Cannon
 Weapon/Name/LiberatorLotV1@Weapon=Lexington Rockets

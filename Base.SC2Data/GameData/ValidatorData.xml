@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitCompareBehaviorCount id="FungalGrowthWoL@CasterNotFungalGrowthed">
+        <ResultFailed value="Error,Error/CantBlinkWhileRooted"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="FungalGrowthWoL"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorPlayerRequirement id="CentrifugalHooksLotV1@Upgraded">
         <WhichPlayer Value="Caster"/>
         <Find value="1"/>
@@ -20,6 +25,20 @@
         <CombineArray value="BanelingLotV1@IsBanelingBurrowed"/>
         <CombineArray value="RoachWoL@IsBurrowed"/>
     </CValidatorCombine>
+    <CValidatorUnitType id="InfestedTerranWoL@EggIsNotInfestedTerransEgg">
+        <Value value="InfestedTerranWoL@Egg"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="ModifiedAbility@CasterNotFungalGrowthed">
+        <ResultFailed value="CantTargetThatUnit"/>
+        <Type value="And"/>
+        <CombineArray value="CasterNotFungalGrowthed"/>
+        <CombineArray value="FungalGrowthWoL@CasterNotFungalGrowthed"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="InfestorWoL@NotInfestorBurrowed">
+        <Value value="InfestorWoL@Burrowed"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
     <CValidatorUnitCompareBehaviorCount id="SpawnLarvaeWoL@NotSpawningLarvaeWoL">
         <ResultFailed value="AlreadySpawningLarva"/>
         <Behavior value="SpawnLarvaeWoL@Timer"/>

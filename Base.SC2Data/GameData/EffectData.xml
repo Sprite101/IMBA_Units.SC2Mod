@@ -7,6 +7,53 @@
         <Amount value="15"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectTeleport id="Blink">
+        <ValidatorArray index="0" value="ModifiedAbility@CasterNotFungalGrowthed"/>
+    </CEffectTeleport>
+    <CEffectTeleport id="DarkTemplarBlink">
+        <ValidatorArray index="0" value="ModifiedAbility@CasterNotFungalGrowthed"/>
+    </CEffectTeleport>
+    <CEffectApplyBehavior id="FungalGrowthWoL@ABRoot">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="FungalGrowthWoL@Root"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="FungalGrowthWoL@DummyDamage">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <AreaArray Radius="2" Fraction="1"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectSet id="FungalGrowthWoL@Set">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="FungalGrowthWoL@AB"/>
+        <EffectArray value="FungalGrowthWoL@ABRoot"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="FungalGrowthWoL@AB">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="FungalGrowthWoL"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="FungalGrowthWoL@Damage">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <Flags index="Notification" value="1"/>
+        <Amount value="1.125"/>
+    </CEffectDamage>
+    <CEffectSet id="FungalGrowthWoL@InitialSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="FungalGrowthWoL@SearchArea"/>
+        <EffectArray value="FungalGrowthWoL@DummyDamage"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectEnumArea id="FungalGrowthWoL@SearchArea">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="FungalGrowthWoL@Set"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
     <CEffectDamage id="HydraliskLotV1@WeaponDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Zerg"/>
         <Kind value="Ranged"/>
@@ -24,6 +71,47 @@
         <Amount value="12"/>
         <Death value="Eviscerate"/>
     </CEffectDamage>
+    <CEffectDamage id="InfestedTerranWoL@WeaponWeaponDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <Kind value="Ranged"/>
+        <Amount value="8"/>
+    </CEffectDamage>
+    <CEffectIssueOrder id="InfestedTerranWoL@EggIssueMorphOrder">
+        <EditorCategories value="Race:Zerg"/>
+        <Abil value="InfestedTerranWoL@MorphToInfestedTerran"/>
+    </CEffectIssueOrder>
+    <CEffectApplyBehavior id="SpawnInfestedTerranWoL@TimedLifeAB">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="SpawnInfestedTerranWoL@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectCreateUnit id="SpawnInfestedTerranWoL@CU">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetPoint"/>
+        <CreateFlags index="SetFacing" value="1"/>
+        <SpawnEffect value="SpawnInfestedTerranWoL@InitialSet"/>
+        <SpawnUnit value="InfestedTerranWoL@Egg"/>
+        <SpawnRange value="3"/>
+    </CEffectCreateUnit>
+    <CEffectSet id="SpawnInfestedTerranWoL@ImpactSet">
+        <EditorCategories value=""/>
+        <EffectArray value="RemovePrecursor"/>
+        <EffectArray value="InfestedTerranWoL@EggIssueMorphOrder"/>
+    </CEffectSet>
+    <CEffectSet id="SpawnInfestedTerranWoL@InitialSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="KillsToCaster"/>
+        <EffectArray value="SpawnInfestedTerranWoL@LM"/>
+        <EffectArray value="MakePrecursor"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="SpawnInfestedTerranWoL@LM">
+        <EditorCategories value="Race:Zerg"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="TargetUnitOrPoint"/>
+        <FinishEffect value="SpawnInfestedTerranWoL@ImpactSet"/>
+        <AmmoOwner Value="Origin"/>
+        <AmmoUnit value="SpawnInfestedTerranWoL@WeaponMissile"/>
+        <Movers Link="InfestedTerransWeapon"/>
+    </CEffectLaunchMissile>
     <CEffectDamage id="QueenLotV@AAWeaponDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Zerg"/>
         <Kind value="Ranged"/>
@@ -1409,7 +1497,7 @@
         <Death value="Remove"/>
     </CEffectDamage>
     <CEffectTeleport id="ShadowStrideLotV@Teleport">
-        <ValidatorArray value="CasterNotFungalGrowthed"/>
+        <ValidatorArray value="ModifiedAbility@CasterNotFungalGrowthed"/>
         <EditorCategories value="Race:Protoss"/>
         <WhichUnit Value="Caster"/>
         <ClearQueuedOrders value="0"/>
@@ -1937,6 +2025,7 @@
         <PeriodicValidator value="ModifiedAbility@TargetNotHaveInterferenceMatrxCombined"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="HyperjumpInitialCP">
+        <ValidatorArray index="0" value="ModifiedAbility@CasterNotFungalGrowthed"/>
         <ValidatorArray index="2" value="ModifiedAbility@CasterNotHaveInterferenceMatrxCombined"/>
     </CEffectCreatePersistent>
     <CEffectSet id="NapalmSpraySwarmBeta@Set">

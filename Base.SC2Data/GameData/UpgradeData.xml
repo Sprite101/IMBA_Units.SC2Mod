@@ -44,7 +44,20 @@
         <Alert value="ResearchComplete"/>
         <ScoreAmount value="300"/>
         <ScoreResult value="BuildOrder"/>
-        <EffectArray Operation="Set" Reference="Unit,HydraliskLotV,Speed" Value="2.812500"/>
+        <EffectArray Operation="Set" Reference="Unit,HydraliskLotV1,Speed" Value="2.812500"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <AffectedUnitArray value="HydraliskLotV"/>
+        <AffectedUnitArray value="HydraliskLotV@Burrowed"/>
+    </CUpgrade>
+    <CUpgrade id="MuscularAugmentsLotV2">
+        <InfoTooltipPriority value="1"/>
+        <Icon value="Assets\Textures\BTN-Upgrade-Zerg-EvolveMuscularAugments.dds"/>
+        <Alert value="ResearchComplete"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Set" Reference="Unit,HydraliskLotV2,Speed" Value="2.812500"/>
+        <EffectArray Reference="Weapon,HydraliskLotV1@Weapon,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,HydraliskLotV1@Weapon,Range" Value="1"/>
         <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
         <AffectedUnitArray value="HydraliskLotV"/>
         <AffectedUnitArray value="HydraliskLotV@Burrowed"/>

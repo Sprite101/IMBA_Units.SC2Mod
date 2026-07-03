@@ -105,6 +105,14 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeMuscularAugmentsLotV1QueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="MuscularAugmentsLotV2@Have">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeMuscularAugmentsLotV2CompleteOnly1065347226"/>
+    </CRequirement>
+    <CRequirement id="MuscularAugmentsLotV2@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeMuscularAugmentsLotV2QueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="OrganicCarapaceWoL@Have">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeOrganicCarapaceWoLCompleteOnly3576986407"/>

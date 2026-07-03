@@ -8,8 +8,6 @@
         <DataRecord Entry="Button,AdaptiveTalonsLotV"/>
         <DataRecord Entry="Requirement,AdaptiveTalonsLotV@Have"/>
         <DataRecord Entry="Requirement,AdaptiveTalonsLotV@Learn"/>
-        <Button value="AmplifiedShieldingLotV"/>
-        <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
     <CDataCollectionUnit id="AdeptLotV">
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
@@ -55,8 +53,6 @@
         <DataRecord Entry="Button,CentrifugalHooksLotV1"/>
         <DataRecord Entry="Requirement,CentrifugalHooksLotV1@Have"/>
         <DataRecord Entry="Requirement,CentrifugalHooksLotV1@Learn"/>
-        <Button value="AmplifiedShieldingLotV"/>
-        <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
     <CDataCollection id="CloakFieldWoL">
         <EditorCategories value="DataGroup:Ability,Race:Protoss,DataFamily:Melee"/>
@@ -74,6 +70,9 @@
         <Button value="DisruptorLotV1"/>
         <TechInfoUnit value="DisruptorLotV1"/>
     </CDataCollectionUnit>
+    <CDataCollection id="FungalGrowthWoL">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+    </CDataCollection>
     <CDataCollectionUpgrade id="GlialReconstitutionWoL">
         <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
         <DataRecord Entry="Abil,GlialReconstitutionWoL@Research"/>
@@ -96,8 +95,6 @@
         <DataRecord Entry="Button,GroovedSpinesLotV1"/>
         <DataRecord Entry="Requirement,GroovedSpinesLotV1@Have"/>
         <DataRecord Entry="Requirement,GroovedSpinesLotV1@Learn"/>
-        <Button value="AmplifiedShieldingLotV"/>
-        <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
     <CDataCollectionUnit id="HydraliskLotV1">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
@@ -110,8 +107,14 @@
     </CDataCollectionUnit>
     <CDataCollectionUnit id="HydraliskLotV2">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
-        <Button value="HydraliskLotV1"/>
-        <TechInfoUnit value="HydraliskLotV1"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="InfestedTerranWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <Button value="InfestorWoL"/>
+        <TechInfoUnit value="InfestorWoL"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="InfestorWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
     </CDataCollectionUnit>
     <CDataCollectionUnit id="LurkerLotV">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
@@ -134,6 +137,17 @@
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
+    <CDataCollectionUpgrade id="MuscularAugmentsLotV2">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,MuscularAugmentsLotV2@Research"/>
+        <DataRecord Entry="Upgrade,MuscularAugmentsLotV2"/>
+        <DataRecord Entry="Button,MuscularAugmentsLotV2@Passive"/>
+        <DataRecord Entry="Button,MuscularAugmentsLotV2"/>
+        <DataRecord Entry="Requirement,MuscularAugmentsLotV2@Have"/>
+        <DataRecord Entry="Requirement,MuscularAugmentsLotV2@Learn"/>
+        <Button value="AmplifiedShieldingLotV"/>
+        <TechInfoUpgrade value="ChargeZealotLotV1"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUnit id="QueenWoL">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
     </CDataCollectionUnit>
@@ -149,6 +163,10 @@
     <CDataCollectionAbil id="ReaperLotV">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionAbil>
+    <CDataCollection id="SpawnInfestedTerranWoL">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+        <Button value="FungalGrowthWoL"/>
+    </CDataCollection>
     <CDataCollection id="SpawnLarvaeWoL">
         <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>

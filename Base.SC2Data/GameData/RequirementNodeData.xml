@@ -165,7 +165,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAdaptiveTalonsLotVQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="AdaptiveTalonsLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAdvancedBallisticsCompleteOnly1495348974">
@@ -478,6 +477,15 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="MuscularAugmentsLotV1" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMuscularAugmentsLotV2CompleteOnly1065347226">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MuscularAugmentsLotV2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMuscularAugmentsLotV2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="MuscularAugmentsLotV2" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeOrganicCarapaceWoLCompleteOnly3576986407">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="OrganicCarapaceWoL" State="CompleteOnly"/>
@@ -702,7 +710,6 @@
         <OperandArray index="0" value="CountBehaviorRavenInterferenceMatrixQueuedOrBetterAtUnit"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAdaptiveTalonsLotVQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeAdaptiveTalonsLotVQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAdvancedBallisticsLotV2QueuedOrBetter">
@@ -782,6 +789,10 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeMuscularAugmentsLotV1QueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeMuscularAugmentsLotV1QueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeMuscularAugmentsLotV2QueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeMuscularAugmentsLotV2QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeOrganicCarapaceWoLQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeOrganicCarapaceWoLQueuedOrBetter"/>
