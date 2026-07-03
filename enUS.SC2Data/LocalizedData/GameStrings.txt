@@ -1023,6 +1023,7 @@ Effect/Name/LiberatorLotV2@TargetAGOrderMorphAG=Target AG Order Morph AG
 Effect/Name/LiberatorLotV2@TargetAGSearchAB=Target AG Search AB
 Effect/Name/LiberatorLotV2@TargetAGSearchArea=Target AG Search Area
 Effect/Name/LockOnCancelSet=Lock On Cancel Set
+Effect/Name/LurkerLotV@Unburrow=Issue Order Unburrow
 Effect/Name/MULEWoL@CalldownMULECP=Calldown MULE CP
 Effect/Name/MULEWoL@CalldownMULECU=Calldown MULE CU
 Effect/Name/MULEWoL@CalldownMULECreateSet=Calldown MULE Create Set

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorModel id="CarrierLotV1@WarpInStargate" parent="ModelAddition">
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="CarrierWarpInStargate"/>
+    </CActorModel>
+    <CActorModel id="CarrierLotV2@WarpInStargate" parent="ModelAddition">
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="CarrierWarpInStargate"/>
+    </CActorModel>
     <CActorSplat id="FungalGrowthWoL@CursorSplat" parent="ZergCursorSplat" abil="FungalGrowthWoL"/>
     <CActorRange id="FungalGrowthWoL@Range" parent="RangeAbil" abil="FungalGrowthWoL">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
@@ -26,6 +36,8 @@
     <CActorUnit id="Hydralisk">
         <On Terms="AbilMorph.*.Finish; MorphTo LurkerLotV@Cocoon" Send="Destroy"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom LurkerLotV@Cocoon; MorphTo Hydralisk" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo LurkerMPEgg" Send="AnimPlay Morph Stand,Work,End"/>
+        <On Terms="AbilMorph.*.Start; MorphTo LurkerLotV@Cocoon" Send="AnimPlay Morph Stand,Work,End"/>
     </CActorUnit>
     <CActorSplat id="HydraliskLotV2@BurrowedSplat" parent="BurrowedSplat" unitName="HydraliskLotV2@Burrowed">
         <On index="2" Terms="UnitBirth.HydraliskLotV2@Burrowed"/>
@@ -68,6 +80,8 @@
         <On Terms="AbilMorph.*.Finish; MorphFrom LurkerMPEgg; MorphTo HydraliskLotV2" Send="Create"/>
         <On Terms="AbilMorph.*.Finish; MorphTo LurkerLotV@Cocoon" Send="Destroy"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom LurkerLotV@Cocoon; MorphTo HydraliskLotV2" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo LurkerMPEgg" Send="AnimPlay Morph Stand,Work,End"/>
+        <On Terms="AbilMorph.*.Start; MorphTo LurkerLotV@Cocoon" Send="AnimPlay Morph Stand,Work,End"/>
         <Model value="Hydralisk"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <EventDataSound Name="HydraliskAttackImpactMelee" Actor="UnitSound" Sound="Hydralisk_AttackImpactMelee"/>
@@ -177,6 +191,8 @@
         <On Terms="AbilMorph.*.Finish; MorphFrom LurkerMPEgg; MorphTo HydraliskLotV1" Send="Create"/>
         <On Terms="AbilMorph.*.Finish; MorphTo LurkerLotV@Cocoon" Send="Destroy"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom LurkerLotV@Cocoon; MorphTo HydraliskLotV1" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo LurkerMPEgg" Send="AnimPlay Morph Stand,Work,End"/>
+        <On Terms="AbilMorph.*.Start; MorphTo LurkerLotV@Cocoon" Send="AnimPlay Morph Stand,Work,End"/>
         <Model value="Hydralisk"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <EventDataSound Name="HydraliskAttackImpactMelee" Actor="UnitSound" Sound="Hydralisk_AttackImpactMelee"/>
@@ -296,6 +312,20 @@
         <On Terms="UnitDeath.InfestorWoL@Burrowed; PassChance 25.000000" Send="Create"/>
         <Sound value="Infestor_Death"/>
     </CActorSound>
+    <CActorModel id="OracleSwarm@WarpInStargate" parent="ModelAddition">
+        <Inherits index="CreepEngulfment" value="0"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="0"/>
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="OracleWarpInStargate"/>
+    </CActorModel>
+    <CActorModel id="OracleLotV1@WarpInStargate" parent="ModelAddition">
+        <Inherits index="CreepEngulfment" value="0"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="0"/>
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="OracleWarpInStargate"/>
+    </CActorModel>
     <CActorSound id="SpawnInfestedTerranWoL@HatchSound" parent="SoundOneShot">
         <On Terms="AbilMorph.*.Finish; MorphFrom InfestedTerranWoL@Egg; MorphTo InfestedTerranWoL" Send="Create"/>
         <Host Subject="_Selectable"/>
@@ -453,7 +483,7 @@
     </CActorRange>
     <CActorUnit id="InfestorWoL" parent="GenericUnitBase" unitName="InfestorWoL">
         <Aliases value="_UnitLarge"/>
-        <Macros value="ZergBurrowMobileTransientAnimMacro"/>
+        <Macros value="ZergBurrowMobileAnimMacro"/>
         <Macros value="ZergMediumBurrowEffects"/>
         <Macros value="UnloadDropAnim"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -1316,6 +1346,60 @@
         <On index="4" Terms="Behavior.SpawnLarvaeWoL@Timer.Off" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpAttachHardPoint04"/>
     </CActorModel>
+    <CActorUnit id="Stargate">
+        <On Terms="AbilTrain.OracleSwarm@Build.Start; AbilTrainProduced OracleSwarm; !ValidateUnit HasNoPower" Send="Create OracleSwarm@WarpInStargate"/>
+        <On Terms="AbilTrain.OracleSwarm@Build.Start; AbilTrainProduced OracleSwarm" Send="StatusSet WarpingIn 7"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Stop; Level 0; IsStatus WarpingIn 7" Send="Create OracleSwarm@WarpInStargate"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Start; Level 0" Target="OracleSwarm@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.OracleSwarm@Build.Cancel" Target="OracleSwarm@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.OracleSwarm@Build.Finish" Target="OracleSwarm@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.OracleLotV1@Build.Start; AbilTrainProduced OracleLotV1; !ValidateUnit HasNoPower" Send="Create OracleLotV1@WarpInStargate"/>
+        <On Terms="AbilTrain.OracleLotV1@Build.Start; AbilTrainProduced OracleLotV1" Send="StatusSet WarpingIn 8"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Stop; Level 0; IsStatus WarpingIn 8" Send="Create OracleLotV1@WarpInStargate"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Start; Level 0" Target="OracleLotV1@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.OracleLotV1@Build.Cancel" Target="OracleLotV1@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.OracleLotV1@Build.Finish" Target="OracleLotV1@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.VoidRayLotV@Build.Start; AbilTrainProduced VoidRayLotV; !ValidateUnit HasNoPower" Send="Create VoidRayLotV@WarpInStargate"/>
+        <On Terms="AbilTrain.VoidRayLotV@Build.Start; AbilTrainProduced VoidRayLotV" Send="StatusSet WarpingIn 9"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Stop; Level 0; IsStatus WarpingIn 9" Send="Create VoidRayLotV@WarpInStargate"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Start; Level 0" Target="VoidRayLotV@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.VoidRayLotV@Build.Cancel" Target="VoidRayLotV@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.VoidRayLotV@Build.Finish" Target="VoidRayLotV@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.TempestSwarm@Build.Start; AbilTrainProduced TempestSwarm; !ValidateUnit HasNoPower" Send="Create TempestSwarm@WarpInStargate"/>
+        <On Terms="AbilTrain.TempestSwarm@Build.Start; AbilTrainProduced TempestSwarm" Send="StatusSet WarpingIn 10"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Stop; Level 0; IsStatus WarpingIn 10" Send="Create TempestSwarm@WarpInStargate"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Start; Level 0" Target="TempestSwarm@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.TempestSwarm@Build.Cancel" Target="TempestSwarm@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.TempestSwarm@Build.Finish" Target="TempestSwarm@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.TempestLotV1@Build.Start; AbilTrainProduced TempestLotV1; !ValidateUnit HasNoPower" Send="Create TempestLotV1@WarpInStargate"/>
+        <On Terms="AbilTrain.TempestLotV1@Build.Start; AbilTrainProduced TempestLotV1" Send="StatusSet WarpingIn 11"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Stop; Level 0; IsStatus WarpingIn 11" Send="Create TempestLotV1@WarpInStargate"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Start; Level 0" Target="TempestSwarm@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.TempestLotV1@Build.Cancel" Target="TempestLotV1@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.TempestLotV1@Build.Finish" Target="TempestLotV1@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.CarrierLotV1@Train.Start; AbilTrainProduced CarrierLotV1; !ValidateUnit HasNoPower" Send="Create CarrierLotV1@WarpInStargate"/>
+        <On Terms="AbilTrain.CarrierLotV1@Train.Start; AbilTrainProduced CarrierLotV1" Send="StatusSet WarpingIn 12"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Stop; Level 0; IsStatus WarpingIn 12" Send="Create CarrierLotV1@WarpInStargate"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Start; Level 0" Target="TempestSwarm@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.CarrierLotV1@Train.Cancel" Target="CarrierLotV1@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.CarrierLotV1@Train.Finish" Target="CarrierLotV1@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.CarrierLotV2@Train.Start; AbilTrainProduced CarrierLotV2; !ValidateUnit HasNoPower" Send="Create CarrierLotV2@WarpInStargate"/>
+        <On Terms="AbilTrain.CarrierLotV2@Train.Start; AbilTrainProduced CarrierLotV2" Send="StatusSet WarpingIn 13"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Stop; Level 0; IsStatus WarpingIn 13" Send="Create CarrierLotV2@WarpInStargate"/>
+        <On Terms="BehaviorLevel.PowerUserQueue.Start; Level 0" Target="TempestSwarm@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.CarrierLotV2@Train.Cancel" Target="CarrierLotV2@WarpInStargate" Send="Destroy"/>
+        <On Terms="AbilTrain.CarrierLotV2@Train.Finish" Target="CarrierLotV2@WarpInStargate" Send="Destroy"/>
+    </CActorUnit>
+    <CActorModel id="TempestSwarm@WarpInStargate" parent="ModelAddition">
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="TempestWarpInStargate"/>
+    </CActorModel>
+    <CActorModel id="TempestLotV1@WarpInStargate" parent="ModelAddition">
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="TempestWarpInStargate"/>
+    </CActorModel>
     <CActorModel id="TransfusionWoL@Model" parent="ModelAnimationStyleOneShot">
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="Visibility" value="1"/>
@@ -1333,6 +1417,11 @@
         <Host Subject="_Selectable"/>
         <Sound value="Queen_Transfusion"/>
     </CActorSound>
+    <CActorModel id="VoidRayLotV@WarpInStargate" parent="ModelAddition">
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="VoidRayWarpInStargate"/>
+    </CActorModel>
     <CActorAction id="VolatileBurstLiberty@BuildingAttackAction" parent="AoESplashShieldHitter" effectHit="VolatileBurstLiberty@BuildingDamage">
         <LaunchAssets Sound=""/>
     </CActorAction>

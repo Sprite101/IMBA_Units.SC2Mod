@@ -20,13 +20,33 @@
     </CValidatorPlayerRequirement>
     <CValidatorCombine id="IsBurrowedUnit">
         <CombineArray value="RoachWoL@IsBurrowed"/>
+        <CombineArray value="HydraliskLotV2@IsHydraliskBurrowed"/>
+        <CombineArray value="HydraliskLotV1@IsHydraliskBurrowed"/>
     </CValidatorCombine>
+    <CValidatorUnitType id="HydraliskLotV1@IsHydraliskBurrowed">
+        <Value value="HydraliskLotV1@Burrowed"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HydraliskLotV2@IsHydraliskBurrowed">
+        <Value value="HydraliskLotV2@Burrowed"/>
+    </CValidatorUnitType>
     <CValidatorCombine id="IsNotBurrowedUnit">
         <CombineArray value="BanelingLotV1@IsBanelingBurrowed"/>
         <CombineArray value="RoachWoL@IsBurrowed"/>
     </CValidatorCombine>
     <CValidatorUnitType id="InfestedTerranWoL@EggIsNotInfestedTerransEgg">
         <Value value="InfestedTerranWoL@Egg"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HydraliskLotV1@IsNotHydralisk">
+        <Value value="HydraliskLotV1"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="HydraliskLotV2@IsNotHydralisk">
+        <Value value="HydraliskLotV2"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="RoachWoL@IsNotRoach">
+        <Value value="RoachWoL"/>
         <Find value="0"/>
     </CValidatorUnitType>
     <CValidatorCombine id="ModifiedAbility@CasterNotFungalGrowthed">
@@ -37,6 +57,13 @@
     </CValidatorCombine>
     <CValidatorUnitType id="InfestorWoL@NotInfestorBurrowed">
         <Value value="InfestorWoL@Burrowed"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="PointDefenseDroneUnitFilter">
+        <CombineArray value="RoachWoL@NotRoachMissile"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="RoachWoL@NotRoachMissile">
+        <Value value="RoachWoL@RangedWeaponMissile"/>
         <Find value="0"/>
     </CValidatorUnitType>
     <CValidatorUnitCompareBehaviorCount id="SpawnLarvaeWoL@NotSpawningLarvaeWoL">

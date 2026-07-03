@@ -72,13 +72,25 @@
         <Death value="Eviscerate"/>
     </CEffectDamage>
     <CEffectDamage id="InfestedTerranWoL@WeaponWeaponDamage" parent="DU_WEAP">
-        <EditorCategories value="Race:Terran"/>
+        <EditorCategories value="Race:Zerg"/>
         <Kind value="Ranged"/>
         <Amount value="8"/>
     </CEffectDamage>
     <CEffectIssueOrder id="InfestedTerranWoL@EggIssueMorphOrder">
         <EditorCategories value="Race:Zerg"/>
         <Abil value="InfestedTerranWoL@MorphToInfestedTerran"/>
+    </CEffectIssueOrder>
+    <CEffectApplyBehavior id="InstantMorphUnburrowAB">
+        <ValidatorArray value="HydraliskLotV1@IsNotHydralisk"/>
+        <ValidatorArray value="HydraliskLotV2@IsNotHydralisk"/>
+        <ValidatorArray value="RoachWoL@IsNotRoach"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="InstantUnburrow">
+        <EffectArray value="LurkerLotV@Unburrow"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="LurkerLotV@Unburrow">
+        <EditorCategories value="Race:Zerg"/>
+        <Abil value="LurkerLotV@Unburrow"/>
     </CEffectIssueOrder>
     <CEffectApplyBehavior id="SpawnInfestedTerranWoL@TimedLifeAB">
         <EditorCategories value="Race:Zerg"/>
@@ -93,7 +105,7 @@
         <SpawnRange value="3"/>
     </CEffectCreateUnit>
     <CEffectSet id="SpawnInfestedTerranWoL@ImpactSet">
-        <EditorCategories value=""/>
+        <EditorCategories value="Race:Zerg"/>
         <EffectArray value="RemovePrecursor"/>
         <EffectArray value="InfestedTerranWoL@EggIssueMorphOrder"/>
     </CEffectSet>
