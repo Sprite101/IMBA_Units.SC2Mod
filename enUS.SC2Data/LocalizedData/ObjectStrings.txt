@@ -467,6 +467,7 @@ Actor/Name/SiegeTankSiegedLotV1=Siege Tank Sieged
 Actor/Name/SiegeTankSiegedLotV1@LoadTransit=Siege Tank Sieged Load Transit
 Actor/Name/SiegeTankSiegedLotV1@Turret=Turret
 Actor/Name/SpawnInfestedTerranLotV@AttackAction=Attack Action
+Actor/Name/SpawnInfestedTerranLotV@HatchSound=Hatch Sound
 Actor/Name/SpawnInfestedTerranLotV@ImpactSound=Impact Sound
 Actor/Name/SpawnInfestedTerranLotV@Missile=Missile
 Actor/Name/SpawnInfestedTerranLotV@Range=Range

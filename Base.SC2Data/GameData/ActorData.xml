@@ -404,7 +404,6 @@
         <On Terms="Abil.NeuralParasite.SourceCastStart; !ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="AnimPlay NeuralParasite Stand,Burrow,Attack PlayForever"/>
         <On Terms="Abil.NeuralParasite.SourceChannelStop" Send="AnimClear NeuralParasite"/>
         <On Terms="Abil.SpawnInfestedTerranLotV.SourceCastStart; ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="$Spell 0 -1.000000 -1.000000 2.000000 AsDuration"/>
-        <On Terms="Abil.SpawnInfestedTerranLotV.SourceCastStart; !ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="AnimPlay Spell Stand,Burrow,Spell"/>
         <On Terms="Abil.FungalGrowthLotV.SourceCastStart; ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="$Spell,A"/>
         <On Terms="Abil.FungalGrowthLotV.SourceCastStart; !ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="AnimPlay Spell Stand,Burrow,Spell,A"/>
         <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownMedium"/>
@@ -497,8 +496,8 @@
         <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV; MorphFrom InfestedTerranLotV@Burrowed" Send="TerrainSquibActivateGroup RippleStandard"/>
         <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV@Burrowed; MorphFrom InfestedTerranLotV" Send="TerrainSquibDeactivate"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create InfestedTerran_Land"/>
-        <On Terms="WeaponStart.InfestedAcidSpines.AttackStart" Send="AnimBracketStart Attack Attack,Superior"/>
-        <On Terms="WeaponStart.InfestedGuassRifle.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStart.InfestedTerranLotV@AAWeapon.AttackStart" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.InfestedTerranLotV@AGWeapon.AttackStart" Send="AnimBracketStart Attack Attack"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <DeathArray index="Normal" ModelLink="InfestorTerranDeath" SoundLink="InfestedTerran_Explode"/>
         <DeathArray index="Disintegrate" ModelLink="InfestorTerranDeathAcid" SoundLink="Uni_DeathFXAcid"/>
@@ -556,6 +555,9 @@
         <Wireframe>
             <Image value="Assets\Textures\Wireframe-Zerg-InfestedMarine.dds"/>
         </Wireframe>
+        <Model value="InfestorTerran"/>
+        <BuildModel value="InfestorTerran"/>
+        <PlacementModel value="InfestorTerran"/>
     </CActorUnit>
     <CActorSplat id="InfestorWoL@BurrowedSplatInitial" parent="BurrowedSplatBase">
         <Inherits index="Visibility" value="0"/>
@@ -754,6 +756,11 @@
         <Missile value="SpawnInfestedTerranWoL@Missile"/>
         <ImpactAttachQuery Methods="Origin"/>
     </CActorAction>
+    <CActorSound id="SpawnInfestedTerranLotV@HatchSound" parent="SoundOneShot">
+        <On Terms="AbilMorph.*.Finish; MorphFrom InfestedTerranLotV@Egg; MorphTo InfestedTerranLotV" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <Sound value="Infestor_InfestedTerranEggExplode"/>
+    </CActorSound>
     <CActorMissile id="SpawnInfestedTerranWoL@Missile">
         <Aliases value="_Unit"/>
         <Aliases value="_Missile"/>

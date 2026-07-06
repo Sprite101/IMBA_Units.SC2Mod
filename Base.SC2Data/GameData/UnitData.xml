@@ -498,7 +498,8 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="InfestedTerranLotV@Burrow"/>
-        <WeaponArray Link="InfestedTerranWoL@Weapon"/>
+        <WeaponArray Link="InfestedTerranLotV@AAWeapon"/>
+        <WeaponArray Link="InfestedTerranLotV@AGWeapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
