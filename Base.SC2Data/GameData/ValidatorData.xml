@@ -18,6 +18,10 @@
         <Find value="1"/>
         <Value value="GroovedSpinesLotV1@Have"/>
     </CValidatorPlayerRequirement>
+    <CValidatorUnitType id="InfestorLotV@NotInfestorBurrowed">
+        <Value value="InfestorLotV@Burrowed"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
     <CValidatorCombine id="IsBurrowedUnit">
         <CombineArray value="RoachWoL@IsBurrowed"/>
         <CombineArray value="HydraliskLotV2@IsHydraliskBurrowed"/>

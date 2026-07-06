@@ -70,6 +70,10 @@
         <Button value="DisruptorLotV1"/>
         <TechInfoUnit value="DisruptorLotV1"/>
     </CDataCollectionUnit>
+    <CDataCollection id="FungalGrowthLotV">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+        <Button value="FungalGrowthWoL"/>
+    </CDataCollection>
     <CDataCollection id="FungalGrowthWoL">
         <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
     </CDataCollection>
@@ -108,7 +112,17 @@
     <CDataCollectionUnit id="HydraliskLotV2">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
     </CDataCollectionUnit>
+    <CDataCollectionUnit id="InfestedTerranLotV">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <Button value="InfestorWoL"/>
+        <TechInfoUnit value="InfestorWoL"/>
+    </CDataCollectionUnit>
     <CDataCollectionUnit id="InfestedTerranWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <Button value="InfestorWoL"/>
+        <TechInfoUnit value="InfestorWoL"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="InfestorLotV">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
         <Button value="InfestorWoL"/>
         <TechInfoUnit value="InfestorWoL"/>
@@ -148,6 +162,24 @@
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
+    <CDataCollectionUpgrade id="PathogenGlandsLotV">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,PathogenGlandsLotV@Research"/>
+        <DataRecord Entry="Upgrade,PathogenGlandsLotV"/>
+        <DataRecord Entry="Button,PathogenGlandsLotV@Passive"/>
+        <DataRecord Entry="Button,PathogenGlandsLotV"/>
+        <DataRecord Entry="Requirement,PathogenGlandsLotV@Have"/>
+        <DataRecord Entry="Requirement,PathogenGlandsLotV@Learn"/>
+    </CDataCollectionUpgrade>
+    <CDataCollectionUpgrade id="PathogenGlandsWoL">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,PathogenGlandsWoL@Research"/>
+        <DataRecord Entry="Upgrade,PathogenGlandsWoL"/>
+        <DataRecord Entry="Button,PathogenGlandsWoL@Passive"/>
+        <DataRecord Entry="Button,PathogenGlandsWoL"/>
+        <DataRecord Entry="Requirement,PathogenGlandsWoL@Have"/>
+        <DataRecord Entry="Requirement,PathogenGlandsWoL@Learn"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUnit id="QueenWoL">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
     </CDataCollectionUnit>
@@ -163,6 +195,10 @@
     <CDataCollectionAbil id="ReaperLotV">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionAbil>
+    <CDataCollection id="SpawnInfestedTerranLotV">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+        <Button value="FungalGrowthWoL"/>
+    </CDataCollection>
     <CDataCollection id="SpawnInfestedTerranWoL">
         <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
         <Button value="FungalGrowthWoL"/>

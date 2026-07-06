@@ -4,6 +4,12 @@
         <Model value="Assets\Effects\Terran\AutoTurretPodMissile\AutoTurretPodMissile.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
+    <CModel id="InfestorWoL" parent="InfestorBase">
+        <Model value="Assets\Units\Zerg\Infestor_Ex3\Infestor_Ex3.m3"/>
+    </CModel>
+    <CModel id="InfestorLotV" parent="InfestorBase">
+        <Model value="Assets\Units\Zerg\Infestor_Ex3\Infestor_Ex3.m3"/>
+    </CModel>
     <CModel id="OracleSwarm@TimeWarpModel" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\TemporalField\TemporalField.m3"/>
         <EditorCategories value="Race:Protoss"/>

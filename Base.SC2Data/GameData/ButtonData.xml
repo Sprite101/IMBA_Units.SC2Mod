@@ -31,6 +31,11 @@
         <EditorCategories value="Race:Protoss"/>
         <TintRacially value="1"/>
     </CButton>
+    <CButton id="FungalGrowthLotV">
+        <Icon value="Assets\Textures\btn-ability-zerg-fungalgrowth-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-fungalgrowth-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="FungalGrowthWoL">
         <Icon value="Assets\Textures\btn-ability-zerg-fungalgrowth.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-zerg-fungalgrowth.dds"/>
@@ -67,7 +72,34 @@
         <AlertIcon value="Assets\Textures\btn-unit-zerg-hydralisk.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
-    <CButton id="SpawnInfestedTerranWoL">
+    <CButton id="InfestedTerranWoL">
+        <Icon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="PathogenGlandsLotV">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="PathogenGlandsLotV@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <Hotkey value=""/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="PathogenGlandsWoL">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="PathogenGlandsWoL@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <Hotkey value=""/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="SpawnInfestedTerranLotV">
         <Icon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
         <EditorCategories value="Race:Zerg"/>

@@ -494,6 +494,24 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="OrganicCarapaceWoL" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePathogenGlandsLotVCompleteOnly3564667570">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="PathogenGlandsLotV" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePathogenGlandsLotVQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="PathogenGlandsLotV" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePathogenGlandsWoLCompleteOnly3564667570">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="PathogenGlandsWoL" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePathogenGlandsWoLQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="PathogenGlandsWoL" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradePsiStormHighTemplarLibertyCompleteOnly3263798822">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="PsiStormHighTemplarLiberty" State="CompleteOnly"/>
@@ -796,6 +814,14 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeOrganicCarapaceWoLQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeOrganicCarapaceWoLQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradePathogenGlandsLotVQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradePathogenGlandsLotVQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradePathogenGlandsWoLQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradePathogenGlandsWoLQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradePsiStormHighTemplarLibertyQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradePsiStormHighTemplarLibertyQueuedOrBetter"/>

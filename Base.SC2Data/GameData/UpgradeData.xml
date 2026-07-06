@@ -62,6 +62,30 @@
         <AffectedUnitArray value="HydraliskLotV"/>
         <AffectedUnitArray value="HydraliskLotV@Burrowed"/>
     </CUpgrade>
+    <CUpgrade id="PathogenGlandsLotV">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Zerg"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,InfestorLotV,EnergyStart" Value="25"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <AffectedUnitArray value="InfestorLotV"/>
+        <AffectedUnitArray value="InfestorLotV@Burrowed"/>
+    </CUpgrade>
+    <CUpgrade id="PathogenGlandsWoL">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Zerg"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Unit,InfestorWoL,EnergyStart" Value="25"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <AffectedUnitArray value="InfestorWoL"/>
+        <AffectedUnitArray value="InfestorWoL@Burrowed"/>
+    </CUpgrade>
     <CUpgrade id="QueenLotV@Upgrade">
         <EffectArray Operation="Set" Reference="Weapon,GlaiveCannonLotV2,Options[Disabled]" Value="0"/>
         <EffectArray Operation="Set" Reference="Weapon,GlaiveCannonLotV2,Options[Hidden]" Value="0"/>

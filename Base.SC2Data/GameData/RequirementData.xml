@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CRequirement id="AdaptiveTalonsLotV@Have">
-        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeAdaptiveTalonsLotVCompleteOnly660444659"/>
     </CRequirement>
     <CRequirement id="AdaptiveTalonsLotV@Learn">
@@ -30,7 +30,7 @@
         <NodeArray index="Use" Link="LT2210218377CountUnitInterceptorLotV2QueuedOrBetterAtUnit8"/>
     </CRequirement>
     <CRequirement id="CentrifugalHooksLotV1@Have">
-        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeCentrifugalHooksLotV1CompleteOnly3524559499"/>
     </CRequirement>
     <CRequirement id="CentrifugalHooksLotV1@Learn">
@@ -54,7 +54,7 @@
         <NodeArray index="Use" Link="CountUpgradeExtendedThermalLanceLibertyCompleteOnly"/>
     </CRequirement>
     <CRequirement id="GlialReconstitutionWoL@Have">
-        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeGlialReconstitutionWoLCompleteOnly2747955788"/>
     </CRequirement>
     <CRequirement id="GlialReconstitutionWoL@Learn">
@@ -90,7 +90,7 @@
         <NodeArray index="Show" Link="NotCountUpgradeGraviticDriveQueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="GroovedSpinesLotV1@Have">
-        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeGroovedSpinesLotV1CompleteOnly2108416373"/>
     </CRequirement>
     <CRequirement id="GroovedSpinesLotV1@Learn">
@@ -98,7 +98,7 @@
         <NodeArray index="Show" Link="NotCountUpgradeGroovedSpinesLotV1QueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="MuscularAugmentsLotV1@Have">
-        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeMuscularAugmentsLotV1CompleteOnly1065347226"/>
     </CRequirement>
     <CRequirement id="MuscularAugmentsLotV1@Learn">
@@ -106,7 +106,7 @@
         <NodeArray index="Show" Link="NotCountUpgradeMuscularAugmentsLotV1QueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="MuscularAugmentsLotV2@Have">
-        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeMuscularAugmentsLotV2CompleteOnly1065347226"/>
     </CRequirement>
     <CRequirement id="MuscularAugmentsLotV2@Learn">
@@ -114,19 +114,35 @@
         <NodeArray index="Show" Link="NotCountUpgradeMuscularAugmentsLotV2QueuedOrBetter"/>
     </CRequirement>
     <CRequirement id="OrganicCarapaceWoL@Have">
-        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeOrganicCarapaceWoLCompleteOnly3576986407"/>
     </CRequirement>
     <CRequirement id="OrganicCarapaceWoL@Learn">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradeOrganicCarapaceWoLQueuedOrBetter"/>
     </CRequirement>
-    <CRequirement id="TunnelingClawsWoL@Have">
+    <CRequirement id="PathogenGlandsLotV@Have">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradePathogenGlandsLotVCompleteOnly3564667570"/>
+    </CRequirement>
+    <CRequirement id="PathogenGlandsLotV@Learn">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradePathogenGlandsLotVQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="PathogenGlandsWoL@Have">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradePathogenGlandsWoLCompleteOnly3564667570"/>
+    </CRequirement>
+    <CRequirement id="PathogenGlandsWoL@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradePathogenGlandsWoLQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="TunnelingClawsWoL@Have">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeTunnelingClawsWoLCompleteOnly3631464287"/>
     </CRequirement>
     <CRequirement id="TunnelingClawsWoL@HaveShow">
-        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Show" Link="CountUpgradeTunnelingClawsWoLCompleteOnly"/>
     </CRequirement>
     <CRequirement id="TunnelingClawsWoL@Learn">
@@ -399,7 +415,7 @@
         <NodeArray index="Use" Link="CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987"/>
     </CRequirement>
     <CRequirement id="TunnelingJawsSwarm@Have">
-        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeTunnelingJawsSwarmCompleteOnly3093285022"/>
     </CRequirement>
     <CRequirement id="TunnelingJawsSwarm@Learn">

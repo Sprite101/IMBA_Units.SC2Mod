@@ -10,6 +10,24 @@
         <HostSiteOps Ops="SOpAttachCenter"/>
         <Model value="CarrierWarpInStargate"/>
     </CActorModel>
+    <CActorModel id="FungalGrowthLotV@ImpactModel" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.FungalGrowthLotV@SearchArea.Start" Send="Create"/>
+        <HostSiteOps Ops="SOpShadowRespectsBaseHeight"/>
+        <Model value="FungalGrowthImpact"/>
+    </CActorModel>
+    <CActorSound id="FungalGrowthLotV@LaunchSound" parent="SoundOneShot">
+        <On Terms="Abil.FungalGrowthLotV.SourceCastStart" Send="Create"/>
+        <Sound value="Infestor_FungalGrowthLaunch"/>
+    </CActorSound>
+    <CActorSound id="FungalGrowthWoL@LaunchSound" parent="SoundOneShot">
+        <On Terms="Abil.FungalGrowthWoL.SourceCastStart" Send="Create"/>
+        <Sound value="Infestor_FungalGrowthLaunch"/>
+    </CActorSound>
+    <CActorSplat id="FungalGrowthLotV@CursorSplat" parent="ZergCursorSplat" abil="FungalGrowthLotV"/>
+    <CActorRange id="FungalGrowthLotV@Range" parent="RangeAbil" abil="FungalGrowthLotV">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
     <CActorSplat id="FungalGrowthWoL@CursorSplat" parent="ZergCursorSplat" abil="FungalGrowthWoL"/>
     <CActorRange id="FungalGrowthWoL@Range" parent="RangeAbil" abil="FungalGrowthWoL">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
@@ -277,6 +295,59 @@
         <On Terms="UnitDeathCustomize.HydraliskLotV2@Burrowed; PassChance 25.000000" Send="Create"/>
         <Sound value="Hydralisk_Death"/>
     </CActorSound>
+    <CActorUnit id="InfestedTerranLotV@Egg" parent="GenericUnitBase" unitName="InfestedTerranLotV@Egg">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <On Terms="ActorCreation" Send="SetRotationFrom ::scope.InfestedMissile"/>
+        <On Terms="ActorCreation" Send="AnimBaselineStop"/>
+        <On Terms="ActorCreation" Send="$Stand,Work PlayForever"/>
+        <On Terms="Behavior.Precursor.Off" Send="AnimPlay WorkStart Stand,Work,Start"/>
+        <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV" Send="Destroy"/>
+        <Model value="InfestedTerransEgg"/>
+        <BuildModel value="InfestedTerransEgg"/>
+        <DeathArray index="Normal" ModelLink="ZergSmallUnitDeath" SoundLink="Zerg_ExplosionSmall"/>
+        <PlacementModel value="InfestedTerransEgg"/>
+        <PortraitModel value="EggPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMedium"/>
+        </TerrainSquibs>
+        <BarOffset value="40"/>
+        <BarWidth value="36"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Egg.dds"/>
+            <Image value="Assets\Textures\Wireframe-Zerg-InfestedMarineEggMissile.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-InfestedMarineEgg.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="What" value="InfestedTerranEgg_What"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-InfestedMarineEgg.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Egg.dds"/>
+            <Image value="Assets\Textures\Wireframe-Zerg-InfestedMarineEggMissile.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorSound id="SpawnInfestedTerranLotV@ImpactSound" parent="SoundOneShot">
+        <On Terms="UnitDeath.SpawnInfestedTerranLotV@Missile" Send="Create"/>
+        <Sound value="Infestor_InfestedTerranAttackImpact"/>
+    </CActorSound>
+    <CActorAction id="InfestedTerranLotV@AAWeaponAttackAction" parent="GenericAttack" effectImpact="InfestedTerranLotV@AAWeaponDamage" effectLaunch="InfestedTerranLotV@AAWeaponLM">
+        <LaunchSiteOps Ops="SOpAttachWeapon SOpMoveByDot25"/>
+        <LaunchAttachQuery Methods="Weapon"/>
+        <LaunchAssets Model="InfestedTerranAAMPLaunch" Sound="InfestedTerran_AirAttackLaunch"/>
+        <Missile value="InfestedTerranLotV@AAWeaponMissile"/>
+        <ImpactMap index="None" Model="InfestedTerranInfestedAcidSpinesMissileImpact" Sound="InfestedTerran_AirAttackImpact"/>
+        <ImpactPhysics Name="AcidSpinesImpact" MatchKeys="Basic" Physics="QueenAttackDeathForce"/>
+        <ShieldFlashType value="Header"/>
+    </CActorAction>
+    <CActorMissile id="InfestedTerranLotV@AAWeaponMissile" parent="GenericAttackMissile" unitName="InfestedTerranLotV@AAWeaponMissile">
+        <Model value="InfestedAcidSpinesWeapon"/>
+    </CActorMissile>
     <CActorSplat id="InfestedTerranWoL@BurrowedSplat" parent="BurrowedSplat" unitName="InfestedTerranWoL">
         <On index="2" Terms="UnitBirth.InfestedTerranWoL@Burrowed"/>
         <On index="3" Terms="AbilMorph.*.Start; MorphTo InfestedTerranWoL@Burrowed"/>
@@ -289,6 +360,203 @@
         <ImpactPhysics Name="InfestedGaussRifleImpact" MatchKeys="Basic" Physics="InfestorTerranAttackDeathForce"/>
         <ShieldFlashType value="Header"/>
     </CActorAction>
+    <CActorSound id="InfestedTerranLotV@AAWeaponLaunchSwtnrSound" parent="SoundOneShot">
+        <On Terms="Effect.InfestedTerranLotV@AAWeaponLM.Start; At Caster" Send="Create"/>
+        <Sound value="InfestedTerran_AirAttackLaunchSwtnr"/>
+    </CActorSound>
+    <CActorAction id="SpawnInfestedTerranLotV@AttackAction" parent="GenericAttack" effectImpact="RemovePrecursor" effectLaunch="SpawnInfestedTerranLotV@LM">
+        <LaunchAttachQuery Methods="AMFilterWeapon01"/>
+        <LaunchAssets Sound="Infestor_InfestedTerranAttackLaunch"/>
+        <Missile value="SpawnInfestedTerranLotV@Missile"/>
+        <ImpactAttachQuery Methods="Origin"/>
+    </CActorAction>
+    <CActorMissile id="SpawnInfestedTerranLotV@Missile">
+        <Aliases value="_Unit"/>
+        <Aliases value="_Missile"/>
+        <On Terms="UnitBirth.SpawnInfestedTerranLotV@Missile" Send="Create"/>
+        <On Terms="UnitBirth" Send="$Birth NonLooping"/>
+        <On Terms="AnimDone; AnimName Birth" Send="$Stand,Work PlayForever"/>
+        <On Terms="ActorCreation" Send="RefSet ::scope.InfestedMissile ::Self"/>
+        <On Terms="ActorCreation" Send="SetScale 0.100000"/>
+        <On Terms="ActorCreation" Send="SetScale 1.000000 0.200000"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Model value="InfestedTerransWeapon"/>
+        <PreHost value="_ActorAction"/>
+    </CActorMissile>
+    <CActorRange id="SpawnInfestedTerranLotV@Range" parent="RangeAbil" abil="SpawnInfestedTerranLotV">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorUnit id="InfestorLotV" parent="GenericUnitBase" unitName="InfestorLotV">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ZergBurrowMobileTransientAnimMacro"/>
+        <Macros value="ZergMediumBurrowEffects"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitBirth.InfestorLotV@Burrowed" Send="Create"/>
+        <On Terms="UnitBirth.InfestorLotV@Burrowed" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull,Instant"/>
+        <On Terms="UnitMovementUpdate.InfestorLotV@Burrowed.Stand" Send="Create InfestorLotV@BurrowedSplat"/>
+        <On Terms="UnitMovementUpdate.InfestorLotV@Burrowed.Walk" Target="InfestorLotV@BurrowedSplat" Send="Destroy"/>
+        <On Terms="Abil.NeuralParasite.SourceCastStart; ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="AnimPlay NeuralParasite Attack PlayForever"/>
+        <On Terms="Abil.NeuralParasite.SourceCastStart; !ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="AnimPlay NeuralParasite Stand,Burrow,Attack PlayForever"/>
+        <On Terms="Abil.NeuralParasite.SourceChannelStop" Send="AnimClear NeuralParasite"/>
+        <On Terms="Abil.SpawnInfestedTerranLotV.SourceCastStart; ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="$Spell 0 -1.000000 -1.000000 2.000000 AsDuration"/>
+        <On Terms="Abil.SpawnInfestedTerranLotV.SourceCastStart; !ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="AnimPlay Spell Stand,Burrow,Spell"/>
+        <On Terms="Abil.FungalGrowthLotV.SourceCastStart; ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="$Spell,A"/>
+        <On Terms="Abil.FungalGrowthLotV.SourceCastStart; !ValidateUnit InfestorLotV@NotInfestorBurrowed" Send="AnimPlay Spell Stand,Burrow,Spell,A"/>
+        <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownMedium"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom InfestorLotV; MorphTo InfestorLotV@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestorLotV; MorphFrom InfestorLotV@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Spell"/>
+        <On Terms="UnitBirth.InfestorLotV" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestorLotV; MorphFrom InfestorLotV@Burrowed" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestorLotV@Burrowed; MorphFrom InfestorLotV" Send="TerrainSquibDeactivate"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Infestor_Land"/>
+        <On Terms="UnitMovementUpdate.*.Walk; ValidateUnit IsBuried" Send="Create ZergUnit_BurrowedMoveLoopSound"/>
+        <On Terms="UnitMovementUpdate.*.Stand" Target="ZergUnit_BurrowedMoveLoopSound" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphTo InfestorLotV" Target="ZergUnit_BurrowedMoveLoopSound" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="ModelAnimateInvisible 1"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <DeathArray index="Normal" ModelLink="InfestorDeath" SoundLink=""/>
+        <DeathArray index="Disintegrate" ModelLink="InfestorDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="InfestorDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <DeathCustoms ActorModel="InfestorDeathRagdoll" ModelLink="InfestorDeathRagdoll" Name="RagdollBasic"/>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PortraitModel value="InfestorPortrait"/>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="2.000000"/>
+            <RangeDown value="2.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleInfestor"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="70"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Infestor.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SelectAbilCmd value="FungalGrowth,Execute"/>
+        <SoundArray index="Ready" value="Infestor_Ready"/>
+        <SoundArray index="What" value="Infestor_What"/>
+        <SoundArray index="Yes" value="Infestor_Yes"/>
+        <SoundArray index="Pissed" value="Infestor_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Infestor.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorAction id="InfestedTerranLotV@AGWeaponAttackAction" parent="GenericAttack" effectAttack="InfestedTerranLotV@AGWeaponDamage">
+        <LaunchAssets Model="InfestorTerranAttackLaunch" Sound="InfestedTerran_AttackLaunch"/>
+        <ImpactMap index="None" Model="InfestorTerranAttackImpact" Sound="InfestedTerran_AttackImpact"/>
+        <ImpactPhysics Name="InfestedGaussRifleImpact" MatchKeys="Basic" Physics="InfestorTerranAttackDeathForce"/>
+        <ShieldFlashType value="Header"/>
+    </CActorAction>
+    <CActorUnit id="InfestedTerranLotV" parent="GenericBurrowerStandard" unitName="InfestedTerranLotV">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergSmallBurrowEffects"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Remove Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On index="69" Terms="UnitBirth.InfestedTerranLotV@Burrowed" Send="Create"/>
+        <On index="70" Terms="UnitBirth.InfestedTerranLotV@Burrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant,DontResetOnUnhide"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV; MorphFrom InfestedTerranLotV@Egg" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV; MorphFrom InfestedTerranLotV@Egg" Send="Create InfestedTerranEggDeath"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV; MorphFrom InfestedTerranLotV@Egg" Send="AnimBracketStart BSD Birth,01 Stand Death"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom InfestedTerranLotV; MorphTo InfestedTerranLotV@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV; MorphFrom InfestedTerranLotV@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV; MorphFrom InfestedTerranLotV@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="UnitBirth.InfestedTerranLotV" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV; MorphFrom InfestedTerranLotV@Egg" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV; MorphFrom InfestedTerranLotV@Burrowed" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo InfestedTerranLotV@Burrowed; MorphFrom InfestedTerranLotV" Send="TerrainSquibDeactivate"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create InfestedTerran_Land"/>
+        <On Terms="WeaponStart.InfestedAcidSpines.AttackStart" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.InfestedGuassRifle.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <DeathArray index="Normal" ModelLink="InfestorTerranDeath" SoundLink="InfestedTerran_Explode"/>
+        <DeathArray index="Disintegrate" ModelLink="InfestorTerranDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="InfestorTerranDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <DeathArray index="Timeout" ModelLink="InfestorTerranDeathTimeout" SoundLink="InfestedTerran_Explode"/>
+        <DeathCustoms ModelLink="InfestorTerranDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="FireOnMetal"/>
+            <BodySquibs Name="BloodReduced" IsFallback="1"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdoll" ModelLink="InfestorTerranDeathRagdoll" Name="RagdollSpineCrawlerHurl"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PortraitModel value="InfestorTerranPortrait"/>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMedium"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="1.125"/>
+        <BarOffset value="40"/>
+        <BarWidth value="40"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-InfestedMarine.dds"/>
+        </GroupIcon>
+        <GroupSoundArray index="What" value="InfestedTerran_What"/>
+        <GroupSoundArray index="Yes" value="InfestedTerran_Yes"/>
+        <GroupSoundArray index="Attack" value="InfestedTerran_Attack"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="Ready" value="InfestedTerran_Ready"/>
+        <SoundArray index="Help" value="InfestedTerran_Help"/>
+        <SoundArray index="What" value="InfestedTerran_What"/>
+        <SoundArray index="Yes" value="InfestedTerran_Yes"/>
+        <SoundArray index="Attack" value="InfestedTerran_Attack"/>
+        <SoundArray index="Pissed" value="InfestedTerran_Pissed"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-InfestedMarine.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorSplat id="InfestorWoL@BurrowedSplatInitial" parent="BurrowedSplatBase">
         <Inherits index="Visibility" value="0"/>
         <On Terms="AbilMorph.*.Start; MorphTo InfestorWoL@Burrowed" Send="Create"/>
@@ -299,6 +567,16 @@
         <On Terms="AbilMorph.*.Finish; MorphFrom InfestorWoL@Burrowed" Send="RefClear ::Host"/>
         <On Terms="TimerExpired; TimerName MorphSplat" Send="Destroy"/>
     </CActorSplat>
+    <CActorSplat id="InfestorLotV@BurrowedSplatInitial" parent="BurrowedSplatBase">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="AbilMorph.*.Start; MorphTo InfestorLotV@Burrowed" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo InfestorLotV@Burrowed" Send="TimerSet 1.000000 MorphSplat"/>
+        <On Terms="AbilMorph.*.Start; MorphTo InfestorLotV@Burrowed" Send="RefClear ::Host"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom InfestorLotV@Burrowed" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom InfestorLotV@Burrowed" Send="TimerSet 1.000000 MorphSplat"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom InfestorLotV@Burrowed" Send="RefClear ::Host"/>
+        <On Terms="TimerExpired; TimerName MorphSplat" Send="Destroy"/>
+    </CActorSplat>
     <CActorSplat id="InfestorWoL@BurrowedSplat" parent="BurrowedSplatBase">
         <On Terms="UnitBirth.InfestorWoL@Burrowed" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo InfestorWoL@Burrowed" Send="Create"/>
@@ -307,9 +585,22 @@
         <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
         <HostSiteOps Ops="SOpAttachHarnessSoft" HoldRotation="1"/>
     </CActorSplat>
+    <CActorSplat id="InfestorLotV@BurrowedSplat" parent="BurrowedSplatBase">
+        <On Terms="UnitBirth.InfestorLotV@Burrowed" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo InfestorLotV@Burrowed" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom InfestorLotV@Burrowed" Send="TimerSet 5.000000 DelayDestroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom InfestorLotV@Burrowed" Send="RefClear ::Host"/>
+        <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachHarnessSoft" HoldRotation="1"/>
+    </CActorSplat>
     <CActorSound id="InfestorWoL@Death" parent="SoundOneShot">
         <On Terms="UnitDeath.InfestorWoL; PassChance 25.000000" Send="Create"/>
         <On Terms="UnitDeath.InfestorWoL@Burrowed; PassChance 25.000000" Send="Create"/>
+        <Sound value="Infestor_Death"/>
+    </CActorSound>
+    <CActorSound id="InfestorLotV@Death" parent="SoundOneShot">
+        <On Terms="UnitDeath.InfestorLotV; PassChance 25.000000" Send="Create"/>
+        <On Terms="UnitDeath.InfestorLotV@Burrowed; PassChance 25.000000" Send="Create"/>
         <Sound value="Infestor_Death"/>
     </CActorSound>
     <CActorModel id="OracleSwarm@WarpInStargate" parent="ModelAddition">
@@ -511,9 +802,7 @@
         <On Terms="UnitMovementUpdate.*.Stand" Target="ZergUnit_BurrowedMoveLoopSound" Send="Destroy"/>
         <On Terms="AbilMorph.*.Start; MorphTo InfestorWoL" Target="ZergUnit_BurrowedMoveLoopSound" Send="Destroy"/>
         <On Terms="ActorCreation" Send="ModelAnimateInvisible 1"/>
-        <Model value="Infestor"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
-        <BuildModel value="Infestor"/>
         <DeathArray index="Normal" ModelLink="InfestorDeath" SoundLink=""/>
         <DeathArray index="Disintegrate" ModelLink="InfestorDeathAcid" SoundLink="Uni_DeathFXAcid"/>
         <DeathArray index="Fire" ModelLink="InfestorDeathFire" SoundLink="Uni_DeathFXFire"/>
@@ -535,7 +824,6 @@
         <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
         <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
         <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
-        <PlacementModel value="Infestor"/>
         <PortraitModel value="InfestorPortrait"/>
         <TerrainSquibs>
             <GroupName value="RippleStandard"/>

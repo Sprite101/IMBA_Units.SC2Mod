@@ -33,6 +33,10 @@
             <StateFlags index="SuppressCloak" value="1"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="InfestedTerranLotV@TimedLife" parent="TimedLife">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <ExpireEffect value="SpawnInfestedTerranLotV@IssueEggMorphOrder"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="SpawnInfestedTerranWoL@TimedLife">
         <Tooltip value="Behavior/Tooltip/BroodlingFate"/>
         <InfoFlags index="Hidden" value="1"/>
@@ -52,6 +56,22 @@
     <CBehaviorBuff id="InfestedTerranWoL@EggTimedLife" parent="TimedLife">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <ExpireEffect value="InfestedTerranWoL@EggIssueMorphOrder"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnInfestedTerranLotV@TimedLife">
+        <Tooltip value="Behavior/Tooltip/BroodlingFate"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="30"/>
+        <DurationRandomMax value="0.5"/>
+        <ExpireEffect value="TimedLifeFate"/>
+        <Modification>
+            <StateFlags index="Summoned" value="1"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="SpawnLarvaeWoL@Spawn">
         <InfoFlags index="Hidden" value="1"/>
