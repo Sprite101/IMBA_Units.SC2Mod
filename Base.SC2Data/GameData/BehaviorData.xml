@@ -37,6 +37,51 @@
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <ExpireEffect value="SpawnInfestedTerranLotV@IssueEggMorphOrder"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="NeuralParasite">
+        <FinalEffect value="ModifiedAbility@NeuralParasiteExpireSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NeuralParasiteWoL@Drone">
+        <Alignment value="Negative"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\BTN-Ability-Zerg-NeuralParasite.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Period value="0.0625"/>
+        <PeriodicEffect value="NeuralParasiteWoL@RBDrone"/>
+        <Player Value="Caster"/>
+        <AcquirePlayer Effect="NeuralParasiteWoL@LM" Value="Target"/>
+        <Modification>
+            <StateFlags index="SuppressPassenger" value="1"/>
+            <AbilClassDisableArray index="CAbilSpecialize" value="1"/>
+            <AbilClassDisableArray index="CAbilTransport" value="1"/>
+            <AbilLinkDisableArray value="ArchonWarp"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NeuralParasiteWoL">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\BTN-Ability-Zerg-NeuralParasite.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <RemoveValidatorArray value="NotHidden"/>
+        <RemoveValidatorArray value="NotFrenzied"/>
+        <RemoveValidatorArray value="NotVortexd"/>
+        <RemoveValidatorArray value="NotOracleStasisTrapped"/>
+        <BuffFlags index="Channeled" value="1"/>
+        <Duration value="15"/>
+        <FinalEffect value="NeuralParasiteWoL@@NeuralParasiteExpireSet"/>
+        <Player Value="Caster"/>
+        <AcquirePlayer Effect="NeuralParasiteWoL@LM" Value="Target"/>
+        <Modification>
+            <StateFlags index="SuppressPassenger" value="1"/>
+            <AbilClassDisableArray index="CAbilSpecialize" value="1"/>
+            <AbilClassDisableArray index="CAbilTransport" value="1"/>
+            <AbilLinkDisableArray value="ArchonWarp"/>
+            <AbilLinkDisableArray value="SprayProtoss"/>
+            <AbilLinkDisableArray value="SprayTerran"/>
+            <AbilLinkDisableArray value="SprayZerg"/>
+            <AbilLinkDisableArray value="Clone"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="SpawnInfestedTerranWoL@TimedLife">
         <Tooltip value="Behavior/Tooltip/BroodlingFate"/>
         <InfoFlags index="Hidden" value="1"/>

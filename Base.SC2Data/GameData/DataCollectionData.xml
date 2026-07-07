@@ -162,6 +162,10 @@
         <Button value="AmplifiedShieldingLotV"/>
         <TechInfoUpgrade value="ChargeZealotLotV1"/>
     </CDataCollectionUpgrade>
+    <CDataCollection id="NeuralParasiteWoL">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollectionUpgrade id="PathogenGlandsLotV">
         <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
         <DataRecord Entry="Abil,PathogenGlandsLotV@Research"/>

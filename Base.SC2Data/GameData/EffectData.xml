@@ -10,6 +10,26 @@
     <CEffectTeleport id="Blink">
         <ValidatorArray index="0" value="ModifiedAbility@CasterNotFungalGrowthed"/>
     </CEffectTeleport>
+    <CEffectSet id="ModifiedAbility@NeuralParasiteExpireSet">
+        <EffectArray value="NeuralParasiteLockOnRemove"/>
+        <EffectArray value="ModifiedAbility@LockOnLotV1RB"/>
+        <EffectArray value="ModifiedAbility@LockOnLotV2RB"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="ModifiedAbility@LockOnLotV1RB">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="NeuralParasiteLaunchMissile"/>
+        <BehaviorLink value="CycloneLockOnAirLoTV1@LockOnCaster"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="ModifiedAbility@LockOnLotV2RB">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="NeuralParasiteLaunchMissile"/>
+        <BehaviorLink value="CycloneLockOnLotV2@LockOnCaster"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="NeuralParasiteWoL@LockOnLotV1RB">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="NeuralParasiteWoL@LM"/>
+        <BehaviorLink value="CycloneLockOnAirLoTV1@LockOnCaster"/>
+    </CEffectRemoveBehavior>
     <CEffectTeleport id="DarkTemplarBlink">
         <ValidatorArray index="0" value="ModifiedAbility@CasterNotFungalGrowthed"/>
     </CEffectTeleport>
@@ -131,6 +151,81 @@
         <EditorCategories value="Race:Zerg"/>
         <Abil value="InfestedTerranWoL@MorphToInfestedTerran"/>
     </CEffectIssueOrder>
+    <CEffectRemoveBehavior id="NeuralParasiteWoL@LockOnLotV2RB">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="NeuralParasiteWoL@LM"/>
+        <BehaviorLink value="CycloneLockOnLotV2@LockOnCaster"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="NeuralParasiteWoL@LockOnRB">
+        <EditorCategories value=""/>
+        <WhichUnit Effect="NeuralParasiteWoL@LM"/>
+        <BehaviorLink value="LockOnDisableAttack"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="NeuralParasiteWoL@AB">
+        <ValidatorArray index="0" value="IsNotWarpingIn"/>
+        <ValidatorArray value="IsNotPhaseShifted"/>
+        <ValidatorArray value="WarpInLiberty@IsNotWarpingIn"/>
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Effect="NeuralParasiteWoL@LM"/>
+        <Behavior value="NeuralParasiteWoL"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NeuralParasiteWoL@ABDrone">
+        <ValidatorArray index="0" value="IsDrone"/>
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Effect="NeuralParasiteWoL@LM"/>
+        <Behavior value="NeuralParasiteWoL@Drone"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="NeuralParasiteWoL@RBDrone">
+        <ValidatorArray index="0" value="NeuralParasiteDroneChecks"/>
+        <EditorCategories value="Race:Terran"/>
+        <BehaviorLink value="NeuralParasiteDrone"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="NeuralParasiteWoL@@NeuralParasiteExpireSet">
+        <EffectArray value="NeuralParasiteWoL@LockOnRB"/>
+        <EffectArray value="NeuralParasiteWoL@LockOnLotV2RB"/>
+        <EffectArray value="NeuralParasiteWoL@LockOnLotV1RB"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="NeuralParasiteWoL@LM">
+        <ValidatorArray index="0" value="noMarkers"/>
+        <ValidatorArray value="NotWarpingIn"/>
+        <ValidatorArray value="NotFrenzied"/>
+        <ValidatorArray value="HasNoCargo"/>
+        <ValidatorArray value="NotPointDefenseDrone"/>
+        <ValidatorArray value="NotHeroic"/>
+        <ValidatorArray value="WarpInLiberty@NotWarpingIn"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="Abil/NeuralParasiteMissile">
+            <MatchFlags index="Link" value="1"/>
+        </Marker>
+        <ImpactEffect value="NeuralParasiteWoL@PersistentSet"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="PointFallback" value="0"/>
+        <AmmoUnit value="NeuralParasiteWoL@Missile"/>
+        <Movers Link="InfestorNeuralParasite" IfRangeLTE="500"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="NeuralParasiteWoL@CP">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="CasterUnit"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="NeuralParasiteWoL@AB"/>
+        <PeriodCount value="30"/>
+        <PeriodicValidator value="NeuralParasitePeriodicValidator"/>
+        <PeriodicEffectArray value="NeuralParasiteWoL@DP"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectDestroyPersistent id="NeuralParasiteWoL@DP">
+        <EditorCategories value="Race:Terran"/>
+        <Effect value="NeuralParasiteWoL@CP"/>
+        <Count value="1"/>
+        <Radius value="0.1"/>
+    </CEffectDestroyPersistent>
+    <CEffectSet id="NeuralParasiteWoL@PersistentSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="NeuralParasiteWoL@ABDrone"/>
+        <EffectArray value="NeuralParasiteWoL@CP"/>
+        <EffectArray value="NeuralParasiteWoL@LockOnLotV2RB"/>
+        <EffectArray value="NeuralParasiteWoL@LockOnLotV1RB"/>
+    </CEffectSet>
     <CEffectSet id="SpawnInfestedTerranLotV@ImpactSet">
         <EditorCategories value="Race:Zerg"/>
         <EffectArray value="RemovePrecursor"/>

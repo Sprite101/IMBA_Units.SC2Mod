@@ -742,6 +742,11 @@
         <LeaderAlias value=""/>
         <HotkeyAlias value=""/>
     </CUnit>
+    <CUnit id="NeuralParasiteWoL@Missile" parent="MISSILE_INVULNERABLE">
+        <Race value="Zerg"/>
+        <Mover value="InfestorNeuralParasite"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+    </CUnit>
     <CUnit id="SpawnInfestedTerranLotV@Missile" parent="MISSILE_INVULNERABLE">
         <Race value="Zerg"/>
         <Mover value="InfestedTerransLayEggWeapon"/>
@@ -870,6 +875,7 @@
         <Mob value="Multiplayer"/>
         <FlagArray index="PreventDestroy" value="1"/>
         <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
         <FlagArray index="Buried" value="1"/>
         <FlagArray index="AlwaysThreatens" value="1"/>
         <FlagArray index="AIThreatGround" value="1"/>
@@ -909,7 +915,6 @@
         <AbilArray Link="InfestorLotV@Unburrow"/>
         <AbilArray Link="FungalGrowthLotV"/>
         <AbilArray Link="SpawnInfestedTerranLotV"/>
-        <BehaviorArray Link="PermanentBurrowMoveCloaked"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1019,9 +1024,9 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="InfestorWoL@Burrow"/>
-        <AbilArray Link="NeuralParasite"/>
         <AbilArray Link="FungalGrowthWoL"/>
         <AbilArray Link="SpawnInfestedTerranWoL"/>
+        <AbilArray Link="NeuralParasiteWoL"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1041,8 +1046,8 @@
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowInfestorTerranDown,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="InfestorWoL@Burrow,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowUltraliskDown,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="NeuralParasite,Cancel" Row="1" Column="2"/>
-            <LayoutButtons Face="NeuralParasite" Type="AbilCmd" AbilCmd="NeuralParasite,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="NeuralParasiteWoL,Cancel" Row="1" Column="2"/>
+            <LayoutButtons Face="NeuralParasiteWoL" Type="AbilCmd" AbilCmd="NeuralParasiteWoL,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="InfestedTerranWoL" Type="AbilCmd" AbilCmd="SpawnInfestedTerranWoL,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="BurrowedMove" Type="Passive" Requirements="UseBurrow" Row="1" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowDroneUp,Execute" Row="2" Column="4"/>
@@ -1091,6 +1096,7 @@
         <Mob value="Multiplayer"/>
         <FlagArray index="PreventDestroy" value="1"/>
         <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
         <FlagArray index="Buried" value="1"/>
         <FlagArray index="AlwaysThreatens" value="1"/>
         <FlagArray index="AIThreatGround" value="1"/>
@@ -1128,8 +1134,8 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="InfestorWoL@Unburrow"/>
-        <AbilArray Link="NeuralParasite"/>
         <AbilArray Link="SpawnInfestedTerranWoL"/>
+        <AbilArray Link="NeuralParasiteWoL"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1150,8 +1156,8 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowedMove" Type="Passive" Requirements="UseBurrow" Row="1" Column="4"/>
-            <LayoutButtons Face="NeuralParasite" Type="AbilCmd" AbilCmd="NeuralParasite,Execute" Row="2" Column="2"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="NeuralParasite,Cancel" Row="2" Column="3"/>
+            <LayoutButtons Face="NeuralParasiteWoL" Type="AbilCmd" AbilCmd="NeuralParasiteWoL,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="NeuralParasiteWoL,Cancel" Row="2" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowDroneDown,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowZerglingDown,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="BurrowBanelingDown,Execute" Row="2" Column="3"/>
@@ -2806,6 +2812,7 @@
         <Mob value="Multiplayer"/>
         <FlagArray index="PreventDestroy" value="1"/>
         <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
         <FlagArray index="Buried" value="1"/>
         <FlagArray index="AIThreatGround" value="1"/>
         <FlagArray index="ArmySelect" value="1"/>

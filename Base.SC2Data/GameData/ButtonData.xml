@@ -77,6 +77,10 @@
         <AlertIcon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
+    <CButton id="NeuralParasiteWoL">
+        <Icon value="Assets\Textures\BTN-Ability-Zerg-NeuralParasite-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="PathogenGlandsLotV">
         <Icon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-zerg-pathogenglands.dds"/>

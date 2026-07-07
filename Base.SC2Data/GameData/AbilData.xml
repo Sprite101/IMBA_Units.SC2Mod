@@ -93,6 +93,29 @@
         <AutoCastRange value="5"/>
         <AutoCastCountMin value="1"/>
     </CAbilMorph>
+    <CAbilEffectTarget id="NeuralParasiteWoL">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Effect index="0" value="NeuralParasiteWoL@LM"/>
+        <Flags index="AbortOnAllianceChange" value="0"/>
+        <Cost>
+            <Vital index="Energy" value="100"/>
+            <Cooldown Link="Abil/Leech" Location="Unit"/>
+        </Cost>
+        <TargetFilters value="Visible;Self,Player,Ally,Neutral,Structure,Stasis,Invulnerable"/>
+        <Range value="9"/>
+        <RangeSlop value="5"/>
+        <CancelableArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <AINotifyEffect value="NeuralParasiteWoL@AB"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="NeuralParasiteWoL" Requirements="UseNeuralParasite">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectTarget>
     <CAbilResearch id="PathogenGlandsLotV@Research">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Time="80" Upgrade="PathogenGlandsLotV">

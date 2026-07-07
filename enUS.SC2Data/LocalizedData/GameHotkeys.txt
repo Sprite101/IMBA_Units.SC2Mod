@@ -94,6 +94,7 @@ Button/Hotkey/MothershipWoL=M
 Button/Hotkey/MothershipWoL@MorphToMothership=U
 Button/Hotkey/MuscularAugmentsLotV1=H
 Button/Hotkey/MuscularAugmentsLotV1@Passive=
+Button/Hotkey/NeuralParasiteWoL=E
 Button/Hotkey/ObserverLotV1=B
 Button/Hotkey/ObserverLotV1@Siege=E
 Button/Hotkey/ObserverLotV1@SiegedUnsiege=T
