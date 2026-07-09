@@ -29,7 +29,6 @@
     <CDataCollectionUnit id="BanelingLotV1">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
         <DataRecord Entry="Unit,BanelingLotV1"/>
-        <DataRecord Entry="Actor,GhostLotV1@Unit"/>
     </CDataCollectionUnit>
     <CDataCollectionUnit id="BarracksLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
@@ -70,6 +69,15 @@
         <Button value="DisruptorLotV1"/>
         <TechInfoUnit value="DisruptorLotV1"/>
     </CDataCollectionUnit>
+    <CDataCollectionUpgrade id="EnduringLocustsSwarm">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,EnduringLocustsSwarm@Research"/>
+        <DataRecord Entry="Upgrade,EnduringLocustsSwarm"/>
+        <DataRecord Entry="Button,EnduringLocustsSwarm@Passive"/>
+        <DataRecord Entry="Button,EnduringLocustsSwarm"/>
+        <DataRecord Entry="Requirement,EnduringLocustsSwarm@Have"/>
+        <DataRecord Entry="Requirement,EnduringLocustsSwarm@Learn"/>
+    </CDataCollectionUpgrade>
     <CDataCollection id="FungalGrowthLotV">
         <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
         <Button value="FungalGrowthWoL"/>
@@ -129,6 +137,10 @@
     </CDataCollectionUnit>
     <CDataCollectionUnit id="InfestorWoL">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="LocustSwarm">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <DataRecord Entry="Unit,SwarmHostSwarm"/>
     </CDataCollectionUnit>
     <CDataCollectionUnit id="LurkerLotV">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
@@ -667,6 +679,10 @@
     <CDataCollectionAbil id="SiegeTankSiegedLotV1">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionAbil>
+    <CDataCollection id="SpawnLocustsSwarm">
+        <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
+        <Button value="SalvageLiberty"/>
+    </CDataCollection>
     <CDataCollectionUnit id="StalkerLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
         <Button value="BarracksLiberty"/>
@@ -680,6 +696,10 @@
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
         <Button value="BarracksLiberty"/>
         <TechInfoUnit value="StalkerLiberty"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="SwarmHostSwarm">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <DataRecord Entry="Unit,SwarmHostSwarm"/>
     </CDataCollectionUnit>
     <CDataCollectionUnit id="TempestLotV1">
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>

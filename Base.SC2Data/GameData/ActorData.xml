@@ -332,6 +332,123 @@
             <Image value="Assets\Textures\Wireframe-Zerg-InfestedMarineEggMissile.dds"/>
         </Wireframe>
     </CActorUnit>
+    <CActorAction id="SpawnLocustsSwarm@MissileAAttackAction" parent="GenericAttack" effectImpact="SpawnLocustsSwarm@ImpactSetA" effectLaunch="SpawnLocustsSwarm@LM_A">
+        <LaunchAttachQuery Methods="Weapon 4"/>
+        <LaunchAssets Sound="SwarmHost_EggLaunch"/>
+        <Missile value="LocustMPEggAAttackMissile2"/>
+        <ImpactAttachQuery Methods="Origin"/>
+    </CActorAction>
+    <CActorMissile id="SpawnLocustsSwarm@MissileA" parent="GenericAttackMissile" unitName="SpawnLocustsSwarm@MissileA">
+        <On Terms="ActorCreation" Send="Create LocustMPEggAttackLaunchModel"/>
+        <Model value="LocustMPEggAMissileWeapon"/>
+    </CActorMissile>
+    <CActorAction id="SpawnLocustsSwarm@MissileBAttackAction" parent="GenericAttack" effectImpact="SpawnLocustsSwarm@ImpactSetB" effectLaunch="SpawnLocustsSwarm@LM_B">
+        <LaunchAttachQuery Methods="Weapon 2"/>
+        <LaunchAssets Sound="SwarmHost_EggLaunch"/>
+        <Missile value="LocustMPEggBAttackMissile2"/>
+        <ImpactAttachQuery Methods="Origin"/>
+    </CActorAction>
+    <CActorMissile id="SpawnLocustsSwarm@MissileB" parent="GenericAttackMissile" unitName="SpawnLocustsSwarm@MissileB">
+        <On Terms="ActorCreation" Send="Create LocustMPEggAttackLaunchModel"/>
+        <Model value="LocustMPEggBMissileWeapon"/>
+    </CActorMissile>
+    <CActorAction id="LocustSwarm@RangedWeaponAttackAction" parent="GenericAttack" effectImpact="LocustSwarm@RangedWeaponDamage" effectLaunch="LocustSwarm@RangedWeaponLM">
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="Locust_Spit"/>
+        <Missile value="LocustSwarm@RangedWeaponAttackMissile"/>
+        <ImpactMap index="None" Model="LocustMPAttackImpact" Sound="Locust_Spit_impact"/>
+        <ImpactPhysics Name="AcidSpit" MatchKeys="Basic" Physics="LocustAttackDeathForce"/>
+    </CActorAction>
+    <CActorMissile id="LocustSwarm@RangedWeaponAttackMissile" parent="GenericAttackMissile" unitName="LocustSwarm@RangedWeaponMissile">
+        <Model value="LocustMPWeapon"/>
+    </CActorMissile>
+    <CActorAction id="LocustSwarm@MeleeWeaponAttackAction" parent="GenericAttack" effectAttack="LocustSwarm@MeleeWeaponDamage">
+        <ImpactMap index="None" Sound="Locust_Spit_impact"/>
+        <ShieldFlashType value="Header"/>
+    </CActorAction>
+    <CActorUnit id="LocustSwarm" parent="GenericBurrowerStandard" unitName="LocustSwarm">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="ZergBurrowMobileAnimMacro"/>
+        <Macros value="ZergSmallBurrowEffects"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="Behavior.SpawnLocustsSwarm@Stun.On" Send="Create SpawnLocustsSwarm@Egg"/>
+        <On Terms="Behavior.SpawnLocustsSwarm@Stun.On" Send="ModelSwap Invisible"/>
+        <On Terms="Behavior.SpawnLocustsSwarm@Stun.On" Send="AnimClear Birth"/>
+        <On Terms="Behavior.SpawnLocustsSwarm@Stun.Off" Target="SpawnLocustsSwarm@Egg" Send="$Death"/>
+        <On Terms="Behavior.SpawnLocustsSwarm@Stun.Off" Send="ModelSwap LocustMP"/>
+        <On Terms="Behavior.SpawnLocustsSwarm@Stun.Off" Send="$Birth 0 0.000000"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AnimBaselineStart"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="WeaponStart.LocustSwarm@RangedWeapon.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart AttackSuperior Attack,Superior"/>
+        <On Terms="WeaponStart.LocustSwarm@RangedWeapon.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.LocustSwarm@RangedWeapon.AttackStop" Send="AnimBracketStop AttackSuperior"/>
+        <On Terms="WeaponStop.LocustSwarm@RangedWeapon.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On Terms="WeaponStart.LocustSwarm@MeleeWeapon.AttackStart" Send="AnimBracketStart AttackMelee Spell,A"/>
+        <On Terms="WeaponStop.LocustSwarm@MeleeWeapon.AttackStop" Send="AnimBracketStop AttackMelee"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Locust_Land"/>
+        <Model value="LocustMP"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="LocustMP"/>
+        <DeathArray index="Normal" ModelLink="LocustMPDeath" SoundLink="Locust_Death"/>
+        <DeathArray index="Disintegrate" ModelLink="LocustMPDeathAcid" SoundLink="Uni_DeathFXAcid"/>
+        <DeathArray index="Fire" ModelLink="LocustMPDeathFire" SoundLink="Uni_DeathFXFire"/>
+        <DeathCustoms ModelLink="LocustMPDeathRagdoll" Name="RagdollBasic">
+            <BodySquibs Name="FireOnMetal"/>
+            <BodySquibs Name="BloodReduced" IsFallback="1"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ActorModel="SpineCrawlerHurlDeathRagdoll" ModelLink="LocustMPDeathRagdoll" Name="RagdollSpineCrawlerHurl"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustomData Name="RagdollBasic" SyncPassChance="65"/>
+        <PlacementModel value="LocustMP"/>
+        <PortraitModel value="LocustMPPortrait"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.400000"/>
+            <RangeDown value="0.400000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSmall"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.25"/>
+        <BarOffset value="45"/>
+        <BarWidth value="36"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Locust.dds"/>
+        </GroupIcon>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="Birth" value="InfestedSwarm_Birth"/>
+        <SoundArray index="Ready" value="InfestedSwarm_Ready"/>
+        <SoundArray index="Help" value="InfestedSwarm_Help"/>
+        <SoundArray index="What" value="InfestedSwarm_What"/>
+        <SoundArray index="Yes" value="InfestedSwarm_Yes"/>
+        <SoundArray index="Attack" value="InfestedSwarm_Attack"/>
+        <SoundArray index="Pissed" value="InfestedSwarm_Pissed"/>
+        <SoundArray index="Movement" value="zLocust_moveLoop"/>
+        <UnitFlags index="StandAnimBirthVariation" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-locust.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Locust.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorSite id="NeuralParasiteWoL@TentacleLaunchSite">
         <Host Subject="::scope.NeuralTentacleWoL"/>
     </CActorSite>
@@ -1786,6 +1903,113 @@
         <On Terms="BehaviorLevel.PowerUserQueue.Start; Level 0" Target="TempestSwarm@WarpInStargate" Send="Destroy"/>
         <On Terms="AbilTrain.CarrierLotV2@Train.Cancel" Target="CarrierLotV2@WarpInStargate" Send="Destroy"/>
         <On Terms="AbilTrain.CarrierLotV2@Train.Finish" Target="CarrierLotV2@WarpInStargate" Send="Destroy"/>
+    </CActorUnit>
+    <CActorModel id="SpawnLocustsSwarm@Egg" parent="ModelAdditionNoAnims">
+        <On Terms="ActorCreation" Send="AnimPlay Work Stand,Work PlayForever"/>
+        <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpShadow" HoldPosition="1" HoldRotation="1"/>
+        <Model value="SwarmHostEgg"/>
+    </CActorModel>
+    <CActorSplat id="SwarmHostSwarm@BurrowedSplat" parent="BurrowedSplatBase" unitName="SwarmHostSwarm@Burrowed">
+        <On Terms="UnitBirth.SwarmHostSwarm@Burrowed" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo SwarmHostSwarm@Burrowed" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom SwarmHostSwarm@Burrowed" Send="RefClear ::Host"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom SwarmHostSwarm@Burrowed" Send="TimerSet 4.000000,2.000000 DelayDestroy"/>
+        <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
+        <Scale value="1.500000"/>
+    </CActorSplat>
+    <CActorSound id="SwarmHostSwarm@BurrowSound" parent="SoundOneShot">
+        <On Terms="AbilMorph.*.Start; MorphTo SwarmHostBurrowedMP" Send="Create"/>
+        <Sound value="SwarmHost_Burrow"/>
+    </CActorSound>
+    <CActorUnit id="SwarmHostSwarm" parent="GenericUnitStandard" unitName="SwarmHostSwarm">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergMediumBurrowEffects"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart Ready Spell,Alternate,Start Spell,Alternate Spell,Alternate,End"/>
+        <On Terms="Behavior.SpawnLocustsSwarm@Animation.Create" Send="AnimBracketStop Ready"/>
+        <On Terms="Behavior.SpawnLocustsSwarm@Animation.Destroy" Send="AnimBracketStart Ready Spell,Alternate,Start Spell,Alternate Spell,Alternate,End"/>
+        <On Terms="UnitBirth.SwarmHostSwarm@Burrowed" Send="Create"/>
+        <On Terms="UnitBirth.SwarmHostSwarm@Burrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant"/>
+        <On Terms="UnitBirth.SwarmHostSwarm" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo SwarmHostSwarm; MorphFrom SwarmHostBurrowedMP" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo SwarmHostBurrowedMP; MorphFrom SwarmHostSwarm" Send="TerrainSquibDeactivate"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SwarmHost_Land"/>
+        <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom SwarmHostSwarm; MorphTo SwarmHostSwarm@Burrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo SwarmHostSwarm; MorphFrom SwarmHostSwarm@Burrowed" Send="AnimBracketStop Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo SwarmHostSwarm; MorphFrom SwarmHostSwarm@Burrowed" Send="AnimClear Burrow"/>
+        <Model value="SwarmHostMP"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="SwarmHostMP"/>
+        <DeathArray index="Normal" ModelLink="SwarmHostMPDeath" SoundLink="BroodLord_Explode" VoiceLink="SwarmHost_Death"/>
+        <DeathArray index="Disintegrate" ModelLink="SwarmHostMPDeathAcid" SoundLink="Uni_DeathFXAcid" VoiceLink="SwarmHost_Death"/>
+        <DeathArray index="Fire" ModelLink="SwarmHostMPDeathFire" SoundLink="Uni_DeathFXFire" VoiceLink="SwarmHost_Death"/>
+        <DeathCustoms ModelLink="ZergLargeUnitDeathLow" Name="AntiGravZerg"/>
+        <DeathCustoms ActorModel="SwarmHostMPDeathRagdoll" ModelLink="SwarmHostMPDeathRagdoll" Name="RagdollBasic"/>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <PlacementModel value="SwarmHostMP"/>
+        <PlacementSound value="Zerg_BuildingPlacement"/>
+        <PortraitModel value="SwarmHostPortrait"/>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.500000,1.000000"/>
+            <IdlePeriod value="0.500000,1.000000"/>
+            <RangeUp value="0.500000"/>
+            <RangeDown value="0.500000"/>
+            <AttachQuery Methods="AMFilterTargetSetB0"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMedium"/>
+        </TerrainSquibs>
+        <TerrainSquibs>
+            <GroupName value="RippleStandard"/>
+            <MovementDistance value="0.500000,1.000000"/>
+            <IdlePeriod value="0.500000,1.000000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleLargeSilent"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="0.707"/>
+        <BarOffset value="80"/>
+        <BarWidth value="80"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-zerg-swarmhost.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-swarmhost.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <MovementHerdNode value="HerdNode_ZergLarge"/>
+        <NameOffset value="80"/>
+        <SoundArray index="Ready" value="SwarmHost_Ready"/>
+        <SoundArray index="What" value="SwarmHost_What"/>
+        <SoundArray index="Yes" value="SwarmHost_Yes"/>
+        <SoundArray index="Attack" value="SwarmHost_Attack"/>
+        <SoundArray index="Pissed" value="SwarmHost_What"/>
+        <SoundArray index="Movement" value="SwarmHost_moveStart"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-swarmhost.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-zerg-swarmhost.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorModel id="TempestSwarm@WarpInStargate" parent="ModelAddition">
         <On Terms="UnitDeathCustomize" Send="Destroy"/>

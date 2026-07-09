@@ -140,6 +140,9 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="RavenInterferenceMatrix" State="QueuedOrBetterAtUnit"/>
     </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorSpawnLocustsSwarm@IsBurrowedCompleteOnlyAtUnit1950107581TechTreeCheat">
+        <Count Link="SpawnLocustsSwarm@IsBurrowed" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
     <CRequirementCountUnit id="CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat">
         <Tooltip value="RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat"/>
     </CRequirementCountUnit>
@@ -236,6 +239,15 @@
     <CRequirementCountUpgrade id="CountUpgradeDurableMaterialsSwarmQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="DurableMaterialsSwarm" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeEnduringLocustsSwarmCompleteOnly538939067">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="EnduringLocustsSwarm" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeEnduringLocustsSwarmQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="EnduringLocustsSwarm" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat">
         <Count Link="EnhancedShockwaves@Upgrade" State="CompleteOnly"/>
@@ -483,7 +495,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeMuscularAugmentsLotV2QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="MuscularAugmentsLotV2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeOrganicCarapaceWoLCompleteOnly3576986407">
@@ -500,7 +511,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradePathogenGlandsLotVQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="PathogenGlandsLotV" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradePathogenGlandsWoLCompleteOnly3564667570">
@@ -509,7 +519,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradePathogenGlandsWoLQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="PathogenGlandsWoL" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradePsiStormHighTemplarLibertyCompleteOnly3263798822">
@@ -763,6 +772,10 @@
     <CRequirementNot id="NotCountUpgradeDurableMaterialsSwarmQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeDurableMaterialsSwarmQueuedOrBetter"/>
     </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeEnduringLocustsSwarmQueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeEnduringLocustsSwarmQueuedOrBetter"/>
+    </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter"/>
     </CRequirementNot>
@@ -809,18 +822,15 @@
         <OperandArray index="0" value="CountUpgradeMuscularAugmentsLotV1QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeMuscularAugmentsLotV2QueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeMuscularAugmentsLotV2QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeOrganicCarapaceWoLQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeOrganicCarapaceWoLQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradePathogenGlandsLotVQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradePathogenGlandsLotVQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradePathogenGlandsWoLQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradePathogenGlandsWoLQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradePsiStormHighTemplarLibertyQueuedOrBetter">

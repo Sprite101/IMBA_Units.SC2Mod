@@ -31,6 +31,16 @@
         <EditorCategories value="Race:Protoss"/>
         <TintRacially value="1"/>
     </CButton>
+    <CButton id="EnduringLocustsSwarm">
+        <Icon value="Assets\Textures\BTN-Upgrade-Zerg-EvolveIncreasedLocustLifetime.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Zerg-EvolveIncreasedLocustLifetime.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="EnduringLocustsSwarm@Passive">
+        <Icon value="Assets\Textures\BTN-Upgrade-Zerg-EvolveIncreasedLocustLifetime.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Zerg-EvolveIncreasedLocustLifetime.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="FungalGrowthLotV">
         <Icon value="Assets\Textures\btn-ability-zerg-fungalgrowth-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-zerg-fungalgrowth-color.dds"/>
@@ -75,6 +85,11 @@
     <CButton id="InfestedTerranWoL">
         <Icon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="SpawnLocustsSwarm">
+        <Icon value="Assets\Textures\btn-unit-zerg-locust.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-locust.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="NeuralParasiteWoL">

@@ -38,6 +38,7 @@ Abil/Name/DisruptorLotV2@Build=Build
 Abil/Name/DisruptorLotVBeta@Build=Build
 Abil/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Abil/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
+Abil/Name/EnduringLocustsSwarm@Research=Research
 Abil/Name/EnergyRechargeLotV=Energy Recharge
 Abil/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
 Abil/Name/ExtendedThermalLanceLiberty@Research=Research
@@ -184,7 +185,10 @@ Abil/Name/SpawnInfestedTerranLotV=Infested Terrans
 Abil/Name/SpawnInfestedTerranLotV@MorphToInfestedTerran=Morph To Infested Terran
 Abil/Name/SpawnInfestedTerranWoL=Infested Terrans
 Abil/Name/SpawnLarvaeWoL=Spawn Larvae
+Abil/Name/SpawnLocustsSwarm=Spawn Locusts
 Abil/Name/StasisWardLotV1@Activate=Activate
+Abil/Name/SwarmHostSwarm@Burrow=Burrow
+Abil/Name/SwarmHostSwarm@Unburrow=Unburrow
 Abil/Name/TempestLotV1@Build=Build
 Abil/Name/TempestSwarm@Build=Build
 Abil/Name/TimeWarpLotV1=Time Warp
@@ -313,6 +317,8 @@ Button/Name/DisruptorLotV2=Warp In Disruptor
 Button/Name/DisruptorLotVBeta=Warp In Disruptor
 Button/Name/DrillingClaws@ResearchDrillingClaws=Research Drilling Claws
 Button/Name/DurableMaterialsSwarm@ResearchDurableMaterials=Research Durable Materials
+Button/Name/EnduringLocustsSwarm=Evolve Enduring Locusts
+Button/Name/EnduringLocustsSwarm@Passive=Enduring Locusts
 Button/Name/EnergyRechargeLotV=Energy Recharge
 Button/Name/EnhancedShockwaves@EnhancedShockwaves=Enhanced Shockwaves
 Button/Name/EnhancedShockwaves@ResearchEnhancedShockwaves=Research Enhanced Shockwaves
@@ -452,6 +458,7 @@ Button/Name/SiegeTankLotV1Morph@SiegeMode=Siege Mode
 Button/Name/SiegeTankLotV1Morph@Unsiege=Tank Mode
 Button/Name/SpawnInfestedTerranLotV=Infested Terran 
 Button/Name/SpawnLarvaeWoL=Spawn Larvae
+Button/Name/SpawnLocustsSwarm=Locust
 Button/Name/StalkerLiberty=Warp In Stalker
 Button/Name/StasisWardLotV1@Activate=Stasis Trap 
 Button/Name/StasisWardLotV1@ActivatePassive=Stasis Trap
@@ -527,6 +534,8 @@ Button/Tooltip/DisruptorLotVBeta=Robotic disruption unit. Can use Purification N
 Button/Tooltip/DisruptorLotVBeta@Phased=Highly concentrated solar energy. Explodes after <d ref="Behavior,OverchargeLotV@Phased,Duration"/> seconds, dealing area damage.
 Button/Tooltip/DrillingClaws@ResearchDrillingClaws=Allows <c val="ffff8a">Widow Mines</c> to burrow and activate two times as fast.
 Button/Tooltip/DurableMaterialsSwarm@ResearchDurableMaterials=Extends the timed duration of Raven <c val="ffff8a">Auto-Turrets</c> and <c val="ffff8a">Point Defense Drones</c>.
+Button/Tooltip/EnduringLocustsSwarm=Increases the lifetime of <c val="ffff8a">Locusts</c> by <d ref="Upgrade,EnduringLocustsSwarm,EffectArray[0].Value"/> seconds.
+Button/Tooltip/EnduringLocustsSwarm@Passive=Increases the lifetime of <c val="ffff8a">Locusts</c> by <d ref="Upgrade,EnduringLocustsSwarm,EffectArray[0].Value"/> seconds.
 Button/Tooltip/EnergyRechargeLotV=Instantly recharges <d ref="Effect,EnergyRechargeLotV@MU,VitalArray[Energy].Change * (Effect,EnergyRechargeLotV@CP,PeriodCount + 1)"/> energy to a unit near a Nexus.
 Button/Tooltip/EnhancedShockwaves@EnhancedShockwaves=Increases the radius of <c val="ffff8a">Ghost's</c> EMP Round by +<d ref="$UpgradeEffectArrayValue:EnhancedShockwaves@Upgrade:Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius$" precision="1"/>.
 Button/Tooltip/EnhancedShockwaves@ResearchEnhancedShockwaves=Increases the <c val="ffff8a">Ghost's</c> EMP Round radius by +<d ref="$UpgradeEffectArrayValue:EnhancedShockwaves@Upgrade:Effect,GhostLotV1@EMPSearch,AreaArray[0].Radius$" precision="1"/>.
@@ -588,6 +597,7 @@ Button/Tooltip/LiberatorLotV1@BuildLiberator=Artillery fighter. Loaded with miss
 Button/Tooltip/LiberatorLotV1@Liberator=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
 Button/Tooltip/LiberatorLotV2=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
 Button/Tooltip/LiberatorLotV2@DefenderMode=Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.
+Button/Tooltip/LocustSwarm=Timed life creature. Durable and dangerous.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/MULEWoL=Drops an experimental robotic MULE miner onto the target Mineral Field. MULEs collect minerals more quickly than SCVs.  <n/><n/>MULEs last <d ref="Behavior,MULETimedLife,Duration"/> seconds before their systems fail.
 Button/Tooltip/MULEWoL@Gather=Orders MULE to gather minerals from a selected Mineral Field.
 Button/Tooltip/MassRecallNexusLotV=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
@@ -682,11 +692,13 @@ Button/Tooltip/SiegeArmorLotV1Morph@Unsiege=Reverts to Tank Mode. In this mode �
 Button/Tooltip/SiegeArmorSiegedLotV1=Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/SpawnInfestedTerranLotV=Spawn an Infested Terran. Infested Terrans last <d ref="Behavior,InfestedTerranTimedLife,Duration"/> seconds.<n/><n/><c val="ffff8a">Can cast while burrowed.</c>
 Button/Tooltip/SpawnLarvaeWoL=Target Hatchery, Lair, or Hive spawns <d ref="Effect,SpawnMutantLarvaApplySpawnBehavior,Count"/> Larvae in <d ref="Behavior,QueenSpawnLarvaTimer,Duration"/> seconds. If Hatchery, Lair, or Hive has more than 3 Larvae at one time, regular Larva production will stop until there are fewer than 3 Larvae. 
+Button/Tooltip/SpawnLocustsSwarm=Timed life creature. Durable and dangerous.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/StalkerLiberty=Ranged support strider.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/StasisWardLotV1=Ground unit trap. Cloak renders the Stasis Ward invisible to enemies without detection.
 Button/Tooltip/StasisWardLotV1@Activate=Traps nearby enemies in stasis for <d ref="Behavior,StasisWardLotV1@ActivateTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
 Button/Tooltip/StasisWardLotV1@ActivatePassive=Traps nearby enemies in stasis for <d ref="Behavior,OracleStasisTrapTarget,Duration"/> seconds. Trapped units cannot be attacked or affected by abilities.
 Button/Tooltip/StasisWardLotV1@PermanentlyCloakedPassive=The Stasis Ward is permanently cloaked.
+Button/Tooltip/SwarmHostSwarm=Siege unit that attacks by spawning Locust minions.<n/><n/><c val="#ColorAttackInfo">Locusts can attack ground units.</c>
 Button/Tooltip/TempestLotV1=Siege artillery craft. Attacks from long range.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/TempestSwarm=Siege artillery craft. Attacks from long range.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/TimeWarpLotV1=After a <d ref="(Effect,TemporalFieldGrowingBubbleCreatePersistent,PeriodCount*Effect,TemporalFieldGrowingBubbleCreatePersistent,PeriodicPeriodArray[0])"/> second delay, warps spacetime within the target area for <d ref="Effect,TemporalFieldAfterBubbleCreatePersistent,PeriodCount*Effect,TemporalFieldAfterBubbleCreatePersistent,PeriodicPeriodArray[0]"/> seconds. All enemy units and structures within the field will have attack and movement speeds reduced by <d ref="(1-Behavior,TemporalField,Modification.MoveSpeedMultiplier)*100"/>%.
@@ -751,6 +763,7 @@ DataCollection/Name/DisruptorLotV2=Disruptor
 DataCollection/Name/DisruptorLotVBeta=Disruptor
 DataCollection/Name/DrillingClaws=Drilling Claws
 DataCollection/Name/DurableMaterialsSwarm=Durable Materials
+DataCollection/Name/EnduringLocustsSwarm=Enduring Locusts
 DataCollection/Name/EnergyRechargeLotV=Energy Recharge
 DataCollection/Name/EnhancedShockwaves=Enhanced Shockwaves
 DataCollection/Name/ExtendedThermalLanceLiberty=Extended Thermal Lance
@@ -794,6 +807,7 @@ DataCollection/Name/LiberatorAGLotV1=Liberator AG LotV1
 DataCollection/Name/LiberatorAGLotV2=Liberator AG
 DataCollection/Name/LiberatorLotV1=Liberator LotV1
 DataCollection/Name/LiberatorLotV2=Liberator AA
+DataCollection/Name/LocustSwarm=Locust
 DataCollection/Name/LurkerLotV=Lurker
 DataCollection/Name/MULEWoL=MULE
 DataCollection/Name/MassRecallNexusLotV=Mass Recall Nexus
@@ -856,8 +870,10 @@ DataCollection/Name/SiegeTankSiegedLotV1=Siege Tank Sieged
 DataCollection/Name/SpawnInfestedTerranLotV=Spawn Infested Terran
 DataCollection/Name/SpawnInfestedTerranWoL=Spawn Infested Terran
 DataCollection/Name/SpawnLarvaeWoL=Spawn Larvae
+DataCollection/Name/SpawnLocustsSwarm=Spawn Locusts
 DataCollection/Name/StalkerLiberty=Stalker
 DataCollection/Name/StasisWardLotV1=Stasis Ward
+DataCollection/Name/SwarmHostSwarm=Swarm Host
 DataCollection/Name/TempestLotV1=Tempest
 DataCollection/Name/TempestSwarm=Tempest
 DataCollection/Name/TimeWarpLotV1=Time Warp
@@ -1067,6 +1083,10 @@ Effect/Name/LiberatorLotV2@TargetAGOrderMorphAG=Target AG Order Morph AG
 Effect/Name/LiberatorLotV2@TargetAGSearchAB=Target AG Search AB
 Effect/Name/LiberatorLotV2@TargetAGSearchArea=Target AG Search Area
 Effect/Name/LockOnCancelSet=Lock On Cancel Set
+Effect/Name/LocustMPDamage=Melee Weapon Damage
+Effect/Name/LocustSwarm@MeleeWeaponDamage=Melee Weapon Damage
+Effect/Name/LocustSwarm@RangedWeaponDamage=Ranged Weapon Damage
+Effect/Name/LocustSwarm@RangedWeaponLM=Ranged Weapon LM
 Effect/Name/LurkerLotV@Unburrow=Issue Order Unburrow
 Effect/Name/MULEWoL@CalldownMULECP=Calldown MULE CP
 Effect/Name/MULEWoL@CalldownMULECU=Calldown MULE CU
@@ -1309,6 +1329,22 @@ Effect/Name/SpawnInfestedTerranWoL@LM=LM
 Effect/Name/SpawnInfestedTerranWoL@TimedLifeAB=Timed Life AB
 Effect/Name/SpawnLarvaeWoL@SpawnAB=Spawn AB
 Effect/Name/SpawnLarvaeWoL@TimerAB=Timer AB
+Effect/Name/SpawnLocustsSwarm@ABAnimation=AB Animation
+Effect/Name/SpawnLocustsSwarm@ABStun=AB Stun
+Effect/Name/SpawnLocustsSwarm@ABTimedLife=Timed Life
+Effect/Name/SpawnLocustsSwarm@CU_A=CU_A
+Effect/Name/SpawnLocustsSwarm@CU_B=CU_B
+Effect/Name/SpawnLocustsSwarm@CreateSetA=Create Set A
+Effect/Name/SpawnLocustsSwarm@CreateSetB=Create Set B
+Effect/Name/SpawnLocustsSwarm@ImpactSetA=Impact Set A
+Effect/Name/SpawnLocustsSwarm@ImpactSetB=Impact Set B
+Effect/Name/SpawnLocustsSwarm@InitialSet=Initial Set
+Effect/Name/SpawnLocustsSwarm@LM_A=LM A
+Effect/Name/SpawnLocustsSwarm@LM_B=LM B
+Effect/Name/SpawnLocustsSwarm@MURally=MU Rally
+Effect/Name/SpawnLocustsSwarm@MakePrecursor=Make Precursor
+Effect/Name/SpawnLocustsSwarm@ReadySet=Ready Set
+Effect/Name/SpawnLocustsSwarm@RemovePrecursor=Remove Precursor
 Effect/Name/StalkerLiberty@AttackDamage=Damage
 Effect/Name/StalkerLiberty@AttackLM=Attack LM
 Effect/Name/StasisWardLotV1@ActivateCP=Activate CP
@@ -1395,6 +1431,7 @@ Param/Expression/lib_B156CA28_B6F59028=Player ~A~ is No. ~B~ in NonCPUPlayerGrou
 Param/Expression/lib_B156CA28_C1F6DD1A=Player ~A~ is No. ~B~ in NonCPUPlayerGroup, Panel Index ~C~
 Param/Expression/lib_B156CA28_F10084BD=Player ~A~ panel index error, skipped
 RequirementNode/Tooltip/And1228785331EqCountUnitMothershipQueuedOrBetter0EqCountUnitMothershipWoLQueuedOrBetter0=No Mothership
+RequirementNode/Tooltip/CountBehaviorSpawnLocustsSwarm@IsBurrowedCompleteOnlyAtUnit1950107581TechTreeCheat=Must be Burrowed
 RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat=Factory
 RequirementNode/Tooltip/CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987=Must have at least 1 interceptor
 RequirementNode/Tooltip/CountUpgradeAdaptiveTalonsLotVCompleteOnly660444659=Evolve Adaptive Talons at the Lurker Den
@@ -1405,6 +1442,7 @@ RequirementNode/Tooltip/CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorComp
 RequirementNode/Tooltip/CountUpgradeCentrifugalHooksLotV1CompleteOnly3524559499=Evolve Centrifical Hooks at the Baneling Nest
 RequirementNode/Tooltip/CountUpgradeChargeZealotLotV1CompleteOnly137519211TechTreeCheat=Research Charge at the Twilight Council
 RequirementNode/Tooltip/CountUpgradeChargeZealotLotV2CompleteOnly137519211TechTreeCheat=Research Charge at the Twilight Council
+RequirementNode/Tooltip/CountUpgradeEnduringLocustsSwarmCompleteOnly538939067=Evolve Enduring Locusts at the Infestation Pit
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat=Research Enhanced Shockwaves at the Ghost Academy
 RequirementNode/Tooltip/CountUpgradeEnhancedShockwavesCompleteOnly2618611756TechTreeCheat2=Research Enhanced Shockwaves at the Ghost Academy
 RequirementNode/Tooltip/CountUpgradeGlialReconstitutionWoLCompleteOnly2747955788=Evolve Glial Reconstitution at the Roach Warren
@@ -1513,6 +1551,8 @@ Unit/Name/LiberatorLotV1@Liberator=Liberator
 Unit/Name/LiberatorLotV1@MorphModel=Liberator
 Unit/Name/LiberatorLotV2=Liberator
 Unit/Name/LiberatorLotV2@MorphModel=Liberator
+Unit/Name/LocustSwarm=Locust
+Unit/Name/LocustSwarm@RangedWeaponMissile=Missile
 Unit/Name/LurkerLotV=Lurker
 Unit/Name/LurkerLotV@Cocoon=Lurker Cocoon
 Unit/Name/MULEWoL=MULE
@@ -1554,9 +1594,12 @@ Unit/Name/SiegeArmorSiegedLotV1=攻城坦克
 Unit/Name/SiegeTankLotV1=Siege Tank
 Unit/Name/SpawnInfestedTerranLotV@Missile=Missile
 Unit/Name/SpawnInfestedTerranWoL@WeaponMissile=Weapon Missile
+Unit/Name/SpawnLocustsSwarm@MissileA=Missile A
+Unit/Name/SpawnLocustsSwarm@MissileB=Missile B
 Unit/Name/StalkerLiberty=Stalker
 Unit/Name/StalkerLiberty@AttackMissile=Attack Missile
 Unit/Name/StasisWardLotV1=Stasis Ward 
+Unit/Name/SwarmHostSwarm=Swarm Host
 Unit/Name/TempestLotV1=Tempest
 Unit/Name/TempestLotV1@AAWeapon=AA Weapon
 Unit/Name/TempestLotV1@AGWeapon=AG Weapon
@@ -1593,6 +1636,7 @@ Upgrade/Name/CorvidReactorLotV=Corvid Reactor
 Upgrade/Name/CorvidReactorSwarm=Corvid Reactor
 Upgrade/Name/DrillingClaws@DrillingClaws=Drilling Claws
 Upgrade/Name/DurableMaterialsSwarm=Durable Materials
+Upgrade/Name/EnduringLocustsSwarm=Enduring Locusts
 Upgrade/Name/EnhancedShockwaves@Upgrade=Enhanced Shockwaves
 Upgrade/Name/ExtendedThermalLanceLiberty=Extended Thermal Lance
 Upgrade/Name/FluxVanesLotV=Flux Vanes
@@ -1855,6 +1899,8 @@ Weapon/Name/InfestedTerranWoL@Weapon=Infested Gauss Rifle
 Weapon/Name/LiberatorAGLotV1@Weapon=Concord Cannon
 Weapon/Name/LiberatorAGLotV2@Weapon=Concord Cannon
 Weapon/Name/LiberatorLotV1@Weapon=Lexington Rockets
+Weapon/Name/LocustSwarm@MeleeWeapon=Toxic Barbs
+Weapon/Name/LocustSwarm@RangedWeapon=Acid Spit
 Weapon/Name/MothershipBeam2=Purifier Beam
 Weapon/Name/MothershipWoL@Weapon=Purifier Beam
 Weapon/Name/NapalmSpraySwarmBeta@NapalmSpray=Napalm Spray

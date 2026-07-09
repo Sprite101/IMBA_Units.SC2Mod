@@ -10,6 +10,120 @@
     <CEffectTeleport id="Blink">
         <ValidatorArray index="0" value="ModifiedAbility@CasterNotFungalGrowthed"/>
     </CEffectTeleport>
+    <CEffectModifyUnit id="SpawnLocustsSwarm@MURally">
+        <EditorCategories value="Race:Zerg"/>
+        <RallyUnit Effect="SpawnLocustsSwarm@InitialSet" Value="Source"/>
+    </CEffectModifyUnit>
+    <CEffectLaunchMissile id="SpawnLocustsSwarm@LM_A">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetUnitOrPoint"/>
+        <FinishEffect value="SpawnLocustsSwarm@ImpactSetA"/>
+        <AmmoUnit value="SpawnLocustsSwarm@MissileA"/>
+        <Movers Link="LocustMPEggMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="SpawnLocustsSwarm@LM_B">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetUnitOrPoint"/>
+        <FinishEffect value="SpawnLocustsSwarm@ImpactSetB"/>
+        <AmmoUnit value="SpawnLocustsSwarm@MissileB"/>
+        <Movers Link="LocustMPEggMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="SpawnLocustsSwarm@ImpactSetA">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="SpawnLocustsSwarm@RemovePrecursor"/>
+        <EffectArray value="SpawnLocustsSwarm@ABStun"/>
+    </CEffectSet>
+    <CEffectSet id="SpawnLocustsSwarm@ImpactSetB">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="SpawnLocustsSwarm@RemovePrecursor"/>
+        <EffectArray value="SpawnLocustsSwarm@ABStun"/>
+    </CEffectSet>
+    <CEffectSet id="SpawnLocustsSwarm@InitialSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="SpawnLocustsSwarm@ABAnimation"/>
+        <EffectArray value="SpawnLocustsSwarm@CU_A"/>
+        <EffectArray value="SpawnLocustsSwarm@CU_B"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="SpawnLocustsSwarm@CreateSetA">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="SpawnLocustsSwarm@MakePrecursor"/>
+        <EffectArray value="SpawnLocustsSwarm@LM_A"/>
+    </CEffectSet>
+    <CEffectSet id="SpawnLocustsSwarm@CreateSetB">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="SpawnLocustsSwarm@MakePrecursor"/>
+        <EffectArray value="SpawnLocustsSwarm@LM_B"/>
+    </CEffectSet>
+    <CEffectCreateUnit id="SpawnLocustsSwarm@CU_A">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="CasterUnit"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="TechComplete" value="0"/>
+        <RallyUnit Value="Source"/>
+        <SpawnEffect value="SpawnLocustsSwarm@CreateSetA"/>
+        <SpawnUnit value="LocustSwarm"/>
+        <SpawnRange value="1.5"/>
+        <SpawnOffset value="0.4,-0.2"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="SpawnLocustsSwarm@CU_B">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="CasterUnit"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="TechComplete" value="0"/>
+        <RallyUnit Value="Source"/>
+        <SpawnEffect value="SpawnLocustsSwarm@CreateSetB"/>
+        <SpawnUnit value="LocustSwarm"/>
+        <SpawnRange value="1.5"/>
+        <SpawnOffset value="-0.4,-0.2"/>
+    </CEffectCreateUnit>
+    <CEffectSet id="SpawnLocustsSwarm@ReadySet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="SpawnLocustsSwarm@MURally"/>
+        <EffectArray value="SpawnLocustsSwarm@ABTimedLife"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="SpawnLocustsSwarm@ABStun">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="SpawnLocustsSwarm@Stun"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="SpawnLocustsSwarm@ABTimedLife">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="SpawnLocustsSwarm@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="LocustSwarm@RangedWeaponDamage">
+        <EditorCategories value="Race:Zerg"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="12"/>
+        <Death value="Disintegrate"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="LocustSwarm@RangedWeaponLM">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="LocustSwarm@RangedWeaponDamage"/>
+        <AmmoUnit value="LocustSwarm@RangedWeaponMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="LocustSwarm@MeleeWeaponDamage">
+        <EditorCategories value="Race:Zerg"/>
+        <Marker Link="Effect/LocustSwarm@RangedWeaponDamage"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="12"/>
+        <Death value="Disintegrate"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="SpawnLocustsSwarm@MakePrecursor">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="SpawnLocustsSwarm@Precursor"/>
+    </CEffectApplyBehavior>
     <CEffectSet id="ModifiedAbility@NeuralParasiteExpireSet">
         <EffectArray value="NeuralParasiteLockOnRemove"/>
         <EffectArray value="ModifiedAbility@LockOnLotV1RB"/>
@@ -226,6 +340,10 @@
         <EffectArray value="NeuralParasiteWoL@LockOnLotV2RB"/>
         <EffectArray value="NeuralParasiteWoL@LockOnLotV1RB"/>
     </CEffectSet>
+    <CEffectRemoveBehavior id="SpawnLocustsSwarm@RemovePrecursor">
+        <EditorCategories value="Race:Zerg"/>
+        <BehaviorLink value="SpawnLocustsSwarm@Precursor"/>
+    </CEffectRemoveBehavior>
     <CEffectSet id="SpawnInfestedTerranLotV@ImpactSet">
         <EditorCategories value="Race:Zerg"/>
         <EffectArray value="RemovePrecursor"/>
@@ -381,6 +499,11 @@
         <ValidatorArray value="NotSpawningMutantLarva"/>
         <EditorCategories value="Race:Zerg"/>
         <Behavior value="SpawnLarvaeWoL@Timer"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="SpawnLocustsSwarm@ABAnimation">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SpawnLocustsSwarm@Animation"/>
     </CEffectApplyBehavior>
     <CEffectModifyUnit id="TransfusionWoL@MU">
         <ValidatorArray value="LifeNotFull"/>

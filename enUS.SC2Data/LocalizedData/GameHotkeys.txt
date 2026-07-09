@@ -29,6 +29,7 @@ Button/Hotkey/DisruptorLotV2=D
 Button/Hotkey/DisruptorLotVBeta=D
 Button/Hotkey/DrillingClaws@ResearchDrillingClaws=C
 Button/Hotkey/DurableMaterialsSwarm@ResearchDurableMaterials=D
+Button/Hotkey/EnduringLocustsSwarm=D
 Button/Hotkey/EnergyRechargeLotV=B
 Button/Hotkey/EnhancedShockwaves@ResearchEnhancedShockwaves=S
 Button/Hotkey/ExtendedThermalLanceLiberty=E

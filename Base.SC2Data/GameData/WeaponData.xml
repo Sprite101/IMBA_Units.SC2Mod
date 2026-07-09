@@ -71,6 +71,34 @@
         <Backswing value="0.75"/>
         <Effect value="InfestedTerranWoL@WeaponWeaponDamage"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="LocustSwarm@RangedWeapon">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <DisplayEffect value="LocustSwarm@RangedWeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="6"/>
+        <Range value="3"/>
+        <Period value="0.8"/>
+        <DamagePoint value="0.2666"/>
+        <Effect value="LocustSwarm@RangedWeaponLM"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LocustSwarm@MeleeWeapon">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
+        <DisplayEffect value="LocustSwarm@MeleeWeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="6"/>
+        <Range value="0.5"/>
+        <Marker Link="Weapon/LocustSwarm@RangedWeapon"/>
+        <Cost>
+            <Cooldown Link="Weapon/LocustSwarm@RangedWeapon"/>
+        </Cost>
+        <Period value="0.8"/>
+        <DamagePoint value="0.2666"/>
+        <Effect value="LocustSwarm@MeleeWeaponDamage"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="QueenLotV@AAWeapon">
         <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>

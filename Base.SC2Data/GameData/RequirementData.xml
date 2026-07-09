@@ -45,6 +45,14 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeChargeZealotLotV2CompleteOnly137519211TechTreeCheat"/>
     </CRequirement>
+    <CRequirement id="EnduringLocustsSwarm@Have">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeEnduringLocustsSwarmCompleteOnly538939067"/>
+    </CRequirement>
+    <CRequirement id="EnduringLocustsSwarm@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeEnduringLocustsSwarmQueuedOrBetter"/>
+    </CRequirement>
     <CRequirement id="ExtendedThermalLanceLiberty@LearnExtendedThermalLance">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="AndNotCountUpgradeExtendedThermalLanceLibertyQueuedOrBetter"/>
@@ -136,6 +144,10 @@
     <CRequirement id="PathogenGlandsWoL@Learn">
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Show" Link="NotCountUpgradePathogenGlandsWoLQueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="SpawnLocustsSwarm@Requirements">
+        <EditorCategories value="Race:Zerg,TechType:Unit"/>
+        <NodeArray index="Use" Link="CountBehaviorSpawnLocustsSwarm@IsBurrowedCompleteOnlyAtUnit1950107581TechTreeCheat"/>
     </CRequirement>
     <CRequirement id="TunnelingClawsWoL@Have">
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>

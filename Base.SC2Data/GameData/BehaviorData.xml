@@ -37,6 +37,36 @@
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <ExpireEffect value="SpawnInfestedTerranLotV@IssueEggMorphOrder"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnLocustsSwarm@Stun">
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Stun" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Duration value="2"/>
+        <FinalEffect value="SpawnLocustsSwarm@ReadySet"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnLocustsSwarm@TimedLife">
+        <Tooltip value="Behavior/Tooltip/BroodlingFate"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="15"/>
+        <DurationRandomMax value="0.5"/>
+        <ExpireEffect value="TimedLifeFate"/>
+        <Modification>
+            <StateFlags index="Summoned" value="1"/>
+        </Modification>
+        <KillCredit Value="Caster"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="NeuralParasite">
         <FinalEffect value="ModifiedAbility@NeuralParasiteExpireSet"/>
     </CBehaviorBuff>
@@ -80,6 +110,18 @@
             <AbilLinkDisableArray value="SprayTerran"/>
             <AbilLinkDisableArray value="SprayZerg"/>
             <AbilLinkDisableArray value="Clone"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnLocustsSwarm@Precursor">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="NoDraw" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="SpawnInfestedTerranWoL@TimedLife">
@@ -133,6 +175,13 @@
         <BuffFlags index="Countdown" value="0"/>
         <Duration value="40"/>
         <ExpireEffect value="SpawnLarvaeWoL@SpawnAB"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnLocustsSwarm@Animation" parent="SwarmHostEggAnimationDefault">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpawnLocustsSwarm@IsBurrowed">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="VolatileBurstLiberty@ToggleBuilding">
         <InfoFlags index="Hidden" value="1"/>

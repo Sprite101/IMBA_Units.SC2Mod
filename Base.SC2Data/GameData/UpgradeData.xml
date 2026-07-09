@@ -25,6 +25,17 @@
         <AffectedUnitArray value="LurkerLotV"/>
         <AffectedUnitArray value="LurkerLotV@Burrowed"/>
     </CUpgrade>
+    <CUpgrade id="EnduringLocustsSwarm">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\BTN-Upgrade-Zerg-EvolveIncreasedLocustLifetime.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Zerg"/>
+        <ScoreAmount value="400"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Reference="Behavior,SpawnLocustsSwarm@TimedLife,Duration" Value="10"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <AffectedUnitArray value="SwarmHostSwarm"/>
+    </CUpgrade>
     <CUpgrade id="GroovedSpinesLotV1">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-hotsgroovedspines.dds"/>
