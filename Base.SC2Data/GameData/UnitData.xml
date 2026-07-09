@@ -3047,7 +3047,6 @@
         <LeaderAlias value="SwarmHostMP"/>
         <HotkeyAlias value="SwarmHostMP"/>
         <SubgroupAlias value="SwarmHostMP"/>
-        <EquipmentArray Weapon="LocustSwarm@RangedWeapon"/>
         <GlossaryAlias value="SwarmHostMP"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
@@ -3137,7 +3136,6 @@
         <TacticalAI value="SwarmHostMP"/>
         <TacticalAIThink value="AIThinkSwarmHostMP"/>
         <TechAliasArray value="Alias_SwarmHost"/>
-        <EquipmentArray Weapon="AcidSpitSwarmhostDummy"/>
         <GlossaryCategory value="Unit/Category/ZergUnits"/>
         <GlossaryPriority value="146"/>
         <GlossaryStrongArray value="SCV"/>

@@ -1920,7 +1920,7 @@
         <Scale value="1.500000"/>
     </CActorSplat>
     <CActorSound id="SwarmHostSwarm@BurrowSound" parent="SoundOneShot">
-        <On Terms="AbilMorph.*.Start; MorphTo SwarmHostBurrowedMP" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo SwarmHostSwarm@Burrowed" Send="Create"/>
         <Sound value="SwarmHost_Burrow"/>
     </CActorSound>
     <CActorUnit id="SwarmHostSwarm" parent="GenericUnitStandard" unitName="SwarmHostSwarm">
