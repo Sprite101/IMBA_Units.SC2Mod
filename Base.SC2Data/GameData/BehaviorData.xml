@@ -3,6 +3,12 @@
     <CBehaviorBuff id="AdeptPhaseShiftTimer">
         <RemoveValidatorArray value="MassRecallNexusLotV@CasterIsNotNexusMassRecallWarpingOut"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="BroodlingEscortWeaponWoL@TimedLife" parent="TimedLife">
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Duration value="8"/>
+        <KillCredit Value="Unknown"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="FungalGrowthWoL@Root">
         <Alignment value="Negative"/>
         <InfoFlags index="Hidden" value="1"/>
@@ -832,6 +838,7 @@
             <AbilClassEnableArray index="CAbilMorph" value="1"/>
             <AbilLinkEnableArray value="BroodLordQueue2"/>
             <AbilLinkEnableArray value="BroodLordHangar"/>
+            <AbilLinkEnableArray value="BroodlingStrikeWoL@Hangar"/>
             <AbilLinkDisableArray value="MorphToOverseer"/>
             <AbilLinkDisableArray value="MorphToBroodLord"/>
             <BehaviorClassDisableArray index="CBehaviorPowerSource" value="1"/>
@@ -874,6 +881,7 @@
             <AbilClassEnableArray index="CAbilMorph" value="1"/>
             <AbilLinkEnableArray value="BroodLordQueue2"/>
             <AbilLinkEnableArray value="BroodLordHangar"/>
+            <AbilLinkEnableArray value="BroodlingStrikeWoL@Hangar"/>
             <AbilLinkDisableArray value="MorphToOverseer"/>
             <AbilLinkDisableArray value="MorphToBroodLord"/>
             <BehaviorClassDisableArray index="CBehaviorPowerSource" value="1"/>

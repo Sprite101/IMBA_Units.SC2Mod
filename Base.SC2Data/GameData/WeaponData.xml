@@ -11,6 +11,28 @@
         <Period value="1.04"/>
         <Effect value="90mmCannonsLotV1@Damage"/>
     </CWeaponLegacy>
+    <CWeaponLegacy id="BroodlingEscortWeaponWoL">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-airattacks-level0.dds"/>
+        <DisplayEffect value="BroodlingEscortWeaponWoL@InitialSwitch"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <Arc value="360"/>
+        <Period value="10"/>
+        <Effect value="BroodlingEscortWeaponWoL@InitialSwitch"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BroodlingStrikeWoL">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-airattacks-level0.dds"/>
+        <DisplayEffect value="BroodlingEscortWeaponWoL@FallbackMissileDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9.5"/>
+        <Period value="2.5"/>
+        <AllowedMovement value="Slowing"/>
+        <Effect value=""/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="HydraliskLotV1@Weapon">
         <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
@@ -98,6 +120,17 @@
         <Period value="0.8"/>
         <DamagePoint value="0.2666"/>
         <Effect value="LocustSwarm@MeleeWeaponDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BroodlingBroodLordWoL@Weapon">
+        <EditorCategories value="Race:Zerg"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level0.dds"/>
+        <DisplayEffect value="BroodlingBroodLordWoL@WeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="15"/>
+        <Range value="0.1"/>
+        <Period value="0.6455"/>
+        <Effect value="BroodlingBroodLordWoL@WeaponDamage"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="QueenLotV@AAWeapon">
         <EditorCategories value="Race:Zerg"/>

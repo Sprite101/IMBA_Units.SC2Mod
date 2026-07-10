@@ -21,6 +21,19 @@
         <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
         <NodeArray index="Use" Link="CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174"/>
     </CRequirement>
+    <CRequirement id="AnabolicSynthesisLotV2@Have">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="CountUpgradeAnabolicSynthesisLotV2CompleteOnly3451611569"/>
+    </CRequirement>
+    <CRequirement id="AnabolicSynthesisLotV2@Learn">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="NotCountUpgradeAnabolicSynthesisLotV2QueuedOrBetter"/>
+    </CRequirement>
+    <CRequirement id="BroodlingStrikeWoL@ArmBroodlingEscort">
+        <EditorCategories value="Race:Protoss,TechType:Unit"/>
+        <CanBeSuppressed index="Use" value="0"/>
+        <NodeArray index="Use" Link="LTCountUnitBroodlingEscortWoLQueuedOrBetterAtUnit2"/>
+    </CRequirement>
     <CRequirement id="CarrierLotV1@WeaponHangarCount">
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="LT2210218377CountUnitInterceptorLotV1QueuedOrBetterAtUnit8"/>

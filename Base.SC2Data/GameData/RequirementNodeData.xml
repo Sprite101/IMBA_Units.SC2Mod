@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CRequirementConst id="2"/>
     <CRequirementAllowAbil id="AllowAbilCaduceusReactorSwarmBeta@ResearchCaduceusReactor0">
         <Link value="CaduceusReactorSwarmBeta@ResearchCaduceusReactor"/>
     </CRequirementAllowAbil>
@@ -146,6 +147,11 @@
     <CRequirementCountUnit id="CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat">
         <Tooltip value="RequirementNode/Tooltip/CountUnitAlias_FactoryCompleteOnly96167438TechTreeCheat"/>
     </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitBroodlingEscortWoLQueuedOrBetterAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="BroodlingEscortWoL" State="QueuedOrBetterAtUnit"/>
+    </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="InterceptorLotV1" State="CompleteOnlyAtUnit"/>
@@ -193,6 +199,15 @@
     <CRequirementCountUpgrade id="CountUpgradeAmplifiedShieldingLotVQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AmplifiedShieldingLotV" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAnabolicSynthesisLotV2CompleteOnly3451611569">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AnabolicSynthesisLotV2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAnabolicSynthesisLotV2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="AnabolicSynthesisLotV2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276">
         <Flags index="TechTreeCheat" value="0"/>
@@ -246,7 +261,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeEnduringLocustsSwarmQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="EnduringLocustsSwarm" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeEnhancedShockwaves@UpgradeCompleteOnly2618611756TechTreeCheat">
@@ -727,6 +741,11 @@
         <OperandArray index="0" value="CountUnitInterceptorLotV2QueuedOrBetterAtUnit"/>
         <OperandArray index="1" value="8"/>
     </CRequirementLT>
+    <CRequirementLT id="LTCountUnitBroodlingEscortWoLQueuedOrBetterAtUnit2">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUnitBroodlingEscortWoLQueuedOrBetterAtUnit"/>
+        <OperandArray index="1" value="2"/>
+    </CRequirementLT>
     <CRequirementNot id="Not361380870CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit">
         <OperandArray index="0" value="CountBehaviorCycloneLockOnAirLoTV1@LockOnCasterCompleteOnlyAtUnit"/>
     </CRequirementNot>
@@ -747,6 +766,10 @@
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAmplifiedShieldingLotVQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeAmplifiedShieldingLotVQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotCountUpgradeAnabolicSynthesisLotV2QueuedOrBetter">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUpgradeAnabolicSynthesisLotV2QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter"/>
@@ -773,7 +796,6 @@
         <OperandArray index="0" value="CountUpgradeDurableMaterialsSwarmQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeEnduringLocustsSwarmQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeEnduringLocustsSwarmQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeEnhancedShockwaves@UpgradeQueuedOrBetter">
@@ -880,5 +902,11 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="UpgradeHydralisk2QueuedOrBetter">
         <Count Link="HydraliskLotV1"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeUltralisk2CompleteOnly">
+        <Count Link="UltraliskLotV2"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="UpgradeUltralisk2QueuedOrBetter">
+        <Count Link="UltraliskLotV2"/>
     </CRequirementCountUpgrade>
 </Catalog>

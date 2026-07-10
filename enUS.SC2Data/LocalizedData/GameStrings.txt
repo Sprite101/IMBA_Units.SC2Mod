@@ -2,6 +2,7 @@
 Abil/Name/AdvancedBallistics@ResearchAdvancedBallistics=Research Advanced Ballistics
 Abil/Name/AdvancedBallisticsLotV2@Research=Research Advanced Ballistics
 Abil/Name/AmplifiedShieldingLotV@Research=Research
+Abil/Name/AnabolicSynthesisLotV2@Research=Research
 Abil/Name/AutoTurretSwarm=Place Auto Turret
 Abil/Name/BanelingLotV1@Burrow=Burrow
 Abil/Name/BanelingLotV1@Explode=Explode
@@ -10,6 +11,8 @@ Abil/Name/BanelingLotV1@MorphZerglingToBaneling=Morph Zergling to Baneling
 Abil/Name/BanelingLotV1@Unburrow=Unburrow
 Abil/Name/BatteryOverchargeLotV=Battery Overcharge
 Abil/Name/BlinkLiberty@ResearchBlink=Research
+Abil/Name/BroodLordWoL@MorphToBroodLord=Morph (Corruptor - > Brood Lord)
+Abil/Name/BroodlingStrikeWoL@Hangar=Hangar
 Abil/Name/BuildCreepTumorLiberty_Queen=Build
 Abil/Name/BuildCreepTumorTumor=Build
 Abil/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
@@ -197,6 +200,8 @@ Abil/Name/TrainQueen2=Train Queen
 Abil/Name/TransfusionWoL=Transfusion
 Abil/Name/TunnelingClawsWoL@Research=Research
 Abil/Name/TunnelingJawsSwarm@Research=Research
+Abil/Name/UltraliskLotV2@Burrow=Burrow
+Abil/Name/UltraliskLotV2@Unburrow=Unburrow
 Abil/Name/VoidRayLotV@Build=Build
 Abil/Name/VolatileBurstLiberty@ToggleBuilding=Toggle Building
 Abil/Name/VortexWoL=Vortex
@@ -289,9 +294,12 @@ Button/Name/AdvancedBallisticsLotV2=Advanced Ballistics
 Button/Name/AdvancedBallisticsLotV2@ResearchAdvancedBallistics=Research Advanced Ballistics
 Button/Name/AmplifiedShieldingLotV=Research Amplified Shielding
 Button/Name/AmplifiedShieldingLotV@Passive=Amplified Shielding
+Button/Name/AnabolicSynthesisLotV2=Evolve Anabolic Synthesis
+Button/Name/AnabolicSynthesisLotV2@Passive=Anabolic Synthesis
 Button/Name/AutoTurretSwarm=Build Auto-Turret
 Button/Name/BarracksLiberty=Build Barracks
 Button/Name/BatteryOverchargeLotV=Battery Overcharge
+Button/Name/BroodLordWoL=Morph to Brood Lord
 Button/Name/BunkerLiberty=Build Bunker
 Button/Name/CaduceusReactorSwarmBeta@Passive=Caduceus Reactor
 Button/Name/CaduceusReactorSwarmBeta@ResearchCaduceusReactor=Research Caduceus Reactor
@@ -493,6 +501,8 @@ Button/Tooltip/AdvancedBallisticsLotV2=Increases the range of Liberators in Defe
 Button/Tooltip/AdvancedBallisticsLotV2@ResearchAdvancedBallistics=Increases the range of Liberators in Defender Mode by <d ref="$UpgradeEffectArrayValue:AdvancedBallisticsLotV2:Weapon,LiberatorAGLotV2@Weapon,Range$"/>.
 Button/Tooltip/AmplifiedShieldingLotV=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShieldingLotV:Unit,AdeptLotV,ShieldsMax$"/>.
 Button/Tooltip/AmplifiedShieldingLotV@Passive=Increases the <c val="ffff8a">Adept's</c> shields by <d ref="$UpgradeEffectArrayValue:AmplifiedShielding:Unit,Adept,ShieldsMax$"/>.
+Button/Tooltip/AnabolicSynthesisLotV2=Increases the movement speed of <c val="ffff8a">Ultralisks</c> off creep.
+Button/Tooltip/AnabolicSynthesisLotV2@Passive=Increases the movement speed of <c val="ffff8a">Ultralisks</c> off creep.
 Button/Tooltip/AutoTurretSwarm=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AutoTurretSwarm@AutoTurret=Automated defensive turret. Times out after <d ref="Behavior,AutoTurretSwarm@TimedLife,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BanelingLotV1=Suicide unit. Does damage over a small area on death. <n/><n/><c val="ffff8a">Can attack ground units.</c>
@@ -500,6 +510,8 @@ Button/Tooltip/BarracksLiberty=Infantry-production facility.<n/><n/><c val="ffff
 Button/Tooltip/BaseDefenseUnit=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
 Button/Tooltip/BaseDefenseUnit2=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
 Button/Tooltip/BatteryOverchargeLotV=Overcharges a target Shield Battery near a Nexus, increasing its shield restoration rate by <d ref="Behavior,BatteryOverchargeLotV,Modification.HealDealtMultiplier * 100 - 100"/>% and allowing it to restore shields without consuming energy for <d ref="Behavior,BatteryOverchargeLotV,Duration"/> seconds.
+Button/Tooltip/BroodLordWoL=Flying heavy-assault unit. Shoots Broodlings at its target. A Broodling is a small creature that can attack ground units.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/BroodlingBroodLordWoL=Fast melee creature that will last for a short duration.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/BuildCycloneLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BuildCycloneLotV2=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/BuildGhostLotV1=Mobile assault vehicle. Can use Lock On to quickly fire while moving.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -708,6 +720,7 @@ Button/Tooltip/TunnelingClawsWoL=Enables <c val="ffff8a">Roaches</c> to move whi
 Button/Tooltip/TunnelingClawsWoL@Passive=Enables <c val="ffff8a">Roaches</c> to move while burrowed.
 Button/Tooltip/TunnelingJawsSwarm=<c val="ffff8a">Banelings</c> gain increased movement speed and +10 health.
 Button/Tooltip/TunnelingJawsSwarm@Passive=<c val="ffff8a">Banelings</c> gain increased movement speed and +10 health.
+Button/Tooltip/UltraliskLotV2=Heavy assault beast. Has an area-damage attack.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/VoidRayLotV=Surgical strike craft.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/VortexWoL=Creates a gravity Vortex that stuns ground and air units in the target area. Units within the Vortex are invulnerable to all damage and effects. Lasts for <d time="20"/>.
 Button/Tooltip/WarhoundSwarm=Anti-vehicle mech. Haywire missiles do bonus damage to mechanical units. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
@@ -729,11 +742,17 @@ DataCollection/Name/AdeptLotV2=Adept
 DataCollection/Name/AdvancedBallistics=Advanced Ballistics
 DataCollection/Name/AdvancedBallisticsLotV2=Advanced Ballistics
 DataCollection/Name/AmplifiedShieldingLotV=Amplified Shielding
+DataCollection/Name/AnabolicSynthesisLotV2=Anabolic Synthesis
 DataCollection/Name/AutoTurretSwarm=Raven Auto Turret
 DataCollection/Name/BanelingLotV1=Baneling
 DataCollection/Name/BarracksLiberty=Barracks
 DataCollection/Name/BatteryOverchargeLotV=Battery Overcharge
 DataCollection/Name/BlinkLiberty=Blink
+DataCollection/Name/BroodLordWoL=Brood Lord
+DataCollection/Name/BroodlingBroodLordWoL=Broodling
+DataCollection/Name/BroodlingEscortWeaponWoL=Broodling Escort
+DataCollection/Name/BroodlingEscortWoL=Broodling
+DataCollection/Name/BroodlingStrikeWoL=Broodling Strike
 DataCollection/Name/BuildCreepTumorLiberty_Queen=Build Creep Tumor
 DataCollection/Name/BuildCreepTumorTumor=Build Creep Tumor
 DataCollection/Name/BunkerLiberty=Bunker
@@ -883,6 +902,7 @@ DataCollection/Name/TransfusionWoL=Transfusion
 DataCollection/Name/TunnelingClawsWoL=Tunneling Claws
 DataCollection/Name/TunnelingJawsSwarm=Tunneling Jaws
 DataCollection/Name/TyphoonMissilePodLotV2=Typhoon Missile Pod
+DataCollection/Name/UltraliskLotV2=Ultralisk
 DataCollection/Name/VoidRayLotV=Void Ray
 DataCollection/Name/VolatileBurstLiberty=Volatile Burst
 DataCollection/Name/VortexWoL=Vortex
@@ -903,6 +923,27 @@ Effect/Name/AutoTurretSwarm@LM=LM
 Effect/Name/AutoTurretSwarm@ReleaseSet=Release Set
 Effect/Name/AutoTurretSwarm@TimedLifeAB=Timed Life AB
 Effect/Name/BatteryOverchargeLotV@AB=AB
+Effect/Name/BroodlingBroodLordWoL@WeaponDamage=Weapon Damage
+Effect/Name/BroodlingEscortWeaponWoL@ABTimedLife=AB Timed Life
+Effect/Name/BroodlingEscortWeaponWoL@Damage=Damage
+Effect/Name/BroodlingEscortWeaponWoL@EscortImpactSet=Escort Impact Set
+Effect/Name/BroodlingEscortWeaponWoL@EscortImpactTransferBehavior=Escort Impact Transfer Behavior
+Effect/Name/BroodlingEscortWeaponWoL@EscortLM=Escort LM
+Effect/Name/BroodlingEscortWeaponWoL@EscortLaunchSet=Escort Launch Set
+Effect/Name/BroodlingEscortWeaponWoL@FallbackLM=Fallback LM
+Effect/Name/BroodlingEscortWeaponWoL@FallbackMissileDamage=Fallback Missile Damage
+Effect/Name/BroodlingEscortWeaponWoL@ImpactACUBroodling=Impact A CU Broodling
+Effect/Name/BroodlingEscortWeaponWoL@ImpactBSet=Impact B Set
+Effect/Name/BroodlingEscortWeaponWoL@InitialSwitch=Initial Switch
+Effect/Name/BroodlingEscortWeaponWoL@IssueOrder=Issue Order
+Effect/Name/BroodlingEscortWeaponWoL@LM_A=LM A
+Effect/Name/BroodlingEscortWeaponWoL@LM_B=LM B
+Effect/Name/BroodlingEscortWeaponWoL@LaunchBSet=Launch B Set
+Effect/Name/BroodlingEscortWeaponWoL@LaunchBTransferBehavior=Launch B Transfer Behavior
+Effect/Name/BroodlingEscortWeaponWoL@ReleaseMagazine=Release Magazine
+Effect/Name/BroodlingEscortWeaponWoL@TargetStructureCUBroodling=Target Structure CU Broodling
+Effect/Name/BroodlingEscortWeaponWoL@TargetStructureSwitch=Target Structure Switch
+Effect/Name/BroodlingEscortWeaponWoL@TargetUnitSet=Target Unit Set
 Effect/Name/BuildCreepTumorTumor@ImpactDummy=Impact Dummy
 Effect/Name/BuildCreepTumorTumor@LM=LM
 Effect/Name/BuildCreepTumorTumor@LMSet=LM Set
@@ -1438,6 +1479,7 @@ RequirementNode/Tooltip/CountUpgradeAdaptiveTalonsLotVCompleteOnly660444659=Evol
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsCompleteOnly1495348974=Research Advanced Ballistics at the Starport Techlab
 RequirementNode/Tooltip/CountUpgradeAdvancedBallisticsLotV2CompleteOnly2325880491=Research Advanced Ballistics at the Fusion Core
 RequirementNode/Tooltip/CountUpgradeAmplifiedShieldingLotVCompleteOnly1628383174=Research Amplified Shielding at the Twilight Council
+RequirementNode/Tooltip/CountUpgradeAnabolicSynthesisLotV2CompleteOnly3451611569=Evolve Anabolic Synthesis at the Ultralisk Carven
 RequirementNode/Tooltip/CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276=Research Caduceus Reactor at the Starport Techlab
 RequirementNode/Tooltip/CountUpgradeCentrifugalHooksLotV1CompleteOnly3524559499=Evolve Centrifical Hooks at the Baneling Nest
 RequirementNode/Tooltip/CountUpgradeChargeZealotLotV1CompleteOnly137519211TechTreeCheat=Research Charge at the Twilight Council
@@ -1499,6 +1541,10 @@ Unit/Name/BanelingLotV1=Baneling
 Unit/Name/BanelingLotV1@Cocoon=Baneling Cocoon
 Unit/Name/BaseDefenseUnit=Base Defense Unit
 Unit/Name/BaseDefenseUnit2=Base Defense Unit
+Unit/Name/BroodLordWoL=Brood Lord
+Unit/Name/BroodLordWoL@Cocoon=Brood Lord Cocoon
+Unit/Name/BroodlingBroodLordWoL=Broodling
+Unit/Name/BroodlingEscortWeaponWoL@BWeaponMissile=B Weapon Missile
 Unit/Name/BuildCreepTumorTumor@Missile=Missile
 Unit/Name/CarrierLotV1=Carrier
 Unit/Name/CarrierLotV2=Carrier
@@ -1609,6 +1655,7 @@ Unit/Name/TempestSwarm@AGWeaponMissile=Weapon Attack Missile
 Unit/Name/TornadoBlaster@Missile=Missile
 Unit/Name/TyphoonMissilePod@Missile=Missile
 Unit/Name/TyphoonMissilePodLotV2@Missile=Missile
+Unit/Name/UltraliskLotV2=Ultralisk
 Unit/Name/VoidRayLotV=Void Ray
 Unit/Name/WarhoundSwarm=Warhound 
 Unit/Name/WarhoundSwarm@HaywireMissilesWeapon=Haywire Missiles Weapon
@@ -1626,6 +1673,7 @@ Upgrade/Name/AdeptLotV2@Upgrade=Adept LotV2
 Upgrade/Name/AdvancedBallistics=Advanced Ballistics
 Upgrade/Name/AdvancedBallisticsLotV2=Advanced Ballistics
 Upgrade/Name/AmplifiedShieldingLotV=Amplified Shielding
+Upgrade/Name/AnabolicSynthesisLotV2=Anabolic Synthesis
 Upgrade/Name/BarracksLiberty@RepairTime=Repair Time
 Upgrade/Name/BunkerLiberty@RepairTime=Repair Time
 Upgrade/Name/CaduceusReactorSwarmBeta@CaduceusReactor=Caduceus Reactor
@@ -1880,6 +1928,9 @@ VolatileBurstLiberty@FriendlyDamage=Friendly Damage
 Weapon/Name/90mmCannonsLotV1=90mm Cannons
 Weapon/Name/AdeptLotV@Weapon=Glaive Cannon
 Weapon/Name/AutoTurretSwarm@AutoTurretWeapon=12mm Gauss Cannon
+Weapon/Name/BroodlingBroodLordWoL@Weapon=Needle Claws
+Weapon/Name/BroodlingEscortWeaponWoL=Broodling Escort
+Weapon/Name/BroodlingStrikeWoL=Broodling Strike
 Weapon/Name/CanisterRifleLiberty=C-10 Canister Rifle
 Weapon/Name/CarrierLotV1@Weapon=Interceptor Launch
 Weapon/Name/CarrierLotV2@Weapon=Interceptor Launch

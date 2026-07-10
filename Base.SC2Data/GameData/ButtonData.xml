@@ -15,6 +15,21 @@
         <AlertIcon value="Assets\Textures\btn-unit-protoss-adept.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="AnabolicSynthesisLotV2">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
+    </CButton>
+    <CButton id="AnabolicSynthesisLotV2@Passive">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
+    </CButton>
+    <CButton id="BroodLordWoL">
+        <Icon value="Assets\Textures\btn-unit-zerg-broodlord.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-broodlord.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="CentrifugalHooksLotV1">
         <Icon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-zerg-centrifugalhooks.dds"/>

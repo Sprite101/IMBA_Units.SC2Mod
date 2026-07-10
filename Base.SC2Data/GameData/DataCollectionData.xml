@@ -26,6 +26,15 @@
         <DataRecord Entry="Button,AdvancedBallisticsLotV2@ResearchAdvancedBallistics"/>
         <Button value="AdvancedBallistics@ResearchAdvancedBallistics"/>
     </CDataCollectionUpgrade>
+    <CDataCollectionUpgrade id="AnabolicSynthesisLotV2">
+        <EditorCategories value="DataFamily:Melee,Race:Zerg"/>
+        <DataRecord Entry="Abil,AnabolicSynthesisLotV2@Research"/>
+        <DataRecord Entry="Upgrade,AnabolicSynthesisLotV2"/>
+        <DataRecord Entry="Button,AnabolicSynthesisLotV2@Passive"/>
+        <DataRecord Entry="Button,AnabolicSynthesisLotV2"/>
+        <DataRecord Entry="Requirement,AnabolicSynthesisLotV2@Have"/>
+        <DataRecord Entry="Requirement,AnabolicSynthesisLotV2@Learn"/>
+    </CDataCollectionUpgrade>
     <CDataCollectionUnit id="BanelingLotV1">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
         <DataRecord Entry="Unit,BanelingLotV1"/>
@@ -33,6 +42,23 @@
     <CDataCollectionUnit id="BarracksLiberty">
         <EditorCategories value="DataGroup:Unit,Race:Terran,DataFamily:Melee"/>
     </CDataCollectionUnit>
+    <CDataCollectionUnit id="BroodLordWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="BroodlingBroodLordWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <TechInfoUnit value="InfestedTerranLotV"/>
+    </CDataCollectionUnit>
+    <CDataCollection id="BroodlingEscortWeaponWoL">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Zerg"/>
+    </CDataCollection>
+    <CDataCollectionUnit id="BroodlingEscortWoL">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <TechInfoUnit value="InfestedTerranLotV"/>
+    </CDataCollectionUnit>
+    <CDataCollection id="BroodlingStrikeWoL">
+        <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Zerg"/>
+    </CDataCollection>
     <CDataCollection id="BuildCreepTumorLiberty_Queen">
         <EditorCategories value="DataGroup:Ability,Race:Zerg,DataFamily:Melee"/>
         <Button value="SalvageLiberty"/>
@@ -122,8 +148,6 @@
     </CDataCollectionUnit>
     <CDataCollectionUnit id="InfestedTerranLotV">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
-        <Button value="InfestorWoL"/>
-        <TechInfoUnit value="InfestorWoL"/>
     </CDataCollectionUnit>
     <CDataCollectionUnit id="InfestedTerranWoL">
         <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
@@ -752,6 +776,11 @@
     <CDataCollection id="TyphoonMissilePodLotV2">
         <EditorCategories value="DataGroup:Weapon,DataFamily:Melee,Race:Terran"/>
     </CDataCollection>
+    <CDataCollectionUnit id="UltraliskLotV2">
+        <EditorCategories value="DataGroup:Unit,Race:Zerg,DataFamily:Melee"/>
+        <Button value="BroodLordWoL"/>
+        <TechInfoUnit value="BroodLordWoL"/>
+    </CDataCollectionUnit>
     <CDataCollectionUnit id="VoidRayLotV">
         <EditorCategories value="DataGroup:Unit,Race:Protoss,DataFamily:Melee"/>
         <Button value="BarracksLiberty"/>

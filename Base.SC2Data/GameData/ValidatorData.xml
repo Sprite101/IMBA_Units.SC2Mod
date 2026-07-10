@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CValidatorUnitFilters id="BroodlingEscortWeaponWoL@BroodlingEscortFilters">
+        <WhichUnit Effect="BroodlingEscortWeaponWoL@InitialSwitch"/>
+        <Filters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
     <CValidatorUnitCompareBehaviorCount id="FungalGrowthWoL@CasterNotFungalGrowthed">
         <ResultFailed value="Error,Error/CantBlinkWhileRooted"/>
         <WhichUnit Value="Caster"/>

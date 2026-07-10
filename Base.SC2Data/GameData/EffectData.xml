@@ -10,6 +10,142 @@
     <CEffectTeleport id="Blink">
         <ValidatorArray index="0" value="ModifiedAbility@CasterNotFungalGrowthed"/>
     </CEffectTeleport>
+    <CEffectSet id="BroodlingEscortWeaponWoL@EscortImpactSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="RemovePrecursor"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@EscortImpactTransferBehavior"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@IssueOrder"/>
+        <EffectArray value="SuicideRemove"/>
+    </CEffectSet>
+    <CEffectSet id="BroodlingEscortWeaponWoL@EscortLaunchSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@ReleaseMagazine"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@EscortLM"/>
+        <EffectArray value="MakePrecursor"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@ABTimedLife"/>
+    </CEffectSet>
+    <CEffectIssueOrder id="BroodlingEscortWeaponWoL@IssueOrder">
+        <EditorCategories value="Race:Zerg"/>
+        <Abil value="attack"/>
+        <Target Effect="BroodlingEscortWeaponWoL@InitialSwitch" Value="TargetUnitOrPoint"/>
+    </CEffectIssueOrder>
+    <CEffectSwitch id="BroodlingEscortWeaponWoL@InitialSwitch">
+        <EditorCategories value="Race:Zerg"/>
+        <CaseArray Validator="IsStructure" Effect="BroodlingEscortWeaponWoL@TargetStructureSwitch"/>
+        <CaseDefault value="BroodlingEscortWeaponWoL@TargetUnitSet"/>
+    </CEffectSwitch>
+    <CEffectCreateUnit id="BroodlingEscortWeaponWoL@TargetStructureCUBroodling">
+        <ValidatorArray value="NotHallucination"/>
+        <EditorCategories value="Race:Zerg"/>
+        <CreateFlags index="Birth" value="0"/>
+        <CreateFlags index="SetFacing" value="1"/>
+        <SpawnEffect value="BroodlingEscortWeaponWoL@EscortLaunchSet"/>
+        <SpawnUnit value="BroodlingBroodLordWoL"/>
+        <SpawnRange value="5"/>
+    </CEffectCreateUnit>
+    <CEffectDamage id="BroodlingEscortWeaponWoL@FallbackMissileDamage" parent="DU_WEAP_MISSILE">
+        <ValidatorArray value="BroodlingEscortWeaponWoL@BroodlingEscortFilters"/>
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Effect="BroodlingEscortWeaponWoL@InitialSwitch" Value="TargetUnit"/>
+        <Visibility value="Visible"/>
+        <Amount value="25"/>
+    </CEffectDamage>
+    <CEffectDamage id="BroodlingEscortWeaponWoL@Damage" parent="DU_WEAP_MISSILE">
+        <ValidatorArray value="BroodlingEscortWeaponWoL@BroodlingEscortFilters"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Visibility value="Visible"/>
+        <Amount value="25"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="BroodlingEscortWeaponWoL@FallbackLM">
+        <EditorCategories value="Race:Zerg"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="TargetUnitOrPoint"/>
+        <FinishEffect value="BroodlingEscortWeaponWoL@FallbackMissileDamage"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <Movers Link="BroodLordWeaponRight" IfRangeLTE="500"/>
+        <Movers Link="BroodLordWeaponLeft" IfRangeLTE="500"/>
+        <MoverRollingJump value="1"/>
+    </CEffectLaunchMissile>
+    <CEffectCreateUnit id="BroodlingEscortWeaponWoL@ImpactACUBroodling">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <CreateFlags index="Birth" value="0"/>
+        <CreateFlags index="SetFacing" value="1"/>
+        <SpawnEffect value="BroodlingEscortWeaponWoL@LaunchBSet"/>
+        <SpawnUnit value="BroodlingBroodLordWoL"/>
+        <SpawnRange value="5"/>
+    </CEffectCreateUnit>
+    <CEffectSet id="BroodlingEscortWeaponWoL@ImpactBSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="RemovePrecursor"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@IssueOrder"/>
+        <EffectArray value="SuicideRemove"/>
+    </CEffectSet>
+    <CEffectTransferBehavior id="BroodlingEscortWeaponWoL@EscortImpactTransferBehavior">
+        <LaunchUnit Effect="BroodlingEscortWeaponWoL@EscortLM" Value="Source"/>
+        <ImpactUnit Value="Target"/>
+        <Behavior value="KillsToCaster"/>
+    </CEffectTransferBehavior>
+    <CEffectLaunchMissile id="BroodlingEscortWeaponWoL@LM_A">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="BroodlingEscortWeaponWoL@Damage"/>
+        <FinishEffect value="BroodlingEscortWeaponWoL@ImpactACUBroodling"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <Movers Link="BroodLordWeaponRight" IfRangeLTE="500"/>
+        <Movers Link="BroodLordWeaponLeft" IfRangeLTE="500"/>
+        <MoverRollingJump value="1"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="BroodlingEscortWeaponWoL@LaunchBSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@LM_B"/>
+        <EffectArray value="MakePrecursor"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@ABTimedLife"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@LaunchBTransferBehavior"/>
+    </CEffectSet>
+    <CEffectTransferBehavior id="BroodlingEscortWeaponWoL@LaunchBTransferBehavior">
+        <LaunchUnit Effect="BroodlingEscortWeaponWoL@LM_A" Value="Source"/>
+        <ImpactUnit Value="Target"/>
+        <Behavior value="KillsToCaster"/>
+    </CEffectTransferBehavior>
+    <CEffectLaunchMissile id="BroodlingEscortWeaponWoL@EscortLM">
+        <EditorCategories value="Race:Zerg"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="TargetUnitOrPoint"/>
+        <ImpactEffect value="BroodlingEscortWeaponWoL@FallbackMissileDamage"/>
+        <FinishEffect value="BroodlingEscortWeaponWoL@EscortImpactSet"/>
+        <Flags index="ValidateWeapon" value="0"/>
+        <Movers Link="BroodLordWeaponRight" IfRangeLTE="500"/>
+        <Movers Link="BroodLordWeaponLeft" IfRangeLTE="500"/>
+        <MoverRollingJump value="1"/>
+        <DeathType value="Unknown"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="BroodlingEscortWeaponWoL@LM_B">
+        <EditorCategories value="Race:Zerg"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <FinishEffect value="BroodlingEscortWeaponWoL@ImpactBSet"/>
+        <AmmoUnit value="BroodlingEscortWeaponWoL@BWeaponMissile"/>
+    </CEffectLaunchMissile>
+    <CEffectReleaseMagazine id="BroodlingEscortWeaponWoL@ReleaseMagazine">
+        <EditorCategories value="Race:Zerg"/>
+    </CEffectReleaseMagazine>
+    <CEffectSwitch id="BroodlingEscortWeaponWoL@TargetStructureSwitch">
+        <EditorCategories value="Race:Zerg"/>
+        <CaseArray Effect="BroodlingEscortWeaponWoL@TargetStructureCUBroodling" FallThrough="1"/>
+        <CaseDefault value="BroodlingEscortWeaponWoL@FallbackLM"/>
+    </CEffectSwitch>
+    <CEffectSet id="BroodlingEscortWeaponWoL@TargetUnitSet">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@ReleaseMagazine"/>
+        <EffectArray value="BroodlingEscortWeaponWoL@LM_A"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="BroodlingEscortWeaponWoL@ABTimedLife">
+        <EditorCategories value="Race:Zerg"/>
+        <Behavior value="BroodlingEscortWeaponWoL@TimedLife"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="BroodlingBroodLordWoL@WeaponDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Zerg"/>
+        <Amount value="4"/>
+    </CEffectDamage>
     <CEffectModifyUnit id="SpawnLocustsSwarm@MURally">
         <EditorCategories value="Race:Zerg"/>
         <RallyUnit Effect="SpawnLocustsSwarm@InitialSet" Value="Source"/>

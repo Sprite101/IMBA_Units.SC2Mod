@@ -25,6 +25,22 @@
         <AffectedUnitArray value="LurkerLotV"/>
         <AffectedUnitArray value="LurkerLotV@Burrowed"/>
     </CUpgrade>
+    <CUpgrade id="AnabolicSynthesisLotV2">
+        <Flags index="TechTreeCheat" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-zerg-adaptivetalons.dds"/>
+        <Alert value="ResearchComplete"/>
+        <Race value="Zerg"/>
+        <ScoreAmount value="300"/>
+        <ScoreResult value="BuildOrder"/>
+        <EffectArray Operation="Subtract" Reference="Abil,LurkerLotV@Burrow,InfoArray[0].RandomDelayMax" Value="0.125000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,LurkerLotV@Burrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="1.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,LurkerLotV@Burrow,InfoArray[0].SectionArray[Collide].DurationArray[Delay]" Value="1.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,LurkerLotV@Burrow,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="1.000000"/>
+        <EffectArray Operation="Multiply" Reference="Unit,LurkerLotV,Speed" Value="1.1"/>
+        <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
+        <AffectedUnitArray value="LurkerLotV"/>
+        <AffectedUnitArray value="LurkerLotV@Burrowed"/>
+    </CUpgrade>
     <CUpgrade id="EnduringLocustsSwarm">
         <Flags index="TechTreeCheat" value="1"/>
         <Icon value="Assets\Textures\BTN-Upgrade-Zerg-EvolveIncreasedLocustLifetime.dds"/>
