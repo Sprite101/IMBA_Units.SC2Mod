@@ -40,6 +40,7 @@ Actor/Name/BatteryOverchargeLotV@Model=Model
 Actor/Name/BroodLordWoL=Brood Lord
 Actor/Name/BroodLordWoL@Cocoon=Brood Lord Cocoon
 Actor/Name/BroodLordWoL@CocoonDeathSound=Cocoon Death Sound
+Actor/Name/BroodLordWoL@CocoonHatchModel=Cocoon Hatch Model
 Actor/Name/BroodLordWoL@DeathSound=Death Sound
 Actor/Name/BroodlingBroodLordWoL=Broodling
 Actor/Name/BroodlingBroodLordWoL@WeaponAttackAction=Attack Action

@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorModel id="BroodLordWoL@CocoonHatchModel">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom BroodLordWoL@Cocoon" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom BroodLordWoL@Cocoon" Send="$Death"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo BroodLordWoL@Cocoon" Send="Destroy"/>
+        <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="Create CocoonCancelOrCocoonComplete"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Model value="BroodLordCocoon"/>
+        <PhysicsImpactDefault AutoVolumeRangeMin="0.000000"/>
+    </CActorModel>
     <CActorSound id="BroodLordWoL@DeathSound" parent="SoundOneShot">
         <On Terms="UnitDeath.BroodLordWoL; PassChance 25.000000" Send="Create"/>
         <Sound value="BroodLord_Death"/>
