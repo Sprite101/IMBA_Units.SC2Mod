@@ -61,16 +61,295 @@
                 <Field Id="Selection_Title" Index="2"/>
             </Text>
         </Instances>
-        <Instances Id="Baneling"/>
-        <Instances Id="Roach"/>
-        <Instances Id="Ravager"/>
-        <Instances Id="Hydralisk"/>
-        <Instances Id="Lurker"/>
-        <Instances Id="Swarm Host"/>
-        <Instances Id="Infestor"/>
+        <Instances Id="Baneling">
+            <GameLink GameLink="Baneling">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Baneling">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="BanelingLotV1">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-baneling.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Baneling_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Baneling_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Baneling_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Baneling_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Roach">
+            <GameLink GameLink="Roach">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Roach">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="RoachWoL">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-roach.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Roach_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Roach_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Roach_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Roach_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Ravager">
+            <GameLink GameLink="Ravager">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Ravager">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="RavagerLotV">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-ravager.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Ravager_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Ravager_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Ravager_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Ravager_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Hydralisk">
+            <GameLink GameLink="Hydralisk">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Hydralisk">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="HydraliskLotV1">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="HydraliskLotV2">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-hydralisk.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Hydralisk_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Hydralisk_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Hydralisk_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Hydralisk_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Hydralisk_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Hydralisk_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+        </Instances>
+        <Instances Id="Lurker">
+            <GameLink GameLink="LurkerMP">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="LurkerMP">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="LurkerLotV">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-lurker.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Image>
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Lurker_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Lurker_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Lurker_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Lurker_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Swarm Host">
+            <GameLink GameLink="SwarmHostMP">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="SwarmHostMP">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="SwarmHostSwarm">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-swarmhost.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_hots.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Swarm Host_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Swarm Host_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Swarm Host_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Swarm Host_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Infestor">
+            <GameLink GameLink="Infestor">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Infestor">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="InfestorWoL">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <GameLink GameLink="InfestorLotV">
+                <Field Id="Selection_Units" Index="2"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-infestor.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="2"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Infestor_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Infestor_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Infestor_Selection_Expansion_Tip_002">
+                <Field Id="Selection_Expansion_Tip" Index="2"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Infestor_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Infestor_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Infestor_Selection_Title_002">
+                <Field Id="Selection_Title" Index="2"/>
+            </Text>
+        </Instances>
         <Instances Id="Viper"/>
-        <Instances Id="Broodlord"/>
-        <Instances Id="Ultralisk"/>
+        <Instances Id="Broodlord">
+            <GameLink GameLink="BroodLordWoL">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="BroodLord">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="BroodLordWoL">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-broodlord.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_wol.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Broodlord_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Broodlord_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Broodlord_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Broodlord_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
+        <Instances Id="Ultralisk">
+            <GameLink GameLink="Ultralisk">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Ultralisk">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <GameLink GameLink="UltraliskLotV2">
+                <Field Id="Selection_Units" Index="1"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-ultralisk.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Image Image="Assets\Textures\ui_glues_icons_expansion_lotv.dds">
+                <Field Id="Selection_Images" Index="1"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Ultralisk_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Ultralisk_Selection_Expansion_Tip_001">
+                <Field Id="Selection_Expansion_Tip" Index="1"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Ultralisk_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Ultralisk_Selection_Title_001">
+                <Field Id="Selection_Title" Index="1"/>
+            </Text>
+        </Instances>
     </CUser>
     <CUser id="IMBA_TerranUnits">
         <Fields>
