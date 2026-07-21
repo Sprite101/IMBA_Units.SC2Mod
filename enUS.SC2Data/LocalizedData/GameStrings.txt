@@ -297,6 +297,7 @@ Button/Name/AmplifiedShieldingLotV@Passive=Amplified Shielding
 Button/Name/AnabolicSynthesisLotV2=Evolve Anabolic Synthesis
 Button/Name/AnabolicSynthesisLotV2@Passive=Anabolic Synthesis
 Button/Name/AutoTurretSwarm=Build Auto-Turret
+Button/Name/BanelingLotV1=Morph to Baneling
 Button/Name/BarracksLiberty=Build Barracks
 Button/Name/BatteryOverchargeLotV=Battery Overcharge
 Button/Name/BroodLordWoL=Morph to Brood Lord
@@ -367,6 +368,7 @@ Button/Name/ImmortalLotV=Warp In Immortal
 Button/Name/ImmortalLotVBarrier=Barrier
 Button/Name/InfernalPreIgniterSwarm=Research Infernal Pre-Igniter
 Button/Name/InfestedTerranWoL=Infested Terran
+Button/Name/InfestorLotV=Morph to Infestor
 Button/Name/InfestorWoL=Morph to Infestor
 Button/Name/InterceptorLotV1=Build Interceptor
 Button/Name/InterceptorLotV2=Build Interceptor
@@ -377,6 +379,7 @@ Button/Name/LiberatorAGLotV2@FighterMode=Fighter Mode
 Button/Name/LiberatorLotV1@BuildLiberator=Build Liberator
 Button/Name/LiberatorLotV2=Build Liberator
 Button/Name/LiberatorLotV2@DefenderMode=Defender Mode
+Button/Name/LurkerLotV=Morph to Lurker
 Button/Name/MULEWoL=Calldown: MULE
 Button/Name/MULEWoL@Gather=Gather
 Button/Name/MassRecallNexusLotV=Mass Recall
@@ -454,6 +457,7 @@ Button/Name/ReaperSwarm@TrainReaper=Train Reaper
 Button/Name/ReleaseInterceptorsLotV1=Release Interceptors
 Button/Name/ResonatingGlaivesLotV=Research Resonating Glaives
 Button/Name/ResonatingGlaivesLotV@Passive=Resonating Glaives
+Button/Name/RoachWoL=Morph to Roach
 Button/Name/SalvageLiberty=Salvage
 Button/Name/SeekerMissileSwarm=Seeker Missile
 Button/Name/SensorTowerLotV1=Build Sensor Tower
@@ -471,6 +475,7 @@ Button/Name/StalkerLiberty=Warp In Stalker
 Button/Name/StasisWardLotV1@Activate=Stasis Trap 
 Button/Name/StasisWardLotV1@ActivatePassive=Stasis Trap
 Button/Name/StasisWardLotV1@PermanentlyCloakedPassive=Permanently Cloaked
+Button/Name/SwarmHostSwarm=Morph to Swarm Host
 Button/Name/TempestLotV1=Warp In Tempest
 Button/Name/TempestSwarm=Warp In Tempest
 Button/Name/TimeWarpLotV1=Time Warp
@@ -480,6 +485,7 @@ Button/Name/TunnelingClawsWoL=Evolve Tunneling Claws
 Button/Name/TunnelingClawsWoL@Passive=Tunneling Claws
 Button/Name/TunnelingJawsSwarm=Evolve Tunneling Jaws
 Button/Name/TunnelingJawsSwarm@Passive=Tunneling Jaws
+Button/Name/UltraliskLotV2=Morph to Ultralisk
 Button/Name/VoidRayLotV=Warp In Void Ray
 Button/Name/VortexWoL=Vortex
 Button/Name/WarhoundSwarm=Build Warhound
@@ -593,7 +599,7 @@ Button/Tooltip/InfestedTerranLotV@Egg=Hatches into an Infested Terran after a sh
 Button/Tooltip/InfestedTerranWoL=Spawn an Infested Terran. Infested Terrans last <d ref="Behavior,SpawnInfestedTerranWoL@TimedLife,Duration"/> seconds.<n/><n/><c val="ffff8a">Can cast while burrowed.</c>
 Button/Tooltip/InfestedTerranWoL2=Spawn an Infested Terran. Infested Terrans last <d ref="Behavior,SpawnInfestedTerranWoL@TimedLife,Duration"/> seconds.<n/><n/><c val="ffff8a">Can cast while burrowed.</c>
 Button/Tooltip/InfestedTerranWoL@Egg=Hatches into an Infested Terran after a short period.
-Button/Tooltip/InfestorLotV=Infestation specialist. Can use the Fungal Growth, Microbial Shroud, and Neural Parasite abilities.
+Button/Tooltip/InfestorLotV=Infestation specialist. Can move while burrowed. Can use the Infested Terran, Fungal Growth, and Neural Parasite abilities.
 Button/Tooltip/InfestorWoL=Infestation specialist. Can move while burrowed. Can use the Infested Terran, Fungal Growth, and Neural Parasite abilities.
 Button/Tooltip/InterceptorLotV1=Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/InterceptorLotV1Unit=Combat drones that automatically strafe their Carrier's target. Carriers may not attack without Interceptors.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
@@ -610,6 +616,7 @@ Button/Tooltip/LiberatorLotV1@Liberator=Artillery fighter. Loaded with missiles 
 Button/Tooltip/LiberatorLotV2=Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c></n></n>Pre 3.3.0 BU Version. Attacks are significantly higher and Advanced Ballistics grants +4 range.<n/>
 Button/Tooltip/LiberatorLotV2@DefenderMode=Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.
 Button/Tooltip/LocustSwarm=Timed life creature. Durable and dangerous.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/LurkerLotV=Anti-ground ambusher. Has a spine attack that damages all enemy units in its line of fire.<n/><n/><c val="ffff8a">Can attack ground units.<n/>Must burrow to attack.</c>
 Button/Tooltip/MULEWoL=Drops an experimental robotic MULE miner onto the target Mineral Field. MULEs collect minerals more quickly than SCVs.  <n/><n/>MULEs last <d ref="Behavior,MULETimedLife,Duration"/> seconds before their systems fail.
 Button/Tooltip/MULEWoL@Gather=Orders MULE to gather minerals from a selected Mineral Field.
 Button/Tooltip/MassRecallNexusLotV=Places target structure in a Chrono Boost, causing it to operate <d ref="(((Behavior,ChronoBoostLotV,Modification.RateMultiplierArray[Progress])-1)*100)" precision="1"/>% faster for <d ref="Behavior,ChronoBoostLotV,Duration"/> seconds.
@@ -1463,6 +1470,7 @@ Effect/Name/WidowMineSwarm@LM=LM
 Effect/Name/WidowMineSwarm@LMAir=LM Air
 Effect/Name/WidowMineSwarm@LMSwitch=LM Switch
 Param/Expression/lib_B156CA28_17F87ABD=Player ~A~'s Index: ~B~
+Param/Expression/lib_B156CA28_25737639=Panel Index: ~A~
 Param/Expression/lib_B156CA28_41422E3B=Player ~A~ is using button: Panel ~B~ Item ~C~ Selection ~D~
 Param/Expression/lib_B156CA28_81A2A7C1=Panel Index: ~A~
 Param/Expression/lib_B156CA28_8D80DA3F=Player ~A~ is using button: Panel ~B~ Item ~C~ Selection ~D~
@@ -1730,6 +1738,7 @@ Upgrade/Name/PsiStormHighTemplarLiberty=Psionic Storm
 Upgrade/Name/QueenLotV@Upgrade=Queen WoL
 Upgrade/Name/RapidDeploymentLotV=Rapid Deployment
 Upgrade/Name/RapidFireLaunchers@Upgrade=Rapid Fire Launchers
+Upgrade/Name/RavagerLotV@CorrosiveBileKillForceField=Corrosive Bile Kill Force Field
 Upgrade/Name/ReactorLiberty@RepairTime=Repair Time
 Upgrade/Name/ReaperLiberty@Upgrade=Nitro Packs
 Upgrade/Name/ReaperSwarm@Upgrade=Nitro Packs
@@ -1969,6 +1978,8 @@ UserData/IMBA_ZergUnits/Ultralisk_Selection_Expansion_Tip=current
 UserData/IMBA_ZergUnits/Ultralisk_Selection_Expansion_Tip_001=smaller but moves faster
 UserData/IMBA_ZergUnits/Ultralisk_Selection_Title=current
 UserData/IMBA_ZergUnits/Ultralisk_Selection_Title_001=lotv
+UserData/IMBA_ZergUnits/Viper_Selection_Expansion_Tip=current
+UserData/IMBA_ZergUnits/Viper_Selection_Title=current
 VolatileBurstLiberty@FriendlyBuildingDamage=Friendly Building Damage
 VolatileBurstLiberty@FriendlyDamage=Friendly Damage
 Weapon/Name/90mmCannonsLotV1=90mm Cannons

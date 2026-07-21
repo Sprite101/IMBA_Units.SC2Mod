@@ -72,7 +72,7 @@
         <Effect value="InfestedTerranLotV@AAWeaponLM"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="InfestedTerranLotV@AGWeapon">
-        <EditorCategories value="Race:Terran"/>
+        <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="InfestedTerranLotV@AGWeaponDamage"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -83,7 +83,7 @@
         <Effect value="InfestedTerranLotV@AGWeaponDamage"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="InfestedTerranWoL@Weapon">
-        <EditorCategories value="Race:Terran"/>
+        <EditorCategories value="Race:Zerg"/>
         <Icon value="Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds"/>
         <DisplayEffect value="InfestedTerranWoL@WeaponWeaponDamage"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>

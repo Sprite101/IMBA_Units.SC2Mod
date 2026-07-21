@@ -25,6 +25,11 @@
         <EditorCategories value="Race:Zerg"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-zerg-anabolicsynthesis.dds"/>
     </CButton>
+    <CButton id="BanelingLotV1">
+        <Icon value="Assets\Textures\btn-unit-zerg-baneling.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-baneling.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
     <CButton id="BroodLordWoL">
         <Icon value="Assets\Textures\btn-unit-zerg-broodlord.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-zerg-broodlord.dds"/>
@@ -100,6 +105,21 @@
     <CButton id="InfestedTerranWoL">
         <Icon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-zerg-infestedmarine.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="InfestorLotV">
+        <Icon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-infestor.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="LurkerLotV">
+        <Icon value="Assets\Textures\btn-unit-zerg-lurker.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-lurker.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="RoachWoL">
+        <Icon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-roach.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="SpawnLocustsSwarm">
@@ -286,6 +306,11 @@
         <AlertIcon value="Assets\Textures\btn-unit-protoss-sentry.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Universal value="1"/>
+    </CButton>
+    <CButton id="SwarmHostSwarm">
+        <Icon value="Assets\Textures\btn-unit-zerg-swarmhost.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-swarmhost.dds"/>
+        <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="TempestLotV1">
         <Icon value="Assets\Textures\btn-unit-protoss-tempest.dds"/>
@@ -520,6 +545,11 @@
     <CButton id="TunnelingJawsSwarm@Passive">
         <Icon value="Assets\Textures\btn-upgrade-zerg-tunnelingjaws.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-zerg-tunnelingjaws.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="UltraliskLotV2">
+        <Icon value="Assets\Textures\btn-unit-zerg-ultralisk.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-zerg-ultralisk.dds"/>
         <EditorCategories value="Race:Zerg"/>
     </CButton>
     <CButton id="WarhoundSwarm">

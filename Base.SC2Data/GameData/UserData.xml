@@ -291,7 +291,23 @@
                 <Field Id="Selection_Title" Index="2"/>
             </Text>
         </Instances>
-        <Instances Id="Viper"/>
+        <Instances Id="Viper">
+            <GameLink GameLink="Viper">
+                <Field Id="Info_Unit"/>
+            </GameLink>
+            <GameLink GameLink="Viper">
+                <Field Id="Selection_Units"/>
+            </GameLink>
+            <Image Image="Assets\Textures\btn-unit-zerg-viper.dds">
+                <Field Id="Info_Image"/>
+            </Image>
+            <Text Text="UserData/IMBA_ZergUnits/Viper_Selection_Expansion_Tip">
+                <Field Id="Selection_Expansion_Tip"/>
+            </Text>
+            <Text Text="UserData/IMBA_ZergUnits/Viper_Selection_Title">
+                <Field Id="Selection_Title"/>
+            </Text>
+        </Instances>
         <Instances Id="Broodlord">
             <GameLink GameLink="BroodLordWoL">
                 <Field Id="Info_Unit"/>

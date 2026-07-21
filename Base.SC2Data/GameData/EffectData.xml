@@ -3190,7 +3190,7 @@
     <CEffectDamage id="VolatileBurstLiberty@FriendlyBuildingDamage" parent="DU_WEAP">
         <Name value="VolatileBurstLiberty@FriendlyBuildingDamage"/>
         <EditorCategories value="Race:Zerg"/>
-        <Marker Link="Effect/VolatileBurstU2"/>
+        <Marker Link="Effect/VolatileBurstLiberty@BuildingDamage"/>
         <ResponseFlags index="Acquire" value="0"/>
         <ResponseFlags index="Flee" value="0"/>
         <ImpactLocation Value="TargetUnit"/>
@@ -3207,7 +3207,7 @@
     <CEffectDamage id="VolatileBurstLiberty@FriendlyDamage" parent="DU_WEAP">
         <Name value="VolatileBurstLiberty@FriendlyDamage"/>
         <EditorCategories value="Race:Zerg"/>
-        <Marker Link="Effect/VolatileBurstU"/>
+        <Marker Link="Effect/VolatileBurstLiberty@Damage"/>
         <ResponseFlags index="Acquire" value="0"/>
         <ResponseFlags index="Flee" value="0"/>
         <ImpactLocation Value="TargetUnit"/>

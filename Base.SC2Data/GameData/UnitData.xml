@@ -175,10 +175,26 @@
             <LayoutButtons Face="BroodLordWoL" Type="AbilCmd" AbilCmd="BroodLordWoL@MorphToBroodLord,Execute" Row="1" Column="1"/>
         </CardLayouts>
     </CUnit>
+    <CUnit id="Hatchery">
+        <AbilArray Link="QueenWoL@Train"/>
+        <AbilArray Link="QueenLotV@Train"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="QueenWoL" Type="AbilCmd" AbilCmd="QueenWoL@Train,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="QueenLotV" Type="AbilCmd" AbilCmd="QueenLotV@Train,Train1" Row="0" Column="1"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Hive">
+        <AbilArray Link="QueenLotV@Train"/>
+        <AbilArray Link="QueenWoL@Train"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="QueenWoL" Type="AbilCmd" AbilCmd="QueenWoL@Train,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="QueenLotV" Type="AbilCmd" AbilCmd="QueenLotV@Train,Train1" Row="0" Column="1"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="Hydralisk">
         <AbilArray Link="LurkerLotV@MorphToLurker"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="LurkerMP" Type="AbilCmd" AbilCmd="LurkerLotV@MorphToLurker,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="LurkerLotV" Type="AbilCmd" AbilCmd="LurkerLotV@MorphToLurker,Execute" Row="2" Column="1"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="HydraliskLotV2">
@@ -253,7 +269,7 @@
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowUltraliskUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="LurkerMP" Type="AbilCmd" AbilCmd="MorphToLurker,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="LurkerMP" Type="AbilCmd" AbilCmd="LurkerLotV@MorphToLurker,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="LurkerLotV" Type="AbilCmd" AbilCmd="LurkerLotV@MorphToLurker,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.625"/>
         <InnerRadius value="0.375"/>
@@ -435,7 +451,7 @@
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowInfestorUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="BurrowUltraliskUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="LurkerMP" Type="AbilCmd" AbilCmd="MorphToLurker,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="LurkerMP" Type="AbilCmd" AbilCmd="LurkerLotV@MorphToLurker,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="LurkerLotV" Type="AbilCmd" AbilCmd="LurkerLotV@MorphToLurker,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.625"/>
         <InnerRadius value="0.375"/>
@@ -919,6 +935,25 @@
         <LeaderAlias value=""/>
         <HotkeyAlias value=""/>
     </CUnit>
+    <CUnit id="Lair">
+        <AbilArray Link="QueenWoL@Train"/>
+        <AbilArray Link="QueenLotV@Train"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="QueenWoL" Type="AbilCmd" AbilCmd="QueenWoL@Train,Train1" Row="0" Column="1"/>
+            <LayoutButtons Face="QueenLotV" Type="AbilCmd" AbilCmd="QueenLotV@Train,Train1" Row="0" Column="1"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="Larva">
+        <CardLayouts index="0">
+            <LayoutButtons Face="RoachWoL" Type="AbilCmd" AbilCmd="LarvaTrain,Train21" Row="0" Column="3"/>
+            <LayoutButtons Face="InfestorWoL" Type="AbilCmd" AbilCmd="LarvaTrain,Train26" Row="1" Column="3"/>
+            <LayoutButtons Face="InfestorLotV" Type="AbilCmd" AbilCmd="LarvaTrain,Train27" Row="1" Column="3"/>
+            <LayoutButtons Face="UltraliskLotV2" Type="AbilCmd" AbilCmd="LarvaTrain,Train25" Row="2" Column="1"/>
+            <LayoutButtons Face="HydraliskLotV1" Type="AbilCmd" AbilCmd="LarvaTrain,Train22" Row="1" Column="0"/>
+            <LayoutButtons Face="HydraliskLotV2" Type="AbilCmd" AbilCmd="LarvaTrain,Train23" Row="1" Column="0"/>
+            <LayoutButtons Face="SwarmHostSwarm" Type="AbilCmd" AbilCmd="LarvaTrain,Train24" Row="1" Column="4"/>
+        </CardLayouts>
+    </CUnit>
     <CUnit id="SpawnLocustsSwarm@MissileA" parent="MISSILE_INVULNERABLE">
         <Race value="Zerg"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
@@ -1163,6 +1198,7 @@
         <AbilArray Link="InfestorLotV@Unburrow"/>
         <AbilArray Link="FungalGrowthLotV"/>
         <AbilArray Link="SpawnInfestedTerranLotV"/>
+        <AbilArray Link="NeuralParasite"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1440,7 +1476,7 @@
     <CUnit id="LurkerDenMP">
         <AbilArray Link="AdaptiveTalonsLotV@Research"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="AdaptiveTalonsLotV" Type="AbilCmd" AbilCmd="AdaptiveTalonsLotV@Research,Research1" Row="1" Column="0"/>
+            <LayoutButtons Face="AdaptiveTalonsLotV" Type="AbilCmd" AbilCmd="AdaptiveTalonsLotV@Research,Research1" Row="0" Column="0"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="LurkerLotV">
@@ -2793,7 +2829,7 @@
     <CUnit id="BanelingNest">
         <AbilArray Link="CentrifugalHooksLotV1@Research"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="CentrifugalHooksLotV1" Type="AbilCmd" AbilCmd="CentrifugalHooksLotV1@Research,Research1" Row="0" Column="1"/>
+            <LayoutButtons Face="CentrifugalHooksLotV1" Type="AbilCmd" AbilCmd="CentrifugalHooksLotV1@Research,Research1" Row="0" Column="0"/>
         </CardLayouts>
     </CUnit>
     <CUnit id="DisruptorLotVBeta@Phased">
@@ -7830,7 +7866,7 @@
     <CUnit id="Zergling">
         <AbilArray Link="BanelingLotV1@MorphToBaneling"/>
         <CardLayouts index="0">
-            <LayoutButtons index="5" AbilCmd="BanelingLotV1@MorphToBaneling,Execute" Row="1"/>
+            <LayoutButtons index="5" Face="BanelingLotV1" AbilCmd="BanelingLotV1@MorphToBaneling,Execute"/>
             <LayoutButtons Face="Baneling" Type="AbilCmd" AbilCmd="MorphToBaneling,Execute" Row="2" Column="0"/>
         </CardLayouts>
     </CUnit>

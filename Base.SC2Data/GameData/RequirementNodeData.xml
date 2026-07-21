@@ -149,7 +149,6 @@
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitBroodlingEscortWoLQueuedOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="BroodlingEscortWoL" State="QueuedOrBetterAtUnit"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitInterceptorLotV1CompleteOnlyAtUnit3031373987">
@@ -206,7 +205,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeAnabolicSynthesisLotV2QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="AnabolicSynthesisLotV2" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorCompleteOnly2609272276">
@@ -742,7 +740,6 @@
         <OperandArray index="1" value="8"/>
     </CRequirementLT>
     <CRequirementLT id="LTCountUnitBroodlingEscortWoLQueuedOrBetterAtUnit2">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUnitBroodlingEscortWoLQueuedOrBetterAtUnit"/>
         <OperandArray index="1" value="2"/>
     </CRequirementLT>
@@ -768,7 +765,6 @@
         <OperandArray index="0" value="CountUpgradeAmplifiedShieldingLotVQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAnabolicSynthesisLotV2QueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUpgradeAnabolicSynthesisLotV2QueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeCaduceusReactorSwarmBeta@CaduceusReactorQueuedOrBetter">
@@ -902,11 +898,5 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="UpgradeHydralisk2QueuedOrBetter">
         <Count Link="HydraliskLotV1"/>
-    </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="UpgradeUltralisk2CompleteOnly">
-        <Count Link="UltraliskLotV2"/>
-    </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="UpgradeUltralisk2QueuedOrBetter">
-        <Count Link="UltraliskLotV2"/>
     </CRequirementCountUpgrade>
 </Catalog>

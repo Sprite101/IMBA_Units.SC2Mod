@@ -3202,6 +3202,11 @@
         <EffectArray Reference="Unit,MothershipWoL,LifeArmor" Value="1.000000"/>
         <EffectArray Operation="Set" Reference="Actor,MothershipWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
     </CUpgrade>
+    <CUpgrade id="RavagerLotV@CorrosiveBileKillForceField">
+        <EffectArray Operation="Set" Reference="Effect,RavagerCorrosiveBileSet,EffectArray[1]" Value="RavagerCorrosiveBileForceFieldKill"/>
+        <EditorCategories value="UpgradeType:Talents"/>
+        <LeaderAlias value=""/>
+    </CUpgrade>
     <CUpgrade id="ResonatingGlaivesLotV">
         <Icon value="Assets\Textures\btn-upgrade-protoss-resonatingglaives.dds"/>
         <ScoreAmount value="200"/>
@@ -4434,5 +4439,512 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
         <AffectedUnitArray value="Gateway"/>
+    </CUpgrade>
+    <CUpgrade id="ZergFlyerArmorsLevel1">
+        <EffectArray Reference="Unit,BroodLordWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,BroodLordWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BroodLordWoL@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,BroodLordWoL@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,BroodLordWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,BroodLordWoL@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level1.dds"/>
+    </CUpgrade>
+    <CUpgrade id="ZergFlyerArmorsLevel2">
+        <EffectArray Reference="Unit,BroodLordWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,BroodLordWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BroodLordWoL@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,BroodLordWoL@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,BroodLordWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,BroodLordWoL@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level2.dds"/>
+    </CUpgrade>
+    <CUpgrade id="ZergFlyerArmorsLevel3">
+        <EffectArray Reference="Unit,BroodLordWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,BroodLordWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BroodLordWoL@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,BroodLordWoL@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,BroodLordWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,BroodLordWoL@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-flyercarapace-level3.dds"/>
+    </CUpgrade>
+    <CUpgrade id="ZergFlyerWeaponsLevel1">
+        <EffectArray Operation="Set" Reference="Weapon,BroodlingStrikeWoL,Icon" Value="Assets\Textures\btn-upgrade-zerg-airattacks-level1.dds"/>
+        <EffectArray Reference="Weapon,BroodlingStrikeWoL,Level" Value="1"/>
+        <EffectArray Reference="Effect,BroodlingEscortWeaponWoL@Damage,Amount" Value="3"/>
+        <EffectArray Reference="Effect,BroodlingEscortWeaponWoL@FallbackMissileDamage,Amount" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="ZergFlyerWeaponsLevel2">
+        <EffectArray Operation="Set" Reference="Weapon,BroodlingStrikeWoL,Icon" Value="Assets\Textures\btn-upgrade-zerg-airattacks-level2.dds"/>
+        <EffectArray Reference="Weapon,BroodlingStrikeWoL,Level" Value="1"/>
+        <EffectArray Reference="Effect,BroodlingEscortWeaponWoL@Damage,Amount" Value="3"/>
+        <EffectArray Reference="Effect,BroodlingEscortWeaponWoL@FallbackMissileDamage,Amount" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="ZergFlyerWeaponsLevel3">
+        <EffectArray Operation="Set" Reference="Weapon,BroodlingStrikeWoL,Icon" Value="Assets\Textures\btn-upgrade-zerg-airattacks-level3.dds"/>
+        <EffectArray Reference="Weapon,BroodlingStrikeWoL,Level" Value="1"/>
+        <EffectArray Reference="Effect,BroodlingEscortWeaponWoL@Damage,Amount" Value="3"/>
+        <EffectArray Reference="Effect,BroodlingEscortWeaponWoL@FallbackMissileDamage,Amount" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="ZergGroundArmorsLevel1">
+        <EffectArray Operation="Set" Reference="Actor,QueenWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,QueenWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,QueenWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,QueenLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,QueenLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,QueenLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,BanelingLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,BanelingLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RoachWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,RoachWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RoachWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RavagerLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,RavagerLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HydraliskLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,HydraliskLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV1,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV1@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV1@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HydraliskLotV2,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,HydraliskLotV2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV2,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV2@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV2@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LurkerLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,LurkerLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,SwarmHostSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LocustSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,LocustSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LocustSwarm,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestorWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,InfestorWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestorWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestorLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,InfestorLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestorLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,UltraliskLotV2,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,UltraliskLotV2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,UltraliskLotV2,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,UltraliskLotV2@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,UltraliskLotV2@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,BroodlingBroodLordWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,BroodlingBroodLordWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BroodlingBroodLordWoL,LifeArmor" Value="1"/>
+        <!-- Cocoons -->
+        <EffectArray Operation="Set" Reference="Actor,BanelingLotV1@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RavagerLotV@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,RavagerLotV@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LurkerLotV@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,LurkerLotV@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranWoL@Egg,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Egg,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Egg,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranLotV@Egg,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level1.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Egg,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Egg,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ZergGroundArmorsLevel2">
+        <EffectArray Operation="Set" Reference="Actor,QueenWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,QueenWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,QueenWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,QueenLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,QueenLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,QueenLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,BanelingLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,BanelingLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RoachWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,RoachWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RoachWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RavagerLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,RavagerLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HydraliskLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,HydraliskLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV1,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV1@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV1@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HydraliskLotV2,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,HydraliskLotV2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV2,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV2@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV2@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LurkerLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,LurkerLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,SwarmHostSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LocustSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,LocustSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LocustSwarm,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestorWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,InfestorWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestorWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestorLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,InfestorLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestorLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,UltraliskLotV2,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,UltraliskLotV2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,UltraliskLotV2,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,UltraliskLotV2@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,UltraliskLotV2@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,BroodlingBroodLordWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,BroodlingBroodLordWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BroodlingBroodLordWoL,LifeArmor" Value="1"/>
+        <!-- Cocoons -->
+        <EffectArray Operation="Set" Reference="Actor,BanelingLotV1@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RavagerLotV@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,RavagerLotV@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LurkerLotV@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,LurkerLotV@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranWoL@Egg,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Egg,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Egg,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranLotV@Egg,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Egg,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Egg,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ZergGroundArmorsLevel3">
+        <EffectArray Operation="Set" Reference="Actor,QueenWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,QueenWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,QueenWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,QueenLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,QueenLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,QueenLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,QueenLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,BanelingLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,BanelingLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RoachWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,RoachWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RoachWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RoachWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RavagerLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,RavagerLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HydraliskLotV1,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,HydraliskLotV1,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV1,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV1@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV1@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,HydraliskLotV2,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,HydraliskLotV2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV2,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV2@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,HydraliskLotV2@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LurkerLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,LurkerLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,SwarmHostSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,SwarmHostSwarm@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LocustSwarm,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,LocustSwarm,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LocustSwarm,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestorWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,InfestorWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestorWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestorLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,InfestorLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestorLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestorLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranLotV,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,UltraliskLotV2,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,UltraliskLotV2,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,UltraliskLotV2,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,UltraliskLotV2@Burrowed,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,UltraliskLotV2@Burrowed,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,BroodlingBroodLordWoL,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,BroodlingBroodLordWoL,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BroodlingBroodLordWoL,LifeArmor" Value="1"/>
+        <!-- Cocoons -->
+        <EffectArray Operation="Set" Reference="Actor,BanelingLotV1@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,BanelingLotV1@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,RavagerLotV@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,RavagerLotV@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,RavagerLotV@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,LurkerLotV@Cocoon,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,LurkerLotV@Cocoon,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,LurkerLotV@Cocoon,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranWoL@Egg,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Egg,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranWoL@Egg,LifeArmor" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,InfestedTerranLotV@Egg,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Egg,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,InfestedTerranLotV@Egg,LifeArmor" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMeleeWeaponsLevel1">
+        <!-- Broodling -->
+        <EffectArray Reference="Weapon,BroodlingBroodLordWoL@Weapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,BroodlingBroodLordWoL@WeaponDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,BroodlingBroodLordWoL@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <!-- Baneling -->
+        <EffectArray Reference="Weapon,VolatileBurstLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@Damage,AttributeBonus[Light]" Value="2.000000"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@FriendlyDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@FriendlyDamage,AttributeBonus[Light]" Value="2.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,VolatileBurstLiberty,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <EffectArray Reference="Weapon,VolatileBurstLiberty@Building,Level" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@BuildingDamage,Amount" Value="5"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@FriendlyBuildingDamage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,VolatileBurstLiberty@Building,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <EffectArray Reference="Weapon,VolatileBurstLiberty@Dummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,VolatileBurstLiberty@Dummy,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMeleeWeaponsLevel2">
+        <!-- Broodling -->
+        <EffectArray Reference="Weapon,BroodlingBroodLordWoL@Weapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,BroodlingBroodLordWoL@WeaponDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,BroodlingBroodLordWoL@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <!-- Baneling -->
+        <EffectArray Reference="Weapon,VolatileBurstLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@Damage,AttributeBonus[Light]" Value="2.000000"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@FriendlyDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@FriendlyDamage,AttributeBonus[Light]" Value="2.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,VolatileBurstLiberty,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <EffectArray Reference="Weapon,VolatileBurstLiberty@Building,Level" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@BuildingDamage,Amount" Value="5"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@FriendlyBuildingDamage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,VolatileBurstLiberty@Building,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <EffectArray Reference="Weapon,VolatileBurstLiberty@Dummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,VolatileBurstLiberty@Dummy,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMeleeWeaponsLevel3">
+        <!-- Broodling -->
+        <EffectArray Reference="Weapon,BroodlingBroodLordWoL@Weapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,BroodlingBroodLordWoL@WeaponDamage,Amount" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,BroodlingBroodLordWoL@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <!-- Baneling -->
+        <EffectArray Reference="Weapon,VolatileBurstLiberty,Level" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@Damage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@Damage,AttributeBonus[Light]" Value="2.000000"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@FriendlyDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@FriendlyDamage,AttributeBonus[Light]" Value="2.000000"/>
+        <EffectArray Operation="Set" Reference="Weapon,VolatileBurstLiberty,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <EffectArray Reference="Weapon,VolatileBurstLiberty@Building,Level" Value="1"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@BuildingDamage,Amount" Value="5"/>
+        <EffectArray Reference="Effect,VolatileBurstLiberty@FriendlyBuildingDamage,Amount" Value="5"/>
+        <EffectArray Operation="Set" Reference="Weapon,VolatileBurstLiberty@Building,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <EffectArray Reference="Weapon,VolatileBurstLiberty@Dummy,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,VolatileBurstLiberty@Dummy,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMissileWeaponsLevel1">
+        <!-- Roach -->
+        <EffectArray Reference="Weapon,RoachWoL@RangedWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,RoachWoL@RangedWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,RoachWoL@RangedWeaponDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,RoachWoL@MeleeWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,RoachWoL@MeleeWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,RoachWoL@MeleeWeaponDamage,Amount" Value="2"/>
+        <!-- Hydralisk -->
+        <EffectArray Reference="Weapon,HydraliskLotV1@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HydraliskLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,HydraliskLotV1@WeaponDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,HydraliskLotV1@Melee,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HydraliskLotV1@Melee,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,HydraliskLotV1@MeleeDamage,Amount" Value="1"/>
+        <!-- Infested Terran LotV -->
+        <EffectArray Reference="Weapon,InfestedTerranLotV@AGWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedTerranLotV@AGWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,InfestedTerranLotV@AGWeaponDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,InfestedTerranLotV@AAWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedTerranLotV@AAWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,InfestedTerranLotV@AAWeaponDamage,Amount" Value="1"/>
+        <!-- Infested Terran WoL -->
+        <EffectArray Reference="Weapon,InfestedTerranWoL@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedTerranWoL@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,InfestedTerranWoL@WeaponDamage,Amount" Value="1"/>
+        <!-- Locust Swarm -->
+        <EffectArray Reference="Weapon,LocustSwarm@RangedWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LocustSwarm@RangedWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,LocustSwarm@RangedWeaponDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,LocustSwarm@MeleeWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LocustSwarm@MeleeWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,LocustSwarm@MeleeWeaponDamage,Amount" Value="1"/>
+        <!-- Queen AA -->
+        <EffectArray Reference="Weapon,QueenLotV@AAWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,QueenLotV@AAWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,QueenLotV@AAWeaponDamage,Amount" Value="1"/>
+        <!-- Ravager -->
+        <EffectArray Reference="Weapon,RavagerLotV@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,RavagerLotV@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Reference="Effect,RavagerLotV@WeaponDamage,Amount" Value="2"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMissileWeaponsLevel2">
+        <!-- Roach -->
+        <EffectArray Reference="Weapon,RoachWoL@RangedWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,RoachWoL@RangedWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,RoachWoL@RangedWeaponDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,RoachWoL@MeleeWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,RoachWoL@MeleeWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,RoachWoL@MeleeWeaponDamage,Amount" Value="2"/>
+        <!-- Hydralisk -->
+        <EffectArray Reference="Weapon,HydraliskLotV1@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HydraliskLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,HydraliskLotV1@WeaponDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,HydraliskLotV1@Melee,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HydraliskLotV1@Melee,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,HydraliskLotV1@MeleeDamage,Amount" Value="1"/>
+        <!-- Infested Terran LotV -->
+        <EffectArray Reference="Weapon,InfestedTerranLotV@AGWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedTerranLotV@AGWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,InfestedTerranLotV@AGWeaponDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,InfestedTerranLotV@AAWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedTerranLotV@AAWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,InfestedTerranLotV@AAWeaponDamage,Amount" Value="1"/>
+        <!-- Infested Terran WoL -->
+        <EffectArray Reference="Weapon,InfestedTerranWoL@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedTerranWoL@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,InfestedTerranWoL@WeaponDamage,Amount" Value="1"/>
+        <!-- Locust Swarm -->
+        <EffectArray Reference="Weapon,LocustSwarm@RangedWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LocustSwarm@RangedWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,LocustSwarm@RangedWeaponDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,LocustSwarm@MeleeWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LocustSwarm@MeleeWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,LocustSwarm@MeleeWeaponDamage,Amount" Value="1"/>
+        <!-- Queen AA -->
+        <EffectArray Reference="Weapon,QueenLotV@AAWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,QueenLotV@AAWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,QueenLotV@AAWeaponDamage,Amount" Value="1"/>
+        <!-- Ravager -->
+        <EffectArray Reference="Weapon,RavagerLotV@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,RavagerLotV@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Reference="Effect,RavagerLotV@WeaponDamage,Amount" Value="2"/>
+    </CUpgrade>
+    <CUpgrade id="ZergMissileWeaponsLevel3">
+        <!-- Roach -->
+        <EffectArray Reference="Weapon,RoachWoL@RangedWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,RoachWoL@RangedWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,RoachWoL@RangedWeaponDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,RoachWoL@MeleeWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,RoachWoL@MeleeWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,RoachWoL@MeleeWeaponDamage,Amount" Value="2"/>
+        <!-- Hydralisk -->
+        <EffectArray Reference="Weapon,HydraliskLotV1@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HydraliskLotV1@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,HydraliskLotV1@WeaponDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,HydraliskLotV1@Melee,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HydraliskLotV1@Melee,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,HydraliskLotV1@MeleeDamage,Amount" Value="1"/>
+        <!-- Infested Terran LotV -->
+        <EffectArray Reference="Weapon,InfestedTerranLotV@AGWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedTerranLotV@AGWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,InfestedTerranLotV@AGWeaponDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,InfestedTerranLotV@AAWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedTerranLotV@AAWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,InfestedTerranLotV@AAWeaponDamage,Amount" Value="1"/>
+        <!-- Infested Terran WoL -->
+        <EffectArray Reference="Weapon,InfestedTerranWoL@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,InfestedTerranWoL@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,InfestedTerranWoL@WeaponDamage,Amount" Value="1"/>
+        <!-- Locust Swarm -->
+        <EffectArray Reference="Weapon,LocustSwarm@RangedWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LocustSwarm@RangedWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,LocustSwarm@RangedWeaponDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,LocustSwarm@MeleeWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,LocustSwarm@MeleeWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,LocustSwarm@MeleeWeaponDamage,Amount" Value="1"/>
+        <!-- Queen AA -->
+        <EffectArray Reference="Weapon,QueenLotV@AAWeapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,QueenLotV@AAWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,QueenLotV@AAWeaponDamage,Amount" Value="1"/>
+        <!-- Ravager -->
+        <EffectArray Reference="Weapon,RavagerLotV@Weapon,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,RavagerLotV@Weapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Reference="Effect,RavagerLotV@WeaponDamage,Amount" Value="2"/>
     </CUpgrade>
 </Catalog>

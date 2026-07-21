@@ -56,6 +56,36 @@
         <ExternalAngle value="-149.9853"/>
         <ExternalAngle value="149.9853"/>
     </CAbilArmMagazine>
+    <CAbilTrain id="LarvaTrain">
+        <InfoArray index="Train21" Time="27">
+            <Button DefaultButtonFace="RoachWoL" Requirements="HaveBanelingNest2"/>
+            <Unit value="RoachWoL"/>
+        </InfoArray>
+        <InfoArray index="Train22" Time="33">
+            <Button DefaultButtonFace="HydraliskLotV1" Requirements="HaveHydraliskDen"/>
+            <Unit value="HydraliskLotV1"/>
+        </InfoArray>
+        <InfoArray index="Train23" Time="33">
+            <Button DefaultButtonFace="HydraliskLotV2" Requirements="HaveHydraliskDen"/>
+            <Unit value="HydraliskLotV2"/>
+        </InfoArray>
+        <InfoArray index="Train24" Time="40">
+            <Button DefaultButtonFace="SwarmHostSwarm" Requirements="HaveInfestationPit"/>
+            <Unit value="SwarmHostSwarm"/>
+        </InfoArray>
+        <InfoArray index="Train25" Time="55">
+            <Button DefaultButtonFace="UltraliskLotV2" Requirements="HaveUltraliskCavern"/>
+            <Unit value="UltraliskLotV2"/>
+        </InfoArray>
+        <InfoArray index="Train26" Time="50">
+            <Button DefaultButtonFace="InfestorWoL" Requirements="HaveInfestationPit"/>
+            <Unit value="InfestorWoL"/>
+        </InfoArray>
+        <InfoArray index="Train27" Time="50">
+            <Button DefaultButtonFace="InfestorLotV" Requirements="HaveInfestationPit"/>
+            <Unit value="InfestorLotV"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilMorph id="UltraliskLotV2@Burrow">
         <AbilSetId value="BrwD"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
@@ -627,7 +657,7 @@
     </CAbilMorph>
     <CAbilMorph id="LurkerLotV@MorphToLurker">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="LurkerMP" Requirements="HaveLurkerDen"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="LurkerLotV" Requirements="HaveLurkerDen"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
         <Flags index="BestUnit" value="1"/>
         <Flags index="Birth" value="1"/>
@@ -1140,7 +1170,7 @@
         <AutoCastValidatorArray value="TargetNotChangeling"/>
     </CAbilMorph>
     <CAbilResearch id="CentrifugalHooksLotV1@Research">
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Time="110" Upgrade="CentrifugalHooksLotV1">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>
@@ -1500,7 +1530,7 @@
     </CAbilEffectTarget>
     <CAbilMorph id="BanelingLotV1@MorphToBaneling">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Baneling" Requirements="HaveBanelingNest"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BanelingLotV1" Requirements="HaveBanelingNest"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
         <Flags index="BestUnit" value="1"/>
         <Flags index="Birth" value="1"/>
@@ -1825,7 +1855,7 @@
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Structures"/>
         <Activity value="UI/Spawning"/>
         <InfoArray index="Train1" Time="50" Effect="QueenBirth">
-            <Button DefaultButtonFace="Queen" Requirements="HaveSpawningPool">
+            <Button DefaultButtonFace="QueenLotV" Requirements="HaveSpawningPool">
                 <Flags index="ToSelection" value="1"/>
             </Button>
             <Unit value="QueenLotV"/>
@@ -1835,7 +1865,7 @@
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Structures"/>
         <Activity value="UI/Spawning"/>
         <InfoArray index="Train1" Time="50" Effect="QueenBirth">
-            <Button DefaultButtonFace="Queen" Requirements="HaveSpawningPool">
+            <Button DefaultButtonFace="QueenWoL" Requirements="HaveSpawningPool">
                 <Flags index="ToSelection" value="1"/>
             </Button>
             <Unit value="QueenWoL"/>
@@ -1870,7 +1900,7 @@
         </InfoArray>
     </CAbilResearch>
     <CAbilResearch id="TunnelingJawsSwarm@Research">
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Time="90" Upgrade="TunnelingJawsSwarm">
             <Resource index="Minerals" value="150"/>
             <Resource index="Vespene" value="150"/>
